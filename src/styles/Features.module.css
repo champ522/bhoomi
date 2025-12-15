@@ -1,0 +1,468 @@
+/* Features Component Styles */
+.featuresSection {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+/* Header Section - Matching About Us styles */
+.headerContent {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.welcomeSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.welcomeText {
+  font-size: 1.1rem;
+  color: #2c5530;
+  font-weight: 500;
+}
+
+.welcomeLine {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, #0e8d38 0%, #03ba58 100%);
+  border-radius: 2px;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #043b1e;
+  line-height: 1.2;
+}
+
+.titleHighlight {
+  background: linear-gradient(135deg, #0e8d38 0%, #03ba58 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sectionDescription {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #2c5530;
+  margin-bottom: 10px;
+  font-weight: 500;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Swiper Container */
+.swiperContainer {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.featuresSwiper {
+  padding: 20px 0;
+  overflow: visible;
+}
+
+.featuresSwiper .swiper-slide {
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+/* Feature Card Styles */
+.featureCard {
+  background: white;
+  border-radius: 0px;
+  height: 350px;
+  width: 100%;
+  max-width: 350px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.featureCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.cardBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.cardOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(74, 144, 226, 0.7), rgba(126, 211, 33, 0.7));
+}
+
+.waveOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+}
+
+.cardContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 35%;
+  background: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.categoryBadge {
+  position: absolute;
+  bottom: 105px;
+  left: 20px;
+  background: linear-gradient(135deg, #079538 0%, #055822 100%);
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px 0 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(7, 149, 56, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.categoryBadge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px #065521;
+}
+
+.categoryBadge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #065521 0%, #093a1a 100%);
+  transition: left 0.5s;
+  z-index: -1;
+}
+
+.categoryBadge:hover::before {
+  left: 0;
+}
+
+.featureTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #043b1e;
+  line-height: 1.6;
+  text-transform: uppercase;
+  /* letter-spacing: 0.5px; */
+  margin: 0;
+}
+
+/* Custom Navigation Buttons */
+.swiperNavButton {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, #0e8d38, #03ba58);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 5px 15px rgba(14, 141, 56, 0.3);
+}
+
+.swiperNavButton:hover {
+  background: linear-gradient(135deg, #043b1e, #0e8d38);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 20px rgba(14, 141, 56, 0.4);
+}
+
+.swiperNavButton svg {
+  width: 20px;
+  height: 20px;
+}
+
+.swiperButtonPrev {
+  left: 10px;
+}
+
+.swiperButtonNext {
+  right: 10px;
+}
+
+/* Custom Pagination */
+.swiperPagination {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+  position: static !important;
+}
+
+.swiperBullet {
+  width: 10px;
+  height: 5px;
+  border-radius: 0%;
+  background: #d1d5db;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+  opacity: 1 !important;
+}
+
+.swiperBullet:hover {
+  background: #9ca3af;
+  transform: scale(1.2);
+}
+
+.swiperBulletActive {
+  background: linear-gradient(135deg, #0e8d38, #03ba58) !important;
+  transform: scale(1.3);
+  box-shadow: 0 2px 8px rgba(14, 141, 56, 0.3);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .swiperContainer {
+    margin-bottom: 20px;
+  }
+
+  .featuresSwiper {
+    padding: 10px 0;
+  }
+
+  .featureCard {
+    height: 300px;
+    max-width: 300px;
+    margin: 0 10px;
+  }
+
+  .cardContent {
+    height: 30%;
+    padding: 15px;
+  }
+
+  .categoryBadge {
+    bottom: 10px;
+    left: 10px;
+    font-size: 0.65rem;
+    padding: 6px 16px;
+  }
+
+  .featureTitle {
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
+  .swiperNavButton {
+    width: 40px;
+    height: 40px;
+  }
+
+  .swiperNavButton svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .swiperButtonPrev {
+    left: 5px;
+  }
+
+  .swiperButtonNext {
+    right: 5px;
+  }
+
+  .swiperPagination {
+    margin-top: 20px;
+    gap: 10px;
+  }
+
+  .swiperBullet {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .featureCard {
+    height: 280px;
+    max-width: 280px;
+    margin: 0 5px;
+  }
+
+  .cardContent {
+    padding: 12px;
+  }
+
+  .categoryBadge {
+    bottom: 8px;
+    left: 8px;
+    font-size: 0.6rem;
+    padding: 5px 14px;
+  }
+
+  .featureTitle {
+    font-size: 0.9rem;
+  }
+
+  .swiperNavButton {
+    width: 35px;
+    height: 35px;
+  }
+
+  .swiperNavButton svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .featuresSection {
+    padding: 60px 0;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .headerContent {
+    margin-bottom: 40px;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .carouselContainer {
+    margin-bottom: 40px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+  }
+
+  .slide {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 60px;
+    justify-items: center;
+  }
+
+  .featureCard {
+    height: 300px;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .cardContent {
+    height: 30%;
+    padding: 15px;
+  }
+
+  .featureTitle {
+    font-size: 0.95rem;
+    line-height: 1.2;
+  }
+
+  .categoryBadge {
+    font-size: 0.7rem;
+    padding: 5px 12px;
+    margin-bottom: 8px;
+  }
+
+  .navButton {
+    width: 40px;
+    height: 40px;
+  }
+
+  .navButton svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .prevButton {
+    left: 10px;
+  }
+
+  .nextButton {
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+
+  .carouselContainer {
+    height: 320px;
+  }
+
+  .slide {
+    padding: 0 50px;
+  }
+
+  .featureCard {
+    height: 280px;
+    max-width: 250px;
+  }
+
+  .cardContent {
+    padding: 12px;
+  }
+
+  .featureTitle {
+    font-size: 0.85rem;
+  }
+
+  .categoryBadge {
+    font-size: 0.65rem;
+    padding: 4px 10px;
+  }
+}

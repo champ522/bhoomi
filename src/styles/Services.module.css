@@ -1,0 +1,267 @@
+/* Services Component Styles */
+.servicesSection {
+  padding: 30px 0;
+  background: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Section */
+.headerContent {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.welcomeSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.welcomeText {
+    font-size: 1.1rem;
+    color: #2c5530;
+    font-weight: 500;
+}
+
+.welcomeLine {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #0e8d38, #03ba58);
+  border-radius: 2px;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  color: #043b1e;
+  margin-bottom: 10px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.titleHighlight {
+  color: #0e8d38;
+}
+
+.sectionDescription {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2c5530;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Services Grid */
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.serviceCard {
+  background: transparent;
+  width: 100%;
+  height: 350px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.serviceCard:hover .cardInner {
+  transform: rotateY(180deg);
+}
+
+.cardFront,
+.cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 0px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Front Card */
+.cardFront {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px 0 50px;
+}
+
+.cardOverlay {
+  background: linear-gradient(45deg, rgba(4, 59, 30, 0.9), rgba(14, 141, 56, 0.8));
+  width: 100%;
+  height: 100%;
+  border-radius: 50px 0 50px;
+  display: flex;
+  align-items: center;
+  padding: 30px;
+}
+
+.frontContent {
+  width: 100%;
+}
+
+.frontTitle {
+  font-size: 1.8rem;
+  color: white;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* Back Card */
+.cardBack {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fffe 100%);
+  transform: rotateY(180deg);
+  padding: 20px;
+  border-radius: 0px 50px 0px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid rgba(14, 141, 56, 0.1);
+}
+
+.backContent {
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.serviceIcon {
+  width: 40px;
+  height: 40px;
+  color: #0e8d38;
+  margin-bottom: 10px;
+  background: rgba(14, 141, 56, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backTitle {
+  font-size: 1.3rem;
+  color: #043b1e;
+  margin-bottom: 10px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.serviceDescription {
+  color: #2c5530;
+  line-height: 1.6;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.serviceButton {
+  background: linear-gradient(135deg, #079538 0%, #055822 100%);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 20px 0 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  position: relative;
+  overflow: hidden;
+  margin-top: 15px;
+  align-self: center;
+}
+
+.serviceButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px #065521;
+}
+
+.serviceButton:active {
+  transform: translateY(0);
+}
+
+.serviceButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #065521 0%, #093a1a 100%);
+  transition: left 0.5s;
+  z-index: -1;
+}
+
+.serviceButton:hover::before {
+  left: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .servicesSection {
+    padding: 60px 0;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .headerContent {
+    margin-bottom: 40px;
+  }
+
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+
+  .servicesGrid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .serviceCard {
+    padding: 25px 20px;
+  }
+
+  .serviceTitle {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .serviceCard {
+    padding: 20px 15px;
+  }
+
+  .serviceIcon {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,83 @@
+/* Wave Container */
+.waveContainer {
+  position: relative;
+  height: 150px;
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(135deg, #016630 0%, #03ba58 50%, #03ba58 100%);
+}
+
+.waveWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+}
+
+.waveWrapper:first-child {
+  animation: waveMove 8s linear infinite;
+}
+
+.waveWrapper:last-child {
+  animation: waveMove 8s linear infinite;
+  animation-delay: -4s;
+}
+
+.waveSvg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Rolling Wave Path */
+.wavePath {
+  fill: rgba(6, 114, 47, 0.3);
+}
+
+/* Wave Movement Animation */
+@keyframes waveMove {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .waveContainer {
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .waveContainer {
+    height: 60px;
+  }
+}
+
+/* Shimmer Effect */
+.waveContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(7, 184, 74, 0.651) 0%, transparent 70%);
+  animation: shimmer 6s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
