@@ -154,12 +154,12 @@
 
 .dropdown {
   position: absolute;
-  top: calc(100% + 5px);
+  top: calc(100% + 10px);
   left: 50%;
   background: white;
-  min-width: 600px;
+  min-width: 650px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
+  border-radius: 0px;
   opacity: 0;
   visibility: hidden;
   transform: translateX(-50%) translateY(-15px) scale(0.95);
@@ -195,7 +195,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  padding: 40px 30px;
+  padding: 20px 15px;
   transform: translateY(10px);
   transition: transform 0.3s ease 0.1s;
 }

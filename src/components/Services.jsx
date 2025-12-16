@@ -2,6 +2,16 @@ import React from 'react';
 import styles from '../styles/Services.module.css';
 
 const Services = () => {
+  // Service images array
+  const serviceImages = [
+    "/images/sliderimg1.png",     // Website Development
+    "/images/sliderimg2.png",     // App Development  
+    "/images/dmarketing.png",   // Digital Marketing
+    "/images/socialmediaa.png",        // Social Media Marketing
+    "/images/appdev.png",     // Application Development
+    "/images/softdev.png"         // Software Development
+  ];
+
   const services = [
     {
       id: 1,
@@ -98,7 +108,7 @@ const Services = () => {
         </div>
 
         <div className={styles.servicesGrid}>
-          {services.map((service) => (
+          {services.map((service, index) => (
             <div key={service.id} className={styles.serviceCard}>
               <div className={styles.cardInner}>
                 {/* Front Side */}
@@ -108,6 +118,13 @@ const Services = () => {
                 >
                   <div className={styles.cardOverlay}>
                     <div className={styles.frontContent}>
+                      <div className={styles.frontImageContainer}>
+                        <img 
+                          src={serviceImages[index]} 
+                          alt={service.title}
+                          className={styles.frontImage}
+                        />
+                      </div>
                       <h3 className={styles.frontTitle}>{service.title}</h3>
                     </div>
                   </div>

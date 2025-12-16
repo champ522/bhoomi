@@ -11,6 +11,13 @@ import styles from '../styles/HeroBanner.module.css';
 const HeroBanner = () => {
   const swiperRef = useRef(null);
 
+  // Right side images array
+  const rightImages = [
+    "/images/sliderimg1.png",      // Slide 1
+    "/images/sliderimg2.png",        // Slide 2  
+    "/images/bhoomilogo.png"       // Slide 3
+  ];
+
   const slides = [
     {
       id: 1,
@@ -130,6 +137,18 @@ const HeroBanner = () => {
                       </a>
                     </div>
                   </div>
+                  
+                  <div className={styles.imageContent} data-swiper-parallax="300">
+                    <div className={styles.heroImage}>
+                      <img 
+                        src={rightImages[index]}
+                        alt={`${slide.title} ${slide.highlight}`}
+                        className={styles.slideImage}
+                      />
+                      <div className={styles.imageDecoration}></div>
+                      <div className={styles.imageGlow}></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -150,7 +169,7 @@ const HeroBanner = () => {
       </div>
 
       {/* Custom Pagination */}
-      <div className={styles.swiperPagination}></div>
+      {/* <div className={styles.swiperPagination}></div> */}
     </section>
   );
 };

@@ -280,6 +280,7 @@
 
   .sectionDescription {
     font-size: 1rem;
+    text-align: justify;
   }
 
   .processGrid {
@@ -301,7 +302,7 @@
   }
 
   .processDescription {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 }
 
@@ -330,6 +331,6 @@
   }
 
   .processDescription {
-    font-size: 0.85rem;
+    font-size: 1rem;
   }
 }

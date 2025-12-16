@@ -119,6 +119,51 @@
 
 .frontContent {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.frontIcon {
+  width: 60px;
+  height: 60px;
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.frontIcon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.frontImageContainer {
+  width: 280px;
+  height: 205px;
+  /* background: rgba(255, 255, 255, 0.15); */
+  /* border-radius: 50%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* backdrop-filter: blur(10px); */
+  /* border: 2px solid rgba(255, 255, 255, 0.3); */
+  transition: all 0.3s ease;
+  /* padding: 10px; */
+}
+
+.frontImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* border-radius: 50%;
+  filter: brightness(0) invert(1); */
 }
 
 .frontTitle {
@@ -127,6 +172,7 @@
   font-weight: 700;
   line-height: 1.3;
   margin: 0;
+  text-align: center;
 }
 
 /* Back Card */

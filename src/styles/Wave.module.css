@@ -1,7 +1,7 @@
 /* Wave Container */
 .waveContainer {
   position: relative;
-  height: 150px;
+  height: 180px;
   width: 100%;
   overflow: hidden;
   background: linear-gradient(135deg, #016630 0%, #03ba58 50%, #03ba58 100%);
@@ -50,13 +50,13 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .waveContainer {
-    height: 80px;
+    height: 100px;
   }
 }
 
 @media (max-width: 480px) {
   .waveContainer {
-    height: 60px;
+    height: 100px;
   }
 }
 

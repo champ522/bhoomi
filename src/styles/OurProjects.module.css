@@ -323,6 +323,9 @@
   .projectDescription {
     font-size: 0.9rem;
   }
+  .sectionDescription{
+    text-align: justify;
+  }
 }
 
 @media (max-width: 480px) {
@@ -336,7 +339,7 @@
   }
   
   .projectCard {
-    height: 280px;
+    height: 300px;
   }
   
   .overlayContent {
