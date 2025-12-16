@@ -203,9 +203,9 @@
   height: 24px;
 }
 
-.featureItem:hover .featureIcon {
-  /* This will be overridden by media query */
-}
+/* .featureItem:hover .featureIcon {
+  
+} */
 
 .featureContent {
   flex: 1;
