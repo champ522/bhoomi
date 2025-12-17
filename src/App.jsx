@@ -9,9 +9,11 @@ import WhyChooseBhoomiTechzone from './components/WhyChooseBhoomiTechzone'
 import StatsCounter from './components/StatsCounter'
 import WorkProcess from './components/WorkProcess'
 import OurProjects from './components/OurProjects'
+import TechnologyStack from './components/TechnologyStack'
 import Pricing from './components/Pricing'
 import Testimonials from './components/Testimonials'
 import CallToAction from './components/CallToAction'
+import Blog from './components/Blog'
 import './index.css'
 
 function App() {
@@ -28,8 +30,10 @@ function App() {
       <StatsCounter />
       <WorkProcess />
       <OurProjects />
+      <TechnologyStack />
       <Pricing />
       <Testimonials />
+      <Blog />
       <CallToAction />
     </>
   )

@@ -46,7 +46,7 @@
 
 .welcomeText {
   font-size: 1.1rem;
-  color: #2c5530;
+  color: #777;
   font-weight: 600;
   /* text-transform: uppercase;
   letter-spacing: 1px; */
@@ -75,13 +75,13 @@
 }
 
 .sectionDescription {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #2c5530;
-  max-width: 750px;
+  font-size: 1.2rem;
+  line-height: 1.7em;
+  color: #777;
+  max-width: 830px;
   text-align: center;
   margin: 0 auto 20px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 /* Projects Grid */

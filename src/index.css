@@ -6,7 +6,7 @@
 }
 
 :root {
-  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Cabin', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   line-height: 1.6;
   font-weight: 400;
   color: #333333;
@@ -23,6 +23,7 @@ body {
   min-height: 100vh;
   background-color: #ffffff;
   color: #333333;
+  font-family: 'Cabin', sans-serif;
 }
 
 /* Typography */
@@ -30,13 +31,14 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   font-weight: 600;
   line-height: 1.3;
+  font-family: 'Montserrat', sans-serif;
 }
 
 p {
   margin: 0;
   line-height: 1.6;
   text-align: justify;
-  /* font-family: Cabin, sans-serif; */
+  font-family: 'Cabin', sans-serif;
 }
 
 /* Links */
@@ -67,4 +69,20 @@ button {
   font-family: inherit;
   font-size: inherit;
   outline: none;
+}
+
+/* Font Family Assignments */
+/* Header/Navbar Elements - Arimo */
+header, nav, .header, .navbar, .nav-link, .menu-item {
+  font-family: 'Arimo', sans-serif;
+}
+
+/* Body Elements - Cabin */
+body, p, div, section, article, aside, footer {
+  font-family: 'Cabin', sans-serif;
+}
+
+/* Headings - Montserrat */
+h1, h2, h3, h4, h5, h6, span, .heading, .title {
+  font-family: 'Montserrat', sans-serif;
 }

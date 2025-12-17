@@ -4,8 +4,14 @@ import styles from '../styles/WhyChooseBhoomiTechzone.module.css';
 const WhyChooseBhoomiTechzone = () => {
   const [openFeature, setOpenFeature] = useState(null);
 
-  const toggleFeature = (featureId) => {
+  const toggleFeature = (featureId, event) => {
+    event.preventDefault();
+    event.stopPropagation();
     setOpenFeature(openFeature === featureId ? null : featureId);
+  };
+
+  const handleFeatureClick = (featureId) => (event) => {
+    toggleFeature(featureId, event);
   };
   const features = [
     {
@@ -109,7 +115,11 @@ const WhyChooseBhoomiTechzone = () => {
                 <div 
                   key={feature.id} 
                   className={`${styles.featureItem} ${openFeature === feature.id ? styles.featureItemActive : ''}`}
-                  onClick={() => toggleFeature(feature.id)}
+                  onClick={handleFeatureClick(feature.id)}
+                  onTouchStart={handleFeatureClick(feature.id)}
+                  role="button"
+                  tabIndex={0}
+                  aria-expanded={openFeature === feature.id}
                 >
                   <div className={styles.featureHeader}>
                     <div className={styles.featureIcon}>

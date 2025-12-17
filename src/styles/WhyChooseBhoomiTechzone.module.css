@@ -52,8 +52,8 @@
 
 .welcomeText {
   font-size: 1.1rem;
-  color: #2c5530;
-  font-weight: 500;
+  color: #777;
+  font-weight: 600;
 }
 
 .welcomeLine {
@@ -64,7 +64,7 @@
 }
 
 .sectionTitle {
-  font-size: 2.4rem;
+  font-size: 2.5rem;
   color: #043b1e;
   margin-bottom: 10px;
   font-weight: 600;
@@ -79,12 +79,12 @@
 }
 
 .sectionDescription {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #2c5530;
+  font-size: 1.2rem;
+  line-height: 1.7em;
+  color: #777;
   margin-bottom: 15px;
-  font-weight: 500;
-  max-width: 800px;
+  font-weight: 400;
+  max-width: 830px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -464,9 +464,21 @@
     transform: none;
   }
 
-  /* Only allow click-based opening on mobile */
+  /* Ensure click-based functionality works on mobile */
+  .featureItem {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+
+  .featureItemActive .featureContent {
+    max-height: 200px !important;
+    opacity: 1 !important;
+    padding: 0 15px 15px 15px !important;
+  }
+
   .featureItemActive .dropdownArrow {
-    transform: rotate(180deg);
+    transform: rotate(180deg) !important;
   }
 
   .imageContainer {

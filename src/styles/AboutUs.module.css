@@ -32,8 +32,8 @@
 
 .welcomeText {
   font-size: 1.1rem;
-  color: #2c5530;
-  font-weight: 500;
+  color: #777;
+  font-weight: 600;
 }
 
 .welcomeLine {
@@ -60,10 +60,10 @@
 
 .description {
   font-size: 1rem;
-  line-height: 1.6;
-  color: #2c5530;
+  line-height: 1.7em;
+  color: #777;
   margin-bottom: 15px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .learnMoreBtn {

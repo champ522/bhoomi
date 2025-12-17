@@ -27,8 +27,8 @@
 
 .welcomeText {
   font-size: 1.1rem;
-  color: #2c5530;
-  font-weight: 500;
+  color: #777;
+  font-weight: 600;
 }
 
 .welcomeLine {
@@ -54,12 +54,13 @@
 }
 
 .sectionDescription {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #2c5530;
-  max-width: 700px;
+  font-size: 1.2rem;
+  line-height: 1.7em;
+  color: #777;
+  max-width: 830px;
+  text-align: center;
   margin: 0 auto;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 /* Testimonials Container */
@@ -128,11 +129,11 @@
 
 .testimonialText {
   font-size: 1rem;
-  line-height: 1.6;
-  color: #043b1e;
+  line-height: 1.6em;
+  color: #777;
   font-style: italic;
   margin: 20px 0 0 0;
-  font-weight: 500;
+  font-weight: 400;
   position: relative;
 }
 
@@ -239,10 +240,10 @@
 
 .dot {
   width: 12px;
-  height: 12px;
-  border-radius: 50%;
+  height: 5px;
+  border-radius: 0%;
   border: 2px solid #0e8d38;
-  background: transparent;
+  background: #80e6a2;
   cursor: pointer;
   transition: all 0.3s ease;
   padding: 0;

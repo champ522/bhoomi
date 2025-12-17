@@ -26,8 +26,8 @@
 
 .welcomeText {
     font-size: 1.1rem;
-    color: #2c5530;
-    font-weight: 500;
+    color: #777;
+    font-weight: 600;
 }
 
 .welcomeLine {
@@ -50,11 +50,11 @@
 }
 
 .sectionDescription {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #2c5530;
-  line-height: 1.6;
-  max-width: 700px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #777;
+  line-height: 1.7em;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -218,10 +218,10 @@
 }
 
 .serviceDescription {
-  color: #2c5530;
-  line-height: 1.6;
-  font-size: 0.8rem;
-  font-weight: 500;
+  color: #777;
+  line-height: 1.7em;
+  font-size: 0.95rem;
+  font-weight: 400;
 }
 
 .serviceButton {
