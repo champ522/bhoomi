@@ -1,41 +1,23 @@
-import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
-import HeroBanner from './components/HeroBanner'
-import Wave from './components/Wave'
-import AboutUs from './components/AboutUs'
-import Services from './components/Services'
-import Features from './components/Features'
-import WhyChooseBhoomiTechzone from './components/WhyChooseBhoomiTechzone'
-import StatsCounter from './components/StatsCounter'
-import WorkProcess from './components/WorkProcess'
-import OurProjects from './components/OurProjects'
-import TechnologyStack from './components/TechnologyStack'
-import Pricing from './components/Pricing'
-import Testimonials from './components/Testimonials'
-import CallToAction from './components/CallToAction'
-import Blog from './components/Blog'
+import Footer from './components/Footer'
+import Home from './pages/Home'
+import AboutPage from './pages/AboutPage'
+import ContactPage from './pages/ContactPage'
 import './index.css'
 
 function App() {
   
   return (
-    <>
+    <Router>
       <Header />
-      <HeroBanner />
-      <Wave />
-      <AboutUs />
-      <Services />
-      <Features />
-      <WhyChooseBhoomiTechzone />
-      <StatsCounter />
-      <WorkProcess />
-      <OurProjects />
-      <TechnologyStack />
-      <Pricing />
-      <Testimonials />
-      <Blog />
-      <CallToAction />
-    </>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
+      <Footer />
+    </Router>
   )
 }
 

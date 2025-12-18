@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import styles from '../styles/Header.module.css';
 
 const Header = () => {
@@ -42,7 +43,7 @@ const Header = () => {
       <div className={styles.container}>
         {/* Logo Section - Left */}
         <div className={styles.logoSection}>
-          <div className={styles.logo}>
+          <Link to="/" className={styles.logo}>
             <img 
               src="/images/bhoomilogo.png" 
               alt="BhoomiTech Logo" 
@@ -52,14 +53,14 @@ const Header = () => {
                 e.target.nextSibling.style.display = 'block';
               }}
             />
-          </div>
+          </Link>
         </div>
 
         {/* Navigation Section - Center */}
         <nav className={`${styles.navigation} ${isMobileMenuOpen ? styles.mobileOpen : ''}`}>
           <ul className={styles.navList}>
             <li className={styles.navItem}>
-              <a href="#about" className={styles.navLink}>About</a>
+              <Link to="/about" className={styles.navLink}>About</Link>
             </li>
             
             {/* Solutions Dropdown */}
@@ -198,7 +199,7 @@ const Header = () => {
               <a href="#career" className={styles.navLink}>Career</a>
             </li>
             <li className={styles.navItem}>
-              <a href="#contact" className={styles.navLink}>Contact Us</a>
+              <Link to="/contact" className={styles.navLink}>Contact Us</Link>
             </li>
           </ul>
         </nav>

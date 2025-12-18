@@ -1,0 +1,484 @@
+/* Footer Container */
+.footer {
+  background-image: url(/images/footer3.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  margin-top: 0px;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 10px 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* Main Footer Content */
+.footerContent {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 2fr;
+  gap: 30px;
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Footer Column */
+.footerColumn {
+  animation: slideInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.footerColumn:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.footerColumn:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.footerColumn:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.footerColumn:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Logo Section */
+.logoSection {
+  margin-bottom: 10px;
+}
+
+.logoImage {
+  height: 60px;
+  width: auto;
+  border-radius: 15px 0px 15px 0px;
+  background: #043e1c;
+  padding: 0px;
+  transition: transform 0.3s ease;
+}
+
+.logoImage:hover {
+  transform: scale(1.05);
+}
+
+.logoFallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 12px;
+  padding: 15px 20px;
+  width: fit-content;
+}
+
+.logoText {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #0e8d38, #03ba58);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.companyDescription {
+  color: #222;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  font-size: 1rem;
+}
+
+/* Social Links */
+.socialLinks {
+  display: flex;
+  gap: 15px;
+  /* flex-wrap: wrap; */
+}
+
+.socialIcon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(5, 5, 5, 0.911);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 2px solid rgba(255, 255, 255, 0.781);
+  cursor: pointer;
+}
+
+.socialIcon:hover {
+  background: white;
+  color: #0e8d38;
+  transform: translateY(-5px) rotate(360deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.socialIcon svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* Column Title */
+.columnTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: black;
+  position: relative;
+  padding-bottom: 12px;
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); */
+}
+
+.columnTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #027036, transparent);
+  border-radius: 2px;
+}
+
+/* Link List */
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.linkList li {
+  margin-bottom: 10px;
+}
+
+.footerLink {
+  color: black;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+  padding-left: 10px;
+   /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); */
+} 
+
+.footerLink::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.footerLink:hover {
+  color: #1d4b32;
+  transform: translateX(8px);
+  /* text-shadow: 0 0 10px rgba(3, 186, 88, 0.5); */
+}
+
+.footerLink:hover::before {
+  opacity: 1;
+  left: 0;
+}
+
+/* Contact Info */
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contactRow {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.contactRow:nth-child(2),
+.contactRow:nth-child(3) {
+  grid-template-columns: 1fr;
+}
+
+.contactItem {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.iconWrapper {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.884);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.contactItem:hover .iconWrapper {
+  background: white;
+  color: #0e8d38;
+  transform: scale(1.1) rotate(360deg);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.contactItem:hover .icon {
+  color: #0e8d38;
+}
+
+.contactText {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); */
+}
+
+.contactText p {
+  margin: 0;
+  text-align: left;
+}
+
+.contactLabel {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: white !important;
+  margin-bottom: 4px !important;
+}
+
+/* Schedule Appointment Button */
+.scheduleBtn {
+  display: inline-block;
+  background: linear-gradient(135deg, #079538 0%, #055822 100%);
+  color: white;
+  border: none;
+  padding: 12px 15px;
+  border-radius: 20px 0 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.scheduleBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #065521 0%, #093a1a 100%);
+  transition: left 0.5s;
+  z-index: -1;
+}
+
+.scheduleBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px #065521;
+}
+
+.scheduleBtn:hover::before {
+  left: 0;
+}
+
+.scheduleBtn:active {
+  transform: translateY(0);
+}
+
+/* Bottom Bar */
+.bottomBar {
+  /* border-top: 2px solid rgba(255, 255, 255, 0.15); */
+  padding: 0;
+  animation: fadeIn 1.5s ease-out 0.7s both;
+  margin-top: 0px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.bottomContent {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  padding: 5px 15px;
+  width: auto;
+  margin: 0 auto;
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 0.9rem;
+  text-align: center;
+  margin: 0;
+}
+
+.brandName {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: white;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .footerContent {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .newsletterContent {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .newsletterForm {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 80px 20px 0;
+  }
+
+  .footerContent {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  /* Company Info - Full width */
+  .footerContent .footerColumn:nth-child(1) {
+    grid-column: 1 / -1;
+  }
+
+  /* Quick Links and Our Services stay in same row - already 2 columns */
+
+  /* Get In Touch - Full width */
+  .footerContent .footerColumn:nth-child(4) {
+    grid-column: 1 / -1;
+  }
+
+  .newsletterSection {
+    padding: 30px 20px;
+  }
+
+  .newsletterForm {
+    flex-direction: column;
+  }
+
+  .subscribeBtn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .bottomContent {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .columnTitle {
+    font-size: 1.2rem;
+  }
+
+  .newsletterTitle {
+    font-size: 1.3rem;
+  }
+
+  .socialLinks {
+    justify-content: space-evenly;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 60px 15px 0;
+  }
+
+  .newsletterSection {
+    padding: 25px 15px;
+  }
+
+  .emailInput {
+    padding: 14px 18px 14px 45px;
+    font-size: 0.9rem;
+  }
+
+  .subscribeBtn {
+    padding: 14px 28px;
+    font-size: 0.95rem;
+  }
+
+  .socialIcon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .socialIcon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .decorativeCircle1,
+  .decorativeCircle2,
+  .decorativeCircle3 {
+    display: none;
+  }
+}

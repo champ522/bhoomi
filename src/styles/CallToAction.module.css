@@ -1,7 +1,7 @@
 .ctaSection {
   background: linear-gradient(45deg, #0e8d38, #03ba58);
   padding: 0px 0;
-  margin: 0px auto;
+  margin: 50px auto;
   border-radius: 12px;
   max-width: 1200px;
   position: relative;
@@ -230,7 +230,7 @@
   }
   
   .title {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     margin-bottom: 50px;
   }
   

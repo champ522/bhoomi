@@ -132,7 +132,7 @@
 }
 
 .slideTitle {
-  font-size: clamp(2.5rem, 6vw, 3rem);
+  font-size: clamp(2rem, 6vw, 3rem);
   font-weight: 700;
   line-height: 1.4;
   margin-bottom: 1.5rem;
@@ -174,7 +174,7 @@
 }
 
 .slideSubtitle {
-  font-size: clamp(1rem, 3vw, 1.8rem);
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
   font-weight: 600;
   margin-bottom: 2rem;
   color: #ffffff;
@@ -182,7 +182,7 @@
 }
 
 .slideDescription {
-  font-size: clamp(0.8rem, 2vw, 1.2rem);
+  font-size: clamp(1.2rem, 2vw, 1.2rem);
   line-height: 1.6;
   font-weight: 500;
   margin-bottom: 2rem;
@@ -554,6 +554,18 @@
 
   .slideNumber::after {
     display: none;
+  }
+
+  .slideTitle{
+    margin-bottom: 1rem;
+  }
+
+  .slideSubtitle{
+    margin-bottom: 1rem;
+  }
+
+  .slideDescription{
+    margin-bottom: 1rem;
   }
 }
 

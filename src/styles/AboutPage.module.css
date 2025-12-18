@@ -1,0 +1,499 @@
+/* About Banner Section */
+.aboutBanner {
+  position: relative;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background: linear-gradient(135deg, #079538 0%, #055822 100%); */
+  background-image: url('/images/aboutbnr.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  /* background-attachment: fixed; */
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(7, 149, 56, 0.85) 0%, rgba(5, 88, 34, 0.9) 100%);
+  z-index: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.content {
+  animation: fadeInUp 1s ease-out;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  /* text-transform: uppercase; */
+  letter-spacing: 2px;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.8s ease-out;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 0 10px 0;
+  font-weight: 300;
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  animation: fadeIn 1s ease-out 0.3s both;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1rem;
+  animation: fadeIn 1s ease-out 0.5s both;
+}
+
+.breadcrumbLink {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 400;
+  position: relative;
+}
+
+.breadcrumbLink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ffffff;
+  transition: width 0.3s ease;
+}
+
+.breadcrumbLink:hover {
+  color: #ffffff;
+}
+
+.breadcrumbLink:hover::after {
+  width: 100%;
+}
+
+.separator {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 300;
+}
+
+.breadcrumbCurrent {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .aboutBanner {
+    height: 400px;
+    background-attachment: scroll;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    padding: 0 15px;
+  }
+
+  .breadcrumb {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutBanner {
+    height: 300px;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .breadcrumb {
+    font-size: 0.85rem;
+    gap: 8px;
+  }
+}
+
+/* About Content Section */
+.aboutSection {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.aboutContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.aboutContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+/* Welcome Section */
+.welcomeSection {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+  animation: fadeIn 0.8s ease-out 0.2s both;
+}
+
+.welcomeText {
+  font-size: 1.1rem;
+  color: #777;
+  font-weight: 600;
+}
+
+.welcomeLine {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, #0e8d38 0%, #03ba58 100%);
+  border-radius: 2px;
+  animation: expandWidth 0.8s ease-out 0.4s both;
+  width: 0;
+}
+
+.aboutTitle {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #043b1e;
+  line-height: 1.2;
+  animation: slideInLeft 0.8s ease-out 0.3s both;
+  opacity: 0;
+}
+
+.highlight {
+  background: linear-gradient(135deg, #0e8d38 0%, #03ba58 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.7em;
+  color: #777;
+  margin-bottom: 15px;
+  font-weight: 400;
+  animation: fadeInUp 0.8s ease-out 0.5s both;
+  opacity: 0;
+}
+
+.description:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.aboutImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(4, 59, 30, 0.15);
+}
+
+.aboutImage:hover {
+  transform: scale(1.05);
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  animation: zoomIn 1s ease-out 0.4s both;
+  opacity: 0;
+}
+
+.imagePlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #043b1e 0%, #0e8d38 50%, #03ba58 100%);
+  color: white;
+  text-align: center;
+}
+
+.placeholderIcon {
+  font-size: 4rem;
+  margin-bottom: 15px;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.imagePlaceholder p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+/* Additional Content Section */
+.additionalContent {
+  margin-top: 0px;
+  padding-top: 0px;
+  animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+.sectionHeading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #043b1e;
+  margin-bottom: 15px;
+  margin-top: 30px;
+  position: relative;
+  padding-left: 20px;
+  animation: slideInLeft 0.8s ease-out both;
+  opacity: 0;
+}
+
+.sectionHeading:nth-child(1) {
+  animation-delay: 0.6s;
+}
+
+.sectionHeading:nth-child(3) {
+  animation-delay: 0.9s;
+}
+
+.sectionHeading:nth-child(5) {
+  animation-delay: 1.2s;
+}
+
+.sectionHeading::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 30px;
+  background: linear-gradient(135deg, #0e8d38 0%, #03ba58 100%);
+  border-radius: 3px;
+  animation: expandHeight 0.6s ease-out forwards;
+  animation-delay: inherit;
+}
+
+.sectionHeading:first-child {
+  margin-top: 0;
+}
+
+.paragraph {
+  font-size: 1rem;
+  line-height: 1.7em;
+  color: #777;
+  margin-bottom: 15px;
+  text-align: justify;
+  font-weight: 400;
+  animation: fadeInUp 0.8s ease-out both;
+  opacity: 1;
+}
+
+.paragraph:nth-child(2) {
+  animation-delay: 0.7s;
+}
+
+.paragraph:nth-child(4) {
+  animation-delay: 1s;
+}
+
+.paragraph:nth-child(6) {
+  animation-delay: 1.3s;
+}
+
+/* Animations */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes expandHeight {
+  from {
+    height: 0;
+  }
+  to {
+    height: 30px;
+  }
+}
+
+@keyframes expandWidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: 60px;
+  }
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive Design for About Section */
+@media (max-width: 768px) {
+  .aboutContent {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .textContent {
+    text-align: center;
+  }
+  
+  .aboutTitle {
+    font-size: 2.5rem;
+  }
+  
+  .imageContainer {
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  .sectionHeading {
+    font-size: 1.5rem;
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .sectionHeading::before {
+    display: none;
+  }
+
+  .paragraph {
+    text-align: justify;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutSection {
+    padding: 40px 0;
+  }
+  
+  .aboutContainer {
+    padding: 0 15px;
+  }
+  
+  .aboutTitle {
+    font-size: 2rem;
+  }
+  
+  .imageContainer {
+    height: 250px;
+  }
+
+  .additionalContent {
+    margin-top: 40px;
+    padding-top: 30px;
+  }
+
+  .sectionHeading {
+    font-size: 1.3rem;
+  }
+
+  .paragraph {
+    font-size: 1rem;
+  }
+}

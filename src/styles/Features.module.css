@@ -458,11 +458,11 @@
   }
 
   .featureTitle {
-    font-size: 0.85rem;
+    font-size: 1.2rem;
   }
 
   .categoryBadge {
-    font-size: 0.65rem;
+    font-size: 1rem;
     padding: 10px 15px;
   }
 }
