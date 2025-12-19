@@ -21,6 +21,23 @@ const Header = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  // Close mobile menu and any open dropdown when a nav link is clicked
+  const handleNavLinkClick = (e) => {
+    const anchor = e.target.closest('a');
+    if (!anchor) return;
+    // If a link inside the navigation was clicked, close the mobile menu
+    setIsMobileMenuOpen(false);
+    setActiveDropdown(null);
+  };
+
+  // Close mobile menu when route/location changes (handles <Link> navigations)
+  const location = useLocation();
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+    setActiveDropdown(null);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.pathname, location.hash]);
+
   const handleDropdownHover = (dropdownName) => {
     setActiveDropdown(dropdownName);
   };
@@ -57,7 +74,10 @@ const Header = () => {
         </div>
 
         {/* Navigation Section - Center */}
-        <nav className={`${styles.navigation} ${isMobileMenuOpen ? styles.mobileOpen : ''}`}>
+        <nav
+          className={`${styles.navigation} ${isMobileMenuOpen ? styles.mobileOpen : ''}`}
+          onClick={handleNavLinkClick}
+        >
           <ul className={styles.navList}>
             <li className={styles.navItem}>
               <Link to="/about" className={styles.navLink}>About</Link>
@@ -112,38 +132,37 @@ const Header = () => {
               onMouseEnter={() => handleDropdownHover('services')}
               onMouseLeave={handleDropdownLeave}
             >
-              <a 
-                href="#services" 
+              <Link 
+                to="/services" 
                 className={styles.navLink}
-                onClick={(e) => handleDropdownClick('services', e)}
               >
                 Services
                 <svg className={styles.dropdownArrow} viewBox="0 0 24 24">
                   <path d="M7 10l5 5 5-5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </a>
+              </Link>
               <div className={`${styles.dropdown} ${activeDropdown === 'services' ? styles.dropdownActive : ''}`}>
                 <div className={styles.dropdownContent}>
                   <div className={styles.dropdownSection}>
                     <h4 className={styles.dropdownTitle}>Development</h4>
-                    <a href="#web-dev" className={styles.dropdownLink}>Web Development</a>
-                    <a href="#mobile-dev" className={styles.dropdownLink}>Mobile App Development</a>
-                    <a href="#software-dev" className={styles.dropdownLink}>Software Development</a>
-                    <a href="#ui-ux" className={styles.dropdownLink}>UI/UX Design</a>
+                    <Link to="/web-development" className={styles.dropdownLink}>Web Development</Link>
+                    <Link to="/services" className={styles.dropdownLink}>Mobile App Development</Link>
+                    <Link to="/services" className={styles.dropdownLink}>Software Development</Link>
+                    <Link to="/services" className={styles.dropdownLink}>Website Design</Link>
                   </div>
                   <div className={styles.dropdownSection}>
-                    <h4 className={styles.dropdownTitle}>Consulting</h4>
-                    <a href="#it-consulting" className={styles.dropdownLink}>IT Consulting</a>
-                    <a href="#digital-transform" className={styles.dropdownLink}>Digital Transformation</a>
-                    <a href="#tech-audit" className={styles.dropdownLink}>Technology Audit</a>
-                    <a href="#strategy" className={styles.dropdownLink}>IT Strategy</a>
+                    <h4 className={styles.dropdownTitle}>Digital Marketing</h4>
+                    <Link to="/services" className={styles.dropdownLink}>SEO & Digital Marketing</Link>
+                    <Link to="/services" className={styles.dropdownLink}>Social Media Marketing</Link>
+                    <Link to="/services" className={styles.dropdownLink}>Content Marketing</Link>
+                    <Link to="/services" className={styles.dropdownLink}>SEO Optimization</Link>
                   </div>
                   <div className={styles.dropdownSection}>
-                    <h4 className={styles.dropdownTitle}>Support & Maintenance</h4>
-                    <a href="#support" className={styles.dropdownLink}>24/7 Support</a>
-                    <a href="#maintenance" className={styles.dropdownLink}>Software Maintenance</a>
-                    <a href="#updates" className={styles.dropdownLink}>System Updates</a>
-                    <a href="#monitoring" className={styles.dropdownLink}>Performance Monitoring</a>
+                    <h4 className={styles.dropdownTitle}>Support & Consulting</h4>
+                    <Link to="/contact" className={styles.dropdownLink}>IT Consulting</Link>
+                    <Link to="/contact" className={styles.dropdownLink}>24/7 Support</Link>
+                    <Link to="/contact" className={styles.dropdownLink}>System Maintenance</Link>
+                    <Link to="/services" className={styles.dropdownLink}>Web Maintenance</Link>
                   </div>
                 </div>
               </div>

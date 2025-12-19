@@ -354,11 +354,13 @@
 
 .officeSection .infoRow {
   border-bottom: 1px solid rgba(14, 141, 56, 0.15);
+  padding-bottom: 20px;
 }
 
 .officeSection .infoRow:last-child {
   border-bottom: none;
   padding-bottom: 0;
+  margin-top: 20px;
 }
 
 .infoRow:first-child {

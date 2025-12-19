@@ -103,7 +103,7 @@ const Services = () => {
             What We <span className={styles.titleHighlight}>Offer</span>
           </h2>
           <p className={styles.sectionDescription}>
-            We provide comprehensive technology solutions to help your business thrive in the digital age.
+            We provide comprehensive technology solutions to help your business thrive in the digital age. From mobile App and web development to digital marketing, our expert team delivers results-driven solutions tailored to your unique business needs.
           </p>
         </div>
 

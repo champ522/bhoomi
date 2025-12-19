@@ -74,7 +74,7 @@ const Footer = () => {
             <h3 className={styles.columnTitle}>Quick Links</h3>
             <ul className={styles.linkList}>
               <li><Link to="/about" className={styles.footerLink}>About Us</Link></li>
-              <li><a href="#services" className={styles.footerLink}>Services</a></li>
+              <li><Link to="/services" className={styles.footerLink}>Services</Link></li>
               <li><a href="#projects" className={styles.footerLink}>Projects</a></li>
               <li><a href="#clients" className={styles.footerLink}>Clients</a></li>
               <li><a href="#blog" className={styles.footerLink}>Blogs</a></li>
