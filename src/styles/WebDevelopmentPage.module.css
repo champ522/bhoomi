@@ -124,9 +124,9 @@
   align-items: center;
 }
 
-.textContent {
-  /* padding: 20px 0; */
-}
+/* .textContent {
+  padding: 20px 0; 
+} */
 
 .welcomeSection {
   display: flex;
