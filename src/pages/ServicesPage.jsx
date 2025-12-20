@@ -13,10 +13,10 @@ const ServicesPage = () => {
   const serviceImages = [
     "https://lottie.host/97b6e0e6-223c-469d-aece-84a4ae835c37/fTvUjslsAk.json",     // Website Development (Lottie)
     "https://lottie.host/5ba5bf8c-480d-413f-815c-44bd492dc4a0/1IlpWLqQBh.json",     // App Development (Lottie)
-    "/images/dmarketing.png",     // Digital Marketing
-    "/images/socialmediaa.png",   // Social Media Marketing
-    "/images/appdev.png",         // Application Development
-    "/images/softdev.png"         // Software Development
+    "https://lottie.host/f2cbf8b5-afdf-44c1-b7ba-fdc2e779bc8e/s9HI4lqVk8.json",     // Digital Marketing (Lottie)
+    "https://lottie.host/56f58b50-2e9d-4f31-85b9-c36c74ecaf3e/5nDFfRQpCF.json",   // Social Media Marketing
+    "https://lottie.host/c6bef809-2df9-4455-b792-a103dc806aaa/wgaZ50ssdv.json",         // Application Development
+    "https://lottie.host/b331077e-3eb6-481b-9885-50c5e45ac7d8/49Smam5Rrf.json"         // Software Development
   ];
 
   const services = [
@@ -174,11 +174,11 @@ const ServicesPage = () => {
               
               <div className={styles.serviceImage}>
                 <div className={styles.imageContainer}>
-                  {(index === 0 || index === 1) ? (
+                  {(index === 0 || index === 1 || index === 2 || index === 3 || index === 4 || index === 5) ? (
                     <lottie-player
                       src={serviceImages[index]}
                       background="transparent"
-                      speed="1"
+                      speed="0.5"
                       className={styles.serviceImg}
                       loop
                       autoplay

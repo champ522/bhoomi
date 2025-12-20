@@ -9,8 +9,15 @@ import styles from '../styles/WebDevelopmentPage.module.css';
 import TechnologyStack from '../components/TechnologyStack';
 import WorkProcess from '../components/WorkProcess';
 import Testimonials from '../components/Testimonials';
+import useCounter from '../hooks/useCounter';
+import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 const WebDevelopmentPage = () => {
+  const [statsRef, isStatsVisible] = useIntersectionObserver();
+  
+  const websitesCount = useCounter(150, 2000, isStatsVisible);
+  const satisfactionCount = useCounter(99, 2000, isStatsVisible);
+  const supportCount = useCounter(24, 1500, isStatsVisible);
 
   const projectTypes = [
     {
@@ -95,17 +102,17 @@ const WebDevelopmentPage = () => {
                 and scalability to ensure your website grows with your business.
               </p>
               
-              <div className={styles.serviceStats}>
+              <div className={styles.serviceStats} ref={statsRef}>
                 <div className={styles.stat}>
-                  <h3>150+</h3>
+                  <h3>{websitesCount}+</h3>
                   <p>Websites Delivered</p>
                 </div>
                 <div className={styles.stat}>
-                  <h3>99%</h3>
+                  <h3>{satisfactionCount}%</h3>
                   <p>Client Satisfaction</p>
                 </div>
                 <div className={styles.stat}>
-                  <h3>24/7</h3>
+                  <h3>{supportCount}/7</h3>
                   <p>Support Available</p>
                 </div>
               </div>

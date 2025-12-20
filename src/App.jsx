@@ -7,6 +7,11 @@ import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
 import ServicesPage from './pages/ServicesPage'
 import WebDevelopmentPage from './pages/WebDevelopmentPage'
+import MobileAppDevelopmentPage from './pages/MobileAppDevelopmentPage'
+import SoftwareDevelopmentPage from './pages/SoftwareDevelopmentPage'
+import WebsiteDesignPage from './pages/WebsiteDesignPage'
+import DigitalMarketingPage from './pages/DigitalMarketingPage'
+import SocialMediaMarketingPage from './pages/SocialMediaMarketingPage'
 import './index.css'
 
 // ScrollToTop component to handle route changes
@@ -60,6 +65,11 @@ function App() {
         <Route path="/about" element={<AboutPage key="about-page" />} />
         <Route path="/services" element={<ServicesPage key="services-page" />} />
         <Route path="/web-development" element={<WebDevelopmentPage key="webdev-page" />} />
+        <Route path="/mobile-app-development" element={<MobileAppDevelopmentPage key="appdev-page" />} />
+        <Route path="/software-development" element={<SoftwareDevelopmentPage key="softwaredev-page" />} />
+        <Route path="/website-design" element={<WebsiteDesignPage key="websitedesign-page" />} />
+        <Route path="/digital-marketing" element={<DigitalMarketingPage key="digitalmarketing-page" />} />
+        <Route path="/social-media-marketing" element={<SocialMediaMarketingPage key="socialmedia-page" />} />
         <Route path="/contact" element={<ContactPage key="contact-page" />} />
       </Routes>
       <Footer />

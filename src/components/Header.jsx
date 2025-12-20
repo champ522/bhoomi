@@ -55,6 +55,51 @@ const Header = () => {
     }
   };
 
+  const handleServicesClick = (e) => {
+    // On mobile/small screens, handle dropdown behavior
+    if (window.innerWidth <= 768) {
+      if (activeDropdown === 'services') {
+        // If dropdown is already open, allow navigation
+        return;
+      } else {
+        // If dropdown is closed, prevent navigation and open dropdown
+        e.preventDefault();
+        setActiveDropdown('services');
+      }
+    }
+    // On desktop, allow normal navigation
+  };
+
+  const handleSolutionsClick = (e) => {
+    // On mobile/small screens, handle dropdown behavior
+    if (window.innerWidth <= 768) {
+      if (activeDropdown === 'solutions') {
+        // If dropdown is already open, allow navigation
+        return;
+      } else {
+        // If dropdown is closed, prevent navigation and open dropdown
+        e.preventDefault();
+        setActiveDropdown('solutions');
+      }
+    }
+    // On desktop, allow normal navigation
+  };
+
+  const handleIndustriesClick = (e) => {
+    // On mobile/small screens, handle dropdown behavior
+    if (window.innerWidth <= 768) {
+      if (activeDropdown === 'industries') {
+        // If dropdown is already open, allow navigation
+        return;
+      } else {
+        // If dropdown is closed, prevent navigation and open dropdown
+        e.preventDefault();
+        setActiveDropdown('industries');
+      }
+    }
+    // On desktop, allow normal navigation
+  };
+
   return (
     <header className={`${styles.header} ${isSticky ? styles.sticky : ''}`}>
       <div className={styles.container}>
@@ -89,16 +134,16 @@ const Header = () => {
               onMouseEnter={() => handleDropdownHover('solutions')}
               onMouseLeave={handleDropdownLeave}
             >
-              <a 
-                href="#solutions" 
+              <Link 
+                to="/solutions" 
                 className={styles.navLink}
-                onClick={(e) => handleDropdownClick('solutions', e)}
+                onClick={handleSolutionsClick}
               >
                 Solutions
                 <svg className={styles.dropdownArrow} viewBox="0 0 24 24">
                   <path d="M7 10l5 5 5-5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </a>
+              </Link>
               <div className={`${styles.dropdown} ${activeDropdown === 'solutions' ? styles.dropdownActive : ''}`}>
                 <div className={styles.dropdownContent}>
                   <div className={styles.dropdownSection}>
@@ -135,6 +180,7 @@ const Header = () => {
               <Link 
                 to="/services" 
                 className={styles.navLink}
+                onClick={handleServicesClick}
               >
                 Services
                 <svg className={styles.dropdownArrow} viewBox="0 0 24 24">
@@ -146,16 +192,16 @@ const Header = () => {
                   <div className={styles.dropdownSection}>
                     <h4 className={styles.dropdownTitle}>Development</h4>
                     <Link to="/web-development" className={styles.dropdownLink}>Web Development</Link>
-                    <Link to="/services" className={styles.dropdownLink}>Mobile App Development</Link>
-                    <Link to="/services" className={styles.dropdownLink}>Software Development</Link>
-                    <Link to="/services" className={styles.dropdownLink}>Website Design</Link>
+                    <Link to="/mobile-app-development" className={styles.dropdownLink}>Mobile App Development</Link>
+                    <Link to="/software-development" className={styles.dropdownLink}>Software Development</Link>
+                    <Link to="/website-design" className={styles.dropdownLink}>Website Design</Link>
                   </div>
                   <div className={styles.dropdownSection}>
                     <h4 className={styles.dropdownTitle}>Digital Marketing</h4>
-                    <Link to="/services" className={styles.dropdownLink}>SEO & Digital Marketing</Link>
-                    <Link to="/services" className={styles.dropdownLink}>Social Media Marketing</Link>
-                    <Link to="/services" className={styles.dropdownLink}>Content Marketing</Link>
-                    <Link to="/services" className={styles.dropdownLink}>SEO Optimization</Link>
+                    <Link to="/digital-marketing" className={styles.dropdownLink}>SEO & Digital Marketing</Link>
+                    <Link to="/social-media-marketing" className={styles.dropdownLink}>Social Media Marketing</Link>
+                    <Link to="/digital-marketing" className={styles.dropdownLink}>Content Marketing</Link>
+                    <Link to="/digital-marketing" className={styles.dropdownLink}>SEO Optimization</Link>
                   </div>
                   <div className={styles.dropdownSection}>
                     <h4 className={styles.dropdownTitle}>Support & Consulting</h4>
@@ -174,16 +220,16 @@ const Header = () => {
               onMouseEnter={() => handleDropdownHover('industries')}
               onMouseLeave={handleDropdownLeave}
             >
-              <a 
-                href="#industries" 
+              <Link 
+                to="/industries" 
                 className={styles.navLink}
-                onClick={(e) => handleDropdownClick('industries', e)}
+                onClick={handleIndustriesClick}
               >
                 Industries
                 <svg className={styles.dropdownArrow} viewBox="0 0 24 24">
                   <path d="M7 10l5 5 5-5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </a>
+              </Link>
               <div className={`${styles.dropdown} ${activeDropdown === 'industries' ? styles.dropdownActive : ''}`}>
                 <div className={styles.dropdownContent}>
                   <div className={styles.dropdownSection}>
