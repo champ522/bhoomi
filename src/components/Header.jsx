@@ -200,12 +200,12 @@ const Header = () => {
                     <h4 className={styles.dropdownTitle}>Digital Marketing</h4>
                     <Link to="/digital-marketing" className={styles.dropdownLink}>SEO & Digital Marketing</Link>
                     <Link to="/social-media-marketing" className={styles.dropdownLink}>Social Media Marketing</Link>
-                    <Link to="/digital-marketing" className={styles.dropdownLink}>Content Marketing</Link>
-                    <Link to="/digital-marketing" className={styles.dropdownLink}>SEO Optimization</Link>
+                    <Link to="/content-marketing" className={styles.dropdownLink}>Content Marketing</Link>
+                    <Link to="/seo-optimization" className={styles.dropdownLink}>SEO Optimization</Link>
                   </div>
                   <div className={styles.dropdownSection}>
                     <h4 className={styles.dropdownTitle}>Support & Consulting</h4>
-                    <Link to="/contact" className={styles.dropdownLink}>IT Consulting</Link>
+                    <Link to="/it-consulting" className={styles.dropdownLink}>IT Consulting</Link>
                     <Link to="/contact" className={styles.dropdownLink}>24/7 Support</Link>
                     <Link to="/contact" className={styles.dropdownLink}>System Maintenance</Link>
                     <Link to="/services" className={styles.dropdownLink}>Web Maintenance</Link>

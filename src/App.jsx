@@ -12,6 +12,9 @@ import SoftwareDevelopmentPage from './pages/SoftwareDevelopmentPage'
 import WebsiteDesignPage from './pages/WebsiteDesignPage'
 import DigitalMarketingPage from './pages/DigitalMarketingPage'
 import SocialMediaMarketingPage from './pages/SocialMediaMarketingPage'
+import ContentMarketingPage from './pages/ContentMarketingPage'
+import SEOOptimizationPage from './pages/SEOOptimizationPage'
+import ITConsultingPage from './pages/ITConsultingPage'
 import './index.css'
 
 // ScrollToTop component to handle route changes
@@ -70,6 +73,9 @@ function App() {
         <Route path="/website-design" element={<WebsiteDesignPage key="websitedesign-page" />} />
         <Route path="/digital-marketing" element={<DigitalMarketingPage key="digitalmarketing-page" />} />
         <Route path="/social-media-marketing" element={<SocialMediaMarketingPage key="socialmedia-page" />} />
+        <Route path="/content-marketing" element={<ContentMarketingPage key="contentmarketing-page" />} />
+        <Route path="/seo-optimization" element={<SEOOptimizationPage key="seooptimization-page" />} />
+        <Route path="/it-consulting" element={<ITConsultingPage key="itconsulting-page" />} />
         <Route path="/contact" element={<ContactPage key="contact-page" />} />
       </Routes>
       <Footer />

@@ -620,11 +620,11 @@
   }
   
   .imageContent {
-    order: -1;
+    order: 1;
   }
   
   .serviceImage {
-    height: 250px;
+    height: auto;
   }
   
   .sectionHeading {

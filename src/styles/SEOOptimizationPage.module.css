@@ -1,3 +1,5 @@
+/* SEO Optimization Page Styles */
+
 /* Banner Section */
 .webDevBanner {
   position: relative;
@@ -103,7 +105,7 @@
   font-weight: 500;
 }
 
-/* Web Development Content Section */
+/* SEO Optimization Content Section */
 .webDevSection {
   padding: 60px 0;
   background: #ffffff;
@@ -122,11 +124,6 @@
   align-items: center;
 }
 
-.textContent {
-  display: flex;
-  flex-direction: column;
-}
-
 .welcomeSection {
   display: flex;
   align-items: center;
@@ -138,7 +135,6 @@
   font-size: 1.1rem;
   color: #777;
   font-weight: 600;
-  /* text-transform: uppercase; */
   letter-spacing: 1px;
 }
 
@@ -198,9 +194,9 @@
 }
 
 .stat p {
-  font-size: 1rem;
+  font-size: 0.95rem;
   text-align: center;
-  color: #666;
+  color: #777;
   font-weight: 500;
   margin: 0;
 }
@@ -217,7 +213,6 @@
   height: 520px;
   object-fit: cover;
   border-radius: 0px;
-  /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); */
   transition: transform 0.3s ease;
 }
 
@@ -254,29 +249,25 @@
 
 /* Additional Content Sections */
 .additionalContent {
-  margin-top: 30px;
+  margin-top: 60px;
 }
 
 .sectionHeading {
   font-size: 1.5rem;
-  color: #043b1e;
-  font-weight: 600;
-  margin: 20px 0 20px 0;
-  border-left: 4px solid #0e8d38;
   padding-left: 20px;
+  color: #043b1e;
+  border-left: 4px solid #0e8d38;
+  margin: 20px 0 20px 0;
+  font-weight: 600;
   line-height: 1.3;
-}
-
-.sectionHeading:first-child {
-  margin-top: 0;
 }
 
 .paragraph {
   font-size: 1.06rem;
   color: #777;
   line-height: 1.7em;
-  font-weight: 400;
   margin-bottom: 15px;
+  font-weight: 400;
   text-align: justify;
 }
 
@@ -291,7 +282,6 @@
   background: #f8f9fa;
   padding: 12px;
   border-radius: 0px;
-  /* border-left: 4px solid #0e8d38; */
   transition: all 0.3s ease;
 }
 
@@ -316,7 +306,6 @@
   margin: 0;
 }
 
-/* Services List Styles */
 .servicesList {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -343,33 +332,28 @@
 .principlesList {
   margin: 0px 0;
   margin-bottom: 25px;
-  padding-left: 0;
   list-style: none;
+  padding: 0;
 }
 
 .principleItem {
-  padding: 5px 0;
-  border-bottom: 1px solid #eee;
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #666;
-  position: relative;
-  padding-left: 25px;
+  font-size: 1.06rem;
   text-align: justify;
+  color: #777;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  padding-left: 20px;
+  position: relative;
+  font-weight: 400;
 }
 
 .principleItem::before {
   content: '✓';
   position: absolute;
   left: 0;
-  top: 5px;
   color: #0e8d38;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.principleItem:last-child {
-  border-bottom: none;
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
 .principleItem strong {
@@ -377,7 +361,6 @@
   font-weight: 600;
 }
 
-/* Process Steps Styles */
 .processList {
   margin: 30px 0;
 }
@@ -629,7 +612,7 @@
   }
   
   .serviceImage {
-    height: 250px;
+    height: auto;
   }
   
   .sectionHeading {
@@ -662,13 +645,9 @@
     height: auto;
     padding: 15px;
   }
-
-  .serviceImage {
-    height: auto;
-  }
-
-  .overlayContent h4{
-    font-size: 1rem;
+  
+  .servicesList {
+    grid-template-columns: 1fr;
   }
 }
 
