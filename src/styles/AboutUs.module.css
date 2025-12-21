@@ -80,6 +80,8 @@
   position: relative;
   overflow: hidden;
   margin-top: 20px;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .learnMoreBtn:hover {

@@ -239,6 +239,8 @@
   overflow: hidden;
   margin-top: 15px;
   align-self: center;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .serviceButton:hover {

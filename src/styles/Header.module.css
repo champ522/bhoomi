@@ -352,6 +352,8 @@
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
   position: relative;
   overflow: hidden;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .getStartedBtn:hover {
@@ -528,7 +530,14 @@
     height: 20px;
   }
 
-  .hasDropdown:hover .dropdownArrow {
+  .hasDropdown:hover .dropdownArrow,
+  .hasDropdown .dropdownActive ~ .dropdownArrow,
+  .hasDropdown.active .dropdownArrow {
+    transform: rotate(180deg);
+  }
+
+  /* Ensure dropdown arrow rotates when active on mobile */
+  .hasDropdown:has(.dropdownActive) .dropdownArrow {
     transform: rotate(180deg);
   }
 
@@ -544,12 +553,16 @@
     box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transform: none !important;
+    opacity: 1;
+    visibility: visible;
   }
   
   .dropdownActive {
-    display: block;
+    display: block !important;
     animation: mobileDropdownSlide 0.3s ease-out;
     transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 
   .dropdown::before {

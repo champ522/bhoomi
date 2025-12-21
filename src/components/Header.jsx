@@ -7,25 +7,56 @@ const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [isSticky, setIsSticky] = useState(false);
 
+  const isMobileView = () => window.innerWidth <= 768;
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       setIsSticky(scrollPosition > 100);
     };
 
+    const handleResize = () => {
+      // Close dropdowns when switching between mobile and desktop
+      setActiveDropdown(null);
+    };
+
+    const handleClickOutside = (event) => {
+      // Close dropdown when clicking outside on mobile
+      if (isMobileView() && activeDropdown) {
+        const navElement = document.querySelector('.navigation');
+        if (navElement && !navElement.contains(event.target)) {
+          setActiveDropdown(null);
+        }
+      }
+    };
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    window.addEventListener('resize', handleResize);
+    document.addEventListener('click', handleClickOutside);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [activeDropdown]);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  // Close mobile menu and any open dropdown when a nav link is clicked
+  // Close mobile menu when a regular nav link is clicked (not dropdown)
   const handleNavLinkClick = (e) => {
-    const anchor = e.target.closest('a');
-    if (!anchor) return;
-    // If a link inside the navigation was clicked, close the mobile menu
+    const target = e.target;
+    const isDropdownLink = target.closest('.hasDropdown .navLink');
+    const isDropdownChild = target.closest('.dropdown');
+    
+    // If clicking a dropdown toggle or dropdown content on mobile, don't close menu
+    if (isMobileView() && (isDropdownLink || isDropdownChild)) {
+      return;
+    }
+    
+    // Close mobile menu for regular navigation links
     setIsMobileMenuOpen(false);
     setActiveDropdown(null);
   };
@@ -39,63 +70,57 @@ const Header = () => {
   }, [location.pathname, location.hash]);
 
   const handleDropdownHover = (dropdownName) => {
-    setActiveDropdown(dropdownName);
+    // Only handle hover on desktop
+    if (!isMobileView()) {
+      setActiveDropdown(dropdownName);
+    }
   };
 
   const handleDropdownLeave = () => {
-    setActiveDropdown(null);
+    // Only handle hover leave on desktop
+    if (!isMobileView()) {
+      setActiveDropdown(null);
+    }
   };
 
   const handleDropdownClick = (dropdownName, e) => {
-    e.preventDefault();
-    if (activeDropdown === dropdownName) {
-      setActiveDropdown(null);
-    } else {
-      setActiveDropdown(dropdownName);
+    // Always prevent default on mobile, and when clicking dropdown toggle
+    if (isMobileView()) {
+      e.preventDefault();
+      if (activeDropdown === dropdownName) {
+        setActiveDropdown(null);
+      } else {
+        setActiveDropdown(dropdownName);
+      }
     }
   };
 
   const handleServicesClick = (e) => {
     // On mobile/small screens, handle dropdown behavior
-    if (window.innerWidth <= 768) {
-      if (activeDropdown === 'services') {
-        // If dropdown is already open, allow navigation
-        return;
-      } else {
-        // If dropdown is closed, prevent navigation and open dropdown
-        e.preventDefault();
-        setActiveDropdown('services');
-      }
+    if (isMobileView()) {
+      e.preventDefault();
+      e.stopPropagation();
+      setActiveDropdown(activeDropdown === 'services' ? null : 'services');
     }
     // On desktop, allow normal navigation
   };
 
   const handleSolutionsClick = (e) => {
-    // On mobile/small screens, handle dropdown behavior
-    if (window.innerWidth <= 768) {
-      if (activeDropdown === 'solutions') {
-        // If dropdown is already open, allow navigation
-        return;
-      } else {
-        // If dropdown is closed, prevent navigation and open dropdown
-        e.preventDefault();
-        setActiveDropdown('solutions');
-      }
+    // On mobile/small screens, handle dropdown behavior  
+    if (isMobileView()) {
+      e.preventDefault();
+      e.stopPropagation();
+      setActiveDropdown(activeDropdown === 'solutions' ? null : 'solutions');
     }
     // On desktop, allow normal navigation
   };
 
   const handleIndustriesClick = (e) => {
     // On mobile/small screens, handle dropdown behavior
-    if (window.innerWidth <= 768) {
-      if (activeDropdown === 'industries') {
-        // If dropdown is already open, allow navigation
-        return;
-      } else {
-        // If dropdown is closed, prevent navigation and open dropdown
-        e.preventDefault();
-        setActiveDropdown('industries');
-      }
+    if (isMobileView()) {
+      e.preventDefault();
+      e.stopPropagation();
+      setActiveDropdown(activeDropdown === 'industries' ? null : 'industries');
     }
     // On desktop, allow normal navigation
   };
@@ -271,9 +296,9 @@ const Header = () => {
 
         {/* Get Started Button - Right */}
         <div className={styles.actionSection}>
-          <button className={styles.getStartedBtn}>
+          <Link to="/contact" className={styles.getStartedBtn}>
             Get Started
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Menu Toggle */}

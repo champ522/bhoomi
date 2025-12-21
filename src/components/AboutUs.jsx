@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from '../styles/AboutUs.module.css';
 
 const AboutUs = () => {
@@ -25,9 +26,9 @@ const AboutUs = () => {
                         <p className={styles.description}>
                             Based in Noida, Bhoomi Techzone Pvt. Ltd. has been delivering exceptional IT services since 2023. We partner with businesses to create custom web solutions, mobile applications, and enterprise software that drive growth. Our team of experienced developers and digital strategists combines technical expertise with creative innovation to build solutions that truly make a difference.
                         </p>
-                        <button className={styles.learnMoreBtn}>
+                        <Link to="/about" className={styles.learnMoreBtn}>
                             Learn More
-                        </button>
+                        </Link>
                     </div>
                     <div className={styles.imageContent}>
                         <div className={styles.imageContainer}>
