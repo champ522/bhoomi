@@ -15,6 +15,10 @@ import SocialMediaMarketingPage from './pages/SocialMediaMarketingPage'
 import ContentMarketingPage from './pages/ContentMarketingPage'
 import SEOOptimizationPage from './pages/SEOOptimizationPage'
 import ITConsultingPage from './pages/ITConsultingPage'
+import SupportPage from './pages/SupportPage'
+import AppMaintenancePage from './pages/AppMaintenancePage'
+import WebMaintenancePage from './pages/WebMaintenancePage'
+import CRMSystemsPage from './pages/CRMSystemsPage'
 import './index.css'
 
 // ScrollToTop component to handle route changes
@@ -76,6 +80,10 @@ function App() {
         <Route path="/content-marketing" element={<ContentMarketingPage key="contentmarketing-page" />} />
         <Route path="/seo-optimization" element={<SEOOptimizationPage key="seooptimization-page" />} />
         <Route path="/it-consulting" element={<ITConsultingPage key="itconsulting-page" />} />
+        <Route path="/support" element={<SupportPage key="support-page" />} />
+        <Route path="/app-maintenance" element={<AppMaintenancePage key="appmaintenance-page" />} />
+        <Route path="/web-maintenance" element={<WebMaintenancePage key="webmaintenance-page" />} />
+        <Route path="/crm-systems" element={<CRMSystemsPage key="crmsystems-page" />} />
         <Route path="/contact" element={<ContactPage key="contact-page" />} />
       </Routes>
       <Footer />

@@ -74,7 +74,7 @@ const ITConsultingPage = () => {
               </div>
               <h1 className={styles.heroTitle}>IT Consulting Services That Drive Digital Growth</h1>
               <p className={styles.heroSubtitle}>
-                We provide expert technology guidance that drives digital transformation, optimizes operations, and accelerates business growth through strategic IT solutions.
+                Expert technology guidance for digital transformation and business growth.
               </p>
             </div>
             <div className={styles.heroImage}>
@@ -100,52 +100,52 @@ const ITConsultingPage = () => {
           </div>
           
           <div className={styles.servicesCards}>
-            <div className={styles.serviceCard}>
-              <div className={styles.cardIcon}>
-                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=100&h=100&fit=crop&crop=center" alt="IT Strategy" />
+            <div className={styles.serviceCard} style={{backgroundImage: 'url(https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=300&fit=crop&crop=center)'}}>
+              <div className={styles.cardOverlay}></div>
+              <div className={styles.cardContent}>
+                <h3>IT Strategy & Planning</h3>
+                <p>Develop comprehensive technology roadmaps aligned with your business objectives and plans.</p>
               </div>
-              <h3>IT Strategy & Planning</h3>
-              <p>Develop comprehensive technology roadmaps aligned with your business objectives and growth plans.</p>
             </div>
             
-            <div className={styles.serviceCard}>
-              <div className={styles.cardIcon}>
-                <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=100&h=100&fit=crop&crop=center" alt="Cloud Migration" />
+            <div className={styles.serviceCard} style={{backgroundImage: 'url(https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&h=300&fit=crop&crop=center)'}}>
+              <div className={styles.cardOverlay}></div>
+              <div className={styles.cardContent}>
+                <h3>Cloud Migration</h3>
+                <p>Seamlessly migrate to cloud platforms with minimal downtime and maximum efficiency.</p>
               </div>
-              <h3>Cloud Migration</h3>
-              <p>Seamlessly migrate to cloud platforms with minimal downtime and maximum efficiency gains.</p>
             </div>
             
-            <div className={styles.serviceCard}>
-              <div className={styles.cardIcon}>
-                <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=100&h=100&fit=crop&crop=center" alt="Cybersecurity" />
+            <div className={styles.serviceCard} style={{backgroundImage: 'url(https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=300&fit=crop&crop=center)'}}>
+              <div className={styles.cardOverlay}></div>
+              <div className={styles.cardContent}>
+                <h3>Cybersecurity</h3>
+                <p>Implement robust security frameworks to protect your assets and ensure compliance.</p>
               </div>
-              <h3>Cybersecurity</h3>
-              <p>Implement robust security frameworks to protect your digital assets and ensure compliance.</p>
             </div>
             
-            <div className={styles.serviceCard}>
-              <div className={styles.cardIcon}>
-                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=100&h=100&fit=crop&crop=center" alt="Digital Transformation" />
+            <div className={styles.serviceCard} style={{backgroundImage: 'url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop&crop=center)'}}>
+              <div className={styles.cardOverlay}></div>
+              <div className={styles.cardContent}>
+                <h3>Digital Transformation</h3>
+                <p>Modernize your businesses with cutting-edge technology solutions and automation.</p>
               </div>
-              <h3>Digital Transformation</h3>
-              <p>Modernize your business processes with cutting-edge technology solutions and automation.</p>
             </div>
             
-            <div className={styles.serviceCard}>
-              <div className={styles.cardIcon}>
-                <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=100&h=100&fit=crop&crop=center" alt="Infrastructure Design" />
+            <div className={styles.serviceCard} style={{backgroundImage: 'url(https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center)'}}>
+              <div className={styles.cardOverlay}></div>
+              <div className={styles.cardContent}>
+                <h3>Infrastructure Design</h3>
+                <p>Build scalable, reliable IT infrastructure that grows with your business requirements.</p>
               </div>
-              <h3>Infrastructure Design</h3>
-              <p>Build scalable, reliable IT infrastructure that grows with your business requirements.</p>
             </div>
             
-            <div className={styles.serviceCard}>
-              <div className={styles.cardIcon}>
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=100&h=100&fit=crop&crop=center" alt="IT Governance" />
+            <div className={styles.serviceCard} style={{backgroundImage: 'url(https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop&crop=center)'}}>
+              <div className={styles.cardOverlay}></div>
+              <div className={styles.cardContent}>
+                <h3>IT Governance</h3>
+                <p>Establish effective IT governance frameworks for better decision-making and compliance.</p>
               </div>
-              <h3>IT Governance</h3>
-              <p>Establish effective IT governance frameworks for better decision-making and compliance.</p>
             </div>
           </div>
         </div>
@@ -193,6 +193,16 @@ const ITConsultingPage = () => {
             </div>
             
             <div className={styles.whyChooseImage}>
+              <div className={styles.lottieContainer}>
+                <lottie-player
+                  src="https://lottie.host/f66a0ef7-ec8a-42eb-9fb8-38e63c7cf1cc/FCyMljPR7M.json"
+                  background="transparent"
+                  speed="1"
+                  className={styles.statsLottie}
+                  loop
+                  autoplay
+                ></lottie-player>
+              </div>
               <div className={styles.statsContainer} ref={statsRef}>
                 <div className={styles.statCard}>
                   <h3>{projectsCount}+</h3>
@@ -265,40 +275,94 @@ const ITConsultingPage = () => {
       {/* Benefits Section */}
       <section className={styles.benefitsSection}>
         <div className={styles.container}>
-          <h2 className={styles.benefitsTitle}>Transform Your Business with Professional IT Consulting</h2>
+          <h2 className={styles.benefitsTitle}>Transform Your Business with Us</h2>
           <div className={styles.benefitsGrid}>
             <div className={styles.benefitCard}>
-              <div className={styles.benefitIcon}>📈</div>
+              <div className={styles.benefitIcon}>
+                <lottie-player
+                  src="https://assets2.lottiefiles.com/packages/lf20_qp1q7mct.json"
+                  background="transparent"
+                  speed="1"
+                  className={styles.benefitLottie}
+                  loop
+                  autoplay
+                ></lottie-player>
+              </div>
               <h3>Strategic Technology Planning</h3>
               <p>Align technology investments with business objectives for maximum ROI and competitive advantage in your industry.</p>
             </div>
             
             <div className={styles.benefitCard}>
-              <div className={styles.benefitIcon}>🛡️</div>
+              <div className={styles.benefitIcon}>
+                <lottie-player
+                  src="https://lottie.host/9b6ebf1e-650c-46e7-975c-b10998bd6674/xo36t3WHed.json"
+                  background="transparent"
+                  speed="1"
+                  className={styles.benefitLottie}
+                  loop
+                  autoplay
+                ></lottie-player>
+              </div>
               <h3>Risk Mitigation & Security</h3>
               <p>Identify vulnerabilities and implement robust cybersecurity measures to protect your business assets and reputation.</p>
             </div>
             
             <div className={styles.benefitCard}>
-              <div className={styles.benefitIcon}>💰</div>
+              <div className={styles.benefitIcon}>
+                <lottie-player
+                  src="https://lottie.host/e20c14a1-cb35-4c94-9874-be75cab64f47/KLeSJhQyME.json"
+                  background="transparent"
+                  speed="1"
+                  className={styles.benefitLottie}
+                  loop
+                  autoplay
+                ></lottie-player>
+              </div>
               <h3>Cost Optimization</h3>
               <p>Reduce IT spending through strategic planning, vendor management, and elimination of redundant systems and processes.</p>
             </div>
             
             <div className={styles.benefitCard}>
-              <div className={styles.benefitIcon}>🚀</div>
+              <div className={styles.benefitIcon}>
+                <lottie-player
+                  src="https://lottie.host/5ba5bf8c-480d-413f-815c-44bd492dc4a0/1IlpWLqQBh.json"
+                  background="transparent"
+                  speed="1"
+                  className={styles.benefitLottie}
+                  loop
+                  autoplay
+                ></lottie-player>
+              </div>
               <h3>Accelerated Innovation</h3>
               <p>Fast-track digital initiatives with proven methodologies and expert guidance for faster time-to-market and results.</p>
             </div>
             
             <div className={styles.benefitCard}>
-              <div className={styles.benefitIcon}>👥</div>
+              <div className={styles.benefitIcon}>
+                <lottie-player
+                  src="https://lottie.host/64c06a0d-e8b8-4d81-b00b-2899a9e3ec70/Q9xUwOb4Lv.json"
+                  background="transparent"
+                  speed="1"
+                  className={styles.benefitLottie}
+                  loop
+                  autoplay
+                ></lottie-player>
+              </div>
               <h3>Expert Knowledge Access</h3>
               <p>Leverage specialized expertise without hiring full-time staff, gaining access to cutting-edge solutions and innovations.</p>
             </div>
             
             <div className={styles.benefitCard}>
-              <div className={styles.benefitIcon}>⚙️</div>
+              <div className={styles.benefitIcon}>
+                <lottie-player
+                  src="https://lottie.host/b7207656-a396-4641-9875-9bc2bfedf4e6/Atylh8eRdF.json"
+                  background="transparent"
+                  speed="1"
+                  className={styles.benefitLottie}
+                  loop
+                  autoplay
+                ></lottie-player>
+              </div>
               <h3>Operational Excellence</h3>
               <p>Optimize business processes and improve operational efficiency through strategic technology implementation and automation.</p>
             </div>
@@ -310,11 +374,12 @@ const ITConsultingPage = () => {
       <section className={styles.ctaSection}>
         <div className={styles.container}>
           <div className={styles.ctaContent}>
-            <h2 className={styles.ctaTitle}>Ready to Transform Your IT Strategy?</h2>
+            <h2 className={styles.ctaTitle}>Transform Your IT Strategy</h2>
             <p className={styles.ctaSubtitle}>Let our experts help you navigate your digital transformation journey</p>
             <div className={styles.ctaButtons}>
-              <Link to="/contact" className={styles.ctaButton}>Get Free Consultation</Link>
-              <Link to="/contact" className={styles.ctaButtonSecondary}>Request Quote</Link>
+              <Link to="/contact" className={styles.primaryButton}>
+                <span>Get Free Consultation</span>
+              </Link>
             </div>
           </div>
         </div>

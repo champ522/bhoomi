@@ -173,24 +173,24 @@ const Header = () => {
                 <div className={styles.dropdownContent}>
                   <div className={styles.dropdownSection}>
                     <h4 className={styles.dropdownTitle}>Business Solutions</h4>
-                    <a href="#crm" className={styles.dropdownLink}>CRM Systems</a>
+                    <Link to="/crm-systems" className={styles.dropdownLink}>CRM Systems</Link>
                     <a href="#erp" className={styles.dropdownLink}>ERP Solutions</a>
                     <a href="#ecommerce" className={styles.dropdownLink}>E-commerce Platforms</a>
                     <a href="#inventory" className={styles.dropdownLink}>Inventory Management</a>
                   </div>
                   <div className={styles.dropdownSection}>
-                    <h4 className={styles.dropdownTitle}>Custom Software</h4>
-                    <a href="#webapp" className={styles.dropdownLink}>Web Applications</a>
-                    <a href="#desktop" className={styles.dropdownLink}>Desktop Software</a>
-                    <a href="#database" className={styles.dropdownLink}>Database Solutions</a>
-                    <a href="#api" className={styles.dropdownLink}>API Development</a>
+                    <h4 className={styles.dropdownTitle}>Custom Softwares</h4>
+                    <a href="#webapp" className={styles.dropdownLink}>HRM Software</a>
+                    <a href="#desktop" className={styles.dropdownLink}>LMS Software</a>
+                    <a href="#database" className={styles.dropdownLink}>Billing Software</a>
+                    <a href="#api" className={styles.dropdownLink}>Web Applications</a>
                   </div>
                   <div className={styles.dropdownSection}>
-                    <h4 className={styles.dropdownTitle}>Cloud Solutions</h4>
-                    <a href="#cloud" className={styles.dropdownLink}>Cloud Migration</a>
-                    <a href="#hosting" className={styles.dropdownLink}>Cloud Hosting</a>
-                    <a href="#backup" className={styles.dropdownLink}>Data Backup</a>
-                    <a href="#security" className={styles.dropdownLink}>Cloud Security</a>
+                    <h4 className={styles.dropdownTitle}>Traditional Sectors</h4>
+                    <a href="#cloud" className={styles.dropdownLink}>Fintech</a>
+                    <a href="#hosting" className={styles.dropdownLink}>Education Tech</a>
+                    <a href="#backup" className={styles.dropdownLink}>Healthcare Tech</a>
+                    <a href="#security" className={styles.dropdownLink}>Real Estate</a>
                   </div>
                 </div>
               </div>
@@ -231,9 +231,9 @@ const Header = () => {
                   <div className={styles.dropdownSection}>
                     <h4 className={styles.dropdownTitle}>Support & Consulting</h4>
                     <Link to="/it-consulting" className={styles.dropdownLink}>IT Consulting</Link>
-                    <Link to="/contact" className={styles.dropdownLink}>24/7 Support</Link>
-                    <Link to="/contact" className={styles.dropdownLink}>System Maintenance</Link>
-                    <Link to="/services" className={styles.dropdownLink}>Web Maintenance</Link>
+                    <Link to="/support" className={styles.dropdownLink}>24/7 Support</Link>
+                    <Link to="/app-maintenance" className={styles.dropdownLink}>App Maintenance</Link>
+                    <Link to="/web-maintenance" className={styles.dropdownLink}>Web Maintenance</Link>
                   </div>
                 </div>
               </div>

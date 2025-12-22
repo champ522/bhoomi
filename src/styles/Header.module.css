@@ -132,7 +132,7 @@
 }
 
 .navLink:hover {
-  color: #065521;
+  color: #070707;
   transform: translateY(-1px);
 }
 
@@ -309,7 +309,7 @@
 }
 
 .hasDropdown:hover .navLink {
-  color: #228B22;
+  color: #0c0c0c;
   transform: translateY(-1px);
 }
 
