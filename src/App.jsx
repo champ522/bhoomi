@@ -19,6 +19,14 @@ import SupportPage from './pages/SupportPage'
 import AppMaintenancePage from './pages/AppMaintenancePage'
 import WebMaintenancePage from './pages/WebMaintenancePage'
 import CRMSystemsPage from './pages/CRMSystemsPage'
+import ERPSolutionsPage from './pages/ERPSolutionsPage'
+import EcommercePlatformPage from './pages/EcommercePlatformPage'
+import InventoryPage from './pages/InventoryPage'
+import HRMSoftwarePage from './pages/HRMSoftwarePage'
+import LMSSoftwarePage from './pages/LMSSoftwarePage'
+import BillingSoftwarePage from './pages/BillingSoftwarePage'
+import WebApplicationPage from './pages/WebApplicationPage'
+import FinTechPage from './pages/FinTechPage'
 import './index.css'
 
 // ScrollToTop component to handle route changes
@@ -84,6 +92,14 @@ function App() {
         <Route path="/app-maintenance" element={<AppMaintenancePage key="appmaintenance-page" />} />
         <Route path="/web-maintenance" element={<WebMaintenancePage key="webmaintenance-page" />} />
         <Route path="/crm-systems" element={<CRMSystemsPage key="crmsystems-page" />} />
+        <Route path="/erp-solutions" element={<ERPSolutionsPage key="erpsolutions-page" />} />
+        <Route path="/ecommerce-platform" element={<EcommercePlatformPage key="ecommerce-page" />} />
+        <Route path="/inventory-management" element={<InventoryPage key="inventory-page" />} />
+        <Route path="/hrm-software" element={<HRMSoftwarePage key="hrm-page" />} />
+        <Route path="/lms-software" element={<LMSSoftwarePage key="lms-page" />} />
+        <Route path="/billing-software" element={<BillingSoftwarePage key="billing-page" />} />
+        <Route path="/web-applications" element={<WebApplicationPage key="webapp-page" />} />
+        <Route path="/fintech" element={<FinTechPage key="fintech-page" />} />
         <Route path="/contact" element={<ContactPage key="contact-page" />} />
       </Routes>
       <Footer />

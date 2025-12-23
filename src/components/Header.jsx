@@ -174,20 +174,20 @@ const Header = () => {
                   <div className={styles.dropdownSection}>
                     <h4 className={styles.dropdownTitle}>Business Solutions</h4>
                     <Link to="/crm-systems" className={styles.dropdownLink}>CRM Systems</Link>
-                    <a href="#erp" className={styles.dropdownLink}>ERP Solutions</a>
-                    <a href="#ecommerce" className={styles.dropdownLink}>E-commerce Platforms</a>
-                    <a href="#inventory" className={styles.dropdownLink}>Inventory Management</a>
+                    <Link to="/erp-solutions" className={styles.dropdownLink}>ERP Solutions</Link>
+                    <Link to="/ecommerce-platform" className={styles.dropdownLink}>E-commerce Platforms</Link>
+                    <Link to="/inventory-management" className={styles.dropdownLink}>Inventory Management</Link>
                   </div>
                   <div className={styles.dropdownSection}>
                     <h4 className={styles.dropdownTitle}>Custom Softwares</h4>
-                    <a href="#webapp" className={styles.dropdownLink}>HRM Software</a>
-                    <a href="#desktop" className={styles.dropdownLink}>LMS Software</a>
-                    <a href="#database" className={styles.dropdownLink}>Billing Software</a>
-                    <a href="#api" className={styles.dropdownLink}>Web Applications</a>
+                    <Link to="/hrm-software" className={styles.dropdownLink}>HRM Software</Link>
+                    <Link to="/lms-software" className={styles.dropdownLink}>LMS Software</Link>
+                    <Link to="/billing-software" className={styles.dropdownLink}>Billing Software</Link>
+                    <Link to="/web-applications" className={styles.dropdownLink}>Web Applications</Link>
                   </div>
                   <div className={styles.dropdownSection}>
                     <h4 className={styles.dropdownTitle}>Traditional Sectors</h4>
-                    <a href="#cloud" className={styles.dropdownLink}>Fintech</a>
+                    <Link to="/fintech" className={styles.dropdownLink}>Fintech</Link>
                     <a href="#hosting" className={styles.dropdownLink}>Education Tech</a>
                     <a href="#backup" className={styles.dropdownLink}>Healthcare Tech</a>
                     <a href="#security" className={styles.dropdownLink}>Real Estate</a>
