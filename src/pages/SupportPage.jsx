@@ -5,6 +5,7 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import ParticleBanner from '../components/ParticleBanner';
 import styles from '../styles/SupportPage.module.css';
 import TechnologyStack from '../components/TechnologyStack';
 import WorkProcess from '../components/WorkProcess';
@@ -51,6 +52,7 @@ const SupportPage = () => {
     <>
       {/* Support Hero Section */}
       <section className={styles.heroSection}>
+        <ParticleBanner />
         <div className={styles.overlay}></div>
         <div className={styles.heroContainer}>
           <div className={styles.heroContent}>

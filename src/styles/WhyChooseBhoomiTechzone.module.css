@@ -235,16 +235,16 @@
 }
 
 .ctaButton {
-  background: linear-gradient(135deg, #079538 0%, #055822 100%);
-  color: white;
+  background: #e8e8e8;
+  color: black;
   border: none;
   padding: 15px 15px;
-  border-radius: 20px 0 20px;
-  font-size: 16px;
+  border-radius: 0.5em;
+  font-size: 17px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
   position: relative;
   overflow: hidden;
   margin-top: 20px;
@@ -255,7 +255,7 @@
 
 .ctaButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 15px #065521;
+  box-shadow: 0 8px 15px #e8e8e8;
 }
 
 .ctaButton:active {
@@ -269,7 +269,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #065521 0%, #093a1a 100%);
+  background: #10e25a;
   transition: left 0.5s;
   z-index: -1;
 }

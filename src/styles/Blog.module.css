@@ -246,11 +246,11 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  background: linear-gradient(135deg, #079538 0%, #055822 100%);
-  color: white;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 20px 0 20px;
+  background: #e8e8e8;
+  color: black;
+  border: 1px solid #e8e8e8;
+  padding: 10px 20px;
+  border-radius: 0.5em;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -258,7 +258,7 @@
   position: relative;
   overflow: hidden;
   align-self: flex-start;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
 }
 
 .readMoreBtn::before {
@@ -268,7 +268,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #065521 0%, #093a1a 100%);
+  background: #10e25a;
   transition: left 0.5s;
   z-index: 1;
 }
@@ -278,11 +278,13 @@
 }
 
 .readMoreBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 15px #065521;
+  transform: translateY(-3px);
+  color: white;
+  box-shadow: 0 8px 15px #e8e8e8;
 }
 
-.readMoreBtn span {
+.readMoreBtn span,
+.readMoreBtn svg {
   position: relative;
   z-index: 2;
 }
@@ -536,11 +538,11 @@
 }
 
 .quickReadBtn {
-  background: linear-gradient(135deg, #079538 0%, #055822 100%);
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 20px 0 20px;
+  background: #e8e8e8;
+  color: black;
+  border: 1px solid #e8e8e8;
+  padding: 10px 20px;
+  border-radius: 0.5em;
   font-weight: 600;
   cursor: pointer;
   transform: translateY(20px);
@@ -548,7 +550,6 @@
   font-size: 14px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
   z-index: 2;
 }
 
@@ -559,7 +560,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #065521 0%, #093a1a 100%);
+  background: #10e25a;
   transition: left 0.5s;
   z-index: -1;
 }
@@ -569,8 +570,8 @@
 }
 
 .quickReadBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 15px #065521;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px #e8e8e8;
 }
 
 .blogCard:hover .quickReadBtn,
@@ -694,18 +695,18 @@
   display: inline-flex;
   align-items: center;
   gap: 15px;
-  background: linear-gradient(135deg, #079538 0%, #055822 100%);
-  color: white;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 20px 0 20px;
+  background: #e8e8e8;
+  color: black;
+  border: 1px solid #e8e8e8;
+  padding: 10px 20px;
+  border-radius: 0.5em;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
 }
 
 .loadMoreBtn::before {
@@ -715,7 +716,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #065521 0%, #093a1a 100%);
+  background: #10e25a;
   transition: left 0.5s;
   z-index: 1;
 }
@@ -725,8 +726,8 @@
 }
 
 .loadMoreBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 15px #065521;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px #e8e8e8;
 }
 
 .loadMoreBtn span {

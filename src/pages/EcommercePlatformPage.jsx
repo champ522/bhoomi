@@ -5,6 +5,7 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import ParticleBanner from '../components/ParticleBanner';
 import styles from '../styles/EcommercePlatformPage.module.css';
 import TechnologyStack from '../components/TechnologyStack';
 import WorkProcess from '../components/WorkProcess';
@@ -60,8 +61,7 @@ const EcommercePlatformPage = () => {
   return (
     <>
       {/* Ecommerce Platform Banner */}
-      <section className={styles.ecommerceBanner}>
-        <div className={styles.overlay}></div>
+      <section className={styles.ecommerceBanner}>        <ParticleBanner />        <div className={styles.overlay}></div>
         <div className={styles.container}>
           <div className={styles.content}>
             <h1 className={styles.title}>Ecommerce Platform</h1>

@@ -5,6 +5,7 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import ParticleBanner from '../components/ParticleBanner';
 import styles from '../styles/CRMSystemsPage.module.css';
 import TechnologyStack from '../components/TechnologyStack';
 import WorkProcess from '../components/WorkProcess';
@@ -61,6 +62,7 @@ const CRMSystemsPage = () => {
     <>
       {/* CRM Systems Banner */}
       <section className={styles.crmBanner}>
+        <ParticleBanner />
         <div className={styles.overlay}></div>
         <div className={styles.container}>
           <div className={styles.content}>

@@ -203,22 +203,24 @@
 }
 
 .viewProject {
-  background: white;
-  color: #0e8d38;
+  background: #e8e8e8;
+  color: black;
   border: none;
   padding: 12px 24px;
-  border-radius: 50px 0 50px;
+  border-radius: 0.5em;
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  /* box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff; */
+  text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 8px;
 }
 
 .viewProject:hover {
-  background: rgba(255, 255, 255, 0.9);
+  background: #10e25a;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }

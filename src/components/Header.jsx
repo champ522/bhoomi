@@ -132,7 +132,7 @@ const Header = () => {
         <div className={styles.logoSection}>
           <Link to="/" className={styles.logo}>
             <img 
-              src="/images/bhoomilogo.png" 
+              src="/images/bhoomi-black.png" 
               alt="BhoomiTech Logo" 
               className={styles.logoImage}
               onError={(e) => {

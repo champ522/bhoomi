@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <>
       <HeroBanner />
-      <Wave />
+      {/* <Wave /> */}
       <AboutUs />
       <Services />
       <Features />

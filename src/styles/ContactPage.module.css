@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('/images/contactbanner.png');
+  /* background-image: url('/images/contactbanner.png'); */
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -17,7 +17,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(7, 149, 56, 0.85) 0%, rgba(5, 88, 34, 0.9) 100%);
   z-index: 1;
 }
 
@@ -37,17 +36,16 @@
 .title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #050000;
   margin: 0 0 10px 0;
   /* text-transform: uppercase; */
   letter-spacing: 2px;
-  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   animation: slideDown 0.8s ease-out;
 }
 
 .subtitle {
   font-size: 1.3rem;
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(10, 1, 1, 0.95);
   margin: 0 0 10px 0;
   font-weight: 300;
   text-align: center;
@@ -68,7 +66,7 @@
 }
 
 .breadcrumbLink {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(5, 1, 1, 0.9);
   text-decoration: none;
   transition: all 0.3s ease;
   font-weight: 400;
@@ -82,12 +80,12 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: #ffffff;
+  background: #030000;
   transition: width 0.3s ease;
 }
 
 .breadcrumbLink:hover {
-  color: #ffffff;
+  color: #066d2e;
 }
 
 .breadcrumbLink:hover::after {
@@ -95,12 +93,12 @@
 }
 
 .separator {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(70, 67, 67, 0.7);
   font-weight: 300;
 }
 
 .breadcrumbCurrent {
-  color: #ffffff;
+  color: #050000;
   font-weight: 500;
 }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import AboutUs from '../components/AboutUs';
+import ParticleBanner from '../components/ParticleBanner';
 import styles from '../styles/AboutPage.module.css';
 import WhyChooseBhoomiTechzone from '../components/WhyChooseBhoomiTechzone';
 import StatsCounter from '../components/StatsCounter';
@@ -12,6 +13,7 @@ const About = () => {
     <>
       {/* About Banner */}
       <section className={styles.aboutBanner}>
+        <ParticleBanner />
         <div className={styles.overlay}></div>
         <div className={styles.container}>
           <div className={styles.content}>

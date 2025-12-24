@@ -5,6 +5,7 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import ParticleBanner from '../components/ParticleBanner';
 import styles from '../styles/WebsiteDesignPage.module.css';
 import TechnologyStack from '../components/TechnologyStack';
 import WorkProcess from '../components/WorkProcess';
@@ -61,6 +62,7 @@ const WebsiteDesignPage = () => {
     <>
       {/* Website Design Banner */}
       <section className={styles.websiteDesignBanner}>
+        <ParticleBanner />
         <div className={styles.overlay}></div>
         <div className={styles.container}>
           <div className={styles.content}>

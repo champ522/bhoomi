@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Services from '../components/Services';
+import ParticleBanner from '../components/ParticleBanner';
 import styles from '../styles/ServicesPage.module.css';
 import WhyChooseBhoomiTechzone from '../components/WhyChooseBhoomiTechzone';
 import TechnologyStack from '../components/TechnologyStack';
@@ -110,6 +111,7 @@ const ServicesPage = () => {
     <>
       {/* Services Banner */}
       <section className={styles.servicesBanner}>
+        <ParticleBanner />
         <div className={styles.overlay}></div>
         <div className={styles.container}>
           <div className={styles.content}>

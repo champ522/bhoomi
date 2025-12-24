@@ -3,12 +3,38 @@
   position: relative;
   height: 100vh;
   overflow: hidden;
-  /* background: #000; */
+  background-color: #f7f4f4f8;
+}
+
+.particleCanvas {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.globeBackground {
+  position: absolute;
+  top: 0;
+  left: 19rem;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.globeBackground canvas {
+  outline: none;
 }
 
 .heroSwiper {
   width: 100%;
   height: 100%;
+  position: relative;
+  z-index: 10;
 }
 
 .heroSlide {
@@ -26,7 +52,17 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #043b1e 0%, #0e8d38 50%, #03ba58 100%);
+  z-index: 1;
+}
+
+.backgroundVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
   z-index: 1;
 }
 
@@ -43,67 +79,6 @@
   z-index: 1;
 }
 
-.backgroundPattern {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    radial-gradient(circle at 25% 25%, #019a35 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, #106e2f 0%, transparent 50%),
-    linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.02) 50%, transparent 60%);
-  animation: patternMove 10s linear infinite;
-  z-index: 2;
-}
-
-@keyframes patternMove {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  100% { transform: translate(-50px, -50px) rotate(360deg); }
-}
-
-/* Floating Elements */
-.floatingElements {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-.floatingElement {
-  position: absolute;
-  background: #019a35;
-  border-radius: 50%;
-  animation-duration: 8s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-}
-
-.element1 { width: 60px; height: 60px; top: 10%; left: 10%; animation: float1 8s infinite; }
-.element2 { width: 40px; height: 40px; top: 20%; right: 20%; animation: float2 10s infinite reverse; }
-.element3 { width: 80px; height: 80px; bottom: 20%; left: 15%; animation: float3 12s infinite; }
-.element4 { width: 30px; height: 30px; top: 60%; right: 10%; animation: float1 9s infinite reverse; }
-.element5 { width: 50px; height: 50px; bottom: 40%; right: 30%; animation: float2 11s infinite; }
-.element6 { width: 70px; height: 70px; top: 40%; left: 5%; animation: float3 7s infinite; }
-.element7 { width: 35px; height: 35px; top: 80%; left: 40%; animation: float1 13s infinite reverse; }
-.element8 { width: 45px; height: 45px; top: 15%; left: 60%; animation: float2 6s infinite; }
-
-@keyframes float1 {
-  0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
-  50% { transform: translateY(-30px) translateX(20px) rotate(180deg); }
-}
-
-@keyframes float2 {
-  0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
-  33% { transform: translateY(-20px) translateX(-15px) rotate(120deg); }
-  66% { transform: translateY(10px) translateX(25px) rotate(240deg); }
-}
-
-@keyframes float3 {
-  0%, 100% { transform: translateY(0px) translateX(0px) scale(1); }
-  50% { transform: translateY(-40px) translateX(-20px) scale(1.2); }
-}
-
 /* Slide Content */
 .slideContent {
   position: relative;
@@ -112,6 +87,7 @@
   height: 100%;
   display: flex;
   align-items: center;
+  pointer-events: none;
 }
 
 .container {
@@ -123,7 +99,7 @@
 
 .contentWrapper {
   max-width: 1200px;
-  color: white;
+  color: #1a1a1a;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
@@ -131,9 +107,23 @@
   width: 100%;
 }
 
+.textContent {
+  pointer-events: auto;
+}
+
+.imageContent {
+  pointer-events: auto;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
 .slideTitle {
   font-size: clamp(2rem, 6vw, 3rem);
   font-weight: 700;
+  color: black;
   line-height: 1.4;
   margin-bottom: 1.5rem;
   display: flex;
@@ -148,7 +138,7 @@
 
 .titleHighlight {
   display: block;
-  background: linear-gradient(45deg, #017728, #fcfbfb, #080000);
+  background: linear-gradient(45deg, #017728, #089b7b, #080000);
   background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -174,10 +164,10 @@
 }
 
 .slideSubtitle {
-  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-size: clamp(1.3rem, 3vw, 1.5rem);
   font-weight: 600;
   margin-bottom: 2rem;
-  color: #ffffff;
+  color: black;
   animation: slideInUp 1s ease-out 0.6s both;
 }
 
@@ -186,7 +176,7 @@
   line-height: 1.6;
   font-weight: 500;
   margin-bottom: 2rem;
-  color: #ffffff;
+  color: black;
   animation: slideInUp 1s ease-out 0.8s both;
 }
 
@@ -200,23 +190,24 @@
 
 .primaryButton {
   position: relative;
-  background: linear-gradient(135deg, #079538 0%, #055822 100%);
-  color: white;
-  padding: 10px 30px;
-  border-radius: 20px 0 20px;
+   background: #e8e8e8;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 0.5rem;
   text-decoration: none;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 17px;
   overflow: hidden;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-  border: none;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+  border: 1px solid #e8e8e8;
   cursor: pointer;
 }
 
 .primaryButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 15px #065521;
+  box-shadow: 0 8px 15px #e8e8e8;
+  color: white;
 }
 
 .primaryButton span {
@@ -231,7 +222,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #065521 0%, #093a1a 100%);
+  background: rgb(24, 202, 24);
   transition: left 0.5s;
   z-index: 1;
 }
@@ -245,23 +236,23 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  background: linear-gradient(135deg, #079538 0%, #055822 100%);
-  color: white;
-  padding: 12px 30px;
-  border-radius: 20px 0 20px;
+  background: #e8e8e8;
+  color: black;
+  padding: 12px 20px;
+  border-radius: 0.5rem;
   text-decoration: none;
   font-weight: 600;
   font-size: 16px;
   overflow: hidden;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-  border: none;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+  border: 1px solid #e8e8e8;
   cursor: pointer;
 }
 
 .secondaryButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 15px #065521;
+  box-shadow: 0 8px 15px #e8e8e8;
 }
 
 .secondaryButton span {
@@ -276,7 +267,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #065521 0%, #093a1a 100%);
+ background: rgb(24, 202, 24);
   transition: left 0.5s;
   z-index: 1;
 }
@@ -286,8 +277,8 @@
 }
 
 .buttonArrow {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   stroke: currentColor;
   fill: none;
   transition: transform 0.3s ease;
@@ -301,7 +292,7 @@
 
 /* Image Content */
 .imageContent {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -436,7 +427,7 @@
 .swiperButtonNext svg {
   width: 24px;
   height: 24px;
-  stroke: white;
+  stroke: rgb(10, 1, 1);
   fill: none;
 }
 
@@ -514,6 +505,15 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .globeBackground {
+    left: 0;
+    transform: scale(0.9);
+  }
+
+  .imageContent {
+    display: flex;
+  }
+
   .contentWrapper {
     max-width: none;
     text-align: center;

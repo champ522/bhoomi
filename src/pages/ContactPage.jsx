@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ParticleBanner from '../components/ParticleBanner';
 import styles from '../styles/ContactPage.module.css';
 
 const ContactPage = () => {
@@ -28,6 +29,7 @@ const ContactPage = () => {
     <>
       {/* Contact Banner */}
       <section className={styles.contactBanner}>
+        <ParticleBanner />
         <div className={styles.overlay}></div>
         <div className={styles.container}>
           <div className={styles.content}>

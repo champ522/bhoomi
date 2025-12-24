@@ -138,7 +138,7 @@ const Blog = () => {
               </div>
               
               <button className={styles.readMoreBtn}>
-                Read Full Article
+                <span>Read Full Article</span>
                 <svg className={styles.readMoreIcon} viewBox="0 0 24 24">
                   <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
