@@ -30,6 +30,7 @@ import FinTechPage from './pages/FinTechPage'
 import EduTechPage from './pages/EduTechPage'
 import HealthcarePage from './pages/HealthcarePage'
 import RealEstatePage from './pages/RealEstatePage'
+import ScheduleMeetingPage from './pages/ScheduleMeetingPage'
 import './index.css'
 
 // ScrollToTop component to handle route changes
@@ -106,6 +107,7 @@ function App() {
         <Route path="/edutech" element={<EduTechPage key="edutech-page" />} />
         <Route path="/healthcare" element={<HealthcarePage key="healthcare-page" />} />
         <Route path="/realestate" element={<RealEstatePage key="realestate-page" />} />
+        <Route path="/schedule-meeting" element={<ScheduleMeetingPage key="schedule-page" />} />
         <Route path="/contact" element={<ContactPage key="contact-page" />} />
       </Routes>
       <Footer />

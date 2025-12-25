@@ -1,0 +1,403 @@
+/* Schedule Meeting Page Styles */
+
+.schedulePage {
+  min-height: 100vh;
+  padding: 100px 20px 60px;
+  background: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Service Selection View */
+.serviceSelection {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.logoSection {
+  margin-bottom: 20px;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #777;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.serviceCard {
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.serviceCard:hover {
+  border-color: #0e8d38;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(14, 141, 56, 0.1);
+}
+
+.serviceName {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 10px;
+}
+
+.serviceDuration {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  color: #0e8d38;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.serviceDescription {
+  font-size: 0.95rem;
+  color: #777;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.selectBtn {
+  width: 100%;
+  padding: 12px;
+  background: #0e8d38;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.selectBtn:hover {
+  background: #0a6b2b;
+  transform: scale(1.02);
+}
+
+/* Booking Section */
+.bookingSection {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.backBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: #0e8d38;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 30px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.backBtn:hover {
+  background: #f0f8f3;
+}
+
+.bookingHeader {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.selectedServiceName {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 10px;
+}
+
+.selectedServiceDuration {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  color: #0e8d38;
+  font-weight: 500;
+}
+
+.bookingContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.leftSection,
+.rightSection {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.sectionLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 12px;
+}
+
+.optional {
+  color: #999;
+  font-weight: 400;
+}
+
+.staffSelect {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #1a1a2e;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.staffSelect:focus {
+  outline: none;
+  border-color: #0e8d38;
+}
+
+.selectedInfo {
+  padding: 12px 16px;
+  background: #f0f8f3;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #0e8d38;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Calendar Styles */
+.calendar {
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.calendarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.monthNav {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+  color: #1a1a2e;
+}
+
+.monthNav:hover {
+  background: #f0f8f3;
+}
+
+.monthYear {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.dayHeader {
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #777;
+  padding: 8px;
+}
+
+.emptyDay {
+  padding: 8px;
+}
+
+.dayCell {
+  padding: 12px;
+  border: none;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #1a1a2e;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.dayCell:hover:not(.disabled) {
+  background: #f0f8f3;
+  color: #0e8d38;
+}
+
+.dayCell.today {
+  background: #0e8d38;
+  color: white;
+  font-weight: 700;
+}
+
+.dayCell.selected {
+  background: #0e8d38;
+  color: white;
+  font-weight: 700;
+}
+
+.dayCell.disabled {
+  color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Time Selection */
+.timeSlots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.timeSlot {
+  padding: 12px;
+  border: 2px solid #e9ecef;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #1a1a2e;
+  transition: all 0.3s ease;
+}
+
+.timeSlot:hover {
+  border-color: #0e8d38;
+  background: #f0f8f3;
+}
+
+.timeSlot.selectedTime {
+  background: #0e8d38;
+  color: white;
+  border-color: #0e8d38;
+}
+
+.timezone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.confirmBtn {
+  width: 100%;
+  padding: 16px;
+  background: #0e8d38;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.confirmBtn:hover {
+  background: #0a6b2b;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(14, 141, 56, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .schedulePage {
+    padding: 80px 15px 40px;
+  }
+
+  .serviceSelection,
+  .bookingSection {
+    padding: 25px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .bookingContent {
+    grid-template-columns: 1fr;
+  }
+
+  .timeSlots {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .calendarGrid {
+    gap: 4px;
+  }
+
+  .dayCell {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+}

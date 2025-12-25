@@ -202,8 +202,8 @@ const Header = () => {
               onMouseEnter={() => handleDropdownHover('services')}
               onMouseLeave={handleDropdownLeave}
             >
-              <Link 
-                to="/services" 
+              <a 
+                href="#services" 
                 className={styles.navLink}
                 onClick={handleServicesClick}
               >
@@ -211,7 +211,7 @@ const Header = () => {
                 <svg className={styles.dropdownArrow} viewBox="0 0 24 24">
                   <path d="M7 10l5 5 5-5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </Link>
+              </a>
               <div className={`${styles.dropdown} ${activeDropdown === 'services' ? styles.dropdownActive : ''}`}>
                 <div className={styles.dropdownContent}>
                   <div className={styles.dropdownSection}>
@@ -296,7 +296,7 @@ const Header = () => {
 
         {/* Get Started Button - Right */}
         <div className={styles.actionSection}>
-          <Link to="/contact" className={styles.getStartedBtn}>
+          <Link to="/schedule-meeting" className={styles.getStartedBtn}>
             Schedule a Meeting
           </Link>
         </div>
