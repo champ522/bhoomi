@@ -1,4 +1,4 @@
-/* FinTech Page Styles */
+/* EduTech Page Styles */
 
 /* Keyframe Animations */
 @keyframes fadeInUp {
@@ -60,7 +60,6 @@
   min-height: 90vh;
   display: flex;
   align-items: center;
-  /* background: linear-gradient(360deg, rgba(34, 102, 57, 0.829) 0%, rgba(12, 119, 46, 0.932) 100%); */
   overflow: hidden;
   padding: 100px 0 80px;
 }
@@ -145,7 +144,7 @@
   height: 400px;
   object-fit: cover;
   border-radius: 30px 0 30px 0;
-  box-shadow: 0 20px 60px rgba(0.3, 0, 0, 0.3);
+  /* box-shadow: 0 20px 60px rgba(0.3, 0, 0, 0.3); */
   transition: transform 0.5s ease;
 }
 
@@ -232,8 +231,6 @@
   gap: 30px;
   align-items: center;
 }
-
-
 
 .sectionLabel {
   display: flex;
@@ -391,7 +388,6 @@
 .solutionCard:hover {
   border-color: #0e8d38;
   transform: translateY(15px) rotateX(5deg) rotateY(5deg) scale(1.05);
-  /* box-shadow: 0 25px 50px rgba(14, 141, 56, 0.2); */
 }
 
 .solutionIcon {
@@ -419,7 +415,8 @@
 }
 
 .solutionCard:hover .solutionIcon svg path,
-.solutionCard:hover .solutionIcon svg rect {
+.solutionCard:hover .solutionIcon svg rect,
+.solutionCard:hover .solutionIcon svg circle {
   stroke: black !important;
 }
 
@@ -437,17 +434,18 @@
   color: black;
 }
 
-
 .solutionDescription {
   font-size: 1rem;
   line-height: 1.6;
   color: #777;
   position: relative;
-  z-index: 1;  transition: color 0.4s ease;
+  z-index: 1;
+  transition: color 0.4s ease;
 }
 
 .solutionCard:hover .solutionDescription {
-  color: black;}
+  color: black;
+}
 
 /* Use Cases Section */
 .useCasesSection {
@@ -474,7 +472,6 @@
 .useCaseRow.reverse > * {
   direction: ltr;
 }
-
 
 .useCaseTitle {
   font-size: 1.7rem;
@@ -545,7 +542,6 @@
 .useCaseImage {
   border-radius: 0px;
   overflow: hidden;
-  /* box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15); */
 }
 
 .useCaseImage img {
@@ -559,7 +555,7 @@
   transform: scale(1.05);
 }
 
-/* Security Section */
+/* Security Section (Features & Benefits) */
 .securitySection {
   padding: 60px 0;
   background: white;
@@ -572,7 +568,6 @@
   gap: 40px;
   align-items: start;
 }
-
 
 .securityFeatures {
   display: grid;
@@ -744,5 +739,4 @@
   .securityImage{
     height: auto;
   }
-
 }

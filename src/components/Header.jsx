@@ -188,9 +188,9 @@ const Header = () => {
                   <div className={styles.dropdownSection}>
                     <h4 className={styles.dropdownTitle}>Traditional Sectors</h4>
                     <Link to="/fintech" className={styles.dropdownLink}>Fintech</Link>
-                    <a href="#hosting" className={styles.dropdownLink}>Education Tech</a>
-                    <a href="#backup" className={styles.dropdownLink}>Healthcare Tech</a>
-                    <a href="#security" className={styles.dropdownLink}>Real Estate</a>
+                    <Link to="/edutech" className={styles.dropdownLink}>Education Tech</Link>
+                    <Link to="/healthcare" className={styles.dropdownLink}>Healthcare Tech</Link>
+                    <Link to="/realestate" className={styles.dropdownLink}>Real Estate</Link>
                   </div>
                 </div>
               </div>
@@ -297,7 +297,7 @@ const Header = () => {
         {/* Get Started Button - Right */}
         <div className={styles.actionSection}>
           <Link to="/contact" className={styles.getStartedBtn}>
-            Get Started
+            Schedule a Meeting
           </Link>
         </div>
 

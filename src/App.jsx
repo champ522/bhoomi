@@ -27,6 +27,9 @@ import LMSSoftwarePage from './pages/LMSSoftwarePage'
 import BillingSoftwarePage from './pages/BillingSoftwarePage'
 import WebApplicationPage from './pages/WebApplicationPage'
 import FinTechPage from './pages/FinTechPage'
+import EduTechPage from './pages/EduTechPage'
+import HealthcarePage from './pages/HealthcarePage'
+import RealEstatePage from './pages/RealEstatePage'
 import './index.css'
 
 // ScrollToTop component to handle route changes
@@ -100,6 +103,9 @@ function App() {
         <Route path="/billing-software" element={<BillingSoftwarePage key="billing-page" />} />
         <Route path="/web-applications" element={<WebApplicationPage key="webapp-page" />} />
         <Route path="/fintech" element={<FinTechPage key="fintech-page" />} />
+        <Route path="/edutech" element={<EduTechPage key="edutech-page" />} />
+        <Route path="/healthcare" element={<HealthcarePage key="healthcare-page" />} />
+        <Route path="/realestate" element={<RealEstatePage key="realestate-page" />} />
         <Route path="/contact" element={<ContactPage key="contact-page" />} />
       </Routes>
       <Footer />

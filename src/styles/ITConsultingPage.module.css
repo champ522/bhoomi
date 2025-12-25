@@ -6,7 +6,7 @@
   min-height: 60vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #0e8d38 0%, #043b1e 100%);
+  /* background: linear-gradient(135deg, #0e8d38 0%, #043b1e 100%); */
   overflow: hidden;
 }
 
@@ -16,7 +16,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.1);
   z-index: 1;
 }
 
@@ -37,7 +36,7 @@
 }
 
 .heroText {
-  color: white;
+  color: rgb(7, 1, 1);
 }
 
 .breadcrumb {
@@ -50,21 +49,21 @@
 }
 
 .breadcrumbLink {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(2, 0, 0, 0.8);
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .breadcrumbLink:hover {
-  color: #ffffff;
+  color: #248d4c;
 }
 
 .separator {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(59, 58, 58, 0.6);
 }
 
 .breadcrumbCurrent {
-  color: #ffffff;
+  color: #030000;
   font-weight: 500;
 }
 
@@ -73,7 +72,7 @@
   font-weight: 600;
   line-height: 1.2;
   margin-bottom: 20px;
-  background: linear-gradient(135deg, #ffffff, #e8f5e8);
+  background: linear-gradient(135deg, #023a25, #011d05);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -84,7 +83,7 @@
   font-size: 1.2rem;
   line-height: 1.6em;
   margin-bottom: 10px;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(10, 1, 1, 0.9);
   animation: slideInLeft 1s ease-out 0.6s both;
 }
 

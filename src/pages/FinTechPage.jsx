@@ -106,17 +106,6 @@ const FinTechPage = () => {
     }
   ];
 
-  const technologies = [
-    "Blockchain & Smart Contracts",
-    "AI & Machine Learning",
-    "Cloud Infrastructure (AWS, Azure)",
-    "Microservices Architecture",
-    "Real-Time Data Processing",
-    "Advanced Encryption",
-    "API Integration",
-    "Mobile-First Development"
-  ];
-
   return (
     <>
       {/* FinTech Hero Banner */}
@@ -128,7 +117,7 @@ const FinTechPage = () => {
             <div className={styles.breadcrumb}>
               <Link to="/">Home</Link>
               <span>/</span>
-              <span>Industries</span>
+              <span>Solutions</span>
               <span>/</span>
               <span>FinTech</span>
             </div>
@@ -333,44 +322,25 @@ const FinTechPage = () => {
         </div>
       </section>
 
-      {/* Technology Stack */}
-      <section className={styles.techSection}>
-        <div className={styles.container}>
-          <div className={styles.sectionHeader}>
-            <span className={styles.sectionLabel}>Technologies</span>
-            <h2 className={styles.sectionTitle}>
-              Cutting-Edge <span className={styles.highlight}>FinTech Stack</span>
-            </h2>
-          </div>
-          <div className={styles.techGrid}>
-            {technologies.map((tech, index) => (
-              <div key={index} className={styles.techCard}>
-                <span className={styles.techIcon}>⚡</span>
-                <span className={styles.techName}>{tech}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TechnologyStack />
+      <WorkProcess />
 
       {/* CTA Section */}
       <section className={styles.ctaSection}>
         <div className={styles.container}>
           <div className={styles.ctaContent}>
-            <h2 className={styles.ctaTitle}>Ready to Transform Your Financial Services?</h2>
+            <h2 className={styles.ctaTitle}>Ready to Transform Finance?</h2>
             <p className={styles.ctaDescription}>
               Let's build innovative fintech solutions that drive growth and enhance customer experiences
             </p>
             <Link to="/contact" className={styles.ctaButton}>
-              Start Your FinTech Project
+              Start Now
             </Link>
           </div>
         </div>
       </section>
 
       {/* Include other components */}
-      <TechnologyStack />
-      <WorkProcess />
       <Testimonials />
     </>
   );

@@ -62,6 +62,7 @@ const HRMSoftwarePage = () => {
     <>
       {/* HRM Banner */}
       <section className={styles.hrmBanner}>
+        <ParticleBanner />
         <div className={styles.overlay}></div>
         <div className={styles.container}>
           <div className={styles.content}>
