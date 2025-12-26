@@ -30,7 +30,10 @@ import FinTechPage from './pages/FinTechPage'
 import EduTechPage from './pages/EduTechPage'
 import HealthcarePage from './pages/HealthcarePage'
 import RealEstatePage from './pages/RealEstatePage'
+import StartupPage from './pages/StartupPage'
+import RetailEcommercePage from './pages/RetailEcommercePage'
 import ScheduleMeetingPage from './pages/ScheduleMeetingPage'
+import OurClientsPage from './pages/OurClientsPage'
 import './index.css'
 
 // ScrollToTop component to handle route changes
@@ -107,7 +110,10 @@ function App() {
         <Route path="/edutech" element={<EduTechPage key="edutech-page" />} />
         <Route path="/healthcare" element={<HealthcarePage key="healthcare-page" />} />
         <Route path="/realestate" element={<RealEstatePage key="realestate-page" />} />
+        <Route path="/startups" element={<StartupPage key="startups-page" />} />
+        <Route path="/retail-ecommerce" element={<RetailEcommercePage key="retail-page" />} />
         <Route path="/schedule-meeting" element={<ScheduleMeetingPage key="schedule-page" />} />
+        <Route path="/our-clients" element={<OurClientsPage key="clients-page" />} />
         <Route path="/contact" element={<ContactPage key="contact-page" />} />
       </Routes>
       <Footer />

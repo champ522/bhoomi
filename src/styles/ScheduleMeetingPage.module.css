@@ -3,7 +3,7 @@
 .schedulePage {
   min-height: 100vh;
   padding: 100px 20px 60px;
-  background: #f8f9fa;
+  background: white;
 }
 
 .container {
@@ -13,10 +13,10 @@
 
 /* Service Selection View */
 .serviceSelection {
-  background: white;
-  border-radius: 12px;
+  background: #e8e8e8;
+  border-radius: 0px;
   padding: 40px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
 }
 
 .header {
@@ -26,6 +26,9 @@
 
 .logoSection {
   margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo {
@@ -34,8 +37,8 @@
 }
 
 .title {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: 600;
   color: #1a1a2e;
   margin-bottom: 10px;
 }
@@ -43,6 +46,7 @@
 .subtitle {
   font-size: 1.1rem;
   color: #777;
+  text-align: center;
 }
 
 .servicesGrid {
@@ -54,134 +58,102 @@
 
 .serviceCard {
   background: white;
-  border: 2px solid #e9ecef;
-  border-radius: 12px;
-  padding: 25px;
+  border: 2px solid #e74c3c;
+  border-radius: 0px;
+  padding: 15px 20px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: left;
+  position: relative;
+  min-height: 120px;
 }
 
 .serviceCard:hover {
+  border-color: #c0392b;
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.15);
+}
+
+.serviceCard.activeCard {
   border-color: #0e8d38;
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(14, 141, 56, 0.1);
+  background: #f0f8f3;
+}
+
+.serviceHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
 }
 
 .serviceName {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #1a1a2e;
-  margin-bottom: 10px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+}
+
+.circleCheck {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e74c3c;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.circleCheck.activeCheck {
+  background: #0e8d38;
+  border-color: #0e8d38;
+  position: relative;
+}
+
+.circleCheck.activeCheck::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .serviceDuration {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 1rem;
-  color: #0e8d38;
-  margin-bottom: 12px;
-  font-weight: 500;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 400;
 }
 
-.serviceDescription {
-  font-size: 0.95rem;
-  color: #777;
-  line-height: 1.6;
-  margin-bottom: 20px;
+/* Booking Area inside Services Section */
+.bookingArea {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #e9ecef;
 }
 
-.selectBtn {
-  width: 100%;
-  padding: 12px;
-  background: #0e8d38;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.selectBtn:hover {
-  background: #0a6b2b;
-  transform: scale(1.02);
-}
-
-/* Booking Section */
-.bookingSection {
-  background: white;
-  border-radius: 12px;
-  padding: 40px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-}
-
-.backBtn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: none;
-  border: none;
-  color: #0e8d38;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  margin-bottom: 30px;
-  padding: 8px 12px;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-}
-
-.backBtn:hover {
-  background: #f0f8f3;
-}
-
-.bookingHeader {
+.bookingMessage {
   text-align: center;
-  margin-bottom: 40px;
-  padding-bottom: 30px;
-  border-bottom: 2px solid #e9ecef;
-}
-
-.selectedServiceName {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #1a1a2e;
-  margin-bottom: 10px;
-}
-
-.selectedServiceDuration {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
   font-size: 1rem;
-  color: #0e8d38;
-  font-weight: 500;
+  color: #666;
+  margin-bottom: 40px;
 }
 
 .bookingContent {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  transition: opacity 0.3s ease;
 }
 
-.leftSection,
-.rightSection {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+.bookingContent.inactive {
+  opacity: 0.5;
+  pointer-events: none;
 }
 
-.sectionLabel {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #1a1a2e;
-  margin-bottom: 12px;
+/* Staff Selection */
+.staffSection {
+  margin-bottom: 40px;
+  width: 50%;
 }
 
 .optional {
@@ -192,8 +164,8 @@
 .staffSelect {
   width: 100%;
   padding: 12px 16px;
-  border: 2px solid #e9ecef;
-  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  border-radius: 0px;
   font-size: 1rem;
   color: #1a1a2e;
   background: white;
@@ -206,21 +178,42 @@
   border-color: #0e8d38;
 }
 
-.selectedInfo {
-  padding: 12px 16px;
-  background: #f0f8f3;
-  border-radius: 8px;
-  font-size: 1rem;
-  color: #0e8d38;
-  text-align: center;
-  font-weight: 500;
+.staffSelect:disabled {
+  background: #f5f5f5;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.dateTimeSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.dateColumn,
+.timeColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 /* Calendar Styles */
 .calendar {
-  border: 2px solid #e9ecef;
-  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  border-radius: 0px;
   padding: 20px;
+  background: #fafafa;
 }
 
 .calendarHeader {
@@ -286,15 +279,17 @@
 }
 
 .dayCell.today {
-  background: #0e8d38;
-  color: white;
-  font-weight: 700;
+  background: #e9f5ec;
+  color: #0e8d38;
+  font-weight: 600;
+  border: 2px solid #0e8d38;
 }
 
 .dayCell.selected {
-  background: #0e8d38;
-  color: white;
+  background: #0e8d38 !important;
+  color: white !important;
   font-weight: 700;
+  border: 2px solid #0e8d38;
 }
 
 .dayCell.disabled {
@@ -304,6 +299,25 @@
 }
 
 /* Time Selection */
+.timeEmptyState {
+  padding: 80px 20px;
+  text-align: center;
+  background: #fafafa;
+  border-radius: 0px;
+  border: 1px solid #e9ecef;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeEmptyState p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
 .timeSlots {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -314,7 +328,7 @@
   padding: 12px;
   border: 2px solid #e9ecef;
   background: white;
-  border-radius: 8px;
+  border-radius: 0px;
   cursor: pointer;
   font-size: 0.95rem;
   font-weight: 500;
@@ -346,23 +360,115 @@
 }
 
 .confirmBtn {
-  width: 100%;
-  padding: 16px;
-  background: #0e8d38;
-  color: white;
+  padding: 16px 28px;
+  background: #e8e8e8;
+  color: black;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: 20px;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+  margin: 20px auto 0;
+  display: block;
 }
 
-.confirmBtn:hover {
-  background: #0a6b2b;
+.confirmBtn:hover:not(:disabled) {
+  background: #0cf320;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(14, 141, 56, 0.3);
+}
+
+.confirmBtn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* User Details Form Section */
+.formSection {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #e9ecef;
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.formTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.formLabel {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.formInput,
+.formTextarea {
+  padding: 12px 16px;
+  border: 2px solid #e9ecef;
+  border-radius: 0px;
+  font-size: 1rem;
+  color: #1a1a2e;
+  background: white;
+  transition: border-color 0.3s ease;
+  font-family: inherit;
+}
+
+.formInput:focus,
+.formTextarea:focus {
+  outline: none;
+  border-color: #0e8d38;
+}
+
+.formInput:disabled,
+.formTextarea:disabled {
+  background: #f5f5f5;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.formInput::placeholder,
+.formTextarea::placeholder {
+  color: #999;
+}
+
+.formTextarea {
+  resize: vertical;
+  min-height: 100px;
 }
 
 /* Responsive Design */
@@ -371,20 +477,27 @@
     padding: 80px 15px 40px;
   }
 
-  .serviceSelection,
-  .bookingSection {
+  .serviceSelection {
     padding: 25px;
   }
 
   .title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .servicesGrid {
     grid-template-columns: 1fr;
   }
 
-  .bookingContent {
+  .staffSection {
+      width: 100%;
+  }
+
+  .dateTimeSection {
+    grid-template-columns: 1fr;
+  }
+
+  .formGrid {
     grid-template-columns: 1fr;
   }
 

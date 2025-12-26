@@ -697,13 +697,13 @@
 }
 
 /* Focus States for Accessibility */
-.navLink:focus,
+/* .navLink:focus,
 .getStartedBtn:focus {
   outline: 2px solid #037c44;
   outline-offset: 2px;
-}
+} */
 
 .mobileToggle:focus {
-  outline: 2px solid #037c44;
+  outline: 1px solid #037c44;
   outline-offset: 4px;
 }

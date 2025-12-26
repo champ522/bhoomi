@@ -22,8 +22,8 @@ const HealthcarePage = () => {
 
   const healthcareSolutions = [
     {
-      title: "HMS Solutions",
-      description: "Complete HMS with patient records, appointment scheduling, and billing management",
+      title: "Hospital Management System (HMS)",
+      description: "Complete HMS with patient records, appointment scheduling, billing, and bed management",
       icon: <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M3 9L12 3L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="#0e8d38" strokeWidth="2"/>
         <path d="M9 22V12H15V22" stroke="#0e8d38" strokeWidth="2"/>
@@ -31,8 +31,8 @@ const HealthcarePage = () => {
       </svg>
     },
     {
-      title: "Telemedicine Platforms",
-      description: "Virtual consultation systems with video conferencing and remote patient monitoring",
+      title: "Telemedicine & Virtual Care",
+      description: "Video consultations, remote patient monitoring, and digital health assessments",
       icon: <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="2" y="3" width="20" height="14" rx="2" stroke="#0e8d38" strokeWidth="2"/>
         <path d="M8 21H16" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round"/>
@@ -41,8 +41,8 @@ const HealthcarePage = () => {
       </svg>
     },
     {
-      title: "Electronic Health Records",
-      description: "Secure EHR systems with patient data management and interoperability features",
+      title: "Electronic Health Records (EHR)",
+      description: "Secure patient data management with HL7/FHIR integration and cloud storage",
       icon: <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M14 2V8H20" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -51,8 +51,8 @@ const HealthcarePage = () => {
       </svg>
     },
     {
-      title: "Medical Billing Software",
-      description: "Automated billing, insurance claims processing, and revenue cycle management",
+      title: "Medical Billing & Revenue Cycle",
+      description: "Automated billing, insurance claims, coding assistance, and revenue management",
       icon: <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="2" y="5" width="20" height="14" rx="2" stroke="#0e8d38" strokeWidth="2"/>
         <path d="M2 10H22" stroke="#0e8d38" strokeWidth="2"/>
@@ -60,8 +60,16 @@ const HealthcarePage = () => {
       </svg>
     },
     {
-      title: "Pharmacy Management",
-      description: "Digital pharmacy solutions with inventory tracking and prescription management",
+      title: "Laboratory Information System (LIS)",
+      description: "Lab workflow automation, sample tracking, test management, and result reporting",
+      icon: <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 3H18V21L12 18L6 21V3Z" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M10 10H14M10 14H14" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round"/>
+      </svg>
+    },
+    {
+      title: "Pharmacy Management System",
+      description: "Inventory control, prescription management, drug interaction alerts, and billing",
       icon: <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M4.5 16.5C3 15 3 12.5 3 10C3 7.5 3 5 4.5 3.5C6 2 8.5 2 11 2H13C15.5 2 18 2 19.5 3.5C21 5 21 7.5 21 10C21 12.5 21 15 19.5 16.5C18 18 15.5 18 13 18H11C8.5 18 6 18 4.5 16.5Z" stroke="#0e8d38" strokeWidth="2"/>
         <path d="M12 6V14M8 10H16" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round"/>
@@ -69,8 +77,16 @@ const HealthcarePage = () => {
       </svg>
     },
     {
-      title: "Health Analytics",
-      description: "AI-powered analytics for clinical insights, predictive care, and population health",
+      title: "Patient Mobile Apps",
+      description: "Appointment booking, health tracking, medication reminders, and test results",
+      icon: <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="2" width="14" height="20" rx="2" stroke="#0e8d38" strokeWidth="2"/>
+        <path d="M12 18H12.01" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round"/>
+      </svg>
+    },
+    {
+      title: "Healthcare Analytics & AI",
+      description: "Predictive analytics, clinical decision support, and population health insights",
       icon: <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M3 3V21H21" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M7 16L12 11L16 15L21 10" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

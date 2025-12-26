@@ -186,7 +186,7 @@ const Header = () => {
                     <Link to="/web-applications" className={styles.dropdownLink}>Web Applications</Link>
                   </div>
                   <div className={styles.dropdownSection}>
-                    <h4 className={styles.dropdownTitle}>Traditional Sectors</h4>
+                    <h4 className={styles.dropdownTitle}>Traditional Solutions</h4>
                     <Link to="/fintech" className={styles.dropdownLink}>Fintech</Link>
                     <Link to="/edutech" className={styles.dropdownLink}>Education Tech</Link>
                     <Link to="/healthcare" className={styles.dropdownLink}>Healthcare Tech</Link>
@@ -246,7 +246,7 @@ const Header = () => {
               onMouseLeave={handleDropdownLeave}
             >
               <Link 
-                to="/industries" 
+                to="#" 
                 className={styles.navLink}
                 onClick={handleIndustriesClick}
               >
@@ -259,16 +259,16 @@ const Header = () => {
                 <div className={styles.dropdownContent}>
                   <div className={styles.dropdownSection}>
                     <h4 className={styles.dropdownTitle}>Technology</h4>
-                    <a href="#fintech" className={styles.dropdownLink}>Fintech</a>
-                    <a href="#edtech" className={styles.dropdownLink}>Education Technology</a>
-                    <a href="#healthtech" className={styles.dropdownLink}>Healthcare Tech</a>
-                    <a href="#startup" className={styles.dropdownLink}>Startups</a>
+                    <Link to="/fintech" className={styles.dropdownLink}>Fintech</Link>
+                    <Link to="/edutech" className={styles.dropdownLink}>Education Tech</Link>
+                    <Link to="/healthcare" className={styles.dropdownLink}>Healthcare Tech</Link>
+                    <Link to="/startups" className={styles.dropdownLink}>Startups</Link>
                   </div>
                   <div className={styles.dropdownSection}>
                     <h4 className={styles.dropdownTitle}>Traditional Sectors</h4>
-                    <a href="#retail" className={styles.dropdownLink}>Retail & E-commerce</a>
+                    <Link to="/retail-ecommerce" className={styles.dropdownLink}>Retail & E-commerce</Link>
                     <a href="#manufacturing" className={styles.dropdownLink}>Manufacturing</a>
-                    <a href="#real-estate" className={styles.dropdownLink}>Real Estate</a>
+                    <Link to="/realestate" className={styles.dropdownLink}>Real Estate</Link>
                     <a href="#logistics" className={styles.dropdownLink}>Logistics</a>
                   </div>
                   <div className={styles.dropdownSection}>
@@ -283,7 +283,7 @@ const Header = () => {
             </li>
 
             <li className={styles.navItem}>
-              <a href="#clients" className={styles.navLink}>Our Clients</a>
+              <Link to="/our-clients" className={styles.navLink}>Our Clients</Link>
             </li>
             <li className={styles.navItem}>
               <a href="#career" className={styles.navLink}>Career</a>
@@ -297,7 +297,7 @@ const Header = () => {
         {/* Get Started Button - Right */}
         <div className={styles.actionSection}>
           <Link to="/schedule-meeting" className={styles.getStartedBtn}>
-            Schedule a Meeting
+            Get a Meeting
           </Link>
         </div>
 
