@@ -30,10 +30,18 @@ import FinTechPage from './pages/FinTechPage'
 import EduTechPage from './pages/EduTechPage'
 import HealthcarePage from './pages/HealthcarePage'
 import RealEstatePage from './pages/RealEstatePage'
+import ManufacturingPage from './pages/ManufacturingPage'
+import LogisticsPage from './pages/LogisticsPage'
+import LegalServicePage from './pages/LegalServicePage'
+import ConsultingFirmsPage from './pages/ConsultingFirmsPage'
+import MarketingAgenciesPage from './pages/MarketingAgenciesPage'
+import NonProfitPage from './pages/NonProfitPage'
 import StartupPage from './pages/StartupPage'
 import RetailEcommercePage from './pages/RetailEcommercePage'
 import ScheduleMeetingPage from './pages/ScheduleMeetingPage'
 import OurClientsPage from './pages/OurClientsPage'
+import ProjectDetailPage from './pages/ProjectDetailPage'
+import TechnologyPage from './pages/TechnologyPage'
 import './index.css'
 
 // ScrollToTop component to handle route changes
@@ -110,10 +118,18 @@ function App() {
         <Route path="/edutech" element={<EduTechPage key="edutech-page" />} />
         <Route path="/healthcare" element={<HealthcarePage key="healthcare-page" />} />
         <Route path="/realestate" element={<RealEstatePage key="realestate-page" />} />
+        <Route path="/manufacturing" element={<ManufacturingPage key="manufacturing-page" />} />
+        <Route path="/logistics" element={<LogisticsPage key="logistics-page" />} />
+        <Route path="/legal-service" element={<LegalServicePage key="legal-page" />} />
+        <Route path="/consulting-firms" element={<ConsultingFirmsPage key="consulting-page" />} />
+        <Route path="/marketing-agencies" element={<MarketingAgenciesPage key="marketing-agencies-page" />} />
+        <Route path="/non-profit" element={<NonProfitPage key="nonprofit-page" />} />
         <Route path="/startups" element={<StartupPage key="startups-page" />} />
         <Route path="/retail-ecommerce" element={<RetailEcommercePage key="retail-page" />} />
         <Route path="/schedule-meeting" element={<ScheduleMeetingPage key="schedule-page" />} />
         <Route path="/our-clients" element={<OurClientsPage key="clients-page" />} />
+        <Route path="/project/:projectId" element={<ProjectDetailPage key="project-detail-page" />} />
+        <Route path="/technology" element={<TechnologyPage key="technology-page" />} />
         <Route path="/contact" element={<ContactPage key="contact-page" />} />
       </Routes>
       <Footer />

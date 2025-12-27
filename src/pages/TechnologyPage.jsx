@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
-import styles from '../styles/TechnologyStack.module.css';
+import { Link } from 'react-router-dom';
+import ParticleBanner from '../components/ParticleBanner';
+import WorkProcess from '../components/WorkProcess';
+import CallToAction from '../components/CallToAction';
+import styles from '../styles/TechnologyPage.module.css';
+import techStyles from '../styles/TechnologyStack.module.css';
 
-const TechnologyStack = () => {
+const TechnologyPage = () => {
   const [hoveredTech, setHoveredTech] = useState(null);
 
   const technologies = [
     {
       id: 1,
       name: "JavaScript",
+      description: "Dynamic programming language that enables interactive web pages and modern web applications.",
       category: "Language",
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor">
@@ -19,6 +25,7 @@ const TechnologyStack = () => {
     {
       id: 2,
       name: ".NET",
+      description: "Microsoft's developer platform for building any type of app with C#, F#, and Visual Basic.",
       category: "Framework",
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor">
@@ -30,6 +37,7 @@ const TechnologyStack = () => {
     {
       id: 3,
       name: "Kotlin",
+      description: "Modern programming language that makes developers happier, fully interoperable with Java.",
       category: "Language",
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor">
@@ -41,6 +49,7 @@ const TechnologyStack = () => {
     {
       id: 4,
       name: "Laravel",
+      description: "PHP web application framework with elegant syntax for building modern web applications.",
       category: "Framework",
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor">
@@ -52,6 +61,7 @@ const TechnologyStack = () => {
     {
       id: 5,
       name: "Cloud Services",
+      description: "Scalable cloud computing solutions for hosting, storage, and application deployment.",
       category: "Cloud",
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor">
@@ -63,6 +73,7 @@ const TechnologyStack = () => {
     {
       id: 6,
       name: "Node.js",
+      description: "Server-side JavaScript runtime for building scalable backend applications and APIs.",
       category: "Runtime",
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor">
@@ -74,6 +85,7 @@ const TechnologyStack = () => {
     {
       id: 7,
       name: "React",
+      description: "Modern JavaScript library for building user interfaces with component-based architecture.",
       category: "Library",
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor">
@@ -85,6 +97,7 @@ const TechnologyStack = () => {
     {
       id: 8,
       name: "PHP",
+      description: "Server-side scripting language designed for web development but also used as general-purpose language.",
       category: "Language",
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor">
@@ -96,6 +109,7 @@ const TechnologyStack = () => {
     {
       id: 9,
       name: "Dart",
+      description: "Client-optimized language for fast apps on any platform, primarily used with Flutter framework.",
       category: "Language",
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor">
@@ -107,6 +121,7 @@ const TechnologyStack = () => {
     {
       id: 10,
       name: "Tailwind CSS",
+      description: "Utility-first CSS framework for rapidly building custom user interfaces with pre-built classes.",
       category: "Framework",
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor">
@@ -118,6 +133,7 @@ const TechnologyStack = () => {
     {
       id: 11,
       name: "Java",
+      description: "Object-oriented programming language designed to have as few implementation dependencies as possible.",
       category: "Language",
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor">
@@ -129,6 +145,7 @@ const TechnologyStack = () => {
     {
       id: 12,
       name: "Python",
+      description: "Backend development, automation, data analysis, and machine learning applications.",
       category: "Language",
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor">
@@ -136,11 +153,11 @@ const TechnologyStack = () => {
         </svg>
       ),
       color: "#3776AB"
-    }
-    ,
+    },
     {
       id: 13,
       name: "Flutter",
+      description: "UI toolkit for building natively compiled apps for mobile, web, and desktop from a single codebase.",
       category: "Framework",
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor">
@@ -152,6 +169,7 @@ const TechnologyStack = () => {
     {
       id: 14,
       name: "HTML",
+      description: "Standard markup language for creating and structuring web page content.",
       category: "Markup",
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor">
@@ -162,7 +180,20 @@ const TechnologyStack = () => {
     },
     {
       id: 15,
+      name: "CSS",
+      description: "Style sheet language used for describing the presentation of a document written in HTML or XML.",
+      category: "Style",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M0 0v20.16A3.84 3.84 0 0 0 3.84 24h16.32A3.84 3.84 0 0 0 24 20.16V3.84A3.84 3.84 0 0 0 20.16 0Zm14.256 13.08c1.56 0 2.28 1.08 2.304 2.64h-1.608c.024-.288-.048-.6-.144-.84-.096-.192-.288-.264-.552-.264-.456 0-.696.264-.696.84-.024.576.288.888.768 1.08.72.288 1.608.744 1.92 1.296q.432.648.432 1.656c0 1.608-.912 2.592-2.496 2.592-1.656 0-2.4-1.032-2.424-2.688h1.68c0 .792.264 1.176.792 1.176.264 0 .456-.072.552-.24.192-.312.24-1.176-.048-1.512-.312-.408-.912-.6-1.32-.816q-.828-.396-1.224-.936c-.24-.36-.36-.888-.36-1.536 0-1.44.936-2.472 2.424-2.448m5.4 0c1.584 0 2.304 1.08 2.328 2.64h-1.608c0-.288-.048-.6-.168-.84-.096-.192-.264-.264-.528-.264-.48 0-.72.264-.72.84s.288.888.792 1.08c.696.288 1.608.744 1.92 1.296.264.432.408.984.408 1.656.024 1.608-.888 2.592-2.472 2.592-1.68 0-2.424-1.056-2.448-2.688h1.68c0 .744.264 1.176.792 1.176.264 0 .456-.072.552-.24.216-.312.264-1.176-.048-1.512-.288-.408-.888-.6-1.32-.816-.552-.264-.96-.576-1.2-.936s-.36-.888-.36-1.536c-.024-1.44.912-2.472 2.4-2.448m-11.031.018c.711-.006 1.419.198 1.839.63.432.432.672 1.128.648 1.992H9.336c.024-.456-.096-.792-.432-.96-.312-.144-.768-.048-.888.24-.12.264-.192.576-.168.864v3.504c0 .744.264 1.128.768 1.128a.65.65 0 0 0 .552-.264c.168-.24.192-.552.168-.84h1.776c.096 1.632-.984 2.712-2.568 2.688-1.536 0-2.496-.864-2.472-2.472v-4.032c0-.816.24-1.44.696-1.848.432-.408 1.146-.624 1.857-.63" />
+        </svg>
+      ),
+      color: "#1572B6"
+    },
+    {
+      id: 16,
       name: "Bootstrap",
+      description: "Popular CSS framework for developing responsive and mobile-first websites.",
       category: "Framework",
       icon: (
           <svg viewBox="0 0 24 24" fill="currentColor">
@@ -174,50 +205,77 @@ const TechnologyStack = () => {
   ];
 
   return (
-    <section className={styles.techSection}>
-      <div className={styles.container}>
-        {/* Header Section */}
-        <div className={styles.headerContent}>
-          <div className={styles.welcomeSection}>
-            {/* <div className={styles.welcomeLine}></div> */}
-            <span className={styles.welcomeText}>Our Technology</span>
-            <div className={styles.welcomeLine}></div>
-          </div>
-          
-          <h2 className={styles.sectionTitle}>
-            Technology <span className={styles.titleHighlight}>Stack</span> We Use
-          </h2>
-          
-          <p className={styles.sectionDescription}>
-            We leverage cutting-edge technologies and frameworks to build robust, scalable, and 
-            innovative solutions that drive your business forward.
-          </p>
-        </div>
-
-
-        {/* Technology Grid */}
-        <div className={styles.techGrid}>
-          {technologies.map((tech) => (
-            <div
-              key={tech.id}
-              className={styles.techCard}
-              onMouseEnter={() => setHoveredTech(tech.id)}
-              onMouseLeave={() => setHoveredTech(null)}
-              style={{
-                '--tech-color': tech.color
-              }}
-            >
-              <div className={styles.techIcon}>
-                {tech.icon}
-              </div>
-              
-              <h3 className={styles.techName}>{tech.name}</h3>
+    <div className={styles.technologyPage}>
+      {/* Technology Banner */}
+      <section className={styles.technologyBanner}>
+        <ParticleBanner />
+        <div className={styles.overlay}></div>
+        <div className={styles.container}>
+          <div className={styles.content}>
+            <h1 className={styles.title}>Technology Stack</h1>
+            <p className={styles.subtitle}>
+              Cutting-edge technologies powering innovative solutions
+            </p>
+            <div className={styles.breadcrumb}>
+              <Link to="/" className={styles.breadcrumbLink}>Home</Link>
+              <span className={styles.separator}>/</span>
+              <span className={styles.breadcrumbCurrent}>Technology</span>
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Technology Stack Section */}
+      <section className={techStyles.techSection}>
+        <div className={techStyles.container}>
+          {/* Header Section */}
+          <div className={techStyles.headerContent}>
+            <div className={techStyles.welcomeSection}>
+              <span className={techStyles.welcomeText}>Our Technology</span>
+              <div className={techStyles.welcomeLine}></div>
+            </div>
+            
+            <h2 className={techStyles.sectionTitle}>
+              Technology <span className={techStyles.titleHighlight}>Stack</span> We Use
+            </h2>
+            
+            <p className={techStyles.sectionDescription}>
+              We leverage cutting-edge technologies and frameworks to build robust, scalable, and 
+              innovative solutions that drive your business forward.
+            </p>
+          </div>
+
+          {/* Technology Grid */}
+          <div className={techStyles.techGrid}>
+            {technologies.map((tech) => (
+              <div
+                key={tech.id}
+                className={techStyles.techCard}
+                onMouseEnter={() => setHoveredTech(tech.id)}
+                onMouseLeave={() => setHoveredTech(null)}
+                style={{
+                  '--tech-color': tech.color
+                }}
+              >
+                <div className={techStyles.techIcon}>
+                  {tech.icon}
+                </div>
+                
+                <h3 className={techStyles.techName}>{tech.name}</h3>
+                <p className={techStyles.techDescription}>{tech.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Work Process */}
+      <WorkProcess />
+
+      {/* Call to Action */}
+      <CallToAction />
+    </div>
   );
 };
 
-export default TechnologyStack;
+export default TechnologyPage;

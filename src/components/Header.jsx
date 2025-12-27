@@ -267,16 +267,16 @@ const Header = () => {
                   <div className={styles.dropdownSection}>
                     <h4 className={styles.dropdownTitle}>Traditional Sectors</h4>
                     <Link to="/retail-ecommerce" className={styles.dropdownLink}>Retail & E-commerce</Link>
-                    <a href="#manufacturing" className={styles.dropdownLink}>Manufacturing</a>
+                    <Link to="/manufacturing" className={styles.dropdownLink}>Manufacturing</Link>
                     <Link to="/realestate" className={styles.dropdownLink}>Real Estate</Link>
-                    <a href="#logistics" className={styles.dropdownLink}>Logistics</a>
+                    <Link to="/logistics" className={styles.dropdownLink}>Logistics</Link>
                   </div>
                   <div className={styles.dropdownSection}>
                     <h4 className={styles.dropdownTitle}>Professional Services</h4>
-                    <a href="#legal" className={styles.dropdownLink}>Legal Services</a>
-                    <a href="#consulting" className={styles.dropdownLink}>Consulting Firms</a>
-                    <a href="#agency" className={styles.dropdownLink}>Marketing Agencies</a>
-                    <a href="#nonprofit" className={styles.dropdownLink}>Non-Profit</a>
+                    <Link to="/legal-service" className={styles.dropdownLink}>Legal Services</Link>
+                    <Link to="/consulting-firms" className={styles.dropdownLink}>Consulting Firms</Link>
+                    <Link to="/marketing-agencies" className={styles.dropdownLink}>Marketing Agencies</Link>
+                    <Link to="/non-profit" className={styles.dropdownLink}>Non-Profit</Link>
                   </div>
                 </div>
               </div>

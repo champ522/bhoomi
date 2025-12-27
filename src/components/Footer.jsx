@@ -75,8 +75,8 @@ const Footer = () => {
             <ul className={styles.linkList}>
               <li><Link to="/about" className={styles.footerLink}>About Us</Link></li>
               <li><Link to="/services" className={styles.footerLink}>Services</Link></li>
-              <li><a href="#projects" className={styles.footerLink}>Projects</a></li>
-              <li><a href="#clients" className={styles.footerLink}>Clients</a></li>
+              <li><Link to="/our-clients" className={styles.footerLink}>Projects</Link></li>
+              <li><Link to="/our-clients" className={styles.footerLink}>Clients</Link></li>
               <li><a href="#blog" className={styles.footerLink}>Blogs</a></li>
               <li><a href="#gallery" className={styles.footerLink}>Gallery</a></li>
               <li><Link to="/contact" className={styles.footerLink}>Contact Us</Link></li>
@@ -87,13 +87,13 @@ const Footer = () => {
           <div className={styles.footerColumn}>
             <h3 className={styles.columnTitle}>Our Services</h3>
             <ul className={styles.linkList}>
-              <li><a href="#web-development" className={styles.footerLink}>Web Development</a></li>
-              <li><a href="#mobile-apps" className={styles.footerLink}>Mobile Apps</a></li>
-              <li><a href="#ui-ux" className={styles.footerLink}>UI/UX Design</a></li>
-              <li><a href="#technology" className={styles.footerLink}>Technology</a></li>
-              <li><a href="#privacy-policy" className={styles.footerLink}>Privacy Policy</a></li>
-              <li><a href="#terms-of-service" className={styles.footerLink}>Terms of Service</a></li>
-              <li><a href="#support" className={styles.footerLink}>24/7 Support</a></li>
+              <li><Link to="/web-development" className={styles.footerLink}>Web Development</Link></li>
+              <li><Link to="/mobile-app-development" className={styles.footerLink}>Mobile Apps</Link></li>
+              <li><Link to="/website-design" className={styles.footerLink}>Website Design</Link></li>
+              <li><Link to="/technology" className={styles.footerLink}>Technology</Link></li>
+              <li><Link to="/privacy-policy" className={styles.footerLink}>Privacy Policy</Link></li>
+              <li><Link to="/terms-of-service" className={styles.footerLink}>Terms of Service</Link></li>
+              <li><a href="/support" className={styles.footerLink}>24/7 Support</a></li>
             </ul>
           </div>
 

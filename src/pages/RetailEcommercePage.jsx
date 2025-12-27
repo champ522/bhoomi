@@ -192,7 +192,7 @@ const RetailEcommercePage = () => {
             </div>
             <div className={styles.aboutImage}>
               <lottie-player
-                src="https://lottie.host/006a6429-e481-4f01-aeb1-44730b7c4e5d/fY2IDpm4dS.json"
+                src="https://lottie.host/a9a55275-11bd-402c-b13d-a236c6fe79d0/q50RtATs0A.json"
                 background="transparent"
                 speed="1"
                 loop
@@ -283,7 +283,7 @@ const RetailEcommercePage = () => {
               </p>
               <div className={styles.securityFeatures}>
                 <div className={styles.securityFeature}>
-                  <h4>✅ Smart Recommendations</h4>
+                  <h4>✅ Smart Insights</h4>
                   <p>AI-powered product recommendations and personalized shopping</p>
                 </div>
                 <div className={styles.securityFeature}>
@@ -302,7 +302,7 @@ const RetailEcommercePage = () => {
             </div>
             <div className={styles.securityImage}>
               <lottie-player
-                src="https://lottie.host/28215764-d8ad-4e59-b0da-7e089088ea59/0R9dy82KRc.json"
+                src="https://lottie.host/7d93d25f-ec7e-44d5-a185-ea9afe0eb813/kPLBMhY2aG.json"
                 background="transparent"
                 speed="1"
                 loop

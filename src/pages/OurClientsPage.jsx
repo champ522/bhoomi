@@ -254,7 +254,7 @@ const OurClientsPage = () => {
                   {/* Back Side */}
                   <div className={styles.cardBack}>
                     <h3 className={styles.cardTitle}>{project.title}</h3>
-                    <button className={styles.exploreBtn}>Explore</button>
+                    <Link to={`/project/${project.id}`} className={styles.exploreBtn}>Explore</Link>
                   </div>
                 </div>
               </div>

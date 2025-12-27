@@ -87,22 +87,22 @@
 /* Technology Grid */
 .techGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 25px;
   margin-bottom: 0px;
 }
 
 .techCard {
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-  border-radius: 0px 30px 0px 30px;
+  background: #e8e8e8;
+  border-radius: 10px;
   padding: 15px 17px;
   text-align: center;
-  box-shadow: 0 8px 25px rgba(14, 141, 56, 0.1);
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  border: 1px solid rgba(14, 141, 56, 0.1);
+  border: 1px solid #e8e8e8;
 }
 
 .techCard::before {
@@ -214,9 +214,9 @@
 }
 
 .techName {
-  font-size: 1.6rem;
+  font-size: 1.1rem;
   color: #043b1e;
-  margin: 0 0 15px 0;
+  margin: 0 0 0px 0;
   font-weight: 600;
   font-family: 'Montserrat', sans-serif;
   position: relative;
@@ -390,7 +390,7 @@
   }
 
   .techGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
   }
 
@@ -410,6 +410,6 @@
   }
 
   .techName {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
 }
