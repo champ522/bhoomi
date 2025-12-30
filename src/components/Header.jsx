@@ -286,7 +286,7 @@ const Header = () => {
               <Link to="/our-clients" className={styles.navLink}>Our Clients</Link>
             </li>
             <li className={styles.navItem}>
-              <a href="#career" className={styles.navLink}>Career</a>
+              <Link to="/career" className={styles.navLink}>Career</Link>
             </li>
             <li className={styles.navItem}>
               <Link to="/contact" className={styles.navLink}>Contact Us</Link>

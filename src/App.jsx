@@ -42,6 +42,9 @@ import ScheduleMeetingPage from './pages/ScheduleMeetingPage'
 import OurClientsPage from './pages/OurClientsPage'
 import ProjectDetailPage from './pages/ProjectDetailPage'
 import TechnologyPage from './pages/TechnologyPage'
+import CareerPage from './pages/CareerPage'
+import BlogPage from './pages/BlogPage'
+import GalleryPage from './pages/GalleryPage'
 import './index.css'
 
 // ScrollToTop component to handle route changes
@@ -130,6 +133,9 @@ function App() {
         <Route path="/our-clients" element={<OurClientsPage key="clients-page" />} />
         <Route path="/project/:projectId" element={<ProjectDetailPage key="project-detail-page" />} />
         <Route path="/technology" element={<TechnologyPage key="technology-page" />} />
+        <Route path="/career" element={<CareerPage key="career-page" />} />
+        <Route path="/blog" element={<BlogPage key="blog-page" />} />
+        <Route path="/gallery" element={<GalleryPage key="gallery-page" />} />
         <Route path="/contact" element={<ContactPage key="contact-page" />} />
       </Routes>
       <Footer />

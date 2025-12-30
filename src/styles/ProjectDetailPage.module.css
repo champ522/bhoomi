@@ -100,6 +100,11 @@
   position: relative;
   border-radius: 0px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  padding: 20px 0;
 }
 
 .projectImage {
@@ -112,6 +117,34 @@
 
 .projectImageWrapper:hover .projectImage {
   transform: scale(1.05);
+}
+
+.launchDemoButton {
+  position: relative;
+  background: #e8e8e8;
+  color: black;
+  padding: 12px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+  border: 1px solid #e8e8e8;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+}
+
+.launchDemoButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(14, 141, 56, 0.4);
+}
+
+.launchDemoButton span {
+  position: relative;
+  z-index: 2;
 }
 
 .sectionTitle {
@@ -142,10 +175,11 @@
 }
 
 .techTag {
-  background: linear-gradient(135deg, #0e8d38, #0ef178);
+  /* background: linear-gradient(135deg, #0e8d38, #0ef178); */
   color: rgb(3, 0, 0);
-  padding: 10px 16px;
-  border-radius: 0px;
+  padding: 8px 10px;
+  border: 2px solid #0e8d38;
+  border-radius: 10px;
   font-size: 1rem;
   font-weight: 600;
 }
@@ -199,20 +233,6 @@
   transform: translateY(-5px);
 }
 
-.moduleIcon {
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #0e8d38, #043b1e);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0 auto 20px;
-}
-
 .moduleCard h3 {
   font-size: 1.1rem;
   color: #043b1e;
@@ -220,123 +240,101 @@
   line-height: 1.4;
 }
 
-/* Demo Section */
-.demoSection {
-  padding: 80px 0;
-  background: linear-gradient(135deg, #0e8d38, #043b1e);
-}
-
-.demoContent {
-  text-align: center;
-  color: white;
-}
-
-.demoTitle {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 15px;
-}
-
-.demoText {
-  font-size: 1.2rem;
-  margin-bottom: 40px;
-  opacity: 0.9;
-}
-
-.demoButton {
-  position: relative;
-  background: white;
-  color: #0e8d38;
-  padding: 15px 40px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 18px;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
-  border: none;
-  cursor: pointer;
-  display: inline-block;
-}
-
-.demoButton:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-.demoButton:not(:disabled):hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
-}
-
-.demoButton span {
-  position: relative;
-  z-index: 2;
-}
-
 /* CTA Section */
 .ctaSection {
-  padding: 80px 0;
-  background: white;
+  padding: 60px 0;
+  margin: 60px 0;
+  background: linear-gradient(135deg, #0a7530 0%, #043b1e 100%);
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaSection::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: moveBackground 20s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes moveBackground {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
 }
 
 .ctaTitle {
-  font-size: 2.5rem;
-  color: #043b1e;
-  font-weight: 700;
-  margin-bottom: 15px;
+  font-size: 2rem;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
 }
 
 .ctaText {
-  font-size: 1.2rem;
-  color: #666;
-  margin-bottom: 40px;
+  font-size: 1.06rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 20px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  font-weight: 400;
 }
 
 .ctaButtons {
   display: flex;
-  gap: 20px;
+  gap: 25px;
   justify-content: center;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
 }
 
 .primaryButton,
 .secondaryButton {
   position: relative;
-  padding: 15px 35px;
-  border-radius: 50px;
+  padding: 12px 15px;
+  border-radius: 5px;
   text-decoration: none;
   font-weight: 600;
   font-size: 16px;
   overflow: hidden;
   transition: all 0.3s ease;
-  border: 2px solid #0e8d38;
   cursor: pointer;
   display: inline-block;
+  border: 1px solid #e8e8e8;
 }
 
 .primaryButton {
-  background: linear-gradient(135deg, #0e8d38, #043b1e);
-  color: white;
+  background: #e8e8e8;
+  color: black;
+  /* box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff; */
 }
 
 .primaryButton:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(14, 141, 56, 0.4);
+  box-shadow: 0 8px 25px rgba(222, 223, 222, 0.4);
 }
 
 .secondaryButton {
-  background: white;
-  color: #0e8d38;
+  background: #e8e8e8;
+  color: black;
+  /* box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff; */
 }
 
 .secondaryButton:hover {
-  background: #0e8d38;
-  color: white;
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(14, 141, 56, 0.3);
+  box-shadow: 0 8px 25px rgba(223, 226, 224, 0.4);
 }
 
 .primaryButton span,
@@ -391,7 +389,6 @@
     grid-template-columns: 1fr;
   }
 
-  .demoTitle,
   .ctaTitle {
     font-size: 1.8rem;
   }

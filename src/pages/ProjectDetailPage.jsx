@@ -521,6 +521,9 @@ const ProjectDetailPage = () => {
           <div className={styles.overviewGrid}>
             <div className={styles.projectImageWrapper}>
               <img src={project.image} alt={project.title} className={styles.projectImage} />
+              <a href={project.demoLink || '#'} target="_blank" rel="noopener noreferrer" className={styles.launchDemoButton}>
+                <span>Launch Demo</span>
+              </a>
             </div>
             <div className={styles.projectInfo}>
               <h2 className={styles.sectionTitle}>About This Project</h2>
@@ -561,25 +564,6 @@ const ProjectDetailPage = () => {
         </div>
       </section>
 
-      {/* Live Demo */}
-      <section className={styles.demoSection}>
-        <div className={styles.container}>
-          <div className={styles.demoContent}>
-            <h2 className={styles.demoTitle}>See It In Action</h2>
-            <p className={styles.demoText}>Experience the full functionality of this project with our live demo</p>
-            {project.demoLink ? (
-              <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className={styles.demoButton}>
-                <span>Launch Live Demo</span>
-              </a>
-            ) : (
-              <button className={styles.demoButton} disabled>
-                <span>Demo Coming Soon</span>
-              </button>
-            )}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className={styles.ctaSection}>
         <div className={styles.container}>
@@ -595,8 +579,6 @@ const ProjectDetailPage = () => {
           </div>
         </div>
       </section>
-
-      <Testimonials />
     </div>
   );
 };
