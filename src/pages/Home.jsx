@@ -14,6 +14,7 @@ import Testimonials from '../components/Testimonials';
 import Blog from '../components/Blog';
 import CallToAction from '../components/CallToAction';
 import Certifications from '../components/Certifications';
+import InstagramReelsSection from '../components/InstagramReelsSection';
 
 const Home = () => {
   return (
@@ -31,6 +32,7 @@ const Home = () => {
       <Pricing />
       <Testimonials />
       <Blog />
+      <InstagramReelsSection />
       <CallToAction />
       <Certifications />
     </>

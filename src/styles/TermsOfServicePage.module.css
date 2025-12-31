@@ -1,0 +1,353 @@
+/* Terms of Service Banner */
+.termsBanner {
+  position: relative;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.content {
+  animation: fadeInUp 1s ease-out;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #050000;
+  margin: 0 0 10px 0;
+  letter-spacing: 2px;
+  animation: slideDown 0.8s ease-out;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  color: rgba(10, 1, 1, 0.95);
+  margin: 0 0 10px 0;
+  font-weight: 300;
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  animation: fadeIn 1s ease-out 0.3s both;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1rem;
+  animation: fadeIn 1s ease-out 0.5s both;
+}
+
+.breadcrumbLink {
+  color: rgba(5, 1, 1, 0.9);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 400;
+  position: relative;
+}
+
+.breadcrumbLink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #030000;
+  transition: width 0.3s ease;
+}
+
+.breadcrumbLink:hover {
+  color: #066d2e;
+}
+
+.breadcrumbLink:hover::after {
+  width: 100%;
+}
+
+.separator {
+  color: rgba(70, 67, 67, 0.7);
+  font-weight: 300;
+}
+
+.breadcrumbCurrent {
+  color: #050000;
+  font-weight: 500;
+}
+
+/* Terms of Service Content Section */
+.termsSection {
+  padding: 60px 0;
+  background: #f8f9fa;
+  position: relative;
+}
+
+.termsContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.lastUpdated {
+  background: white;
+  color: #333;
+  padding: 15px 30px;
+  border-radius: 0px;
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.8s ease-out;
+}
+
+.policyContent {
+  background: white;
+  padding: 40px;
+  border-radius: 0px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  animation: slideInUp 0.8s ease-out 0.2s both;
+}
+
+.introduction {
+  margin-bottom: 25px;
+  padding-bottom: 0px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.section {
+  margin-bottom: 25px;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #066d2e;
+  margin-bottom: 20px;
+}
+
+.subsectionTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+  margin: 25px 0 15px;
+}
+
+.paragraph {
+  font-size: 1rem;
+  line-height: 1.7em;
+  color: #777;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+
+.list {
+  list-style: none;
+  padding-left: 0;
+  margin: 20px 0;
+}
+
+.list li {
+  font-size: 1rem;
+  line-height: 1.7em;
+  color: #777;
+  margin-bottom: 8px;
+  padding-left: 30px;
+  position: relative;
+}
+
+.list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #066d2e;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.contactInfo {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 25px 30px;
+  border-radius: 0px;
+  margin-top: 20px;
+  border-left: 4px solid #066d2e;
+}
+
+.contactInfo p {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.contactInfo a {
+  color: #066d2e;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contactInfo a:hover {
+  color: #044d20;
+  text-decoration: underline;
+}
+
+.acknowledgment {
+  background: rgba(6, 109, 46, 0.1);
+  padding: 20px;
+  border-radius: 0px;
+  margin-top: 40px;
+  border: 2px solid rgba(6, 109, 46, 0.2);
+}
+
+.acknowledgment .paragraph {
+  margin-bottom: 0;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .termsBanner {
+    height: 400px;
+  }
+
+  .title {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .termsSection {
+    padding: 60px 0;
+  }
+
+  .termsContainer {
+    padding: 0 0px;
+  }
+
+  .policyContent {
+    padding: 30px 20px;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .subsectionTitle {
+    font-size: 1.2rem;
+  }
+
+  .paragraph,
+  .list li {
+    font-size: 1rem;
+    text-align: justify;
+  }
+
+  .contactInfo {
+    padding: 20px;
+  }
+
+  .lastUpdated {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .termsBanner {
+    height: 350px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .breadcrumb {
+    font-size: 0.9rem;
+  }
+
+  .policyContent {
+    padding: 25px 15px;
+  }
+
+  .sectionTitle {
+    font-size: 1.3rem;
+  }
+
+  .list li {
+    padding-left: 30px;
+  }
+}

@@ -1,0 +1,320 @@
+/* Instagram Reels Section - Mobile First Design */
+
+.instagramSection {
+  width: 100%;
+  padding: 60px 0;
+  background: linear-gradient(135deg, #f8fffe 0%, #ffffff 50%, #f0f9f4 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.instagramSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e8f7ec' fill-opacity='0.3'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.4;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header Section */
+.headerContent {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.welcomeSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.welcomeText {
+  font-size: 1.1rem;
+  color: #777;
+  font-weight: 600;
+  font-family: 'Cabin', sans-serif;
+}
+
+.welcomeLine {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, #0e8d38 0%, #03ba58 100%);
+  border-radius: 2px;
+  animation: expandLine 1.5s ease-out 0.5s both;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  color: #043b1e;
+  margin-bottom: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+  font-family: 'Montserrat', sans-serif;
+  animation: slideInDown 1.2s ease-out 0.3s both;
+}
+
+.titleHighlight {
+  background: linear-gradient(135deg, #0e8d38 0%, #03ba58 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.sectionDescription {
+  font-size: 1.06rem;
+  line-height: 1.7em;
+  color: #777;
+  max-width: 830px;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+/* Reels Container */
+.reelsContainer {
+  position: relative;
+  min-height: 400px;
+}
+
+.reelsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.reelsGrid.hidden {
+  display: none;
+}
+
+/* Individual Reel Card */
+.reelCard {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.reelCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(14, 141, 56, 0.15);
+}
+
+.reelWrapper {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Loading Skeleton */
+.loadingGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.skeletonCard {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.skeletonVideo {
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.skeletonText {
+  width: 70%;
+  height: 16px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.skeletonTextSmall {
+  width: 50%;
+  height: 14px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes expandLine {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 60px;
+    opacity: 1;
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .sectionDescription {
+    font-size: 1.06rem;
+  }
+
+  .reelsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .loadingGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+
+  .reelsGrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+
+  .loadingGrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+
+  .reelCard:hover {
+    transform: translateY(-12px) scale(1.02);
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+  .reelsGrid {
+    gap: 40px;
+  }
+
+  .loadingGrid {
+    gap: 40px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .reelCard,
+  .headerContent {
+    animation: none;
+  }
+
+  .reelCard:hover {
+    transform: none;
+  }
+
+  .skeletonVideo,
+  .skeletonText,
+  .skeletonTextSmall {
+    animation: none;
+  }
+
+  .welcomeLine {
+    animation: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .instagramSection {
+    background: white;
+    padding: 20px;
+  }
+
+  .instagramSection::before {
+    display: none;
+  }
+}

@@ -45,6 +45,8 @@ import TechnologyPage from './pages/TechnologyPage'
 import CareerPage from './pages/CareerPage'
 import BlogPage from './pages/BlogPage'
 import GalleryPage from './pages/GalleryPage'
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
+import TermsOfServicePage from './pages/TermsOfServicePage'
 import './index.css'
 
 // ScrollToTop component to handle route changes
@@ -137,6 +139,8 @@ function App() {
         <Route path="/blog" element={<BlogPage key="blog-page" />} />
         <Route path="/gallery" element={<GalleryPage key="gallery-page" />} />
         <Route path="/contact" element={<ContactPage key="contact-page" />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage key="privacy-page" />} />
+        <Route path="/terms-of-service" element={<TermsOfServicePage key="terms-page" />} />
       </Routes>
       <Footer />
     </Router>

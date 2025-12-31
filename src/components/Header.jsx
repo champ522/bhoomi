@@ -297,7 +297,7 @@ const Header = () => {
         {/* Get Started Button - Right */}
         <div className={styles.actionSection}>
           <Link to="/schedule-meeting" className={styles.getStartedBtn}>
-            Get a Meeting
+            Schedule Meeting
           </Link>
         </div>
 
