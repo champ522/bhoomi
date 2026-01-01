@@ -29,7 +29,7 @@ const HeroBanner = () => {
       subtitle: "Innovative Solutions for Modern Businesses",
       description: "We create cutting-edge software solutions that drive growth, enhance efficiency, and transform your business for the digital age.",
       buttonText: "Get Started",
-      buttonLink: "#contact"
+      buttonLink: "/contact"
     },
     {
       id: 2,
@@ -38,7 +38,7 @@ const HeroBanner = () => {
       subtitle: "Custom Applications & Web Solutions",
       description: "From web applications to mobile apps, we deliver powerful, scalable solutions tailored to your specific business requirements.",
       buttonText: "Our Services",
-      buttonLink: "#services"
+      buttonLink: "/services"
     },
     {
       id: 3,
@@ -47,7 +47,7 @@ const HeroBanner = () => {
       subtitle: "Your Trusted Technology Partner",
       description: "Join hundreds of satisfied clients who have transformed their businesses with our comprehensive technology solutions and expert guidance.",
       buttonText: "View Portfolio",
-      buttonLink: "#portfolio"
+      buttonLink: "/our-clients"
     }
   ];
 
@@ -303,7 +303,7 @@ const HeroBanner = () => {
                       <a href={slide.buttonLink} className={styles.primaryButton}>
                         <span>{slide.buttonText}</span>
                       </a>
-                      <a href="#about" className={styles.secondaryButton}>
+                      <a href="/about" className={styles.secondaryButton}>
                         <span>Learn More</span>
                         <svg className={styles.buttonArrow} viewBox="0 0 24 24">
                           <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

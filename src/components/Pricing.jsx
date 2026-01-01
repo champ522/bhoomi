@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from '../styles/Pricing.module.css';
 
 const Pricing = () => {
@@ -108,9 +109,9 @@ const Pricing = () => {
               </div>
 
               <div className={styles.cardFooter}>
-                <button className={styles.ctaButton}>
+                <Link to="/contact" className={styles.ctaButton}>
                   {plan.buttonText}
-                </button>
+                </Link>
               </div>
 
               <div className={styles.cardDecoration}>

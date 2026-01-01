@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from '../styles/WhyChooseBhoomiTechzone.module.css';
 
 const WhyChooseBhoomiTechzone = () => {
@@ -161,12 +162,12 @@ const WhyChooseBhoomiTechzone = () => {
 
         {/* CTA Section - Outside Grid */}
         <div className={styles.ctaSection}>
-          <button className={styles.ctaButton}>
+          <Link to="/contact" className={styles.ctaButton}>
             <span>Get Started Today</span>
             <svg className={styles.ctaArrow} viewBox="0 0 24 24">
               <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-          </button>
+          </Link>
         </div>
       </div>
     </section>

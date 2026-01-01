@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -137,12 +138,12 @@ const Blog = () => {
                 ))}
               </div>
               
-              <button className={styles.readMoreBtn}>
+              <Link to="/blog" className={styles.readMoreBtn}>
                 <span>Read Full Article</span>
                 <svg className={styles.readMoreIcon} viewBox="0 0 24 24">
                   <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -202,7 +203,7 @@ const Blog = () => {
                       className={styles.cardImage}
                     />
                     <div className={styles.cardOverlay}>
-                      <button className={styles.quickReadBtn}>Quick Read</button>
+                      <Link to="/blog" className={styles.quickReadBtn}>Quick Read</Link>
                     </div>
                     <div className={styles.cardCategory}>
                       {post.category}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import styles from '../styles/OurProjects.module.css';
 
 const OurProjects = () => {
@@ -11,56 +12,64 @@ const OurProjects = () => {
       title: "E-Commerce Platform",
       description: "Modern responsive online shopping platform with advanced features and seamless user experience.",
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      tech: ["React", "Node.js", "MongoDB"]
+      tech: ["React", "Node.js", "MongoDB"],
+      link: "/ecommerce-platform"
     },
     {
       id: 2,
       title: "Healthcare App",
       description: "Digital health management system connecting patients with healthcare providers efficiently.",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      tech: ["React Native", "Firebase", "AI"]
+      tech: ["React Native", "Firebase", "AI"],
+      link: "/healthcare"
     },
     {
       id: 3,
       title: "Financial Dashboard",
       description: "Real-time financial analytics and reporting dashboard with interactive data visualization.",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      tech: ["Vue.js", "D3.js", "Python"]
+      tech: ["Vue.js", "D3.js", "Python"],
+      link: "/fintech"
     },
     {
       id: 4,
       title: "Education Portal",
       description: "Comprehensive learning management system with interactive courses and progress tracking.",
       image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      tech: ["Angular", "Spring", "MySQL"]
+      tech: ["Angular", "Spring", "MySQL"],
+      link: "/edutech"
     },
     {
       id: 5,
       title: "Social Media App",
       description: "Next-generation social networking platform with AI-powered content recommendations.",
       image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      tech: ["React", "GraphQL", "AWS"]
+      tech: ["React", "GraphQL", "AWS"],
+      link: "/social-media-marketing"
     },
     {
       id: 6,
       title: "Smart IoT System",
       description: "Intelligent home automation system with voice control and energy optimization features.",
       image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      tech: ["IoT", "Python", "ML"]
+      tech: ["IoT", "Python", "ML"],
+      link: "/mobile-app-development"
     },
     {
       id: 7,
       title: "Blockchain DApp",
       description: "Decentralized application with smart contracts for secure cryptocurrency transactions.",
       image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      tech: ["Solidity", "Web3", "React"]
+      tech: ["Solidity", "Web3", "React"],
+      link: "/web-development"
     },
     {
       id: 8,
       title: "AI Chatbot Platform",
       description: "Advanced conversational AI system with natural language processing and machine learning.",
       image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      tech: ["Python", "NLP", "TensorFlow"]
+      tech: ["Python", "NLP", "TensorFlow"],
+      link: "/software-development"
     }
   ];
 
@@ -126,12 +135,12 @@ const OurProjects = () => {
                       <span key={idx} className={styles.techTag}>{tech}</span>
                     ))}
                   </div>
-                  <button className={styles.viewProject}>
+                  <Link to={project.link} className={styles.viewProject}>
                     <span>View Project</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="M7 17L17 7M17 7H7M17 7V17"/>
                     </svg>
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
