@@ -47,6 +47,10 @@ import BlogPage from './pages/BlogPage'
 import GalleryPage from './pages/GalleryPage'
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
 import TermsOfServicePage from './pages/TermsOfServicePage'
+// LMS Components
+import LMSHome from './lms/pages/LMSHome'
+import CoursePage from './lms/pages/CoursePage'
+import LessonPage from './lms/pages/LessonPage'
 import './index.css'
 
 // ScrollToTop component to handle route changes
@@ -141,6 +145,10 @@ function App() {
         <Route path="/contact" element={<ContactPage key="contact-page" />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage key="privacy-page" />} />
         <Route path="/terms-of-service" element={<TermsOfServicePage key="terms-page" />} />
+        {/* LMS Routes */}
+        <Route path="/lms" element={<LMSHome key="lms-home" />} />
+        <Route path="/lms/course/:courseId" element={<CoursePage key="course-page" />} />
+        <Route path="/lms/course/:courseId/lesson/:lessonId" element={<LessonPage key="lesson-page" />} />
       </Routes>
       <Footer />
     </Router>

@@ -73,13 +73,13 @@ const Footer = () => {
           <div className={styles.footerColumn}>
             <h3 className={styles.columnTitle}>Quick Links</h3>
             <ul className={styles.linkList}>
+              <li><Link to="/lms" className={styles.footerLink}>Learning Hub</Link></li>
               <li><Link to="/about" className={styles.footerLink}>About Us</Link></li>
               <li><Link to="/services" className={styles.footerLink}>Services</Link></li>
               <li><Link to="/our-clients" className={styles.footerLink}>Projects</Link></li>
               <li><Link to="/our-clients" className={styles.footerLink}>Clients</Link></li>
               <li><Link to="/blog" className={styles.footerLink}>Blogs</Link></li>
               <li><Link to="/gallery" className={styles.footerLink}>Gallery</Link></li>
-              <li><Link to="/contact" className={styles.footerLink}>Contact Us</Link></li>
             </ul>
           </div>
 
