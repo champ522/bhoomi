@@ -429,7 +429,7 @@
 
 .lessonText strong {
   font-weight: 600;
-  color: #333333;
+  color: #af0909;
 }
 
 /* ==========================================================================
@@ -1127,6 +1127,121 @@
 }
 
 /* ==========================================================================
+   Code Block Styles
+   ========================================================================== */
+.lessonContent pre {
+  background: #e5e9f0;
+  color: #010408;
+  padding: 1.5rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: 'Courier New', Monaco, 'Lucida Console', monospace;
+  font-size: 0.975rem;
+  line-height: 1.5;
+  margin: 1.5rem 0;
+  border: 1px solid #334155;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.lessonContent pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  font-size: inherit;
+  display: block;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+.lessonContent code {
+  background: #f1f5f9;
+  color: #e11d48;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-family: 'Courier New', Monaco, 'Lucida Console', monospace;
+  font-size: 0.875em;
+  font-weight: 500;
+  border: 1px solid #e2e8f0;
+}
+
+.lessonContent h3 + p + pre {
+  margin-top: 1rem;
+}
+
+.lessonContent pre + p {
+  margin-top: 1.5rem;
+}
+
+/* ==========================================================================
+   Mobile Code Block Styles
+   ========================================================================== */
+@media (max-width: 768px) {
+  .lessonContent pre {
+    padding: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin: 1rem -1rem;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .lessonContent code {
+    font-size: 0.8em;
+    padding: 0.2rem 0.4rem;
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 480px) {
+  .lessonContent pre {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.3;
+    margin: 1rem -1rem;
+  }
+  
+  .lessonContent pre code {
+    font-size: 0.95rem;
+  }
+  
+  .lessonContent code {
+    font-size: 0.95em;
+    padding: 0.15rem 0.3rem;
+  }
+  
+  /* Better scrolling for code blocks on small screens */
+  .lessonContent pre {
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+}
+
+/* Horizontal scrollbar styling for code blocks */
+.lessonContent pre::-webkit-scrollbar {
+  height: 8px;
+}
+
+.lessonContent pre::-webkit-scrollbar-track {
+  background: #334155;
+  border-radius: 4px;
+}
+
+.lessonContent pre::-webkit-scrollbar-thumb {
+  background: #64748b;
+  border-radius: 4px;
+}
+
+.lessonContent pre::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ==========================================================================
    Print Styles
    ========================================================================== */
 @media print {
@@ -1148,10 +1263,22 @@
     padding: 0 !important;
   }
   
-  .codeBlock {
-    break-inside: avoid;
-    box-shadow: none !important;
-    border: 1px solid #ddd !important;
+  /* Print styles for code blocks */
+  .lessonContent pre {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #000000 !important;
+    padding: 1rem !important;
+    font-size: 0.7rem !important;
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+    overflow: visible !important;
+  }
+  
+  .lessonContent code {
+    background: #f5f5f5 !important;
+    color: #000000 !important;
+    border: 1px solid #cccccc !important;
   }
 }
 

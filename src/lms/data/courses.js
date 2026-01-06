@@ -8,13 +8,21 @@ export const courses = [
     lessons: [
       {
         id: 'html-intro',
-        title: 'HTML Introduction',
+        title: 'HTML Intro',
         content: `
           <h2>What is HTML?</h2>
-          <p>HTML (HyperText Markup Language) is the standard markup language for creating web pages and web applications. It provides the basic building blocks for structuring content on the World Wide Web.</p>
+          <p>HTML (HyperText Markup Language) is the standard markup language for creating web pages and web applications. It provides the basic building blocks for structuring content on the World Wide Web. As the foundation of all websites, HTML is essential for anyone wanting to enter web development.</p>
           
-          <h3>History of HTML</h3>
-          <p>HTML was first created by Tim Berners-Lee in 1990 at CERN. The latest version is HTML5, which introduced many new features including semantic elements, multimedia support, and improved form controls.</p>
+          <h3>History and Evolution of HTML</h3>
+          <p>HTML was first created by Tim Berners-Lee in 1990 at CERN as part of the World Wide Web project. Since then, it has evolved through multiple versions:</p>
+          <ul>
+            <li><strong>HTML 1.0 (1991):</strong> Basic structure and hyperlinks</li>
+            <li><strong>HTML 2.0 (1995):</strong> Forms and tables introduced</li>
+            <li><strong>HTML 3.2 (1997):</strong> Style sheets and scripting</li>
+            <li><strong>HTML 4.01 (1999):</strong> Improved accessibility and internationalization</li>
+            <li><strong>XHTML (2000):</strong> XML-based HTML with stricter syntax</li>
+            <li><strong>HTML5 (2014):</strong> Semantic elements, multimedia, APIs, and mobile support</li>
+          </ul>
           
           <h3>Key Features of HTML:</h3>
           <ul>
@@ -23,31 +31,63 @@ export const courses = [
             <li><strong>Easy to Learn:</strong> Simple syntax and straightforward structure</li>
             <li><strong>Free and Open:</strong> No licensing costs or restrictions</li>
             <li><strong>SEO Friendly:</strong> Search engines can easily crawl HTML content</li>
+            <li><strong>Accessible:</strong> Built-in support for screen readers and assistive technologies</li>
+            <li><strong>Semantic:</strong> HTML5 provides meaningful elements for better structure</li>
+            <li><strong>Multimedia Support:</strong> Native support for audio, video, and graphics</li>
           </ul>
           
-          <h3>Basic HTML Document Structure:</h3>
-          <p>Every HTML document follows a standard structure with DOCTYPE declaration, html element, head section for metadata, and body section for visible content.</p>
+          <h3>Prerequisites and Learning Path:</h3>
+          <ul>
+            <li><strong>No Programming Experience Required:</strong> HTML is beginner-friendly</li>
+            <li><strong>Basic Computer Skills:</strong> File management and text editing</li>
+            <li><strong>Web Browser:</strong> Chrome, Firefox, Safari, or Edge for testing</li>
+            <li><strong>Text Editor:</strong> VS Code, Sublime Text, or any code editor</li>
+            <li><strong>Learning Sequence:</strong> HTML → CSS → JavaScript → Frameworks</li>
+          </ul>
+          
+          <h3>Learning Benefits:</h3>
+          <ul>
+            <li><strong>Foundation Building:</strong> Master the core structure of all web pages</li>
+            <li><strong>Creative Expression:</strong> Learn to bring your ideas to life on the web</li>
+            <li><strong>Problem Solving:</strong> Develop logical thinking through markup structure</li>
+            <li><strong>Industry Readiness:</strong> Build skills used by millions of developers worldwide</li>
+            <li><strong>Quick Results:</strong> See immediate visual feedback as you learn</li>
+            <li><strong>Universal Knowledge:</strong> HTML works everywhere - browsers, mobile apps, emails</li>
+            <li><strong>Gateway Skill:</strong> Essential foundation for CSS, JavaScript, and all web technologies</li>
+          </ul>
+          
+          <h3>Industry Applications:</h3>
+          <ul>
+            <li><strong>E-commerce:</strong> Online stores and shopping platforms</li>
+            <li><strong>Corporate Websites:</strong> Business websites and portfolios</li>
+            <li><strong>Educational Platforms:</strong> Online learning and course websites</li>
+            <li><strong>News and Media:</strong> Content management and publishing</li>
+            <li><strong>Social Networks:</strong> Social media and community platforms</li>
+            <li><strong>Government:</strong> Public services and information portals</li>
+            <li><strong>Healthcare:</strong> Medical information and patient portals</li>
+          </ul>
+          
+          <h3>What You'll Learn in This Course:</h3>
+          <ul>
+            <li><strong>HTML Document Structure:</strong> DOCTYPE, html, head, body elements</li>
+            <li><strong>Text Content:</strong> Headings, paragraphs, lists, and formatting</li>
+            <li><strong>Links and Navigation:</strong> Creating internal and external links</li>
+            <li><strong>Images and Media:</strong> Adding and optimizing multimedia content</li>
+            <li><strong>Forms:</strong> User input collection and validation</li>
+            <li><strong>Tables:</strong> Structured data presentation</li>
+            <li><strong>Semantic HTML5:</strong> Modern semantic elements for better structure</li>
+            <li><strong>Accessibility:</strong> Creating inclusive and accessible websites</li>
+            <li><strong>Best Practices:</strong> Clean code, validation, and optimization</li>
+          </ul>
           
           <h3>HTML vs Other Technologies:</h3>
-          <p>HTML provides structure, CSS handles presentation/styling, and JavaScript adds interactivity. Together, they form the foundation of modern web development.</p>
+          <p>HTML provides structure, CSS handles presentation/styling, and JavaScript adds interactivity. Together, they form the foundation of modern web development. Understanding this separation of concerns is crucial for becoming an effective web developer.</p>
         `,
-        codeExample: `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First HTML Page</title>
-</head>
-<body>
-    <h1>Welcome to HTML!</h1>
-    <p>This is my first HTML document.</p>
-</body>
-</html>`,
         videoUrl: 'https://www.youtube.com/embed/UB1O30fR-EE'
       },
       {
         id: 'html-elements',
-        title: 'HTML Elements & Tags',
+        title: 'Elements & Tags',
         content: `
           <h2>Understanding HTML Elements and Tags</h2>
           <p>HTML elements are the building blocks of HTML pages. An HTML element is defined by a start tag, content, and an end tag. Elements can be nested and have attributes to provide additional information.</p>
@@ -83,28 +123,10 @@ export const courses = [
             <li><strong>&lt;dl&gt;</strong> - Description list</li>
           </ul>
         `,
-        codeExample: `<!-- Headings -->
-<h1>Main Title</h1>
-<h2>Subtitle</h2>
-<h3>Section Heading</h3>
-
-<!-- Paragraph -->
-<p>This is a paragraph with some text content.</p>
-
-<!-- Links -->
-<a href="https://example.com">External Link</a>
-<a href="#section1">Internal Link</a>
-
-<!-- Images -->
-<img src="image.jpg" alt="Description of image">
-
-<!-- Containers -->
-<div>This is a div (block-level)</div>
-<span>This is a span (inline)</span>`
       },
       {
         id: 'html-forms',
-        title: 'HTML Forms',
+        title: 'Forms',
         content: `
           <h2>HTML Forms - Collecting User Input</h2>
           <p>HTML forms are essential for user interaction on websites. They allow users to enter data that can be sent to a server for processing. Forms are used for contact pages, login systems, surveys, and e-commerce checkout.</p>
@@ -136,33 +158,6 @@ export const courses = [
           <h3>Form Validation:</h3>
           <p>HTML5 provides built-in form validation attributes like required, pattern, min, max, and maxlength to ensure data quality without JavaScript.</p>
         `,
-        codeExample: `<form action="/submit" method="POST">
-  <div>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-  </div>
-  
-  <div>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-  </div>
-  
-  <div>
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" rows="4"></textarea>
-  </div>
-  
-  <div>
-    <label for="country">Country:</label>
-    <select id="country" name="country">
-      <option value="in">India</option>
-      <option value="us">United States</option>
-      <option value="uk">United Kingdom</option>
-    </select>
-  </div>
-  
-  <button type="submit">Submit Form</button>
-</form>`
       },
       {
         id: 'html-semantic',
@@ -199,49 +194,10 @@ export const courses = [
           <h3>Microdata and Schema:</h3>
           <p>Semantic HTML works well with structured data markup (Schema.org) to provide even more context to search engines about your content.</p>
         `,
-        codeExample: `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Semantic HTML Example</title>
-</head>
-<body>
-    <header>
-        <h1>Website Title</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <article>
-            <h2>Article Title</h2>
-            <p>Article content goes here...</p>
-        </article>
-        
-        <section>
-            <h2>Section Title</h2>
-            <p>Section content goes here...</p>
-        </section>
-    </main>
-    
-    <aside>
-        <h3>Sidebar</h3>
-        <p>Related links or information</p>
-    </aside>
-    
-    <footer>
-        <p>&copy; 2024 Website Name</p>
-    </footer>
-</body>
-</html>`
       },
       {
         id: 'html-tables',
-        title: 'HTML Tables & Lists',
+        title: 'Tables & Lists',
         content: `
           <h2>HTML Tables - Organizing Tabular Data</h2>
           <p>HTML tables are used to display data in rows and columns. They're perfect for presenting structured information like schedules, pricing, or comparison data.</p>
@@ -272,52 +228,10 @@ export const courses = [
             <li><strong>Description Lists (&lt;dl&gt;):</strong> Term and description pairs</li>
           </ul>
         `,
-        codeExample: `<!-- Table Example -->
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>City</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>John Doe</td>
-            <td>28</td>
-            <td>New York</td>
-        </tr>
-        <tr>
-            <td>Jane Smith</td>
-            <td>34</td>
-            <td>Los Angeles</td>
-        </tr>
-    </tbody>
-</table>
-
-<!-- Lists Examples -->
-<ol>
-    <li>First item</li>
-    <li>Second item</li>
-    <li>Third item</li>
-</ol>
-
-<ul>
-    <li>Bullet point</li>
-    <li>Another bullet</li>
-    <li>Third bullet</li>
-</ul>
-
-<dl>
-    <dt>HTML</dt>
-    <dd>HyperText Markup Language</dd>
-    <dt>CSS</dt>
-    <dd>Cascading Style Sheets</dd>
-</dl>`
       },
       {
         id: 'html-media',
-        title: 'HTML Media & Links',
+        title: 'Media & Links',
         content: `
           <h2>Working with Images</h2>
           <p>Images make websites more engaging and informative. HTML provides several ways to include and optimize images for web use.</p>
@@ -351,39 +265,10 @@ export const courses = [
             <li><strong>muted:</strong> Starts with audio muted</li>
           </ul>
         `,
-        codeExample: `<!-- Images -->
-<img src="photo.jpg" alt="Beautiful sunset over mountains" width="800" height="600">
-
-<!-- Responsive Image -->
-<img src="small.jpg" 
-     srcset="small.jpg 480w, medium.jpg 768w, large.jpg 1200w"
-     sizes="(max-width: 768px) 100vw, 50vw"
-     alt="Responsive image example">
-
-<!-- Links -->
-<a href="https://example.com">External Link</a>
-<a href="about.html">Internal Link</a>
-<a href="#section1">Jump to Section 1</a>
-<a href="mailto:contact@example.com">Send Email</a>
-<a href="tel:+1234567890">Call Us</a>
-
-<!-- Video -->
-<video controls width="640" height="360">
-    <source src="video.mp4" type="video/mp4">
-    <source src="video.webm" type="video/webm">
-    Your browser doesn't support video.
-</video>
-
-<!-- Audio -->
-<audio controls>
-    <source src="audio.mp3" type="audio/mpeg">
-    <source src="audio.ogg" type="audio/ogg">
-    Your browser doesn't support audio.
-</audio>`
       },
       {
         id: 'html-advanced',
-        title: 'Advanced HTML Features',
+        title: 'Advanced Features',
         content: `
           <h2>HTML5 APIs and Advanced Features</h2>
           <p>Modern HTML includes powerful APIs and features that enable rich, interactive web applications without requiring additional plugins.</p>
@@ -415,50 +300,10 @@ export const courses = [
             <li><strong>Web App Manifest:</strong> Installation prompts</li>
           </ul>
         `,
-        codeExample: `<!-- Data Attributes -->
-<div data-user-id="12345" data-role="admin" data-theme="dark">
-    User Profile
-</div>
-
-<!-- Meta Tags -->
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn web development with our comprehensive courses">
-    <meta name="keywords" content="HTML, CSS, JavaScript, web development">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Web Development Course">
-    <meta property="og:description" content="Master modern web development">
-    <meta property="og:image" content="course-preview.jpg">
-    
-    <title>Web Development Course - Learn HTML, CSS, JS</title>
-</head>
-
-<!-- Accessibility -->
-<button aria-label="Close dialog" aria-describedby="close-help">
-    ×
-</button>
-<span id="close-help">Closes the current dialog window</span>
-
-<nav role="navigation" aria-label="Main menu">
-    <ul>
-        <li><a href="/" tabindex="1">Home</a></li>
-        <li><a href="/about" tabindex="2">About</a></li>
-        <li><a href="/contact" tabindex="3">Contact</a></li>
-    </ul>
-</nav>
-
-<!-- Microdata -->
-<article itemscope itemtype="https://schema.org/Article">
-    <h1 itemprop="headline">Article Title</h1>
-    <p itemprop="description">Article description...</p>
-    <time itemprop="datePublished" datetime="2024-01-15">January 15, 2024</time>
-</article>`
       },
       {
         id: 'html-validation',
-        title: 'HTML Validation & Debugging',
+        title: 'Validation & Debugging',
         content: `
           <h2>HTML Validation - Writing Clean Code</h2>
           <p>Valid HTML ensures better performance, accessibility, and cross-browser compatibility. Learn how to validate and debug your HTML code effectively.</p>
@@ -490,40 +335,10 @@ export const courses = [
             <li>Missing DOCTYPE declaration</li>
           </ul>
         `,
-        codeExample: `<!-- INVALID HTML -->
-<div>
-    <p>Paragraph with <strong>bold text</p>
-    <img src="image.jpg"> <!-- Missing alt attribute -->
-    <div id="content">
-        <span>Content</div> <!-- Wrong closing tag -->
-    </div>
-</div>
-
-<!-- VALID HTML -->
-<div>
-    <p>Paragraph with <strong>bold text</strong></p>
-    <img src="image.jpg" alt="Description of image">
-    <div id="content">
-        <span>Content</span>
-    </div>
-</div>
-
-<!-- HTML5 DOCTYPE -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valid HTML Document</title>
-</head>
-<body>
-    <!-- Content here -->
-</body>
-</html>`
       },
       {
         id: 'html-performance',
-        title: 'HTML Performance Optimization',
+        title: 'Performance',
         content: `
           <h2>Optimizing HTML for Performance</h2>
           <p>Performance optimization ensures fast loading times and better user experience. Learn techniques to make your HTML more efficient.</p>
@@ -552,52 +367,10 @@ export const courses = [
             <li>Clean markup reduces file size and parsing time</li>
           </ul>
         `,
-        codeExample: `<!-- Performance Optimized HTML -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Resource Hints -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link rel="preconnect" href="https://api.example.com">
-    
-    <!-- Critical CSS Inline -->
-    <style>
-        body { font-family: Arial, sans-serif; }
-        .hero { background: #f0f0f0; }
-    </style>
-    
-    <title>Performance Optimized Page</title>
-</head>
-<body>
-    <!-- Above-the-fold content -->
-    <header class="hero">
-        <h1>Fast Loading Content</h1>
-    </header>
-    
-    <!-- Lazy loaded images -->
-    <img src="hero.jpg" alt="Hero image">
-    <img src="placeholder.jpg" data-src="actual-image.jpg" 
-         loading="lazy" alt="Lazy loaded image">
-    
-    <!-- Below-the-fold content -->
-    <main>
-        <section>
-            <h2>Content Section</h2>
-            <p>Main content here...</p>
-        </section>
-    </main>
-    
-    <!-- Scripts at bottom -->
-    <script src="app.min.js" defer></script>
-</body>
-</html>`
       },
       {
         id: 'html-best-practices',
-        title: 'HTML Best Practices & Standards',
+        title: 'Best Practices',
         content: `
           <h2>Modern HTML Development Standards</h2>
           <p>Follow industry best practices to write maintainable, scalable, and professional HTML code. These standards ensure your code is future-ready and team-friendly.</p>
@@ -635,63 +408,6 @@ export const courses = [
             <li><strong>Internal Linking:</strong> Connect related content</li>
           </ul>
         `,
-        codeExample: `<!-- Professional HTML Template -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Essential Meta Tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional web development services">
-    
-    <!-- SEO Meta Tags -->
-    <meta name="keywords" content="web development, HTML, CSS, JavaScript">
-    <meta name="author" content="Your Company Name">
-    
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="Professional Web Services">
-    <meta property="og:description" content="High-quality web development">
-    <meta property="og:image" content="og-image.jpg">
-    
-    <title>Professional Web Development Services</title>
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Your Company",
-        "url": "https://yoursite.com"
-    }
-    </script>
-</head>
-<body>
-    <!-- Skip Link for Accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    
-    <!-- Semantic Structure -->
-    <header role="banner">
-        <nav role="navigation" aria-label="Main navigation">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main id="main-content" role="main">
-        <section aria-labelledby="services-heading">
-            <h1 id="services-heading">Our Services</h1>
-            <p>Professional web development with modern standards.</p>
-        </section>
-    </main>
-    
-    <footer role="contentinfo">
-        <p>&copy; 2024 Your Company. All rights reserved.</p>
-    </footer>
-</body>
-</html>`
       }
     ]
   },
@@ -703,16 +419,71 @@ export const courses = [
     lessons: [
       {
         id: 'css-intro',
-        title: 'CSS Introduction',
+        title: 'CSS Intro',
         content: `
           <h2>What is CSS?</h2>
-          <p>CSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation of HTML documents. CSS controls layout, colors, fonts, spacing, animations, and responsive design across multiple devices.</p>
+          <p>CSS (Cascading Style Sheets) is a powerful stylesheet language used to describe the presentation, layout, and visual design of HTML documents. CSS transforms plain HTML into beautiful, interactive, and responsive websites that work seamlessly across all devices and screen sizes.</p>
           
           <h3>The Evolution of CSS:</h3>
           <ul>
-            <li><strong>CSS1 (1996):</strong> Basic styling capabilities</li>
-            <li><strong>CSS2 (1998):</strong> Positioning, media types, and more selectors</li>
-            <li><strong>CSS3 (2011-present):</strong> Modular approach with animations, gradients, and flexbox</li>
+            <li><strong>CSS1 (1996):</strong> Basic styling capabilities - fonts, colors, margins</li>
+            <li><strong>CSS2 (1998):</strong> Positioning, media types, z-index, and advanced selectors</li>
+            <li><strong>CSS2.1 (2004):</strong> Refinements and bug fixes to CSS2</li>
+            <li><strong>CSS3 (2011-present):</strong> Modular approach with animations, gradients, flexbox, grid</li>
+            <li><strong>CSS4 (Future):</strong> Advanced selectors, container queries, and new layout methods</li>
+          </ul>
+          
+          <h3>Why Learn CSS?</h3>
+          <ul>
+            <li><strong>Visual Appeal:</strong> Transform boring HTML into stunning designs</li>
+            <li><strong>User Experience:</strong> Create intuitive and engaging interfaces</li>
+            <li><strong>Responsive Design:</strong> Build websites that work on all devices</li>
+            <li><strong>Performance:</strong> Optimize loading speed and user interaction</li>
+            <li><strong>Accessibility:</strong> Ensure content is accessible to all users</li>
+            <li><strong>Brand Consistency:</strong> Maintain consistent visual identity</li>
+            <li><strong>Career Growth:</strong> Essential skill for web development careers</li>
+          </ul>
+          
+          <h3>Prerequisites for CSS:</h3>
+          <ul>
+            <li><strong>HTML Knowledge:</strong> Solid understanding of HTML structure and elements</li>
+            <li><strong>Visual Design Basics:</strong> Understanding of color theory and typography</li>
+            <li><strong>Browser Tools:</strong> Familiarity with browser developer tools</li>
+            <li><strong>Code Editor:</strong> VS Code, Sublime Text, or similar editor</li>
+            <li><strong>Design Software:</strong> Figma, Adobe XD, or Photoshop (helpful but not required)</li>
+          </ul>
+          
+          <h3>Learning Benefits of CSS:</h3>
+          <ul>
+            <li><strong>Creative Expression:</strong> Transform your design ideas into beautiful web interfaces</li>
+            <li><strong>Visual Problem Solving:</strong> Learn to create responsive layouts that work on any device</li>
+            <li><strong>Enhanced User Experience:</strong> Master animations, transitions, and interactive elements</li>
+            <li><strong>Design Thinking:</strong> Develop an eye for typography, color theory, and visual hierarchy</li>
+            <li><strong>Technical Foundation:</strong> Build strong fundamentals for all modern frontend frameworks</li>
+            <li><strong>Cross-Platform Skills:</strong> One codebase works across web, mobile, and desktop applications</li>
+            <li><strong>Immediate Results:</strong> See your code changes instantly in the browser</li>
+          </ul>
+          
+          <h3>Modern CSS Applications:</h3>
+          <ul>
+            <li><strong>Responsive Web Design:</strong> Mobile-first, adaptive layouts</li>
+            <li><strong>Component Libraries:</strong> Bootstrap, Tailwind, Material UI</li>
+            <li><strong>CSS-in-JS:</strong> Styled Components, Emotion, JSS</li>
+            <li><strong>CSS Preprocessors:</strong> Sass, Less, Stylus for advanced features</li>
+            <li><strong>CSS Frameworks:</strong> Foundation, Bulma, Semantic UI</li>
+            <li><strong>Animation Libraries:</strong> Animate.css, Framer Motion, GSAP</li>
+            <li><strong>Design Systems:</strong> Consistent UI patterns across applications</li>
+          </ul>
+          
+          <h3>What You'll Master in This Course:</h3>
+          <ul>
+            <li><strong>CSS Fundamentals:</strong> Selectors, properties, and values</li>
+            <li><strong>Layout Techniques:</strong> Flexbox, Grid, and responsive design</li>
+            <li><strong>Visual Design:</strong> Typography, colors, spacing, and visual hierarchy</li>
+            <li><strong>Animations:</strong> Transitions, transforms, and keyframe animations</li>
+            <li><strong>Advanced Topics:</strong> CSS custom properties, preprocessors, and optimization</li>
+            <li><strong>Real Projects:</strong> Build beautiful, responsive websites from scratch</li>
+          </ul>
             <li><strong>CSS4:</strong> Future developments in selectors and features</li>
           </ul>
           
@@ -735,37 +506,10 @@ export const courses = [
           <h3>CSS Syntax Rules:</h3>
           <p>CSS follows a simple syntax: selector { property: value; }. Multiple declarations are separated by semicolons, and rules are case-insensitive (except for class/ID names).</p>
         `,
-        codeExample: `/* CSS Syntax */
-selector {
-    property: value;
-}
-
-/* Basic Examples */
-h1 {
-    color: blue;
-    font-size: 28px;
-    text-align: center;
-}
-
-p {
-    color: #333;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-}
-
-.highlight {
-    background-color: yellow;
-    padding: 10px;
-}
-
-#header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-}`
       },
       {
         id: 'css-selectors',
-        title: 'CSS Selectors',
+        title: 'Selectors',
         content: `
           <h2>CSS Selectors</h2>
           <p>Selectors are used to target specific HTML elements that you want to style. There are various types of selectors in CSS.</p>
@@ -779,54 +523,10 @@ p {
             <li><strong>Pseudo-classes:</strong> Target element states (:hover, :active)</li>
           </ul>
         `,
-        codeExample: `/* Element Selector */
-h1 {
-    color: red;
-}
-
-/* Class Selector */
-.button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-}
-
-/* ID Selector */
-#navbar {
-    background-color: #333;
-    height: 60px;
-}
-
-/* Attribute Selector */
-input[type="text"] {
-    border: 2px solid #ddd;
-    padding: 8px;
-}
-
-/* Pseudo-classes */
-a:hover {
-    color: #ff6b6b;
-    text-decoration: none;
-}
-
-button:active {
-    transform: scale(0.98);
-}
-
-/* Combined Selectors */
-.container h2 {
-    margin-bottom: 15px;
-}
-
-.card:hover .title {
-    color: #007bff;
-}`
       },
       {
         id: 'css-box-model',
-        title: 'CSS Box Model',
+        title: 'Box Model',
         content: `
           <h2>CSS Box Model</h2>
           <p>The CSS box model describes how elements are structured and how space is distributed around them. Every element is a rectangular box.</p>
@@ -842,42 +542,10 @@ button:active {
           <h3>Box Sizing:</h3>
           <p>The box-sizing property controls how the total width and height are calculated.</p>
         `,
-        codeExample: `/* Box Model Properties */
-.box {
-    width: 300px;
-    height: 200px;
-    padding: 20px;
-    border: 5px solid #333;
-    margin: 15px;
-    background-color: #f0f0f0;
-}
-
-/* Box Sizing */
-.content-box {
-    box-sizing: content-box; /* default */
-    /* Total width = width + padding + border */
-}
-
-.border-box {
-    box-sizing: border-box;
-    /* Total width = width (includes padding and border) */
-}
-
-/* Universal Box Sizing (recommended) */
-* {
-    box-sizing: border-box;
-}
-
-/* Margin and Padding Shorthand */
-.example {
-    margin: 10px 20px 15px 5px; /* top right bottom left */
-    padding: 20px 15px; /* top/bottom left/right */
-    margin: 10px auto; /* auto centers element */
-}`
       },
       {
         id: 'css-flexbox',
-        title: 'CSS Flexbox',
+        title: 'Flexbox',
         content: `
           <h2>CSS Flexbox</h2>
           <p>Flexbox is a powerful layout method that allows you to arrange elements in a flexible way. It's perfect for creating responsive layouts.</p>
@@ -891,51 +559,10 @@ button:active {
             <li><strong>flex-wrap:</strong> Controls whether items wrap</li>
           </ul>
         `,
-        codeExample: `/* Basic Flexbox Container */
-.flex-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-}
-
-/* Flex Items */
-.flex-item {
-    flex: 1; /* grow, shrink, basis */
-    padding: 20px;
-    background: #f0f0f0;
-    text-align: center;
-}
-
-/* Common Flexbox Patterns */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.center-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-.card-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.card {
-    flex: 1 1 300px; /* grow shrink basis */
-    min-width: 0; /* prevents overflow */
-}`
       },
       {
         id: 'css-grid',
-        title: 'CSS Grid Layout',
+        title: 'Grid Layout',
         content: `
           <h2>CSS Grid - Two-Dimensional Layouts</h2>
           <p>CSS Grid is a powerful layout system that allows you to create complex two-dimensional layouts with ease. Unlike Flexbox which is one-dimensional, Grid excels at both rows and columns.</p>
@@ -964,49 +591,10 @@ button:active {
             <li><strong>grid-area:</strong> Named area placement</li>
           </ul>
         `,
-        codeExample: `/* Grid Container */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-    gap: 20px;
-    padding: 20px;
-}
-
-/* Advanced Grid Layout */
-.page-layout {
-    display: grid;
-    grid-template-columns: 200px 1fr 150px;
-    grid-template-rows: 60px 1fr 40px;
-    grid-template-areas:
-        "header header header"
-        "sidebar content ads"
-        "footer footer footer";
-    min-height: 100vh;
-}
-
-.header { grid-area: header; }
-.sidebar { grid-area: sidebar; }
-.content { grid-area: content; }
-.ads { grid-area: ads; }
-.footer { grid-area: footer; }
-
-/* Responsive Grid */
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-/* Grid Item Positioning */
-.featured-item {
-    grid-column: 1 / -1; /* Span all columns */
-    grid-row: span 2;    /* Span 2 rows */
-}`
       },
       {
         id: 'css-animations',
-        title: 'CSS Animations & Transitions',
+        title: 'Animations',
         content: `
           <h2>CSS Animations and Transitions</h2>
           <p>CSS animations and transitions bring life to your web pages by enabling smooth changes between different states of elements.</p>
@@ -1038,70 +626,10 @@ button:active {
             <li>Avoid animating layout properties (width, height)</li>
           </ul>
         `,
-        codeExample: `/* CSS Transitions */
-.button {
-    background: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-.button:hover {
-    background: #0056b3;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-/* CSS Keyframe Animation */
-@keyframes slideIn {
-    0% {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-.slide-in {
-    animation: slideIn 0.5s ease-out;
-}
-
-/* Pulse Animation */
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-}
-
-.pulse {
-    animation: pulse 2s infinite;
-}
-
-/* Loading Spinner */
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.loading {
-    width: 40px;
-    height: 40px;
-    border: 4px solid #f3f3f3;
-    border-top: 4px solid #3498db;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}`
       },
       {
         id: 'css-responsive',
-        title: 'Responsive Design with CSS',
+        title: 'Responsive Design',
         content: `
           <h2>Responsive Web Design</h2>
           <p>Responsive design ensures your website looks and works great on all devices - from mobile phones to large desktop screens.</p>
@@ -1130,71 +658,10 @@ button:active {
             <li><strong>Desktop:</strong> 1025px+</li>
           </ul>
         `,
-        codeExample: `/* Mobile-First Approach */
-/* Base styles for mobile */
-.container {
-    width: 100%;
-    padding: 1rem;
-    margin: 0 auto;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-}
-
-/* Tablet styles */
-@media screen and (min-width: 768px) {
-    .container {
-        max-width: 750px;
-        padding: 2rem;
-    }
-    
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Desktop styles */
-@media screen and (min-width: 1024px) {
-    .container {
-        max-width: 1200px;
-    }
-    
-    .grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* Responsive Typography */
-.heading {
-    font-size: clamp(1.5rem, 4vw, 3rem);
-    line-height: 1.2;
-}
-
-/* Responsive Images */
-.responsive-img {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-}
-
-/* Print Styles */
-@media print {
-    .no-print {
-        display: none;
-    }
-    
-    body {
-        font-size: 12pt;
-        line-height: 1.4;
-    }
-}`
       },
       {
         id: 'css-variables',
-        title: 'CSS Custom Properties (Variables)',
+        title: 'Variables',
         content: `
           <h2>CSS Custom Properties</h2>
           <p>CSS Custom Properties (also known as CSS Variables) allow you to store values that can be reused throughout your stylesheet, making maintenance easier and enabling dynamic theming.</p>
@@ -1223,72 +690,10 @@ button:active {
             <li><strong>Component Variants:</strong> Different versions of same component</li>
           </ul>
         `,
-        codeExample: `/* Global CSS Variables */
-:root {
-    /* Color Palette */
-    --primary-color: #007bff;
-    --secondary-color: #6c757d;
-    --success-color: #28a745;
-    --danger-color: #dc3545;
-    --warning-color: #ffc107;
-    
-    /* Spacing System */
-    --space-xs: 0.25rem;
-    --space-sm: 0.5rem;
-    --space-md: 1rem;
-    --space-lg: 2rem;
-    --space-xl: 3rem;
-    
-    /* Typography */
-    --font-family-primary: 'Inter', sans-serif;
-    --font-size-sm: 0.875rem;
-    --font-size-base: 1rem;
-    --font-size-lg: 1.25rem;
-    --font-size-xl: 1.5rem;
-    
-    /* Shadows */
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
-    --shadow-md: 0 4px 6px rgba(0,0,0,0.16);
-    --shadow-lg: 0 10px 15px rgba(0,0,0,0.20);
-}
-
-/* Using Variables */
-.button {
-    background-color: var(--primary-color);
-    color: white;
-    padding: var(--space-sm) var(--space-md);
-    font-family: var(--font-family-primary);
-    font-size: var(--font-size-base);
-    border-radius: var(--space-xs);
-    box-shadow: var(--shadow-sm);
-    border: none;
-    cursor: pointer;
-}
-
-.button:hover {
-    box-shadow: var(--shadow-md);
-}
-
-/* Dark Theme */
-[data-theme="dark"] {
-    --primary-color: #0d6efd;
-    --text-color: #ffffff;
-    --bg-color: #212529;
-}
-
-/* Component Scoped Variables */
-.card {
-    --card-padding: var(--space-md);
-    --card-radius: calc(var(--space-xs) * 2);
-    
-    padding: var(--card-padding);
-    border-radius: var(--card-radius);
-    background: var(--bg-color, white);
-}`
       },
       {
         id: 'css-advanced-selectors',
-        title: 'Advanced CSS Selectors',
+        title: 'Advanced Selectors',
         content: `
           <h2>Advanced CSS Selectors</h2>
           <p>Master advanced CSS selectors to target elements with precision and create more maintainable stylesheets.</p>
@@ -1322,85 +727,10 @@ button:active {
             <li><strong>::selection:</strong> Selected text</li>
           </ul>
         `,
-        codeExample: `/* Attribute Selectors */
-input[type="email"] {
-    border-color: blue;
-}
-
-a[href^="https://"] {
-    color: green;
-}
-
-img[alt*="icon"] {
-    width: 24px;
-    height: 24px;
-}
-
-/* Advanced Pseudo-classes */
-.list-item:nth-child(odd) {
-    background-color: #f8f9fa;
-}
-
-.list-item:nth-child(3n+1) {
-    color: red;
-}
-
-.button:not(.disabled) {
-    cursor: pointer;
-}
-
-/* Modern Selectors */
-.container:has(.error) {
-    border-color: red;
-}
-
-:is(h1, h2, h3):hover {
-    color: blue;
-}
-
-:where(.btn, .button) {
-    padding: 0.5rem 1rem;
-}
-
-/* Pseudo-elements */
-.quote::before {
-    content: "\x201C"; /* Opening quote */
-    font-size: 2em;
-    color: #ccc;
-}
-
-.quote::after {
-    content: "\x201D"; /* Closing quote */
-    font-size: 2em;
-    color: #ccc;
-}
-
-.tooltip {
-    position: relative;
-}
-
-.tooltip::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: black;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 4px;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s;
-}
-
-.tooltip:hover::after {
-    opacity: 1;
-}`
       },
       {
         id: 'css-best-practices',
-        title: 'CSS Best Practices & Architecture',
+        title: 'Best Practices',
         content: `
           <h2>CSS Architecture and Best Practices</h2>
           <p>Writing maintainable CSS requires following established patterns and methodologies. Learn industry-standard approaches to organizing your CSS.</p>
@@ -1438,85 +768,6 @@ img[alt*="icon"] {
             <li><strong>CSS Loading:</strong> Use preload for important stylesheets</li>
           </ul>
         `,
-        codeExample: `/* BEM Methodology Example */
-.card { /* Block */
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    padding: 1rem;
-}
-
-.card__header { /* Element */
-    border-bottom: 1px solid #eee;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.card__title { /* Element */
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin: 0;
-}
-
-.card__content { /* Element */
-    color: #666;
-    line-height: 1.5;
-}
-
-.card--featured { /* Modifier */
-    border: 2px solid gold;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-
-.card--large { /* Modifier */
-    padding: 2rem;
-}
-
-/* Utility Classes */
-.text-center { text-align: center; }
-.mb-1 { margin-bottom: 0.25rem; }
-.mb-2 { margin-bottom: 0.5rem; }
-.mb-3 { margin-bottom: 1rem; }
-.text-primary { color: var(--primary-color); }
-.bg-light { background-color: #f8f9fa; }
-
-/* Component States */
-.button {
-    /* Base styles */
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.button:hover {
-    transform: translateY(-1px);
-}
-
-.button:active {
-    transform: translateY(0);
-}
-
-.button:focus {
-    outline: 2px solid var(--focus-color);
-    outline-offset: 2px;
-}
-
-.button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    transform: none;
-}
-
-/* CSS Organization Structure */
-/* 1. Variables and Custom Properties */
-/* 2. Reset and Base Styles */
-/* 3. Typography */
-/* 4. Layout Components */
-/* 5. UI Components */
-/* 6. Utility Classes */
-/* 7. Media Queries */`
       }
     ]
   },
@@ -1528,42 +779,117 @@ img[alt*="icon"] {
     lessons: [
       {
         id: 'js-intro',
-        title: 'JavaScript Introduction',
+        title: 'JS Intro',
         content: `
           <h2>What is JavaScript?</h2>
-          <p>JavaScript is a high-level, interpreted programming language that enables interactive web pages. Originally created for the browser, JavaScript now runs everywhere - servers, mobile apps, desktop applications, and even IoT devices.</p>
+          <p>JavaScript is a high-level, dynamic programming language that powers the interactive web. Originally created by Brendan Eich in 1995 for Netscape Navigator, JavaScript has evolved into one of the world's most popular programming languages, running on browsers, servers, mobile devices, and even IoT devices. It's the only programming language that runs natively in web browsers, making it essential for web development.</p>
           
-          <h3>History of JavaScript:</h3>
+          <h3>Why JavaScript is Essential in 2026:</h3>
+          <ul>
+            <li><strong>Web Dominance:</strong> The only programming language that runs natively in browsers</li>
+            <li><strong>Full-Stack Development:</strong> Frontend and backend with Node.js ecosystem</li>
+            <li><strong>Mobile Development:</strong> React Native, Ionic, Cordova for cross-platform apps</li>
+            <li><strong>Desktop Applications:</strong> Electron, Tauri for cross-platform desktop apps</li>
+            <li><strong>IoT and Embedded:</strong> JavaScript for Internet of Things devices</li>
+            <li><strong>Machine Learning:</strong> TensorFlow.js for AI in browsers and Node.js</li>
+            <li><strong>Game Development:</strong> Web-based games and interactive experiences</li>
+            <li><strong>Server-Side Rendering:</strong> Next.js, Nuxt.js for SEO-optimized applications</li>
+          </ul>
+          
+          <h3>History and Evolution:</h3>
           <ul>
             <li><strong>1995:</strong> Created by Brendan Eich at Netscape in just 10 days</li>
-            <li><strong>1997:</strong> Standardized as ECMAScript</li>
+            <li><strong>1997:</strong> Standardized as ECMAScript (ES1)</li>
             <li><strong>2009:</strong> Node.js brings JavaScript to servers</li>
-            <li><strong>2015:</strong> ES6/ES2015 introduces modern features</li>
+            <li><strong>2015:</strong> ES6/ES2015 introduces modern features (classes, modules, arrow functions)</li>
+            <li><strong>2016-2023:</strong> Annual ECMAScript updates with new features</li>
+            <li><strong>2024-2026:</strong> Advanced features like decorators, temporal API, and more</li>
           </ul>
           
-          <h3>What makes JavaScript special?</h3>
+          <h3>Key Features of Modern JavaScript:</h3>
           <ul>
-            <li><strong>Dynamic Typing:</strong> Variables can hold different types</li>
-            <li><strong>Event-Driven:</strong> Responds to user interactions</li>
-            <li><strong>Asynchronous:</strong> Non-blocking code execution</li>
-            <li><strong>Interpreted:</strong> No compilation step needed</li>
-            <li><strong>Versatile:</strong> Frontend, backend, mobile, desktop</li>
+            <li><strong>Dynamic Typing:</strong> Variables can hold different types without declaration</li>
+            <li><strong>Event-Driven Programming:</strong> Responds to user interactions and system events</li>
+            <li><strong>Asynchronous Programming:</strong> Promises, async/await for non-blocking code</li>
+            <li><strong>Prototype-Based OOP:</strong> Flexible object-oriented programming model</li>
+            <li><strong>First-Class Functions:</strong> Functions as values, closures, higher-order functions</li>
+            <li><strong>Just-In-Time Compilation:</strong> Modern engines compile for optimal performance</li>
+            <li><strong>Multi-Paradigm:</strong> Functional, object-oriented, and procedural styles</li>
           </ul>
           
-          <h3>JavaScript in the Browser:</h3>
+          <h3>Prerequisites for Learning JavaScript:</h3>
           <ul>
-            <li>Manipulate HTML DOM elements</li>
-            <li>Handle user events (clicks, typing, etc.)</li>
-            <li>Communicate with servers (AJAX/Fetch)</li>
-            <li>Store data locally in browsers</li>
-            <li>Create animations and visual effects</li>
+            <li><strong>HTML/CSS Foundation:</strong> Understanding of web page structure and styling</li>
+            <li><strong>Basic Programming Concepts:</strong> Variables, loops, conditions (helpful but not required)</li>
+            <li><strong>Browser Developer Tools:</strong> Chrome DevTools, Firefox Developer Tools</li>
+            <li><strong>Code Editor:</strong> VS Code with JavaScript extensions, WebStorm, or Sublime Text</li>
+            <li><strong>Version Control:</strong> Basic Git knowledge for code management</li>
+            <li><strong>Package Management:</strong> Understanding of npm/yarn for project dependencies</li>
+          </ul>
+          
+          <h3>Learning Benefits of JavaScript:</h3>
+          <ul>
+            <li><strong>Logic & Problem Solving:</strong> Develop algorithmic thinking and computational problem-solving skills</li>
+            <li><strong>Interactive Programming:</strong> Create dynamic, responsive applications that users can interact with</li>
+            <li><strong>Full-Stack Understanding:</strong> Learn both frontend and backend development with one language</li>
+            <li><strong>Real-World Applications:</strong> Build everything from websites to mobile apps to desktop software</li>
+            <li><strong>Mathematical Thinking:</strong> Apply programming concepts to solve complex mathematical and logical problems</li>
+            <li><strong>Creative Development:</strong> Bring your ideas to life with interactive games, animations, and applications</li>
+            <li><strong>Foundation for Advanced Topics:</strong> Gateway to AI, machine learning, and data science concepts</li>
+          </ul>
+          
+          <h3>Modern JavaScript Ecosystem (2026):</h3>
+          <ul>
+            <li><strong>Frontend Frameworks:</strong> React 18+, Vue 3, Angular 17+, Svelte 4, Solid.js</li>
+            <li><strong>Backend Runtime:</strong> Node.js 20+, Deno 2.0, Bun 1.0 for server-side development</li>
+            <li><strong>Meta Frameworks:</strong> Next.js 14, Nuxt 3, SvelteKit, Remix for production apps</li>
+            <li><strong>Build Tools:</strong> Vite 5, Webpack 5, esbuild, Turbopack for fast development</li>
+            <li><strong>Mobile Development:</strong> React Native, Expo, Ionic, Capacitor for hybrid apps</li>
+            <li><strong>Desktop:</strong> Electron, Tauri, NW.js for cross-platform desktop apps</li>
+            <li><strong>Testing:</strong> Vitest, Jest, Playwright, Cypress for quality assurance</li>
+            <li><strong>Package Managers:</strong> npm, yarn, pnpm, bun for dependency management</li>
+          </ul>
+          
+          <h3>What You'll Master in This Course:</h3>
+          <ul>
+            <li><strong>Core Fundamentals:</strong> Variables, data types, operators, control structures</li>
+            <li><strong>Functions & Scope:</strong> Function declarations, expressions, arrow functions, closures</li>
+            <li><strong>Objects & Arrays:</strong> Data manipulation, destructuring, modern array methods</li>
+            <li><strong>DOM Manipulation:</strong> Selecting, modifying, creating HTML elements dynamically</li>
+            <li><strong>Event Handling:</strong> User interactions, event bubbling, delegation patterns</li>
+            <li><strong>Asynchronous JavaScript:</strong> Callbacks, promises, async/await, fetch API</li>
+            <li><strong>ES6+ Features:</strong> Modern syntax, modules, template literals, spread/rest</li>
+            <li><strong>Error Handling:</strong> Try/catch, error types, debugging techniques</li>
+            <li><strong>Real-World Projects:</strong> Interactive web applications, games, API integrations</li>
+          </ul>
+          
+          <h3>JavaScript in Different Environments:</h3>
+          <ul>
+            <li><strong>Browser JavaScript:</strong> DOM manipulation, event handling, client-side logic</li>
+            <li><strong>Server-Side (Node.js):</strong> APIs, databases, file systems, real-time applications</li>
+            <li><strong>Mobile (React Native):</strong> Cross-platform mobile apps with native performance</li>
+            <li><strong>Desktop (Electron):</strong> Cross-platform desktop applications</li>
+            <li><strong>IoT Devices:</strong> Embedded systems and Internet of Things applications</li>
+            <li><strong>Cloud Functions:</strong> Serverless computing with AWS Lambda, Vercel, Netlify</li>
+          </ul>
+          
+          <h3>Modern JavaScript Applications:</h3>
+          <ul>
+            <li><strong>Single Page Applications (SPAs):</strong> Dynamic, responsive web applications</li>
+            <li><strong>Progressive Web Apps (PWAs):</strong> Web apps that work offline and feel native</li>
+            <li><strong>Real-Time Applications:</strong> Chat apps, collaborative tools, live updates</li>
+            <li><strong>E-Commerce Platforms:</strong> Online stores with complex user interactions</li>
+            <li><strong>Data Visualization:</strong> Interactive charts, graphs, and dashboards</li>
+            <li><strong>Game Development:</strong> Browser-based games and interactive experiences</li>
+            <li><strong>AI/ML Applications:</strong> Machine learning models in the browser</li>
+          </ul>
             <li>Build complete web applications</li>
           </ul>
         `
       },
       {
         id: 'js-variables-datatypes',
-        title: 'Variables and Data Types',
+        title: 'Variables & Types',
         content: `
           <h2>JavaScript Variables</h2>
           <p>Variables are containers for storing data values. JavaScript uses dynamic typing, meaning you don't need to declare variable types explicitly.</p>
@@ -1600,7 +926,7 @@ img[alt*="icon"] {
       },
       {
         id: 'js-operators-control',
-        title: 'Operators and Control Structures',
+        title: 'Operators & Control',
         content: `
           <h2>JavaScript Operators</h2>
           <p>Operators are used to perform operations on variables and values. JavaScript includes arithmetic, comparison, logical, and assignment operators.</p>
@@ -1649,7 +975,7 @@ img[alt*="icon"] {
       },
       {
         id: 'js-functions-scope',
-        title: 'Functions and Scope',
+        title: 'Functions & Scope',
         content: `
           <h2>JavaScript Functions</h2>
           <p>Functions are one of the fundamental building blocks in JavaScript. A function is a reusable block of code designed to perform a particular task.</p>
@@ -1690,7 +1016,7 @@ img[alt*="icon"] {
       },
       {
         id: 'js-objects-arrays',
-        title: 'Objects and Arrays',
+        title: 'Objects & Arrays',
         content: `
           <h2>JavaScript Objects</h2>
           <p>Objects are collections of related data and functionality. They store data as key-value pairs and are the foundation of JavaScript programming.</p>
@@ -1798,7 +1124,7 @@ img[alt*="icon"] {
       },
       {
         id: 'js-events',
-        title: 'Events and Event Handling',
+        title: 'Events',
         content: `
           <h2>JavaScript Events</h2>
           <p>Events are actions that happen in the browser - user clicks, page loads, form submissions, etc. JavaScript can respond to these events to create interactive web pages.</p>
@@ -1863,7 +1189,7 @@ img[alt*="icon"] {
       },
       {
         id: 'js-async-programming',
-        title: 'Asynchronous Programming',
+        title: 'Async Programming',
         content: `
           <h2>Asynchronous JavaScript</h2>
           <p>JavaScript is single-threaded but can handle asynchronous operations through callbacks, promises, and async/await. This allows non-blocking code execution.</p>
@@ -1916,7 +1242,7 @@ img[alt*="icon"] {
       },
       {
         id: 'js-es6-features',
-        title: 'ES6+ Modern Features',
+        title: 'ES6+ Features',
         content: `
           <h2>ECMAScript 2015 (ES6) and Beyond</h2>
           <p>ES6 introduced many powerful features that modernized JavaScript. Understanding these features is essential for contemporary JavaScript development.</p>
@@ -1989,7 +1315,7 @@ img[alt*="icon"] {
       },
       {
         id: 'js-projects-best-practices',
-        title: 'JavaScript Projects and Best Practices',
+        title: 'Projects & Practices',
         content: `
           <h2>JavaScript Best Practices</h2>
           <p>Writing clean, maintainable JavaScript code requires following established patterns and best practices. These guidelines help create robust applications.</p>
@@ -2078,17 +1404,96 @@ img[alt*="icon"] {
     lessons: [
       {
         id: 'react-intro',
-        title: 'React Introduction',
+        title: 'React Intro',
         content: `
           <h2>What is React?</h2>
-          <p>React is a JavaScript library for building user interfaces, particularly web applications. Created by Facebook in 2013, React has become one of the most popular frontend frameworks for creating dynamic, interactive web applications.</p>
+          <p>React is a powerful JavaScript library for building user interfaces, created by Facebook (now Meta) in 2013. It has revolutionized frontend development by introducing a component-based architecture that makes building complex, interactive web applications more manageable and efficient. React is now used by millions of developers worldwide and powers some of the most popular websites including Facebook, Netflix, Airbnb, Instagram, and WhatsApp Web.</p>
           
-          <h3>Key Concepts:</h3>
+          <h3>Why React Dominates Frontend Development:</h3>
           <ul>
-            <li><strong>Component-Based Architecture:</strong> Build encapsulated components that manage their own state</li>
-            <li><strong>Virtual DOM:</strong> React creates an in-memory virtual DOM to optimize rendering</li>
-            <li><strong>Declarative:</strong> Describe what the UI should look like for any given state</li>
-            <li><strong>Unidirectional Data Flow:</strong> Data flows down from parent to child components</li>
+            <li><strong>Industry Standard:</strong> Used by 87% of developers and major companies worldwide</li>
+            <li><strong>High Market Demand:</strong> Most requested skill in frontend developer job postings</li>
+            <li><strong>Massive Ecosystem:</strong> Extensive library of components, tools, and resources</li>
+            <li><strong>Strong Community:</strong> Active community with continuous updates and support</li>
+            <li><strong>Performance Optimized:</strong> Virtual DOM and React 18+ concurrent features</li>
+            <li><strong>Developer Experience:</strong> Excellent tooling, debugging, and development workflow</li>
+            <li><strong>Meta Backing:</strong> Continuous investment and development by Meta (Facebook)</li>
+          </ul>
+          
+          <h3>Core React Concepts:</h3>
+          <ul>
+            <li><strong>Component-Based Architecture:</strong> Build encapsulated, reusable UI components</li>
+            <li><strong>Virtual DOM:</strong> Efficient diffing algorithm for optimal performance</li>
+            <li><strong>Declarative Programming:</strong> Describe what the UI should look like, not how</li>
+            <li><strong>Unidirectional Data Flow:</strong> Predictable data flow from parent to child</li>
+            <li><strong>JSX Syntax:</strong> Write HTML-like syntax directly in JavaScript</li>
+            <li><strong>State Management:</strong> Manage component data and user interactions</li>
+            <li><strong>Hooks:</strong> Modern way to handle state and lifecycle in functional components</li>
+          </ul>
+          
+          <h3>Prerequisites for React Development:</h3>
+          <ul>
+            <li><strong>JavaScript Proficiency:</strong> Strong ES6+ knowledge (arrow functions, destructuring, modules)</li>
+            <li><strong>HTML/CSS Skills:</strong> Solid foundation in web markup and responsive design</li>
+            <li><strong>Modern JavaScript:</strong> Promises, async/await, array methods, object manipulation</li>
+            <li><strong>Node.js & npm:</strong> Package management and build tools understanding</li>
+            <li><strong>Git Version Control:</strong> Source code management and collaboration</li>
+            <li><strong>Development Tools:</strong> VS Code, React DevTools, browser debugging</li>
+          </ul>
+          
+          <h3>Learning Benefits:</h3>
+          <ul>
+            <li><strong>Component Thinking:</strong> Learn to break complex UIs into reusable pieces</li>
+            <li><strong>Modern Development:</strong> Master the most popular frontend library in the world</li>
+            <li><strong>State Management:</strong> Understand how to manage complex application data</li>
+            <li><strong>Industry Standards:</strong> Learn the tools and patterns used by top tech companies</li>
+            <li><strong>Rapid Prototyping:</strong> Build interactive applications quickly and efficiently</li>
+            <li><strong>Ecosystem Mastery:</strong> Access to thousands of libraries and tools</li>
+            <li><strong>Future-Proof Skills:</strong> React's concepts apply to many other modern frameworks</li>
+          </ul>
+          
+          <h3>Modern React Ecosystem & Tools:</h3>
+          <ul>
+            <li><strong>Meta Frameworks:</strong> Next.js 14, Remix, Gatsby for production applications</li>
+            <li><strong>State Management:</strong> Redux Toolkit, Zustand, Jotai, Recoil for complex state</li>
+            <li><strong>Routing:</strong> React Router 6+ for single-page application navigation</li>
+            <li><strong>UI Libraries:</strong> Material-UI, Ant Design, Chakra UI, Mantine, shadcn/ui</li>
+            <li><strong>Styling:</strong> Styled Components, Emotion, Tailwind CSS, CSS Modules</li>
+            <li><strong>Testing:</strong> Jest, React Testing Library, Cypress, Playwright</li>
+            <li><strong>Build Tools:</strong> Vite, Create React App, Webpack, Turbopack</li>
+            <li><strong>Mobile Development:</strong> React Native for cross-platform mobile apps</li>
+          </ul>
+          
+          <h3>React 18+ Modern Features:</h3>
+          <ul>
+            <li><strong>Concurrent Features:</strong> Suspense, Server Components, streaming SSR</li>
+            <li><strong>Hooks:</strong> useState, useEffect, useContext, custom hooks</li>
+            <li><strong>Performance:</strong> React.memo, useMemo, useCallback for optimization</li>
+            <li><strong>Error Boundaries:</strong> Graceful error handling in component trees</li>
+            <li><strong>Context API:</strong> State sharing without prop drilling</li>
+            <li><strong>Portals:</strong> Render components outside normal DOM hierarchy</li>
+            <li><strong>Strict Mode:</strong> Development mode for detecting side effects</li>
+          </ul>
+          
+          <h3>What You'll Build in This Course:</h3>
+          <ul>
+            <li><strong>Component Library:</strong> Reusable UI components with props and state</li>
+            <li><strong>Todo Application:</strong> Full CRUD operations with local storage</li>
+            <li><strong>Weather Dashboard:</strong> API integration with real-time data fetching</li>
+            <li><strong>E-commerce Cart:</strong> Complex state management and user interactions</li>
+            <li><strong>Social Media Feed:</strong> Dynamic content with routing and authentication</li>
+            <li><strong>Admin Dashboard:</strong> Data visualization with charts and responsive design</li>
+          </ul>
+          
+          <h3>Industry Applications:</h3>
+          <ul>
+            <li><strong>Enterprise Applications:</strong> Internal tools, dashboards, CRM systems</li>
+            <li><strong>E-commerce Platforms:</strong> Online stores, marketplaces, checkout systems</li>
+            <li><strong>Social Media:</strong> Facebook, Instagram, Twitter-like applications</li>
+            <li><strong>Streaming Services:</strong> Netflix, Disney+, video platforms</li>
+            <li><strong>Financial Applications:</strong> Banking, trading platforms, fintech apps</li>
+            <li><strong>Educational Platforms:</strong> Learning management systems, online courses</li>
+            <li><strong>Healthcare:</strong> Patient portals, medical record systems</li>
           </ul>
           
           <h3>Why Choose React?</h3>
@@ -2117,7 +1522,7 @@ img[alt*="icon"] {
       },
       {
         id: 'react-setup-jsx',
-        title: 'React Setup and JSX',
+        title: 'Setup & JSX',
         content: `
           <h2>Setting Up React</h2>
           <p>There are several ways to start a React project. The most common method is using Create React App, which provides a modern build setup with no configuration.</p>
@@ -2169,7 +1574,7 @@ img[alt*="icon"] {
       },
       {
         id: 'react-components-props',
-        title: 'Components and Props',
+        title: 'Components & Props',
         content: `
           <h2>React Components</h2>
           <p>Components are the building blocks of React applications. They are independent, reusable pieces of code that return JSX to describe what should appear on screen.</p>
@@ -2221,7 +1626,7 @@ img[alt*="icon"] {
       },
       {
         id: 'react-state-hooks',
-        title: 'State Management and Hooks',
+        title: 'State & Hooks',
         content: `
           <h2>React State</h2>
           <p>State is data that changes over time in your component. Unlike props, state is owned and controlled by the component itself and can be modified.</p>
@@ -2281,7 +1686,7 @@ img[alt*="icon"] {
       },
       {
         id: 'react-event-handling',
-        title: 'Event Handling in React',
+        title: 'Event Handling',
         content: `
           <h2>React Event Handling</h2>
           <p>React has its own event system called SyntheticEvents, which wraps native DOM events to provide consistent behavior across different browsers.</p>
@@ -2347,7 +1752,7 @@ img[alt*="icon"] {
       },
       {
         id: 'react-conditional-lists',
-        title: 'Conditional Rendering and Lists',
+        title: 'Conditional & Lists',
         content: `
           <h2>Conditional Rendering</h2>
           <p>In React, you can render different components or elements based on certain conditions. This allows you to create dynamic user interfaces that respond to state changes.</p>
@@ -2422,7 +1827,7 @@ img[alt*="icon"] {
       },
       {
         id: 'react-component-lifecycle',
-        title: 'Component Lifecycle and Effects',
+        title: 'Lifecycle & Effects',
         content: `
           <h2>Component Lifecycle</h2>
           <p>React components go through various phases during their lifetime: mounting, updating, and unmounting. Understanding these phases helps you manage side effects and optimize performance.</p>
@@ -2498,7 +1903,7 @@ img[alt*="icon"] {
       },
       {
         id: 'react-routing-navigation',
-        title: 'React Router and Navigation',
+        title: 'Router & Navigation',
         content: `
           <h2>React Router</h2>
           <p>React Router is the standard routing library for React applications. It enables navigation between different components/pages in a Single Page Application (SPA).</p>
@@ -2569,7 +1974,7 @@ img[alt*="icon"] {
       },
       {
         id: 'react-context-state',
-        title: 'Context API and State Management',
+        title: 'Context API',
         content: `
           <h2>React Context API</h2>
           <p>Context provides a way to share data between components without passing props down manually at every level. It's designed to share data that can be considered "global" for a tree of React components.</p>
@@ -2646,7 +2051,7 @@ img[alt*="icon"] {
       },
       {
         id: 'react-performance-projects',
-        title: 'Performance Optimization and Projects',
+        title: 'Performance & Projects',
         content: `
           <h2>React Performance Optimization</h2>
           <p>React applications can become slow if not optimized properly. Understanding performance bottlenecks and optimization techniques is crucial for building fast, responsive applications.</p>
@@ -2737,6 +2142,12735 @@ img[alt*="icon"] {
             <li><strong>SEO:</strong> Server-side rendering with Next.js</li>
           </ul>
         `
+      }
+    ]
+  },
+  {
+    id: 'nodejs',
+    title: 'Node.js',
+    description: 'Node.js - server side JavaScript runtime for buildings applications',
+    color: '#68a063',
+    lessons: [
+      {
+        id: 'nodejs-intro',
+        title: 'Node.js Intro',
+        content: `
+          <h2>What is Node.js?</h2>
+          <p>Node.js is a powerful JavaScript runtime built on Chrome's V8 JavaScript engine that revolutionized backend development by bringing JavaScript to the server-side. Created by Ryan Dahl in 2009, Node.js enables developers to use JavaScript for full-stack development, eliminating the need to learn separate languages for frontend and backend. Today, Node.js powers some of the world's largest applications including Netflix, LinkedIn, Uber, PayPal, and NASA, handling millions of requests daily with exceptional performance.</p>
+          
+          <h3>Why Node.js Dominates Backend Development in 2026:</h3>
+          <ul>
+            <li><strong>Unified Language:</strong> Use JavaScript across the entire stack (frontend + backend)</li>
+            <li><strong>Enterprise Adoption:</strong> Used by 98% of Fortune 500 companies for backend services</li>
+            <li><strong>Exceptional Performance:</strong> Event-driven architecture handles 10x more concurrent connections than traditional servers</li>
+            <li><strong>Massive Ecosystem:</strong> Over 2 million packages in NPM, the world's largest package registry</li>
+            <li><strong>Rapid Development:</strong> 50% faster development cycle compared to traditional backend technologies</li>
+            <li><strong>Microservices Ready:</strong> Perfect architecture for modern distributed systems</li>
+            <li><strong>Real-Time Capabilities:</strong> Native support for WebSockets, real-time communication</li>
+          </ul>
+          
+          <h3>Learning Benefits:</h3>
+          <ul>
+            <li><strong>Full-Stack Mastery:</strong> Use JavaScript for both frontend and backend development</li>
+            <li><strong>Server-Side Thinking:</strong> Understand how modern web applications work behind the scenes</li>
+            <li><strong>API Development:</strong> Learn to build services that power mobile apps and websites</li>
+            <li><strong>Real-Time Applications:</strong> Create chat systems, live updates, and interactive features</li>
+            <li><strong>Database Integration:</strong> Connect your applications to data storage systems</li>
+            <li><strong>Performance Understanding:</strong> Learn about scalability and efficient server programming</li>
+            <li><strong>DevOps Skills:</strong> Understand deployment, monitoring, and production environments</li>
+          </ul>
+          
+          <h3>Prerequisites:</h3>
+          <ul>
+            <li><strong>Essential:</strong> Solid JavaScript fundamentals (ES6+, async/await, promises)</li>
+            <li><strong>Helpful:</strong> Basic understanding of HTTP, APIs, and databases</li>
+            <li><strong>Recommended:</strong> Command line interface (CLI) familiarity</li>
+            <li><strong>Bonus:</strong> Understanding of web servers and networking concepts</li>
+          </ul>
+          
+          <h3>Modern Node.js Ecosystem (2026):</h3>
+          <ul>
+            <li><strong>Web Frameworks:</strong> Express.js, Fastify, Nest.js, Koa.js, Hapi.js</li>
+            <li><strong>Databases:</strong> MongoDB (Mongoose), PostgreSQL (Sequelize), Redis, Neo4j</li>
+            <li><strong>Cloud Platforms:</strong> AWS Lambda, Azure Functions, Google Cloud Functions</li>
+            <li><strong>Testing:</strong> Jest, Mocha, Chai, Supertest, Cypress</li>
+            <li><strong>DevOps:</strong> Docker, Kubernetes, PM2, GitHub Actions</li>
+            <li><strong>APIs:</strong> GraphQL, REST, gRPC, WebSocket, Server-Sent Events</li>
+            <li><strong>Monitoring:</strong> New Relic, DataDog, Winston, Pino logging</li>
+          </ul>
+          
+          <h3>What You'll Master:</h3>
+          <ul>
+            <li><strong>Server Development:</strong> Building robust web servers and APIs from scratch</li>
+            <li><strong>Database Integration:</strong> Working with SQL and NoSQL databases</li>
+            <li><strong>Authentication & Security:</strong> JWT, OAuth, encryption, input validation</li>
+            <li><strong>Real-Time Applications:</strong> Chat systems, live updates, WebSocket connections</li>
+            <li><strong>File System Operations:</strong> File uploads, processing, and management</li>
+            <li><strong>API Design:</strong> RESTful services, GraphQL, microservices architecture</li>
+            <li><strong>Testing & Debugging:</strong> Unit testing, integration testing, error handling</li>
+            <li><strong>Deployment:</strong> Cloud deployment, containerization, scaling strategies</li>
+            <li><strong>Performance Optimization:</strong> Caching, clustering, load balancing</li>
+          </ul>
+          
+          <h3>Key Features of Node.js:</h3>
+          <ul>
+            <li><strong>Asynchronous & Event-Driven:</strong> Non-blocking I/O operations</li>
+            <li><strong>Fast:</strong> Built on Google Chrome's V8 engine</li>
+            <li><strong>Single-Threaded:</strong> Uses event loop for handling requests</li>
+            <li><strong>NPM:</strong> Vast ecosystem of packages and modules</li>
+            <li><strong>Cross-Platform:</strong> Works on Windows, macOS, and Linux</li>
+            <li><strong>Scalable:</strong> Perfect for building scalable network applications</li>
+          </ul>
+          
+          <h3>Node.js Use Cases:</h3>
+          <ul>
+            <li>Web Applications and APIs</li>
+            <li>Real-time Applications (Chat, Gaming)</li>
+            <li>Microservices Architecture</li>
+            <li>Command Line Tools</li>
+            <li>Desktop Applications (with Electron)</li>
+          </ul>
+          
+          <h3>Industry Applications:</h3>
+          <ul>
+            <li><strong>E-Commerce:</strong> Payment processing, inventory management, order systems</li>
+            <li><strong>Social Media:</strong> Real-time messaging, content feeds, notification systems</li>
+            <li><strong>Streaming Services:</strong> Video/audio streaming, content delivery networks</li>
+            <li><strong>Financial Services:</strong> Trading platforms, banking APIs, cryptocurrency exchanges</li>
+            <li><strong>IoT Applications:</strong> Device communication, sensor data processing</li>
+            <li><strong>Gaming:</strong> Real-time multiplayer games, leaderboards, chat systems</li>
+          </ul>
+          
+          <h3>Installing Node.js:</h3>
+          <p>Download Node.js from the official website. This includes NPM (Node Package Manager) by default.</p>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/TlB_eWDSMt4'
+      },
+      {
+        id: 'nodejs-modules',
+        title: 'Modules & NPM',
+        content: `
+          <h2>Understanding Node.js Modules</h2>
+          <p>Node.js uses a module system to organize code. Modules are reusable blocks of code that can be imported and exported.</p>
+          
+          <h3>Types of Modules:</h3>
+          <ul>
+            <li><strong>Core Modules:</strong> Built-in modules (fs, path, http, etc.)</li>
+            <li><strong>File Modules:</strong> Your own modules</li>
+            <li><strong>Node Modules:</strong> Third-party packages from NPM</li>
+          </ul>
+          
+          <h3>CommonJS vs ES Modules:</h3>
+          <p>Node.js supports both CommonJS (require/module.exports) and ES6 modules (import/export) syntax.</p>
+          
+          <h3>NPM (Node Package Manager):</h3>
+          <ul>
+            <li>Install packages: <code>npm install package-name</code></li>
+            <li>Initialize project: <code>npm init</code></li>
+            <li>Install dev dependencies: <code>npm install --save-dev package-name</code></li>
+            <li>Global installation: <code>npm install -g package-name</code></li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/xHLd36QoS4k'
+      },
+      {
+        id: 'nodejs-filesystem',
+        title: 'File System',
+        content: `
+          <h2>Working with File System</h2>
+          <p>Node.js provides the 'fs' module for interacting with the file system. You can read, write, create, and delete files and directories.</p>
+          
+          <h3>Synchronous vs Asynchronous:</h3>
+          <ul>
+            <li><strong>Synchronous:</strong> Blocks execution until operation completes</li>
+            <li><strong>Asynchronous:</strong> Non-blocking, uses callbacks or promises</li>
+          </ul>
+          
+          <h3>Common File Operations:</h3>
+          <ul>
+            <li>Reading files: fs.readFile(), fs.readFileSync()</li>
+            <li>Writing files: fs.writeFile(), fs.writeFileSync()</li>
+            <li>Creating directories: fs.mkdir(), fs.mkdirSync()</li>
+            <li>Checking file existence: fs.existsSync(), fs.access()</li>
+          </ul>
+          
+          <h3>Best Practices:</h3>
+          <ul>
+            <li>Always use asynchronous methods in production</li>
+            <li>Handle errors properly</li>
+            <li>Use path module for cross-platform compatibility</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/U57kU311-nE'
+      },
+      {
+        id: 'nodejs-http',
+        title: 'HTTP Server',
+        content: `
+          <h2>Creating HTTP Servers and Clients</h2>
+          <p>Node.js makes it easy to create web servers and make HTTP requests using the built-in 'http' and 'https' modules.</p>
+          
+          <h3>HTTP Server:</h3>
+          <p>Create web servers that can handle requests and send responses.</p>
+          
+          <h3>HTTP Client:</h3>
+          <p>Make requests to other servers and APIs.</p>
+          
+          <h3>Key Concepts:</h3>
+          <ul>
+            <li><strong>Request Object:</strong> Contains information about the incoming request</li>
+            <li><strong>Response Object:</strong> Used to send data back to the client</li>
+            <li><strong>Routing:</strong> Handling different URLs and HTTP methods</li>
+            <li><strong>Middleware:</strong> Functions that process requests before sending responses</li>
+          </ul>
+          
+          <h3>Status Codes:</h3>
+          <ul>
+            <li>200: Success</li>
+            <li>404: Not Found</li>
+            <li>500: Internal Server Error</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/VShtPwEkDD0'
+      },
+      {
+        id: 'nodejs-express',
+        title: 'Express.js',
+        content: `
+          <h2>Introduction to Express.js</h2>
+          <p>Express.js is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.</p>
+          
+          <h3>Why Express.js?</h3>
+          <ul>
+            <li><strong>Simplicity:</strong> Easy to set up and use</li>
+            <li><strong>Middleware:</strong> Powerful middleware system</li>
+            <li><strong>Routing:</strong> Robust routing capabilities</li>
+            <li><strong>Template Engines:</strong> Support for various view engines</li>
+            <li><strong>Community:</strong> Large ecosystem and community support</li>
+          </ul>
+          
+          <h3>Core Concepts:</h3>
+          <ul>
+            <li><strong>App Object:</strong> The Express application</li>
+            <li><strong>Routes:</strong> Define endpoints for your API</li>
+            <li><strong>Middleware:</strong> Functions that execute during request-response cycle</li>
+            <li><strong>Request/Response:</strong> Enhanced req and res objects</li>
+          </ul>
+          
+          <h3>Installation:</h3>
+          <p>npm install express</p>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/SccSCuHhOw0'
+      },
+      {
+        id: 'nodejs-mongodb',
+        title: 'MongoDB',
+        content: `
+          <h2>Working with MongoDB in Node.js</h2>
+          <p>MongoDB is a popular NoSQL database, and Mongoose is an elegant MongoDB object modeling library for Node.js.</p>
+          
+          <h3>MongoDB Features:</h3>
+          <ul>
+            <li><strong>Document Database:</strong> Stores data in flexible JSON-like documents</li>
+            <li><strong>Scalable:</strong> Built for modern applications</li>
+            <li><strong>Flexible Schema:</strong> No predefined schema required</li>
+            <li><strong>Rich Queries:</strong> Support for complex queries</li>
+          </ul>
+          
+          <h3>Mongoose Benefits:</h3>
+          <ul>
+            <li><strong>Schema Definition:</strong> Define structure for your data</li>
+            <li><strong>Validation:</strong> Built-in data validation</li>
+            <li><strong>Middleware:</strong> Pre and post hooks</li>
+            <li><strong>Query Builder:</strong> Chainable query building</li>
+          </ul>
+          
+          <h3>Installation:</h3>
+          <p>npm install mongoose</p>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/DZBGEVgL2eE'
+      },
+      {
+        id: 'nodejs-authentication',
+        title: 'Authentication & Authorization',
+        content: `
+          <h2>User Authentication in Node.js</h2>
+          <p>Learn how to implement user authentication and authorization in Node.js applications using JWT, bcrypt, and middleware.</p>
+          
+          <h3>Authentication vs Authorization:</h3>
+          <ul>
+            <li><strong>Authentication:</strong> Verifying who the user is</li>
+            <li><strong>Authorization:</strong> Determining what the user can do</li>
+          </ul>
+          
+          <h3>Key Technologies:</h3>
+          <ul>
+            <li><strong>JWT:</strong> JSON Web Tokens for stateless authentication</li>
+            <li><strong>bcrypt:</strong> Password hashing library</li>
+            <li><strong>Passport.js:</strong> Authentication middleware</li>
+            <li><strong>Sessions:</strong> Server-side session management</li>
+          </ul>
+          
+          <h3>Security Best Practices:</h3>
+          <ul>
+            <li>Never store passwords in plain text</li>
+            <li>Use strong password policies</li>
+            <li>Implement rate limiting</li>
+            <li>Use HTTPS in production</li>
+            <li>Validate and sanitize inputs</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/mbsmsi7l3r4'
+      },
+      {
+        id: 'nodejs-testing',
+        title: 'Testing',
+        content: `
+          <h2>Testing in Node.js</h2>
+          <p>Learn how to write comprehensive tests for your Node.js applications using popular testing frameworks and tools.</p>
+          
+          <h3>Types of Testing:</h3>
+          <ul>
+            <li><strong>Unit Tests:</strong> Test individual functions or modules</li>
+            <li><strong>Integration Tests:</strong> Test how different parts work together</li>
+            <li><strong>End-to-End Tests:</strong> Test complete user workflows</li>
+          </ul>
+          
+          <h3>Popular Testing Frameworks:</h3>
+          <ul>
+            <li><strong>Jest:</strong> Comprehensive testing framework</li>
+            <li><strong>Mocha:</strong> Flexible testing framework</li>
+            <li><strong>Chai:</strong> Assertion library</li>
+            <li><strong>Supertest:</strong> HTTP assertion library</li>
+          </ul>
+          
+          <h3>Best Practices:</h3>
+          <ul>
+            <li>Write tests before code (TDD)</li>
+            <li>Keep tests simple and focused</li>
+            <li>Use descriptive test names</li>
+            <li>Mock external dependencies</li>
+            <li>Maintain good test coverage</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/7r4xVDI2vho'
+      },
+      {
+        id: 'nodejs-deployment',
+        title: 'Deployment',
+        content: `
+          <h2>Deploying Node.js Applications</h2>
+          <p>Learn how to deploy Node.js applications to production environments and follow best practices for performance and security.</p>
+          
+          <h3>Deployment Platforms:</h3>
+          <ul>
+            <li><strong>Heroku:</strong> Easy deployment platform</li>
+            <li><strong>AWS:</strong> Amazon Web Services (EC2, Lambda, Elastic Beanstalk)</li>
+            <li><strong>DigitalOcean:</strong> Simple cloud hosting</li>
+            <li><strong>Vercel:</strong> Great for serverless deployment</li>
+            <li><strong>Netlify:</strong> JAMstack applications</li>
+          </ul>
+          
+          <h3>Production Best Practices:</h3>
+          <ul>
+            <li><strong>Environment Variables:</strong> Use .env files for configuration</li>
+            <li><strong>Process Management:</strong> Use PM2 or similar tools</li>
+            <li><strong>Logging:</strong> Implement proper logging with Winston</li>
+            <li><strong>Monitoring:</strong> Set up application monitoring</li>
+            <li><strong>Security:</strong> Use helmet.js, rate limiting, input validation</li>
+            <li><strong>Performance:</strong> Enable compression, caching</li>
+          </ul>
+          
+          <h3>Docker Containerization:</h3>
+          <p>Package your application in containers for consistent deployments.</p>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/oykl1Ih9pMg'
+      }
+    ]
+  },
+  {
+    id: 'php',
+    title: 'PHP',
+    description: 'PHP - server-side scripting language for dynamic web development',
+    color: '#777bb4',
+    lessons: [
+      {
+        id: 'php-intro',
+        title: 'PHP Intro',
+        content: `
+          <h2>What is PHP?</h2>
+          <p>PHP (PHP: Hypertext Preprocessor) is a powerful, open-source server-side scripting language that has been the backbone of web development for over 25 years. Created by Rasmus Lerdorf in 1995, PHP powers 78.1% of all websites with known server-side programming languages, including tech giants like Facebook, Wikipedia, WordPress, and Slack. With over 5 million developers worldwide and continuous evolution through PHP 8+, it remains one of the most practical and job-ready programming languages for web development.</p>
+          
+          <h3>Why PHP Remains Essential in 2026:</h3>
+          <ul>
+            <li><strong>Market Dominance:</strong> Powers 78.1% of websites with known server-side languages</li>
+            <li><strong>Enterprise Adoption:</strong> Used by Fortune 500 companies and startups alike</li>
+            <li><strong>Modern Performance:</strong> PHP 8.3+ delivers 3x better performance than older versions</li>
+            <li><strong>Extensive Ecosystem:</strong> 400,000+ packages available via Composer</li>
+            <li><strong>Cost Effective:</strong> Affordable hosting and rapid development cycles</li>
+            <li><strong>Job Security:</strong> Millions of existing PHP applications need maintenance and upgrades</li>
+            <li><strong>Framework Excellence:</strong> Laravel, Symfony, CodeIgniter power modern applications</li>
+          </ul>
+          
+          <h3>Learning Benefits:</h3>
+          <ul>
+            <li><strong>Web Foundation:</strong> Learn the language that powers most of the internet</li>
+            <li><strong>Practical Skills:</strong> Start building functional websites from day one</li>
+            <li><strong>Database Mastery:</strong> Understand how to store and retrieve data dynamically</li>
+            <li><strong>Content Management:</strong> Learn to build systems that others can easily update</li>
+            <li><strong>E-commerce Understanding:</strong> Discover how online stores and payment systems work</li>
+            <li><strong>Server Logic:</strong> Master the thinking behind dynamic web applications</li>
+            <li><strong>Rapid Development:</strong> Build complex web applications quickly and efficiently</li>
+          </ul>
+          
+          <h3>Prerequisites:</h3>
+          <ul>
+            <li><strong>Essential:</strong> Basic HTML and CSS understanding</li>
+            <li><strong>Helpful:</strong> Programming fundamentals (variables, functions, loops)</li>
+            <li><strong>Recommended:</strong> Database concepts (especially MySQL)</li>
+            <li><strong>Bonus:</strong> Basic understanding of HTTP and web servers</li>
+          </ul>
+          
+          <h3>Modern PHP Ecosystem (2026):</h3>
+          <ul>
+            <li><strong>Frameworks:</strong> Laravel 11, Symfony 7, CodeIgniter 4, Phalcon, Yii2</li>
+            <li><strong>CMS Platforms:</strong> WordPress 6.5+, Drupal 11, Joomla 5</li>
+            <li><strong>Package Manager:</strong> Composer for dependency management</li>
+            <li><strong>Databases:</strong> MySQL 8.0+, PostgreSQL, SQLite, Redis, MongoDB</li>
+            <li><strong>Testing:</strong> PHPUnit, Pest, Behat, Codeception</li>
+            <li><strong>DevOps:</strong> Docker, Kubernetes, GitHub Actions, GitLab CI</li>
+            <li><strong>Cloud Hosting:</strong> AWS, Google Cloud, DigitalOcean, Cloudflare</li>
+          </ul>
+          
+          <h3>What You'll Master:</h3>
+          <ul>
+            <li><strong>Core PHP Programming:</strong> Syntax, functions, OOP principles, error handling</li>
+            <li><strong>Database Integration:</strong> MySQL queries, PDO, database design</li>
+            <li><strong>Web Development:</strong> Forms, sessions, cookies, file uploads</li>
+            <li><strong>Security Best Practices:</strong> Input validation, SQL injection prevention, authentication</li>
+            <li><strong>API Development:</strong> RESTful APIs, JSON handling, authentication</li>
+            <li><strong>Framework Mastery:</strong> Laravel/Symfony for rapid application development</li>
+            <li><strong>Testing & Debugging:</strong> Unit testing, debugging techniques, performance optimization</li>
+            <li><strong>Deployment:</strong> Server configuration, version control, production best practices</li>
+          </ul>
+          
+          <h3>Key Features of PHP:</h3>
+          <ul>
+            <li><strong>Server-Side:</strong> Code executes on the web server</li>
+            <li><strong>Open Source:</strong> Free to use and distribute</li>
+            <li><strong>Cross-Platform:</strong> Runs on various operating systems</li>
+            <li><strong>Database Support:</strong> Works with MySQL, PostgreSQL, Oracle, etc.</li>
+            <li><strong>Easy to Learn:</strong> Simple syntax similar to C and Perl</li>
+            <li><strong>Large Community:</strong> Extensive documentation and support</li>
+          </ul>
+          
+          <h3>Industry Applications:</h3>
+          <ul>
+            <li><strong>E-Commerce:</strong> Online stores, payment systems, inventory management</li>
+            <li><strong>Content Management:</strong> News sites, blogs, corporate websites</li>
+            <li><strong>Social Networks:</strong> Community platforms, social features</li>
+            <li><strong>Business Applications:</strong> CRM systems, project management tools</li>
+            <li><strong>Educational Platforms:</strong> Learning management systems, online courses</li>
+            <li><strong>Healthcare:</strong> Patient management, appointment systems</li>
+          </ul>
+          
+          <h3>PHP Use Cases:</h3>
+          <ul>
+            <li>Dynamic Web Applications</li>
+            <li>Content Management Systems (WordPress, Drupal)</li>
+            <li>E-commerce Platforms</li>
+            <li>Web APIs and Services</li>
+            <li>Command Line Applications</li>
+          </ul>
+          
+          <h3>Popular PHP Applications:</h3>
+          <ul>
+            <li>WordPress - 43% of all websites</li>
+            <li>Facebook (originally built with PHP)</li>
+            <li>Wikipedia</li>
+            <li>Slack</li>
+            <li>Etsy</li>
+            <li>MailChimp</li>
+          </ul>
+          
+          <h3>Setting Up PHP:</h3>
+          <p>Install XAMPP, WAMP, or MAMP for local development environment with Apache, MySQL, and PHP.</p>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/OK_JCtrrv-c'
+      },
+      {
+        id: 'php-variables-datatypes',
+        title: 'Variables & Types',
+        content: `
+          <h2>PHP Variables and Data Types</h2>
+          <p>PHP variables are containers for storing data values. PHP is a loosely typed language - you don't need to declare variable types.</p>
+          
+          <h3>Variable Rules:</h3>
+          <ul>
+            <li>Variables start with $ sign</li>
+            <li>Must start with letter or underscore</li>
+            <li>Can contain letters, numbers, and underscores</li>
+            <li>Case-sensitive</li>
+          </ul>
+          
+          <h3>PHP Data Types:</h3>
+          <ul>
+            <li><strong>String:</strong> Text data in quotes</li>
+            <li><strong>Integer:</strong> Whole numbers</li>
+            <li><strong>Float:</strong> Decimal numbers</li>
+            <li><strong>Boolean:</strong> true or false</li>
+            <li><strong>Array:</strong> Collection of values</li>
+            <li><strong>Object:</strong> Instance of a class</li>
+            <li><strong>NULL:</strong> Variable with no value</li>
+          </ul>
+          
+          <h3>Variable Scope:</h3>
+          <ul>
+            <li><strong>Local:</strong> Inside functions</li>
+            <li><strong>Global:</strong> Outside functions</li>
+            <li><strong>Static:</strong> Retains value between function calls</li>
+            <li><strong>Superglobals:</strong> $_GET, $_POST, $_SESSION, etc.</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/1SnPKhCdlsU'
+      },
+      {
+        id: 'php-control-structures',
+        title: 'Control Flow',
+        content: `
+          <h2>PHP Control Structures</h2>
+          <p>Control structures allow you to control the flow of program execution based on conditions and loops.</p>
+          
+          <h3>Conditional Statements:</h3>
+          <ul>
+            <li><strong>if:</strong> Execute code if condition is true</li>
+            <li><strong>if...else:</strong> Execute different code blocks</li>
+            <li><strong>if...elseif...else:</strong> Multiple conditions</li>
+            <li><strong>switch:</strong> Compare variable against many values</li>
+            <li><strong>match:</strong> PHP 8+ expression (similar to switch)</li>
+          </ul>
+          
+          <h3>Loops:</h3>
+          <ul>
+            <li><strong>for:</strong> Loop with counter</li>
+            <li><strong>foreach:</strong> Loop through arrays</li>
+            <li><strong>while:</strong> Loop while condition is true</li>
+            <li><strong>do...while:</strong> Execute at least once</li>
+          </ul>
+          
+          <h3>Loop Control:</h3>
+          <ul>
+            <li><strong>break:</strong> Exit loop</li>
+            <li><strong>continue:</strong> Skip current iteration</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/yXzWfZ4N4xU'
+      },
+      {
+        id: 'php-functions',
+        title: 'Functions',
+        content: `
+          <h2>PHP Functions</h2>
+          <p>Functions are blocks of code that can be repeatedly used throughout your program. PHP has thousands of built-in functions and you can create your own custom functions.</p>
+          
+          <h3>Function Benefits:</h3>
+          <ul>
+            <li><strong>Reusability:</strong> Write once, use many times</li>
+            <li><strong>Organization:</strong> Keep code organized and readable</li>
+            <li><strong>Modularity:</strong> Break complex problems into smaller pieces</li>
+            <li><strong>Testing:</strong> Easier to test individual functions</li>
+          </ul>
+          
+          <h3>Function Types:</h3>
+          <ul>
+            <li><strong>Built-in Functions:</strong> strlen(), array_push(), date(), etc.</li>
+            <li><strong>User-defined Functions:</strong> Custom functions you create</li>
+            <li><strong>Anonymous Functions:</strong> Functions without names (closures)</li>
+            <li><strong>Arrow Functions:</strong> PHP 7.4+ short syntax</li>
+          </ul>
+          
+          <h3>Advanced Concepts:</h3>
+          <ul>
+            <li>Default parameters</li>
+            <li>Variable-length argument lists</li>
+            <li>Return type declarations</li>
+            <li>Function recursion</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/WvZ0x3PJvKE'
+      },
+      {
+        id: 'php-arrays',
+        title: 'Arrays',
+        content: `
+          <h2>PHP Arrays</h2>
+          <p>Arrays are used to store multiple values in a single variable. PHP supports both indexed and associative arrays, and provides many built-in functions for array manipulation.</p>
+          
+          <h3>Array Types:</h3>
+          <ul>
+            <li><strong>Indexed Arrays:</strong> Arrays with numeric indexes</li>
+            <li><strong>Associative Arrays:</strong> Arrays with named keys</li>
+            <li><strong>Multidimensional Arrays:</strong> Arrays containing other arrays</li>
+          </ul>
+          
+          <h3>Array Functions:</h3>
+          <ul>
+            <li><strong>array_push():</strong> Add elements to end</li>
+            <li><strong>array_pop():</strong> Remove last element</li>
+            <li><strong>array_merge():</strong> Combine arrays</li>
+            <li><strong>array_keys():</strong> Get all keys</li>
+            <li><strong>array_values():</strong> Get all values</li>
+            <li><strong>in_array():</strong> Check if value exists</li>
+            <li><strong>sort():</strong> Sort arrays</li>
+          </ul>
+          
+          <h3>Advanced Array Operations:</h3>
+          <ul>
+            <li>Array mapping and filtering</li>
+            <li>Array searching and sorting</li>
+            <li>Array slicing and splicing</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/VBmzX2dVbww'
+      },
+      {
+        id: 'php-strings',
+        title: 'Strings',
+        content: `
+          <h2>PHP String Manipulation</h2>
+          <p>Strings are sequences of characters. PHP provides extensive string manipulation functions for processing and formatting text data.</p>
+          
+          <h3>String Creation:</h3>
+          <ul>
+            <li><strong>Single Quotes:</strong> Literal strings</li>
+            <li><strong>Double Quotes:</strong> Variable interpolation</li>
+            <li><strong>Heredoc:</strong> Multi-line strings with variables</li>
+            <li><strong>Nowdoc:</strong> Multi-line literal strings</li>
+          </ul>
+          
+          <h3>Common String Functions:</h3>
+          <ul>
+            <li><strong>strlen():</strong> String length</li>
+            <li><strong>substr():</strong> Extract substring</li>
+            <li><strong>str_replace():</strong> Replace text</li>
+            <li><strong>trim():</strong> Remove whitespace</li>
+            <li><strong>strtolower()/strtoupper():</strong> Case conversion</li>
+            <li><strong>explode()/implode():</strong> Split/join strings</li>
+          </ul>
+          
+          <h3>Pattern Matching:</h3>
+          <ul>
+            <li>Regular expressions with preg_match()</li>
+            <li>String searching and positioning</li>
+            <li>Wildcard matching</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/ASXUC7Hwmrg'
+      },
+      {
+        id: 'php-forms',
+        title: 'Forms & Input',
+        content: `
+          <h2>Handling Forms and User Input</h2>
+          <p>PHP excels at processing web forms and handling user input. Learn how to securely collect, validate, and process form data.</p>
+          
+          <h3>HTTP Methods:</h3>
+          <ul>
+            <li><strong>GET:</strong> Data sent in URL parameters ($_GET)</li>
+            <li><strong>POST:</strong> Data sent in request body ($_POST)</li>
+            <li><strong>REQUEST:</strong> Combined GET and POST data ($_REQUEST)</li>
+          </ul>
+          
+          <h3>Input Validation:</h3>
+          <ul>
+            <li>Check for empty fields</li>
+            <li>Validate email addresses</li>
+            <li>Sanitize user input</li>
+            <li>CSRF protection</li>
+            <li>File upload validation</li>
+          </ul>
+          
+          <h3>Security Best Practices:</h3>
+          <ul>
+            <li>Always validate on server-side</li>
+            <li>Escape output to prevent XSS</li>
+            <li>Use prepared statements for database queries</li>
+            <li>Implement CSRF tokens</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/75W34kPgTfc'
+      },
+      {
+        id: 'php-mysql',
+        title: 'Database',
+        content: `
+          <h2>PHP and MySQL Integration</h2>
+          <p>Learn how to connect PHP applications to MySQL databases using PDO and MySQLi extensions. Perform CRUD operations safely and efficiently.</p>
+          
+          <h3>Database Connection Methods:</h3>
+          <ul>
+            <li><strong>PDO:</strong> PHP Data Objects (recommended)</li>
+            <li><strong>MySQLi:</strong> MySQL Improved extension</li>
+            <li><strong>Legacy MySQL:</strong> Deprecated, don't use</li>
+          </ul>
+          
+          <h3>CRUD Operations:</h3>
+          <ul>
+            <li><strong>Create:</strong> INSERT data into database</li>
+            <li><strong>Read:</strong> SELECT data from database</li>
+            <li><strong>Update:</strong> UPDATE existing records</li>
+            <li><strong>Delete:</strong> DELETE records from database</li>
+          </ul>
+          
+          <h3>Security Best Practices:</h3>
+          <ul>
+            <li>Use prepared statements</li>
+            <li>Validate input data</li>
+            <li>Escape output data</li>
+            <li>Use proper error handling</li>
+            <li>Limit database permissions</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/kEW6f7Pilc4'
+      },
+      {
+        id: 'php-sessions-cookies',
+        title: 'Sessions & Cookies',
+        content: `
+          <h2>PHP Sessions and Cookies</h2>
+          <p>Learn how to maintain user state across multiple pages using sessions and cookies. Essential for building login systems and personalized user experiences.</p>
+          
+          <h3>Sessions vs Cookies:</h3>
+          <ul>
+            <li><strong>Sessions:</strong> Server-side storage, more secure</li>
+            <li><strong>Cookies:</strong> Client-side storage, persistent</li>
+          </ul>
+          
+          <h3>Session Features:</h3>
+          <ul>
+            <li>Temporary storage during user visit</li>
+            <li>Unique session ID for each user</li>
+            <li>Automatic expiration</li>
+            <li>Server-side security</li>
+          </ul>
+          
+          <h3>Cookie Features:</h3>
+          <ul>
+            <li>Persistent storage across visits</li>
+            <li>Client-side storage</li>
+            <li>Configurable expiration</li>
+            <li>Domain and path restrictions</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/ZXTp0y_A5DU'
+      },
+      {
+        id: 'php-oop',
+        title: 'OOP PHP',
+        content: `
+          <h2>Object-Oriented Programming in PHP</h2>
+          <p>Learn the principles of OOP in PHP including classes, objects, inheritance, polymorphism, and advanced OOP concepts for building maintainable applications.</p>
+          
+          <h3>OOP Principles:</h3>
+          <ul>
+            <li><strong>Encapsulation:</strong> Bundle data and methods together</li>
+            <li><strong>Inheritance:</strong> Create classes based on existing classes</li>
+            <li><strong>Polymorphism:</strong> Objects of different types with same interface</li>
+            <li><strong>Abstraction:</strong> Hide complex implementation details</li>
+          </ul>
+          
+          <h3>Key Concepts:</h3>
+          <ul>
+            <li><strong>Classes & Objects:</strong> Blueprint and instances</li>
+            <li><strong>Properties & Methods:</strong> Data and behavior</li>
+            <li><strong>Visibility:</strong> public, private, protected</li>
+            <li><strong>Static Members:</strong> Class-level properties and methods</li>
+            <li><strong>Interfaces & Traits:</strong> Contracts and code reuse</li>
+          </ul>
+          
+          <h3>Advanced Features:</h3>
+          <ul>
+            <li>Namespaces and autoloading</li>
+            <li>Magic methods</li>
+            <li>Exception handling</li>
+            <li>Design patterns</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/Anz0ArcQ5kI'
+      }
+    ]
+  },
+  {
+    id: 'laravel',
+    title: 'Laravel',
+    description: 'Laravel - the elegant PHP framework for web development',
+    color: '#ff2d20',
+    lessons: [
+      {
+        id: 'laravel-intro',
+        title: 'Laravel Intro',
+        content: `
+          <h2>What is Laravel?</h2>
+          <p>Laravel is a sophisticated, elegant PHP web application framework that has revolutionized modern web development since its creation by Taylor Otwell in 2011. Known as "The PHP Framework For Web Artisans," Laravel combines expressive syntax with powerful features, making it the most popular PHP framework in 2026. With over 3 million developers worldwide and adoption by companies like Disney, Pfizer, and BBC, Laravel has established itself as the gold standard for PHP development, powering everything from startups to Fortune 500 enterprise applications.</p>
+          
+          <h3>Why Laravel Dominates PHP Development in 2026:</h3>
+          <ul>
+            <li><strong>Industry Leader:</strong> #1 most popular PHP framework with 40%+ market share</li>
+            <li><strong>Enterprise Adoption:</strong> Used by Fortune 500 companies and government organizations</li>
+            <li><strong>Developer Productivity:</strong> 60% faster development than vanilla PHP</li>
+            <li><strong>Modern Architecture:</strong> Clean MVC pattern with dependency injection</li>
+            <li><strong>Rich Ecosystem:</strong> Laravel Nova, Forge, Vapor, Cashier, and 15,000+ packages</li>
+            <li><strong>Active Development:</strong> Regular updates, LTS versions, strong roadmap</li>
+            <li><strong>Outstanding Documentation:</strong> Comprehensive, clear, and constantly updated</li>
+          </ul>
+          
+          <h3>Learning Benefits:</h3>
+          <ul>
+            <li><strong>Elegant Programming:</strong> Learn to write beautiful, expressive code with Laravel's syntax</li>
+            <li><strong>Rapid Prototyping:</strong> Build complex web applications in record time</li>
+            <li><strong>Best Practices:</strong> Master modern web development patterns and architecture</li>
+            <li><strong>Full-Stack Thinking:</strong> Understand how frontend and backend work together seamlessly</li>
+            <li><strong>Database Relationships:</strong> Learn advanced data modeling and ORM concepts</li>
+            <li><strong>Security Awareness:</strong> Build applications with enterprise-level security from the start</li>
+            <li><strong>Ecosystem Integration:</strong> Connect with APIs, payment systems, and third-party services</li>
+          </ul>
+          
+          <h3>Prerequisites:</h3>
+          <ul>
+            <li><strong>Essential:</strong> Solid PHP knowledge and OOP principles</li>
+            <li><strong>Required:</strong> Understanding of MVC architecture</li>
+            <li><strong>Helpful:</strong> HTML, CSS, JavaScript/Vue.js fundamentals</li>
+            <li><strong>Recommended:</strong> Database design (MySQL/PostgreSQL)</li>
+            <li><strong>Bonus:</strong> Command line interface familiarity, Composer experience</li>
+          </ul>
+          
+          <h3>Modern Laravel Ecosystem (2026):</h3>
+          <ul>
+            <li><strong>Frontend:</strong> Laravel Mix/Vite, Vue.js 3, Inertia.js, Livewire 3</li>
+            <li><strong>Database:</strong> Eloquent ORM, MySQL 8, PostgreSQL, Redis, MongoDB</li>
+            <li><strong>Testing:</strong> PHPUnit, Pest, Laravel Dusk, Faker</li>
+            <li><strong>DevOps:</strong> Laravel Sail (Docker), Forge, Vapor (serverless)</li>
+            <li><strong>APIs:</strong> Laravel Sanctum, Passport, JSON API resources</li>
+            <li><strong>Admin Panels:</strong> Laravel Nova, Filament, Laravel Admin</li>
+            <li><strong>Queues:</strong> Redis, Amazon SQS, Database queues</li>
+          </ul>
+          
+          <h3>What You'll Master:</h3>
+          <ul>
+            <li><strong>MVC Architecture:</strong> Clean separation of concerns and maintainable code</li>
+            <li><strong>Eloquent ORM:</strong> Intuitive database interactions and relationships</li>
+            <li><strong>Blade Templating:</strong> Powerful templating with inheritance and components</li>
+            <li><strong>Authentication & Authorization:</strong> Built-in user management and permissions</li>
+            <li><strong>API Development:</strong> RESTful APIs with authentication and rate limiting</li>
+            <li><strong>Real-Time Features:</strong> WebSockets, broadcasting, events, and notifications</li>
+            <li><strong>Testing:</strong> Comprehensive testing with feature and unit tests</li>
+            <li><strong>Deployment:</strong> Production deployment, optimization, and scaling</li>
+            <li><strong>Package Development:</strong> Creating and publishing Laravel packages</li>
+          </ul>
+          
+          <h3>Key Features of Laravel:</h3>
+          <ul>
+            <li><strong>Eloquent ORM:</strong> Powerful and intuitive database interactions</li>
+            <li><strong>Artisan CLI:</strong> Command-line tools for development</li>
+            <li><strong>Blade Templates:</strong> Elegant templating engine</li>
+            <li><strong>Routing:</strong> Simple and expressive routing system</li>
+            <li><strong>Middleware:</strong> HTTP request filtering</li>
+            <li><strong>Authentication:</strong> Built-in user authentication</li>
+            <li><strong>Caching:</strong> Multiple caching backends</li>
+            <li><strong>Queue System:</strong> Background job processing</li>
+          </ul>
+          
+          <h3>Industry Applications:</h3>
+          <ul>
+            <li><strong>E-Commerce:</strong> Complex online stores, payment processing, inventory</li>
+            <li><strong>Enterprise Applications:</strong> CRM, ERP, business management systems</li>
+            <li><strong>SaaS Platforms:</strong> Multi-tenant applications, subscription billing</li>
+            <li><strong>Content Management:</strong> Custom CMS, publishing platforms, media sites</li>
+            <li><strong>API Services:</strong> RESTful APIs, microservices, mobile backends</li>
+            <li><strong>Social Platforms:</strong> Community sites, social networks, collaboration tools</li>
+          </ul>
+          
+          <h3>Why Choose Laravel?</h3>
+          <ul>
+            <li><strong>Developer Experience:</strong> Clean, expressive syntax</li>
+            <li><strong>Rapid Development:</strong> Built-in features save time</li>
+            <li><strong>Scalability:</strong> Suitable for small to large applications</li>
+            <li><strong>Community:</strong> Large, active community support</li>
+            <li><strong>Documentation:</strong> Comprehensive and well-maintained</li>
+            <li><strong>Ecosystem:</strong> Rich package ecosystem (Packagist)</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/MFh0Fd7BsjE'
+      },
+      {
+        id: 'laravel-installation',
+        title: 'Installation & Setup',
+        content: `
+          <h2>Installing Laravel</h2>
+          <p>Learn how to install Laravel and set up your development environment for building modern web applications.</p>
+          
+          <h3>System Requirements:</h3>
+          <ul>
+            <li><strong>PHP:</strong> >= 8.0</li>
+            <li><strong>Composer:</strong> Dependency manager for PHP</li>
+            <li><strong>Web Server:</strong> Apache/Nginx or Laravel Sail</li>
+            <li><strong>Database:</strong> MySQL, PostgreSQL, SQLite, or SQL Server</li>
+          </ul>
+          
+          <h3>Installation Methods:</h3>
+          <ul>
+            <li><strong>Composer Create-Project:</strong> Traditional installation</li>
+            <li><strong>Laravel Installer:</strong> Global Laravel installer</li>
+            <li><strong>Laravel Sail:</strong> Docker-based development environment</li>
+          </ul>
+          
+          <h3>Development Tools:</h3>
+          <ul>
+            <li><strong>Laravel Valet:</strong> Mac development environment</li>
+            <li><strong>Homestead:</strong> Vagrant virtual machine</li>
+            <li><strong>XAMPP/WAMP:</strong> Local server packages</li>
+          </ul>
+          
+          <h3>Project Structure:</h3>
+          <ul>
+            <li><strong>app/:</strong> Application core (Models, Controllers)</li>
+            <li><strong>config/:</strong> Configuration files</li>
+            <li><strong>database/:</strong> Migrations, seeders, factories</li>
+            <li><strong>public/:</strong> Web server entry point</li>
+            <li><strong>resources/:</strong> Views, assets, language files</li>
+            <li><strong>routes/:</strong> Route definitions</li>
+            <li><strong>storage/:</strong> Logs, cache, uploaded files</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/rIfdg_Ot-LI'
+      },
+      {
+        id: 'laravel-routing',
+        title: 'Routing & Controllers',
+        content: `
+          <h2>Laravel Routing System</h2>
+          <p>Laravel routing provides a clean, expressive way to define your application's URL structure and handle HTTP requests efficiently.</p>
+          
+          <h3>Basic Routing:</h3>
+          <ul>
+            <li><strong>GET Routes:</strong> Display data or pages</li>
+            <li><strong>POST Routes:</strong> Submit forms or create data</li>
+            <li><strong>PUT/PATCH Routes:</strong> Update existing data</li>
+            <li><strong>DELETE Routes:</strong> Remove data</li>
+          </ul>
+          
+          <h3>Route Parameters:</h3>
+          <ul>
+            <li><strong>Required Parameters:</strong> /user/{id}</li>
+            <li><strong>Optional Parameters:</strong> /user/{name?}</li>
+            <li><strong>Regular Expression Constraints:</strong> where() method</li>
+          </ul>
+          
+          <h3>Controllers:</h3>
+          <ul>
+            <li><strong>Resource Controllers:</strong> CRUD operations</li>
+            <li><strong>Single Action Controllers:</strong> __invoke() method</li>
+            <li><strong>Controller Middleware:</strong> Route protection</li>
+            <li><strong>Dependency Injection:</strong> Service container integration</li>
+          </ul>
+          
+          <h3>Route Model Binding:</h3>
+          <ul>
+            <li><strong>Implicit Binding:</strong> Automatic model resolution</li>
+            <li><strong>Explicit Binding:</strong> Custom binding logic</li>
+            <li><strong>Route Caching:</strong> Performance optimization</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/pRtQUDCjjTc'
+      },
+      {
+        id: 'laravel-blade-templates',
+        title: 'Blade Templates',
+        content: `
+          <h2>Blade Templating Engine</h2>
+          <p>Blade is Laravel's powerful templating engine that allows you to create beautiful, maintainable templates with PHP seamlessly integrated.</p>
+          
+          <h3>Blade Features:</h3>
+          <ul>
+            <li><strong>Template Inheritance:</strong> Extend layouts and sections</li>
+            <li><strong>Data Display:</strong> Escaped and unescaped output</li>
+            <li><strong>Control Structures:</strong> Loops, conditionals</li>
+            <li><strong>Components:</strong> Reusable UI elements</li>
+            <li><strong>Includes:</strong> Partial template inclusion</li>
+          </ul>
+          
+          <h3>Blade Directives:</h3>
+          <ul>
+            <li><strong>@if, @else, @endif:</strong> Conditional statements</li>
+            <li><strong>@foreach, @endforeach:</strong> Loop iterations</li>
+            <li><strong>@extends, @section:</strong> Template inheritance</li>
+            <li><strong>@include:</strong> Include sub-views</li>
+            <li><strong>@yield:</strong> Define content sections</li>
+            <li><strong>@csrf:</strong> CSRF token inclusion</li>
+          </ul>
+          
+          <h3>Blade Components:</h3>
+          <ul>
+            <li><strong>Anonymous Components:</strong> Simple reusable templates</li>
+            <li><strong>Class-based Components:</strong> Components with PHP logic</li>
+            <li><strong>Component Attributes:</strong> Dynamic attribute handling</li>
+            <li><strong>Slots:</strong> Flexible content injection</li>
+          </ul>
+          
+          <h3>Advanced Features:</h3>
+          <ul>
+            <li><strong>Custom Directives:</strong> Create your own Blade directives</li>
+            <li><strong>Template Caching:</strong> Improved performance</li>
+            <li><strong>Asset Compilation:</strong> Laravel Mix integration</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/eWJVx2K4fjM'
+      },
+      {
+        id: 'laravel-eloquent-orm',
+        title: 'Eloquent ORM',
+        content: `
+          <h2>Laravel Eloquent ORM</h2>
+          <p>Eloquent is Laravel's built-in Object-Relational Mapping (ORM) that provides an elegant ActiveRecord implementation for working with your database.</p>
+          
+          <h3>Model Features:</h3>
+          <ul>
+            <li><strong>Active Record Pattern:</strong> Models represent database tables</li>
+            <li><strong>Mass Assignment:</strong> Fillable and guarded properties</li>
+            <li><strong>Timestamps:</strong> Automatic created_at and updated_at</li>
+            <li><strong>Soft Deletes:</strong> Mark records as deleted without removing</li>
+            <li><strong>Attributes:</strong> Accessors and mutators for data transformation</li>
+          </ul>
+          
+          <h3>Query Builder Integration:</h3>
+          <ul>
+            <li><strong>Fluent Interface:</strong> Method chaining for queries</li>
+            <li><strong>Eager Loading:</strong> Solve N+1 query problems</li>
+            <li><strong>Lazy Loading:</strong> Load relationships on demand</li>
+            <li><strong>Query Scopes:</strong> Reusable query logic</li>
+          </ul>
+          
+          <h3>Relationships:</h3>
+          <ul>
+            <li><strong>One-to-One:</strong> hasOne() and belongsTo()</li>
+            <li><strong>One-to-Many:</strong> hasMany() and belongsTo()</li>
+            <li><strong>Many-to-Many:</strong> belongsToMany()</li>
+            <li><strong>Polymorphic Relations:</strong> Flexible relationships</li>
+          </ul>
+          
+          <h3>Advanced Features:</h3>
+          <ul>
+            <li><strong>Model Events:</strong> Hooks for model operations</li>
+            <li><strong>Observers:</strong> Separate event handling logic</li>
+            <li><strong>Collections:</strong> Powerful data manipulation</li>
+            <li><strong>Model Factories:</strong> Generate test data</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/qJqt3CzqtVA'
+      },
+      {
+        id: 'laravel-migrations-database',
+        title: 'Migrations & DB',
+        content: `
+          <h2>Database Migrations</h2>
+          <p>Laravel migrations are version control for your database, allowing you to define and share your application's database schema with your team.</p>
+          
+          <h3>Migration Benefits:</h3>
+          <ul>
+            <li><strong>Version Control:</strong> Track database changes</li>
+            <li><strong>Team Collaboration:</strong> Share schema changes</li>
+            <li><strong>Environment Sync:</strong> Keep databases in sync</li>
+            <li><strong>Rollback Capability:</strong> Undo schema changes</li>
+          </ul>
+          
+          <h3>Schema Builder:</h3>
+          <ul>
+            <li><strong>Table Creation:</strong> Create new tables</li>
+            <li><strong>Column Types:</strong> String, integer, boolean, timestamps</li>
+            <li><strong>Indexes:</strong> Primary keys, unique constraints, indexes</li>
+            <li><strong>Foreign Keys:</strong> Define relationships between tables</li>
+            <li><strong>Table Modifications:</strong> Add, modify, drop columns</li>
+          </ul>
+          
+          <h3>Database Seeding:</h3>
+          <ul>
+            <li><strong>Seeders:</strong> Populate tables with sample data</li>
+            <li><strong>Model Factories:</strong> Generate fake data for testing</li>
+            <li><strong>Database Testing:</strong> RefreshDatabase trait</li>
+          </ul>
+          
+          <h3>Query Builder:</h3>
+          <ul>
+            <li><strong>Fluent Interface:</strong> Build complex queries</li>
+            <li><strong>Raw Queries:</strong> Execute custom SQL when needed</li>
+            <li><strong>Transactions:</strong> Database transaction support</li>
+            <li><strong>Multiple Connections:</strong> Work with multiple databases</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/4RHUwzGWRAw'
+      },
+      {
+        id: 'laravel-authentication',
+        title: 'Authentication & Authorization',
+        content: `
+          <h2>Laravel Authentication System</h2>
+          <p>Laravel provides a complete authentication system out of the box, including user registration, login, password reset, and email verification.</p>
+          
+          <h3>Authentication Features:</h3>
+          <ul>
+            <li><strong>User Registration:</strong> Built-in registration system</li>
+            <li><strong>Login/Logout:</strong> Session-based authentication</li>
+            <li><strong>Password Reset:</strong> Email-based password recovery</li>
+            <li><strong>Email Verification:</strong> Verify user email addresses</li>
+            <li><strong>Remember Me:</strong> Persistent login sessions</li>
+          </ul>
+          
+          <h3>Laravel Breeze & Jetstream:</h3>
+          <ul>
+            <li><strong>Laravel Breeze:</strong> Simple authentication scaffolding</li>
+            <li><strong>Laravel Jetstream:</strong> Advanced authentication with teams</li>
+            <li><strong>Inertia.js:</strong> Modern single-page applications</li>
+            <li><strong>Livewire:</strong> Dynamic interfaces without JavaScript</li>
+          </ul>
+          
+          <h3>Authorization:</h3>
+          <ul>
+            <li><strong>Gates:</strong> Simple closure-based authorization</li>
+            <li><strong>Policies:</strong> Class-based authorization logic</li>
+            <li><strong>Middleware:</strong> Route-level protection</li>
+            <li><strong>Blade Directives:</strong> Template-level authorization</li>
+          </ul>
+          
+          <h3>API Authentication:</h3>
+          <ul>
+            <li><strong>Sanctum:</strong> API token authentication</li>
+            <li><strong>Passport:</strong> Full OAuth2 server implementation</li>
+            <li><strong>JWT:</strong> JSON Web Token authentication</li>
+            <li><strong>Guard Configuration:</strong> Multiple authentication systems</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/th6LsKxf8fY'
+      },
+      {
+        id: 'laravel-forms-validation',
+        title: 'Forms & Validation',
+        content: `
+          <h2>Laravel Forms and Validation</h2>
+          <p>Laravel provides powerful tools for building forms and validating user input with simple, expressive syntax and comprehensive validation rules.</p>
+          
+          <h3>Form Building:</h3>
+          <ul>
+            <li><strong>Blade Forms:</strong> HTML forms with Blade helpers</li>
+            <li><strong>CSRF Protection:</strong> Built-in CSRF token handling</li>
+            <li><strong>Method Spoofing:</strong> HTTP verb simulation</li>
+            <li><strong>File Uploads:</strong> Handle file upload forms</li>
+            <li><strong>Form Requests:</strong> Dedicated request classes</li>
+          </ul>
+          
+          <h3>Validation Rules:</h3>
+          <ul>
+            <li><strong>Basic Rules:</strong> required, email, numeric, string</li>
+            <li><strong>Size Rules:</strong> min, max, between for strings/numbers</li>
+            <li><strong>Database Rules:</strong> unique, exists for database validation</li>
+            <li><strong>File Rules:</strong> image, mimes, file size validation</li>
+            <li><strong>Custom Rules:</strong> Create your own validation rules</li>
+          </ul>
+          
+          <h3>Form Request Classes:</h3>
+          <ul>
+            <li><strong>Validation Logic:</strong> Centralized validation rules</li>
+            <li><strong>Authorization:</strong> Request-level authorization</li>
+            <li><strong>Error Handling:</strong> Automatic error response</li>
+            <li><strong>Custom Messages:</strong> Personalized error messages</li>
+          </ul>
+          
+          <h3>Error Handling:</h3>
+          <ul>
+            <li><strong>Error Bags:</strong> Organize validation errors</li>
+            <li><strong>Old Input:</strong> Preserve form data on validation failure</li>
+            <li><strong>Error Display:</strong> Show errors in Blade templates</li>
+            <li><strong>AJAX Validation:</strong> Handle validation in JavaScript</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/H3pij8VzPDk'
+      },
+      {
+        id: 'laravel-api-development',
+        title: 'API Development',
+        content: `
+          <h2>Laravel API Development</h2>
+          <p>Laravel excels at building robust RESTful APIs with built-in tools for authentication, rate limiting, and API resource transformation.</p>
+          
+          <h3>API Routes:</h3>
+          <ul>
+            <li><strong>API Route Group:</strong> routes/api.php for API endpoints</li>
+            <li><strong>Resource Routes:</strong> Automatic CRUD route generation</li>
+            <li><strong>Route Model Binding:</strong> Automatic model injection</li>
+            <li><strong>Rate Limiting:</strong> Protect API from abuse</li>
+          </ul>
+          
+          <h3>API Resources:</h3>
+          <ul>
+            <li><strong>Resource Classes:</strong> Transform models to JSON</li>
+            <li><strong>Resource Collections:</strong> Transform model collections</li>
+            <li><strong>Conditional Attributes:</strong> Include data based on conditions</li>
+            <li><strong>Resource Relationships:</strong> Include related data efficiently</li>
+          </ul>
+          
+          <h3>API Authentication:</h3>
+          <ul>
+            <li><strong>Laravel Sanctum:</strong> Simple API token authentication</li>
+            <li><strong>Personal Access Tokens:</strong> User-specific API tokens</li>
+            <li><strong>API Token Abilities:</strong> Scope-based permissions</li>
+            <li><strong>SPA Authentication:</strong> Single-page application auth</li>
+          </ul>
+          
+          <h3>API Best Practices:</h3>
+          <ul>
+            <li><strong>HTTP Status Codes:</strong> Proper response codes</li>
+            <li><strong>Error Handling:</strong> Consistent error responses</li>
+            <li><strong>Pagination:</strong> Handle large datasets efficiently</li>
+            <li><strong>Versioning:</strong> API version management</li>
+            <li><strong>Documentation:</strong> API documentation with tools</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/YGqCZjdgJJk'
+      },
+      {
+        id: 'laravel-testing',
+        title: 'Testing Laravel',
+        content: `
+          <h2>Laravel Testing</h2>
+          <p>Laravel is built with testing in mind, providing excellent support for unit testing, feature testing, and browser testing with PHPUnit and Laravel Dusk.</p>
+          
+          <h3>Testing Types:</h3>
+          <ul>
+            <li><strong>Unit Tests:</strong> Test individual classes and methods</li>
+            <li><strong>Feature Tests:</strong> Test application features and HTTP requests</li>
+            <li><strong>Browser Tests:</strong> Test JavaScript interactions with Dusk</li>
+            <li><strong>Database Testing:</strong> Test database interactions</li>
+          </ul>
+          
+          <h3>Testing Tools:</h3>
+          <ul>
+            <li><strong>PHPUnit:</strong> PHP testing framework integration</li>
+            <li><strong>Laravel Dusk:</strong> Browser automation and testing</li>
+            <li><strong>HTTP Testing:</strong> Test API endpoints and responses</li>
+            <li><strong>Mocking:</strong> Mock dependencies and external services</li>
+          </ul>
+          
+          <h3>Database Testing:</h3>
+          <ul>
+            <li><strong>RefreshDatabase:</strong> Reset database between tests</li>
+            <li><strong>Database Transactions:</strong> Rollback changes after tests</li>
+            <li><strong>Model Factories:</strong> Generate test data efficiently</li>
+            <li><strong>Seeder Testing:</strong> Test database seeders</li>
+          </ul>
+          
+          <h3>Testing Best Practices:</h3>
+          <ul>
+            <li><strong>Test Organization:</strong> Organize tests logically</li>
+            <li><strong>Test Data:</strong> Use factories for consistent test data</li>
+            <li><strong>Assertions:</strong> Use appropriate assertion methods</li>
+            <li><strong>Test Coverage:</strong> Ensure comprehensive test coverage</li>
+            <li><strong>Continuous Integration:</strong> Automated testing workflows</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/DWnKnGkh7oU'
+      },
+      {
+        id: 'laravel-deployment',
+        title: 'Deployment',
+        content: `
+          <h2>Laravel Deployment</h2>
+          <p>Learn how to deploy Laravel applications to production servers with proper configuration, optimization, and security practices.</p>
+          
+          <h3>Pre-deployment Checklist:</h3>
+          <ul>
+            <li><strong>Environment Configuration:</strong> .env file setup</li>
+            <li><strong>App Key Generation:</strong> Secure application encryption key</li>
+            <li><strong>Debug Mode:</strong> Disable debug mode in production</li>
+            <li><strong>Config Caching:</strong> Cache configuration files</li>
+            <li><strong>Route Caching:</strong> Cache application routes</li>
+          </ul>
+          
+          <h3>Server Requirements:</h3>
+          <ul>
+            <li><strong>PHP Version:</strong> Compatible PHP version (8.0+)</li>
+            <li><strong>Web Server:</strong> Apache or Nginx configuration</li>
+            <li><strong>Database:</strong> MySQL, PostgreSQL, or other databases</li>
+            <li><strong>PHP Extensions:</strong> Required extensions installed</li>
+            <li><strong>Composer:</strong> Dependency management in production</li>
+          </ul>
+          
+          <h3>Deployment Strategies:</h3>
+          <ul>
+            <li><strong>Laravel Forge:</strong> Automated server management</li>
+            <li><strong>Laravel Envoyer:</strong> Zero-downtime deployment</li>
+            <li><strong>Manual Deployment:</strong> Traditional server deployment</li>
+            <li><strong>Docker Deployment:</strong> Containerized applications</li>
+            <li><strong>Cloud Platforms:</strong> AWS, DigitalOcean, Heroku</li>
+          </ul>
+          
+          <h3>Production Optimization:</h3>
+          <ul>
+            <li><strong>Opcode Caching:</strong> PHP opcode caching (OPcache)</li>
+            <li><strong>Queue Workers:</strong> Background job processing</li>
+            <li><strong>Redis/Memcached:</strong> Application caching</li>
+            <li><strong>CDN Integration:</strong> Content delivery networks</li>
+            <li><strong>Database Optimization:</strong> Query optimization and indexing</li>
+            <li><strong>Monitoring:</strong> Application performance monitoring</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/6g8G3YQtQt4'
+      }
+    ]
+  },
+  {
+    id: 'bootstrap',
+    title: 'Bootstrap',
+    description: 'Bootstrap - popular CSS framework for building responsive websites',
+    color: '#7952b3',
+    lessons: [
+      {
+        id: 'bootstrap-intro',
+        title: 'Bootstrap Intro',
+        content: `
+          <h2>What is Bootstrap?</h2>
+          <p>Bootstrap is the world's most popular front-end CSS framework that has revolutionized web development since its creation by Mark Otto and Jacob Thornton at Twitter in 2011. Used by over 22% of all websites globally, Bootstrap provides a comprehensive toolkit of responsive grid systems, pre-built components, and JavaScript plugins that enable developers to create professional, mobile-first websites 10x faster than traditional CSS. With over 158,000 GitHub stars and adoption by companies like Spotify, LinkedIn, and Walmart, Bootstrap has become the industry standard for rapid web development.</p>
+          
+          <h3>Why Bootstrap Dominates Frontend Development in 2026:</h3>
+          <ul>
+            <li><strong>Market Leader:</strong> Used by 22% of all websites and 80% of top 10,000 sites</li>
+            <li><strong>Enterprise Adoption:</strong> Trusted by Fortune 500 companies and government agencies</li>
+            <li><strong>Developer Productivity:</strong> 10x faster development with pre-built components</li>
+            <li><strong>Mobile-First Design:</strong> Built-in responsive design for all devices</li>
+            <li><strong>Extensive Ecosystem:</strong> 50,000+ themes, templates, and components available</li>
+            <li><strong>Cross-Browser Compatibility:</strong> Works consistently across all modern browsers</li>
+            <li><strong>Active Development:</strong> Regular updates, Bootstrap 5+ with modern features</li>
+          </ul>
+          
+          <h3>Learning Benefits:</h3>
+          <ul>
+            <li><strong>Rapid Prototyping:</strong> Build professional websites in hours, not days</li>
+            <li><strong>Responsive Design:</strong> Master mobile-first development automatically</li>
+            <li><strong>Design Consistency:</strong> Learn to create cohesive, professional-looking interfaces</li>
+            <li><strong>Component Understanding:</strong> Discover how modern UI libraries are structured</li>
+            <li><strong>Cross-Browser Compatibility:</strong> Build sites that work perfectly everywhere</li>
+            <li><strong>Industry Standards:</strong> Learn the framework used by millions of websites</li>
+            <li><strong>Customization Skills:</strong> Understand how to modify and extend existing frameworks</li>
+          </ul>
+          
+          <h3>Prerequisites:</h3>
+          <ul>
+            <li><strong>Essential:</strong> Solid HTML and CSS fundamentals</li>
+            <li><strong>Helpful:</strong> Basic JavaScript understanding</li>
+            <li><strong>Recommended:</strong> CSS preprocessors (Sass) knowledge</li>
+            <li><strong>Bonus:</strong> Responsive design principles, mobile-first approach</li>
+          </ul>
+          
+          <h3>Modern Bootstrap Ecosystem (2026):</h3>
+          <ul>
+            <li><strong>Bootstrap 5.3+:</strong> Latest features without jQuery dependency</li>
+            <li><strong>Build Tools:</strong> Webpack, Vite, Parcel, Gulp integration</li>
+            <li><strong>Icons:</strong> Bootstrap Icons library with 1,800+ scalable icons</li>
+            <li><strong>Themes:</strong> Premium and free themes from BootstrapMade, Creative Tim</li>
+            <li><strong>Customization:</strong> Sass variables, CSS custom properties</li>
+            <li><strong>JavaScript:</strong> Vanilla JS plugins, no jQuery required</li>
+            <li><strong>Admin Templates:</strong> SB Admin, AdminLTE, Soft UI Dashboard</li>
+          </ul>
+          
+          <h3>What You'll Master:</h3>
+          <ul>
+            <li><strong>Grid System Mastery:</strong> 12-column responsive layouts and breakpoints</li>
+            <li><strong>Component Library:</strong> Buttons, forms, navigation, cards, and modals</li>
+            <li><strong>Responsive Design:</strong> Mobile-first approach with breakpoint utilities</li>
+            <li><strong>Customization:</strong> Sass variables, custom themes, and brand styling</li>
+            <li><strong>JavaScript Plugins:</strong> Interactive components without jQuery</li>
+            <li><strong>Utility Classes:</strong> Spacing, typography, and display utilities</li>
+            <li><strong>Real Projects:</strong> Build professional websites and admin dashboards</li>
+            <li><strong>Performance:</strong> Optimize bundle size and loading performance</li>
+          </ul>
+          
+          <h3>Key Features of Bootstrap:</h3>
+          <ul>
+            <li><strong>Responsive Grid System:</strong> 12-column flexible grid layout</li>
+            <li><strong>Pre-built Components:</strong> Buttons, forms, navigation, modals, and more</li>
+            <li><strong>CSS Utilities:</strong> Spacing, colors, typography utilities</li>
+            <li><strong>JavaScript Plugins:</strong> Interactive components with JavaScript</li>
+            <li><strong>Customizable:</strong> Sass variables and custom builds</li>
+            <li><strong>Mobile-First:</strong> Designed for mobile devices first</li>
+          </ul>
+          
+          <h3>Industry Applications:</h3>
+          <ul>
+            <li><strong>Corporate Websites:</strong> Professional business sites with consistent design</li>
+            <li><strong>E-Commerce:</strong> Online stores with responsive product layouts</li>
+            <li><strong>Admin Dashboards:</strong> Business intelligence and data visualization</li>
+            <li><strong>Landing Pages:</strong> Marketing and conversion-focused pages</li>
+            <li><strong>Portfolio Sites:</strong> Creative professional showcases</li>
+            <li><strong>Web Applications:</strong> User interfaces for complex applications</li>
+          </ul>
+          
+          <h3>Why Use Bootstrap?</h3>
+          <ul>
+            <li><strong>Rapid Development:</strong> Build prototypes and websites quickly</li>
+            <li><strong>Consistency:</strong> Uniform design across projects</li>
+            <li><strong>Community Support:</strong> Large community and resources</li>
+            <li><strong>Browser Compatibility:</strong> Works across all modern browsers</li>
+            <li><strong>Documentation:</strong> Comprehensive and well-maintained docs</li>
+          </ul>
+          
+          <h3>Bootstrap Versions:</h3>
+          <ul>
+            <li><strong>Bootstrap 5:</strong> Latest version (no jQuery dependency)</li>
+            <li><strong>Bootstrap 4:</strong> Still widely used</li>
+            <li><strong>Bootstrap 3:</strong> Legacy version</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/4sosXZsdy-s'
+      },
+      {
+        id: 'bootstrap-installation',
+        title: 'Installation & Setup',
+        content: `
+          <h2>Getting Started with Bootstrap</h2>
+          <p>Learn different ways to include Bootstrap in your projects and set up your development environment for building responsive websites.</p>
+          
+          <h3>Installation Methods:</h3>
+          <ul>
+            <li><strong>CDN Links:</strong> Quick setup with hosted CSS and JS files</li>
+            <li><strong>Download:</strong> Compiled CSS and JS files</li>
+            <li><strong>Package Managers:</strong> npm, yarn, Composer</li>
+            <li><strong>Source Files:</strong> Sass source files for customization</li>
+          </ul>
+          
+          <h3>CDN Setup:</h3>
+          <ul>
+            <li><strong>CSS Link:</strong> Include Bootstrap CSS in your HTML head</li>
+            <li><strong>JavaScript Bundle:</strong> Include Bootstrap JS before closing body tag</li>
+            <li><strong>Popper.js:</strong> Required for tooltips and popovers</li>
+            <li><strong>Icons:</strong> Bootstrap Icons for scalable vector icons</li>
+          </ul>
+          
+          <h3>Basic HTML Template:</h3>
+          <ul>
+            <li><strong>HTML5 Doctype:</strong> Required for proper rendering</li>
+            <li><strong>Viewport Meta Tag:</strong> Essential for responsive behavior</li>
+            <li><strong>Container Classes:</strong> Proper content wrapping</li>
+          </ul>
+          
+          <h3>Development Setup:</h3>
+          <ul>
+            <li><strong>Build Tools:</strong> Webpack, Parcel, or Gulp integration</li>
+            <li><strong>Sass Compilation:</strong> Customize Bootstrap variables</li>
+            <li><strong>Live Reload:</strong> Development server setup</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/O_9u1P5YjVc'
+      },
+      {
+        id: 'bootstrap-grid-system',
+        title: 'Grid System',
+        content: `
+          <h2>Bootstrap Grid System</h2>
+          <p>Master Bootstrap's powerful 12-column grid system built with flexbox that adapts to different screen sizes and orientations.</p>
+          
+          <h3>Grid Basics:</h3>
+          <ul>
+            <li><strong>Containers:</strong> .container and .container-fluid</li>
+            <li><strong>Rows:</strong> Horizontal groups of columns</li>
+            <li><strong>Columns:</strong> Content containers with flexible widths</li>
+            <li><strong>Gutters:</strong> Spacing between columns</li>
+          </ul>
+          
+          <h3>Responsive Breakpoints:</h3>
+          <ul>
+            <li><strong>xs:</strong> Extra small devices (< 576px)</li>
+            <li><strong>sm:</strong> Small devices (≥ 576px)</li>
+            <li><strong>md:</strong> Medium devices (≥ 768px)</li>
+            <li><strong>lg:</strong> Large devices (≥ 992px)</li>
+            <li><strong>xl:</strong> Extra large devices (≥ 1200px)</li>
+            <li><strong>xxl:</strong> Extra extra large devices (≥ 1400px)</li>
+          </ul>
+          
+          <h3>Column Classes:</h3>
+          <ul>
+            <li><strong>Auto Layout:</strong> .col for equal-width columns</li>
+            <li><strong>Specific Widths:</strong> .col-6 for 50% width</li>
+            <li><strong>Responsive Columns:</strong> .col-md-4 .col-lg-3</li>
+            <li><strong>Column Ordering:</strong> .order-* classes</li>
+            <li><strong>Column Offsetting:</strong> .offset-* classes</li>
+          </ul>
+          
+          <h3>Advanced Grid Features:</h3>
+          <ul>
+            <li><strong>Nesting:</strong> Grids within grids</li>
+            <li><strong>Alignment:</strong> Vertical and horizontal alignment</li>
+            <li><strong>Auto-sizing:</strong> Content-based column widths</li>
+            <li><strong>No Gutters:</strong> .g-0 for tight layouts</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/qmPmwdshCMw'
+      },
+      {
+        id: 'bootstrap-typography',
+        title: 'Typography',
+        content: `
+          <h2>Bootstrap Typography</h2>
+          <p>Learn how Bootstrap provides beautiful, consistent typography with heading styles, body text, and powerful text utilities for styling content.</p>
+          
+          <h3>Headings & Display Text:</h3>
+          <ul>
+            <li><strong>HTML Headings:</strong> h1 through h6 with custom styling</li>
+            <li><strong>Heading Classes:</strong> .h1 through .h6 for any element</li>
+            <li><strong>Display Headings:</strong> .display-1 through .display-6</li>
+            <li><strong>Lead Text:</strong> .lead for emphasized paragraphs</li>
+          </ul>
+          
+          <h3>Text Styling:</h3>
+          <ul>
+            <li><strong>Font Weight:</strong> .fw-bold, .fw-normal, .fw-light</li>
+            <li><strong>Font Style:</strong> .fst-italic, .fst-normal</li>
+            <li><strong>Text Transform:</strong> .text-uppercase, .text-lowercase</li>
+            <li><strong>Text Decoration:</strong> .text-decoration-none, .text-decoration-underline</li>
+          </ul>
+          
+          <h3>Text Alignment & Colors:</h3>
+          <ul>
+            <li><strong>Text Alignment:</strong> .text-start, .text-center, .text-end</li>
+            <li><strong>Responsive Alignment:</strong> .text-sm-center, .text-md-end</li>
+            <li><strong>Text Colors:</strong> .text-primary, .text-danger, .text-success</li>
+            <li><strong>Text Opacity:</strong> .text-opacity-75, .text-opacity-50</li>
+          </ul>
+          
+          <h3>Lists & Blockquotes:</h3>
+          <ul>
+            <li><strong>Unstyled Lists:</strong> .list-unstyled for clean lists</li>
+            <li><strong>Inline Lists:</strong> .list-inline for horizontal lists</li>
+            <li><strong>Blockquotes:</strong> .blockquote styling</li>
+            <li><strong>Abbreviations:</strong> Enhanced abbr element styling</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/rQryOSyfXmI'
+      },
+      {
+        id: 'bootstrap-components',
+        title: 'Components',
+        content: `
+          <h2>Bootstrap Components</h2>
+          <p>Explore Bootstrap's extensive library of prebuilt components including buttons, cards, navigation, forms, and interactive elements.</p>
+          
+          <h3>Buttons & Button Groups:</h3>
+          <ul>
+            <li><strong>Button Styles:</strong> .btn-primary, .btn-secondary, .btn-outline-*</li>
+            <li><strong>Button Sizes:</strong> .btn-lg, .btn-sm for different sizes</li>
+            <li><strong>Button States:</strong> Active, disabled, and toggle buttons</li>
+            <li><strong>Button Groups:</strong> .btn-group for grouped buttons</li>
+            <li><strong>Button Toolbar:</strong> .btn-toolbar for complex layouts</li>
+          </ul>
+          
+          <h3>Cards & Content:</h3>
+          <ul>
+            <li><strong>Basic Cards:</strong> .card with header, body, and footer</li>
+            <li><strong>Card Images:</strong> .card-img-top, .card-img-bottom</li>
+            <li><strong>Card Groups:</strong> .card-group for connected cards</li>
+            <li><strong>Card Decks:</strong> Equal height card layouts</li>
+            <li><strong>Card Columns:</strong> Masonry-style card layouts</li>
+          </ul>
+          
+          <h3>Alerts & Badges:</h3>
+          <ul>
+            <li><strong>Alert Types:</strong> Success, danger, warning, info alerts</li>
+            <li><strong>Dismissible Alerts:</strong> Closable alert messages</li>
+            <li><strong>Alert Links:</strong> Matching colored links in alerts</li>
+            <li><strong>Badges:</strong> .badge for counters and labels</li>
+            <li><strong>Pill Badges:</strong> .badge-pill for rounded badges</li>
+          </ul>
+          
+          <h3>Progress & Spinners:</h3>
+          <ul>
+            <li><strong>Progress Bars:</strong> .progress with animated bars</li>
+            <li><strong>Striped Progress:</strong> .progress-bar-striped styling</li>
+            <li><strong>Animated Progress:</strong> .progress-bar-animated</li>
+            <li><strong>Loading Spinners:</strong> .spinner-border, .spinner-grow</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/c9B4TPnak1A'
+      },
+      {
+        id: 'bootstrap-navigation',
+        title: 'Navigation',
+        content: `
+          <h2>Bootstrap Navigation</h2>
+          <p>Create responsive navigation menus, navbars, breadcrumbs, and pagination with Bootstrap's flexible navigation components.</p>
+          
+          <h3>Navbar Component:</h3>
+          <ul>
+            <li><strong>Navbar Structure:</strong> .navbar with brand, nav, and collapsible content</li>
+            <li><strong>Navbar Colors:</strong> .navbar-light, .navbar-dark themes</li>
+            <li><strong>Background Colors:</strong> .bg-primary, .bg-dark, .bg-light</li>
+            <li><strong>Navbar Positioning:</strong> .fixed-top, .fixed-bottom, .sticky-top</li>
+            <li><strong>Responsive Navbar:</strong> .navbar-expand-* for breakpoint control</li>
+          </ul>
+          
+          <h3>Navigation Components:</h3>
+          <ul>
+            <li><strong>Nav Tabs:</strong> .nav-tabs for tabbed interfaces</li>
+            <li><strong>Nav Pills:</strong> .nav-pills for pill-style navigation</li>
+            <li><strong>Nav Links:</strong> .nav-link styling for navigation items</li>
+            <li><strong>Vertical Nav:</strong> .flex-column for vertical layouts</li>
+            <li><strong>Justified Nav:</strong> .nav-fill, .nav-justified for full-width</li>
+          </ul>
+          
+          <h3>Dropdown Menus:</h3>
+          <ul>
+            <li><strong>Dropdown Toggle:</strong> .dropdown-toggle for dropdown triggers</li>
+            <li><strong>Dropdown Menu:</strong> .dropdown-menu container</li>
+            <li><strong>Dropdown Items:</strong> .dropdown-item for menu options</li>
+            <li><strong>Dropdown Directions:</strong> .dropup, .dropend, .dropstart</li>
+            <li><strong>Dropdown Dividers:</strong> .dropdown-divider for separators</li>
+          </ul>
+          
+          <h3>Breadcrumb & Pagination:</h3>
+          <ul>
+            <li><strong>Breadcrumb:</strong> .breadcrumb for navigation trails</li>
+            <li><strong>Breadcrumb Items:</strong> .breadcrumb-item styling</li>
+            <li><strong>Pagination:</strong> .pagination for page navigation</li>
+            <li><strong>Pagination Sizes:</strong> .pagination-lg, .pagination-sm</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/gt8zOLQ8A0w'
+      },
+      {
+        id: 'bootstrap-forms',
+        title: 'Forms',
+        content: `
+          <h2>Bootstrap Forms</h2>
+          <p>Build beautiful, accessible forms with Bootstrap's form controls, validation states, input groups, and layout options.</p>
+          
+          <h3>Form Controls:</h3>
+          <ul>
+            <li><strong>Form Control:</strong> .form-control for text inputs, textareas</li>
+            <li><strong>Form Select:</strong> .form-select for dropdown selects</li>
+            <li><strong>Form Check:</strong> .form-check for checkboxes and radios</li>
+            <li><strong>Form Range:</strong> .form-range for slider inputs</li>
+            <li><strong>Form File:</strong> .form-control for file inputs</li>
+          </ul>
+          
+          <h3>Form Layout:</h3>
+          <ul>
+            <li><strong>Form Groups:</strong> .mb-3 spacing between form elements</li>
+            <li><strong>Form Grid:</strong> Use grid classes for form layouts</li>
+            <li><strong>Horizontal Forms:</strong> .row and .col-* for horizontal layouts</li>
+            <li><strong>Inline Forms:</strong> .row-cols-auto for inline layouts</li>
+          </ul>
+          
+          <h3>Input Groups:</h3>
+          <ul>
+            <li><strong>Input Group:</strong> .input-group for enhanced inputs</li>
+            <li><strong>Input Group Text:</strong> .input-group-text for addons</li>
+            <li><strong>Input Group Size:</strong> .input-group-lg, .input-group-sm</li>
+            <li><strong>Button Addons:</strong> Buttons attached to inputs</li>
+            <li><strong>Dropdown Addons:</strong> Dropdown menus in input groups</li>
+          </ul>
+          
+          <h3>Form Validation:</h3>
+          <ul>
+            <li><strong>Validation Classes:</strong> .is-valid, .is-invalid states</li>
+            <li><strong>Valid Feedback:</strong> .valid-feedback for success messages</li>
+            <li><strong>Invalid Feedback:</strong> .invalid-feedback for error messages</li>
+            <li><strong>Server-side Validation:</strong> .was-validated class</li>
+            <li><strong>Custom Validation:</strong> JavaScript validation integration</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/3CyCMJ7c8b0'
+      },
+      {
+        id: 'bootstrap-utilities',
+        title: 'Utilities',
+        content: `
+          <h2>Bootstrap Utility Classes</h2>
+          <p>Master Bootstrap's comprehensive utility classes for spacing, colors, positioning, display, and more to fine-tune your designs efficiently.</p>
+          
+          <h3>Spacing Utilities:</h3>
+          <ul>
+            <li><strong>Margin:</strong> .m-* classes for all sides (0-5)</li>
+            <li><strong>Padding:</strong> .p-* classes for all sides (0-5)</li>
+            <li><strong>Directional Spacing:</strong> .mt-*, .mb-*, .ms-*, .me-*</li>
+            <li><strong>Horizontal/Vertical:</strong> .mx-*, .my-* for axis spacing</li>
+            <li><strong>Auto Margins:</strong> .mx-auto, .ms-auto for centering</li>
+          </ul>
+          
+          <h3>Color Utilities:</h3>
+          <ul>
+            <li><strong>Text Colors:</strong> .text-primary, .text-secondary, .text-success</li>
+            <li><strong>Background Colors:</strong> .bg-primary, .bg-light, .bg-dark</li>
+            <li><strong>Color Opacity:</strong> .bg-opacity-*, .text-opacity-*</li>
+            <li><strong>Gradient Backgrounds:</strong> .bg-gradient for smooth gradients</li>
+          </ul>
+          
+          <h3>Display & Positioning:</h3>
+          <ul>
+            <li><strong>Display:</strong> .d-none, .d-block, .d-flex, .d-grid</li>
+            <li><strong>Responsive Display:</strong> .d-md-block, .d-lg-none</li>
+            <li><strong>Position:</strong> .position-relative, .position-absolute</li>
+            <li><strong>Position Values:</strong> .top-0, .bottom-0, .start-0, .end-0</li>
+            <li><strong>Z-index:</strong> .z-index-* for layering control</li>
+          </ul>
+          
+          <h3>Flexbox & Sizing:</h3>
+          <ul>
+            <li><strong>Flex Direction:</strong> .flex-row, .flex-column</li>
+            <li><strong>Justify Content:</strong> .justify-content-center, .justify-content-between</li>
+            <li><strong>Align Items:</strong> .align-items-center, .align-items-stretch</li>
+            <li><strong>Width/Height:</strong> .w-25, .w-50, .h-100</li>
+            <li><strong>Max Width/Height:</strong> .mw-100, .mh-100</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/Jja6vWzgNJE'
+      },
+      {
+        id: 'bootstrap-javascript',
+        title: 'JS Components',
+        content: `
+          <h2>Bootstrap JavaScript Components</h2>
+          <p>Learn to use Bootstrap's interactive JavaScript components including modals, tooltips, popovers, carousels, and collapse functionality.</p>
+          
+          <h3>Modal Component:</h3>
+          <ul>
+            <li><strong>Modal Structure:</strong> .modal with .modal-dialog and .modal-content</li>
+            <li><strong>Modal Sizes:</strong> .modal-lg, .modal-sm, .modal-xl</li>
+            <li><strong>Modal Trigger:</strong> data-bs-toggle="modal" attributes</li>
+            <li><strong>Modal Events:</strong> JavaScript events for modal lifecycle</li>
+            <li><strong>Modal Options:</strong> Backdrop, keyboard, focus configuration</li>
+          </ul>
+          
+          <h3>Tooltips & Popovers:</h3>
+          <ul>
+            <li><strong>Tooltip Initialization:</strong> JavaScript initialization required</li>
+            <li><strong>Tooltip Placement:</strong> top, bottom, left, right positioning</li>
+            <li><strong>Popover Content:</strong> data-bs-title and data-bs-content</li>
+            <li><strong>Trigger Options:</strong> click, hover, focus triggers</li>
+            <li><strong>Custom Styling:</strong> CSS customization options</li>
+          </ul>
+          
+          <h3>Carousel Component:</h3>
+          <ul>
+            <li><strong>Carousel Structure:</strong> .carousel with .carousel-inner</li>
+            <li><strong>Carousel Items:</strong> .carousel-item with images/content</li>
+            <li><strong>Carousel Controls:</strong> Previous/next navigation</li>
+            <li><strong>Carousel Indicators:</strong> Dot navigation for slides</li>
+            <li><strong>Carousel Options:</strong> Autoplay, interval, animation</li>
+          </ul>
+          
+          <h3>Collapse & Accordion:</h3>
+          <ul>
+            <li><strong>Collapse Toggle:</strong> data-bs-toggle="collapse"</li>
+            <li><strong>Collapse Target:</strong> data-bs-target for collapsible content</li>
+            <li><strong>Accordion:</strong> .accordion for grouped collapsible panels</li>
+            <li><strong>Accordion Items:</strong> .accordion-item structure</li>
+            <li><strong>Multiple Collapse:</strong> Independent collapsible sections</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/VENo7jExUXI'
+      },
+      {
+        id: 'bootstrap-responsive-design',
+        title: 'Responsive Design',
+        content: `
+          <h2>Responsive Design Mastery</h2>
+          <p>Master responsive web design with Bootstrap's mobile-first approach, breakpoint system, and responsive utilities for all device sizes.</p>
+          
+          <h3>Mobile-First Philosophy:</h3>
+          <ul>
+            <li><strong>Base Styles:</strong> Start with mobile styles as foundation</li>
+            <li><strong>Progressive Enhancement:</strong> Add larger screen enhancements</li>
+            <li><strong>Performance:</strong> Faster loading on mobile devices</li>
+            <li><strong>User Experience:</strong> Optimized for touch interfaces</li>
+          </ul>
+          
+          <h3>Responsive Breakpoints:</h3>
+          <ul>
+            <li><strong>Extra Small:</strong> < 576px (default, no prefix)</li>
+            <li><strong>Small:</strong> ≥ 576px (sm prefix)</li>
+            <li><strong>Medium:</strong> ≥ 768px (md prefix)</li>
+            <li><strong>Large:</strong> ≥ 992px (lg prefix)</li>
+            <li><strong>Extra Large:</strong> ≥ 1200px (xl prefix)</li>
+            <li><strong>Extra Extra Large:</strong> ≥ 1400px (xxl prefix)</li>
+          </ul>
+          
+          <h3>Responsive Utilities:</h3>
+          <ul>
+            <li><strong>Display Controls:</strong> .d-none .d-md-block for show/hide</li>
+            <li><strong>Text Alignment:</strong> .text-center .text-md-start</li>
+            <li><strong>Spacing:</strong> .p-2 .p-md-4 for responsive spacing</li>
+            <li><strong>Flex Properties:</strong> .flex-column .flex-md-row</li>
+            <li><strong>Grid Columns:</strong> .col-12 .col-md-6 .col-lg-4</li>
+          </ul>
+          
+          <h3>Responsive Images & Media:</h3>
+          <ul>
+            <li><strong>Responsive Images:</strong> .img-fluid for scalable images</li>
+            <li><strong>Image Shapes:</strong> .rounded, .img-thumbnail styling</li>
+            <li><strong>Responsive Embeds:</strong> .ratio for videos and embeds</li>
+            <li><strong>Object Fit:</strong> .object-fit-cover utilities</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/Wny_NAxjhhs'
+      },
+      {
+        id: 'bootstrap-customization',
+        title: 'Customization',
+        content: `
+          <h2>Customizing Bootstrap</h2>
+          <p>Learn how to customize Bootstrap with Sass variables, create custom builds, override default styles, and maintain your own design system.</p>
+          
+          <h3>Sass Customization:</h3>
+          <ul>
+            <li><strong>Variable Override:</strong> Customize colors, fonts, and spacing</li>
+            <li><strong>Theme Colors:</strong> Define custom primary, secondary colors</li>
+            <li><strong>Component Variables:</strong> Customize individual components</li>
+            <li><strong>Sass Compilation:</strong> Build process for custom Bootstrap</li>
+            <li><strong>Sass Maps:</strong> Extend utility classes and variants</li>
+          </ul>
+          
+          <h3>CSS Custom Properties:</h3>
+          <ul>
+            <li><strong>CSS Variables:</strong> Runtime customization with CSS custom properties</li>
+            <li><strong>Dark Mode:</strong> Implement dark theme variations</li>
+            <li><strong>Dynamic Theming:</strong> Switch themes with JavaScript</li>
+            <li><strong>Component Theming:</strong> Per-component customization</li>
+          </ul>
+          
+          <h3>Custom Components:</h3>
+          <ul>
+            <li><strong>Component Architecture:</strong> Follow Bootstrap patterns</li>
+            <li><strong>Utility Integration:</strong> Use Bootstrap utilities in custom components</li>
+            <li><strong>Responsive Behavior:</strong> Maintain responsive principles</li>
+            <li><strong>JavaScript Integration:</strong> Custom interactive components</li>
+          </ul>
+          
+          <h3>Build Tools & Workflow:</h3>
+          <ul>
+            <li><strong>Webpack Integration:</strong> Modern build tool setup</li>
+            <li><strong>PostCSS Processing:</strong> Additional CSS processing</li>
+            <li><strong>Purge CSS:</strong> Remove unused styles for production</li>
+            <li><strong>Design Tokens:</strong> Maintain consistent design system</li>
+            <li><strong>Version Control:</strong> Managing custom Bootstrap versions</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/6Ovw43Dkp44'
+      }
+    ]
+  },
+  {
+    id: 'tailwind',
+    title: 'Tailwind CSS',
+    description: 'Learn Tailwind CSS to build modern, responsive websites faster.',
+    color: '#06b6d4',
+    lessons: [
+      {
+        id: 'tailwind-intro',
+        title: 'Tailwind Intro',
+        content: `
+          <h2>What is Tailwind CSS?</h2>
+          <p>Tailwind CSS is a revolutionary utility-first CSS framework that has transformed modern web development since its creation by Adam Wathan in 2017. Unlike traditional frameworks that provide pre-designed components, Tailwind offers low-level utility classes that enable developers to build completely custom designs faster than ever before. With over 70,000 GitHub stars and adoption by companies like Netflix, GitHub, Shopify, and Algolia, Tailwind has become the fastest-growing CSS framework, preferred by 87% of developers who have used it.</p>
+          
+          <h3>Why Tailwind CSS is Revolutionizing Frontend in 2026:</h3>
+          <ul>
+            <li><strong>Developer Experience:</strong> 87% satisfaction rate, highest among CSS frameworks</li>
+            <li><strong>Rapid Adoption:</strong> 3x growth year-over-year, surpassing many established frameworks</li>
+            <li><strong>Utility-First Philosophy:</strong> Build custom designs without writing CSS</li>
+            <li><strong>Performance Optimized:</strong> PurgeCSS removes unused styles for tiny bundle sizes</li>
+            <li><strong>Design System Built-In:</strong> Consistent spacing, colors, and typography out of the box</li>
+            <li><strong>Framework Agnostic:</strong> Works with React, Vue, Angular, and plain HTML</li>
+            <li><strong>Modern Workflow:</strong> Perfect for component-based development</li>
+          </ul>
+          
+          <h3>Learning Benefits:</h3>
+          <ul>
+            <li><strong>Utility-First Thinking:</strong> Learn a completely new approach to writing CSS</li>
+            <li><strong>Design System Mastery:</strong> Understand how to build consistent, scalable designs</li>
+            <li><strong>Rapid Development:</strong> Build custom designs without writing traditional CSS</li>
+            <li><strong>Modern Workflow:</strong> Master the tools and processes used by cutting-edge teams</li>
+            <li><strong>Responsive Design:</strong> Create mobile-first designs with intuitive class names</li>
+            <li><strong>Performance Optimization:</strong> Learn how to build fast-loading, efficient websites</li>
+            <li><strong>Design Constraints:</strong> Discover how limitations can enhance creativity</li>
+          </ul>
+          
+          <h3>Prerequisites:</h3>
+          <ul>
+            <li><strong>Essential:</strong> Solid HTML and CSS fundamentals</li>
+            <li><strong>Helpful:</strong> Understanding of responsive design principles</li>
+            <li><strong>Recommended:</strong> Familiarity with build tools (npm, webpack, Vite)</li>
+            <li><strong>Bonus:</strong> Experience with JavaScript frameworks (React, Vue, Angular)</li>
+          </ul>
+          
+          <h3>Modern Tailwind Ecosystem (2026):</h3>
+          <ul>
+            <li><strong>Tailwind CSS 3.4+:</strong> Latest features, container queries, dynamic viewport units</li>
+            <li><strong>Headless UI:</strong> Unstyled, accessible components for React and Vue</li>
+            <li><strong>Tailwind UI:</strong> Professional component and template library</li>
+            <li><strong>Build Tools:</strong> JIT engine, Vite, Next.js, Nuxt.js integration</li>
+            <li><strong>Plugins:</strong> Typography, forms, aspect-ratio, line-clamp</li>
+            <li><strong>Design Tools:</strong> Figma plugins, VS Code extensions</li>
+            <li><strong>Community:</strong> TailwindComponents, Tailwind Elements, WindUI</li>
+          </ul>
+          
+          <h3>What You'll Master:</h3>
+          <ul>
+            <li><strong>Utility-First Methodology:</strong> Build designs without writing custom CSS</li>
+            <li><strong>Responsive Design:</strong> Mobile-first approach with intuitive breakpoints</li>
+            <li><strong>Design System:</strong> Colors, spacing, typography, and layout systems</li>
+            <li><strong>Component Architecture:</strong> Extracting components with @apply directive</li>
+            <li><strong>Advanced Features:</strong> Dark mode, animations, transforms</li>
+            <li><strong>Customization:</strong> Configuration files, custom utilities, plugins</li>
+            <li><strong>Performance:</strong> PurgeCSS optimization and production builds</li>
+            <li><strong>Real Projects:</strong> Modern websites, dashboards, and applications</li>
+          </ul>
+          
+          <h3>Key Features of Tailwind CSS:</h3>
+          <ul>
+            <li><strong>Utility-First:</strong> Low-level utility classes to build custom designs</li>
+            <li><strong>Responsive:</strong> Built-in responsive design system</li>
+            <li><strong>Component-Friendly:</strong> Extract components with @apply directive</li>
+            <li><strong>Customizable:</strong> Configure design system via tailwind.config.js</li>
+            <li><strong>Small Bundle Size:</strong> PurgeCSS removes unused styles</li>
+            <li><strong>Developer Experience:</strong> IntelliSense and excellent tooling</li>
+          </ul>
+          
+          <h3>Utility-First Philosophy:</h3>
+          <ul>
+            <li><strong>No Custom CSS:</strong> Build designs without writing CSS</li>
+            <li><strong>Maintainable:</strong> Classes in HTML are easier to maintain</li>
+            <li><strong>Consistent:</strong> Design system built into the framework</li>
+            <li><strong>Fast Development:</strong> No context switching between files</li>
+            <li><strong>Responsive by Default:</strong> Mobile-first responsive design</li>
+          </ul>
+          
+          <h3>Industry Applications:</h3>
+          <ul>
+            <li><strong>SaaS Applications:</strong> Clean, modern interfaces for software products</li>
+            <li><strong>E-Commerce:</strong> Custom storefronts without design limitations</li>
+            <li><strong>Landing Pages:</strong> High-converting marketing pages</li>
+            <li><strong>Admin Dashboards:</strong> Data-rich interfaces with custom components</li>
+            <li><strong>Mobile Apps:</strong> Consistent design across web and mobile</li>
+            <li><strong>Design Systems:</strong> Scalable, maintainable component libraries</li>
+          </ul>
+          
+          <h3>Why Choose Tailwind CSS?</h3>
+          <ul>
+            <li><strong>Rapid Prototyping:</strong> Build interfaces quickly</li>
+            <li><strong>Design Consistency:</strong> Constrained design choices</li>
+            <li><strong>No CSS Conflicts:</strong> Utility classes prevent specificity issues</li>
+            <li><strong>Performance:</strong> Only ship the CSS you use</li>
+            <li><strong>Community:</strong> Large ecosystem and community</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/UBOj6rqRUME'
+      },
+      {
+        id: 'tailwind-installation',
+        title: 'Installation & Setup',
+        content: `
+          <h2>Installing Tailwind CSS</h2>
+          <p>Learn different ways to install and configure Tailwind CSS in your projects, from CDN to build tools integration.</p>
+          <p>Choose the installation method that best fits your project setup and development workflow preferences.</p>
+          
+          <h3>Installation Methods:</h3>
+          <ul>
+            <li><strong>Tailwind CLI:</strong> Standalone CLI tool (recommended)</li>
+            <li><strong>PostCSS Plugin:</strong> Integrate with existing build tools</li>
+            <li><strong>CDN:</strong> Quick prototyping (not for production)</li>
+            <li><strong>Framework Integration:</strong> Next.js, Vue, React, etc.</li>
+          </ul>
+          
+          <pre><code>// Quick CDN setup for prototyping
+&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+
+// CLI Installation
+npm install -D tailwindcss
+npx tailwindcss init
+
+// Build CSS
+npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch</code></pre>
+          
+          <p><strong>Quick Start:</strong> CDN provides instant access to Tailwind classes. CLI installation offers full customization control with optimized builds for production.</p>
+          
+          <h3>Tailwind CLI Setup:</h3>
+          <ul>
+            <li><strong>Install:</strong> npm install -D tailwindcss</li>
+            <li><strong>Initialize:</strong> npx tailwindcss init</li>
+            <li><strong>Configure:</strong> Edit tailwind.config.js</li>
+            <li><strong>Build:</strong> npx tailwindcss -i input.css -o output.css --watch</li>
+          </ul>
+          
+          <pre><code>// tailwind.config.js
+module.exports = {
+  content: ["./src/**/*.{html,js}"],
+  theme: {
+    extend: {
+      colors: {
+        brand: '#06b6d4'
+      }
+    }
+  },
+  plugins: []
+}</code></pre>
+          
+          <h3>Configuration File:</h3>
+          <ul>
+            <li><strong>Content Paths:</strong> Specify HTML/template files</li>
+            <li><strong>Theme Customization:</strong> Colors, fonts, spacing</li>
+            <li><strong>Plugins:</strong> Add official and community plugins</li>
+            <li><strong>Preset:</strong> Extend or override default configuration</li>
+          </ul>
+          
+          <pre><code>/* src/input.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom component example */
+@layer components {
+  .btn-primary {
+    @apply bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600;
+  }
+}</code></pre>
+          
+          <h3>CSS Input File:</h3>
+          <ul>
+            <li><strong>@tailwind base:</strong> Normalize/reset styles</li>
+            <li><strong>@tailwind components:</strong> Component layer</li>
+            <li><strong>@tailwind utilities:</strong> Utility classes</li>
+            <li><strong>Custom Styles:</strong> Add custom CSS when needed</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/dFgzHOX84xQ'
+      },
+      {
+        id: 'tailwind-utility-classes',
+        title: 'Utility Classes',
+        content: `
+          <h2>Tailwind CSS Utility Classes</h2>
+          <p>Master the fundamental utility classes that form the building blocks of Tailwind CSS designs, from spacing to typography.</p>
+          <p>Utility classes provide atomic building blocks that combine to create any design without writing custom CSS.</p>
+          
+          <h3>Spacing Utilities:</h3>
+          <ul>
+            <li><strong>Margin:</strong> m-4, mt-2, mr-6, mb-8, ml-1, mx-auto, my-4</li>
+            <li><strong>Padding:</strong> p-4, pt-2, pr-6, pb-8, pl-1, px-4, py-2</li>
+            <li><strong>Space Between:</strong> space-x-4, space-y-2 for child elements</li>
+            <li><strong>Spacing Scale:</strong> 0, px, 0.5, 1, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10, 12, 16, 20, 24, 32, 40, 48, 56, 64</li>
+          </ul>
+          
+          <pre><code>&lt;!-- Spacing Examples --&gt;
+&lt;div class="m-4 p-6"&gt;Margin 16px, Padding 24px&lt;/div&gt;
+&lt;div class="mx-auto max-w-md"&gt;Centered container&lt;/div&gt;
+&lt;div class="space-y-4"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+  &lt;div&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          
+          <p><strong>Spacing Logic:</strong> Numbers multiply by 0.25rem (4px). mx-auto centers horizontally. space-y adds vertical gaps between children.</p>
+          
+          <h3>Sizing Utilities:</h3>
+          <ul>
+            <li><strong>Width:</strong> w-full, w-1/2, w-64, w-screen, w-min, w-max</li>
+            <li><strong>Height:</strong> h-full, h-screen, h-64, h-min, h-max</li>
+            <li><strong>Min/Max Width:</strong> min-w-0, max-w-sm, max-w-md, max-w-lg</li>
+            <li><strong>Min/Max Height:</strong> min-h-screen, max-h-64</li>
+          </ul>
+          
+          <pre><code>&lt;!-- Sizing Examples --&gt;
+&lt;div class="w-full h-64 bg-blue-500"&gt;Full width, 256px height&lt;/div&gt;
+&lt;div class="w-1/2 h-32"&gt;Half width, 128px height&lt;/div&gt;
+&lt;div class="max-w-md mx-auto"&gt;Max width container&lt;/div&gt;</code></pre>
+          
+          <h3>Typography Utilities:</h3>
+          <ul>
+            <li><strong>Font Family:</strong> font-sans, font-serif, font-mono</li>
+            <li><strong>Font Size:</strong> text-xs, text-sm, text-base, text-lg, text-xl, text-2xl, text-3xl</li>
+            <li><strong>Font Weight:</strong> font-thin, font-normal, font-medium, font-bold, font-black</li>
+            <li><strong>Text Color:</strong> text-gray-900, text-blue-500, text-red-400</li>
+            <li><strong>Text Alignment:</strong> text-left, text-center, text-right, text-justify</li>
+          </ul>
+          
+          <pre><code>&lt;!-- Typography Examples --&gt;
+&lt;h1 class="text-3xl font-bold text-gray-900"&gt;Main Heading&lt;/h1&gt;
+&lt;p class="text-lg text-gray-600 font-medium"&gt;Subtitle text&lt;/p&gt;
+&lt;p class="text-base leading-relaxed"&gt;Body paragraph&lt;/p&gt;
+&lt;code class="font-mono text-sm bg-gray-100"&gt;Code snippet&lt;/code&gt;</code></pre>
+          
+          <h3>Color System:</h3>
+          <ul>
+            <li><strong>Color Palette:</strong> Gray, red, yellow, green, blue, indigo, purple, pink</li>
+            <li><strong>Color Scale:</strong> 50, 100, 200, 300, 400, 500, 600, 700, 800, 900</li>
+            <li><strong>Background Colors:</strong> bg-white, bg-gray-100, bg-blue-500</li>
+            <li><strong>Border Colors:</strong> border-gray-300, border-blue-500</li>
+          </ul>
+          
+          <pre><code>&lt;!-- Color Examples --&gt;
+&lt;div class="bg-blue-500 text-white p-4"&gt;Blue background&lt;/div&gt;
+&lt;div class="bg-red-100 text-red-800 border border-red-300"&gt;Light red theme&lt;/div&gt;
+&lt;div class="bg-gradient-to-r from-purple-500 to-pink-500"&gt;Gradient&lt;/div&gt;</code></pre>
+          
+          <p><strong>Color Strategy:</strong> Lower numbers = lighter colors. 500 is the base color. Use consistent color combinations for cohesive design.</p>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/elgqxmdVms8'
+      },
+      {
+        id: 'tailwind-layout',
+        title: 'Layout & Positioning',
+        content: `
+          <h2>Layout and Positioning with Tailwind</h2>
+          <p>Learn how to create complex layouts using Tailwind's layout utilities including Flexbox, Grid, positioning, and display properties.</p>
+          <p>Modern web layouts are built with Flexbox for 1D layouts and Grid for 2D layouts, both fully supported by Tailwind.</p>
+          
+          <h3>Display Utilities:</h3>
+          <ul>
+            <li><strong>Block/Inline:</strong> block, inline-block, inline, hidden</li>
+            <li><strong>Flex:</strong> flex, inline-flex for flexbox containers</li>
+            <li><strong>Grid:</strong> grid, inline-grid for CSS Grid layouts</li>
+            <li><strong>Table:</strong> table, table-row, table-cell for table display</li>
+          </ul>
+          
+          <h3>Flexbox Utilities:</h3>
+          <ul>
+            <li><strong>Flex Direction:</strong> flex-row, flex-col, flex-row-reverse, flex-col-reverse</li>
+            <li><strong>Flex Wrap:</strong> flex-wrap, flex-nowrap, flex-wrap-reverse</li>
+            <li><strong>Justify Content:</strong> justify-start, justify-center, justify-between, justify-around, justify-evenly</li>
+            <li><strong>Align Items:</strong> items-start, items-center, items-end, items-stretch, items-baseline</li>
+            <li><strong>Align Self:</strong> self-auto, self-start, self-center, self-end, self-stretch</li>
+            <li><strong>Flex Grow/Shrink:</strong> flex-1, flex-auto, flex-initial, flex-none</li>
+          </ul>
+          
+          <pre><code>&lt;!-- Flexbox Layout Examples --&gt;
+&lt;div class="flex justify-between items-center p-4"&gt;
+  &lt;div&gt;Logo&lt;/div&gt;
+  &lt;div class="flex space-x-4"&gt;
+    &lt;a href="#"&gt;Home&lt;/a&gt;
+    &lt;a href="#"&gt;About&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="flex flex-col md:flex-row gap-4"&gt;
+  &lt;div class="flex-1"&gt;Main content&lt;/div&gt;
+  &lt;div class="w-64"&gt;Sidebar&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          
+          <p><strong>Flexbox Benefits:</strong> Perfect for navigation bars, card layouts, and centering content. justify controls horizontal alignment, items controls vertical.</p>
+          
+          <h3>CSS Grid Utilities:</h3>
+          <ul>
+            <li><strong>Grid Template Columns:</strong> grid-cols-1, grid-cols-2, grid-cols-3, grid-cols-12</li>
+            <li><strong>Grid Template Rows:</strong> grid-rows-1, grid-rows-2, grid-rows-6</li>
+            <li><strong>Grid Column Span:</strong> col-span-1, col-span-2, col-span-full</li>
+            <li><strong>Grid Row Span:</strong> row-span-1, row-span-2, row-span-full</li>
+            <li><strong>Grid Gap:</strong> gap-4, gap-x-2, gap-y-4</li>
+          </ul>
+          
+          <pre><code>&lt;!-- CSS Grid Examples --&gt;
+&lt;div class="grid grid-cols-3 gap-4"&gt;
+  &lt;div class="bg-blue-100 p-4"&gt;Item 1&lt;/div&gt;
+  &lt;div class="bg-blue-100 p-4"&gt;Item 2&lt;/div&gt;
+  &lt;div class="bg-blue-100 p-4"&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="grid grid-cols-4 gap-2"&gt;
+  &lt;div class="col-span-2"&gt;Header&lt;/div&gt;
+  &lt;div&gt;Nav&lt;/div&gt;
+  &lt;div&gt;Sidebar&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          
+          <h3>Positioning Utilities:</h3>
+          <ul>
+            <li><strong>Position:</strong> static, fixed, absolute, relative, sticky</li>
+            <li><strong>Top/Right/Bottom/Left:</strong> top-0, right-4, bottom-2, left-8</li>
+            <li><strong>Inset:</strong> inset-0, inset-x-4, inset-y-2</li>
+            <li><strong>Z-Index:</strong> z-0, z-10, z-20, z-30, z-40, z-50, z-auto</li>
+          </ul>
+          
+          <pre><code>&lt;!-- Positioning Examples --&gt;
+&lt;div class="relative"&gt;
+  &lt;img src="image.jpg" alt="Background"&gt;
+  &lt;div class="absolute top-4 right-4 bg-white p-2 rounded"&gt;
+    Overlay badge
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="fixed bottom-4 right-4 bg-blue-500 text-white p-3 rounded z-50"&gt;
+  Chat button
+&lt;/div&gt;</code></pre>
+          
+          <p><strong>Positioning Strategy:</strong> relative creates positioning context. absolute positions relative to nearest positioned parent. fixed positions relative to viewport.</p>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/Ff8pihN4oMM'
+      },
+      {
+        id: 'tailwind-responsive',
+        title: 'Responsive Design',
+        content: `
+          <h2>Responsive Design with Tailwind CSS</h2>
+          <p>Create responsive layouts using Tailwind's mobile-first breakpoint system and responsive utility variants.</p>
+          <p>Mobile-first approach ensures optimal performance and user experience across all device sizes.</p>
+          
+          <h3>Breakpoint System:</h3>
+          <ul>
+            <li><strong>sm:</strong> 640px and up (small devices)</li>
+            <li><strong>md:</strong> 768px and up (medium devices)</li>
+            <li><strong>lg:</strong> 1024px and up (large devices)</li>
+            <li><strong>xl:</strong> 1280px and up (extra large devices)</li>
+            <li><strong>2xl:</strong> 1536px and up (2x extra large devices)</li>
+          </ul>
+          
+          <pre><code>&lt;!-- Responsive Layout Example --&gt;
+&lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"&gt;
+  &lt;div class="bg-blue-100 p-4"&gt;Card 1&lt;/div&gt;
+  &lt;div class="bg-blue-100 p-4"&gt;Card 2&lt;/div&gt;
+  &lt;div class="bg-blue-100 p-4"&gt;Card 3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Responsive Typography --&gt;
+&lt;h1 class="text-2xl md:text-4xl lg:text-6xl font-bold"&gt;
+  Responsive Heading
+&lt;/h1&gt;</code></pre>
+          
+          <p><strong>Mobile-First Logic:</strong> Base styles apply to all sizes. Breakpoint prefixes override for larger screens. Each breakpoint includes all larger sizes.</p>
+          
+          <h3>Responsive Utilities:</h3>
+          <ul>
+            <li><strong>Mobile First:</strong> Base styles apply to all screen sizes</li>
+            <li><strong>Breakpoint Prefixes:</strong> sm:text-lg, md:w-1/2, lg:flex-row</li>
+            <li><strong>Responsive Typography:</strong> text-sm md:text-base lg:text-lg</li>
+            <li><strong>Responsive Layout:</strong> flex-col md:flex-row</li>
+            <li><strong>Responsive Spacing:</strong> p-4 md:p-8 lg:p-12</li>
+          </ul>
+          
+          <pre><code>&lt;!-- Responsive Navigation --&gt;
+&lt;nav class="flex flex-col md:flex-row justify-between items-center p-4"&gt;
+  &lt;div class="text-xl font-bold mb-4 md:mb-0"&gt;Logo&lt;/div&gt;
+  &lt;div class="hidden md:flex space-x-6"&gt;
+    &lt;a href="#"&gt;Home&lt;/a&gt;
+    &lt;a href="#"&gt;About&lt;/a&gt;
+    &lt;a href="#"&gt;Contact&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;button class="md:hidden"&gt;Menu&lt;/button&gt;
+&lt;/nav&gt;</code></pre>
+          
+          <h3>Common Responsive Patterns:</h3>
+          <ul>
+            <li><strong>Navigation:</strong> Hidden mobile menu, visible desktop nav</li>
+            <li><strong>Grid Layouts:</strong> Single column mobile, multi-column desktop</li>
+            <li><strong>Typography Scale:</strong> Smaller text mobile, larger desktop</li>
+            <li><strong>Spacing Scale:</strong> Tighter mobile spacing, generous desktop</li>
+            <li><strong>Image Sizing:</strong> Full-width mobile, constrained desktop</li>
+          </ul>
+          
+          <pre><code>&lt;!-- Responsive Card --&gt;
+&lt;div class="w-full sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto"&gt;
+  &lt;img class="w-full h-48 object-cover" src="image.jpg" alt="Card"&gt;
+  &lt;div class="p-4 sm:p-6"&gt;
+    &lt;h3 class="text-lg sm:text-xl font-semibold"&gt;Card Title&lt;/h3&gt;
+    &lt;p class="text-sm sm:text-base text-gray-600"&gt;Description&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          
+          <h3>Responsive Design Strategy:</h3>
+          <ul>
+            <li><strong>Mobile First:</strong> Design for mobile, enhance for desktop</li>
+            <li><strong>Progressive Enhancement:</strong> Add complexity at larger screens</li>
+            <li><strong>Content Priority:</strong> Most important content visible on mobile</li>
+            <li><strong>Touch Targets:</strong> Larger touch areas for mobile interfaces</li>
+            <li><strong>Performance:</strong> Optimize for slower mobile connections</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/hX1zUdj4Dw4'
+      },
+      {
+        id: 'tailwind-components',
+        title: 'Components',
+        content: `
+          <h2>Building Components with Tailwind CSS</h2>
+          <p>Learn how to create reusable components using Tailwind utilities and extract repetitive patterns with @apply directive.</p>
+          <p>Components are built by composing utility classes, then optionally extracted using @apply for reusability.</p>
+          
+          <h3>Component Approach:</h3>
+          <ul>
+            <li><strong>Utility Composition:</strong> Combine utilities to create components</li>
+            <li><strong>Template Reuse:</strong> Copy and paste component markup</li>
+            <li><strong>JavaScript Frameworks:</strong> Create components in React, Vue, etc.</li>
+            <li><strong>Partial Templates:</strong> Reusable HTML partials</li>
+          </ul>
+          
+          <pre><code>&lt;!-- Button Component --&gt;
+&lt;button class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded transition-colors"&gt;
+  Primary Button
+&lt;/button&gt;
+
+&lt;button class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded transition-colors"&gt;
+  Secondary Button
+&lt;/button&gt;</code></pre>
+          
+          <p><strong>Button Pattern:</strong> Background color, hover state, text styling, padding, rounded corners, and smooth transitions combined into reusable button design.</p>
+          
+          <h3>Common Component Patterns:</h3>
+          <ul>
+            <li><strong>Buttons:</strong> Base styles with size and color variants</li>
+            <li><strong>Cards:</strong> Container with header, body, and footer sections</li>
+            <li><strong>Forms:</strong> Input fields with labels and validation states</li>
+            <li><strong>Navigation:</strong> Header navigation with responsive behavior</li>
+            <li><strong>Modals:</strong> Overlay dialogs with backdrop and content</li>
+          </ul>
+          
+          <pre><code>&lt;!-- Card Component --&gt;
+&lt;div class="bg-white rounded-lg shadow-md overflow-hidden"&gt;
+  &lt;img class="w-full h-48 object-cover" src="image.jpg" alt="Card"&gt;
+  &lt;div class="p-6"&gt;
+    &lt;h3 class="text-lg font-semibold text-gray-900 mb-2"&gt;Card Title&lt;/h3&gt;
+    &lt;p class="text-gray-600 text-sm mb-4"&gt;Card description goes here...&lt;/p&gt;
+    &lt;button class="bg-blue-500 text-white px-4 py-2 rounded text-sm hover:bg-blue-600"&gt;
+      Read More
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          
+          <h3>@apply Directive:</h3>
+          <ul>
+            <li><strong>Extract Utilities:</strong> Combine multiple utilities into a single class</li>
+            <li><strong>Component Layer:</strong> Add custom component classes</li>
+            <li><strong>Maintainability:</strong> Reduce duplication in templates</li>
+            <li><strong>Performance:</strong> Smaller HTML file sizes</li>
+          </ul>
+          
+          <pre><code>/* Custom CSS with @apply */
+@layer components {
+  .btn-primary {
+    @apply bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded transition-colors;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden;
+  }
+  
+  .form-input {
+    @apply border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+  }
+}</code></pre>
+          
+          <h3>Component Libraries:</h3>
+          <ul>
+            <li><strong>Headless UI:</strong> Unstyled, accessible components</li>
+            <li><strong>Tailwind UI:</strong> Official component library</li>
+            <li><strong>Community Libraries:</strong> Third-party component collections</li>
+            <li><strong>Custom Library:</strong> Build your own component system</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/0m7bIoWSU9c'
+      },
+      {
+        id: 'tailwind-states-variants',
+        title: 'States & Variants',
+        content: `
+          <h2>Interactive States and Variants</h2>
+          <p>Master Tailwind's state variants for creating interactive user interfaces including hover, focus, active states, and more.</p>
+          <p>State variants allow you to conditionally apply styles based on element states, creating dynamic and engaging user experiences.</p>
+          
+          <h3>Pseudo-class Variants:</h3>
+          <ul>
+            <li><strong>Hover:</strong> hover:bg-blue-500, hover:text-white</li>
+            <li><strong>Focus:</strong> focus:outline-none, focus:ring-2, focus:ring-blue-500</li>
+            <li><strong>Active:</strong> active:bg-blue-600, active:scale-95</li>
+            <li><strong>Visited:</strong> visited:text-purple-600 (for links)</li>
+            <li><strong>Disabled:</strong> disabled:opacity-50, disabled:cursor-not-allowed</li>
+          </ul>
+          
+          <pre><code>&lt;!-- Interactive Button States --&gt;
+&lt;button class="bg-blue-500 hover:bg-blue-600 active:bg-blue-700 focus:ring-2 focus:ring-blue-300 text-white px-4 py-2 rounded transition-colors"&gt;
+  Interactive Button
+&lt;/button&gt;
+
+&lt;!-- Disabled State --&gt;
+&lt;button class="bg-blue-500 text-white px-4 py-2 rounded disabled:opacity-50 disabled:cursor-not-allowed" disabled&gt;
+  Disabled Button
+&lt;/button&gt;
+
+&lt;!-- Link States --&gt;
+&lt;a href="#" class="text-blue-600 hover:text-blue-800 visited:text-purple-600 underline"&gt;
+  Interactive Link
+&lt;/a&gt;</code></pre>
+          
+          <p><strong>State Flow:</strong> Normal → Hover → Active → Focus. Use transition-colors for smooth state changes. disabled: variant prevents interaction and shows visual feedback.</p>
+          
+          <h3>Group Variants:</h3>
+          <ul>
+            <li><strong>Group Hover:</strong> group-hover:text-blue-500 (child changes on parent hover)</li>
+            <li><strong>Group Focus:</strong> group-focus:opacity-100</li>
+            <li><strong>Group Active:</strong> group-active:scale-95</li>
+            <li><strong>Named Groups:</strong> group/card, group-hover/card:opacity-100</li>
+          </ul>
+          
+          <pre><code>&lt;!-- Group Hover Card --&gt;
+&lt;div class="group bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer"&gt;
+  &lt;img class="w-full h-48 object-cover rounded group-hover:scale-105 transition-transform" src="image.jpg" alt="Card"&gt;
+  &lt;h3 class="text-lg font-semibold mt-4 group-hover:text-blue-600 transition-colors"&gt;Card Title&lt;/h3&gt;
+  &lt;p class="text-gray-600 group-hover:text-gray-800 transition-colors"&gt;Description text&lt;/p&gt;
+  &lt;div class="opacity-0 group-hover:opacity-100 transition-opacity mt-4"&gt;
+    &lt;button class="bg-blue-500 text-white px-4 py-2 rounded"&gt;Learn More&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Named Groups --&gt;
+&lt;div class="group/item hover:bg-slate-100"&gt;
+  &lt;img class="group-hover/item:grayscale" src="image.jpg" alt="Item"&gt;
+&lt;/div&gt;</code></pre>
+          
+          <p><strong>Group Pattern:</strong> Parent gets group class, children use group-hover: variants. Perfect for cards, navigation items, and interactive containers.</p>
+          
+          <h3>Peer Variants:</h3>
+          <ul>
+            <li><strong>Peer Checked:</strong> peer-checked:bg-blue-500 (sibling state changes)</li>
+            <li><strong>Peer Focus:</strong> peer-focus:text-blue-600</li>
+            <li><strong>Peer Invalid:</strong> peer-invalid:text-red-500</li>
+            <li><strong>Named Peers:</strong> peer/email, peer-invalid/email:text-red-500</li>
+          </ul>
+          
+          <pre><code>&lt;!-- Custom Checkbox with Peer --&gt;
+&lt;div class="flex items-center space-x-3"&gt;
+  &lt;input type="checkbox" id="agree" class="peer sr-only"&gt;
+  &lt;label for="agree" class="relative flex items-center justify-center w-5 h-5 border-2 border-gray-300 rounded peer-checked:bg-blue-500 peer-checked:border-blue-500 peer-focus:ring-2 peer-focus:ring-blue-300 cursor-pointer"&gt;
+    &lt;svg class="w-3 h-3 text-white opacity-0 peer-checked:opacity-100" fill="currentColor" viewBox="0 0 20 20"&gt;
+      &lt;path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/&gt;
+    &lt;/svg&gt;
+  &lt;/label&gt;
+  &lt;span class="peer-checked:text-blue-600 peer-checked:font-medium"&gt;I agree to the terms&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Form Validation with Peer --&gt;
+&lt;div&gt;
+  &lt;input type="email" class="peer w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 invalid:border-red-500" placeholder="Enter email" required&gt;
+  &lt;p class="text-red-500 text-sm mt-1 opacity-0 peer-invalid:opacity-100"&gt;Please enter a valid email address&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+          
+          <h3>Form States:</h3>
+          <ul>
+            <li><strong>Required:</strong> required:border-red-500</li>
+            <li><strong>Invalid:</strong> invalid:border-red-500, invalid:text-red-600</li>
+            <li><strong>Placeholder Shown:</strong> placeholder-shown:border-gray-300</li>
+            <li><strong>Checked:</strong> checked:bg-blue-500, checked:border-blue-500</li>
+            <li><strong>Indeterminate:</strong> indeterminate:bg-gray-300</li>
+          </ul>
+          
+          <pre><code>&lt;!-- Form Input States --&gt;
+&lt;input 
+  type="text" 
+  class="w-full px-3 py-2 border border-gray-300 rounded
+         focus:border-blue-500 focus:ring-2 focus:ring-blue-200
+         invalid:border-red-500 invalid:ring-red-200
+         placeholder-shown:border-gray-300
+         required:border-orange-300" 
+  placeholder="Required field" 
+  required
+&gt;
+
+&lt;!-- Custom Radio Buttons --&gt;
+&lt;label class="flex items-center space-x-3 cursor-pointer"&gt;
+  &lt;input type="radio" name="option" class="sr-only peer"&gt;
+  &lt;div class="w-4 h-4 border-2 border-gray-300 rounded-full peer-checked:border-blue-500 peer-checked:bg-blue-500 relative"&gt;
+    &lt;div class="w-2 h-2 bg-white rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 peer-checked:opacity-100"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;span class="peer-checked:text-blue-600 peer-checked:font-medium"&gt;Option 1&lt;/span&gt;
+&lt;/label&gt;</code></pre>
+          
+          <h3>Advanced Variants:</h3>
+          <ul>
+            <li><strong>First/Last Child:</strong> first:mt-0, last:mb-0</li>
+            <li><strong>Even/Odd:</strong> even:bg-gray-50, odd:bg-white</li>
+            <li><strong>Dark Mode:</strong> dark:bg-gray-900, dark:text-white</li>
+            <li><strong>Motion Preferences:</strong> motion-reduce:animate-none</li>
+          </ul>
+          
+          <pre><code>&lt;!-- List with Alternating Colors --&gt;
+&lt;ul class="divide-y divide-gray-200"&gt;
+  &lt;li class="py-3 first:pt-0 last:pb-0 even:bg-gray-50 odd:bg-white px-4"&gt;Item 1&lt;/li&gt;
+  &lt;li class="py-3 first:pt-0 last:pb-0 even:bg-gray-50 odd:bg-white px-4"&gt;Item 2&lt;/li&gt;
+  &lt;li class="py-3 first:pt-0 last:pb-0 even:bg-gray-50 odd:bg-white px-4"&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Dark Mode Toggle --&gt;
+&lt;div class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white p-4 rounded"&gt;
+  &lt;h3 class="text-lg font-semibold"&gt;Content&lt;/h3&gt;
+  &lt;p class="text-gray-600 dark:text-gray-300"&gt;This adapts to dark mode&lt;/p&gt;
+  &lt;button class="bg-blue-500 dark:bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-600 dark:hover:bg-blue-700"&gt;
+    Button
+  &lt;/button&gt;
+&lt;/div&gt;
+
+&lt;!-- Reduced Motion --&gt;
+&lt;div class="transform transition-transform hover:scale-105 motion-reduce:transition-none motion-reduce:hover:transform-none"&gt;
+  Respects motion preferences
+&lt;/div&gt;</code></pre>
+          
+          <p><strong>Advanced Patterns:</strong> first:/last: removes extra spacing. even:/odd: creates zebra striping. dark: enables theme switching. motion-reduce: respects accessibility preferences.</p>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/r5cBUVqOjqQ'
+      },
+      {
+        id: 'tailwind-customization',
+        title: 'Customization',
+        content: `
+          <h2>Customizing Tailwind CSS Theme</h2>
+          <p>Learn how to customize Tailwind's default design system by modifying the configuration file to match your brand and design requirements.</p>
+          <p>Theme customization allows you to create a consistent design system that reflects your brand identity and project needs.</p>
+          
+          <h3>Configuration Structure</h3>
+          <p>Understanding the tailwind.config.js structure is essential for effective customization and maintaining organized theme settings.</p>
+          <p>The configuration file controls every aspect of your design system from colors to spacing and component generation.</p>
+          
+          <ul>
+            <li><strong>Theme Object:</strong> Customize design tokens and values</li>
+            <li><strong>Extend vs Replace:</strong> Extend existing values or completely replace them</li>
+            <li><strong>Core Plugins:</strong> Enable/disable built-in utility generators</li>
+            <li><strong>Variants:</strong> Control which variants are generated</li>
+          </ul>
+          
+          <pre><code>// tailwind.config.js - Basic Structure
+module.exports = {
+  content: ['./src/**/*.{html,js}'],
+  theme: {
+    // Replace default values
+    colors: {
+      primary: '#3b82f6',
+      secondary: '#64748b'
+    },
+    extend: {
+      // Extend default values
+      colors: {
+        brand: {
+          light: '#dbeafe',
+          DEFAULT: '#3b82f6',
+          dark: '#1d4ed8'
+        }
+      }
+    }
+  },
+  plugins: []
+}</code></pre>
+          
+          <p><strong>Structure Logic:</strong> theme replaces defaults, extend adds to defaults. Use extend to keep existing Tailwind colors while adding your brand colors.</p>
+          
+          <h3>Custom Colors</h3>
+          <p>Creating custom color palettes ensures brand consistency and provides semantic meaning to your design elements.</p>
+          <p>Tailwind's color system supports both simple hex values and full 50-900 scales for comprehensive color management.</p>
+          
+          <ul>
+            <li><strong>Brand Colors:</strong> Define primary, secondary color palettes</li>
+            <li><strong>Color Scales:</strong> Create custom 50-900 color scales</li>
+            <li><strong>Semantic Colors:</strong> Success, warning, error colors</li>
+            <li><strong>CSS Variables:</strong> Dynamic color theming</li>
+          </ul>
+          
+          <pre><code>// Custom Brand Colors
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        // Brand palette
+        brand: {
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          200: '#bae6fd',
+          500: '#0ea5e9',
+          600: '#0284c7',
+          900: '#0c4a6e'
+        },
+        // Semantic colors
+        success: '#10b981',
+        warning: '#f59e0b',
+        error: '#ef4444'
+      }
+    }
+  }
+}
+
+// Usage in HTML
+&lt;div class="bg-brand-500 text-white"&gt;Brand Color&lt;/div&gt;
+&lt;button class="bg-success text-white"&gt;Success&lt;/button&gt;</code></pre>
+          
+          <h3>Typography Customization</h3>
+          <p>Custom typography settings establish your brand's voice and ensure consistent text styling across all components.</p>
+          <p>Font families, sizes, and weights work together to create a cohesive typographic hierarchy for better readability.</p>
+          
+          <ul>
+            <li><strong>Font Families:</strong> Add custom web fonts</li>
+            <li><strong>Font Sizes:</strong> Custom type scale</li>
+            <li><strong>Font Weights:</strong> Available font weights</li>
+            <li><strong>Line Heights:</strong> Custom leading values</li>
+            <li><strong>Letter Spacing:</strong> Custom tracking values</li>
+          </ul>
+          
+          <pre><code>// Custom Typography
+module.exports = {
+  theme: {
+    extend: {
+      fontFamily: {
+        'brand': ['Poppins', 'Inter', 'sans-serif'],
+        'heading': ['Playfair Display', 'serif']
+      },
+      fontSize: {
+        'xs': '0.75rem',
+        'hero': '4.5rem',
+        'display': '3.5rem'
+      },
+      fontWeight: {
+        'light': 300,
+        'normal': 400,
+        'semibold': 600,
+        'bold': 700
+      }
+    }
+  }
+}
+
+// Usage Examples
+&lt;h1 class="font-heading text-hero font-bold"&gt;Hero Title&lt;/h1&gt;
+&lt;p class="font-brand text-base font-normal"&gt;Body text&lt;/p&gt;</code></pre>
+          
+          <h3>Spacing & Sizing</h3>
+          <p>Custom spacing and sizing values create consistent layouts and help maintain proper visual rhythm throughout your design.</p>
+          <p>Tailwind's spacing system extends to margins, padding, dimensions, and visual effects like shadows and border radius.</p>
+          
+          <ul>
+            <li><strong>Spacing Scale:</strong> Custom margin/padding values</li>
+            <li><strong>Width/Height:</strong> Custom sizing options</li>
+            <li><strong>Border Radius:</strong> Custom rounded corner values</li>
+            <li><strong>Box Shadow:</strong> Custom shadow presets</li>
+          </ul>
+          
+          <pre><code>// Custom Spacing & Sizing
+module.exports = {
+  theme: {
+    extend: {
+      spacing: {
+        '18': '4.5rem',
+        '88': '22rem',
+        'section': '6rem'
+      },
+      borderRadius: {
+        'xl': '1rem',
+        '2xl': '1.5rem',
+        'card': '0.75rem'
+      },
+      boxShadow: {
+        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+        'card-hover': '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+        'inner-light': 'inset 0 1px 0 0 rgba(255, 255, 255, 0.05)'
+      }
+    }
+  }
+}
+
+// Usage Examples
+&lt;div class="p-section rounded-card shadow-card"&gt;Custom spacing&lt;/div&gt;
+&lt;div class="w-88 h-18"&gt;Custom dimensions&lt;/div&gt;</code></pre>
+          
+          <h3>Advanced Customization</h3>
+          <p>Advanced customization techniques allow you to create unique utility classes and extend Tailwind's capabilities beyond default offerings.</p>
+          <p>These methods include custom utilities, plugins, and arbitrary values for handling specific design requirements and one-off customizations.</p>
+          
+          <ul>
+            <li><strong>Custom Utilities:</strong> Add your own utility classes</li>
+            <li><strong>Plugin System:</strong> Create and use plugins</li>
+            <li><strong>Arbitrary Values:</strong> Use arbitrary values with []</li>
+            <li><strong>CSS-in-JS:</strong> Dynamic styling with JavaScript</li>
+          </ul>
+          
+          <pre><code>// Custom Utilities with @layer
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
+
+// Arbitrary Values
+&lt;div class="w-[800px] h-[600px] bg-[#bada55]"&gt;
+  Arbitrary dimensions and color
+&lt;/div&gt;
+
+// Custom Plugin Example
+const plugin = require('tailwindcss/plugin')
+
+module.exports = {
+  plugins: [
+    plugin(function({ addUtilities }) {
+      addUtilities({
+        '.scrollbar-hide': {
+          '-ms-overflow-style': 'none',
+          'scrollbar-width': 'none',
+          '&::-webkit-scrollbar': {
+            display: 'none'
+          }
+        }
+      })
+    })
+  ]
+}</code></pre>
+          
+          <p><strong>Advanced Tips:</strong> Use @layer utilities for custom CSS that integrates with Tailwind's system. Arbitrary values with [] for one-off customizations. Plugins for reusable utility patterns.</p>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/MAtaT8BZEAo'
+      },
+      {
+        id: 'tailwind-animations',
+        title: 'Animations',
+        content: `
+          <h2>Animations and Transitions</h2>
+          <p>Create smooth animations and transitions using Tailwind's built-in animation utilities and transition classes.</p>
+          <p>Animations enhance user experience by providing visual feedback and creating engaging interactions that feel natural and polished.</p>
+          
+          <h3>Transition Utilities</h3>
+          <p>Transitions provide smooth changes between different states, making interactions feel natural rather than abrupt and jarring.</p>
+          <p>Tailwind's transition system covers properties, duration, timing functions, and delays for complete animation control.</p>
+          
+          <ul>
+            <li><strong>Transition:</strong> transition-none, transition-all, transition</li>
+            <li><strong>Transition Property:</strong> transition-colors, transition-opacity, transition-transform</li>
+            <li><strong>Duration:</strong> duration-75, duration-150, duration-300, duration-500, duration-700, duration-1000</li>
+            <li><strong>Timing Function:</strong> ease-linear, ease-in, ease-out, ease-in-out</li>
+            <li><strong>Delay:</strong> delay-75, delay-150, delay-300, delay-500, delay-700, delay-1000</li>
+          </ul>
+          
+          <pre><code>&lt;!-- Basic Transitions --&gt;
+&lt;button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition-colors duration-300"&gt;
+  Color Transition
+&lt;/button&gt;
+
+&lt;div class="w-16 h-16 bg-red-500 hover:scale-110 transition-transform duration-300 ease-out"&gt;
+  Scale on Hover
+&lt;/div&gt;
+
+&lt;!-- Multiple Properties --&gt;
+&lt;div class="opacity-50 hover:opacity-100 transform hover:translate-y-1 transition-all duration-500"&gt;
+  Multiple Property Transition
+&lt;/div&gt;
+
+&lt;!-- With Delay --&gt;
+&lt;div class="bg-green-500 hover:bg-green-600 transition-colors duration-300 delay-150"&gt;
+  Delayed Transition
+&lt;/div&gt;</code></pre>
+          
+          <p><strong>Transition Tips:</strong> Use transition-colors for backgrounds, transition-transform for scaling/moving, transition-all for multiple properties. Duration-300 is ideal for most interactions.</p>
+          
+          <h3>Transform Utilities</h3>
+          <p>Transform utilities allow you to scale, rotate, translate, and skew elements for dynamic visual effects without affecting layout flow.</p>
+          <p>Transforms work seamlessly with transitions to create smooth animations and can be combined for complex effects.</p>
+          
+          <ul>
+            <li><strong>Scale:</strong> scale-50, scale-75, scale-90, scale-95, scale-100, scale-105, scale-110, scale-125, scale-150</li>
+            <li><strong>Rotate:</strong> rotate-0, rotate-1, rotate-2, rotate-3, rotate-6, rotate-12, rotate-45, rotate-90, rotate-180</li>
+            <li><strong>Translate:</strong> translate-x-1, translate-y-2, -translate-x-1, -translate-y-2</li>
+            <li><strong>Skew:</strong> skew-x-1, skew-y-1, skew-x-6, skew-y-6</li>
+            <li><strong>Transform Origin:</strong> origin-center, origin-top, origin-bottom-right</li>
+          </ul>
+          
+          <pre><code>&lt;!-- Scale Effects --&gt;
+&lt;div class="w-20 h-20 bg-purple-500 hover:scale-125 transition-transform duration-300 origin-center"&gt;
+  Scale from Center
+&lt;/div&gt;
+
+&lt;!-- Rotation --&gt;
+&lt;div class="w-16 h-16 bg-yellow-500 hover:rotate-45 transition-transform duration-300"&gt;
+  Rotate 45°
+&lt;/div&gt;
+
+&lt;!-- Translation --&gt;
+&lt;div class="bg-pink-500 p-4 hover:translate-x-4 hover:-translate-y-2 transition-transform duration-300"&gt;
+  Move Right and Up
+&lt;/div&gt;
+
+&lt;!-- Combined Transforms --&gt;
+&lt;div class="w-16 h-16 bg-indigo-500 hover:scale-110 hover:rotate-12 hover:translate-x-2 transition-transform duration-500 ease-out"&gt;
+  Combined Effects
+&lt;/div&gt;</code></pre>
+          
+          <h3>Built-in Animations</h3>
+          <p>Tailwind provides ready-to-use animations for common UI patterns like loading states and attention-grabbing elements.</p>
+          <p>These animations are optimized for performance and accessibility, providing consistent behavior across all browsers.</p>
+          
+          <ul>
+            <li><strong>Spin:</strong> animate-spin for loading spinners</li>
+            <li><strong>Ping:</strong> animate-ping for notification badges</li>
+            <li><strong>Pulse:</strong> animate-pulse for skeleton loading</li>
+            <li><strong>Bounce:</strong> animate-bounce for attention-grabbing elements</li>
+          </ul>
+          
+          <pre><code>&lt;!-- Loading Spinner --&gt;
+&lt;div class="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"&gt;&lt;/div&gt;
+
+&lt;!-- Notification Badge --&gt;
+&lt;div class="relative"&gt;
+  &lt;button class="bg-gray-500 text-white p-3 rounded"&gt;Messages&lt;/button&gt;
+  &lt;span class="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-ping"&gt;&lt;/span&gt;
+  &lt;span class="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full"&gt;&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Skeleton Loading --&gt;
+&lt;div class="space-y-3"&gt;
+  &lt;div class="h-4 bg-gray-300 rounded animate-pulse"&gt;&lt;/div&gt;
+  &lt;div class="h-4 bg-gray-300 rounded w-3/4 animate-pulse"&gt;&lt;/div&gt;
+  &lt;div class="h-4 bg-gray-300 rounded w-1/2 animate-pulse"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Bouncing Element --&gt;
+&lt;div class="w-4 h-4 bg-green-500 rounded-full animate-bounce"&gt;&lt;/div&gt;</code></pre>
+          
+          <h3>Custom Animations</h3>
+          <p>Create unique animations by defining custom keyframes and adding them to your Tailwind configuration for reusable effects.</p>
+          <p>Custom animations provide complete control over timing, easing, and complex multi-step animation sequences.</p>
+          
+          <ul>
+            <li><strong>Keyframe Animation:</strong> Define custom @keyframes in CSS</li>
+            <li><strong>Animation Configuration:</strong> Add animations to Tailwind config</li>
+            <li><strong>CSS Variables:</strong> Dynamic animation values</li>
+            <li><strong>JavaScript Integration:</strong> Trigger animations with JS</li>
+          </ul>
+          
+          <pre><code>/* Custom CSS Animations */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tailwind Config */
+module.exports = {
+  theme: {
+    extend: {
+      animation: {
+        'wiggle': 'wiggle 1s ease-in-out infinite',
+        'fade-in-up': 'fadeInUp 0.5s ease-out'
+      }
+    }
+  }
+}
+
+&lt;!-- Usage --&gt;
+&lt;div class="animate-wiggle"&gt;Wiggling Element&lt;/div&gt;
+&lt;div class="animate-fade-in-up"&gt;Fade In Up&lt;/div&gt;</code></pre>
+          
+          <h3>Animation Patterns</h3>
+          <p>Common animation patterns provide consistent user experience across different interface elements and interactions.</p>
+          <p>These patterns follow UX best practices for timing, easing, and visual hierarchy to guide user attention effectively.</p>
+          
+          <ul>
+            <li><strong>Hover Effects:</strong> hover:scale-105 transition-transform</li>
+            <li><strong>Loading States:</strong> animate-pulse for content loading</li>
+            <li><strong>Page Transitions:</strong> Smooth page navigation effects</li>
+            <li><strong>Micro-interactions:</strong> Button press, form focus animations</li>
+          </ul>
+          
+          <pre><code>&lt;!-- Card Hover Effect --&gt;
+&lt;div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer"&gt;
+  &lt;h3 class="text-lg font-semibold"&gt;Interactive Card&lt;/h3&gt;
+  &lt;p class="text-gray-600"&gt;Hover for smooth animation&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- Button Press Animation --&gt;
+&lt;button class="bg-blue-500 hover:bg-blue-600 active:scale-95 text-white px-6 py-3 rounded-lg transition-all duration-150"&gt;
+  Press Me
+&lt;/button&gt;
+
+&lt;!-- Form Focus Animation --&gt;
+&lt;input type="text" class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:scale-105 transition-all duration-200" placeholder="Focus for animation"&gt;
+
+&lt;!-- Staggered List Animation --&gt;
+&lt;div class="space-y-2"&gt;
+  &lt;div class="opacity-0 animate-fade-in-up" style="animation-delay: 0.1s"&gt;Item 1&lt;/div&gt;
+  &lt;div class="opacity-0 animate-fade-in-up" style="animation-delay: 0.2s"&gt;Item 2&lt;/div&gt;
+  &lt;div class="opacity-0 animate-fade-in-up" style="animation-delay: 0.3s"&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          
+          <p><strong>Animation Guidelines:</strong> Use subtle effects (scale-105 vs scale-150), keep durations under 500ms for interactions, and provide visual feedback for all clickable elements.</p>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/4dHarq9dGts'
+      },
+      {
+        id: 'tailwind-dark-mode',
+        title: 'Dark Mode',
+        content: `
+          <h2>Dark Mode with Tailwind CSS</h2>
+          <p>Implement dark mode in your applications using Tailwind's dark mode utilities to provide users with theme flexibility.</p>
+          <p>Dark mode reduces eye strain in low-light environments and has become an essential feature for modern web applications.</p>
+          
+          <h3>Dark Mode Setup</h3>
+          <p>Configure Tailwind to enable dark mode functionality using either automatic system detection or manual toggle control.</p>
+          <p>Proper setup ensures seamless theme switching and maintains consistent styling across all application states.</p>
+          
+          <ul>
+            <li><strong>Configuration:</strong> Enable dark mode in tailwind.config.js</li>
+            <li><strong>Class Strategy:</strong> dark:* variants based on 'dark' class</li>
+            <li><strong>Media Strategy:</strong> Automatic based on system preference</li>
+            <li><strong>Manual Toggle:</strong> JavaScript-controlled dark mode</li>
+          </ul>
+          
+          <pre><code>// tailwind.config.js - Class Strategy
+module.exports = {
+  darkMode: 'class', // Enable class-based dark mode
+  content: ['./src/**/*.{html,js,jsx}'],
+  theme: {
+    extend: {}
+  }
+}
+
+// tailwind.config.js - Media Strategy (System Preference)
+module.exports = {
+  darkMode: 'media', // Automatic based on system
+  content: ['./src/**/*.{html,js,jsx}'],
+  theme: {
+    extend: {}
+  }
+}
+
+&lt;!-- Basic Dark Mode Usage --&gt;
+&lt;html class="dark"&gt; &lt;!-- Add 'dark' class to enable dark mode --&gt;
+  &lt;body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white"&gt;
+    &lt;h1&gt;Auto Dark Mode Content&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          
+          <p><strong>Setup Tips:</strong> Use 'class' strategy for manual control, 'media' for automatic system preference detection. Class strategy provides more flexibility for custom toggles.</p>
+          
+          <h3>Dark Mode Utilities</h3>
+          <p>Apply dark mode variants to any Tailwind utility by prefixing it with 'dark:' to create theme-aware styling.</p>
+          <p>Dark mode utilities automatically activate when the dark class is present or system preferences detect dark mode.</p>
+          
+          <ul>
+            <li><strong>Background Colors:</strong> bg-white dark:bg-gray-900</li>
+            <li><strong>Text Colors:</strong> text-gray-900 dark:text-white</li>
+            <li><strong>Border Colors:</strong> border-gray-300 dark:border-gray-700</li>
+            <li><strong>Ring Colors:</strong> ring-blue-500 dark:ring-blue-400</li>
+          </ul>
+          
+          <pre><code>&lt;!-- Basic Dark Mode Styling --&gt;
+&lt;div class="bg-white dark:bg-gray-800 text-gray-900 dark:text-white p-6 rounded-lg border border-gray-200 dark:border-gray-700"&gt;
+  &lt;h2 class="text-xl font-bold text-gray-800 dark:text-gray-100"&gt;Theme-Aware Card&lt;/h2&gt;
+  &lt;p class="text-gray-600 dark:text-gray-300 mt-2"&gt;This content adapts to dark mode&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- Button Dark Mode --&gt;
+&lt;button class="bg-blue-500 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors"&gt;
+  Dark Mode Button
+&lt;/button&gt;
+
+&lt;!-- Form Input Dark Mode --&gt;
+&lt;input type="text" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400" placeholder="Search..."&gt;
+
+&lt;!-- Navigation Dark Mode --&gt;
+&lt;nav class="bg-gray-100 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700"&gt;
+  &lt;a href="#" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"&gt;Home&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+          
+          <h3>Color Strategy</h3>
+          <p>Develop a systematic approach to colors that ensures proper contrast and readability in both light and dark themes.</p>
+          <p>Effective color strategy maintains brand consistency while providing optimal user experience across different lighting conditions.</p>
+          
+          <ul>
+            <li><strong>Semantic Colors:</strong> Define light/dark color variables</li>
+            <li><strong>Contrast Ratios:</strong> Ensure accessibility in both modes</li>
+            <li><strong>Color Inversion:</strong> Lighter colors in dark mode</li>
+            <li><strong>Brand Consistency:</strong> Maintain brand colors across themes</li>
+          </ul>
+          
+          <pre><code>/* Custom Dark Mode CSS Variables */
+:root {
+  --color-primary: #3b82f6;
+  --color-bg: #ffffff;
+  --color-text: #1f2937;
+  --color-border: #d1d5db;
+}
+
+.dark {
+  --color-primary: #60a5fa;
+  --color-bg: #111827;
+  --color-text: #f9fafb;
+  --color-border: #4b5563;
+}
+
+/* Tailwind Config Extended Colors */
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        'theme': {
+          bg: 'var(--color-bg)',
+          text: 'var(--color-text)',
+          primary: 'var(--color-primary)'
+        }
+      }
+    }
+  }
+}
+
+&lt;!-- Using Custom Theme Colors --&gt;
+&lt;div class="bg-theme-bg text-theme-text border border-theme-border"&gt;
+  &lt;button class="bg-theme-primary text-white px-4 py-2 rounded"&gt;Theme Button&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+          
+          <h3>Implementation Patterns</h3>
+          <p>Implement robust dark mode functionality with proper state management, user preference detection, and smooth transitions.</p>
+          <p>Modern dark mode implementation should respect system preferences while allowing manual override and persistent storage.</p>
+          
+          <ul>
+            <li><strong>System Preference:</strong> Respect user's OS setting</li>
+            <li><strong>Manual Override:</strong> Allow user to choose preference</li>
+            <li><strong>Persistence:</strong> Remember user's choice in localStorage</li>
+            <li><strong>Smooth Transitions:</strong> Animate between light/dark modes</li>
+          </ul>
+          
+          <pre><code>// Complete Dark Mode Toggle Implementation
+class DarkModeToggle {
+  constructor() {
+    this.darkMode = localStorage.getItem('darkMode') === 'true' ||
+      (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    this.init();
+  }
+
+  init() {
+    // Apply initial theme
+    if (this.darkMode) {
+      document.documentElement.classList.add('dark');
+    }
+    
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!localStorage.getItem('darkMode')) {
+        this.setDarkMode(e.matches);
+      }
+    });
+  }
+
+  toggle() {
+    this.setDarkMode(!this.darkMode);
+  }
+
+  setDarkMode(isDark) {
+    this.darkMode = isDark;
+    localStorage.setItem('darkMode', isDark);
+    
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }
+}
+
+&lt;!-- Dark Mode Toggle Button --&gt;
+&lt;button onclick="darkModeToggle.toggle()" class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 transition-colors"&gt;
+  &lt;span class="dark:hidden"&gt;🌙&lt;/span&gt;
+  &lt;span class="hidden dark:inline"&gt;☀️&lt;/span&gt;
+&lt;/button&gt;
+
+&lt;!-- Smooth Transition CSS --&gt;
+&lt;style&gt;
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+&lt;/style&gt;</code></pre>
+          
+          <h3>Best Practices</h3>
+          <p>Follow accessibility guidelines and performance best practices to create inclusive and efficient dark mode implementations.</p>
+          <p>Thorough testing and attention to detail ensure dark mode enhances rather than hinders the user experience.</p>
+          
+          <ul>
+            <li><strong>Accessibility:</strong> Maintain WCAG contrast requirements</li>
+            <li><strong>Performance:</strong> Optimize for both themes</li>
+            <li><strong>Testing:</strong> Test all components in both modes</li>
+            <li><strong>Images:</strong> Consider different images for themes</li>
+            <li><strong>Icons:</strong> Adjust icon colors and opacity</li>
+          </ul>
+          
+          <pre><code>&lt;!-- Accessible Dark Mode Card --&gt;
+&lt;div class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700"&gt;
+  &lt;h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2"&gt;Accessible Content&lt;/h3&gt;
+  &lt;p class="text-gray-700 dark:text-gray-300 mb-4"&gt;High contrast text for readability&lt;/p&gt;
+  
+  &lt;!-- Theme-aware Image --&gt;
+  &lt;img src="/logo-light.png" alt="Logo" class="block dark:hidden h-8"&gt;
+  &lt;img src="/logo-dark.png" alt="Logo" class="hidden dark:block h-8"&gt;
+  
+  &lt;!-- Theme-aware Icons --&gt;
+  &lt;svg class="w-5 h-5 text-gray-600 dark:text-gray-400" fill="currentColor"&gt;
+    &lt;path d="..."&gt;&lt;/path&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+
+&lt;!-- Testing Checklist --&gt;
+&lt;div class="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-700 p-4 rounded-lg"&gt;
+  &lt;h4 class="text-yellow-800 dark:text-yellow-200 font-semibold"&gt;Dark Mode Testing:&lt;/h4&gt;
+  &lt;ul class="text-yellow-700 dark:text-yellow-300 mt-2 space-y-1"&gt;
+    &lt;li&gt;✓ All text meets contrast requirements (4.5:1 minimum)&lt;/li&gt;
+    &lt;li&gt;✓ Images and icons are visible in both themes&lt;/li&gt;
+    &lt;li&gt;✓ Form inputs maintain proper contrast&lt;/li&gt;
+    &lt;li&gt;✓ Hover and focus states work in both modes&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+          
+          <p><strong>Dark Mode Guidelines:</strong> Test with real users, maintain 4.5:1 contrast ratio minimum, provide smooth transitions, and ensure all interactive elements remain accessible.</p>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/o4Prej0wIZA'
+      },
+      {
+        id: 'tailwind-optimization',
+        title: 'Optimization',
+        content: `
+          <h2>Optimizing Tailwind for Production</h2>
+          <p>Optimize Tailwind CSS for production by removing unused styles, minimizing file sizes, and improving performance for faster loading.</p>
+          <p>Production optimization reduces CSS bundle sizes by up to 95% and significantly improves website loading speed and user experience.</p>
+          
+          <h3>Content Configuration</h3>
+          <p>Configure Tailwind to scan your project files and identify which CSS classes are actually used in your application.</p>
+          <p>Proper content configuration ensures only necessary styles are included while preventing accidental removal of dynamic classes.</p>
+          
+          <ul>
+            <li><strong>Content Paths:</strong> Specify all template/component files</li>
+            <li><strong>File Extensions:</strong> Include .html, .js, .jsx, .ts, .tsx, .vue</li>
+            <li><strong>Dynamic Classes:</strong> Safelist dynamically generated classes</li>
+            <li><strong>Blocklist:</strong> Exclude specific classes from being generated</li>
+          </ul>
+          
+          <pre><code>// tailwind.config.js - Content Configuration
+module.exports = {
+  content: [
+    "./src/**/*.{html,js,jsx,ts,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./public/index.html"
+  ],
+  safelist: [
+    // Always include these classes
+    'text-red-500',
+    'bg-blue-500',
+    // Pattern-based safelist
+    {
+      pattern: /bg-(red|green|blue)-(100|200|300|400|500)/,
+    },
+    // Dynamic classes that might be missed
+    'hover:scale-110',
+    'focus:ring-2'
+  ],
+  blocklist: [
+    // Never include these classes
+    'container',
+    'debug-*'
+  ],
+  theme: {
+    extend: {}
+  }
+}
+
+// Content paths for different frameworks
+// React/Next.js
+content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"]
+
+// Vue/Nuxt
+content: ["./components/**/*.{vue,js}", "./layouts/**/*.vue", "./pages/**/*.vue"]
+
+// Angular
+content: ["./src/**/*.{html,ts,css,scss,sass,less,styl}"]</code></pre>
+          
+          <p><strong>Content Tips:</strong> Include all file types where Tailwind classes might appear. Use safelist for dynamic classes, and blocklist to exclude unnecessary utilities.</p>
+          
+          <h3>PurgeCSS Integration</h3>
+          <p>Tailwind includes built-in CSS purging that automatically removes unused styles based on your content configuration.</p>
+          <p>Advanced purging options provide fine-grained control over which styles are kept and which are removed from the final build.</p>
+          
+          <ul>
+            <li><strong>Automatic Purging:</strong> Built-in CSS purging in Tailwind CLI</li>
+            <li><strong>Safe Extraction:</strong> Intelligent class name detection</li>
+            <li><strong>Whitelist Patterns:</strong> Protect dynamically used classes</li>
+            <li><strong>Custom Extractors:</strong> Custom pattern matching logic</li>
+          </ul>
+          
+          <pre><code>// Advanced purging configuration
+module.exports = {
+  content: {
+    files: ["./src/**/*.{html,js,jsx,ts,tsx}"],
+    extract: {
+      // Custom extractor for special file types
+      css: (content) => {
+        return content.match(/[A-Za-z0-9_-]+/g) || [];
+      }
+    },
+    transform: {
+      // Transform content before extraction
+      js: (content) => {
+        return content.replace(/(?:^|\\\\s)(?:tw\\\`)([^\\\`]*)/g, '&#36;1');
+      }
+    }
+  },
+  safelist: [
+    // Safelist with complex patterns
+    {
+      pattern: /(bg|text|border)-(red|blue|green)-(100|500|900)/,
+      variants: ['hover', 'focus', 'active']
+    }
+  ]
+}
+
+// Package.json build scripts
+{
+  "scripts": {
+    "build-css": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "watch-css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "build-prod": "NODE_ENV=production tailwindcss -i ./src/input.css -o ./dist/output.css --minify"
+  }
+}
+
+/* Input CSS with optimized imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom utilities that won't be purged */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}</code></pre>
+          
+          <h3>Build Optimization</h3>
+          <p>Implement additional optimization strategies to further reduce file sizes and improve loading performance across all devices.</p>
+          <p>Build optimization combines CSS minification, compression, and delivery strategies for maximum performance gains.</p>
+          
+          <ul>
+            <li><strong>CSS Minification:</strong> Compress generated CSS</li>
+            <li><strong>Gzip Compression:</strong> Enable gzip on web server</li>
+            <li><strong>CDN Delivery:</strong> Serve CSS from CDN</li>
+            <li><strong>Critical CSS:</strong> Inline critical above-fold styles</li>
+          </ul>
+          
+          <pre><code>// Webpack optimization for Tailwind
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+
+module.exports = {
+  mode: 'production',
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css',
+    }),
+  ],
+  optimization: {
+    minimizer: [
+      new CssMinimizerPlugin({
+        minimizerOptions: {
+          preset: ['default', { discardComments: { removeAll: true } }],
+        },
+      }),
+    ],
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+      },
+    ],
+  },
+};
+
+// PostCSS config for optimization
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+    cssnano: process.env.NODE_ENV === 'production' ? {} : false,
+  }
+};
+
+// Critical CSS extraction
+&lt;!-- Inline critical CSS --&gt;
+&lt;style&gt;
+  /* Above-fold critical styles */
+  .hero { @apply bg-blue-500 text-white py-20; }
+  .nav { @apply fixed top-0 w-full bg-white shadow-md z-50; }
+&lt;/style&gt;
+
+&lt;!-- Load non-critical CSS asynchronously --&gt;
+&lt;link rel="preload" href="/css/tailwind.css" as="style" onload="this.onload=null;this.rel='stylesheet'"&gt;
+&lt;noscript&gt;&lt;link rel="stylesheet" href="/css/tailwind.css"&gt;&lt;/noscript&gt;</code></pre>
+          
+          <h3>Performance Strategies</h3>
+          <p>Advanced performance strategies maximize Tailwind's efficiency through intelligent compilation and strategic code organization.</p>
+          <p>Modern build tools and techniques ensure optimal CSS delivery while maintaining developer experience and code maintainability.</p>
+          
+          <ul>
+            <li><strong>JIT Mode:</strong> Just-in-Time compilation for faster builds</li>
+            <li><strong>Component Extraction:</strong> Use @apply for repeated patterns</li>
+            <li><strong>Utility Splitting:</strong> Split utilities across multiple files</li>
+            <li><strong>Lazy Loading:</strong> Load non-critical CSS asynchronously</li>
+          </ul>
+          
+          <pre><code>// JIT Mode Configuration (Default in Tailwind v3+)
+module.exports = {
+  mode: 'jit', // Just-in-Time mode
+  content: ['./src/**/*.{html,js,jsx,ts,tsx}'],
+  theme: {
+    extend: {
+      // JIT supports arbitrary values
+      spacing: {
+        '18': '4.5rem', // Or use arbitrary: p-[18px]
+      }
+    }
+  }
+}
+
+/* Component extraction with @apply */
+@layer components {
+  .btn-primary {
+    @apply bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-colors;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6 border border-gray-200;
+  }
+  
+  .form-input {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500;
+  }
+}
+
+// Splitting CSS for better caching
+// Critical utilities (always needed)
+// critical.css
+@tailwind base;
+@layer utilities {
+  .container { @apply max-w-7xl mx-auto px-4; }
+}
+
+// Non-critical utilities (loaded later)
+// utilities.css
+@tailwind components;
+@tailwind utilities;
+
+// Dynamic import for large utility sets
+const loadUtilities = async () => {
+  if (window.matchMedia('(min-width: 768px)').matches) {
+    await import('./styles/desktop-utilities.css');
+  }
+};
+
+// Service Worker CSS caching
+self.addEventListener('fetch', event => {
+  if (event.request.destination === 'style') {
+    event.respondWith(
+      caches.match(event.request).then(response => {
+        return response || fetch(event.request);
+      })
+    );
+  }
+});</code></pre>
+          
+          <h3>Monitoring & Analysis</h3>
+          <p>Track and analyze your Tailwind CSS bundle performance to identify optimization opportunities and measure improvements.</p>
+          <p>Regular monitoring ensures your optimizations remain effective as your application grows and evolves over time.</p>
+          
+          <ul>
+            <li><strong>Bundle Analysis:</strong> Analyze CSS file sizes</li>
+            <li><strong>Performance Metrics:</strong> Monitor page load times</li>
+            <li><strong>Unused CSS:</strong> Tools to detect unused styles</li>
+            <li><strong>Build Reports:</strong> Generate optimization reports</li>
+          </ul>
+          
+          <pre><code>// Bundle analyzer for CSS
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+
+module.exports = {
+  plugins: [
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false,
+      reportFilename: 'bundle-report.html'
+    })
+  ]
+};
+
+// CSS stats generation
+npm install --save-dev css-tree-shake
+npx css-tree-shake --css ./dist/output.css --content "./src/**/*.{html,js,jsx}" --output ./analysis/
+
+// Performance monitoring script
+const measureCSSLoad = () => {
+  const perfEntry = performance.getEntriesByType('resource')
+    .find(entry => entry.name.includes('tailwind.css'));
+  
+  if (perfEntry) {
+    console.log('CSS Load Time:', perfEntry.responseEnd - perfEntry.startTime + 'ms');
+    console.log('CSS Size:', perfEntry.transferSize + ' bytes');
+  }
+};
+
+// Lighthouse CI for CSS performance
+module.exports = {
+  ci: {
+    collect: {
+      url: ['http://localhost:3000'],
+      settings: {
+        onlyCategories: ['performance'],
+      },
+    },
+    assert: {
+      assertions: {
+        'unused-css-rules': ['error', {maxLength: 2000}],
+        'render-blocking-resources': 'error'
+      }
+    }
+  }
+};
+
+// Build size comparison script
+{
+  "scripts": {
+    "analyze:before": "npx tailwindcss -i ./src/input.css -o ./before.css",
+    "analyze:after": "npx tailwindcss -i ./src/input.css -o ./after.css --minify",
+    "size-compare": "echo 'Before:' && wc -c ./before.css && echo 'After:' && wc -c ./after.css"
+  }
+}</code></pre>
+          
+          <p><strong>Optimization Guidelines:</strong> Start with content configuration, enable JIT mode, use @apply sparingly, monitor bundle sizes regularly, and test performance on real devices.</p>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/yhv0Aq4nXPU'
+      }
+    ]
+  },
+  {
+    id: 'java',
+    title: 'Java',
+    description: 'Learn Java — a powerful language for enterprise and Android apps.',
+    color: '#f89820',
+    lessons: [
+      {
+        id: 'java-introduction',
+        title: 'Java Intro',
+        content: `
+          <h2>What is Java?</h2>
+          <p>Java is a powerful, object-oriented programming language that has been at the forefront of enterprise software development for over 25 years. Created by James Gosling at Sun Microsystems (now Oracle) in 1995, Java revolutionized programming with its "Write Once, Run Anywhere" philosophy. With over 12 million developers worldwide and powering 3 billion devices globally, Java remains one of the most in-demand programming languages, consistently ranking in the top 3 most popular languages. From Android apps to enterprise systems, from big data processing to cloud microservices, Java powers the digital infrastructure of the modern world.</p>
+          
+          <h3>Why Java Dominates Enterprise Development in 2026:</h3>
+          <ul>
+            <li><strong>Enterprise Standard:</strong> 97% of enterprise applications use Java</li>
+            <li><strong>Android Development:</strong> Primary language for Android with 2.5+ billion active devices</li>
+            <li><strong>Big Data Ecosystem:</strong> Powers Hadoop, Spark, Elasticsearch, and Kafka</li>
+            <li><strong>Microservices Architecture:</strong> Spring Boot leads cloud-native development</li>
+            <li><strong>Performance & Scalability:</strong> JVM optimization handles billions of transactions</li>
+            <li><strong>Security:</strong> Built-in security features for mission-critical applications</li>
+            <li><strong>Long-Term Support:</strong> Oracle and OpenJDK provide LTS versions</li>
+          </ul>
+          
+          <h3>Learning Benefits:</h3>
+          <ul>
+            <li><strong>Strong Foundations:</strong> Master object-oriented programming principles that apply everywhere</li>
+            <li><strong>Platform Independence:</strong> Write code once and run it on any operating system</li>
+            <li><strong>Enterprise Thinking:</strong> Learn to build large-scale, robust applications</li>
+            <li><strong>Mobile Development:</strong> Create Android apps for billions of devices worldwide</li>
+            <li><strong>Problem Solving:</strong> Develop structured thinking through Java's disciplined approach</li>
+            <li><strong>Memory Management:</strong> Understand how computers handle data and resources</li>
+            <li><strong>Multi-threading:</strong> Learn to build applications that handle multiple tasks simultaneously</li>
+          </ul>
+          
+          <h3>Prerequisites:</h3>
+          <ul>
+            <li><strong>Essential:</strong> Basic programming concepts (variables, loops, functions)</li>
+            <li><strong>Helpful:</strong> Understanding of object-oriented programming principles</li>
+            <li><strong>Recommended:</strong> Familiarity with command line interface</li>
+            <li><strong>Bonus:</strong> Basic understanding of databases and web development</li>
+          </ul>
+          
+          <h3>Modern Java Ecosystem (2026):</h3>
+          <ul>
+            <li><strong>Java Versions:</strong> Java 21 LTS, Java 22+, with 6-month release cycles</li>
+            <li><strong>Frameworks:</strong> Spring Boot 3, Quarkus, Micronaut, Jakarta EE</li>
+            <li><strong>Build Tools:</strong> Maven, Gradle, SBT for project management</li>
+            <li><strong>IDEs:</strong> IntelliJ IDEA, Eclipse, VS Code with Java extensions</li>
+            <li><strong>Testing:</strong> JUnit 5, TestNG, Mockito, AssertJ</li>
+            <li><strong>Cloud Platforms:</strong> Spring Cloud, AWS SDK, Google Cloud, Azure</li>
+            <li><strong>Databases:</strong> JPA/Hibernate, Spring Data, JDBC, R2DBC</li>
+          </ul>
+          
+          <h3>What You'll Master:</h3>
+          <ul>
+            <li><strong>Core Java:</strong> Syntax, OOP principles, collections, and exception handling</li>
+            <li><strong>Advanced Concepts:</strong> Multithreading, generics, lambda expressions, streams</li>
+            <li><strong>Enterprise Development:</strong> Spring Framework, RESTful APIs, microservices</li>
+            <li><strong>Database Integration:</strong> JDBC, JPA, Hibernate for data persistence</li>
+            <li><strong>Web Development:</strong> Servlets, JSP, Spring MVC for web applications</li>
+            <li><strong>Testing:</strong> Unit testing, integration testing, test-driven development</li>
+            <li><strong>Build & Deploy:</strong> Maven/Gradle, Docker, CI/CD pipelines</li>
+            <li><strong>Performance:</strong> JVM tuning, profiling, memory management</li>
+          </ul>
+          
+          <h3>Industry Applications:</h3>
+          <ul>
+            <li><strong>Enterprise Systems:</strong> Banking, finance, and large-scale business applications</li>
+            <li><strong>Android Development:</strong> Mobile apps for the world's most popular mobile OS</li>
+            <li><strong>Big Data Processing:</strong> Hadoop, Apache Spark, Elasticsearch ecosystems</li>
+            <li><strong>Microservices:</strong> Cloud-native distributed systems and APIs</li>
+            <li><strong>Scientific Computing:</strong> Research, mathematical modeling, simulations</li>
+            <li><strong>Trading Systems:</strong> High-frequency trading and financial algorithms</li>
+          </ul>
+          
+          <h3>Key Features of Java:</h3>
+          <ul>
+            <li><strong>Platform Independent:</strong> Java bytecode runs on any platform with JVM</li>
+            <li><strong>Object-Oriented:</strong> Everything in Java is an object (except primitives)</li>
+            <li><strong>Robust:</strong> Strong memory management and exception handling</li>
+            <li><strong>Secure:</strong> Built-in security features and sandboxing</li>
+            <li><strong>Multithreaded:</strong> Built-in support for concurrent programming</li>
+            <li><strong>High Performance:</strong> Just-In-Time (JIT) compilation</li>
+            <li><strong>Distributed:</strong> Built-in networking capabilities</li>
+          </ul>
+          
+          <h3>Java Applications:</h3>
+          <ul>
+            <li><strong>Enterprise Applications:</strong> Large-scale business applications</li>
+            <li><strong>Android Development:</strong> Mobile app development</li>
+            <li><strong>Web Applications:</strong> Server-side development with Spring, Servlets</li>
+            <li><strong>Desktop Applications:</strong> GUI applications with Swing/JavaFX</li>
+            <li><strong>Scientific Applications:</strong> Mathematical and statistical software</li>
+            <li><strong>Big Data:</strong> Hadoop, Apache Spark, Elasticsearch</li>
+          </ul>
+          
+          <h3>Java Development Environment:</h3>
+          <ul>
+            <li><strong>JDK (Java Development Kit):</strong> Complete development environment</li>
+            <li><strong>JRE (Java Runtime Environment):</strong> Runtime environment for Java programs</li>
+            <li><strong>JVM (Java Virtual Machine):</strong> Executes Java bytecode</li>
+            <li><strong>IDEs:</strong> Eclipse, IntelliJ IDEA, NetBeans, VS Code</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/eIrMbAQSU34'
+      },
+      {
+        id: 'java-basics',
+        title: 'Basics & Syntax',
+        content: `
+          <h2>Java Basic Syntax</h2>
+          <p>Learn the fundamental syntax and structure of Java programs, including variables, data types, operators, and basic program structure.</p>
+          
+          <h3>Java Program Structure</h3>
+          <p>Every Java program follows a specific structure with class declarations, main method, and optional package/import statements.</p>
+          <p>Understanding this fundamental structure is essential for writing any Java application, from simple programs to complex enterprise systems.</p>
+          
+          <pre><code>// Complete Java program structure
+package com.example;           // Optional package declaration
+import java.util.Scanner;      // Import statements
+
+public class HelloWorld {      // Class declaration
+    public static void main(String[] args) {  // Main method
+        System.out.println("Hello, World!");   // Program logic
+        
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter your name: ");
+        String name = scanner.nextLine();
+        System.out.println("Hello, " + name + "!");
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> Java programs must be contained within classes, and execution starts from the main method. The class name must match the filename. Package declarations organize classes into namespaces, while import statements allow access to classes from other packages. The main method signature must be exactly as shown for the JVM to recognize it as the entry point.</p>
+          
+          <h3>Java Data Types</h3>
+          <p>Java is a statically-typed language that supports primitive data types for efficiency and reference types for complex objects.</p>
+          <p>Primitive types are stored directly in memory while reference types store addresses to objects, forming the foundation of Java's type system.</p>
+          
+          <pre><code>// Primitive data types
+byte smallNumber = 100;        // 8-bit integer (-128 to 127)
+short mediumNumber = 30000;    // 16-bit integer (-32,768 to 32,767)
+int regularNumber = 2000000;   // 32-bit integer (most common)
+long bigNumber = 3000000000L;  // 64-bit integer (note the 'L')
+
+float decimalFloat = 3.14f;    // 32-bit floating point (note the 'f')
+double decimalDouble = 3.14159;// 64-bit floating point (default)
+
+char singleChar = 'A';         // 16-bit Unicode character
+boolean flag = true;           // true or false
+
+// Reference types
+String text = "Hello World";   // String object
+int[] numbers = {1, 2, 3, 4};  // Array object</code></pre>
+          
+          <p><strong>Explanation:</strong> Primitive types store actual values directly in memory and are more efficient for basic operations. Reference types store memory addresses pointing to objects on the heap. Java provides wrapper classes (Integer, Double, etc.) that allow primitive types to be treated as objects when needed for collections or generic programming.</p>
+          
+          <h3>Variables and Constants</h3>
+          <p>Variables in Java store data that can change during program execution, while constants hold immutable values declared with the final keyword.</p>
+          <p>Proper variable naming and scope understanding ensures clean, maintainable code that follows Java conventions and best practices.</p>
+          
+          <pre><code>// Variable declarations and initialization
+int age;                       // Declaration only
+age = 25;                      // Assignment
+
+int height = 180;              // Declaration with initialization
+String firstName = "John";     // Reference type variable
+
+// Constants (final variables)
+final double PI = 3.14159;     // Mathematical constant
+final int MAX_STUDENTS = 30;   // Application constant
+
+// Variable scope examples
+public class VariableScope {
+    static int classVariable = 100;     // Class/static variable
+    int instanceVariable = 200;         // Instance variable
+    
+    public void method() {
+        int localVariable = 300;         // Local variable
+        System.out.println(localVariable + instanceVariable + classVariable);
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> Variables must be declared with a specific type and can be initialized immediately or later. The final keyword creates constants that cannot be reassigned after initialization. Local variables exist only within their method, instance variables belong to object instances, and class variables are shared across all instances of a class.</p>
+          
+          <h3>Java Operators</h3>
+          <p>Java operators perform operations on variables and values, including arithmetic calculations, logical comparisons, and assignment operations.</p>
+          <p>Understanding operator precedence and different operator types is crucial for writing correct expressions and controlling program logic effectively.</p>
+          
+          <pre><code>// Arithmetic operators
+int a = 10, b = 3;
+int sum = a + b;        // Addition: 13
+int difference = a - b; // Subtraction: 7
+int product = a * b;    // Multiplication: 30
+int quotient = a / b;   // Division: 3 (integer division)
+int remainder = a % b;  // Modulo: 1
+
+// Comparison operators
+boolean result1 = (a == b);  // Equal to: false
+boolean result2 = (a != b);  // Not equal: true
+boolean result3 = (a > b);   // Greater than: true
+boolean result4 = (a <= b);  // Less than or equal: false
+
+// Logical operators
+boolean x = true, y = false;
+boolean and = x && y;        // Logical AND: false
+boolean or = x || y;         // Logical OR: true
+boolean not = !x;            // Logical NOT: false
+
+// Assignment and compound operators
+int count = 0;
+count = count + 5;    // Regular assignment
+count += 5;           // Compound assignment (same as above)
+count++;              // Increment by 1
+++count;              // Pre-increment</code></pre>
+          
+          <p><strong>Explanation:</strong> Arithmetic operators follow standard mathematical precedence (multiplication/division before addition/subtraction). Integer division truncates decimal parts. Comparison operators return boolean values for conditional logic. Logical operators use short-circuit evaluation (stop evaluating when result is determined). Compound assignment operators provide concise ways to modify variables.</p>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/UmnCZ7-9yDY'
+      },
+      {
+        id: 'java-control-structures',
+        title: 'Control Flow',
+        content: `
+          <h2>Java Control Flow</h2>
+          <p>Master Java's control flow statements to control program execution, make decisions, and create loops for repetitive tasks.</p>
+          
+          <h3>If-Else Statements</h3>
+          <p>If-else statements allow your program to make decisions based on conditions, executing different code blocks depending on whether a condition is true or false.</p>
+          <p>This is fundamental for creating responsive programs that can handle different scenarios and user inputs dynamically.</p>
+          
+          <pre><code>// Simple if statement
+int age = 18;
+if (age >= 18) {
+    System.out.println("You can vote!");
+}
+
+// If-else statement
+int score = 85;
+if (score >= 90) {
+    System.out.println("Grade A");
+} else if (score >= 80) {
+    System.out.println("Grade B");
+} else {
+    System.out.println("Grade C");
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> If-else statements evaluate boolean conditions sequentially. The first condition that evaluates to true executes its corresponding block, and subsequent conditions are skipped. This creates a decision tree that allows programs to respond appropriately to different situations and data values.</p>
+          
+          <h3>Switch Statements</h3>
+          <p>Switch statements provide an elegant way to handle multiple possible values of a variable, offering better readability than long if-else chains.</p>
+          <p>They work best when you need to compare a single variable against several constant values and execute different code for each case.</p>
+          
+          <pre><code>// Traditional switch statement
+int day = 3;
+switch (day) {
+    case 1:
+        System.out.println("Monday");
+        break;
+    case 2:
+        System.out.println("Tuesday");
+        break;
+    case 3:
+        System.out.println("Wednesday");
+        break;
+    default:
+        System.out.println("Other day");
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> Switch statements compare a variable against multiple case values using equality comparison. The break statement prevents fall-through to the next case. The default case handles any value not explicitly covered by the other cases, ensuring your program handles unexpected inputs gracefully.</p>
+          
+          <h3>For Loops</h3>
+          <p>For loops are perfect when you know exactly how many times you want to repeat a block of code, providing initialization, condition, and increment in one line.</p>
+          <p>They offer precise control over iteration and are commonly used for array traversal, counting operations, and generating sequences.</p>
+          
+          <pre><code>// Basic for loop
+for (int i = 0; i &lt; 5; i++) {
+    System.out.println("Count: " + i);
+}
+
+// Enhanced for loop (for arrays/collections)
+int[] numbers = {10, 20, 30, 40, 50};
+for (int num : numbers) {
+    System.out.println("Number: " + num);
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> The traditional for loop consists of initialization (int i = 0), condition (i < 5), and increment (i++) phases. Enhanced for loops simplify iteration over arrays and collections by automatically handling the indexing, making code more readable and less error-prone when you don't need index values.</p>
+          
+          <h3>While and Do-While Loops</h3>
+          <p>While loops continue executing as long as a condition remains true, making them ideal for situations where the number of iterations is unknown.</p>
+          <p>Do-while loops guarantee at least one execution before checking the condition, useful when you need to perform an action before validation.</p>
+          
+          <pre><code>// While loop
+int count = 0;
+while (count &lt; 3) {
+    System.out.println("While count: " + count);
+    count++;
+}
+
+// Do-while loop
+int number;
+do {
+    System.out.println("Enter a positive number:");
+    number = scanner.nextInt();
+} while (number &lt;= 0);</code></pre>
+          
+          <p><strong>Explanation:</strong> While loops check the condition before each iteration, potentially executing zero times if the condition is initially false. Do-while loops execute the body first, then check the condition, guaranteeing at least one execution. This difference is crucial for input validation and menu-driven programs.</p>
+          
+          <h3>Break and Continue Statements</h3>
+          <p>Break and continue statements provide fine-grained control over loop execution, allowing you to exit loops early or skip specific iterations.</p>
+          <p>These control statements help optimize program flow and handle special cases without complex conditional logic within loop bodies.</p>
+          
+          <pre><code>// Break statement
+for (int i = 0; i &lt; 10; i++) {
+    if (i == 5) {
+        break;  // Exit loop when i equals 5
+    }
+    System.out.println("i: " + i);
+}
+
+// Continue statement
+for (int i = 0; i &lt; 5; i++) {
+    if (i == 2) {
+        continue;  // Skip when i equals 2
+    }
+    System.out.println("Value: " + i);
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> Break statements immediately terminate the innermost loop and transfer control to the statement following the loop. Continue statements skip the remaining code in the current iteration and move to the next iteration. These statements provide efficient ways to handle exceptions and special cases in repetitive operations.</p>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/ldYLYRNaucM'
+      },
+      {
+        id: 'java-arrays',
+        title: 'Arrays',
+        content: `
+          <h2>Java Arrays</h2>
+          <p>Arrays are fundamental data structures in Java that store multiple values of the same type in a single variable, providing efficient access to elements using indices.</p>
+          
+          <h3>Array Declaration and Initialization</h3>
+          <p>Array declaration creates a reference variable, while initialization allocates memory and assigns values to array elements.</p>
+          <p>Understanding different initialization methods is crucial for efficient memory usage and proper data organization in your Java programs.</p>
+          
+          <pre><code>// Array declaration and initialization
+int[] numbers = new int[5];  // Creates array of size 5 with default values (0)
+int[] values = {10, 20, 30, 40, 50};  // Direct initialization with values
+
+// Alternative declaration syntax
+String names[] = new String[3];  // Less preferred but valid
+String[] cities = {"Delhi", "Mumbai", "Bangalore"};
+
+// Dynamic initialization
+double[] scores = new double[] {85.5, 92.0, 78.5};</code></pre>
+          
+          <p><strong>Explanation:</strong> Arrays can be declared using dataType[] arrayName or dataType arrayName[] syntax, though the first is preferred. The new operator allocates memory for the specified number of elements, initializing them with default values (0 for numbers, null for objects, false for booleans). Direct initialization with curly braces creates and populates the array simultaneously.</p>
+          
+          <h3>Array Access and Modification</h3>
+          <p>Array elements are accessed using zero-based indexing, where the first element is at index 0 and the last at length-1.</p>
+          <p>Proper index management prevents ArrayIndexOutOfBoundsException and ensures safe data manipulation throughout your program execution.</p>
+          
+          <pre><code>// Array access and modification
+int[] numbers = {10, 20, 30, 40, 50};
+
+// Accessing elements
+int first = numbers[0];      // Gets 10
+int last = numbers[4];       // Gets 50
+int length = numbers.length; // Gets 5
+
+// Modifying elements
+numbers[2] = 35;  // Changes third element to 35
+System.out.println("Modified array: " + Arrays.toString(numbers));</code></pre>
+          
+          <p><strong>Explanation:</strong> Array indexing starts at 0, so an array of length n has valid indices from 0 to n-1. The length property returns the number of elements in the array. Accessing an invalid index throws ArrayIndexOutOfBoundsException. Arrays.toString() provides a convenient way to display array contents for debugging purposes.</p>
+          
+          <h3>Array Traversal</h3>
+          <p>Array traversal involves visiting each element systematically using loops, essential for processing all data within the array structure.</p>
+          <p>Different traversal methods offer varying levels of control and readability, allowing you to choose the best approach for your specific use case.</p>
+          
+          <pre><code>// Different ways to traverse arrays
+int[] numbers = {5, 10, 15, 20, 25};
+
+// Traditional for loop (with index access)
+for (int i = 0; i &lt; numbers.length; i++) {
+    System.out.println("Index " + i + ": " + numbers[i]);
+}
+
+// Enhanced for loop (for-each)
+for (int num : numbers) {
+    System.out.println("Value: " + num);
+}
+
+// While loop traversal
+int index = 0;
+while (index &lt; numbers.length) {
+    System.out.println("Element: " + numbers[index]);
+    index++;
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> Traditional for loops provide index access, useful when you need to modify elements or track positions. Enhanced for loops (for-each) offer cleaner syntax when you only need element values without indices. While loops give maximum control over iteration conditions but require manual index management.</p>
+          
+          <h3>Multi-Dimensional Arrays</h3>
+          <p>Multi-dimensional arrays store arrays within arrays, creating matrix-like structures perfect for representing tables, grids, and mathematical matrices.</p>
+          <p>They provide organized data storage for complex data relationships while maintaining the simplicity of array access patterns.</p>
+          
+          <pre><code>// 2D array declaration and initialization
+int[][] matrix = new int[3][4];  // 3 rows, 4 columns
+int[][] grid = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};
+
+// Accessing 2D array elements
+int element = grid[1][2];  // Gets 6 (row 1, column 2)
+grid[0][0] = 10;          // Sets first element to 10
+
+// Traversing 2D arrays
+for (int i = 0; i &lt; grid.length; i++) {
+    for (int j = 0; j &lt; grid[i].length; j++) {
+        System.out.print(grid[i][j] + " ");
+    }
+    System.out.println();
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> 2D arrays use double indexing [row][column] for element access. The outer array contains references to inner arrays, allowing for jagged arrays where rows can have different lengths. Nested loops are commonly used for traversing multi-dimensional arrays, with the outer loop handling rows and inner loop handling columns.</p>
+          
+          <h3>Array Utility Methods</h3>
+          <p>Java's Arrays class provides powerful utility methods for common array operations like sorting, searching, and comparison.</p>
+          <p>These built-in methods offer optimized implementations that save development time and provide reliable functionality for array manipulation.</p>
+          
+          <pre><code>import java.util.Arrays;
+
+int[] numbers = {64, 34, 25, 12, 22, 11, 90};
+
+// Sorting array
+Arrays.sort(numbers);
+System.out.println("Sorted: " + Arrays.toString(numbers));
+
+// Binary search (array must be sorted)
+int index = Arrays.binarySearch(numbers, 25);
+System.out.println("Found 25 at index: " + index);
+
+// Array comparison
+int[] copy = Arrays.copyOf(numbers, numbers.length);
+boolean areEqual = Arrays.equals(numbers, copy);
+
+// Fill array with specific value
+int[] filled = new int[5];
+Arrays.fill(filled, 100);  // All elements become 100</code></pre>
+          
+          <p><strong>Explanation:</strong> Arrays.sort() uses optimized sorting algorithms like Timsort for object arrays and dual-pivot quicksort for primitives. Arrays.binarySearch() requires a sorted array and returns the index if found, or a negative value indicating insertion point. Arrays.equals() performs element-by-element comparison, while Arrays.copyOf() creates new arrays with specified lengths.</p>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/xzjZy8a_-tw'
+      },
+      {
+        id: 'java-oop-concepts',
+        title: 'Object-Oriented Programming',
+        content: `
+          <h2>OOP Concepts in Java</h2>
+          <p>Java is fundamentally object-oriented. Learn the core principles of OOP: classes, objects, encapsulation, inheritance, polymorphism, and abstraction.</p>
+          
+          <h3>Classes and Objects</h3>
+          <p>Classes serve as blueprints that define the structure and behavior of objects, while objects are actual instances of classes with specific data values.</p>
+          <p>Understanding the relationship between classes and objects is fundamental to object-oriented programming and effective software design patterns.</p>
+          
+          <pre><code>// Class definition
+public class Student {
+    // Instance variables (attributes)
+    private String name;
+    private int age;
+    private double gpa;
+    
+    // Constructor
+    public Student(String name, int age, double gpa) {
+        this.name = name;
+        this.age = age;
+        this.gpa = gpa;
+    }
+    
+    // Methods (behavior)
+    public void study() {
+        System.out.println(name + " is studying.");
+    }
+    
+    public void displayInfo() {
+        System.out.println("Name: " + name + ", Age: " + age + ", GPA: " + gpa);
+    }
+}
+
+// Creating and using objects
+public class Main {
+    public static void main(String[] args) {
+        // Creating objects (instances of Student class)
+        Student student1 = new Student("Alice", 20, 3.8);
+        Student student2 = new Student("Bob", 19, 3.5);
+        
+        // Using object methods
+        student1.study();
+        student1.displayInfo();
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> Classes define the template with attributes (instance variables) and methods (behaviors). Constructors initialize objects with specific values. The \`this\` keyword refers to the current object instance. Objects are created using the \`new\` keyword, and each object has its own copy of instance variables while sharing the same methods defined in the class.</p>
+          
+          <h3>Encapsulation</h3>
+          <p>Encapsulation bundles data and methods together while restricting direct access to internal object details through access modifiers.</p>
+          <p>This principle promotes data security, code maintainability, and flexibility by controlling how object data is accessed and modified.</p>
+          
+          <pre><code>public class BankAccount {
+    // Private data members (encapsulated)
+    private String accountNumber;
+    private double balance;
+    private String ownerName;
+    
+    // Constructor
+    public BankAccount(String accountNumber, String ownerName, double initialBalance) {
+        this.accountNumber = accountNumber;
+        this.ownerName = ownerName;
+        this.balance = initialBalance;
+    }
+    
+    // Public getter methods (controlled access)
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+    
+    public double getBalance() {
+        return balance;
+    }
+    
+    public String getOwnerName() {
+        return ownerName;
+    }
+    
+    // Public setter with validation
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited: $" + amount);
+        } else {
+            System.out.println("Invalid deposit amount");
+        }
+    }
+    
+    public boolean withdraw(double amount) {
+        if (amount > 0 && amount &lt;= balance) {
+            balance -= amount;
+            System.out.println("Withdrawn: $" + amount);
+            return true;
+        }
+        System.out.println("Invalid withdrawal amount");
+        return false;
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> Private fields prevent direct external access to sensitive data. Public getter and setter methods provide controlled access with validation logic. This encapsulation prevents invalid states (like negative balances) and maintains data integrity. Access modifiers (private, protected, public) control the visibility and accessibility of class members.</p>
+          
+          <h3>Inheritance</h3>
+          <p>Inheritance allows classes to inherit properties and methods from parent classes, promoting code reusability and establishing hierarchical relationships.</p>
+          <p>The \`extends\` keyword creates subclasses that can add new features while inheriting existing functionality from their superclass.</p>
+          
+          <pre><code>// Parent class (Superclass)
+public class Vehicle {
+    protected String brand;
+    protected int year;
+    protected double price;
+    
+    public Vehicle(String brand, int year, double price) {
+        this.brand = brand;
+        this.year = year;
+        this.price = price;
+    }
+    
+    public void start() {
+        System.out.println("Vehicle is starting...");
+    }
+    
+    public void displayInfo() {
+        System.out.println("Brand: " + brand + ", Year: " + year + ", Price: $" + price);
+    }
+}
+
+// Child class (Subclass)
+public class Car extends Vehicle {
+    private int numberOfDoors;
+    private String fuelType;
+    
+    public Car(String brand, int year, double price, int numberOfDoors, String fuelType) {
+        super(brand, year, price);  // Call parent constructor
+        this.numberOfDoors = numberOfDoors;
+        this.fuelType = fuelType;
+    }
+    
+    // Method overriding
+    @Override
+    public void start() {
+        System.out.println("Car engine is starting...");
+    }
+    
+    // Additional method specific to Car
+    public void honk() {
+        System.out.println("Car is honking!");
+    }
+    
+    @Override
+    public void displayInfo() {
+        super.displayInfo();  // Call parent method
+        System.out.println("Doors: " + numberOfDoors + ", Fuel: " + fuelType);
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> The Car class inherits all non-private members from Vehicle using \`extends\`. The \`super\` keyword accesses parent class constructors and methods. Method overriding (@Override) allows subclasses to provide specific implementations. Protected access modifier allows access by subclasses while maintaining encapsulation from other classes.</p>
+          
+          <h3>Polymorphism</h3>
+          <p>Polymorphism allows objects of different classes to be treated uniformly through a common interface, enabling flexible and extensible code design.</p>
+          <p>This principle supports method overloading (compile-time) and method overriding (runtime) for dynamic behavior based on actual object types.</p>
+          
+          <pre><code>// Base class
+class Animal {
+    public void makeSound() {
+        System.out.println("Some generic animal sound");
+    }
+    
+    public void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+
+// Derived classes
+class Dog extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Woof! Woof!");
+    }
+    
+    // Method overloading
+    public void makeSound(int times) {
+        for (int i = 0; i &lt; times; i++) {
+            makeSound();
+        }
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Meow! Meow!");
+    }
+}
+
+// Demonstrating polymorphism
+public class PolymorphismDemo {
+    public static void main(String[] args) {
+        // Runtime polymorphism
+        Animal[] animals = {new Dog(), new Cat(), new Animal()};
+        
+        for (Animal animal : animals) {
+            animal.makeSound();  // Calls appropriate overridden method
+        }
+        
+        // Compile-time polymorphism (method overloading)
+        Dog dog = new Dog();
+        dog.makeSound();      // Single call
+        dog.makeSound(3);     // Multiple calls
+        
+        // instanceof operator
+        Animal myPet = new Dog();
+        if (myPet instanceof Dog) {
+            Dog actualDog = (Dog) myPet;  // Casting
+            actualDog.makeSound(2);
+        }
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> Runtime polymorphism occurs when the same method call produces different behaviors based on the actual object type. The JVM determines the correct method to call at runtime (dynamic method dispatch). Method overloading provides compile-time polymorphism with same method names but different parameters. The instanceof operator checks object types before casting.</p>
+          
+          <h3>Abstraction</h3>
+          <p>Abstraction hides implementation complexity while exposing only essential features through abstract classes and interfaces.</p>
+          <p>This principle allows you to focus on what an object does rather than how it does it, promoting cleaner and more maintainable code architecture.</p>
+          
+          <pre><code>// Abstract class
+abstract class Shape {
+    protected String color;
+    
+    public Shape(String color) {
+        this.color = color;
+    }
+    
+    // Abstract method (must be implemented by subclasses)
+    public abstract double calculateArea();
+    public abstract double calculatePerimeter();
+    
+    // Concrete method (can be used as-is or overridden)
+    public void displayColor() {
+        System.out.println("Shape color: " + color);
+    }
+}
+
+// Concrete classes implementing abstract class
+class Circle extends Shape {
+    private double radius;
+    
+    public Circle(String color, double radius) {
+        super(color);
+        this.radius = radius;
+    }
+    
+    @Override
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+    
+    @Override
+    public double calculatePerimeter() {
+        return 2 * Math.PI * radius;
+    }
+}
+
+class Rectangle extends Shape {
+    private double length, width;
+    
+    public Rectangle(String color, double length, double width) {
+        super(color);
+        this.length = length;
+        this.width = width;
+    }
+    
+    @Override
+    public double calculateArea() {
+        return length * width;
+    }
+    
+    @Override
+    public double calculatePerimeter() {
+        return 2 * (length + width);
+    }
+}
+
+// Interface example
+interface Drawable {
+    void draw();  // Abstract method (public and abstract by default)
+    
+    default void resize(double factor) {  // Default method (Java 8+)
+        System.out.println("Resizing by factor: " + factor);
+    }
+}
+
+class DrawableCircle extends Circle implements Drawable {
+    public DrawableCircle(String color, double radius) {
+        super(color, radius);
+    }
+    
+    @Override
+    public void draw() {
+        System.out.println("Drawing a " + color + " circle with radius " + 
+                         calculatePerimeter()/(2*Math.PI));
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> Abstract classes cannot be instantiated and may contain both abstract and concrete methods. Subclasses must implement all abstract methods. Interfaces define contracts that implementing classes must follow, supporting multiple inheritance through interface implementation. Default methods in interfaces provide shared implementations while maintaining abstraction principles.</p>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/6T_HgnjoYwM'
+      },
+      {
+        id: 'java-strings',
+        title: 'Strings',
+        content: `
+          <h2>Java String Handling</h2>
+          <p>Strings are one of the most commonly used classes in Java. Learn string creation, manipulation, and best practices for efficient string handling.</p>
+          
+          <h3>String Creation and Immutability</h3>
+          <p>Java Strings are immutable objects stored in a special memory area called the String Pool for optimization and memory efficiency.</p>
+          <p>Understanding string creation methods and immutability is crucial for writing memory-efficient programs and avoiding common performance pitfalls.</p>
+          
+          <pre><code>// Different ways to create strings
+String str1 = "Hello";                    // String literal (stored in string pool)
+String str2 = "Hello";                    // Same reference as str1
+String str3 = new String("Hello");       // New object in heap
+String str4 = new String("Hello");       // Another new object
+
+// String comparison
+System.out.println(str1 == str2);        // true (same reference)
+System.out.println(str1 == str3);        // false (different objects)
+System.out.println(str1.equals(str3));   // true (same content)
+
+// Demonstrating immutability
+String original = "Java";
+String modified = original.concat(" Programming");
+System.out.println("Original: " + original);    // Still "Java"
+System.out.println("Modified: " + modified);    // "Java Programming"
+
+// String from char array and byte array
+char[] charArray = {'H', 'e', 'l', 'l', 'o'};
+String fromChar = new String(charArray);
+byte[] byteArray = {72, 101, 108, 108, 111};    // ASCII values
+String fromByte = new String(byteArray);</code></pre>
+          
+          <p><strong>Explanation:</strong> String literals are automatically stored in the String Pool and reused for memory efficiency. Objects created with \`new\` keyword always create separate instances in heap memory. String immutability means any modification creates a new String object rather than changing the existing one. Always use \`.equals()\` for content comparison and \`==\` only for reference comparison.</p>
+          
+          <h3>Essential String Methods</h3>
+          <p>Java String class provides numerous built-in methods for text manipulation, searching, and formatting operations.</p>
+          <p>Mastering these methods enables efficient string processing for text analysis, data parsing, and user input validation tasks.</p>
+          
+          <pre><code>String text = "  Java Programming Language  ";
+
+// Basic string information
+int length = text.length();                    // 28
+boolean isEmpty = text.isEmpty();              // false
+char charAt5 = text.charAt(5);                 // 'a'
+
+// String searching and indexing
+int firstIndex = text.indexOf("Java");         // 2
+int lastIndex = text.lastIndexOf("a");         // 24
+boolean contains = text.contains("Program");   // true
+boolean startsWith = text.startsWith("  Ja"); // true
+boolean endsWith = text.endsWith("ge  ");     // true
+
+// String extraction
+String trimmed = text.trim();                  // "Java Programming Language"
+String substring1 = text.substring(2, 6);      // "Java"
+String substring2 = text.substring(7);         // "Programming Language  "
+
+// String modification (returns new strings)
+String upper = text.toUpperCase();
+String lower = text.toLowerCase();
+String replaced = text.replace("Java", "Python");
+String replaceAll = text.replaceAll("\\\\s+", " ");  // Replace multiple spaces
+
+// String splitting and joining
+String sentence = "apple,banana,orange";
+String[] fruits = sentence.split(",");
+String joined = String.join(" | ", fruits);   // "apple | banana | orange"
+
+// String formatting
+String name = "Alice";
+int age = 25;
+String formatted = String.format("Name: %s, Age: %d", name, age);</code></pre>
+          
+          <p><strong>Explanation:</strong> String methods like \`indexOf()\` return -1 if the substring is not found. The \`substring()\` method uses start index (inclusive) and end index (exclusive). \`replaceAll()\` accepts regular expressions for pattern-based replacements. \`String.join()\` provides an efficient way to concatenate multiple strings with a delimiter.</p>
+          
+          <h3>StringBuilder and StringBuffer</h3>
+          <p>StringBuilder and StringBuffer provide mutable string alternatives for efficient string manipulation when multiple modifications are needed.</p>
+          <p>These classes prevent the performance overhead of creating new String objects for each modification operation.</p>
+          
+          <pre><code>// StringBuilder (not thread-safe, faster)
+StringBuilder sb = new StringBuilder();
+sb.append("Hello");
+sb.append(" ");
+sb.append("World");
+sb.insert(5, ",");                    // "Hello, World"
+sb.delete(5, 6);                      // "Hello World"
+sb.reverse();                         // "dlroW olleH"
+sb.reverse();                         // Back to "Hello World"
+
+String result = sb.toString();
+
+// StringBuffer (thread-safe, synchronized)
+StringBuffer buffer = new StringBuffer("Java");
+buffer.append(" is").append(" awesome!");
+buffer.setCharAt(0, 'j');            // "java is awesome!"
+
+// Performance comparison example
+long startTime = System.currentTimeMillis();
+
+// Inefficient string concatenation
+String inefficient = "";
+for (int i = 0; i < 10000; i++) {
+    inefficient += "a";               // Creates new String each time
+}
+long stringTime = System.currentTimeMillis() - startTime;
+
+startTime = System.currentTimeMillis();
+
+// Efficient string building
+StringBuilder efficient = new StringBuilder();
+for (int i = 0; i < 10000; i++) {
+    efficient.append("a");            // Modifies existing buffer
+}
+String efficientResult = efficient.toString();
+long builderTime = System.currentTimeMillis() - startTime;
+
+System.out.println("String concatenation: " + stringTime + "ms");
+System.out.println("StringBuilder: " + builderTime + "ms");</code></pre>
+          
+          <p><strong>Explanation:</strong> StringBuilder maintains an internal character buffer that grows automatically as needed. Methods like \`append()\`, \`insert()\`, and \`delete()\` modify the buffer directly without creating new objects. StringBuffer provides the same functionality with thread-safety through synchronized methods, making it slower but safe for concurrent access.</p>
+          
+          <h3>String Comparison and Validation</h3>
+          <p>Proper string comparison and validation are essential for data integrity, user authentication, and preventing common programming errors.</p>
+          <p>Understanding different comparison methods helps avoid null pointer exceptions and ensures accurate string processing in applications.</p>
+          
+          <pre><code>// String comparison methods
+String str1 = "Hello";
+String str2 = "HELLO";
+String str3 = null;
+
+// Content comparison
+boolean equal = str1.equals(str2);              // false
+boolean equalIgnoreCase = str1.equalsIgnoreCase(str2);  // true
+int comparison = str1.compareTo("Apple");       // Positive (lexicographic)
+int comparisonIgnoreCase = str1.compareToIgnoreCase("hello");  // 0
+
+// Null-safe comparison
+boolean safeEquals = Objects.equals(str1, str3);  // false, no exception
+// str1.equals(str3) would be safe, but str3.equals(str1) would throw NPE
+
+// String validation methods
+String input = "user@example.com";
+boolean isValidEmail = input.matches("^[A-Za-z0-9+_.-]+@(.+)$");
+
+String phoneNumber = "123-456-7890";
+boolean isValidPhone = phoneNumber.matches("\\\\d{3}-\\\\d{3}-\\\\d{4}");
+
+// Check for empty or whitespace
+String emptyCheck = "   ";
+boolean isEmpty = emptyCheck.trim().isEmpty();   // true
+boolean isBlank = emptyCheck.isBlank();          // true (Java 11+)
+
+// String sanitization
+String userInput = "<script>alert('hack')</script>";
+String sanitized = userInput.replaceAll("<[^>]*>", "");  // Remove HTML tags
+
+// Case-insensitive contains check
+String text = "Java Programming Tutorial";
+boolean containsJava = text.toLowerCase().contains("java");  // true</code></pre>
+          
+          <p><strong>Explanation:</strong> \`Objects.equals()\` handles null values safely, preventing NullPointerException. Regular expressions with \`matches()\` provide powerful pattern validation. \`compareTo()\` returns negative, zero, or positive values for lexicographic comparison. \`isBlank()\` (Java 11+) checks for empty or whitespace-only strings more conveniently than \`trim().isEmpty()\`.</p>
+          
+          <h3>String Performance and Best Practices</h3>
+          <p>Following string best practices ensures optimal memory usage, prevents security vulnerabilities, and improves application performance.</p>
+          <p>These guidelines help avoid common pitfalls like memory leaks, security issues, and performance bottlenecks in string-intensive applications.</p>
+          
+          <pre><code>// Best practice: Use string literals for constants
+public static final String APP_NAME = "MyApp";  // Stored in string pool
+public static final String VERSION = "1.0.0";
+
+// Best practice: StringBuilder for multiple concatenations
+public String buildUserProfile(String name, int age, String city) {
+    StringBuilder profile = new StringBuilder();
+    profile.append("Name: ").append(name)
+           .append(", Age: ").append(age)
+           .append(", City: ").append(city);
+    return profile.toString();
+}
+
+// Best practice: String.format() for complex formatting
+public String formatMessage(String template, Object... args) {
+    return String.format(template, args);
+}
+
+// Usage example
+String message = formatMessage("Hello %s, you have %d new messages", "Alice", 5);
+
+// Best practice: Avoid string concatenation in loops
+public String joinNumbers(int[] numbers) {
+    StringBuilder result = new StringBuilder();
+    for (int i = 0; i < numbers.length; i++) {
+        if (i > 0) result.append(", ");
+        result.append(numbers[i]);
+    }
+    return result.toString();
+}
+
+// Best practice: Use String.join() for simple joining
+String[] words = {"Java", "is", "awesome"};
+String sentence = String.join(" ", words);  // "Java is awesome"
+
+// Best practice: Null-safe string operations
+public boolean isStringValid(String input) {
+    return input != null && !input.trim().isEmpty();
+}
+
+// Best practice: String interning for memory optimization (use carefully)
+String internedString = new String("Hello").intern();  // Force into string pool</code></pre>
+          
+          <p><strong>Explanation:</strong> String literals are automatically interned and reused from the string pool. StringBuilder should be used for multiple concatenations to avoid creating intermediate String objects. \`String.format()\` provides readable and maintainable formatting for complex strings. Null checks should always precede string operations to prevent exceptions. String interning can save memory but should be used judiciously as it affects garbage collection.</p>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/zQZ5FmXJdmM'
+      },
+      {
+        id: 'java-exception-handling',
+        title: 'Exception Handling',
+        content: `
+          <h2>Java Exception Handling</h2>
+          <p>Exception handling is a powerful mechanism in Java to handle runtime errors and maintain program flow. Learn to write robust applications that gracefully handle errors.</p>
+          
+          <h3>Try-Catch-Finally Blocks</h3>
+          <p>The try-catch-finally structure provides a systematic way to handle exceptions while ensuring cleanup code always executes.</p>
+          <p>This fundamental pattern separates normal program logic from error handling, making code more readable and maintainable.</p>
+          
+          <pre><code>// Basic try-catch example
+public void divideNumbers(int dividend, int divisor) {
+    try {
+        int result = dividend / divisor;
+        System.out.println("Result: " + result);
+    } catch (ArithmeticException e) {
+        System.out.println("Error: Division by zero!");
+        System.out.println("Exception message: " + e.getMessage());
+    } finally {
+        System.out.println("Division operation completed");
+    }
+}
+
+// Multiple catch blocks
+public void fileOperation(String filename) {
+    FileInputStream file = null;
+    try {
+        file = new FileInputStream(filename);
+        int data = file.read();
+        System.out.println("First byte: " + data);
+    } catch (FileNotFoundException e) {
+        System.out.println("File not found: " + filename);
+    } catch (IOException e) {
+        System.out.println("Error reading file: " + e.getMessage());
+    } finally {
+        if (file != null) {
+            try {
+                file.close();
+            } catch (IOException e) {
+                System.out.println("Error closing file: " + e.getMessage());
+            }
+        }
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> The try block contains code that might throw exceptions. Catch blocks handle specific exception types in order of declaration. The finally block always executes, even if an exception occurs or a return statement is encountered. Multiple catch blocks allow handling different exception types with specific responses.</p>
+          
+          <h3>Checked vs Unchecked Exceptions</h3>
+          <p>Java categorizes exceptions into checked (compile-time) and unchecked (runtime) exceptions, each requiring different handling approaches.</p>
+          <p>Understanding this distinction helps you write appropriate error handling code and follow Java's exception handling contracts.</p>
+          
+          <pre><code>import java.io.*;
+import java.util.*;
+
+public class ExceptionTypes {
+    
+    // Checked exception - must be handled or declared
+    public void readFile(String filename) throws IOException {
+        FileReader file = new FileReader(filename);  // IOException is checked
+        BufferedReader reader = new BufferedReader(file);
+        String line = reader.readLine();
+        System.out.println(line);
+        reader.close();
+    }
+    
+    // Handling checked exception with try-catch
+    public void safeReadFile(String filename) {
+        try {
+            readFile(filename);
+        } catch (IOException e) {
+            System.out.println("Failed to read file: " + e.getMessage());
+        }
+    }
+    
+    // Unchecked exceptions - handling is optional
+    public void demonstrateUnchecked() {
+        try {
+            // NullPointerException (unchecked)
+            String str = null;
+            int length = str.length();
+            
+            // ArrayIndexOutOfBoundsException (unchecked)
+            int[] array = {1, 2, 3};
+            int value = array[10];
+            
+        } catch (NullPointerException e) {
+            System.out.println("Null pointer error: " + e.getMessage());
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Array index error: " + e.getMessage());
+        } catch (RuntimeException e) {
+            System.out.println("Runtime exception: " + e.getMessage());
+        }
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> Checked exceptions like IOException must be either handled with try-catch or declared in the method signature using throws. Unchecked exceptions (RuntimeException subclasses) like NullPointerException can occur at runtime and don't require explicit handling. The compiler enforces checked exception handling but allows unchecked exceptions to propagate.</p>
+          
+          <h3>Try-With-Resources</h3>
+          <p>Try-with-resources automatically manages resource cleanup, eliminating the need for explicit finally blocks in resource management scenarios.</p>
+          <p>This feature ensures resources are properly closed even if exceptions occur, preventing resource leaks and simplifying code structure.</p>
+          
+          <pre><code>import java.io.*;
+import java.sql.*;
+
+// Traditional approach with finally
+public void readFileTraditional(String filename) {
+    FileInputStream input = null;
+    BufferedReader reader = null;
+    try {
+        input = new FileInputStream(filename);
+        reader = new BufferedReader(new InputStreamReader(input));
+        String line;
+        while ((line = reader.readLine()) != null) {
+            System.out.println(line);
+        }
+    } catch (IOException e) {
+        System.out.println("Error: " + e.getMessage());
+    } finally {
+        try {
+            if (reader != null) reader.close();
+            if (input != null) input.close();
+        } catch (IOException e) {
+            System.out.println("Error closing resources: " + e.getMessage());
+        }
+    }
+}
+
+// Try-with-resources approach
+public void readFileModern(String filename) {
+    try (FileInputStream input = new FileInputStream(filename);
+         BufferedReader reader = new BufferedReader(new InputStreamReader(input))) {
+        
+        String line;
+        while ((line = reader.readLine()) != null) {
+            System.out.println(line);
+        }
+    } catch (IOException e) {
+        System.out.println("Error: " + e.getMessage());
+    }
+    // Resources automatically closed here
+}
+
+// Multiple resources with try-with-resources
+public void copyFile(String source, String destination) {
+    try (FileInputStream input = new FileInputStream(source);
+         FileOutputStream output = new FileOutputStream(destination);
+         BufferedInputStream bufferedInput = new BufferedInputStream(input);
+         BufferedOutputStream bufferedOutput = new BufferedOutputStream(output)) {
+        
+        byte[] buffer = new byte[1024];
+        int bytesRead;
+        while ((bytesRead = bufferedInput.read(buffer)) != -1) {
+            bufferedOutput.write(buffer, 0, bytesRead);
+        }
+    } catch (IOException e) {
+        System.out.println("File copy error: " + e.getMessage());
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> Resources declared in the try-with-resources statement must implement AutoCloseable interface. The close() method is automatically called when exiting the try block, regardless of whether execution completes normally or abruptly. Multiple resources can be declared by separating them with semicolons.</p>
+          
+          <h3>Throwing and Custom Exceptions</h3>
+          <p>Java allows you to throw exceptions manually and create custom exception classes for specific application scenarios.</p>
+          <p>Custom exceptions provide meaningful error messages and enable precise error handling strategies for domain-specific problems.</p>
+          
+          <pre><code>// Custom checked exception
+class InsufficientFundsException extends Exception {
+    private double amount;
+    private double balance;
+    
+    public InsufficientFundsException(double amount, double balance) {
+        super("Insufficient funds: Attempted to withdraw $" + amount + 
+              ", but balance is only $" + balance);
+        this.amount = amount;
+        this.balance = balance;
+    }
+    
+    public double getAmount() { return amount; }
+    public double getBalance() { return balance; }
+}
+
+// Custom unchecked exception
+class InvalidAccountNumberException extends RuntimeException {
+    public InvalidAccountNumberException(String accountNumber) {
+        super("Invalid account number: " + accountNumber);
+    }
+}
+
+// Using custom exceptions
+public class BankAccount {
+    private String accountNumber;
+    private double balance;
+    
+    public BankAccount(String accountNumber, double initialBalance) {
+        if (accountNumber == null || accountNumber.length() != 10) {
+            throw new InvalidAccountNumberException(accountNumber);
+        }
+        this.accountNumber = accountNumber;
+        this.balance = initialBalance;
+    }
+    
+    public void withdraw(double amount) throws InsufficientFundsException {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Withdrawal amount must be positive");
+        }
+        if (amount > balance) {
+            throw new InsufficientFundsException(amount, balance);
+        }
+        balance -= amount;
+        System.out.println("Withdrawn: $" + amount + ", Remaining: $" + balance);
+    }
+    
+    public double getBalance() { return balance; }
+}
+
+// Exception handling example
+public void bankingExample() {
+    try {
+        BankAccount account = new BankAccount("1234567890", 500.0);
+        account.withdraw(600.0);  // Will throw InsufficientFundsException
+    } catch (InsufficientFundsException e) {
+        System.out.println("Transaction failed: " + e.getMessage());
+        System.out.println("Available balance: $" + e.getBalance());
+    } catch (InvalidAccountNumberException e) {
+        System.out.println("Account error: " + e.getMessage());
+    } catch (IllegalArgumentException e) {
+        System.out.println("Invalid input: " + e.getMessage());
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> Custom checked exceptions extend Exception class and must be declared in method signatures. Custom unchecked exceptions extend RuntimeException. The throw keyword manually triggers exceptions with specific messages. Exception constructors can accept messages, causes, and custom data for detailed error reporting.</p>
+          
+          <h3>Exception Best Practices</h3>
+          <p>Following exception handling best practices ensures robust, maintainable code that gracefully handles errors without compromising security.</p>
+          <p>These guidelines help you write defensive code that fails safely and provides meaningful feedback to users and developers.</p>
+          
+          <pre><code>import java.util.logging.Logger;
+import java.util.logging.Level;
+
+public class ExceptionBestPractices {
+    private static final Logger logger = Logger.getLogger(ExceptionBestPractices.class.getName());
+    
+    // Good: Specific exception handling
+    public void processUserInput(String input) {
+        try {
+            int number = Integer.parseInt(input);
+            int result = 100 / number;
+            System.out.println("Result: " + result);
+        } catch (NumberFormatException e) {
+            logger.log(Level.WARNING, "Invalid number format: " + input, e);
+            System.out.println("Please enter a valid number");
+        } catch (ArithmeticException e) {
+            logger.log(Level.WARNING, "Division by zero attempted", e);
+            System.out.println("Cannot divide by zero");
+        }
+    }
+    
+    // Bad: Catching general Exception
+    public void badPractice(String input) {
+        try {
+            // Some operations
+            int number = Integer.parseInt(input);
+            int result = 100 / number;
+        } catch (Exception e) {
+            // Too general - hides specific error types
+            System.out.println("Something went wrong");
+        }
+    }
+    
+    // Good: Resource management and error recovery
+    public boolean saveUserData(String filename, String data) {
+        try (FileWriter writer = new FileWriter(filename)) {
+            writer.write(data);
+            writer.flush();
+            logger.info("Data successfully saved to: " + filename);
+            return true;
+        } catch (IOException e) {
+            logger.log(Level.SEVERE, "Failed to save data to: " + filename, e);
+            // Attempt recovery - try backup location
+            return saveToBackupLocation(data);
+        }
+    }
+    
+    private boolean saveToBackupLocation(String data) {
+        try (FileWriter writer = new FileWriter("backup.txt")) {
+            writer.write(data);
+            logger.info("Data saved to backup location");
+            return true;
+        } catch (IOException e) {
+            logger.log(Level.SEVERE, "Failed to save to backup location", e);
+            return false;
+        }
+    }
+    
+    // Good: Exception chaining for context
+    public void processTransaction(String transactionId) throws TransactionException {
+        try {
+            validateTransaction(transactionId);
+            executeTransaction(transactionId);
+        } catch (ValidationException e) {
+            throw new TransactionException("Transaction validation failed: " + transactionId, e);
+        } catch (DatabaseException e) {
+            throw new TransactionException("Database error during transaction: " + transactionId, e);
+        }
+    }
+    
+    // Placeholder methods for compilation
+    private void validateTransaction(String id) throws ValidationException { }
+    private void executeTransaction(String id) throws DatabaseException { }
+}
+
+class TransactionException extends Exception {
+    public TransactionException(String message, Throwable cause) {
+        super(message, cause);
+    }
+}
+
+class ValidationException extends Exception { }
+class DatabaseException extends Exception { }</code></pre>
+          
+          <p><strong>Explanation:</strong> Always catch specific exceptions rather than general Exception class. Use logging frameworks to record exception details for debugging. Implement graceful degradation and recovery strategies when possible. Exception chaining preserves the original error context while adding application-specific information. Never catch exceptions without handling them appropriately.</p>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/1XAfapkBQjk'
+      },
+      {
+        id: 'java-collections',
+        title: 'Collections',
+        content: `
+          <h2>Java Collections Framework</h2>
+          <p>The Collections Framework provides a unified architecture for storing and manipulating groups of objects. Master Lists, Sets, Maps, and their implementations.</p>
+          
+          <h3>Collection Hierarchy</h3>
+          <p>Understanding the Collections hierarchy helps you choose the right collection type for your specific use case and programming requirements.</p>
+          <p>Each interface defines specific contracts and behaviors that all implementing classes must follow for consistency and interoperability.</p>
+          
+          <ul>
+            <li><strong>Collection Interface:</strong> Root interface for all collections</li>
+            <li><strong>List Interface:</strong> Ordered collection with duplicates</li>
+            <li><strong>Set Interface:</strong> Unordered collection without duplicates</li>
+            <li><strong>Map Interface:</strong> Key-value pairs (separate hierarchy)</li>
+          </ul>
+          
+          <pre><code>import java.util.*;
+
+public class CollectionHierarchyDemo {
+    public static void main(String[] args) {
+        // Collection interface methods (common to all collections)
+        Collection&lt;String&gt; collection = new ArrayList&lt;&gt;();
+        collection.add("Java");
+        collection.add("Python");
+        System.out.println("Size: " + collection.size());
+        System.out.println("Contains Java: " + collection.contains("Java"));
+        
+        // List interface - ordered, allows duplicates
+        List&lt;String&gt; languages = new ArrayList&lt;&gt;();
+        languages.add("Java");
+        languages.add("Python");
+        languages.add("Java");  // Duplicate allowed
+        System.out.println("List: " + languages);  // [Java, Python, Java]
+        
+        // Set interface - no duplicates
+        Set&lt;String&gt; uniqueLanguages = new HashSet&lt;&gt;();
+        uniqueLanguages.add("Java");
+        uniqueLanguages.add("Python");
+        uniqueLanguages.add("Java");  // Duplicate ignored
+        System.out.println("Set: " + uniqueLanguages);  // [Java, Python]
+        
+        // Map interface - key-value pairs
+        Map&lt;String, Integer&gt; languageRank = new HashMap&lt;&gt;();
+        languageRank.put("Java", 1);
+        languageRank.put("Python", 2);
+        languageRank.put("JavaScript", 3);
+        System.out.println("Map: " + languageRank);
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> Collection is the root interface providing basic operations like add(), remove(), size(), and contains(). List extends Collection adding indexed access and allowing duplicates. Set extends Collection but ensures uniqueness. Map is separate from Collection hierarchy and stores key-value associations.</p>
+          
+          <h3>List Implementations</h3>
+          <p>Different List implementations offer varying performance characteristics for common operations like access, insertion, and deletion.</p>
+          <p>Choosing the right implementation based on your usage patterns can significantly impact application performance.</p>
+          
+          <ul>
+            <li><strong>ArrayList:</strong> Dynamic array, fast random access</li>
+            <li><strong>LinkedList:</strong> Doubly-linked list, fast insertion/deletion</li>
+            <li><strong>Vector:</strong> Synchronized ArrayList (legacy)</li>
+            <li><strong>Stack:</strong> LIFO data structure (legacy)</li>
+          </ul>
+          
+          <pre><code>import java.util.*;
+
+public class ListImplementations {
+    public static void main(String[] args) {
+        // ArrayList - best for random access and iteration
+        List&lt;String&gt; arrayList = new ArrayList&lt;&gt;();
+        arrayList.add("First");
+        arrayList.add("Second");
+        arrayList.add(1, "Inserted");  // Insert at index 1
+        System.out.println("ArrayList: " + arrayList);
+        System.out.println("Get index 1: " + arrayList.get(1));  // Fast O(1)
+        
+        // LinkedList - best for frequent insertions/deletions
+        List&lt;String&gt; linkedList = new LinkedList&lt;&gt;();
+        linkedList.add("A");
+        linkedList.add("B");
+        linkedList.add("C");
+        linkedList.addFirst("Start");  // Fast insertion at beginning
+        linkedList.addLast("End");     // Fast insertion at end
+        System.out.println("LinkedList: " + linkedList);
+        
+        // LinkedList as Queue
+        Queue&lt;String&gt; queue = new LinkedList&lt;&gt;();
+        queue.offer("First");
+        queue.offer("Second");
+        queue.offer("Third");
+        System.out.println("Queue poll: " + queue.poll());  // Remove and return first
+        
+        // LinkedList as Deque (double-ended queue)
+        Deque&lt;String&gt; deque = new LinkedList&lt;&gt;();
+        deque.addFirst("Front");
+        deque.addLast("Back");
+        System.out.println("Deque: " + deque);
+        
+        // Performance comparison example
+        long startTime = System.currentTimeMillis();
+        List&lt;Integer&gt; perfTest = new ArrayList&lt;&gt;();
+        for (int i = 0; i < 100000; i++) {
+            perfTest.add(0, i);  // Insert at beginning - slow for ArrayList
+        }
+        System.out.println("ArrayList insert at beginning: " + 
+                          (System.currentTimeMillis() - startTime) + "ms");
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> ArrayList provides O(1) random access but O(n) insertion/deletion in middle. LinkedList offers O(1) insertion/deletion at ends but O(n) random access. LinkedList implements Queue and Deque interfaces for specialized operations. Choose ArrayList for frequent access, LinkedList for frequent modifications.</p>
+          
+          <h3>Set Implementations</h3>
+          <p>Set implementations ensure uniqueness while offering different ordering guarantees and performance characteristics for various use cases.</p>
+          <p>Understanding these differences helps you choose between hash-based, tree-based, or specialized set implementations.</p>
+          
+          <ul>
+            <li><strong>HashSet:</strong> Hash table based, fast performance</li>
+            <li><strong>LinkedHashSet:</strong> Maintains insertion order</li>
+            <li><strong>TreeSet:</strong> Sorted set using Red-Black tree</li>
+            <li><strong>EnumSet:</strong> Optimized for enum types</li>
+          </ul>
+          
+          <pre><code>import java.util.*;
+
+public class SetImplementations {
+    public static void main(String[] args) {
+        // HashSet - fastest performance, no ordering
+        Set&lt;String&gt; hashSet = new HashSet&lt;&gt;();
+        hashSet.add("Banana");
+        hashSet.add("Apple");
+        hashSet.add("Cherry");
+        hashSet.add("Apple");  // Duplicate ignored
+        System.out.println("HashSet: " + hashSet);  // Random order
+        
+        // LinkedHashSet - maintains insertion order
+        Set&lt;String&gt; linkedHashSet = new LinkedHashSet&lt;&gt;();
+        linkedHashSet.add("Banana");
+        linkedHashSet.add("Apple");
+        linkedHashSet.add("Cherry");
+        System.out.println("LinkedHashSet: " + linkedHashSet);  // [Banana, Apple, Cherry]
+        
+        // TreeSet - sorted order
+        Set&lt;String&gt; treeSet = new TreeSet&lt;&gt;();
+        treeSet.add("Banana");
+        treeSet.add("Apple");
+        treeSet.add("Cherry");
+        System.out.println("TreeSet: " + treeSet);  // [Apple, Banana, Cherry]
+        
+        // TreeSet with custom comparator
+        Set&lt;String&gt; customTreeSet = new TreeSet&lt;&gt;(String.CASE_INSENSITIVE_ORDER);
+        customTreeSet.add("banana");
+        customTreeSet.add("Apple");
+        customTreeSet.add("CHERRY");
+        System.out.println("Custom TreeSet: " + customTreeSet);
+        
+        // Set operations
+        Set&lt;Integer&gt; set1 = new HashSet&lt;&gt;(Arrays.asList(1, 2, 3, 4));
+        Set&lt;Integer&gt; set2 = new HashSet&lt;&gt;(Arrays.asList(3, 4, 5, 6));
+        
+        // Union
+        Set&lt;Integer&gt; union = new HashSet&lt;&gt;(set1);
+        union.addAll(set2);
+        System.out.println("Union: " + union);
+        
+        // Intersection
+        Set&lt;Integer&gt; intersection = new HashSet&lt;&gt;(set1);
+        intersection.retainAll(set2);
+        System.out.println("Intersection: " + intersection);
+        
+        // Difference
+        Set&lt;Integer&gt; difference = new HashSet&lt;&gt;(set1);
+        difference.removeAll(set2);
+        System.out.println("Difference: " + difference);
+        
+        // EnumSet example
+        enum Day { MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY }
+        Set&lt;Day&gt; weekdays = EnumSet.range(Day.MONDAY, Day.FRIDAY);
+        Set&lt;Day&gt; weekend = EnumSet.of(Day.SATURDAY, Day.SUNDAY);
+        System.out.println("Weekdays: " + weekdays);
+        System.out.println("Weekend: " + weekend);
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> HashSet offers O(1) average performance for basic operations but no ordering guarantees. LinkedHashSet maintains insertion order with slightly higher memory overhead. TreeSet keeps elements sorted with O(log n) operations and implements NavigableSet interface. EnumSet is highly optimized for enum types using bit vectors.</p>
+          
+          <h3>Map Implementations</h3>
+          <p>Map implementations provide key-value storage with different performance characteristics and ordering guarantees for diverse application needs.</p>
+          <p>Understanding map implementations helps you choose between hash-based, tree-based, or thread-safe options based on requirements.</p>
+          
+          <ul>
+            <li><strong>HashMap:</strong> Hash table based, fast access</li>
+            <li><strong>LinkedHashMap:</strong> Maintains insertion or access order</li>
+            <li><strong>TreeMap:</strong> Sorted map using Red-Black tree</li>
+            <li><strong>Hashtable:</strong> Synchronized HashMap (legacy)</li>
+            <li><strong>ConcurrentHashMap:</strong> Thread-safe HashMap</li>
+          </ul>
+          
+          <pre><code>import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+
+public class MapImplementations {
+    public static void main(String[] args) {
+        // HashMap - fastest performance, no ordering
+        Map&lt;String, Integer&gt; hashMap = new HashMap&lt;&gt;();
+        hashMap.put("Java", 1995);
+        hashMap.put("Python", 1991);
+        hashMap.put("JavaScript", 1995);
+        hashMap.put("C++", 1985);
+        System.out.println("HashMap: " + hashMap);
+        
+        // LinkedHashMap - maintains insertion order
+        Map&lt;String, Integer&gt; linkedHashMap = new LinkedHashMap&lt;&gt;();
+        linkedHashMap.put("Java", 1995);
+        linkedHashMap.put("Python", 1991);
+        linkedHashMap.put("JavaScript", 1995);
+        System.out.println("LinkedHashMap: " + linkedHashMap);
+        
+        // LinkedHashMap with access order (LRU cache behavior)
+        Map&lt;String, Integer&gt; lruMap = new LinkedHashMap&lt;&gt;(16, 0.75f, true);
+        lruMap.put("A", 1);
+        lruMap.put("B", 2);
+        lruMap.put("C", 3);
+        lruMap.get("A");  // Access A, moves it to end
+        System.out.println("LRU Map after accessing A: " + lruMap);
+        
+        // TreeMap - sorted by keys
+        Map&lt;String, Integer&gt; treeMap = new TreeMap&lt;&gt;();
+        treeMap.put("Java", 1995);
+        treeMap.put("Python", 1991);
+        treeMap.put("JavaScript", 1995);
+        treeMap.put("C++", 1985);
+        System.out.println("TreeMap (sorted): " + treeMap);
+        
+        // Map operations
+        Map&lt;String, String&gt; countryCapital = new HashMap&lt;&gt;();
+        countryCapital.put("India", "New Delhi");
+        countryCapital.put("USA", "Washington D.C.");
+        countryCapital.put("UK", "London");
+        
+        // Iterate over keys
+        System.out.println("\\nCountries:");
+        for (String country : countryCapital.keySet()) {
+            System.out.println(country);
+        }
+        
+        // Iterate over values
+        System.out.println("\\nCapitals:");
+        for (String capital : countryCapital.values()) {
+            System.out.println(capital);
+        }
+        
+        // Iterate over entries
+        System.out.println("\\nCountry-Capital pairs:");
+        for (Map.Entry&lt;String, String&gt; entry : countryCapital.entrySet()) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
+        }
+        
+        // Modern iteration with forEach (Java 8+)
+        System.out.println("\\nUsing forEach:");
+        countryCapital.forEach((country, capital) -> 
+            System.out.println(country + " has capital " + capital));
+        
+        // Map operations
+        countryCapital.putIfAbsent("Canada", "Ottawa");
+        countryCapital.replace("UK", "London", "London, England");
+        countryCapital.compute("France", (k, v) -> v == null ? "Paris" : v);
+        
+        // ConcurrentHashMap for thread safety
+        Map&lt;String, Integer&gt; concurrentMap = new ConcurrentHashMap&lt;&gt;();
+        concurrentMap.put("Thread1", 100);
+        concurrentMap.put("Thread2", 200);
+        System.out.println("ConcurrentHashMap: " + concurrentMap);
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> HashMap offers O(1) average performance with no ordering. LinkedHashMap maintains insertion or access order for predictable iteration. TreeMap keeps keys sorted with O(log n) operations. ConcurrentHashMap provides thread-safe operations without synchronizing the entire map. Use putIfAbsent(), compute(), and merge() for atomic operations.</p>
+          
+          <h3>Iterator and Enhanced For Loop</h3>
+          <p>Iterators provide a uniform way to traverse collections safely, while enhanced for loops offer simplified syntax for common iteration patterns.</p>
+          <p>Understanding iterator behavior and fail-fast mechanisms helps prevent concurrent modification exceptions during iteration.</p>
+          
+          <ul>
+            <li><strong>Iterator:</strong> Standard way to traverse collections</li>
+            <li><strong>ListIterator:</strong> Bidirectional iterator for lists</li>
+            <li><strong>Enhanced for loop:</strong> Simplified iteration syntax</li>
+            <li><strong>fail-fast Behavior:</strong> Concurrent modification detection</li>
+          </ul>
+          
+          <pre><code>import java.util.*;
+
+public class IterationExamples {
+    public static void main(String[] args) {
+        List&lt;String&gt; languages = new ArrayList&lt;&gt;(Arrays.asList("Java", "Python", "C++", "JavaScript"));
+        
+        // Enhanced for loop (for-each) - simplest approach
+        System.out.println("Enhanced for loop:");
+        for (String language : languages) {
+            System.out.println(language);
+        }
+        
+        // Iterator - safe removal during iteration
+        System.out.println("\\nUsing Iterator:");
+        Iterator&lt;String&gt; iterator = languages.iterator();
+        while (iterator.hasNext()) {
+            String language = iterator.next();
+            System.out.println(language);
+            if (language.equals("C++")) {
+                iterator.remove();  // Safe removal
+            }
+        }
+        System.out.println("After removal: " + languages);
+        
+        // ListIterator - bidirectional navigation
+        System.out.println("\\nListIterator (forward and backward):");
+        ListIterator&lt;String&gt; listIterator = languages.listIterator();
+        
+        // Forward iteration
+        while (listIterator.hasNext()) {
+            System.out.println("Forward: " + listIterator.next());
+        }
+        
+        // Backward iteration
+        while (listIterator.hasPrevious()) {
+            System.out.println("Backward: " + listIterator.previous());
+        }
+        
+        // ListIterator modifications
+        ListIterator&lt;String&gt; modifyIterator = languages.listIterator();
+        while (modifyIterator.hasNext()) {
+            String lang = modifyIterator.next();
+            if (lang.equals("Java")) {
+                modifyIterator.set("Java 17");  // Replace
+                modifyIterator.add("Kotlin");   // Add after current
+            }
+        }
+        System.out.println("After modifications: " + languages);
+        
+        // Fail-fast behavior demonstration
+        List&lt;Integer&gt; numbers = new ArrayList&lt;&gt;(Arrays.asList(1, 2, 3, 4, 5));
+        try {
+            for (Integer number : numbers) {
+                System.out.println(number);
+                if (number == 3) {
+                    numbers.add(6);  // This will cause ConcurrentModificationException
+                }
+            }
+        } catch (ConcurrentModificationException e) {
+            System.out.println("ConcurrentModificationException caught!");
+        }
+        
+        // Safe way to modify during iteration
+        Iterator&lt;Integer&gt; safeIterator = numbers.iterator();
+        while (safeIterator.hasNext()) {
+            Integer number = safeIterator.next();
+            if (number % 2 == 0) {
+                safeIterator.remove();  // Safe removal
+            }
+        }
+        System.out.println("After safe removal of even numbers: " + numbers);
+        
+        // Stream iteration (Java 8+)
+        System.out.println("\\nStream iteration:");
+        languages.stream()
+                .filter(lang -> lang.length() > 4)
+                .map(String::toUpperCase)
+                .forEach(System.out::println);
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> Enhanced for loops provide clean syntax but don't allow safe element removal. Iterator.remove() is the only safe way to remove elements during iteration. ListIterator allows bidirectional traversal and modification for List implementations. Fail-fast iterators detect concurrent modifications and throw ConcurrentModificationException to prevent data corruption.</p>
+          
+          <h3>Utility Classes</h3>
+          <p>Collections and Arrays utility classes provide static methods for common operations like sorting, searching, and manipulating collections.</p>
+          <p>These utilities offer optimized implementations and convenient methods that work with any collection type, promoting code reuse.</p>
+          
+          <ul>
+            <li><strong>Collections:</strong> Static utility methods for collections</li>
+            <li><strong>Arrays:</strong> Utility methods for arrays</li>
+            <li><strong>Comparable:</strong> Natural ordering of objects</li>
+            <li><strong>Comparator:</strong> Custom ordering of objects</li>
+          </ul>
+          
+          <pre><code>import java.util.*;
+
+class Student implements Comparable&lt;Student&gt; {
+    private String name;
+    private int grade;
+    
+    public Student(String name, int grade) {
+        this.name = name;
+        this.grade = grade;
+    }
+    
+    // Natural ordering by grade
+    @Override
+    public int compareTo(Student other) {
+        return Integer.compare(this.grade, other.grade);
+    }
+    
+    @Override
+    public String toString() {
+        return name + "(" + grade + ")";
+    }
+    
+    public String getName() { return name; }
+    public int getGrade() { return grade; }
+}
+
+public class UtilityClassesDemo {
+    public static void main(String[] args) {
+        List&lt;Integer&gt; numbers = new ArrayList&lt;&gt;(Arrays.asList(3, 1, 4, 1, 5, 9, 2, 6));
+        
+        // Collections utility methods
+        System.out.println("Original: " + numbers);
+        Collections.sort(numbers);
+        System.out.println("Sorted: " + numbers);
+        
+        Collections.reverse(numbers);
+        System.out.println("Reversed: " + numbers);
+        
+        Collections.shuffle(numbers);
+        System.out.println("Shuffled: " + numbers);
+        
+        System.out.println("Max: " + Collections.max(numbers));
+        System.out.println("Min: " + Collections.min(numbers));
+        System.out.println("Frequency of 1: " + Collections.frequency(numbers, 1));
+        
+        // Binary search (requires sorted list)
+        Collections.sort(numbers);
+        int index = Collections.binarySearch(numbers, 5);
+        System.out.println("Index of 5: " + index);
+        
+        // Creating special collections
+        List&lt;String&gt; immutableList = Collections.unmodifiableList(
+            Arrays.asList("A", "B", "C"));
+        List&lt;String&gt; synchronizedList = Collections.synchronizedList(
+            new ArrayList&lt;&gt;());
+        List&lt;String&gt; emptyList = Collections.emptyList();
+        
+        // Working with Comparable objects
+        List&lt;Student&gt; students = Arrays.asList(
+            new Student("Alice", 85),
+            new Student("Bob", 92),
+            new Student("Charlie", 78)
+        );
+        
+        Collections.sort(students);  // Uses natural ordering (by grade)
+        System.out.println("Students by grade: " + students);
+        
+        // Custom comparator for sorting by name
+        Comparator&lt;Student&gt; nameComparator = new Comparator&lt;Student&gt;() {
+            @Override
+            public int compare(Student s1, Student s2) {
+                return s1.getName().compareTo(s2.getName());
+            }
+        };
+        Collections.sort(students, nameComparator);
+        System.out.println("Students by name: " + students);
+        
+        // Lambda expressions for comparators (Java 8+)
+        Collections.sort(students, (s1, s2) -> s1.getName().compareTo(s2.getName()));
+        
+        // Method references and Comparator utility methods
+        students.sort(Comparator.comparing(Student::getName));
+        students.sort(Comparator.comparing(Student::getGrade).reversed());
+        
+        // Chained comparators
+        students.sort(Comparator.comparing(Student::getGrade)
+                                .thenComparing(Student::getName));
+        System.out.println("Sorted by grade then name: " + students);
+        
+        // Arrays utility methods
+        int[] array = {3, 1, 4, 1, 5, 9, 2, 6};
+        Arrays.sort(array);
+        System.out.println("Sorted array: " + Arrays.toString(array));
+        
+        int searchIndex = Arrays.binarySearch(array, 4);
+        System.out.println("Index of 4 in array: " + searchIndex);
+        
+        int[] copy = Arrays.copyOf(array, array.length);
+        Arrays.fill(copy, 2, 5, 0);  // Fill indices 2-4 with 0
+        System.out.println("Modified copy: " + Arrays.toString(copy));
+        
+        // Convert array to list
+        List&lt;Integer&gt; listFromArray = Arrays.asList(1, 2, 3, 4, 5);
+        System.out.println("List from array: " + listFromArray);
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> Collections class provides algorithms that work on any Collection implementation. Comparable interface defines natural ordering for objects, while Comparator allows custom ordering logic. Arrays utilities work specifically with array types. Modern Java offers lambda expressions and method references for concise comparator creation and chaining multiple sort criteria.</p>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/rzA7TPISu-g'
+      },
+      {
+        id: 'java-file-handling',
+        title: 'File I/O',
+        content: `
+          <h2>Java File I/O</h2>
+          <p>Learn to read from and write to files in Java using various I/O classes and the modern NIO.2 API for efficient file operations.</p>
+          
+          <h3>File I/O Classes</h3>
+          <p>Java provides multiple approaches for file operations, from traditional stream-based I/O to modern NIO.2 API for enhanced performance.</p>
+          <p>Understanding different I/O classes helps you choose the right approach based on your specific requirements and performance needs.</p>
+          
+          <ul>
+            <li><strong>File Class:</strong> Represent file and directory pathnames</li>
+            <li><strong>FileInputStream/FileOutputStream:</strong> Byte-oriented file I/O</li>
+            <li><strong>FileReader/FileWriter:</strong> Character-oriented file I/O</li>
+            <li><strong>BufferedReader/BufferedWriter:</strong> Buffered character I/O</li>
+            <li><strong>PrintWriter:</strong> Formatted text output</li>
+          </ul>
+          
+          <pre><code>import java.io.*;
+
+public class TraditionalFileIO {
+    public static void main(String[] args) {
+        // File class for file operations
+        File file = new File("sample.txt");
+        
+        try {
+            // Check file properties
+            System.out.println("File exists: " + file.exists());
+            System.out.println("Is directory: " + file.isDirectory());
+            System.out.println("Can read: " + file.canRead());
+            System.out.println("Can write: " + file.canWrite());
+            System.out.println("File size: " + file.length() + " bytes");
+            
+            // Create new file if it doesn't exist
+            if (file.createNewFile()) {
+                System.out.println("File created: " + file.getName());
+            }
+            
+            // Writing to file using FileWriter
+            try (FileWriter writer = new FileWriter(file)) {
+                writer.write("Hello, World!\\n");
+                writer.write("This is a test file.\\n");
+                writer.write("Java File I/O Example");
+            }
+            
+            // Reading from file using FileReader
+            try (FileReader reader = new FileReader(file);
+                 BufferedReader bufferedReader = new BufferedReader(reader)) {
+                
+                String line;
+                System.out.println("\\nFile contents:");
+                while ((line = bufferedReader.readLine()) != null) {
+                    System.out.println(line);
+                }
+            }
+            
+            // Using PrintWriter for formatted output
+            try (PrintWriter printWriter = new PrintWriter(new FileWriter("formatted.txt"))) {
+                printWriter.println("Name: John Doe");
+                printWriter.printf("Age: %d%n", 25);
+                printWriter.printf("Salary: $%.2f%n", 50000.50);
+            }
+            
+            // Binary file operations
+            byte[] data = "Binary data example".getBytes();
+            
+            // Write binary data
+            try (FileOutputStream fos = new FileOutputStream("binary.dat")) {
+                fos.write(data);
+            }
+            
+            // Read binary data
+            try (FileInputStream fis = new FileInputStream("binary.dat")) {
+                byte[] buffer = new byte[1024];
+                int bytesRead = fis.read(buffer);
+                String content = new String(buffer, 0, bytesRead);
+                System.out.println("Binary file content: " + content);
+            }
+            
+        } catch (IOException e) {
+            System.err.println("I/O error: " + e.getMessage());
+        }
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> File class provides file system operations like checking existence and properties. FileReader/FileWriter handle character-based I/O with automatic character encoding. BufferedReader/BufferedWriter improve performance by reducing system calls. PrintWriter offers formatted output capabilities. FileInputStream/FileOutputStream handle raw byte data for binary files.</p>
+          
+          <h3>Modern NIO.2 API</h3>
+          <p>The NIO.2 API introduced in Java 7 provides more powerful and efficient file operations with better exception handling and atomic operations.</p>
+          <p>Path and Files classes offer improved performance, better error reporting, and support for symbolic links and file attributes.</p>
+          
+          <ul>
+            <li><strong>Path Interface:</strong> Represents file system paths</li>
+            <li><strong>Paths Class:</strong> Factory methods for Path objects</li>
+            <li><strong>Files Class:</strong> Utility methods for file operations</li>
+            <li><strong>DirectoryStream:</strong> Iterate over directory entries</li>
+          </ul>
+          
+          <pre><code>import java.io.IOException;
+import java.nio.file.*;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.util.List;
+import java.util.stream.Stream;
+
+public class ModernFileIO {
+    public static void main(String[] args) {
+        // Creating Path objects
+        Path currentDir = Paths.get(".");
+        Path file = Paths.get("nio-example.txt");
+        Path directory = Paths.get("test-directory");
+        
+        try {
+            // File operations with Files class
+            System.out.println("Current directory: " + currentDir.toAbsolutePath());
+            System.out.println("File exists: " + Files.exists(file));
+            
+            // Create directory if it doesn't exist
+            if (!Files.exists(directory)) {
+                Files.createDirectory(directory);
+                System.out.println("Directory created: " + directory);
+            }
+            
+            // Write to file (creates file if it doesn't exist)
+            String content = "Line 1\\nLine 2\\nLine 3\\nLine 4";
+            Files.write(file, content.getBytes(), 
+                       StandardOpenOption.CREATE, 
+                       StandardOpenOption.WRITE,
+                       StandardOpenOption.TRUNCATE_EXISTING);
+            
+            // Read entire file as string (Java 11+)
+            String fileContent = Files.readString(file);
+            System.out.println("\\nFile content:\\n" + fileContent);
+            
+            // Read all lines into a list
+            List&lt;String&gt; lines = Files.readAllLines(file);
+            System.out.println("\\nReading lines:");
+            lines.forEach(line -> System.out.println("Line: " + line));
+            
+            // Stream file lines for large files
+            System.out.println("\\nStreaming lines:");
+            try (Stream&lt;String&gt; lineStream = Files.lines(file)) {
+                lineStream.filter(line -> line.contains("2"))
+                         .forEach(System.out::println);
+            }
+            
+            // File attributes
+            BasicFileAttributes attributes = Files.readAttributes(file, BasicFileAttributes.class);
+            System.out.println("\\nFile attributes:");
+            System.out.println("Size: " + attributes.size() + " bytes");
+            System.out.println("Creation time: " + attributes.creationTime());
+            System.out.println("Last modified: " + attributes.lastModifiedTime());
+            System.out.println("Is directory: " + attributes.isDirectory());
+            
+            // Copy file
+            Path copyPath = Paths.get("nio-copy.txt");
+            Files.copy(file, copyPath, StandardCopyOption.REPLACE_EXISTING);
+            System.out.println("File copied to: " + copyPath);
+            
+            // Move file
+            Path movedPath = directory.resolve("moved-file.txt");
+            Files.move(copyPath, movedPath, StandardCopyOption.REPLACE_EXISTING);
+            System.out.println("File moved to: " + movedPath);
+            
+            // Directory listing
+            System.out.println("\\nDirectory contents:");
+            try (DirectoryStream&lt;Path&gt; stream = Files.newDirectoryStream(directory)) {
+                for (Path entry : stream) {
+                    System.out.println("  " + entry.getFileName());
+                }
+            }
+            
+            // Walk file tree
+            System.out.println("\\nWalking file tree:");
+            try (Stream&lt;Path&gt; pathStream = Files.walk(currentDir, 2)) {
+                pathStream.filter(Files::isRegularFile)
+                         .filter(path -> path.toString().endsWith(".txt"))
+                         .forEach(System.out::println);
+            }
+            
+            // Cleanup
+            Files.deleteIfExists(file);
+            Files.deleteIfExists(movedPath);
+            Files.deleteIfExists(directory);
+            
+        } catch (IOException e) {
+            System.err.println("I/O error: " + e.getMessage());
+        }
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> Path interface represents file system paths in a more object-oriented way than File class. Files.readString() and Files.readAllLines() provide convenient methods for reading entire files. Files.lines() returns a Stream for memory-efficient processing of large files. DirectoryStream allows iteration over directory contents. Files.walk() provides recursive directory traversal capabilities.</p>
+          
+          <h3>File Operations</h3>
+          <p>Comprehensive file operations include creating, reading, writing, copying, moving, and deleting files with proper error handling.</p>
+          <p>Modern Java provides both traditional and NIO.2 approaches for these operations, each with specific advantages and use cases.</p>
+          
+          <ul>
+            <li><strong>File Creation:</strong> createNewFile(), createDirectory()</li>
+            <li><strong>File Reading:</strong> Read entire files or line by line</li>
+            <li><strong>File Writing:</strong> Write text or binary data</li>
+            <li><strong>File Copying:</strong> Copy files and directories</li>
+            <li><strong>File Deletion:</strong> Delete files and directories</li>
+            <li><strong>File Properties:</strong> Size, modified date, permissions</li>
+          </ul>
+          
+          <pre><code>import java.io.*;
+import java.nio.file.*;
+import java.nio.file.attribute.FileTime;
+import java.time.Instant;
+import java.util.Properties;
+
+public class FileOperationsDemo {
+    
+    public static void createAndWriteFile(String filename, String content) throws IOException {
+        // Method 1: Traditional approach
+        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(filename))) {
+            writer.write(content);
+        }
+        
+        // Method 2: NIO.2 approach
+        Files.write(Paths.get(filename), content.getBytes());
+        
+        System.out.println("File created and written: " + filename);
+    }
+    
+    public static String readFile(String filename) throws IOException {
+        // Method 1: Read all at once (for small files)
+        return Files.readString(Paths.get(filename));
+        
+        // Method 2: Line by line (for large files)
+        /*
+        StringBuilder content = new StringBuilder();
+        try (BufferedReader reader = Files.newBufferedReader(Paths.get(filename))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                content.append(line).append("\\n");
+            }
+        }
+        return content.toString();
+        */
+    }
+    
+    public static void copyFile(String source, String destination) throws IOException {
+        Path sourcePath = Paths.get(source);
+        Path destPath = Paths.get(destination);
+        
+        Files.copy(sourcePath, destPath, 
+                  StandardCopyOption.REPLACE_EXISTING,
+                  StandardCopyOption.COPY_ATTRIBUTES);
+        
+        System.out.println("File copied from " + source + " to " + destination);
+    }
+    
+    public static void moveFile(String source, String destination) throws IOException {
+        Path sourcePath = Paths.get(source);
+        Path destPath = Paths.get(destination);
+        
+        Files.move(sourcePath, destPath, StandardCopyOption.REPLACE_EXISTING);
+        System.out.println("File moved from " + source + " to " + destination);
+    }
+    
+    public static void getFileProperties(String filename) throws IOException {
+        Path path = Paths.get(filename);
+        
+        if (Files.exists(path)) {
+            System.out.println("\\nFile Properties for: " + filename);
+            System.out.println("Size: " + Files.size(path) + " bytes");
+            System.out.println("Readable: " + Files.isReadable(path));
+            System.out.println("Writable: " + Files.isWritable(path));
+            System.out.println("Executable: " + Files.isExecutable(path));
+            System.out.println("Last modified: " + Files.getLastModifiedTime(path));
+            System.out.println("Owner: " + Files.getOwner(path));
+        }
+    }
+    
+    public static void workWithDirectories() throws IOException {
+        Path dir = Paths.get("sample-directory");
+        
+        // Create directory
+        Files.createDirectories(dir);
+        System.out.println("Directory created: " + dir);
+        
+        // Create subdirectories and files
+        Path subdir = dir.resolve("subdir");
+        Files.createDirectory(subdir);
+        
+        Path file1 = dir.resolve("file1.txt");
+        Path file2 = subdir.resolve("file2.txt");
+        
+        Files.write(file1, "Content of file 1".getBytes());
+        Files.write(file2, "Content of file 2".getBytes());
+        
+        // List directory contents
+        System.out.println("\\nDirectory contents:");
+        Files.list(dir).forEach(System.out::println);
+        
+        // Recursive directory walk
+        System.out.println("\\nRecursive directory walk:");
+        Files.walk(dir)
+             .forEach(path -> System.out.println("  " + path));
+        
+        // Cleanup - delete directory tree
+        Files.walk(dir)
+             .sorted((a, b) -> b.compareTo(a))  // Reverse order for deletion
+             .forEach(path -> {
+                 try {
+                     Files.delete(path);
+                 } catch (IOException e) {
+                     System.err.println("Failed to delete: " + path);
+                 }
+             });
+    }
+    
+    public static void workWithProperties() throws IOException {
+        Properties props = new Properties();
+        props.setProperty("app.name", "My Application");
+        props.setProperty("app.version", "1.0.0");
+        props.setProperty("database.url", "jdbc:mysql://localhost/mydb");
+        
+        // Write properties to file
+        try (FileOutputStream out = new FileOutputStream("app.properties")) {
+            props.store(out, "Application Properties");
+        }
+        
+        // Read properties from file
+        Properties loadedProps = new Properties();
+        try (FileInputStream in = new FileInputStream("app.properties")) {
+            loadedProps.load(in);
+        }
+        
+        System.out.println("\\nLoaded properties:");
+        loadedProps.forEach((key, value) -> 
+            System.out.println(key + " = " + value));
+    }
+    
+    public static void main(String[] args) {
+        try {
+            // File operations demo
+            createAndWriteFile("demo.txt", "Hello, File I/O!\\nThis is a demo file.");
+            String content = readFile("demo.txt");
+            System.out.println("File content:\\n" + content);
+            
+            copyFile("demo.txt", "demo-copy.txt");
+            getFileProperties("demo.txt");
+            
+            workWithDirectories();
+            workWithProperties();
+            
+            // Cleanup
+            Files.deleteIfExists(Paths.get("demo.txt"));
+            Files.deleteIfExists(Paths.get("demo-copy.txt"));
+            Files.deleteIfExists(Paths.get("app.properties"));
+            
+        } catch (IOException e) {
+            System.err.println("File operation error: " + e.getMessage());
+        }
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> File operations should always use try-with-resources for proper resource management. NIO.2 provides atomic operations that either complete successfully or leave the file system unchanged. StandardCopyOption enum provides options for copy/move operations. Files.walk() enables recursive directory traversal with proper ordering for deletion. Properties files provide a standard way to store application configuration.</p>
+          
+          <h3>Serialization</h3>
+          <p>Object serialization converts Java objects into byte streams for storage or network transmission, with deserialization recreating objects from byte streams.</p>
+          <p>Understanding serialization is crucial for data persistence, caching, and distributed systems where objects need to cross process boundaries.</p>
+          
+          <ul>
+            <li><strong>Object Serialization:</strong> Convert objects to byte stream</li>
+            <li><strong>ObjectOutputStream:</strong> Write objects to file</li>
+            <li><strong>ObjectInputStream:</strong> Read objects from file</li>
+            <li><strong>Serializable Interface:</strong> Mark classes as serializable</li>
+            <li><strong>transient Keyword:</strong> Exclude fields from serialization</li>
+          </ul>
+          
+          <pre><code>import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+
+// Serializable class
+class Employee implements Serializable {
+    private static final long serialVersionUID = 1L;
+    
+    private String name;
+    private int id;
+    private double salary;
+    private transient String password;  // Won't be serialized
+    private static String company = "TechCorp";  // Static fields aren't serialized
+    
+    public Employee(String name, int id, double salary, String password) {
+        this.name = name;
+        this.id = id;
+        this.salary = salary;
+        this.password = password;
+    }
+    
+    @Override
+    public String toString() {
+        return String.format("Employee{name='%s', id=%d, salary=%.2f, password='%s', company='%s'}", 
+                           name, id, salary, password, company);
+    }
+    
+    // Getters
+    public String getName() { return name; }
+    public int getId() { return id; }
+    public double getSalary() { return salary; }
+    public String getPassword() { return password; }
+}
+
+public class SerializationDemo {
+    
+    public static void serializeObjects(String filename) {
+        List&lt;Employee&gt; employees = new ArrayList&lt;&gt;();
+        employees.add(new Employee("Alice Johnson", 1001, 75000.0, "secret123"));
+        employees.add(new Employee("Bob Smith", 1002, 65000.0, "password456"));
+        employees.add(new Employee("Carol Davis", 1003, 80000.0, "mypass789"));
+        
+        try (ObjectOutputStream oos = new ObjectOutputStream(
+                 new FileOutputStream(filename))) {
+            
+            oos.writeObject(employees);
+            System.out.println("Objects serialized to " + filename);
+            
+            // Also serialize individual objects
+            oos.writeObject(new Employee("David Wilson", 1004, 70000.0, "secure321"));
+            
+        } catch (IOException e) {
+            System.err.println("Serialization error: " + e.getMessage());
+        }
+    }
+    
+    @SuppressWarnings("unchecked")
+    public static void deserializeObjects(String filename) {
+        try (ObjectInputStream ois = new ObjectInputStream(
+                 new FileInputStream(filename))) {
+            
+            // Read the list of employees
+            List&lt;Employee&gt; employees = (List&lt;Employee&gt;) ois.readObject();
+            System.out.println("\\nDeserialized employee list:");
+            employees.forEach(System.out::println);
+            
+            // Read the individual employee
+            Employee employee = (Employee) ois.readObject();
+            System.out.println("\\nDeserialized individual employee:");
+            System.out.println(employee);
+            
+            // Note: transient fields will be null/default values
+            
+        } catch (IOException | ClassNotFoundException e) {
+            System.err.println("Deserialization error: " + e.getMessage());
+        }
+    }
+    
+    // Custom serialization example
+    static class CustomSerializableClass implements Serializable {
+        private static final long serialVersionUID = 1L;
+        
+        private String data;
+        private transient int computedValue;
+        
+        public CustomSerializableClass(String data) {
+            this.data = data;
+            this.computedValue = data.length() * 2;
+        }
+        
+        // Custom serialization method
+        private void writeObject(ObjectOutputStream out) throws IOException {
+            out.defaultWriteObject();  // Serialize non-transient fields
+            out.writeInt(data.length());  // Custom serialization logic
+        }
+        
+        // Custom deserialization method
+        private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+            in.defaultReadObject();  // Deserialize non-transient fields
+            int length = in.readInt();  // Custom deserialization logic
+            this.computedValue = length * 2;  // Recompute transient field
+        }
+        
+        @Override
+        public String toString() {
+            return String.format("CustomSerializableClass{data='%s', computedValue=%d}", 
+                               data, computedValue);
+        }
+    }
+    
+    public static void customSerializationDemo() {
+        String filename = "custom-serialized.dat";
+        
+        // Serialize custom object
+        try (ObjectOutputStream oos = new ObjectOutputStream(
+                 new FileOutputStream(filename))) {
+            
+            CustomSerializableClass obj = new CustomSerializableClass("Hello World");
+            System.out.println("\\nOriginal object: " + obj);
+            oos.writeObject(obj);
+            
+        } catch (IOException e) {
+            System.err.println("Custom serialization error: " + e.getMessage());
+        }
+        
+        // Deserialize custom object
+        try (ObjectInputStream ois = new ObjectInputStream(
+                 new FileInputStream(filename))) {
+            
+            CustomSerializableClass obj = (CustomSerializableClass) ois.readObject();
+            System.out.println("Deserialized object: " + obj);
+            
+        } catch (IOException | ClassNotFoundException e) {
+            System.err.println("Custom deserialization error: " + e.getMessage());
+        }
+        
+        // Cleanup
+        new File(filename).delete();
+    }
+    
+    public static void main(String[] args) {
+        String filename = "employees.ser";
+        
+        serializeObjects(filename);
+        deserializeObjects(filename);
+        customSerializationDemo();
+        
+        // Cleanup
+        new File(filename).delete();
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> Classes must implement Serializable interface for serialization. serialVersionUID ensures version compatibility during deserialization. Transient fields are excluded from serialization and default to null/zero after deserialization. Custom writeObject/readObject methods allow control over serialization process. Static fields belong to the class, not instances, so they're not serialized.</p>
+          
+          <h3>Best Practices</h3>
+          <p>Following file I/O best practices ensures efficient, secure, and maintainable code while preventing resource leaks and data corruption.</p>
+          <p>These guidelines help you write robust file handling code that works reliably across different platforms and usage scenarios.</p>
+          
+          <ul>
+            <li><strong>Resource Management:</strong> Use try-with-resources</li>
+            <li><strong>Buffer I/O:</strong> Use buffered streams for better performance</li>
+            <li><strong>Exception Handling:</strong> Handle IOException properly</li>
+            <li><strong>Path Validation:</strong> Check file existence and permissions</li>
+            <li><strong>Character Encoding:</strong> Specify encoding for text files</li>
+          </ul>
+          
+          <pre><code>import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.*;
+import java.util.concurrent.locks.ReentrantLock;
+
+public class FileIOBestPractices {
+    private static final ReentrantLock fileLock = new ReentrantLock();
+    
+    // Good: Use try-with-resources for automatic resource management
+    public static void goodResourceManagement(String filename) {
+        try (BufferedReader reader = Files.newBufferedReader(
+                 Paths.get(filename), StandardCharsets.UTF_8)) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading file: " + e.getMessage());
+        }
+        // Resources automatically closed here
+    }
+    
+    // Bad: Manual resource management (prone to resource leaks)
+    public static void badResourceManagement(String filename) {
+        BufferedReader reader = null;
+        try {
+            reader = Files.newBufferedReader(Paths.get(filename));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            System.err.println("Error: " + e.getMessage());
+        } finally {
+            if (reader != null) {
+                try {
+                    reader.close();  // Manual cleanup - error prone
+                } catch (IOException e) {
+                    System.err.println("Error closing reader: " + e.getMessage());
+                }
+            }
+        }
+    }
+    
+    // Good: Validate file operations before proceeding
+    public static boolean safeFileOperation(String filename) {
+        Path path = Paths.get(filename);
+        
+        // Check file existence and permissions
+        if (!Files.exists(path)) {
+            System.err.println("File does not exist: " + filename);
+            return false;
+        }
+        
+        if (!Files.isReadable(path)) {
+            System.err.println("File is not readable: " + filename);
+            return false;
+        }
+        
+        if (Files.isDirectory(path)) {
+            System.err.println("Path is a directory, not a file: " + filename);
+            return false;
+        }
+        
+        try {
+            long fileSize = Files.size(path);
+            if (fileSize > 100 * 1024 * 1024) {  // 100MB limit
+                System.err.println("File too large: " + fileSize + " bytes");
+                return false;
+            }
+        } catch (IOException e) {
+            System.err.println("Error checking file size: " + e.getMessage());
+            return false;
+        }
+        
+        return true;
+    }
+    
+    // Good: Specify character encoding explicitly
+    public static void writeWithEncoding(String filename, String content) {
+        try (BufferedWriter writer = Files.newBufferedWriter(
+                 Paths.get(filename), 
+                 StandardCharsets.UTF_8,
+                 StandardOpenOption.CREATE,
+                 StandardOpenOption.WRITE,
+                 StandardOpenOption.TRUNCATE_EXISTING)) {
+            
+            writer.write(content);
+            
+        } catch (IOException e) {
+            System.err.println("Error writing file: " + e.getMessage());
+        }
+    }
+    
+    // Good: Use buffered streams for performance
+    public static void efficientFileCopy(String source, String destination) {
+        try (BufferedInputStream bis = new BufferedInputStream(
+                 new FileInputStream(source));
+             BufferedOutputStream bos = new BufferedOutputStream(
+                 new FileOutputStream(destination))) {
+            
+            byte[] buffer = new byte[8192];  // 8KB buffer
+            int bytesRead;
+            
+            while ((bytesRead = bis.read(buffer)) != -1) {
+                bos.write(buffer, 0, bytesRead);
+            }
+            
+        } catch (IOException e) {
+            System.err.println("Error copying file: " + e.getMessage());
+        }
+    }
+    
+    // Good: Thread-safe file operations
+    public static void threadSafeFileAppend(String filename, String content) {
+        fileLock.lock();
+        try (BufferedWriter writer = Files.newBufferedWriter(
+                 Paths.get(filename),
+                 StandardCharsets.UTF_8,
+                 StandardOpenOption.CREATE,
+                 StandardOpenOption.APPEND)) {
+            
+            writer.write(content);
+            writer.newLine();
+            
+        } catch (IOException e) {
+            System.err.println("Error appending to file: " + e.getMessage());
+        } finally {
+            fileLock.unlock();
+        }
+    }
+    
+    // Good: Atomic file operations to prevent corruption
+    public static void atomicFileWrite(String filename, String content) {
+        Path filePath = Paths.get(filename);
+        Path tempPath = Paths.get(filename + ".tmp");
+        
+        try {
+            // Write to temporary file first
+            Files.write(tempPath, content.getBytes(StandardCharsets.UTF_8));
+            
+            // Atomically move temp file to final location
+            Files.move(tempPath, filePath, StandardCopyOption.REPLACE_EXISTING);
+            
+            System.out.println("File written atomically: " + filename);
+            
+        } catch (IOException e) {
+            System.err.println("Error in atomic write: " + e.getMessage());
+            
+            // Cleanup temp file if operation failed
+            try {
+                Files.deleteIfExists(tempPath);
+            } catch (IOException cleanupEx) {
+                System.err.println("Error cleaning up temp file: " + cleanupEx.getMessage());
+            }
+        }
+    }
+    
+    // Good: Comprehensive error handling with specific exceptions
+    public static void robustFileOperation(String filename) {
+        try {
+            if (safeFileOperation(filename)) {
+                String content = Files.readString(Paths.get(filename));
+                System.out.println("File read successfully, length: " + content.length());
+            }
+            
+        } catch (AccessDeniedException e) {
+            System.err.println("Access denied: " + e.getMessage());
+        } catch (NoSuchFileException e) {
+            System.err.println("File not found: " + e.getMessage());
+        } catch (FileSystemException e) {
+            System.err.println("File system error: " + e.getMessage());
+        } catch (IOException e) {
+            System.err.println("I/O error: " + e.getMessage());
+        } catch (OutOfMemoryError e) {
+            System.err.println("File too large to read into memory: " + e.getMessage());
+        }
+    }
+    
+    public static void main(String[] args) throws IOException {
+        // Create test file
+        String testFile = "test-best-practices.txt";
+        writeWithEncoding(testFile, "Test content\\nLine 2\\nLine 3");
+        
+        // Demonstrate best practices
+        System.out.println("Good resource management:");
+        goodResourceManagement(testFile);
+        
+        System.out.println("\\nRobust file operation:");
+        robustFileOperation(testFile);
+        
+        System.out.println("\\nAtomic file write:");
+        atomicFileWrite("atomic-test.txt", "Atomically written content");
+        
+        // Cleanup
+        Files.deleteIfExists(Paths.get(testFile));
+        Files.deleteIfExists(Paths.get("atomic-test.txt"));
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> Try-with-resources automatically closes resources and handles exceptions during closure. Always validate file paths, permissions, and sizes before operations. Specify character encoding explicitly to avoid platform-dependent behavior. Use buffered streams for better I/O performance. Implement atomic operations using temporary files to prevent data corruption. Handle specific exception types for better error reporting and recovery strategies.</p>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/ScUJx4aWRi0'
+      },
+      {
+        id: 'java-multithreading',
+        title: 'Multithreading & Concurrency',
+        content: `
+          <h2>Java Multithreading</h2>
+          <p>Multithreading allows concurrent execution of multiple parts of a program. Learn thread creation, synchronization, and concurrent programming in Java.</p>
+          
+          <h3>Thread Basics</h3>
+          <p>Understanding thread fundamentals is essential for creating responsive applications that can perform multiple tasks simultaneously.</p>
+          <p>Java provides both Thread class inheritance and Runnable interface implementation for creating and managing threads effectively.</p>
+          
+          <ul>
+            <li><strong>Thread Class:</strong> Extend Thread class and override run()</li>
+            <li><strong>Runnable Interface:</strong> Implement run() method</li>
+            <li><strong>Thread Lifecycle:</strong> New, Runnable, Blocked, Waiting, Terminated</li>
+            <li><strong>Thread Priority:</strong> MIN_PRIORITY, NORM_PRIORITY, MAX_PRIORITY</li>
+          </ul>
+          
+          <pre><code>// Method 1: Extending Thread class
+class MyThread extends Thread {
+    private String threadName;
+    
+    public MyThread(String name) {
+        this.threadName = name;
+    }
+    
+    @Override
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(threadName + " - Count: " + i);
+            try {
+                Thread.sleep(1000);  // Sleep for 1 second
+            } catch (InterruptedException e) {
+                System.out.println(threadName + " interrupted");
+                return;
+            }
+        }
+        System.out.println(threadName + " finished");
+    }
+}
+
+// Method 2: Implementing Runnable interface (preferred)
+class MyRunnable implements Runnable {
+    private String taskName;
+    
+    public MyRunnable(String name) {
+        this.taskName = name;
+    }
+    
+    @Override
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(taskName + " - Count: " + i + 
+                             " [Thread: " + Thread.currentThread().getName() + "]");
+            try {
+                Thread.sleep(800);
+            } catch (InterruptedException e) {
+                System.out.println(taskName + " interrupted");
+                return;
+            }
+        }
+        System.out.println(taskName + " completed");
+    }
+}
+
+public class ThreadBasicsDemo {
+    public static void main(String[] args) throws InterruptedException {
+        System.out.println("Main thread: " + Thread.currentThread().getName());
+        
+        // Creating and starting threads using Thread class
+        MyThread thread1 = new MyThread("Thread-A");
+        MyThread thread2 = new MyThread("Thread-B");
+        
+        thread1.start();  // Start thread execution
+        thread2.start();
+        
+        // Creating threads using Runnable interface
+        MyRunnable task1 = new MyRunnable("Task-1");
+        MyRunnable task2 = new MyRunnable("Task-2");
+        
+        Thread thread3 = new Thread(task1);
+        Thread thread4 = new Thread(task2);
+        
+        // Set thread priorities
+        thread3.setPriority(Thread.MAX_PRIORITY);
+        thread4.setPriority(Thread.MIN_PRIORITY);
+        
+        thread3.start();
+        thread4.start();
+        
+        // Lambda expression for simple tasks
+        Thread lambdaThread = new Thread(() -> {
+            for (int i = 0; i < 3; i++) {
+                System.out.println("Lambda thread: " + i);
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+            }
+        });
+        lambdaThread.start();
+        
+        // Wait for all threads to complete
+        thread1.join();
+        thread2.join();
+        thread3.join();
+        thread4.join();
+        lambdaThread.join();
+        
+        System.out.println("All threads completed");
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> Thread class provides direct threading capability but limits inheritance. Runnable interface is preferred as it allows the class to extend another class. Thread.start() creates a new thread and calls run(), while calling run() directly executes in the current thread. Thread.join() makes the main thread wait for child threads to complete. Thread priorities influence scheduling but don't guarantee execution order.</p>
+          
+          <h3>Thread Creation</h3>
+          <p>Java offers multiple approaches for thread creation, from basic Thread and Runnable to modern ExecutorService for enterprise applications.</p>
+          <p>Choosing the right approach depends on your application's complexity, scalability requirements, and resource management needs.</p>
+          
+          <ul>
+            <li><strong>Extending Thread:</strong> Create subclass of Thread</li>
+            <li><strong>Implementing Runnable:</strong> Better approach, supports multiple inheritance</li>
+            <li><strong>Lambda Expressions:</strong> Simplified thread creation</li>
+            <li><strong>Thread Pool:</strong> ExecutorService for managing threads</li>
+          </ul>
+          
+          <pre><code>import java.util.concurrent.*;
+
+public class ThreadCreationMethods {
+    
+    // Method 1: Anonymous Runnable
+    public static void createWithAnonymousRunnable() {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("Anonymous Runnable executed by: " + 
+                                 Thread.currentThread().getName());
+            }
+        });
+        thread.start();
+    }
+    
+    // Method 2: Lambda expression (Java 8+)
+    public static void createWithLambda() {
+        Thread thread = new Thread(() -> {
+            System.out.println("Lambda thread executed by: " + 
+                             Thread.currentThread().getName());
+        });
+        thread.start();
+    }
+    
+    // Method 3: ExecutorService with single task
+    public static void createWithExecutor() {
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        
+        executor.submit(() -> {
+            System.out.println("Executor task executed by: " + 
+                             Thread.currentThread().getName());
+        });
+        
+        executor.shutdown();  // Important: shutdown executor
+    }
+    
+    // Method 4: Thread pool for multiple tasks
+    public static void createWithThreadPool() {
+        ExecutorService executor = Executors.newFixedThreadPool(3);
+        
+        // Submit multiple tasks
+        for (int i = 1; i <= 5; i++) {
+            final int taskId = i;
+            executor.submit(() -> {
+                System.out.println("Pool Task " + taskId + " executed by: " + 
+                                 Thread.currentThread().getName());
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+            });
+        }
+        
+        executor.shutdown();
+        try {
+            if (!executor.awaitTermination(5, TimeUnit.SECONDS)) {
+                executor.shutdownNow();
+            }
+        } catch (InterruptedException e) {
+            executor.shutdownNow();
+        }
+    }
+    
+    // Method 5: Callable with return value
+    public static void createWithCallable() throws ExecutionException, InterruptedException {
+        ExecutorService executor = Executors.newFixedThreadPool(2);
+        
+        // Callable returns a value
+        Callable&lt;Integer&gt; task = () -> {
+            Thread.sleep(1000);
+            return 42;
+        };
+        
+        Future&lt;Integer&gt; future = executor.submit(task);
+        System.out.println("Callable result: " + future.get());  // Blocks until result is available
+        
+        executor.shutdown();
+    }
+    
+    // Method 6: CompletableFuture (Java 8+)
+    public static void createWithCompletableFuture() {
+        CompletableFuture&lt;String&gt; future = CompletableFuture.supplyAsync(() -> {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+            return "CompletableFuture result";
+        });
+        
+        future.thenAccept(result -> 
+            System.out.println("Async result: " + result));
+        
+        // Keep main thread alive to see result
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+    
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
+        System.out.println("=== Thread Creation Methods ===");
+        
+        createWithAnonymousRunnable();
+        createWithLambda();
+        createWithExecutor();
+        createWithThreadPool();
+        createWithCallable();
+        createWithCompletableFuture();
+        
+        Thread.sleep(3000);  // Wait for async operations
+        System.out.println("All examples completed");
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> Anonymous Runnable provides flexibility without creating separate classes. Lambda expressions offer concise syntax for simple tasks. ExecutorService manages thread lifecycle automatically and provides better resource control. Thread pools reuse threads for better performance. Callable allows returning values from threads. CompletableFuture supports modern asynchronous programming patterns.</p>
+          
+          <h3>Thread Synchronization</h3>
+          <p>Synchronization prevents race conditions when multiple threads access shared resources, ensuring data consistency and thread safety.</p>
+          <p>Java provides various synchronization mechanisms from basic synchronized blocks to advanced concurrent utilities for different scenarios.</p>
+          
+          <ul>
+            <li><strong>synchronized Keyword:</strong> Method and block synchronization</li>
+            <li><strong>Intrinsic Locks:</strong> Every object has a monitor lock</li>
+            <li><strong>wait() and notify():</strong> Thread communication</li>
+            <li><strong>volatile Keyword:</strong> Ensure variable visibility</li>
+          </ul>
+          
+          <pre><code>class Counter {
+    private int count = 0;
+    private volatile boolean flag = false;
+    
+    // Synchronized method
+    public synchronized void increment() {
+        count++;
+    }
+    
+    // Synchronized block
+    public void decrement() {
+        synchronized(this) {
+            count--;
+        }
+    }
+    
+    public synchronized int getCount() {
+        return count;
+    }
+    
+    // Volatile variable for visibility
+    public void setFlag(boolean flag) {
+        this.flag = flag;  // Visible to all threads immediately
+    }
+    
+    public boolean isFlag() {
+        return flag;
+    }
+}
+
+class ProducerConsumer {
+    private final Object lock = new Object();
+    private int data;
+    private boolean hasData = false;
+    
+    public void produce(int value) throws InterruptedException {
+        synchronized(lock) {
+            while (hasData) {
+                lock.wait();  // Wait until data is consumed
+            }
+            data = value;
+            hasData = true;
+            System.out.println("Produced: " + value);
+            lock.notifyAll();  // Notify waiting consumers
+        }
+    }
+    
+    public int consume() throws InterruptedException {
+        synchronized(lock) {
+            while (!hasData) {
+                lock.wait();  // Wait until data is produced
+            }
+            int value = data;
+            hasData = false;
+            System.out.println("Consumed: " + value);
+            lock.notifyAll();  // Notify waiting producers
+            return value;
+        }
+    }
+}
+
+public class SynchronizationDemo {
+    public static void demonstrateCounter() throws InterruptedException {
+        Counter counter = new Counter();
+        int numThreads = 5;
+        int incrementsPerThread = 1000;
+        
+        Thread[] threads = new Thread[numThreads];
+        
+        // Create threads that increment counter
+        for (int i = 0; i < numThreads; i++) {
+            threads[i] = new Thread(() -> {
+                for (int j = 0; j < incrementsPerThread; j++) {
+                    counter.increment();
+                }
+            });
+            threads[i].start();
+        }
+        
+        // Wait for all threads to complete
+        for (Thread thread : threads) {
+            thread.join();
+        }
+        
+        System.out.println("Final counter value: " + counter.getCount());
+        System.out.println("Expected: " + (numThreads * incrementsPerThread));
+    }
+    
+    public static void demonstrateProducerConsumer() throws InterruptedException {
+        ProducerConsumer pc = new ProducerConsumer();
+        
+        // Producer thread
+        Thread producer = new Thread(() -> {
+            try {
+                for (int i = 1; i <= 5; i++) {
+                    pc.produce(i);
+                    Thread.sleep(100);
+                }
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        });
+        
+        // Consumer thread
+        Thread consumer = new Thread(() -> {
+            try {
+                for (int i = 1; i <= 5; i++) {
+                    pc.consume();
+                    Thread.sleep(150);
+                }
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        });
+        
+        producer.start();
+        consumer.start();
+        
+        producer.join();
+        consumer.join();
+    }
+    
+    // Deadlock example (avoid this!)
+    static class DeadlockExample {
+        private final Object lock1 = new Object();
+        private final Object lock2 = new Object();
+        
+        public void method1() {
+            synchronized(lock1) {
+                System.out.println("Thread " + Thread.currentThread().getName() + " acquired lock1");
+                try { Thread.sleep(100); } catch (InterruptedException e) {}
+                
+                synchronized(lock2) {
+                    System.out.println("Thread " + Thread.currentThread().getName() + " acquired lock2");
+                }
+            }
+        }
+        
+        public void method2() {
+            synchronized(lock2) {
+                System.out.println("Thread " + Thread.currentThread().getName() + " acquired lock2");
+                try { Thread.sleep(100); } catch (InterruptedException e) {}
+                
+                synchronized(lock1) {
+                    System.out.println("Thread " + Thread.currentThread().getName() + " acquired lock1");
+                }
+            }
+        }
+    }
+    
+    public static void main(String[] args) throws InterruptedException {
+        System.out.println("=== Counter Demo ===");
+        demonstrateCounter();
+        
+        System.out.println("\\n=== Producer-Consumer Demo ===");
+        demonstrateProducerConsumer();
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> Synchronized methods and blocks ensure only one thread can execute the code at a time. wait() releases the lock and waits, while notify()/notifyAll() wakes up waiting threads. volatile keyword ensures variable changes are visible across threads immediately. The producer-consumer pattern demonstrates coordinated thread communication. Deadlocks occur when threads wait for each other's locks in circular dependency.</p>
+          
+          <h3>Advanced Concurrency</h3>
+          <p>Java's concurrent utilities provide high-performance alternatives to basic synchronization for scalable multithreaded applications.</p>
+          <p>These advanced tools offer better performance, reduced contention, and specialized functionality for complex concurrent scenarios.</p>
+          
+          <ul>
+            <li><strong>java.util.concurrent:</strong> Concurrent collections and utilities</li>
+            <li><strong>Locks:</strong> ReentrantLock, ReadWriteLock</li>
+            <li><strong>Atomic Classes:</strong> AtomicInteger, AtomicBoolean</li>
+            <li><strong>CountDownLatch:</strong> Thread coordination</li>
+            <li><strong>Semaphore:</strong> Control access to shared resources</li>
+          </ul>
+          
+          <pre><code>import java.util.concurrent.*;
+import java.util.concurrent.atomic.*;
+import java.util.concurrent.locks.*;
+
+public class AdvancedConcurrencyDemo {
+    
+    // ReentrantLock example
+    static class BankAccount {
+        private double balance;
+        private final ReentrantLock lock = new ReentrantLock();
+        
+        public BankAccount(double initialBalance) {
+            this.balance = initialBalance;
+        }
+        
+        public void deposit(double amount) {
+            lock.lock();
+            try {
+                balance += amount;
+                System.out.println("Deposited " + amount + ", Balance: " + balance);
+            } finally {
+                lock.unlock();  // Always unlock in finally block
+            }
+        }
+        
+        public boolean withdraw(double amount) {
+            if (lock.tryLock()) {  // Try to acquire lock without blocking
+                try {
+                    if (balance >= amount) {
+                        balance -= amount;
+                        System.out.println("Withdrew " + amount + ", Balance: " + balance);
+                        return true;
+                    }
+                    return false;
+                } finally {
+                    lock.unlock();
+                }
+            } else {
+                System.out.println("Could not acquire lock for withdrawal");
+                return false;
+            }
+        }
+    }
+    
+    // ReadWriteLock example
+    static class SharedData {
+        private int data = 0;
+        private final ReadWriteLock rwLock = new ReentrantReadWriteLock();
+        private final Lock readLock = rwLock.readLock();
+        private final Lock writeLock = rwLock.writeLock();
+        
+        public int read() {
+            readLock.lock();
+            try {
+                Thread.sleep(100);  // Simulate read operation
+                return data;
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                return -1;
+            } finally {
+                readLock.unlock();
+            }
+        }
+        
+        public void write(int value) {
+            writeLock.lock();
+            try {
+                Thread.sleep(200);  // Simulate write operation
+                data = value;
+                System.out.println("Data written: " + value);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            } finally {
+                writeLock.unlock();
+            }
+        }
+    }
+    
+    // Atomic classes example
+    static class AtomicCounter {
+        private final AtomicInteger count = new AtomicInteger(0);
+        private final AtomicBoolean isActive = new AtomicBoolean(true);
+        
+        public int incrementAndGet() {
+            return count.incrementAndGet();
+        }
+        
+        public int getAndAdd(int delta) {
+            return count.getAndAdd(delta);
+        }
+        
+        public boolean compareAndSet(int expected, int update) {
+            return count.compareAndSet(expected, update);
+        }
+        
+        public void deactivate() {
+            isActive.set(false);
+        }
+        
+        public boolean isActive() {
+            return isActive.get();
+        }
+    }
+    
+    // CountDownLatch example
+    public static void demonstrateCountDownLatch() throws InterruptedException {
+        int numWorkers = 3;
+        CountDownLatch startSignal = new CountDownLatch(1);  // Start barrier
+        CountDownLatch doneSignal = new CountDownLatch(numWorkers);  // Completion barrier
+        
+        // Create worker threads
+        for (int i = 1; i <= numWorkers; i++) {
+            final int workerId = i;
+            new Thread(() -> {
+                try {
+                    startSignal.await();  // Wait for start signal
+                    System.out.println("Worker " + workerId + " started");
+                    Thread.sleep(1000 + (int)(Math.random() * 1000));
+                    System.out.println("Worker " + workerId + " finished");
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                } finally {
+                    doneSignal.countDown();  // Signal completion
+                }
+            }).start();
+        }
+        
+        Thread.sleep(500);
+        System.out.println("Starting all workers...");
+        startSignal.countDown();  // Release all workers
+        
+        doneSignal.await();  // Wait for all workers to complete
+        System.out.println("All workers completed");
+    }
+    
+    // Semaphore example
+    public static void demonstrateSemaphore() throws InterruptedException {
+        Semaphore semaphore = new Semaphore(2);  // Allow 2 concurrent accesses
+        
+        for (int i = 1; i <= 5; i++) {
+            final int taskId = i;
+            new Thread(() -> {
+                try {
+                    semaphore.acquire();  // Acquire permit
+                    System.out.println("Task " + taskId + " acquired permit");
+                    Thread.sleep(2000);  // Simulate work
+                    System.out.println("Task " + taskId + " releasing permit");
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                } finally {
+                    semaphore.release();  // Release permit
+                }
+            }).start();
+        }
+        
+        Thread.sleep(10000);  // Wait for all tasks
+    }
+    
+    // ConcurrentHashMap example
+    public static void demonstrateConcurrentCollections() throws InterruptedException {
+        ConcurrentHashMap&lt;String, Integer&gt; map = new ConcurrentHashMap&lt;&gt;();
+        int numThreads = 4;
+        CountDownLatch latch = new CountDownLatch(numThreads);
+        
+        // Multiple threads updating the map
+        for (int i = 0; i < numThreads; i++) {
+            final int threadId = i;
+            new Thread(() -> {
+                try {
+                    for (int j = 0; j < 10; j++) {
+                        String key = "key" + (j % 3);
+                        map.compute(key, (k, v) -> (v == null) ? 1 : v + 1);
+                        Thread.sleep(10);
+                    }
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                } finally {
+                    latch.countDown();
+                }
+            }).start();
+        }
+        
+        latch.await();
+        System.out.println("ConcurrentHashMap results: " + map);
+    }
+    
+    public static void main(String[] args) throws InterruptedException {
+        System.out.println("=== CountDownLatch Demo ===");
+        demonstrateCountDownLatch();
+        
+        System.out.println("\\n=== Semaphore Demo ===");
+        demonstrateSemaphore();
+        
+        System.out.println("\\n=== ConcurrentHashMap Demo ===");
+        demonstrateConcurrentCollections();
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> ReentrantLock provides more flexibility than synchronized blocks with tryLock() and timed waits. ReadWriteLock allows multiple concurrent readers or single writer for better performance. Atomic classes use hardware-level compare-and-swap for lock-free operations. CountDownLatch coordinates thread startup and completion. Semaphore controls access to limited resources. ConcurrentHashMap provides thread-safe map operations without locking the entire map.</p>
+          
+          <h3>Thread Pool and Executors</h3>
+          <p>Thread pools provide efficient thread management by reusing threads and controlling resource consumption in multithreaded applications.</p>
+          <p>ExecutorService abstraction simplifies thread management and provides better control over task execution and lifecycle.</p>
+          
+          <ul>
+            <li><strong>ExecutorService:</strong> Manage thread pool</li>
+            <li><strong>ThreadPoolExecutor:</strong> Configurable thread pool</li>
+            <li><strong>ScheduledExecutorService:</strong> Schedule tasks</li>
+            <li><strong>Fork/Join Framework:</strong> Parallel processing</li>
+          </ul>
+          
+          <pre><code>import java.util.concurrent.*;
+import java.util.List;
+import java.util.ArrayList;
+
+public class ThreadPoolDemo {
+    
+    // Basic ExecutorService examples
+    public static void basicExecutorExamples() throws InterruptedException, ExecutionException {
+        System.out.println("=== Basic Executor Examples ===");
+        
+        // Single thread executor
+        ExecutorService singleExecutor = Executors.newSingleThreadExecutor();
+        singleExecutor.submit(() -> System.out.println("Single thread task"));
+        
+        // Fixed thread pool
+        ExecutorService fixedPool = Executors.newFixedThreadPool(3);
+        for (int i = 1; i <= 5; i++) {
+            final int taskId = i;
+            fixedPool.submit(() -> {
+                System.out.println("Fixed pool task " + taskId + 
+                                 " by " + Thread.currentThread().getName());
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+            });
+        }
+        
+        // Cached thread pool (creates threads as needed)
+        ExecutorService cachedPool = Executors.newCachedThreadPool();
+        for (int i = 1; i <= 3; i++) {
+            final int taskId = i;
+            cachedPool.submit(() -> 
+                System.out.println("Cached pool task " + taskId));
+        }
+        
+        // Shutdown executors
+        shutdownExecutor(singleExecutor);
+        shutdownExecutor(fixedPool);
+        shutdownExecutor(cachedPool);
+    }
+    
+    // Custom ThreadPoolExecutor
+    public static void customThreadPoolExample() throws InterruptedException {
+        System.out.println("\\n=== Custom Thread Pool ===");
+        
+        ThreadPoolExecutor executor = new ThreadPoolExecutor(
+            2,      // Core pool size
+            4,      // Maximum pool size
+            60L,    // Keep alive time
+            TimeUnit.SECONDS,
+            new ArrayBlockingQueue&lt;&gt;(10),  // Work queue
+            new ThreadPoolExecutor.CallerRunsPolicy()  // Rejection policy
+        );
+        
+        // Submit tasks
+        for (int i = 1; i <= 15; i++) {
+            final int taskId = i;
+            try {
+                executor.submit(() -> {
+                    System.out.println("Custom pool task " + taskId + 
+                                     " by " + Thread.currentThread().getName());
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
+                });
+            } catch (RejectedExecutionException e) {
+                System.out.println("Task " + taskId + " rejected");
+            }
+        }
+        
+        // Monitor pool status
+        System.out.println("Active threads: " + executor.getActiveCount());
+        System.out.println("Pool size: " + executor.getPoolSize());
+        System.out.println("Queue size: " + executor.getQueue().size());
+        
+        shutdownExecutor(executor);
+    }
+    
+    // ScheduledExecutorService example
+    public static void scheduledExecutorExample() throws InterruptedException {
+        System.out.println("\\n=== Scheduled Executor ===");
+        
+        ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(2);
+        
+        // One-time delayed task
+        scheduler.schedule(() -> 
+            System.out.println("Delayed task executed"), 1, TimeUnit.SECONDS);
+        
+        // Recurring task with fixed delay
+        ScheduledFuture<?> fixedDelay = scheduler.scheduleWithFixedDelay(() -> 
+            System.out.println("Fixed delay task: " + System.currentTimeMillis()), 
+            0, 2, TimeUnit.SECONDS);
+        
+        // Recurring task with fixed rate
+        ScheduledFuture<?> fixedRate = scheduler.scheduleAtFixedRate(() -> 
+            System.out.println("Fixed rate task: " + System.currentTimeMillis()), 
+            0, 3, TimeUnit.SECONDS);
+        
+        // Let tasks run for a while
+        Thread.sleep(8000);
+        
+        // Cancel recurring tasks
+        fixedDelay.cancel(false);
+        fixedRate.cancel(false);
+        
+        shutdownExecutor(scheduler);
+    }
+    
+    // ForkJoinPool example
+    static class SumTask extends RecursiveTask&lt;Long&gt; {
+        private final int[] array;
+        private final int start;
+        private final int end;
+        private static final int THRESHOLD = 1000;
+        
+        public SumTask(int[] array, int start, int end) {
+            this.array = array;
+            this.start = start;
+            this.end = end;
+        }
+        
+        @Override
+        protected Long compute() {
+            if (end - start <= THRESHOLD) {
+                // Sequential computation for small arrays
+                long sum = 0;
+                for (int i = start; i < end; i++) {
+                    sum += array[i];
+                }
+                return sum;
+            } else {
+                // Split task for large arrays
+                int mid = start + (end - start) / 2;
+                SumTask leftTask = new SumTask(array, start, mid);
+                SumTask rightTask = new SumTask(array, mid, end);
+                
+                leftTask.fork();  // Execute left task asynchronously
+                long rightResult = rightTask.compute();  // Execute right task synchronously
+                long leftResult = leftTask.join();  // Wait for left task result
+                
+                return leftResult + rightResult;
+            }
+        }
+    }
+    
+    public static void forkJoinExample() {
+        System.out.println("\\n=== Fork/Join Framework ===");
+        
+        int size = 10000;
+        int[] array = new int[size];
+        for (int i = 0; i < size; i++) {
+            array[i] = i + 1;
+        }
+        
+        ForkJoinPool forkJoinPool = new ForkJoinPool();
+        SumTask task = new SumTask(array, 0, array.length);
+        
+        long startTime = System.currentTimeMillis();
+        long result = forkJoinPool.invoke(task);
+        long endTime = System.currentTimeMillis();
+        
+        System.out.println("Sum: " + result);
+        System.out.println("Time taken: " + (endTime - startTime) + " ms");
+        System.out.println("Expected: " + ((long)size * (size + 1) / 2));
+        
+        forkJoinPool.shutdown();
+    }
+    
+    // Utility method for proper executor shutdown
+    public static void shutdownExecutor(ExecutorService executor) {
+        executor.shutdown();
+        try {
+            if (!executor.awaitTermination(5, TimeUnit.SECONDS)) {
+                executor.shutdownNow();
+                if (!executor.awaitTermination(2, TimeUnit.SECONDS)) {
+                    System.err.println("Executor did not terminate");
+                }
+            }
+        } catch (InterruptedException e) {
+            executor.shutdownNow();
+            Thread.currentThread().interrupt();
+        }
+    }
+    
+    public static void main(String[] args) throws InterruptedException, ExecutionException {
+        basicExecutorExamples();
+        customThreadPoolExample();
+        scheduledExecutorExample();
+        forkJoinExample();
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> ExecutorService manages thread lifecycle automatically and provides different pool types for various scenarios. ThreadPoolExecutor offers fine-grained control over pool behavior, queue management, and rejection policies. ScheduledExecutorService supports delayed and recurring task execution. ForkJoinPool implements work-stealing algorithm for divide-and-conquer problems. Proper shutdown sequence prevents resource leaks.</p>
+          
+          <h3>Best Practices</h3>
+          <p>Following multithreading best practices prevents common pitfalls like deadlocks, race conditions, and performance bottlenecks.</p>
+          <p>These guidelines ensure robust, scalable, and maintainable multithreaded applications that perform well under various conditions.</p>
+          
+          <ul>
+            <li><strong>Avoid Deadlocks:</strong> Consistent lock ordering</li>
+            <li><strong>Minimize Synchronization:</strong> Use concurrent collections</li>
+            <li><strong>Thread Safety:</strong> Design immutable objects</li>
+            <li><strong>Resource Management:</strong> Properly shutdown thread pools</li>
+          </ul>
+          
+          <pre><code>import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicReference;
+
+// Immutable class for thread safety
+final class ImmutablePoint {
+    private final int x;
+    private final int y;
+    
+    public ImmutablePoint(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+    
+    public int getX() { return x; }
+    public int getY() { return y; }
+    
+    public ImmutablePoint move(int dx, int dy) {
+        return new ImmutablePoint(x + dx, y + dy);
+    }
+    
+    @Override
+    public String toString() {
+        return "Point(" + x + ", " + y + ")";
+    }
+}
+
+// Thread-safe class using best practices
+class ThreadSafeBank {
+    private final ConcurrentHashMap&lt;String, Double&gt; accounts = new ConcurrentHashMap&lt;&gt;();
+    private final ExecutorService executor = Executors.newFixedThreadPool(4);
+    
+    public void createAccount(String accountId, double initialBalance) {
+        accounts.put(accountId, initialBalance);
+    }
+    
+    public CompletableFuture&lt;Boolean&gt; transfer(String fromAccount, String toAccount, double amount) {
+        return CompletableFuture.supplyAsync(() -> {
+            // Use consistent ordering to avoid deadlocks
+            String firstLock = fromAccount.compareTo(toAccount) < 0 ? fromAccount : toAccount;
+            String secondLock = fromAccount.compareTo(toAccount) < 0 ? toAccount : fromAccount;
+            
+            synchronized(firstLock.intern()) {
+                synchronized(secondLock.intern()) {
+                    Double fromBalance = accounts.get(fromAccount);
+                    Double toBalance = accounts.get(toAccount);
+                    
+                    if (fromBalance != null && toBalance != null && fromBalance >= amount) {
+                        accounts.put(fromAccount, fromBalance - amount);
+                        accounts.put(toAccount, toBalance + amount);
+                        return true;
+                    }
+                    return false;
+                }
+            }
+        }, executor);
+    }
+    
+    public double getBalance(String accountId) {
+        return accounts.getOrDefault(accountId, 0.0);
+    }
+    
+    public void shutdown() {
+        executor.shutdown();
+        try {
+            if (!executor.awaitTermination(5, TimeUnit.SECONDS)) {
+                executor.shutdownNow();
+            }
+        } catch (InterruptedException e) {
+            executor.shutdownNow();
+            Thread.currentThread().interrupt();
+        }
+    }
+}
+
+public class MultithreadingBestPractices {
+    
+    // Best Practice 1: Use thread-local variables for per-thread state
+    private static final ThreadLocal&lt;Integer&gt; threadLocalValue = new ThreadLocal&lt;Integer&gt;() {
+        @Override
+        protected Integer initialValue() {
+            return 0;
+        }
+    };
+    
+    // Best Practice 2: Use atomic operations for simple thread-safe operations
+    private static final AtomicReference&lt;ImmutablePoint&gt; currentPosition = 
+        new AtomicReference&lt;&gt;(new ImmutablePoint(0, 0));
+    
+    public static void demonstrateThreadLocal() throws InterruptedException {
+        System.out.println("=== ThreadLocal Demo ===");
+        
+        Runnable task = () -> {
+            int threadId = (int) Thread.currentThread().getId();
+            threadLocalValue.set(threadId * 10);
+            
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+            
+            System.out.println("Thread " + threadId + " value: " + threadLocalValue.get());
+        };
+        
+        Thread[] threads = new Thread[3];
+        for (int i = 0; i < threads.length; i++) {
+            threads[i] = new Thread(task);
+            threads[i].start();
+        }
+        
+        for (Thread thread : threads) {
+            thread.join();
+        }
+    }
+    
+    public static void demonstrateImmutableObjects() throws InterruptedException {
+        System.out.println("\\n=== Immutable Objects Demo ===");
+        
+        Runnable mover = () -> {
+            for (int i = 0; i < 5; i++) {
+                currentPosition.updateAndGet(point -> point.move(1, 1));
+                System.out.println("Thread " + Thread.currentThread().getId() + 
+                                 " moved to: " + currentPosition.get());
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                    break;
+                }
+            }
+        };
+        
+        Thread thread1 = new Thread(mover);
+        Thread thread2 = new Thread(mover);
+        
+        thread1.start();
+        thread2.start();
+        
+        thread1.join();
+        thread2.join();
+    }
+    
+    public static void demonstrateThreadSafeBank() throws InterruptedException, ExecutionException {
+        System.out.println("\\n=== Thread-Safe Bank Demo ===");
+        
+        ThreadSafeBank bank = new ThreadSafeBank();
+        bank.createAccount("A", 1000.0);
+        bank.createAccount("B", 500.0);
+        bank.createAccount("C", 300.0);
+        
+        // Concurrent transfers
+        List&lt;CompletableFuture&lt;Boolean&gt;&gt; transfers = new ArrayList&lt;&gt;();
+        
+        transfers.add(bank.transfer("A", "B", 100.0));
+        transfers.add(bank.transfer("B", "C", 150.0));
+        transfers.add(bank.transfer("C", "A", 50.0));
+        transfers.add(bank.transfer("A", "C", 200.0));
+        
+        // Wait for all transfers to complete
+        CompletableFuture&lt;Void&gt; allTransfers = CompletableFuture.allOf(
+            transfers.toArray(new CompletableFuture[0]));
+        allTransfers.get();
+        
+        System.out.println("Final balances:");
+        System.out.println("Account A: " + bank.getBalance("A"));
+        System.out.println("Account B: " + bank.getBalance("B"));
+        System.out.println("Account C: " + bank.getBalance("C"));
+        
+        bank.shutdown();
+    }
+    
+    // Best Practice: Proper exception handling in threads
+    public static void demonstrateExceptionHandling() throws InterruptedException {
+        System.out.println("\\n=== Exception Handling Demo ===");
+        
+        Thread.UncaughtExceptionHandler handler = (thread, exception) -> {
+            System.err.println("Uncaught exception in " + thread.getName() + ": " + exception.getMessage());
+        };
+        
+        Thread faultyThread = new Thread(() -> {
+            try {
+                Thread.sleep(100);
+                throw new RuntimeException("Something went wrong!");
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        });
+        
+        faultyThread.setUncaughtExceptionHandler(handler);
+        faultyThread.start();
+        faultyThread.join();
+    }
+    
+    public static void main(String[] args) throws InterruptedException, ExecutionException {
+        demonstrateThreadLocal();
+        demonstrateImmutableObjects();
+        demonstrateThreadSafeBank();
+        demonstrateExceptionHandling();
+        
+        System.out.println("\\nAll best practices demonstrated!");
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> Immutable objects eliminate synchronization needs by preventing state changes. ThreadLocal provides per-thread storage without synchronization overhead. Consistent lock ordering prevents deadlocks in multi-resource scenarios. Atomic operations offer lock-free thread safety for simple operations. CompletableFuture enables modern asynchronous programming patterns. Proper exception handling prevents silent thread failures. Always shutdown ExecutorService to prevent resource leaks.</p>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/r_MbozD32eo'
+      },
+      {
+        id: 'java-generics',
+        title: 'Generics in Java',
+        content: `
+          <h2>Java Generics</h2>
+          <p>Generics enable types (classes and interfaces) to be parameters when defining classes, interfaces, and methods. Learn type safety and generic programming in Java.</p>
+          
+          <h3>Why Generics?</h3>
+          <p>Generics provide compile-time type safety and eliminate the need for explicit type casting in Java collections.</p>
+          <p>They enable writing reusable code that works with different types while maintaining type safety and performance.</p>
+          
+          <ul>
+            <li><strong>Type Safety:</strong> Compile-time type checking</li>
+            <li><strong>Elimination of Casts:</strong> No need for explicit casting</li>
+            <li><strong>Generic Algorithms:</strong> Write algorithms that work on collections of different types</li>
+            <li><strong>Code Reusability:</strong> Write once, use with different types</li>
+          </ul>
+          
+          <pre><code>// Without Generics (Old approach)
+List list = new ArrayList();
+list.add("Hello");
+list.add(123);  // Different types allowed
+String str = (String) list.get(0);  // Explicit casting required
+// Runtime ClassCastException possible if wrong type
+
+// With Generics (Type-safe approach)
+List&lt;String&gt; stringList = new ArrayList&lt;&gt;();
+stringList.add("Hello");
+// stringList.add(123);  // Compile error - type safety
+String str = stringList.get(0);  // No casting needed
+
+// Generic method example
+public class GenericExample {
+    
+    // Before Generics - requires Object and casting
+    public static Object findLargest(Object[] array) {
+        Object largest = array[0];
+        // Comparison logic would require casting
+        return largest;
+    }
+    
+    // With Generics - type-safe and reusable
+    public static &lt;T extends Comparable&lt;T&gt;&gt; T findLargest(T[] array) {
+        T largest = array[0];
+        for (T element : array) {
+            if (element.compareTo(largest) > 0) {
+                largest = element;
+            }
+        }
+        return largest;
+    }
+    
+    public static void main(String[] args) {
+        // Usage with different types
+        Integer[] numbers = {5, 2, 8, 1, 9};
+        Integer largestNumber = findLargest(numbers);  // No casting needed
+        System.out.println("Largest number: " + largestNumber);
+        
+        String[] names = {"Alice", "Bob", "Charlie", "David"};
+        String largestName = findLargest(names);  // Type-safe
+        System.out.println("Largest name: " + largestName);
+        
+        // Collection examples
+        List&lt;Integer&gt; intList = Arrays.asList(1, 2, 3, 4, 5);
+        List&lt;String&gt; strList = Arrays.asList("A", "B", "C");
+        
+        // Type safety prevents errors
+        System.out.println("Numbers: " + intList);
+        System.out.println("Strings: " + strList);
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> Without generics, collections store Object references requiring explicit casting and allowing runtime errors. Generics provide compile-time type checking, eliminating ClassCastException risks. Generic methods use type parameters (&lt;T&gt;) to work with different types safely. The compiler ensures type consistency and generates optimized bytecode.</p>
+          
+          <h3>Generic Classes</h3>
+          <p>Generic classes use type parameters to create reusable data structures that work with any object type.</p>
+          <p>Type parameters are specified in angle brackets and can have bounds to restrict the allowed types.</p>
+          
+          <ul>
+            <li><strong>Type Parameter:</strong> class MyClass&lt;T&gt; { ... }</li>
+            <li><strong>Multiple Type Parameters:</strong> class Pair&lt;K, V&gt; { ... }</li>
+            <li><strong>Bounded Type Parameters:</strong> &lt;T extends Number&gt;</li>
+            <li><strong>Wildcard Types:</strong> ? for unknown type</li>
+          </ul>
+          
+          <pre><code>// Generic class with single type parameter
+class Box&lt;T&gt; {
+    private T content;
+    
+    public Box() {}
+    
+    public Box(T content) {
+        this.content = content;
+    }
+    
+    public void setContent(T content) {
+        this.content = content;
+    }
+    
+    public T getContent() {
+        return content;
+    }
+    
+    public boolean isEmpty() {
+        return content == null;
+    }
+    
+    @Override
+    public String toString() {
+        return "Box[" + (content != null ? content.toString() : "empty") + "]";
+    }
+}
+
+// Generic class with multiple type parameters
+class Pair&lt;K, V&gt; {
+    private K key;
+    private V value;
+    
+    public Pair(K key, V value) {
+        this.key = key;
+        this.value = value;
+    }
+    
+    public K getKey() { return key; }
+    public V getValue() { return value; }
+    
+    public void setKey(K key) { this.key = key; }
+    public void setValue(V value) { this.value = value; }
+    
+    @Override
+    public String toString() {
+        return "Pair{key=" + key + ", value=" + value + "}";
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        
+        Pair&lt;?, ?&gt; pair = (Pair&lt;?, ?&gt;) obj;
+        return Objects.equals(key, pair.key) && Objects.equals(value, pair.value);
+    }
+}
+
+// Bounded generic class
+class NumberBox&lt;T extends Number&gt; {
+    private T number;
+    
+    public NumberBox(T number) {
+        this.number = number;
+    }
+    
+    public double getDoubleValue() {
+        return number.doubleValue();  // Available because T extends Number
+    }
+    
+    public boolean isPositive() {
+        return number.doubleValue() > 0;
+    }
+    
+    public T getNumber() {
+        return number;
+    }
+}
+
+// Multiple bounds example
+interface Printable {
+    void print();
+}
+
+class Document implements Printable {
+    private String content;
+    
+    public Document(String content) {
+        this.content = content;
+    }
+    
+    @Override
+    public void print() {
+        System.out.println("Document: " + content);
+    }
+    
+    @Override
+    public String toString() {
+        return content;
+    }
+}
+
+// Generic class with multiple bounds
+class PrintableContainer&lt;T extends Document & Printable&gt; {
+    private T item;
+    
+    public PrintableContainer(T item) {
+        this.item = item;
+    }
+    
+    public void processItem() {
+        System.out.println("Processing: " + item.toString());  // From Document
+        item.print();  // From Printable interface
+    }
+}
+
+public class GenericClassDemo {
+    public static void main(String[] args) {
+        // Basic generic class usage
+        Box&lt;String&gt; stringBox = new Box&lt;&gt;("Hello Generics");
+        Box&lt;Integer&gt; intBox = new Box&lt;&gt;(42);
+        Box&lt;Boolean&gt; boolBox = new Box&lt;&gt;();
+        
+        System.out.println("String box: " + stringBox);
+        System.out.println("Integer box: " + intBox);
+        System.out.println("Boolean box: " + boolBox);
+        
+        // Multiple type parameters
+        Pair&lt;String, Integer&gt; nameAge = new Pair&lt;&gt;("Alice", 30);
+        Pair&lt;Integer, String&gt; idName = new Pair&lt;&gt;(101, "Employee");
+        
+        System.out.println("Name-Age: " + nameAge);
+        System.out.println("ID-Name: " + idName);
+        
+        // Bounded generics
+        NumberBox&lt;Integer&gt; intNumber = new NumberBox&lt;&gt;(42);
+        NumberBox&lt;Double&gt; doubleNumber = new NumberBox&lt;&gt;(3.14);
+        
+        System.out.println("Integer as double: " + intNumber.getDoubleValue());
+        System.out.println("Is positive: " + doubleNumber.isPositive());
+        
+        // Multiple bounds
+        Document doc = new Document("Important document content");
+        PrintableContainer&lt;Document&gt; container = new PrintableContainer&lt;&gt;(doc);
+        container.processItem();
+        
+        // Generic array alternative using List
+        List&lt;Box&lt;String&gt;&gt; boxList = new ArrayList&lt;&gt;();
+        boxList.add(new Box&lt;&gt;("Box 1"));
+        boxList.add(new Box&lt;&gt;("Box 2"));
+        boxList.add(new Box&lt;&gt;("Box 3"));
+        
+        System.out.println("\\nBox collection:");
+        for (Box&lt;String&gt; box : boxList) {
+            System.out.println(box);
+        }
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> Generic classes use type parameters (T, K, V) as placeholders for actual types. Single type parameter &lt;T&gt; creates flexible containers. Multiple parameters &lt;K, V&gt; enable key-value structures like maps. Bounded parameters &lt;T extends Number&gt; restrict types to Number subclasses. Multiple bounds &lt;T extends Class & Interface&gt; require types to satisfy multiple constraints. Diamond operator &lt;&gt; (Java 7+) enables type inference for cleaner code.</p>
+          
+          <h3>Generic Methods</h3>
+          <p>Generic methods use type parameters to accept and return different types while maintaining type safety.</p>
+          <p>They can be static or instance methods and are independent of the class's generic parameters.</p>
+          
+          <ul>
+            <li><strong>Method Declaration:</strong> public &lt;T&gt; void method(T param)</li>
+            <li><strong>Type Inference:</strong> Compiler infers types from context</li>
+            <li><strong>Generic Constructors:</strong> Constructors can be generic</li>
+            <li><strong>Static Generic Methods:</strong> Independent of class type parameters</li>
+          </ul>
+          
+          <pre><code>import java.util.*;
+
+public class GenericMethodsDemo {
+    
+    // Basic generic method
+    public static &lt;T&gt; void swap(T[] array, int i, int j) {
+        T temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    
+    // Generic method with return type
+    public static &lt;T&gt; T getMiddleElement(T[] array) {
+        if (array.length == 0) {
+            return null;
+        }
+        return array[array.length / 2];
+    }
+    
+    // Multiple type parameters in method
+    public static &lt;K, V&gt; void printPair(K key, V value) {
+        System.out.println("Key: " + key + ", Value: " + value);
+    }
+    
+    // Bounded generic method
+    public static &lt;T extends Comparable&lt;T&gt;&gt; T findMaximum(T[] array) {
+        if (array.length == 0) {
+            return null;
+        }
+        
+        T max = array[0];
+        for (T element : array) {
+            if (element.compareTo(max) > 0) {
+                max = element;
+            }
+        }
+        return max;
+    }
+    
+    // Generic method with collections
+    public static &lt;T&gt; List&lt;T&gt; createList(T... elements) {
+        List&lt;T&gt; list = new ArrayList&lt;&gt;();
+        Collections.addAll(list, elements);
+        return list;
+    }
+    
+    // Generic method for filtering
+    public static &lt;T&gt; List&lt;T&gt; filter(List&lt;T&gt; list, Predicate&lt;T&gt; predicate) {
+        List&lt;T&gt; result = new ArrayList&lt;&gt;();
+        for (T element : list) {
+            if (predicate.test(element)) {
+                result.add(element);
+            }
+        }
+        return result;
+    }
+    
+    // Generic method for transformation
+    public static &lt;T, R&gt; List&lt;R&gt; transform(List&lt;T&gt; list, Function&lt;T, R&gt; mapper) {
+        List&lt;R&gt; result = new ArrayList&lt;&gt;();
+        for (T element : list) {
+            result.add(mapper.apply(element));
+        }
+        return result;
+    }
+}
+
+// Generic utility class with static methods
+class ArrayUtils {
+    
+    // Generic method to convert array to list
+    public static &lt;T&gt; List&lt;T&gt; arrayToList(T[] array) {
+        return new ArrayList&lt;&gt;(Arrays.asList(array));
+    }
+    
+    // Generic method to check if array contains element
+    public static &lt;T&gt; boolean contains(T[] array, T element) {
+        for (T item : array) {
+            if (Objects.equals(item, element)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    // Generic method to reverse array
+    public static &lt;T&gt; void reverse(T[] array) {
+        int left = 0;
+        int right = array.length - 1;
+        
+        while (left < right) {
+            T temp = array[left];
+            array[left] = array[right];
+            array[right] = temp;
+            left++;
+            right--;
+        }
+    }
+}
+
+// Class with generic constructor
+class GenericConstructorExample&lt;T&gt; {
+    private T data;
+    
+    // Generic constructor (type parameter different from class parameter)
+    public &lt;U&gt; GenericConstructorExample(U initialValue, Function&lt;U, T&gt; converter) {
+        this.data = converter.apply(initialValue);
+    }
+    
+    // Regular constructor
+    public GenericConstructorExample(T data) {
+        this.data = data;
+    }
+    
+    public T getData() {
+        return data;
+    }
+}
+
+public class GenericMethodExample {
+    public static void main(String[] args) {
+        // Generic method usage
+        String[] names = {"Alice", "Bob", "Charlie", "Diana"};
+        Integer[] numbers = {5, 2, 8, 1, 9, 3};
+        
+        // Swap elements
+        System.out.println("Before swap: " + Arrays.toString(names));
+        GenericMethodsDemo.swap(names, 0, 2);
+        System.out.println("After swap: " + Arrays.toString(names));
+        
+        // Find maximum
+        String maxName = GenericMethodsDemo.findMaximum(names);
+        Integer maxNumber = GenericMethodsDemo.findMaximum(numbers);
+        System.out.println("Max name: " + maxName + ", Max number: " + maxNumber);
+        
+        // Get middle element
+        String middleName = GenericMethodsDemo.getMiddleElement(names);
+        Integer middleNumber = GenericMethodsDemo.getMiddleElement(numbers);
+        System.out.println("Middle name: " + middleName + ", Middle number: " + middleNumber);
+        
+        // Create lists using varargs
+        List&lt;String&gt; fruits = GenericMethodsDemo.createList("Apple", "Banana", "Orange");
+        List&lt;Integer&gt; nums = GenericMethodsDemo.createList(1, 2, 3, 4, 5);
+        
+        System.out.println("Fruits: " + fruits);
+        System.out.println("Numbers: " + nums);
+        
+        // Filter and transform examples
+        List&lt;Integer&gt; evenNumbers = GenericMethodsDemo.filter(nums, n -> n % 2 == 0);
+        List&lt;String&gt; lengths = GenericMethodsDemo.transform(fruits, s -> s + "(" + s.length() + ")");
+        
+        System.out.println("Even numbers: " + evenNumbers);
+        System.out.println("Fruits with lengths: " + lengths);
+        
+        // Array utility methods
+        System.out.println("Contains 'Bob': " + ArrayUtils.contains(names, "Bob"));
+        System.out.println("Before reverse: " + Arrays.toString(numbers));
+        ArrayUtils.reverse(numbers);
+        System.out.println("After reverse: " + Arrays.toString(numbers));
+        
+        // Generic constructor example
+        GenericConstructorExample&lt;String&gt; stringExample = 
+            new GenericConstructorExample&lt;&gt;(42, Object::toString);
+        System.out.println("Converted data: " + stringExample.getData());
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> Generic methods declare type parameters before the return type (&lt;T&gt; void method). They enable type-safe operations on different data types. Type inference allows omitting explicit type arguments when compiler can deduce them. Bounded type parameters (&lt;T extends Comparable&lt;T&gt;&gt;) restrict allowed types. Static generic methods are independent of class generics. Generic constructors can use different type parameters than the class. Functional interfaces (Predicate, Function) work seamlessly with generics.</p>
+          
+          <h3>Wildcards</h3>
+          <p>Wildcards provide flexibility when working with generic types by representing unknown types in method parameters.</p>
+          <p>They follow the PECS principle: Producer Extends, Consumer Super for maximum API flexibility.</p>
+          
+          <ul>
+            <li><strong>Unbounded Wildcard:</strong> List&lt;?&gt; - any type</li>
+            <li><strong>Upper Bounded:</strong> List&lt;? extends Number&gt; - Number or subclass</li>
+            <li><strong>Lower Bounded:</strong> List&lt;? super Integer&gt; - Integer or superclass</li>
+            <li><strong>PECS Principle:</strong> Producer Extends, Consumer Super</li>
+          </ul>
+          
+          <pre><code>import java.util.*;
+
+public class WildcardDemo {
+    
+    // Unbounded wildcard - can read but can't add (except null)
+    public static void printList(List&lt;?&gt; list) {
+        for (Object item : list) {
+            System.out.println(item);
+        }
+        // list.add("test");  // Compile error - can't add to List&lt;?&gt;
+        // list.add(null);   // OK - null is allowed
+    }
+    
+    // Upper bounded wildcard (? extends) - Producer/Covariant
+    public static double sumNumbers(List&lt;? extends Number&gt; numbers) {
+        double sum = 0.0;
+        for (Number number : numbers) {
+            sum += number.doubleValue();
+        }
+        // numbers.add(new Integer(5));  // Compile error - can't add
+        return sum;
+    }
+    
+    // Lower bounded wildcard (? super) - Consumer/Contravariant
+    public static void addNumbers(List&lt;? super Integer&gt; numbers) {
+        numbers.add(1);      // OK - Integer is guaranteed
+        numbers.add(2);      // OK - Integer is guaranteed
+        // numbers.add(3.14);  // Compile error - Double not guaranteed
+        
+        // Can't guarantee return type except Object
+        Object first = numbers.get(0);  // Returns Object
+        // Integer val = numbers.get(0);  // Compile error
+    }
+    
+    // PECS examples
+    public static void copy(List&lt;? extends Number&gt; source, List&lt;? super Number&gt; destination) {
+        for (Number number : source) {
+            destination.add(number);
+        }
+    }
+    
+    // Advanced wildcard usage
+    public static &lt;T&gt; void copyGeneric(List&lt;? extends T&gt; source, List&lt;? super T&gt; destination) {
+        for (T item : source) {
+            destination.add(item);
+        }
+    }
+    
+    // Wildcard capture
+    public static void reverseList(List&lt;?&gt; list) {
+        reverseHelper(list);  // Helper method to capture wildcard
+    }
+    
+    private static &lt;T&gt; void reverseHelper(List&lt;T&gt; list) {
+        Collections.reverse(list);  // Now we can modify the list
+    }
+    
+    // Complex wildcard scenarios
+    public static void processNestedList(List&lt;? extends List&lt;? extends Number&gt;&gt; nestedList) {
+        for (List&lt;? extends Number&gt; innerList : nestedList) {
+            double sum = sumNumbers(innerList);
+            System.out.println("Sum of inner list: " + sum);
+        }
+    }
+    
+    // Comparable with wildcards
+    public static &lt;T extends Comparable&lt;? super T&gt;&gt; T findMax(List&lt;T&gt; list) {
+        if (list.isEmpty()) return null;
+        
+        T max = list.get(0);
+        for (T item : list) {
+            if (item.compareTo(max) > 0) {
+                max = item;
+            }
+        }
+        return max;
+    }
+}
+
+// Example hierarchy for demonstrating wildcards
+abstract class Animal {
+    protected String name;
+    
+    public Animal(String name) {
+        this.name = name;
+    }
+    
+    public String getName() {
+        return name;
+    }
+    
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + "[" + name + "]";
+    }
+}
+
+class Dog extends Animal {
+    public Dog(String name) {
+        super(name);
+    }
+}
+
+class Cat extends Animal {
+    public Cat(String name) {
+        super(name);
+    }
+}
+
+class AnimalShelter {
+    
+    // Upper bound - can accept List of Animal or any subclass
+    public static void feedAnimals(List&lt;? extends Animal&gt; animals) {
+        for (Animal animal : animals) {
+            System.out.println("Feeding " + animal.getName());
+        }
+        // animals.add(new Dog("Rex"));  // Compile error
+    }
+    
+    // Lower bound - can add Animal or any subclass
+    public static void addAnimals(List&lt;? super Animal&gt; animals) {
+        animals.add(new Dog("Rex"));
+        animals.add(new Cat("Fluffy"));
+        // Can't guarantee specific return type
+        Object animal = animals.get(0);
+    }
+}
+
+public class WildcardExample {
+    public static void main(String[] args) {
+        // Unbounded wildcard examples
+        List&lt;String&gt; strings = Arrays.asList("A", "B", "C");
+        List&lt;Integer&gt; integers = Arrays.asList(1, 2, 3);
+        
+        System.out.println("Printing strings:");
+        WildcardDemo.printList(strings);
+        System.out.println("Printing integers:");
+        WildcardDemo.printList(integers);
+        
+        // Upper bounded wildcard examples
+        List&lt;Integer&gt; intList = Arrays.asList(1, 2, 3, 4, 5);
+        List&lt;Double&gt; doubleList = Arrays.asList(1.1, 2.2, 3.3);
+        
+        System.out.println("Sum of integers: " + WildcardDemo.sumNumbers(intList));
+        System.out.println("Sum of doubles: " + WildcardDemo.sumNumbers(doubleList));
+        
+        // Lower bounded wildcard examples
+        List&lt;Number&gt; numbers = new ArrayList&lt;&gt;();
+        List&lt;Object&gt; objects = new ArrayList&lt;&gt;();
+        
+        WildcardDemo.addNumbers(numbers);   // List&lt;Number&gt; is super of Integer
+        WildcardDemo.addNumbers(objects);   // List&lt;Object&gt; is super of Integer
+        System.out.println("Numbers after adding: " + numbers);
+        
+        // PECS example
+        List&lt;Integer&gt; source = Arrays.asList(10, 20, 30);
+        List&lt;Number&gt; destination = new ArrayList&lt;&gt;();
+        WildcardDemo.copy(source, destination);
+        System.out.println("Copied numbers: " + destination);
+        
+        // Animal hierarchy example
+        List&lt;Dog&gt; dogs = Arrays.asList(new Dog("Rex"), new Dog("Buddy"));
+        List&lt;Cat&gt; cats = Arrays.asList(new Cat("Fluffy"), new Cat("Whiskers"));
+        
+        AnimalShelter.feedAnimals(dogs);  // List&lt;Dog&gt; extends Animal
+        AnimalShelter.feedAnimals(cats);  // List&lt;Cat&gt; extends Animal
+        
+        // Complex nested example
+        List&lt;List&lt;Integer&gt;&gt; nestedInts = Arrays.asList(
+            Arrays.asList(1, 2, 3),
+            Arrays.asList(4, 5, 6),
+            Arrays.asList(7, 8, 9)
+        );
+        WildcardDemo.processNestedList(nestedInts);
+        
+        // Wildcard capture example
+        List&lt;String&gt; mutableStrings = new ArrayList&lt;&gt;(Arrays.asList("C", "A", "B"));
+        System.out.println("Before reverse: " + mutableStrings);
+        WildcardDemo.reverseList(mutableStrings);
+        System.out.println("After reverse: " + mutableStrings);
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> Unbounded wildcards (List&lt;?&gt;) accept any type but prevent adding elements (except null). Upper bounded wildcards (? extends T) enable reading T or subtypes but prevent adding. Lower bounded wildcards (? super T) enable adding T or subtypes but reading returns Object. PECS principle guides wildcard usage: use extends for producers (output), super for consumers (input). Wildcard capture uses helper methods to convert wildcards to type parameters for modification operations.</p>
+          
+          <h3>Type Erasure</h3>
+          <p>Type erasure is Java's mechanism for implementing generics while maintaining backward compatibility with pre-generic code.</p>
+          <p>Understanding erasure helps avoid common pitfalls and explains runtime behavior of generic code.</p>
+          
+          <ul>
+            <li><strong>Compile-time Feature:</strong> Generic information removed at runtime</li>
+            <li><strong>Raw Types:</strong> Generic classes without type parameters</li>
+            <li><strong>Bridge Methods:</strong> Compiler generates bridge methods</li>
+            <li><strong>Limitations:</strong> Cannot create arrays of generic types</li>
+          </ul>
+          
+          <pre><code>import java.util.*;
+import java.lang.reflect.*;
+
+// Generic class to demonstrate type erasure
+class Container&lt;T&gt; {
+    private T item;
+    
+    public Container(T item) {
+        this.item = item;
+    }
+    
+    public T getItem() {
+        return item;
+    }
+    
+    public void setItem(T item) {
+        this.item = item;
+    }
+    
+    // This method shows how erasure works
+    public void printTypeInfo() {
+        System.out.println("Item class: " + item.getClass().getName());
+        // System.out.println("T class: " + T.class);  // Compile error - T not available at runtime
+    }
+}
+
+// Raw type usage (not recommended)
+class RawTypeExample {
+    @SuppressWarnings("rawtypes")
+    public static void demonstrateRawTypes() {
+        // Raw type - no generic parameter
+        List rawList = new ArrayList();
+        rawList.add("String");
+        rawList.add(42);  // Different types allowed
+        rawList.add(true);
+        
+        // Mixing raw and generic types
+        List&lt;String&gt; stringList = rawList;  // Unchecked assignment warning
+        
+        // This could cause ClassCastException at runtime
+        try {
+            for (String str : stringList) {
+                System.out.println("String: " + str);
+            }
+        } catch (ClassCastException e) {
+            System.out.println("ClassCastException: " + e.getMessage());
+        }
+    }
+}
+
+// Bridge method demonstration
+class Parent&lt;T&gt; {
+    public T process(T input) {
+        System.out.println("Parent processing: " + input);
+        return input;
+    }
+}
+
+class Child extends Parent&lt;String&gt; {
+    @Override
+    public String process(String input) {  // This creates a bridge method
+        System.out.println("Child processing: " + input);
+        return input.toUpperCase();
+    }
+}
+
+// Type erasure limitations
+class TypeErasureLimitations {
+    
+    // Cannot create arrays of generic types
+    public static void arrayLimitations() {
+        // T[] array = new T[10];  // Compile error
+        // List&lt;String&gt;[] stringLists = new List&lt;String&gt;[10];  // Compile error
+        
+        // Workaround using wildcards
+        List&lt;?&gt;[] wildcardLists = new List&lt;?&gt;[10];
+        wildcardLists[0] = new ArrayList&lt;String&gt;();
+        wildcardLists[1] = new ArrayList&lt;Integer&gt;();
+        
+        // Workaround using Object array with casting
+        @SuppressWarnings("unchecked")
+        List&lt;String&gt;[] stringLists = (List&lt;String&gt;[]) new List[10];
+        for (int i = 0; i < stringLists.length; i++) {
+            stringLists[i] = new ArrayList&lt;&gt;();
+        }
+    }
+    
+    // Cannot use instanceof with parameterized types
+    public static void instanceofLimitations() {
+        List&lt;String&gt; stringList = new ArrayList&lt;&gt;();
+        List&lt;Integer&gt; intList = new ArrayList&lt;&gt;();
+        
+        // if (stringList instanceof List&lt;String&gt;) { }  // Compile error
+        
+        // Can only check raw type
+        if (stringList instanceof List) {
+            System.out.println("stringList is a List");
+        }
+        
+        // Both are true due to type erasure
+        System.out.println("stringList instanceof List: " + (stringList instanceof List));
+        System.out.println("intList instanceof List: " + (intList instanceof List));
+    }
+    
+    // Static context limitations
+    static class StaticLimitations&lt;T&gt; {
+        // static T staticField;  // Compile error
+        // static T staticMethod() { return null; }  // Compile error
+        
+        // Static methods can have their own type parameters
+        static &lt;U&gt; U staticGenericMethod(U param) {
+            return param;
+        }
+    }
+}
+
+// Reflection and type erasure
+class ReflectionExample {
+    public static void examineTypeErasure() {
+        // Create instances
+        Container&lt;String&gt; stringContainer = new Container&lt;&gt;("Hello");
+        Container&lt;Integer&gt; intContainer = new Container&lt;&gt;(42);
+        
+        // At runtime, both have the same class
+        System.out.println("String container class: " + stringContainer.getClass());
+        System.out.println("Int container class: " + intContainer.getClass());
+        System.out.println("Classes equal: " + (stringContainer.getClass() == intContainer.getClass()));
+        
+        // Examine methods
+        Method[] methods = Container.class.getMethods();
+        for (Method method : methods) {
+            if (method.getName().equals("getItem")) {
+                System.out.println("getItem return type: " + method.getReturnType());
+                System.out.println("getItem generic return type: " + method.getGenericReturnType());
+            }
+        }
+    }
+    
+    // Generic type information can be preserved in certain contexts
+    public static void preservedTypeInfo() {
+        // Anonymous class preserves type information
+        List&lt;String&gt; stringList = new ArrayList&lt;String&gt;() {};
+        
+        Type superclass = stringList.getClass().getGenericSuperclass();
+        if (superclass instanceof ParameterizedType) {
+            ParameterizedType paramType = (ParameterizedType) superclass;
+            Type[] typeArgs = paramType.getActualTypeArguments();
+            System.out.println("Preserved type argument: " + typeArgs[0]);
+        }
+    }
+}
+
+// Heap pollution demonstration
+class HeapPollutionExample {
+    @SafeVarargs
+    public static &lt;T&gt; void addToList(List&lt;T&gt; list, T... elements) {
+        for (T element : elements) {
+            list.add(element);
+        }
+    }
+    
+    // Potentially unsafe method
+    @SuppressWarnings("unchecked")
+    public static void demonstrateHeapPollution() {
+        List&lt;String&gt; stringList = new ArrayList&lt;&gt;();
+        List rawList = stringList;  // Raw reference to generic list
+        
+        rawList.add(42);  // Adding Integer to List&lt;String&gt; via raw reference
+        
+        // Heap pollution - list contains non-String object
+        try {
+            String str = stringList.get(0);  // ClassCastException at runtime
+        } catch (ClassCastException e) {
+            System.out.println("Heap pollution caused: " + e.getMessage());
+        }
+    }
+}
+
+public class TypeErasureDemo {
+    public static void main(String[] args) {
+        System.out.println("=== Type Erasure Examples ===");
+        
+        // Basic type erasure
+        Container&lt;String&gt; stringContainer = new Container&lt;&gt;("Hello");
+        Container&lt;Integer&gt; intContainer = new Container&lt;&gt;(42);
+        
+        stringContainer.printTypeInfo();
+        intContainer.printTypeInfo();
+        
+        // Raw types
+        System.out.println("\\n=== Raw Types ===");
+        RawTypeExample.demonstrateRawTypes();
+        
+        // Bridge methods
+        System.out.println("\\n=== Bridge Methods ===");
+        Child child = new Child();
+        String result = child.process("hello");
+        System.out.println("Result: " + result);
+        
+        // Examine bridge methods via reflection
+        Method[] methods = Child.class.getDeclaredMethods();
+        for (Method method : methods) {
+            System.out.println("Method: " + method.getName() + 
+                             ", Synthetic: " + method.isSynthetic() + 
+                             ", Bridge: " + method.isBridge());
+        }
+        
+        // Limitations
+        System.out.println("\\n=== Limitations ===");
+        TypeErasureLimitations.arrayLimitations();
+        TypeErasureLimitations.instanceofLimitations();
+        
+        // Reflection
+        System.out.println("\\n=== Reflection ===");
+        ReflectionExample.examineTypeErasure();
+        ReflectionExample.preservedTypeInfo();
+        
+        // Heap pollution
+        System.out.println("\\n=== Heap Pollution ===");
+        HeapPollutionExample.demonstrateHeapPollution();
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> Type erasure removes generic type information at runtime for backward compatibility. Generic classes become raw types with Object casts inserted by compiler. Bridge methods maintain polymorphism when extending generic classes. Arrays of generic types are prohibited due to type safety issues. instanceof checks work only on raw types. Static members cannot use class type parameters. Reflection shows erased types but preserves some generic information in specific contexts. Heap pollution occurs when raw types bypass generic type safety.</p>
+          
+          <h3>Generic Best Practices</h3>
+          <p>Following best practices ensures effective and maintainable use of generics in Java applications.</p>
+          <p>These guidelines help avoid common pitfalls and maximize the benefits of type safety and code reusability.</p>
+          
+          <ul>
+            <li><strong>Use Descriptive Names:</strong> T for type, E for element, K for key</li>
+            <li><strong>Prefer Generic Types:</strong> Use ArrayList&lt;String&gt; over raw ArrayList</li>
+            <li><strong>Bounded Wildcards:</strong> Use wildcards to increase API flexibility</li>
+            <li><strong>Avoid Raw Types:</strong> Always specify generic parameters</li>
+          </ul>
+          
+          <pre><code>import java.util.*;
+import java.util.function.*;
+
+// Best Practice 1: Use descriptive type parameter names
+class Repository&lt;E extends Entity, K extends Serializable&gt; {  // E=Entity, K=Key
+    private Map&lt;K, E&gt; storage = new HashMap&lt;&gt;();
+    
+    public void save(K key, E entity) {
+        storage.put(key, entity);
+    }
+    
+    public E findById(K key) {
+        return storage.get(key);
+    }
+    
+    public Collection&lt;E&gt; findAll() {
+        return storage.values();
+    }
+}
+
+interface Entity extends Serializable {
+    Serializable getId();
+}
+
+interface Serializable {
+    // Marker interface
+}
+
+// Best Practice 2: Prefer generic types over raw types
+class GoodPracticesExample {
+    
+    // GOOD: Use parameterized types
+    private List&lt;String&gt; names = new ArrayList&lt;&gt;();
+    private Map&lt;Long, User&gt; userCache = new HashMap&lt;&gt;();
+    private Set&lt;Permission&gt; permissions = new HashSet&lt;&gt;();
+    
+    // AVOID: Raw types
+    // private List names = new ArrayList();  // Raw type - avoid
+    // private Map userCache = new HashMap(); // Raw type - avoid
+    
+    public void processUsers(List&lt;User&gt; users) {  // GOOD: Generic parameter
+        for (User user : users) {
+            System.out.println("Processing: " + user.getName());
+        }
+    }
+    
+    // AVOID: Raw type parameter
+    // public void processUsers(List users) { ... }  // Raw parameter - avoid
+}
+
+// Best Practice 3: Use wildcards for flexibility
+class CollectionUtils {
+    
+    // GOOD: Upper bounded wildcard for reading
+    public static double sumNumbers(Collection&lt;? extends Number&gt; numbers) {
+        double sum = 0.0;
+        for (Number number : numbers) {
+            sum += number.doubleValue();
+        }
+        return sum;
+    }
+    
+    // GOOD: Lower bounded wildcard for writing
+    public static void addNumbers(Collection&lt;? super Integer&gt; numbers) {
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+    }
+    
+    // GOOD: Unbounded wildcard when type doesn't matter
+    public static void printCollection(Collection&lt;?&gt; collection) {
+        for (Object item : collection) {
+            System.out.println(item);
+        }
+    }
+    
+    // AVOID: Overly restrictive types
+    // public static double sumIntegers(Collection&lt;Integer&gt; numbers) { ... }  // Too restrictive
+}
+
+// Best Practice 4: Generic methods vs generic classes
+class UtilityMethods {
+    
+    // GOOD: Generic method for type-specific operations
+    public static &lt;T&gt; void swap(T[] array, int i, int j) {
+        T temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    
+    // GOOD: Multiple type parameters when needed
+    public static &lt;K, V&gt; Map&lt;V, K&gt; reverseMap(Map&lt;K, V&gt; original) {
+        Map&lt;V, K&gt; reversed = new HashMap&lt;&gt;();
+        for (Map.Entry&lt;K, V&gt; entry : original.entrySet()) {
+            reversed.put(entry.getValue(), entry.getKey());
+        }
+        return reversed;
+    }
+    
+    // GOOD: Bounded type parameters for specific operations
+    public static &lt;T extends Comparable&lt;T&gt;&gt; List&lt;T&gt; sort(List&lt;T&gt; list) {
+        List&lt;T&gt; sorted = new ArrayList&lt;&gt;(list);
+        Collections.sort(sorted);
+        return sorted;
+    }
+}
+
+// Best Practice 5: Favor composition over inheritance with generics
+class ServiceRegistry&lt;T extends Service&gt; {
+    private Map&lt;String, T&gt; services = new HashMap&lt;&gt;();
+    
+    public void register(String name, T service) {
+        services.put(name, service);
+    }
+    
+    public Optional&lt;T&gt; getService(String name) {
+        return Optional.ofNullable(services.get(name));
+    }
+    
+    public Collection&lt;T&gt; getAllServices() {
+        return services.values();
+    }
+}
+
+interface Service {
+    String getName();
+    void start();
+    void stop();
+}
+
+// Best Practice 6: Use generics with functional interfaces
+class FunctionalGenericExamples {
+    
+    // Generic method with functional interface
+    public static &lt;T, R&gt; List&lt;R&gt; map(List&lt;T&gt; list, Function&lt;T, R&gt; mapper) {
+        List&lt;R&gt; result = new ArrayList&lt;&gt;();
+        for (T item : list) {
+            result.add(mapper.apply(item));
+        }
+        return result;
+    }
+    
+    // Generic filtering
+    public static &lt;T&gt; List&lt;T&gt; filter(List&lt;T&gt; list, Predicate&lt;T&gt; predicate) {
+        List&lt;T&gt; result = new ArrayList&lt;&gt;();
+        for (T item : list) {
+            if (predicate.test(item)) {
+                result.add(item);
+            }
+        }
+        return result;
+    }
+    
+    // Generic reduction
+    public static &lt;T, R&gt; R reduce(List&lt;T&gt; list, R identity, BinaryOperator&lt;R&gt; accumulator, Function&lt;T, R&gt; mapper) {
+        R result = identity;
+        for (T item : list) {
+            result = accumulator.apply(result, mapper.apply(item));
+        }
+        return result;
+    }
+}
+
+// Best Practice 7: Error handling with generics
+class Result&lt;T, E extends Exception&gt; {
+    private final T value;
+    private final E error;
+    private final boolean success;
+    
+    private Result(T value, E error, boolean success) {
+        this.value = value;
+        this.error = error;
+        this.success = success;
+    }
+    
+    public static &lt;T, E extends Exception&gt; Result&lt;T, E&gt; success(T value) {
+        return new Result&lt;&gt;(value, null, true);
+    }
+    
+    public static &lt;T, E extends Exception&gt; Result&lt;T, E&gt; failure(E error) {
+        return new Result&lt;&gt;(null, error, false);
+    }
+    
+    public boolean isSuccess() {
+        return success;
+    }
+    
+    public T getValue() {
+        if (!success) {
+            throw new IllegalStateException("No value available for failed result");
+        }
+        return value;
+    }
+    
+    public E getError() {
+        if (success) {
+            throw new IllegalStateException("No error available for successful result");
+        }
+        return error;
+    }
+    
+    public &lt;U&gt; Result&lt;U, E&gt; map(Function&lt;T, U&gt; mapper) {
+        if (success) {
+            return Result.success(mapper.apply(value));
+        } else {
+            return Result.failure(error);
+        }
+    }
+}
+
+// Example classes for demonstration
+class User implements Entity {
+    private Long id;
+    private String name;
+    
+    public User(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+    
+    @Override
+    public Serializable getId() {
+        return id;
+    }
+    
+    public String getName() {
+        return name;
+    }
+    
+    @Override
+    public String toString() {
+        return "User{id=" + id + ", name='" + name + "'}";
+    }
+}
+
+class Permission {
+    private String name;
+    
+    public Permission(String name) {
+        this.name = name;
+    }
+    
+    @Override
+    public String toString() {
+        return "Permission{" + name + "}";
+    }
+}
+
+public class GenericBestPracticesDemo {
+    public static void main(String[] args) {
+        System.out.println("=== Generic Best Practices Demo ===");
+        
+        // Repository example
+        Repository&lt;User, Long&gt; userRepo = new Repository&lt;&gt;();
+        userRepo.save(1L, new User(1L, "Alice"));
+        userRepo.save(2L, new User(2L, "Bob"));
+        
+        User user = userRepo.findById(1L);
+        System.out.println("Found user: " + user);
+        
+        // Collection utilities
+        List&lt;Integer&gt; integers = Arrays.asList(1, 2, 3, 4, 5);
+        List&lt;Double&gt; doubles = Arrays.asList(1.1, 2.2, 3.3);
+        
+        double intSum = CollectionUtils.sumNumbers(integers);
+        double doubleSum = CollectionUtils.sumNumbers(doubles);
+        System.out.println("Integer sum: " + intSum + ", Double sum: " + doubleSum);
+        
+        // Functional programming with generics
+        List&lt;String&gt; names = Arrays.asList("Alice", "Bob", "Charlie");
+        List&lt;Integer&gt; nameLengths = FunctionalGenericExamples.map(names, String::length);
+        List&lt;String&gt; longNames = FunctionalGenericExamples.filter(names, name -> name.length() > 4);
+        
+        System.out.println("Name lengths: " + nameLengths);
+        System.out.println("Long names: " + longNames);
+        
+        // Result type example
+        Result&lt;Integer, RuntimeException&gt; success = Result.success(42);
+        Result&lt;Integer, RuntimeException&gt; failure = Result.failure(new RuntimeException("Error"));
+        
+        System.out.println("Success result: " + success.getValue());
+        System.out.println("Failure has error: " + !failure.isSuccess());
+        
+        // Method chaining with generics
+        Result&lt;String, RuntimeException&gt; mapped = success.map(Object::toString);
+        System.out.println("Mapped result: " + mapped.getValue());
+    }
+}</code></pre>
+          
+          <p><strong>Explanation:</strong> Use meaningful type parameter names (E for Element, K for Key, V for Value). Always specify generic parameters instead of using raw types for compile-time safety. Apply PECS principle with wildcards for flexible APIs. Use bounded type parameters to enable specific operations. Prefer generic methods over generic classes for utility functions. Combine generics with functional interfaces for powerful abstractions. Design generic wrapper types for better error handling. Follow consistent naming conventions and documentation practices.</p>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/K1iu1kXkVoA'
+      }
+    ]
+  },
+  {
+    id: 'python',
+    title: 'Python',
+    description: 'Learn Python including OOP, data structures, and frameworks.',
+    image: '/images/python-course.jpg',
+    level: 'Beginner to Intermediate',
+    duration: '12 weeks',
+    modules: 16,
+    studentsEnrolled: 2847,
+    rating: 4.9,
+    instructor: {
+      name: 'Dr. Sarah Chen',
+      avatar: '/images/instructors/sarah.jpg',
+      bio: 'Senior Python Developer with 8+ years experience in data science and web development'
+    },
+    tags: ['Python', 'Programming', 'Data Science', 'Backend', 'Automation'],
+    learningPath: [
+      'Python Fundamentals',
+      'Data Structures & Algorithms', 
+      'Object-Oriented Programming',
+      'File Handling & APIs',
+      'Popular Python Libraries',
+      'Web Development with Flask/Django',
+      'Data Science & Machine Learning',
+      'Testing & Best Practices'
+    ],
+    introduction: `
+      <h2>Master Python - The World's Most Popular Programming Language</h2>
+      <p>Python is renowned for its simplicity, readability, and versatility. Whether you're interested in web development, data science, artificial intelligence, automation, or general programming, Python provides an excellent foundation. This comprehensive course will take you from complete beginner to confident Python programmer.</p>
+      
+      <h3>Why Learn Python in 2026?</h3>
+      <p>Python continues to dominate programming rankings and is used by tech giants like Google, Netflix, Instagram, and Spotify. Its clean syntax makes it perfect for beginners, while its powerful libraries and frameworks make it suitable for complex enterprise applications.</p>
+      
+      <h3>Learning Benefits of Python:</h3>
+      <ul>
+        <li><strong>Beginner-Friendly Syntax:</strong> Learn programming concepts without getting bogged down by complex syntax</li>
+        <li><strong>Versatile Applications:</strong> Build web apps, analyze data, create AI models, automate tasks, and more</li>
+        <li><strong>Problem-Solving Skills:</strong> Develop logical thinking and algorithmic problem-solving abilities</li>
+        <li><strong>Rapid Prototyping:</strong> Quickly turn ideas into working programs and see immediate results</li>
+        <li><strong>Scientific Computing:</strong> Gateway to data science, machine learning, and mathematical computing</li>
+        <li><strong>Automation Mastery:</strong> Automate repetitive tasks and increase productivity</li>
+        <li><strong>Strong Community:</strong> Access to extensive libraries and helpful developer community</li>
+      </ul>
+      
+      <h3>Prerequisites for Python:</h3>
+      <ul>
+        <li><strong>Basic Computer Skills:</strong> File management and basic command line usage</li>
+        <li><strong>Mathematical Thinking:</strong> Basic algebra and logical reasoning (helpful but not required)</li>
+        <li><strong>Text Editor/IDE:</strong> VS Code, PyCharm, or Sublime Text with Python extensions</li>
+        <li><strong>Problem-Solving Mindset:</strong> Willingness to break down problems into smaller steps</li>
+        <li><strong>Python Installation:</strong> Python 3.9+ installed on your system</li>
+        <li><strong>Package Manager:</strong> pip for installing Python libraries and packages</li>
+      </ul>
+      
+      <h3>Modern Python Ecosystem (2026):</h3>
+      <ul>
+        <li><strong>Latest Version:</strong> Python 3.12+ with performance improvements and new syntax features</li>
+        <li><strong>Web Frameworks:</strong> Django 5.0, Flask 3.0, FastAPI 0.104, Starlette for web development</li>
+        <li><strong>Data Science:</strong> NumPy 1.26, Pandas 2.1, Matplotlib 3.8, Seaborn 0.13 for data analysis</li>
+        <li><strong>Machine Learning:</strong> scikit-learn 1.4, TensorFlow 2.15, PyTorch 2.1, Keras 3.0</li>
+        <li><strong>GUI Development:</strong> Tkinter, PyQt6, Kivy, Dear PyGui for desktop applications</li>
+        <li><strong>Automation:</strong> Selenium 4.15, Beautiful Soup 4, Scrapy 2.11 for web scraping</li>
+        <li><strong>API Development:</strong> FastAPI, Flask-RESTful, Django REST Framework for backend services</li>
+        <li><strong>Testing:</strong> pytest 7.4, unittest, doctest for quality assurance</li>
+        <li><strong>Package Management:</strong> pip, poetry, conda for dependency management</li>
+      </ul>
+      
+      <h3>Industry Applications:</h3>
+      <ul>
+        <li><strong>Web Development:</strong> Instagram, Pinterest, Reddit use Django and Flask</li>
+        <li><strong>Data Science:</strong> Netflix, Uber, Airbnb use Python for data analysis and ML</li>
+        <li><strong>Artificial Intelligence:</strong> Google, OpenAI, Tesla use Python for AI development</li>
+        <li><strong>Finance:</strong> Goldman Sachs, JP Morgan use Python for algorithmic trading</li>
+        <li><strong>Scientific Research:</strong> NASA, CERN use Python for research computing</li>
+        <li><strong>DevOps:</strong> Dropbox, Instagram use Python for infrastructure automation</li>
+      </ul>
+    `,
+    lessons: [
+      {
+        id: 'python-intro',
+        title: 'Introduction to Python',
+        content: `
+          <h2>Welcome to Python Programming</h2>
+          <p>Python is a high-level, interpreted programming language known for its simplicity and readability. Created by Guido van Rossum in 1991, Python has become one of the most popular programming languages in the world.</p>
+          
+          <h3>Why Python?</h3>
+          <ul>
+            <li><strong>Simple Syntax:</strong> Python's syntax is clean and easy to read</li>
+            <li><strong>Versatile:</strong> Used for web development, data science, AI, automation</li>
+            <li><strong>Large Community:</strong> Extensive libraries and community support</li>
+            <li><strong>Cross-Platform:</strong> Runs on Windows, macOS, and Linux</li>
+          </ul>
+          
+          <h3>Installing Python:</h3>
+          <p>Download Python from <a href="https://python.org" target="_blank">python.org</a> and follow the installation instructions for your operating system.</p>
+          
+          <pre><code># Check Python version
+python --version
+
+# Run Python interactively  
+python
+
+# Exit Python
+exit()</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/kqtD5dpn9C8'
+      },
+      {
+        id: 'python-basics',
+        title: 'Python Basics & Variables',
+        content: `
+          <h2>Python Variables and Data Types</h2>
+          <p>In Python, variables are containers for storing data values. Python has various data types including numbers, strings, and booleans.</p>
+          
+          <h3>Variables:</h3>
+          <p>Variables in Python are containers that store data values and don't need explicit type declaration. Python automatically determines the data type based on the value assigned, making it beginner-friendly. Understanding how to create, assign, and work with different variable types is fundamental to writing effective Python programs.</p>
+          <pre><code># Creating variables
+name = "Alice"
+age = 25
+height = 5.6
+is_student = True
+
+# Python is dynamically typed
+x = 10      # integer
+x = "Hello" # now it's a string</code></pre>
+          
+          <h3>Basic Data Types:</h3>
+          <ul>
+            <li><strong>int:</strong> Integer numbers (1, 42, -17)</li>
+            <li><strong>float:</strong> Decimal numbers (3.14, -2.5)</li>
+            <li><strong>str:</strong> Text strings ("Hello", 'World')</li>
+            <li><strong>bool:</strong> True or False values</li>
+          </ul>
+          
+          <h3>String Operations:</h3>
+          <p>Strings are sequences of characters used to store and manipulate text data in Python. Python provides powerful string methods and formatting options that make text processing intuitive and efficient. String manipulation is essential for data processing, web development, and user interaction in most applications.</p>
+          <pre><code># String concatenation
+first_name = "John"
+last_name = "Doe"
+full_name = first_name + " " + last_name
+
+# String formatting
+message = f"Hello, {full_name}!"
+print(message)</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/cQT33yu9pY8'
+      },
+      {
+        id: 'python-control-flow',
+        title: 'Control Flow & Loops',
+        content: `
+          <h2>Control Flow in Python</h2>
+          <p>Control flow statements allow you to control the execution of your program based on conditions and repeat actions with loops.</p>
+          
+          <h3>If Statements:</h3>
+          <p>Conditional statements allow your program to make decisions and execute different code paths based on specific conditions. Python's if-elif-else structure is clean and readable, using indentation instead of braces to define code blocks. Mastering conditionals is crucial for creating programs that respond intelligently to different scenarios.</p>
+          <pre><code>age = 18
+
+if age >= 18:
+    print("You are an adult")
+elif age >= 13:
+    print("You are a teenager") 
+else:
+    print("You are a child")</code></pre>
+          
+          <h3>For Loops:</h3>
+          <p>For loops in Python are used to iterate over sequences like lists, strings, or ranges, making repetitive tasks efficient and manageable. Python's for loop syntax is more intuitive than many other languages, allowing you to directly iterate over collection items. Understanding loops is essential for processing data collections and automating repetitive operations.</p>
+          <pre><code># Loop through a range
+for i in range(5):
+    print(i)
+
+# Loop through a list
+fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(fruit)
+    
+# Loop through string
+for char in "Hello":
+    print(char)</code></pre>
+          
+          <h3>While Loops:</h3>
+          <p>While loops execute a block of code repeatedly as long as a specified condition remains true, providing more control over loop execution than for loops. They're particularly useful when you don't know in advance how many iterations you need. Proper use of while loops prevents infinite loops and ensures efficient program execution.</p>
+          <pre><code>count = 0
+while count < 5:
+    print(f"Count: {count}")
+    count += 1</code></pre>
+          
+          <h3>Loop Control:</h3>
+          <p>Loop control statements like break and continue give you fine-grained control over loop execution, allowing you to exit loops early or skip specific iterations. These statements help optimize performance and create more sophisticated loop logic. Understanding when and how to use loop control statements is key to writing efficient iterative code.</p>
+          <pre><code># break and continue
+for i in range(10):
+    if i == 5:
+        break  # Exit loop
+    if i == 2:
+        continue  # Skip this iteration
+    print(i)</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/6iF8Xb7Z3wQ'
+      },
+      {
+        id: 'python-data-structures',
+        title: 'Lists, Tuples & Dictionaries', 
+        content: `
+          <h2>Python Data Structures</h2>
+          <p>Python provides several built-in data structures to store and organize data efficiently.</p>
+          
+          <h3>Lists - Ordered and Mutable:</h3>
+          <p>Lists are one of Python's most versatile and commonly used data structures, allowing you to store multiple items in a single variable. They're ordered, changeable, and allow duplicate values, making them perfect for storing collections of related data. Understanding list operations, indexing, and methods is fundamental to Python programming and data manipulation.</p>
+          <pre><code># Creating lists
+numbers = [1, 2, 3, 4, 5]
+mixed = [1, "hello", 3.14, True]
+
+# List operations
+numbers.append(6)        # Add to end
+numbers.insert(0, 0)     # Insert at position
+numbers.remove(3)        # Remove value
+last = numbers.pop()     # Remove and return last
+print(len(numbers))      # Length</code></pre>
+          
+          <h3>Tuples - Ordered and Immutable:</h3>
+          <p>Tuples are ordered collections that cannot be changed after creation, making them ideal for storing data that shouldn't be modified accidentally. They're faster than lists for certain operations and can be used as dictionary keys due to their immutability. Tuples are perfect for representing fixed collections like coordinates, RGB colors, or database records.</p>
+          <pre><code># Creating tuples
+coordinates = (10, 20)
+colors = ("red", "green", "blue")
+
+# Tuple unpacking
+x, y = coordinates
+print(f"x: {x}, y: {y}")</code></pre>
+          
+          <h3>Dictionaries - Key-Value Pairs:</h3>
+          <p>Dictionaries store data in key-value pairs, providing fast lookup capabilities and logical data organization. They're unordered (in Python 3.7+, insertion order is preserved) and mutable, making them excellent for representing structured data like JSON objects or database records. Dictionaries are essential for efficient data storage and retrieval in Python applications.</p>
+          <pre><code># Creating dictionaries
+person = {
+    "name": "Alice",
+    "age": 30,
+    "city": "New York"
+}
+
+# Dictionary operations
+print(person["name"])           # Access value
+person["email"] = "alice@example.com"  # Add key-value
+del person["age"]               # Remove key
+print(person.keys())            # Get all keys
+print(person.values())          # Get all values</code></pre>
+          
+          <h3>List Comprehensions:</h3>
+          <p>List comprehensions provide a concise and readable way to create lists based on existing sequences or ranges. They combine the functionality of loops and conditional statements into a single, elegant expression. Mastering list comprehensions makes your code more Pythonic and often more efficient than traditional loop-based approaches.</p>
+          <pre><code># Create list with comprehension
+squares = [x**2 for x in range(10)]
+even_squares = [x**2 for x in range(10) if x % 2 == 0]</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/AhSvKGTh28Q'
+      },
+      {
+        id: 'python-functions',
+        title: 'Functions & Modules',
+        content: `
+          <h2>Functions in Python</h2>
+          <p>Functions are reusable blocks of code that perform specific tasks. They help organize code and avoid repetition.</p>
+          
+          <h3>Defining Functions:</h3>
+          <p>Functions are reusable blocks of code that perform specific tasks, helping you organize code and avoid repetition. Python functions can accept parameters, return values, and have default arguments, making them flexible and powerful. Understanding how to create and use functions is essential for writing modular, maintainable code and following the DRY (Don't Repeat Yourself) principle.</p>
+          <pre><code># Basic function
+def greet(name):
+    return f"Hello, {name}!"
+
+# Function with default parameters
+def greet_with_title(name, title="Mr."):
+    return f"Hello, {title} {name}!"
+
+# Function with multiple parameters
+def calculate_area(length, width):
+    area = length * width
+    return area</code></pre>
+          
+          <h3>Function Arguments:</h3>
+          <p>Python functions support various types of arguments including default parameters, variable-length arguments, and keyword arguments, providing flexibility in function design. Understanding how to use *args and **kwargs allows you to create functions that can handle varying numbers of parameters. This flexibility is essential for creating reusable, adaptable functions in Python applications.</p>
+          <pre><code># Variable arguments
+def sum_all(*args):
+    return sum(args)
+
+# Keyword arguments  
+def create_profile(**kwargs):
+    return kwargs
+
+# Mixed arguments
+def process_data(required, *args, **kwargs):
+    print(f"Required: {required}")
+    print(f"Args: {args}")
+    print(f"Kwargs: {kwargs}")</code></pre>
+          
+          <h3>Lambda Functions:</h3>
+          <p>Lambda functions are anonymous, single-expression functions that provide a concise way to create small functions without formal definition. They're particularly useful with higher-order functions like map(), filter(), and sort(), enabling functional programming paradigms. Understanding lambdas helps you write more compact and expressive code for simple operations.</p>
+          <pre><code># Lambda (anonymous) functions
+square = lambda x: x**2
+add = lambda x, y: x + y
+
+# Using with map, filter
+numbers = [1, 2, 3, 4, 5]
+squares = list(map(lambda x: x**2, numbers))
+evens = list(filter(lambda x: x % 2 == 0, numbers))</code></pre>
+          
+          <h3>Modules and Imports:</h3>
+          <p>Modules are Python files containing definitions and statements that can be imported and reused in other programs. Python's module system promotes code organization, reusability, and namespace management. Understanding how to create, import, and use modules is crucial for building larger Python applications and utilizing the vast Python ecosystem.</p>
+          <pre><code># Importing modules
+import math
+import random
+from datetime import datetime
+from math import sqrt, pi
+
+# Using imported functions
+print(math.sqrt(16))
+print(random.randint(1, 10))
+print(datetime.now())</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/9Os0o3wzS_I'
+      },
+      {
+        id: 'python-oop',
+        title: 'Object-Oriented Programming',
+        content: `
+          <h2>Object-Oriented Programming in Python</h2>
+          <p>OOP is a programming paradigm that uses objects and classes to structure code. It provides concepts like encapsulation, inheritance, and polymorphism.</p>
+          
+          <h3>Classes and Objects:</h3>
+          <p>Object-oriented programming in Python allows you to create classes that serve as blueprints for creating objects with shared attributes and methods. Classes enable code organization, data encapsulation, and the creation of complex data structures. Understanding class creation, instantiation, and method definition is fundamental to writing scalable Python applications.</p>
+          <pre><code>class Car:
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model 
+        self.year = year
+        self.odometer = 0
+    
+    def drive(self, miles):
+        self.odometer += miles
+        return f"Drove {miles} miles"
+    
+    def get_info(self):
+        return f"{self.year} {self.make} {self.model}"
+
+# Creating objects
+my_car = Car("Toyota", "Camry", 2023)
+print(my_car.get_info())
+my_car.drive(100)</code></pre>
+          
+          <h3>Inheritance:</h3>
+          <p>Inheritance allows you to create new classes based on existing ones, inheriting their attributes and methods while adding or modifying functionality. This promotes code reuse and establishes hierarchical relationships between classes. Understanding inheritance, method overriding, and the super() function is essential for effective object-oriented design in Python.</p>
+          <pre><code>class ElectricCar(Car):
+    def __init__(self, make, model, year, battery_size):
+        super().__init__(make, model, year)
+        self.battery_size = battery_size
+        self.battery_level = 100
+    
+    def charge(self):
+        self.battery_level = 100
+        return "Battery fully charged"
+    
+    def drive(self, miles):
+        super().drive(miles)
+        self.battery_level -= miles * 0.1
+        return f"Drove {miles} miles electrically"</code></pre>
+          
+          <h3>Encapsulation:</h3>
+          <p>Encapsulation is the practice of restricting access to certain attributes and methods within a class, protecting internal data from external interference. Python uses naming conventions like underscore prefixes to indicate private members. Understanding encapsulation helps you create robust, maintainable classes with controlled interfaces and protected internal state.</p>
+          <pre><code>class BankAccount:
+    def __init__(self, initial_balance=0):
+        self._balance = initial_balance  # Protected
+        self.__pin = None                # Private
+    
+    def deposit(self, amount):
+        if amount > 0:
+            self._balance += amount
+            return True
+        return False
+    
+    def get_balance(self):
+        return self._balance</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/JeznW_7DlB0'
+      },
+      {
+        id: 'python-file-handling',
+        title: 'File Handling & I/O',
+        content: `
+          <h2>File Handling in Python</h2>
+          <p>Python provides built-in functions to work with files. You can read from and write to files, handle different file formats, and manage file operations safely.</p>
+          
+          <h3>Reading Files:</h3>
+          <p>File handling in Python allows you to read and process external data from text files, configuration files, and datasets. Python provides simple, intuitive methods for opening, reading, and closing files with automatic resource management. Understanding file operations is essential for data processing, configuration management, and building applications that work with external data sources.</p>
+          <pre><code># Reading entire file
+with open('data.txt', 'r') as file:
+    content = file.read()
+    print(content)
+
+# Reading line by line
+with open('data.txt', 'r') as file:
+    for line in file:
+        print(line.strip())
+
+# Reading all lines into list
+with open('data.txt', 'r') as file:
+    lines = file.readlines()</code></pre>
+          
+          <h3>Writing Files:</h3>
+          <p>File writing capabilities allow Python programs to save data, generate reports, create logs, and export results to external files. Python supports different write modes including overwrite and append, with automatic handling of file creation and resource cleanup. Understanding file writing is crucial for data persistence and creating applications that generate output files.</p>
+          <pre><code># Writing to file (overwrites)
+with open('output.txt', 'w') as file:
+    file.write("Hello, World!\n")
+    file.write("Python file handling")
+
+# Appending to file  
+with open('output.txt', 'a') as file:
+    file.write("\nAppended text")
+
+# Writing multiple lines
+lines = ["First line", "Second line", "Third line"]
+with open('output.txt', 'w') as file:
+    file.writelines(f"{line}\n" for line in lines)</code></pre>
+          
+          <h3>Working with CSV:</h3>
+          <p>CSV (Comma-Separated Values) files are a common format for storing tabular data, and Python's csv module provides powerful tools for reading and writing CSV files. This capability is essential for data analysis, data import/export, and working with spreadsheet data. Understanding CSV operations enables you to work with real-world datasets and integrate with various data sources.</p>
+          <pre><code>import csv
+
+# Reading CSV
+with open('data.csv', 'r') as file:
+    csv_reader = csv.reader(file)
+    for row in csv_reader:
+        print(row)
+
+# Writing CSV
+data = [['Name', 'Age'], ['Alice', 25], ['Bob', 30]]
+with open('people.csv', 'w', newline='') as file:
+    csv_writer = csv.writer(file)
+    csv_writer.writerows(data)</code></pre>
+          
+          <h3>JSON Handling:</h3>
+          <p>JSON (JavaScript Object Notation) is a lightweight data interchange format widely used in web APIs and data storage. Python's json module provides easy-to-use methods for parsing JSON strings into Python objects and serializing Python data into JSON format. Understanding JSON handling is crucial for web development, API integration, and modern data exchange.</p>
+          <pre><code>import json
+
+# Reading JSON
+with open('data.json', 'r') as file:
+    data = json.load(file)
+
+# Writing JSON
+person = {"name": "Alice", "age": 30}
+with open('person.json', 'w') as file:
+    json.dump(person, file, indent=2)</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/Uh2ebFW8OYM'
+      },
+      {
+        id: 'python-libraries',
+        title: 'Popular Python Libraries',
+        content: `
+          <h2>Essential Python Libraries</h2>
+          <p>Python's strength lies in its extensive ecosystem of libraries. Here are some of the most popular and useful libraries for different domains.</p>
+          
+          <h3>NumPy - Numerical Computing:</h3>
+          <p>NumPy is the fundamental package for scientific computing in Python, providing powerful N-dimensional array objects and mathematical functions. It enables efficient operations on large datasets and forms the foundation for most Python data science libraries. Understanding NumPy arrays, broadcasting, and mathematical operations is essential for data analysis, machine learning, and scientific computing.</p>
+          <pre><code>import numpy as np
+
+# Creating arrays
+arr = np.array([1, 2, 3, 4, 5])
+matrix = np.array([[1, 2], [3, 4]])
+
+# Array operations
+print(arr * 2)           # Multiply all elements
+print(np.mean(arr))      # Calculate mean
+print(np.max(arr))       # Find maximum</code></pre>
+          
+          <h3>Pandas - Data Analysis:</h3>
+          <p>Pandas is a powerful data manipulation and analysis library that provides data structures like DataFrames for handling structured data. It offers tools for data cleaning, transformation, aggregation, and analysis, making it indispensable for data science workflows. Understanding Pandas operations is crucial for working with real-world datasets and performing exploratory data analysis.</p>
+          <pre><code>import pandas as pd
+
+# Creating DataFrames
+data = {'Name': ['Alice', 'Bob'], 'Age': [25, 30]}
+df = pd.DataFrame(data)
+
+# Reading CSV
+df = pd.read_csv('data.csv')
+
+# Data operations
+print(df.head())         # First 5 rows
+print(df.describe())     # Statistical summary
+filtered = df[df['Age'] > 25]  # Filtering</code></pre>
+          
+          <h3>Requests - HTTP Library:</h3>
+          <p>The Requests library simplifies making HTTP requests in Python, providing an elegant interface for interacting with web APIs and services. It handles authentication, headers, parameters, and response processing with minimal code. Understanding how to use Requests is essential for web scraping, API integration, and building applications that communicate with external services.</p>
+          <pre><code>import requests
+
+# GET request
+response = requests.get('https://api.github.com/users/octocat')
+data = response.json()
+print(data['name'])
+
+# POST request with data
+payload = {'username': 'user', 'password': 'pass'}
+response = requests.post('https://api.example.com/login', data=payload)</code></pre>
+          
+          <h3>Matplotlib - Data Visualization:</h3>
+          <p>Matplotlib is Python's primary plotting library, enabling the creation of static, animated, and interactive visualizations. It provides a MATLAB-like interface for creating charts, graphs, and plots to visualize data insights effectively. Understanding Matplotlib is crucial for data analysis, scientific computing, and creating publication-quality visualizations for reports and presentations.</p>
+          <pre><code>import matplotlib.pyplot as plt
+
+# Simple line plot
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 6, 8, 10]
+plt.plot(x, y)
+plt.xlabel('X values')
+plt.ylabel('Y values') 
+plt.title('Simple Line Plot')
+plt.show()
+
+# Bar chart
+categories = ['A', 'B', 'C']
+values = [10, 15, 8]
+plt.bar(categories, values)
+plt.show()</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/xa4UZdIfph0'
+      },
+      {
+        id: 'python-error-handling',
+        title: 'Error Handling & Exceptions',
+        content: `
+          <h2>Exception Handling in Python</h2>
+          <p>Error handling is crucial for writing robust Python programs. Python provides try-except blocks to handle exceptions gracefully and prevent program crashes.</p>
+          
+          <h3>Basic Exception Handling:</h3>
+          <p>Exception handling allows your programs to gracefully handle errors and unexpected situations without crashing. Python's try-except blocks provide a robust mechanism for catching and responding to various types of exceptions. Understanding exception handling is crucial for building reliable, production-ready applications that can handle edge cases and provide meaningful error messages to users.</p>
+          <pre><code>try:
+    number = int(input("Enter a number: "))
+    result = 10 / number
+    print(f"Result: {result}")
+except ValueError:
+    print("Please enter a valid number!")
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+except Exception as e:
+    print(f"An error occurred: {e}")
+finally:
+    print("This always executes")</code></pre>
+          
+          <h3>Common Exception Types:</h3>
+          <ul>
+            <li><strong>ValueError:</strong> Invalid value for operation</li>
+            <li><strong>TypeError:</strong> Wrong data type</li>
+            <li><strong>KeyError:</strong> Dictionary key not found</li>
+            <li><strong>IndexError:</strong> List index out of range</li>
+            <li><strong>FileNotFoundError:</strong> File doesn't exist</li>
+            <li><strong>AttributeError:</strong> Object has no attribute</li>
+          </ul>
+          
+          <h3>Custom Exceptions:</h3>
+          <p>Creating custom exception classes allows you to define application-specific error types that provide meaningful context about what went wrong. Custom exceptions improve code readability and enable more precise error handling strategies. Understanding how to create and use custom exceptions is important for building professional applications with clear error reporting and debugging capabilities.</p>
+          <pre><code>class CustomError(Exception):
+    def __init__(self, message):
+        self.message = message
+        super().__init__(self.message)
+
+class AgeError(Exception):
+    pass
+
+def validate_age(age):
+    if age < 0:
+        raise AgeError("Age cannot be negative")
+    if age > 150:
+        raise AgeError("Age too high")
+    return True
+
+try:
+    validate_age(-5)
+except AgeError as e:
+    print(f"Age validation error: {e}")</code></pre>
+          
+          <h3>File Handling with Exceptions:</h3>
+          <p>Combining file operations with proper exception handling ensures your programs can gracefully handle file-related errors like missing files, permission issues, or disk space problems. This approach prevents crashes and provides meaningful feedback to users when file operations fail. Understanding robust file handling is essential for building reliable applications that work with external data sources.</p>
+          <pre><code>def read_file_safely(filename):
+    try:
+        with open(filename, 'r') as file:
+            content = file.read()
+            return content
+    except FileNotFoundError:
+        print(f"File '{filename}' not found")
+        return None
+    except PermissionError:
+        print(f"Permission denied to read '{filename}'")
+        return None</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/NIWwJbo-9_8'
+      },
+      {
+        id: 'python-web-scraping',
+        title: 'Web Scraping & APIs',
+        content: `
+          <h2>Web Scraping and API Integration</h2>
+          <p>Learn how to extract data from websites and interact with web APIs using Python. This is essential for data collection and automation tasks.</p>
+          
+          <h3>Web Scraping with BeautifulSoup:</h3>
+          <p>Web scraping allows you to extract data from websites programmatically, opening up access to vast amounts of publicly available information. BeautifulSoup provides an intuitive interface for parsing HTML and XML documents, making it easy to navigate and extract specific elements. Understanding web scraping is valuable for data collection, research, and building applications that aggregate information from multiple sources.</p>
+          <pre><code>import requests
+from bs4 import BeautifulSoup
+
+# Scraping a webpage
+url = "https://example.com"
+response = requests.get(url)
+soup = BeautifulSoup(response.content, 'html.parser')
+
+# Finding elements
+title = soup.find('title').text
+paragraphs = soup.find_all('p')
+links = soup.find_all('a')
+
+# Extract specific data
+for link in links:
+    href = link.get('href')
+    text = link.text
+    print(f"Link: {href}, Text: {text}")</code></pre>
+          
+          <h3>Working with APIs:</h3>
+          <p>Application Programming Interfaces (APIs) enable your Python programs to communicate with external services and retrieve data in real-time. REST APIs are the foundation of modern web services, allowing applications to exchange data using standard HTTP methods. Understanding API integration is crucial for building applications that connect to social media platforms, payment gateways, and other third-party services.</p>
+          <pre><code>import requests
+import json
+
+# GET request to API
+response = requests.get('https://jsonplaceholder.typicode.com/posts')
+if response.status_code == 200:
+    posts = response.json()
+    for post in posts[:5]:  # First 5 posts
+        print(f"Title: {post['title']}")
+
+# POST request with authentication
+headers = {'Authorization': 'Bearer your_token_here'}
+data = {'title': 'New Post', 'content': 'This is content'}
+response = requests.post('https://api.example.com/posts', 
+                        json=data, headers=headers)</code></pre>
+          
+          <h3>Handling Rate Limits:</h3>
+          <p>Rate limiting is a common mechanism that APIs use to control how frequently clients can make requests, preventing abuse and ensuring fair resource usage. Understanding how to implement delays, retry logic, and exponential backoff helps you build respectful applications that work within API constraints. Proper rate limit handling is essential for production applications that integrate with external services.</p>
+          <pre><code>import time
+import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
+
+def requests_with_retry():
+    session = requests.Session()
+    retry = Retry(
+        total=3,
+        backoff_factor=1,
+        status_forcelist=[429, 500, 502, 503, 504]
+    )
+    adapter = HTTPAdapter(max_retries=retry)
+    session.mount("http://", adapter)
+    session.mount("https://", adapter)
+    return session
+
+# Use with rate limiting
+session = requests_with_retry()
+for i in range(10):
+    response = session.get('https://api.example.com/data')
+    time.sleep(1)  # Be respectful to the server</code></pre>
+          
+          <h3>Data Processing Pipeline:</h3>
+          <p>Data processing pipelines combine multiple operations like data collection, cleaning, transformation, and storage into automated workflows. Building efficient pipelines is crucial for handling large datasets and ensuring data quality in analytics and machine learning projects. Understanding pipeline architecture helps you create scalable systems that can process data reliably and efficiently.</p>
+          <pre><code>def scrape_and_process(url):
+    try:
+        # Scrape data
+        response = requests.get(url)
+        soup = BeautifulSoup(response.content, 'html.parser')
+        
+        # Extract and clean data
+        data = []
+        items = soup.find_all('div', class_='item')
+        
+        for item in items:
+            title = item.find('h2').text.strip()
+            price = item.find('span', class_='price').text.strip()
+            data.append({'title': title, 'price': price})
+        
+        return data
+    except Exception as e:
+        print(f"Error scraping {url}: {e}")
+        return []</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/XVv6mJpFOb0'
+      },
+      {
+        id: 'python-testing',
+        title: 'Testing & Debugging',
+        content: `
+          <h2>Testing and Debugging Python Code</h2>
+          <p>Writing tests is essential for maintaining code quality and catching bugs early. Learn how to write effective tests and debug your Python programs.</p>
+          
+          <h3>Unit Testing with unittest:</h3>
+          <p>Unit testing ensures individual components of your code work correctly by testing them in isolation with known inputs and expected outputs. Python's unittest module provides a framework for organizing and running tests systematically. Understanding how to write comprehensive tests is essential for building reliable software and maintaining code quality as projects grow in complexity.</p>
+          <pre><code>import unittest
+
+class Calculator:
+    def add(self, a, b):
+        return a + b
+    
+    def divide(self, a, b):
+        if b == 0:
+            raise ValueError("Cannot divide by zero")
+        return a / b
+
+class TestCalculator(unittest.TestCase):
+    def setUp(self):
+        self.calc = Calculator()
+    
+    def test_add(self):
+        self.assertEqual(self.calc.add(2, 3), 5)
+        self.assertEqual(self.calc.add(-1, 1), 0)
+    
+    def test_divide(self):
+        self.assertEqual(self.calc.divide(10, 2), 5)
+        with self.assertRaises(ValueError):
+            self.calc.divide(10, 0)
+
+if __name__ == '__main__':
+    unittest.main()</code></pre>
+          
+          <h3>Testing with pytest:</h3>
+          <p>Pytest is a more advanced testing framework that offers simpler syntax, powerful fixtures, and extensive plugin ecosystem compared to unittest. It makes writing and organizing tests more intuitive while providing detailed failure reports and test discovery. Understanding pytest is valuable for professional Python development where comprehensive testing is critical for maintaining code quality.</p>
+          <pre><code>import pytest
+
+def test_string_operations():
+    text = "Hello World"
+    assert text.upper() == "HELLO WORLD"
+    assert len(text) == 11
+    assert "World" in text
+
+def test_list_operations():
+    numbers = [1, 2, 3, 4, 5]
+    assert sum(numbers) == 15
+    assert max(numbers) == 5
+    assert len(numbers) == 5
+
+# Fixtures for test setup
+@pytest.fixture
+def sample_data():
+    return {"name": "Alice", "age": 30}
+
+def test_with_fixture(sample_data):
+    assert sample_data["name"] == "Alice"
+    assert sample_data["age"] == 30</code></pre>
+          
+          <h3>Debugging Techniques:</h3>
+          <p>Effective debugging skills are essential for identifying and fixing issues in your Python code efficiently. From simple print statements to advanced debugger tools, understanding various debugging approaches helps you diagnose problems quickly. Mastering debugging techniques reduces development time and improves your ability to maintain and troubleshoot complex applications.</p>
+          <pre><code># Using print statements
+def debug_function(data):
+    print(f"Input data: {data}")
+    result = process_data(data)
+    print(f"Processed result: {result}")
+    return result
+
+# Using Python debugger (pdb)
+import pdb
+
+def complex_function(x, y):
+    pdb.set_trace()  # Debugger will pause here
+    result = x * y + 10
+    return result
+
+# Using logging
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+
+def logged_function(value):
+    logger.debug(f"Processing value: {value}")
+    if value < 0:
+        logger.warning("Negative value detected")
+    result = abs(value) * 2
+    logger.info(f"Result: {result}")
+    return result</code></pre>
+          
+          <h3>Test Coverage and Best Practices:</h3>
+          <p>Test coverage analysis measures how much of your code is executed during testing, helping identify untested code paths and potential gaps in your test suite. Comprehensive testing includes edge cases, boundary values, and error conditions to ensure robust applications. Understanding coverage metrics, testing best practices, and systematic test design creates reliable software with confidence in code quality and maintainability.</p>
+          <pre><code># Test different scenarios
+def test_edge_cases():
+    # Test empty inputs
+    assert process_empty_list([]) == []
+    
+    # Test boundary values
+    assert validate_age(0) == True
+    assert validate_age(150) == True
+    
+    # Test invalid inputs
+    with pytest.raises(TypeError):
+        calculate_sum("invalid", "input")</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/6tNS--WetLI'
+      },
+      {
+        id: 'python-automation',
+        title: 'Automation & Scripting',
+        content: `
+          <h2>Python Automation and Scripting</h2>
+          <p>Python excels at automating repetitive tasks. Learn how to create scripts that can automate file operations, system tasks, and everyday workflows.</p>
+          
+          <h3>File and Directory Operations:</h3>
+          <p>File automation involves programmatically managing files and directories, enabling tasks like organizing files by type, batch renaming, and directory cleanup. Python's pathlib and shutil modules provide powerful tools for cross-platform file operations with clean, readable syntax. Understanding file automation helps you create scripts that save hours of manual work, organize digital content efficiently, and maintain clean file systems automatically.</p>
+          <pre><code>import os
+import shutil
+from pathlib import Path
+
+# Working with paths
+current_dir = Path.cwd()
+files_dir = current_dir / "files"
+files_dir.mkdir(exist_ok=True)
+
+# File operations
+def organize_files_by_extension(source_dir):
+    source_path = Path(source_dir)
+    
+    for file_path in source_path.iterdir():
+        if file_path.is_file():
+            extension = file_path.suffix[1:]  # Remove the dot
+            dest_dir = source_path / extension
+            dest_dir.mkdir(exist_ok=True)
+            
+            new_path = dest_dir / file_path.name
+            shutil.move(str(file_path), str(new_path))
+            print(f"Moved {file_path.name} to {extension}/ folder")</code></pre>
+          
+          <h3>System Automation:</h3>
+          <p>System automation enables scheduling and executing system-level tasks like database backups, log rotation, and maintenance scripts through Python's subprocess and scheduling capabilities. The schedule library provides intuitive task scheduling while subprocess handles external command execution safely. Understanding system automation allows you to create reliable scripts that handle critical maintenance tasks, ensuring system health and data integrity without manual intervention.</p>
+          <pre><code>import subprocess
+import schedule
+import time
+from datetime import datetime
+
+# Running system commands
+def backup_database():
+    try:
+        result = subprocess.run([
+            'mysqldump', '-u', 'username', '-p', 'database_name'
+        ], capture_output=True, text=True)
+        
+        if result.returncode == 0:
+            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+            backup_file = f"backup_{timestamp}.sql"
+            
+            with open(backup_file, 'w') as f:
+                f.write(result.stdout)
+            print(f"Backup created: {backup_file}")
+        else:
+            print(f"Backup failed: {result.stderr}")
+    except Exception as e:
+        print(f"Error during backup: {e}")
+
+# Scheduling tasks
+schedule.every().day.at("02:00").do(backup_database)
+schedule.every().monday.at("09:00").do(weekly_report)
+
+# Keep scheduler running
+while True:
+    schedule.run_pending()
+    time.sleep(60)</code></pre>
+          
+          <h3>Email Automation:</h3>
+          <p>Email automation streamlines communication tasks by programmatically sending notifications, reports, and alerts through SMTP protocols with support for attachments and HTML formatting. Python's email and smtplib modules provide comprehensive email handling capabilities for both simple notifications and complex email campaigns. Understanding email automation enables you to create systems that send automated reports, alert notifications, and maintain communication workflows without manual effort.</p>
+          <pre><code>import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.mime.base import MIMEBase
+from email import encoders
+
+def send_automated_email(to_email, subject, body, attachment=None):
+    smtp_server = "smtp.gmail.com"
+    smtp_port = 587
+    from_email = "your_email@gmail.com"
+    password = "your_app_password"
+    
+    # Create message
+    msg = MIMEMultipart()
+    msg['From'] = from_email
+    msg['To'] = to_email
+    msg['Subject'] = subject
+    
+    # Add body
+    msg.attach(MIMEText(body, 'plain'))
+    
+    # Add attachment if provided
+    if attachment:
+        with open(attachment, 'rb') as file:
+            part = MIMEBase('application', 'octet-stream')
+            part.set_payload(file.read())
+            encoders.encode_base64(part)
+            part.add_header(
+                'Content-Disposition',
+                f'attachment; filename= {attachment}'
+            )
+            msg.attach(part)
+    
+    # Send email
+    try:
+        server = smtplib.SMTP(smtp_server, smtp_port)
+        server.starttls()
+        server.login(from_email, password)
+        server.send_message(msg)
+        server.quit()
+        print("Email sent successfully!")
+    except Exception as e:
+        print(f"Error sending email: {e}")</code></pre>
+          
+          <h3>Data Processing Automation:</h3>
+          <p>Data processing automation handles repetitive data tasks like file parsing, data transformation, and report generation using pandas and other data libraries for efficient bulk operations. Automated data workflows can process multiple files, generate summaries, and create standardized reports on schedule. Understanding data automation enables you to create systems that handle large datasets, generate business insights automatically, and maintain data pipelines that save significant time and reduce human error.</p>
+          <pre><code>import pandas as pd
+import glob
+from datetime import datetime
+
+def process_daily_reports():
+    # Find all CSV files in reports directory
+    csv_files = glob.glob("reports/*.csv")
+    
+    combined_data = []
+    
+    for file in csv_files:
+        try:
+            df = pd.read_csv(file)
+            df['source_file'] = file
+            combined_data.append(df)
+            print(f"Processed: {file}")
+        except Exception as e:
+            print(f"Error processing {file}: {e}")
+    
+    if combined_data:
+        # Combine all data
+        final_df = pd.concat(combined_data, ignore_index=True)
+        
+        # Generate summary
+        summary = {
+            'total_records': len(final_df),
+            'files_processed': len(csv_files),
+            'processing_date': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        }
+        
+        # Save results
+        output_file = f"combined_report_{datetime.now().strftime('%Y%m%d')}.csv"
+        final_df.to_csv(output_file, index=False)
+        
+        print(f"Summary: {summary}")
+        return output_file
+    
+    return None</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/s8XjEuplx_U'
+      }
+    ]
+  },
+  {
+    id: 'flutter',
+    title: 'Flutter',
+    description: 'Learn and Build beautiful cross-platform mobile apps with Flutter',
+    image: '/images/flutter-course.jpg',
+    level: 'Beginner to Intermediate',
+    duration: '10 weeks',
+    modules: 14,
+    studentsEnrolled: 1923,
+    rating: 4.8,
+    instructor: {
+      name: 'Alex Kumar',
+      avatar: '/images/instructors/alex.jpg',
+      bio: 'Senior Flutter Developer with 5+ years experience in mobile app development'
+    },
+    tags: ['Flutter', 'Dart', 'Mobile Development', 'Cross-Platform', 'iOS', 'Android'],
+    learningPath: [
+      'Flutter Setup & Environment',
+      'Dart Programming Fundamentals',
+      'Flutter Widgets & Layouts', 
+      'State Management',
+      'Navigation & Routing',
+      'Working with APIs',
+      'Local Data Storage',
+      'Publishing Apps'
+    ],
+    introduction: `
+      <h2>Master Flutter - Build Beautiful Mobile Apps</h2>
+      <p>Flutter is Google's revolutionary UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase. With Flutter, you can create stunning, high-performance mobile apps for both iOS and Android using just one programming language - Dart.</p>
+      
+      <h3>Why Learn Flutter in 2026?</h3>
+      <p>Flutter has become the fastest-growing mobile development framework, used by companies like Google Pay, BMW, Alibaba, and eBay. Its "write once, run anywhere" approach significantly reduces development time and costs while maintaining native performance.</p>
+      
+      <h3>Learning Benefits of Flutter:</h3>
+      <ul>
+        <li><strong>Cross-Platform Efficiency:</strong> Build apps for iOS and Android simultaneously with one codebase</li>
+        <li><strong>Hot Reload:</strong> See changes instantly without restarting the app, accelerating development</li>
+        <li><strong>Beautiful UIs:</strong> Create pixel-perfect, customizable user interfaces with rich widgets</li>
+        <li><strong>Native Performance:</strong> Achieve 60fps performance comparable to native apps</li>
+        <li><strong>Single Language:</strong> Learn Dart once and build for multiple platforms</li>
+        <li><strong>Rich Ecosystem:</strong> Access thousands of packages and plugins for extended functionality</li>
+        <li><strong>Future-Proof Skills:</strong> Expandable to web and desktop development with same knowledge</li>
+      </ul>
+      
+      <h3>Prerequisites for Flutter:</h3>
+      <ul>
+        <li><strong>Programming Basics:</strong> Understanding of variables, functions, and OOP concepts (helpful but not required)</li>
+        <li><strong>Mobile Familiarity:</strong> Basic understanding of mobile app interfaces and user experience</li>
+        <li><strong>Development Environment:</strong> Android Studio or VS Code with Flutter extensions</li>
+        <li><strong>System Requirements:</strong> Windows/macOS/Linux with sufficient storage for SDKs</li>
+        <li><strong>Device Testing:</strong> Android emulator or physical device for testing</li>
+        <li><strong>Version Control:</strong> Basic Git knowledge for project management</li>
+      </ul>
+      
+      <h3>Modern Flutter Ecosystem (2026):</h3>
+      <ul>
+        <li><strong>Flutter 3.16+:</strong> Latest stable version with improved performance and new features</li>
+        <li><strong>Dart 3.2+:</strong> Modern programming language with null safety and pattern matching</li>
+        <li><strong>State Management:</strong> Provider, Riverpod, BLoC, GetX for app state handling</li>
+        <li><strong>UI Components:</strong> Material Design 3, Cupertino, custom widget libraries</li>
+        <li><strong>Backend Integration:</strong> Firebase, Supabase, REST APIs, GraphQL support</li>
+        <li><strong>Database:</strong> SQLite, Hive, Isar for local data storage</li>
+        <li><strong>Testing:</strong> Unit tests, widget tests, integration tests for quality assurance</li>
+        <li><strong>Deployment:</strong> Google Play Store, Apple App Store, web deployment</li>
+        <li><strong>DevTools:</strong> Flutter Inspector, performance profiler, network inspector</li>
+      </ul>
+      
+      <h3>Industry Applications:</h3>
+      <ul>
+        <li><strong>E-commerce:</strong> Alibaba, eBay use Flutter for shopping applications</li>
+        <li><strong>Financial Services:</strong> Google Pay, Nubank for secure payment apps</li>
+        <li><strong>Social Media:</strong> TikTok, Instagram use Flutter for certain features</li>
+        <li><strong>Transportation:</strong> BMW, Toyota for automotive companion apps</li>
+        <li><strong>Entertainment:</strong> Disney+, Hamilton for media streaming apps</li>
+        <li><strong>Productivity:</strong> Google Ads, Realtor.com for business applications</li>
+      </ul>
+    `,
+    lessons: [
+      {
+        id: 'flutter-setup',
+        title: 'Flutter Setup & Environment',
+        content: `
+          <h2>Setting Up Flutter Development Environment</h2>
+          <p>Before we start building Flutter apps, we need to set up our development environment properly. This includes installing Flutter SDK, setting up an IDE, and configuring device emulators.</p>
+          
+          <h3>Installing Flutter SDK:</h3>
+          <ol>
+            <li>Download Flutter SDK from <a href="https://flutter.dev" target="_blank">flutter.dev</a></li>
+            <li>Extract the downloaded file to a desired location</li>
+            <li>Add Flutter to your system PATH</li>
+            <li>Run <code>flutter doctor</code> to check installation</li>
+          </ol>
+          
+          <h3>IDE Setup:</h3>
+          <p><strong>Android Studio:</strong></p>
+          <ul>
+            <li>Install Android Studio with Android SDK</li>
+            <li>Install Flutter and Dart plugins</li>
+            <li>Configure Android Virtual Device (AVD)</li>
+          </ul>
+          
+          <p><strong>VS Code (Alternative):</strong></p>
+          <ul>
+            <li>Install Flutter extension</li>
+            <li>Install Dart extension</li>
+            <li>Configure Flutter SDK path</li>
+          </ul>
+          
+          <h3>Flutter Doctor Check:</h3>
+          <p>Flutter Doctor is a command-line tool that verifies your development environment setup and identifies any missing dependencies or configuration issues. Running flutter doctor ensures you have all necessary tools installed for Flutter development, including Android SDK, iOS development tools, and IDE plugins. Proper environment setup is crucial for smooth Flutter development experience.</p>
+          <pre><code># Check Flutter installation
+flutter doctor
+
+# Expected output should show:
+# ✓ Flutter (Channel stable)
+# ✓ Android toolchain
+# ✓ IDE setup
+# ✓ Connected device</code></pre>
+          
+          <h3>Creating Your First Flutter App:</h3>
+          <p>Creating a new Flutter project sets up the basic structure and files needed for mobile app development. The Flutter CLI generates a starter app with example code demonstrating fundamental concepts like widgets, state management, and hot reload. Understanding the project structure and generated files is essential for building and organizing your Flutter applications effectively.</p>
+          <pre><code># Create new Flutter project
+flutter create my_first_app
+
+# Navigate to project directory
+cd my_first_app
+
+# Run the app
+flutter run</code></pre>
+          
+          <h3>Project Structure Overview:</h3>
+          <ul>
+            <li><strong>lib/:</strong> Contains Dart source code</li>
+            <li><strong>android/:</strong> Android-specific configuration</li>
+            <li><strong>ios/:</strong> iOS-specific configuration</li>
+            <li><strong>pubspec.yaml:</strong> Project dependencies and configuration</li>
+            <li><strong>test/:</strong> Unit and widget tests</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/Z6KZ3cTGBWw'
+      },
+      {
+        id: 'dart-basics',
+        title: 'Dart Programming Fundamentals',
+        content: `
+          <h2>Dart Language Basics</h2>
+          <p>Dart is the programming language used by Flutter. It's easy to learn, especially if you have experience with languages like JavaScript, Java, or C#. Let's explore Dart fundamentals.</p>
+          
+          <h3>Variables and Data Types:</h3>
+          <p>Dart supports both static and dynamic typing, allowing you to declare variables with explicit types or let Dart infer them automatically. Understanding Dart's type system, including built-in types like String, int, double, and bool, is fundamental to writing reliable Flutter applications. Dart's sound null safety also helps prevent null reference errors at compile time.</p>
+          <pre><code>// Variables
+var name = 'Flutter';  // Type inferred as String
+String title = 'Mobile Development';
+int age = 5;  // Flutter's age in years
+double version = 3.16;
+bool isAwesome = true;
+
+// Constants
+final String company = 'Google';  // Runtime constant
+const int maxItems = 100;        // Compile-time constant</code></pre>
+          
+          <h3>Functions:</h3>
+          <p>Functions in Dart are first-class objects that can be assigned to variables, passed as parameters, and returned from other functions. Dart supports various function features including optional parameters, named parameters, and arrow syntax for concise function definitions. Understanding functions is essential for organizing code and building reusable components in Flutter applications.</p>
+          <pre><code>// Basic function
+String greetUser(String name) {
+  return 'Hello, \$name!';
+}
+
+// Arrow function
+String greetUserShort(String name) => 'Hello, \$name!';
+
+// Optional parameters
+String greetWithTitle([String? title]) {
+  return 'Hello, \${title ?? 'User'}!';
+}
+
+// Named parameters
+String createMessage({required String name, String greeting = 'Hello'}) {
+  return '\$greeting, \$name!';
+}</code></pre>
+          
+          <h3>Collections:</h3>
+          <p>Dart provides powerful collection types including Lists, Sets, and Maps that are essential for managing data in Flutter applications. These collections offer rich APIs for data manipulation, filtering, and transformation. Understanding how to work with collections effectively is crucial for handling dynamic data, managing state, and building responsive user interfaces.</p>
+          <pre><code>// Lists
+List<String> fruits = ['apple', 'banana', 'orange'];
+fruits.add('mango');
+print(fruits.length);
+
+// Maps
+Map<String, int> scores = {
+  'Alice': 95,
+  'Bob': 87,
+  'Charlie': 92
+};
+scores['David'] = 89;
+
+// Sets
+Set<String> uniqueNames = {'Alice', 'Bob', 'Charlie'};</code></pre>
+          
+          <h3>Classes and Objects:</h3>
+          <pre><code>class Person {
+  String name;
+  int age;
+  
+  // Constructor
+  Person(this.name, this.age);
+  
+  // Named constructor
+  Person.guest() : name = 'Guest', age = 0;
+  
+  // Method
+  void introduce() {
+    print('Hi, I am \$name, \$age years old.');
+  }
+  
+  // Getter
+  String get info => '\$name (\$age)';
+  
+  // Setter
+  set updateAge(int newAge) {
+    if (newAge >= 0) age = newAge;
+  }
+}
+
+// Usage
+Person person = Person('Alice', 25);
+person.introduce();</code></pre>
+          
+          <h3>Null Safety:</h3>
+          <p>Dart's sound null safety prevents null reference errors by distinguishing between nullable and non-nullable types at compile time. This feature eliminates one of the most common sources of runtime crashes in mobile applications. Understanding nullable types, null-aware operators, and the late keyword is essential for writing robust Flutter applications.</p>
+          <pre><code>// Non-nullable types
+String name = 'Flutter';  // Cannot be null
+
+// Nullable types
+String? nickname;  // Can be null
+
+// Null-aware operators
+String displayName = nickname ?? 'No nickname';
+int? length = nickname?.length;
+
+// Null assertion
+String definitelyNotNull = nickname!;  // Use carefully!</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/Ej_Pcr4uC2Q'
+      },
+      {
+        id: 'flutter-widgets',
+        title: 'Flutter Widgets & Layouts',
+        content: `
+          <h2>Understanding Flutter Widgets</h2>
+          <p>Everything in Flutter is a widget! Widgets are the building blocks of Flutter apps. They describe what the UI should look like and how it should behave.</p>
+          
+          <h3>Basic Widgets:</h3>
+          <p>Widgets are the fundamental building blocks of Flutter applications, representing everything from structural elements to stylistic elements. Flutter follows a 'everything is a widget' philosophy, where UI components, layouts, and even invisible elements like padding are widgets. Understanding basic widgets and how to compose them is essential for creating beautiful, responsive mobile applications.</p>
+          <pre><code>import 'package:flutter/material.dart';
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'My Flutter App',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Welcome to Flutter'),
+          backgroundColor: Colors.blue,
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Hello Flutter!',
+                style: TextStyle(fontSize: 24),
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  print('Button pressed!');
+                },
+                child: Text('Click Me'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}</code></pre>
+          
+          <h3>Layout Widgets:</h3>
+          <p>Layout widgets are fundamental building blocks that control how other widgets are positioned and sized within your Flutter application. Row, Column, Stack, and Container widgets provide flexible ways to arrange UI elements horizontally, vertically, and in layers. Mastering layout widgets is essential for creating responsive and visually appealing user interfaces.</p>
+          <pre><code>// Row - Horizontal layout
+Row(
+  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  children: [
+    Icon(Icons.home),
+    Icon(Icons.search),
+    Icon(Icons.settings),
+  ],
+)
+
+// Column - Vertical layout
+Column(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    Text('Title'),
+    Text('Subtitle'),
+    Text('Description'),
+  ],
+)
+
+// Container - Box model
+Container(
+  width: 200,
+  height: 100,
+  padding: EdgeInsets.all(16),
+  margin: EdgeInsets.symmetric(vertical: 8),
+  decoration: BoxDecoration(
+    color: Colors.blue,
+    borderRadius: BorderRadius.circular(8),
+  ),
+  child: Text('Container content'),
+)</code></pre>
+          
+          <h3>Common UI Widgets:</h3>
+          <p>Flutter provides a rich set of pre-built UI widgets that handle common interface elements like images, buttons, text inputs, and icons. These widgets follow Material Design and Cupertino design principles, ensuring your app looks native on both Android and iOS platforms. Understanding these widgets and their properties is key to building polished mobile applications quickly.</p>
+          <pre><code>// Image widget
+Image.asset('assets/images/logo.png'),
+Image.network('https://example.com/image.jpg'),
+
+// TextField for input
+TextField(
+  decoration: InputDecoration(
+    labelText: 'Enter your name',
+    border: OutlineInputBorder(),
+  ),
+  onChanged: (value) {
+    print('Input: \$value');
+  },
+)
+
+// ListView for scrollable lists
+ListView(
+  children: [
+    ListTile(
+      leading: Icon(Icons.person),
+      title: Text('John Doe'),
+      subtitle: Text('john@example.com'),
+    ),
+    ListTile(
+      leading: Icon(Icons.phone),
+      title: Text('Phone'),
+      subtitle: Text('+1 234 567 8900'),
+    ),
+  ],
+)</code></pre>
+          
+          <h3>Styling and Theming:</h3>
+          <p>Flutter's theming system allows you to create consistent visual designs across your entire application while maintaining the flexibility to customize individual widgets. Understanding how to work with themes, colors, typography, and custom styles ensures your app has a professional appearance and consistent user experience. Proper styling is crucial for creating visually appealing mobile applications.</p>
+          <pre><code>// Text styling
+Text(
+  'Styled Text',
+  style: TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+    color: Colors.red,
+    decoration: TextDecoration.underline,
+  ),
+)
+
+// Custom theme
+MaterialApp(
+  theme: ThemeData(
+    primarySwatch: Colors.blue,
+    fontFamily: 'Roboto',
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.orange,
+        foregroundColor: Colors.white,
+      ),
+    ),
+  ),
+  home: MyHomePage(),
+)</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/1gDhl4leEzA'
+      },
+      {
+        id: 'stateful-widgets',
+        title: 'Stateful Widgets & State Management',
+        content: `
+          <h2>Stateful Widgets and State Management</h2>
+          <p>While StatelessWidgets are immutable, StatefulWidgets can change their appearance in response to user interactions or data changes. Understanding state is crucial for interactive apps.</p>
+          
+          <h3>StatefulWidget Basics:</h3>
+          <p>StatefulWidgets enable dynamic content by maintaining mutable state that can change over time in response to user interactions or data updates. The setState() method triggers UI rebuilds when state changes, while the separation of StatefulWidget and State classes follows Flutter's architectural patterns. Understanding the widget-state relationship and proper state modification techniques is fundamental for creating interactive, responsive Flutter applications.</p>
+          <pre><code>class CounterWidget extends StatefulWidget {
+  @override
+  _CounterWidgetState createState() => _CounterWidgetState();
+}
+
+class _CounterWidgetState extends State<CounterWidget> {
+  int _counter = 0;
+  
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Counter App')),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Counter Value:'),
+            Text(
+              '\$_counter',
+              style: TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _incrementCounter,
+        child: Icon(Icons.add),
+      ),
+    );
+  }
+}</code></pre>
+          
+          <h3>Widget Lifecycle:</h3>
+          <p>Widget lifecycle methods provide hooks for managing resources, initializing data, and cleaning up when widgets are created, updated, or destroyed. InitState() handles one-time setup, build() constructs the UI, didChangeDependencies() responds to inherited widget changes, and dispose() performs cleanup. Understanding lifecycle management prevents memory leaks and ensures optimal performance in complex Flutter applications.</p>
+          <pre><code>class LifecycleWidget extends StatefulWidget {
+  @override
+  _LifecycleWidgetState createState() => _LifecycleWidgetState();
+}
+
+class _LifecycleWidgetState extends State<LifecycleWidget> {
+  @override
+  void initState() {
+    super.initState();
+    print('Widget initialized');
+    // Initialize data, start timers, etc.
+  }
+  
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    print('Dependencies changed');
+  }
+  
+  @override
+  Widget build(BuildContext context) {
+    print('Building widget');
+    return Container();
+  }
+  
+  @override
+  void dispose() {
+    print('Widget disposed');
+    // Clean up resources, cancel timers, etc.
+    super.dispose();
+  }
+}</code></pre>
+          
+          <h3>Form Handling:</h3>
+          <p>Form handling in Flutter involves managing user input through TextEditingController objects and validating data with GlobalKey<FormState> for form-wide validation. TextFormField widgets provide built-in validation capabilities, while proper controller disposal prevents memory leaks. Understanding form state management, validation patterns, and input handling is essential for creating robust user registration, login, and data entry interfaces.</p>
+          <pre><code>class LoginForm extends StatefulWidget {
+  @override
+  _LoginFormState createState() => _LoginFormState();
+}
+
+class _LoginFormState extends State<LoginForm> {
+  final _formKey = GlobalKey<FormState>();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Login')),
+      body: Padding(
+        padding: EdgeInsets.all(16),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              TextFormField(
+                controller: _emailController,
+                decoration: InputDecoration(labelText: 'Email'),
+                validator: (value) {
+                  if (value?.isEmpty ?? true) {
+                    return 'Please enter email';
+                  }
+                  return null;
+                },
+              ),
+              TextFormField(
+                controller: _passwordController,
+                decoration: InputDecoration(labelText: 'Password'),
+                obscureText: true,
+                validator: (value) {
+                  if (value?.isEmpty ?? true) {
+                    return 'Please enter password';
+                  }
+                  return null;
+                },
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: _submitForm,
+                child: Text('Login'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+  
+  void _submitForm() {
+    if (_formKey.currentState?.validate() ?? false) {
+      // Process login
+      print('Email: \${_emailController.text}');
+      print('Password: \${_passwordController.text}');
+    }
+  }
+  
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+}</code></pre>
+          
+          <h3>Managing Complex State:</h3>
+          <p>Complex state management involves coordinating multiple data sources, handling collections of data, and managing interdependent UI components efficiently. List manipulation, dynamic UI updates, and state synchronization require careful setState() usage and proper data structure management. Understanding complex state patterns prepares you for real-world applications with multiple screens, data persistence, and sophisticated user interactions.</p>
+          <pre><code>class TodoApp extends StatefulWidget {
+  @override
+  _TodoAppState createState() => _TodoAppState();
+}
+
+class _TodoAppState extends State<TodoApp> {
+  List<String> _todos = [];
+  final _textController = TextEditingController();
+  
+  void _addTodo() {
+    if (_textController.text.isNotEmpty) {
+      setState(() {
+        _todos.add(_textController.text);
+        _textController.clear();
+      });
+    }
+  }
+  
+  void _removeTodo(int index) {
+    setState(() {
+      _todos.removeAt(index);
+    });
+  }
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Todo List')),
+      body: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.all(16),
+            child: Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    controller: _textController,
+                    decoration: InputDecoration(labelText: 'Add todo'),
+                  ),
+                ),
+                IconButton(
+                  onPressed: _addTodo,
+                  icon: Icon(Icons.add),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: _todos.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text(_todos[index]),
+                  trailing: IconButton(
+                    onPressed: () => _removeTodo(index),
+                    icon: Icon(Icons.delete),
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/AqCMFXEmf3w'
+      },
+      {
+        id: 'navigation-routing',
+        title: 'Navigation & Routing',
+        content: `
+          <h2>Navigation and Routing in Flutter</h2>
+          <p>Navigation allows users to move between different screens in your app. Flutter provides powerful navigation and routing capabilities to create seamless user experiences.</p>
+          
+          <h3>Basic Navigation:</h3>
+          <p>Navigation is fundamental to multi-screen mobile applications, allowing users to move between different parts of your app seamlessly. Flutter's Navigator widget manages a stack of routes, enabling push and pop operations for screen transitions. Understanding navigation patterns and route management is essential for creating intuitive user experiences in mobile applications.</p>
+          <pre><code>// Navigate to a new screen
+Navigator.push(
+  context,
+  MaterialPageRoute(builder: (context) => SecondScreen()),
+);
+
+// Go back to previous screen
+Navigator.pop(context);
+
+// Replace current screen
+Navigator.pushReplacement(
+  context,
+  MaterialPageRoute(builder: (context) => NewScreen()),
+);</code></pre>
+          
+          <h3>Creating Multiple Screens:</h3>
+          <p>Creating multiple screens involves building separate StatelessWidget or StatefulWidget classes that represent different app sections or pages. Each screen should be self-contained with its own UI logic, while data can be passed between screens through constructor parameters. Understanding screen separation, data passing techniques, and maintaining navigation state is fundamental for building multi-screen Flutter applications with clean architecture.</p>
+          <pre><code>class FirstScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('First Screen')),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('This is the first screen'),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SecondScreen(message: 'Hello from First Screen!'),
+                  ),
+                );
+              },
+              child: Text('Go to Second Screen'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class SecondScreen extends StatelessWidget {
+  final String message;
+  
+  SecondScreen({required this.message});
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Second Screen')),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(message),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text('Go Back'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}</code></pre>
+          
+          <h3>Named Routes:</h3>
+          <p>Named routes provide a clean way to organize navigation in larger Flutter applications by assigning string identifiers to different screens. This approach makes navigation code more maintainable and enables features like deep linking and programmatic navigation. Understanding named routes is important for building scalable mobile applications with complex navigation requirements.</p>
+          <pre><code>// Define routes in MaterialApp
+MaterialApp(
+  title: 'Navigation Demo',
+  initialRoute: '/',
+  routes: {
+    '/': (context) => HomeScreen(),
+    '/profile': (context) => ProfileScreen(),
+    '/settings': (context) => SettingsScreen(),
+  },
+)
+
+// Navigate using named routes
+Navigator.pushNamed(context, '/profile');
+
+// Navigate with arguments
+Navigator.pushNamed(
+  context, 
+  '/profile',
+  arguments: {'userId': 123, 'userName': 'Alice'},
+);
+
+// Extract arguments in destination screen
+class ProfileScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final Map<String, dynamic> args = 
+        ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>;
+    
+    return Scaffold(
+      appBar: AppBar(title: Text('Profile')),
+      body: Center(
+        child: Text('User: \${args['userName']}'),
+      ),
+    );
+  }
+}</code></pre>
+          
+          <h3>Tab Navigation:</h3>
+          <p>Tab navigation provides users with quick access to different app sections through bottom or top tabs, commonly used in social media and productivity apps. BottomNavigationBar manages tab states and screen switching through index-based navigation with setState() for dynamic updates. Understanding tab navigation patterns, state preservation between tabs, and proper tab management creates intuitive user experiences in mobile applications.</p>
+          <pre><code>class TabNavigationExample extends StatefulWidget {
+  @override
+  _TabNavigationExampleState createState() => _TabNavigationExampleState();
+}
+
+class _TabNavigationExampleState extends State<TabNavigationExample> {
+  int _currentIndex = 0;
+  
+  final List<Widget> _screens = [
+    HomeTab(),
+    SearchTab(),
+    ProfileTab(),
+  ];
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: _screens[_currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: 'Search',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+        ],
+      ),
+    );
+  }
+}</code></pre>
+          
+          <h3>Drawer Navigation:</h3>
+          <p>Drawer navigation provides a slide-out menu for accessing secondary navigation options and app settings, following Material Design patterns for consistent user experience. The Drawer widget integrates seamlessly with Scaffold and supports customized headers, icons, and navigation actions. Understanding drawer implementation, proper menu organization, and navigation integration creates professional mobile apps with comprehensive navigation systems.</p>
+          <pre><code>Scaffold(
+  appBar: AppBar(title: Text('App with Drawer')),
+  drawer: Drawer(
+    child: ListView(
+      padding: EdgeInsets.zero,
+      children: [
+        DrawerHeader(
+          decoration: BoxDecoration(color: Colors.blue),
+          child: Text(
+            'Menu',
+            style: TextStyle(color: Colors.white, fontSize: 24),
+          ),
+        ),
+        ListTile(
+          leading: Icon(Icons.home),
+          title: Text('Home'),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.pushNamed(context, '/');
+          },
+        ),
+        ListTile(
+          leading: Icon(Icons.settings),
+          title: Text('Settings'),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.pushNamed(context, '/settings');
+          },
+        ),
+      ],
+    ),
+  ),
+  body: Center(child: Text('Main Content')),
+)</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/nyvwx7o277U'
+      },
+      {
+        id: 'flutter-basics-final',
+        title: 'Building Your First Complete App',
+        content: `
+          <h2>Building a Complete Flutter App</h2>
+          <p>Let's put everything together and build a complete Flutter app that demonstrates all the concepts we've learned so far.</p>
+          
+          <h3>App Structure - Personal Expense Tracker:</h3>
+          <p>Building a complete expense tracker app demonstrates how to structure a real-world Flutter application with multiple screens, data models, and user interactions. This practical project integrates navigation, state management, form handling, and data persistence. Understanding how to architect Flutter applications is crucial for building maintainable and scalable mobile apps.</p>
+          <pre><code>// main.dart
+import 'package:flutter/material.dart';
+import 'screens/home_screen.dart';
+
+void main() {
+  runApp(ExpenseTrackerApp());
+}
+
+class ExpenseTrackerApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Expense Tracker',
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: HomeScreen(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}</code></pre>
+          
+          <h3>Data Model:</h3>
+          <p>Data models define the structure and behavior of your application's data, serving as blueprints for objects that represent real-world entities. The Expense class encapsulates expense properties while enums provide type-safe category classification with extensions for display names and icons. Understanding proper data modeling with classes, enums, and extensions creates maintainable, scalable applications with clean separation between data and presentation layers.</p>
+          <pre><code>// models/expense.dart
+class Expense {
+  final String id;
+  final String title;
+  final double amount;
+  final DateTime date;
+  final Category category;
+  
+  Expense({
+    required this.id,
+    required this.title,
+    required this.amount,
+    required this.date,
+    required this.category,
+  });
+}
+
+enum Category { food, transport, entertainment, utilities, other }
+
+extension CategoryExtension on Category {
+  String get displayName {
+    switch (this) {
+      case Category.food:
+        return 'Food';
+      case Category.transport:
+        return 'Transport';
+      case Category.entertainment:
+        return 'Entertainment';
+      case Category.utilities:
+        return 'Utilities';
+      case Category.other:
+        return 'Other';
+    }
+  }
+  
+  IconData get icon {
+    switch (this) {
+      case Category.food:
+        return Icons.restaurant;
+      case Category.transport:
+        return Icons.directions_car;
+      case Category.entertainment:
+        return Icons.movie;
+      case Category.utilities:
+        return Icons.home;
+      case Category.other:
+        return Icons.category;
+    }
+  }
+}</code></pre>
+          
+          <h3>Home Screen:</h3>
+          <p>The home screen demonstrates comprehensive Flutter development by integrating state management, UI composition, and user interactions in a single cohesive interface. List management with setState(), dynamic UI updates, dialog presentations, and data calculations showcase real-world app development patterns. Understanding how to combine multiple Flutter concepts into functional screens is essential for building complete, production-ready mobile applications.</p>
+          <pre><code>// screens/home_screen.dart
+class HomeScreen extends StatefulWidget {
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  List<Expense> _expenses = [];
+  
+  void _addExpense(Expense expense) {
+    setState(() {
+      _expenses.add(expense);
+    });
+  }
+  
+  void _removeExpense(String id) {
+    setState(() {
+      _expenses.removeWhere((expense) => expense.id == id);
+    });
+  }
+  
+  double get totalAmount {
+    return _expenses.fold(0.0, (sum, expense) => sum + expense.amount);
+  }
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Expense Tracker'),
+        elevation: 0,
+      ),
+      body: Column(
+        children: [
+          // Total Amount Card
+          Container(
+            width: double.infinity,
+            padding: EdgeInsets.all(20),
+            margin: EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: Colors.green,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Column(
+              children: [
+                Text(
+                  'Total Expenses',
+                  style: TextStyle(color: Colors.white, fontSize: 16),
+                ),
+                SizedBox(height: 8),
+                Text(
+                  '\\\$\${totalAmount.toStringAsFixed(2)}',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          // Expenses List
+          Expanded(
+            child: _expenses.isEmpty
+                ? Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.receipt, size: 64, color: Colors.grey),
+                        SizedBox(height: 16),
+                        Text('No expenses yet!', style: TextStyle(fontSize: 18)),
+                      ],
+                    ),
+                  )
+                : ListView.builder(
+                    itemCount: _expenses.length,
+                    itemBuilder: (context, index) {
+                      final expense = _expenses[index];
+                      return Card(
+                        margin: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                        child: ListTile(
+                          leading: Icon(expense.category.icon),
+                          title: Text(expense.title),
+                          subtitle: Text(expense.category.displayName),
+                          trailing: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Text(
+                                '\\\$\${expense.amount.toStringAsFixed(2)}',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                '\${expense.date.day}/\${expense.date.month}',
+                                style: TextStyle(fontSize: 12),
+                              ),
+                            ],
+                          ),
+                          onLongPress: () {
+                            _showDeleteDialog(expense);
+                          },
+                        ),
+                      );
+                    },
+                  ),
+          ),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => _showAddExpenseDialog(),
+        child: Icon(Icons.add),
+      ),
+    );
+  }
+  
+  void _showAddExpenseDialog() {
+    showDialog(
+      context: context,
+      builder: (context) => AddExpenseDialog(onAddExpense: _addExpense),
+    );
+  }
+  
+  void _showDeleteDialog(Expense expense) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text('Delete Expense'),
+        content: Text('Are you sure you want to delete "\${expense.title}"?'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text('Cancel'),
+          ),
+          TextButton(
+            onPressed: () {
+              _removeExpense(expense.id);
+              Navigator.pop(context);
+            },
+            child: Text('Delete', style: TextStyle(color: Colors.red)),
+          ),
+        ],
+      ),
+    );
+  }
+}</code></pre>
+          
+          <h3>Key Concepts Demonstrated:</h3>
+          <ul>
+            <li><strong>State Management:</strong> Using setState to manage expense list</li>
+            <li><strong>Widget Composition:</strong> Breaking down UI into reusable components</li>
+            <li><strong>User Input:</strong> Forms, text fields, dropdowns</li>
+            <li><strong>Data Modeling:</strong> Creating custom classes and enums</li>
+            <li><strong>Lists and Cards:</strong> Displaying dynamic content</li>
+            <li><strong>Dialogs:</strong> Modal interactions for adding/deleting items</li>
+            <li><strong>Styling:</strong> Custom themes, colors, and layouts</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/GLSG_Wh_YWc'
+      },
+      {
+        id: 'flutter-apis',
+        title: 'APIs & HTTP',
+        content: `
+          <h2>Working with APIs in Flutter</h2>
+          <p>Learn how to fetch data from REST APIs and handle HTTP requests in Flutter applications.</p>
+          
+          <h3>HTTP Package Setup:</h3>
+          <p>Setting up HTTP communication in Flutter requires the http package for making network requests and dart:convert for JSON serialization and deserialization. Proper package configuration in pubspec.yaml and correct imports enable seamless API integration. Understanding package management and dependency setup is fundamental for building Flutter apps that communicate with external services and REST APIs.</p>
+          <pre><code># Add to pubspec.yaml
+dependencies:
+  http: ^1.1.0
+
+# Import in your file
+import 'package:http/http.dart' as http;
+import 'dart:convert';</code></pre>
+          
+          <h3>GET Request:</h3>
+          <p>GET requests retrieve data from REST APIs using asynchronous programming patterns with Future and await keywords for non-blocking operations. Response status code validation, JSON parsing, and error handling ensure robust network communication. Understanding GET request patterns, data transformation from JSON to Dart objects, and proper exception handling is essential for fetching data reliably from external APIs.</p>
+          <pre><code>Future&lt;List&lt;Post&gt;&gt; fetchPosts() async {
+  final response = await http.get(
+    Uri.parse('https://jsonplaceholder.typicode.com/posts'),
+  );
+  
+  if (response.statusCode == 200) {
+    List<dynamic> data = jsonDecode(response.body);
+    return data.map((json) => Post.fromJson(json)).toList();
+  } else {
+    throw Exception('Failed to load posts');
+  }
+}</code></pre>
+          
+          <h3>POST Request:</h3>
+          <p>POST requests send data to servers for creating or updating resources, requiring proper headers, request body formatting, and JSON encoding of payload data. Content-Type headers ensure server understanding of data format, while status code checking validates successful operations. Understanding POST request structure, data serialization, and server response handling enables creating, updating, and managing resources through REST API interactions.</p>
+          <pre><code>Future&lt;Post&gt; createPost(String title, String body) async {
+  final response = await http.post(
+    Uri.parse('https://jsonplaceholder.typicode.com/posts'),
+    headers: {'Content-Type': 'application/json'},
+    body: jsonEncode({
+      'title': title,
+      'body': body,
+      'userId': 1,
+    }),
+  );
+  
+  if (response.statusCode == 201) {
+    return Post.fromJson(jsonDecode(response.body));
+  } else {
+    throw Exception('Failed to create post');
+  }
+}</code></pre>
+          
+          <h3>Using FutureBuilder:</h3>
+          <p>FutureBuilder bridges asynchronous data fetching with Flutter's reactive UI system, automatically rebuilding widgets based on Future states like loading, success, and error. Snapshot objects provide access to data, error states, and connection status for comprehensive UI state management. Understanding FutureBuilder patterns, loading indicators, and error handling creates responsive user interfaces that gracefully handle network operations and data presentation.</p>
+          <pre><code>FutureBuilder&lt;List&lt;Post&gt;&gt;(
+  future: fetchPosts(),
+  builder: (context, snapshot) {
+    if (snapshot.hasData) {
+      return ListView.builder(
+        itemCount: snapshot.data!.length,
+        itemBuilder: (context, index) {
+          Post post = snapshot.data![index];
+          return ListTile(
+            title: Text(post.title),
+            subtitle: Text(post.body),
+          );
+        },
+      );
+    } else if (snapshot.hasError) {
+      return Text('Error: \${snapshot.error}');
+    }
+    return CircularProgressIndicator();
+  },
+)</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/aIJU68Phi1w'
+      },
+      {
+        id: 'flutter-storage',
+        title: 'Local Storage',
+        content: `
+          <h2>Local Data Storage in Flutter</h2>
+          <p>Learn different ways to store data locally in Flutter apps using SharedPreferences, SQLite, and Hive.</p>
+          
+          <h3>SharedPreferences Setup:</h3>
+          <p>SharedPreferences provides a simple key-value storage mechanism for persisting small amounts of data like user preferences, settings, and session information across app launches. This cross-platform solution works seamlessly on both Android and iOS, storing data in platform-specific locations. Understanding SharedPreferences setup and configuration is essential for maintaining user preferences and lightweight data persistence in Flutter applications.</p>
+          <pre><code># Add to pubspec.yaml
+dependencies:
+  shared_preferences: ^2.2.2
+
+# Import
+import 'package:shared_preferences/shared_preferences.dart';</code></pre>
+          
+          <h3>Storing Simple Data:</h3>
+          <p>SharedPreferences supports various primitive data types including strings, integers, booleans, and doubles with asynchronous operations for reading and writing data. The singleton instance pattern ensures data consistency while async/await patterns provide non-blocking storage operations. Understanding simple data storage patterns enables efficient management of user settings, authentication tokens, and application state persistence across app sessions.</p>
+          <pre><code>// Save data
+Future<void> saveUserData() async {
+  final prefs = await SharedPreferences.getInstance();
+  await prefs.setString('username', 'john_doe');
+  await prefs.setInt('age', 25);
+  await prefs.setBool('isLoggedIn', true);
+}
+
+// Read data
+Future<String?> getUserName() async {
+  final prefs = await SharedPreferences.getInstance();
+  return prefs.getString('username');
+}
+
+// Remove data
+Future<void> clearUserData() async {
+  final prefs = await SharedPreferences.getInstance();
+  await prefs.remove('username');
+}</code></pre>
+          
+          <h3>SQLite Database:</h3>
+          <p>SQLite provides robust relational database capabilities for complex data storage requirements, supporting structured queries, transactions, and relationships between data entities. The sqflite package offers Flutter integration with database initialization, schema creation, and migration support. Understanding SQLite setup, singleton database patterns, and table schema design enables building applications with sophisticated data storage, querying, and relational data management requirements.</p>
+          <pre><code># Add to pubspec.yaml
+dependencies:
+  sqflite: ^2.3.0
+  path: ^1.8.0
+
+// Database helper
+class DatabaseHelper {
+  static final DatabaseHelper _instance = DatabaseHelper._internal();
+  factory DatabaseHelper() => _instance;
+  DatabaseHelper._internal();
+  
+  Database? _database;
+  
+  Future<Database> get database async {
+    if (_database != null) return _database!;
+    _database = await _initDatabase();
+    return _database!;
+  }
+  
+  Future<Database> _initDatabase() async {
+    String path = join(await getDatabasesPath(), 'app_database.db');
+    return await openDatabase(
+      path,
+      version: 1,
+      onCreate: _createTables,
+    );
+  }
+  
+  Future<void> _createTables(Database db, int version) async {
+    await db.execute('''
+      CREATE TABLE users(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        email TEXT NOT NULL
+      )
+    ''');
+  }
+}</code></pre>
+          
+          <h3>CRUD Operations:</h3>
+          <p>CRUD (Create, Read, Update, Delete) operations form the foundation of database interactions, enabling complete data lifecycle management through standardized SQL operations. Parameterized queries prevent SQL injection attacks while asynchronous execution ensures smooth UI performance during database operations. Understanding CRUD patterns, prepared statements, and error handling creates robust data management systems capable of handling complex business logic and data integrity requirements.</p>
+          <pre><code>// Insert
+Future<int> insertUser(Map<String, dynamic> user) async {
+  final db = await database;
+  return await db.insert('users', user);
+}
+
+// Query
+Future<List<Map<String, dynamic>>> getUsers() async {
+  final db = await database;
+  return await db.query('users');
+}
+
+// Update
+Future<int> updateUser(int id, Map<String, dynamic> user) async {
+  final db = await database;
+  return await db.update('users', user, where: 'id = ?', whereArgs: [id]);
+}
+
+// Delete
+Future<int> deleteUser(int id) async {
+  final db = await database;
+  return await db.delete('users', where: 'id = ?', whereArgs: [id]);
+}</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/HefHf5B1YM0'
+      },
+      {
+        id: 'flutter-animation',
+        title: 'Animations',
+        content: `
+          <h2>Flutter Animations</h2>
+          <p>Learn how to create smooth animations in Flutter to enhance user experience.</p>
+          
+          <h3>Basic Animation:</h3>
+          <p>Basic animations in Flutter use built-in animated widgets like AnimatedContainer that automatically interpolate between property values over specified durations. These implicit animations require no animation controllers and respond to state changes through setState(), making them perfect for simple transitions. Understanding implicit animations, duration control, and property interpolation provides an easy entry point for adding smooth visual feedback and enhanced user experience to Flutter applications.</p>
+          <pre><code>class AnimatedContainer extends StatefulWidget {
+  @override
+  _AnimatedContainerState createState() => _AnimatedContainerState();
+}
+
+class _AnimatedContainerState extends State<AnimatedContainer> {
+  bool _isExpanded = false;
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: GestureDetector(
+          onTap: () {
+            setState(() {
+              _isExpanded = !_isExpanded;
+            });
+          },
+          child: AnimatedContainer(
+            duration: Duration(seconds: 1),
+            width: _isExpanded ? 200 : 100,
+            height: _isExpanded ? 200 : 100,
+            color: _isExpanded ? Colors.blue : Colors.red,
+            child: Center(child: Text('Tap me!')),
+          ),
+        ),
+      ),
+    );
+  }
+}</code></pre>
+          
+          <h3>Hero Animation:</h3>
+          <p>Hero animations create seamless transitions between screens by animating shared elements using matching hero tags, providing visual continuity in navigation flows. The Hero widget automatically handles complex transformations including position, size, and clip changes during page transitions. Understanding hero animations, tag matching, and cross-screen element transitions creates polished user experiences that guide users naturally between different app sections and maintain visual context.</p>
+          <pre><code>// First screen
+Hero(
+  tag: 'hero-image',
+  child: GestureDetector(
+    onTap: () {
+      Navigator.push(context, 
+        MaterialPageRoute(builder: (_) => SecondScreen()));
+    },
+    child: Container(
+      width: 100,
+      height: 100,
+      child: Image.network('https://example.com/image.jpg'),
+    ),
+  ),
+)
+
+// Second screen
+Hero(
+  tag: 'hero-image',
+  child: Container(
+    width: 300,
+    height: 300,
+    child: Image.network('https://example.com/image.jpg'),
+  ),
+)</code></pre>
+          
+          <h3>Custom Animation:</h3>
+          <p>Custom animations provide complete control over animation behavior through AnimationController, Tween objects, and AnimatedBuilder widgets for complex, coordinated animations. SingleTickerProviderStateMixin enables efficient animation updates while proper disposal prevents memory leaks in stateful widgets. Understanding explicit animation architecture, animation lifecycle management, and custom interpolation enables creating sophisticated animations like rotations, complex transitions, and coordinated multi-element animations for professional app experiences.</p>
+          <pre><code>class RotatingWidget extends StatefulWidget {
+  @override
+  _RotatingWidgetState createState() => _RotatingWidgetState();
+}
+
+class _RotatingWidgetState extends State<RotatingWidget>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _animation;
+  
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: Duration(seconds: 2),
+      vsync: this,
+    );
+    _animation = Tween<double>(begin: 0, end: 1).animate(_controller);
+    _controller.repeat();
+  }
+  
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: _animation,
+      builder: (context, child) {
+        return Transform.rotate(
+          angle: _animation.value * 2 * math.pi,
+          child: Container(
+            width: 100,
+            height: 100,
+            color: Colors.blue,
+          ),
+        );
+      },
+    );
+  }
+  
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+}</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/mdhoIQqS2z0'
+      },
+      {
+        id: 'flutter-testing',
+        title: 'Testing',
+        content: `
+          <h2>Testing Flutter Apps</h2>
+          <p>Learn how to write unit tests, widget tests, and integration tests for Flutter applications.</p>
+          
+          <h3>Unit Tests:</h3>
+          <p>Unit tests validate individual functions, methods, and classes in isolation without dependencies on Flutter widgets or external systems, ensuring business logic correctness. The test package provides a comprehensive testing framework with group organization, setUp/tearDown lifecycle methods, and assertion capabilities. Understanding unit testing principles, test isolation, and proper test structure creates reliable codebases with high confidence in core functionality and easier debugging.</p>
+          <pre><code># Add to pubspec.yaml
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  test: ^1.24.0
+
+// test/unit_test.dart
+import 'package:flutter_test/flutter_test.dart';
+
+class Calculator {
+  int add(int a, int b) => a + b;
+  int multiply(int a, int b) => a * b;
+}
+
+void main() {
+  group('Calculator Tests', () {
+    late Calculator calculator;
+    
+    setUp(() {
+      calculator = Calculator();
+    });
+    
+    test('should add two numbers correctly', () {
+      expect(calculator.add(2, 3), equals(5));
+    });
+    
+    test('should multiply two numbers correctly', () {
+      expect(calculator.multiply(3, 4), equals(12));
+    });
+  });
+}</code></pre>
+          
+          <h3>Widget Tests:</h3>
+          <p>Widget tests verify Flutter UI components and their interactions using WidgetTester to simulate user actions like tapping, scrolling, and text entry. The flutter_test package provides powerful finder methods and pump functions for widget lifecycle management and UI state verification. Understanding widget testing patterns, user interaction simulation, and UI state validation ensures your Flutter widgets behave correctly across different scenarios and user interactions.</p>
+          <pre><code>// test/widget_test.dart
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+
+void main() {
+  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+    await tester.pumpWidget(MaterialApp(home: CounterApp()));
+    
+    // Verify initial counter value
+    expect(find.text('0'), findsOneWidget);
+    expect(find.text('1'), findsNothing);
+    
+    // Tap increment button
+    await tester.tap(find.byIcon(Icons.add));
+    await tester.pump();
+    
+    // Verify counter incremented
+    expect(find.text('0'), findsNothing);
+    expect(find.text('1'), findsOneWidget);
+  });
+  
+  testWidgets('should display error message for invalid input', (tester) async {
+    await tester.pumpWidget(MaterialApp(home: LoginForm()));
+    
+    // Tap login without entering data
+    await tester.tap(find.text('Login'));
+    await tester.pump();
+    
+    // Check for error messages
+    expect(find.text('Please enter email'), findsOneWidget);
+    expect(find.text('Please enter password'), findsOneWidget);
+  });
+}</code></pre>
+          
+          <h3>Integration Tests:</h3>
+          <p>Integration tests validate complete user workflows by running the entire app and simulating real user interactions across multiple screens and features. The integration_test package enables end-to-end testing on actual devices or emulators, testing navigation flows, data persistence, and feature integration. Understanding integration testing ensures your complete app functions correctly as a cohesive system, validating user journeys and cross-feature interactions in production-like environments.</p>
+          <pre><code># Add to pubspec.yaml
+dev_dependencies:
+  integration_test:
+    sdk: flutter
+
+// integration_test/app_test.dart
+import 'package:flutter_test/flutter_test.dart';
+import 'package:integration_test/integration_test.dart';
+import 'package:myapp/main.dart' as app;
+
+void main() {
+  IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+  
+  group('App Integration Tests', () {
+    testWidgets('complete user flow test', (tester) async {
+      app.main();
+      await tester.pumpAndSettle();
+      
+      // Navigate through app
+      await tester.tap(find.text('Login'));
+      await tester.pumpAndSettle();
+      
+      // Fill login form
+      await tester.enterText(find.byType(TextField).first, 'test@example.com');
+      await tester.enterText(find.byType(TextField).last, 'password123');
+      
+      // Submit form
+      await tester.tap(find.text('Submit'));
+      await tester.pumpAndSettle();
+      
+      // Verify navigation to home screen
+      expect(find.text('Welcome'), findsOneWidget);
+    });
+  });
+}</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/RDPnHXjt_iI'
+      },
+      {
+        id: 'flutter-deployment',
+        title: 'App Deployment',
+        content: `
+          <h2>Deploying Flutter Apps</h2>
+          <p>Learn how to build and deploy Flutter apps to Google Play Store and Apple App Store.</p>
+          
+          <h3>Android Deployment:</h3>
+          <p>Android deployment requires code signing through keystores to ensure app authenticity and security for Google Play Store distribution. Keystore generation and key.properties configuration establish the signing credentials necessary for release builds. Understanding Android deployment fundamentals, keystore management, and secure credential handling is essential for publishing professional Flutter applications to the Play Store safely and securely.</p>
+          <pre><code># Generate keystore
+keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key
+
+# Create android/key.properties
+storePassword=your_password
+keyPassword=your_password
+keyAlias=key
+storeFile=/path/to/key.jks</code></pre>
+          
+          <h3>Configure android/app/build.gradle:</h3>
+          <p>Gradle build configuration integrates keystore signing into the Flutter build process through signing configurations and build types. Properties file integration keeps sensitive credentials separate from source code while automating the signing process for release builds. Understanding Gradle configuration, build variants, and secure credential management ensures smooth, automated deployment workflows while maintaining security best practices.</p>
+          <pre><code>def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
+android {
+    compileSdkVersion 34
+    
+    signingConfigs {
+        release {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+            storePassword keystoreProperties['storePassword']
+        }
+    }
+    
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+        }
+    }
+}</code></pre>
+          
+          <h3>Build APK/AAB:</h3>
+          <p>Flutter provides multiple build options including APK files for direct installation and App Bundles (AAB) for optimized Play Store distribution with dynamic delivery features. App Bundles reduce download sizes through asset and code splitting, while APK builds offer broader compatibility for direct distribution. Understanding build formats, optimization strategies, and deployment options helps you choose the right approach for your app distribution needs.</p>
+          <pre><code># Build APK
+flutter build apk --release
+
+# Build App Bundle (recommended for Play Store)
+flutter build appbundle --release
+
+# Install on device
+flutter install --release</code></pre>
+          
+          <h3>iOS Deployment:</h3>
+          <p>iOS deployment requires Apple Developer account membership, code signing certificates, and Xcode for building and archiving applications for App Store submission. Bundle identifier configuration, team selection, and proper provisioning profiles ensure successful builds and distribution. Understanding iOS deployment workflow, certificate management, and Apple's submission process is crucial for publishing Flutter apps to the competitive iOS App Store ecosystem.</p>
+          <pre><code># Open iOS project in Xcode
+open ios/Runner.xcworkspace
+
+# Configure signing in Xcode:
+# 1. Select Runner project
+# 2. Go to Signing & Capabilities
+# 3. Select your development team
+# 4. Choose bundle identifier
+
+# Build for iOS
+flutter build ios --release
+
+# Archive in Xcode:
+# Product -> Archive -> Upload to App Store</code></pre>
+          
+          <h3>App Store Preparation:</h3>
+          <ul>
+            <li><strong>App Icons:</strong> Create icons for all required sizes</li>
+            <li><strong>Screenshots:</strong> Prepare screenshots for different device sizes</li>
+            <li><strong>App Description:</strong> Write compelling app store description</li>
+            <li><strong>Privacy Policy:</strong> Create privacy policy if required</li>
+            <li><strong>App Store Guidelines:</strong> Follow platform-specific guidelines</li>
+          </ul>
+          
+          <h3>Continuous Deployment:</h3>
+          <p>Automated deployment pipelines using CI/CD tools like GitHub Actions streamline the build, test, and deployment process while ensuring consistent releases and reduced manual errors. Workflow automation includes dependency installation, testing, building, and potential store uploads through secure credential management. Understanding CI/CD principles, automated testing integration, and deployment automation creates professional development workflows that scale with team growth and project complexity.</p>
+          <pre><code># GitHub Actions workflow
+name: Build and Deploy
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-java@v1
+      with:
+        java-version: '12.x'
+    - uses: subosito/flutter-action@v1
+      with:
+        flutter-version: '3.16.x'
+    - run: flutter pub get
+    - run: flutter test
+    - run: flutter build appbundle --release</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/ciNHhp2dUjE'
+      }
+    ]
+  },
+  {
+    id: 'dart',
+    title: 'Dart',
+    description: 'Learn Dart for modern app development with Flutter.',
+    image: '/images/dart-course.jpg',
+    level: 'Beginner to Intermediate',
+    duration: '8 weeks',
+    modules: 12,
+    studentsEnrolled: 1456,
+    rating: 4.7,
+    instructor: {
+      name: 'Emily Rodriguez',
+      avatar: '/images/instructors/emily.jpg',
+      bio: 'Dart Expert with 6+ years experience in Flutter and web development'
+    },
+    tags: ['Dart', 'Programming', 'Flutter', 'Object-Oriented', 'Google'],
+    learningPath: [
+      'Dart Fundamentals',
+      'Object-Oriented Programming',
+      'Asynchronous Programming',
+      'Collections & Generics',
+      'Error Handling',
+      'Advanced Features',
+      'Testing & Debugging',
+      'Package Management'
+    ],
+    introduction: `
+      <h2>Master Dart - The Powerful Programming Language</h2>
+      <p>Dart is a client-optimized programming language developed by Google for fast apps on any platform. It's the foundation of Flutter development and increasingly popular for web and server-side development. With its clean syntax, strong type system, and modern features, Dart makes programming both productive and enjoyable.</p>
+      
+      <h3>Why Learn Dart in 2026?</h3>
+      <p>Dart powers millions of apps worldwide through Flutter, and is rapidly expanding into web and backend development. Google's continued investment in Dart, along with its performance optimizations and developer-friendly features, makes it an excellent choice for modern application development.</p>
+      
+      <h3>Learning Benefits of Dart:</h3>
+      <ul>
+        <li><strong>Foundation for Flutter:</strong> Essential for mobile app development with Flutter framework</li>
+        <li><strong>Modern Language Design:</strong> Clean syntax with powerful features like null safety and pattern matching</li>
+        <li><strong>Fast Development:</strong> Hot reload, strong tooling, and excellent debugging capabilities</li>
+        <li><strong>Multi-Platform:</strong> Build mobile, web, desktop, and server applications</li>
+        <li><strong>Type Safety:</strong> Catch errors early with Dart's sound null safety system</li>
+        <li><strong>Performance:</strong> Compiled to native code for optimal runtime performance</li>
+        <li><strong>Google Ecosystem:</strong> First-class integration with Google's development tools and services</li>
+      </ul>
+      
+      <h3>Prerequisites for Dart:</h3>
+      <ul>
+        <li><strong>Programming Basics:</strong> Understanding of variables, functions, and basic programming concepts (helpful but not required)</li>
+        <li><strong>Object-Oriented Concepts:</strong> Basic familiarity with classes and objects (we'll teach from scratch)</li>
+        <li><strong>Development Environment:</strong> VS Code with Dart extension or Android Studio with Dart plugin</li>
+        <li><strong>Command Line:</strong> Basic terminal/command prompt usage</li>
+        <li><strong>Problem-Solving Mindset:</strong> Logical thinking and willingness to practice coding exercises</li>
+        <li><strong>Dart SDK:</strong> Dart Software Development Kit installed on your system</li>
+      </ul>
+      
+      <h3>Modern Dart Ecosystem (2026):</h3>
+      <ul>
+        <li><strong>Dart 3.2+:</strong> Latest version with enhanced pattern matching and records</li>
+        <li><strong>Flutter Integration:</strong> Seamless mobile and web app development</li>
+        <li><strong>Web Development:</strong> Dart2JS compiler for high-performance web applications</li>
+        <li><strong>Server-Side:</strong> Shelf framework, Aqueduct, and native HTTP servers</li>
+        <li><strong>Package Ecosystem:</strong> pub.dev with thousands of reusable packages</li>
+        <li><strong>Testing Framework:</strong> Built-in testing tools and mocking capabilities</li>
+        <li><strong>Developer Tools:</strong> Dart DevTools, analyzer, formatter, and debugger</li>
+        <li><strong>Build Tools:</strong> dart compile, webdev, and advanced build runners</li>
+        <li><strong>IDE Support:</strong> Excellent tooling in VS Code, IntelliJ, and Android Studio</li>
+      </ul>
+      
+      <h3>Industry Applications:</h3>
+      <ul>
+        <li><strong>Mobile Development:</strong> Flutter apps for iOS and Android (Google Pay, Alibaba, BMW)</li>
+        <li><strong>Web Applications:</strong> Single-page applications and progressive web apps</li>
+        <li><strong>Desktop Software:</strong> Cross-platform desktop applications via Flutter</li>
+        <li><strong>Server-Side Development:</strong> REST APIs, microservices, and backend services</li>
+        <li><strong>Google Services:</strong> Internal tools and services at Google</li>
+        <li><strong>Enterprise Solutions:</strong> Business applications requiring cross-platform compatibility</li>
+      </ul>
+    `,
+    lessons: [
+      {
+        id: 'dart-intro',
+        title: 'Dart Intro',
+        content: `
+          <h2>Welcome to Dart Programming</h2>
+          <p>Dart is a modern, object-oriented programming language developed by Google. It's designed to be fast, productive, and portable across multiple platforms including mobile, web, desktop, and server.</p>
+          
+          <h3>Why Dart?</h3>
+          <ul>
+            <li><strong>Performance:</strong> Compiles to native code for optimal speed</li>
+            <li><strong>Productivity:</strong> Hot reload and excellent tooling</li>
+            <li><strong>Portability:</strong> Write once, run on multiple platforms</li>
+            <li><strong>Modern:</strong> Null safety, pattern matching, and async/await</li>
+            <li><strong>Scalable:</strong> From small scripts to large applications</li>
+          </ul>
+          
+          <h3>Installing Dart SDK:</h3>
+          <ol>
+            <li>Visit <a href="https://dart.dev/get-dart" target="_blank">dart.dev/get-dart</a></li>
+            <li>Download and install Dart SDK for your operating system</li>
+            <li>Add Dart to your system PATH</li>
+            <li>Verify installation: <code>dart --version</code></li>
+          </ol>
+          
+          <h3>Your First Dart Program:</h3>
+          <p>Creating your first Dart program introduces you to the basic syntax and structure of Dart applications. The main() function serves as the entry point for all Dart programs, similar to other programming languages. This simple program demonstrates variable declaration, string interpolation, and console output - fundamental concepts you'll use in every Dart application.</p>
+          <pre><code>// main.dart
+void main() {
+  print('Hello, Dart!');
+  
+  // Variables
+  String name = 'Dart';
+  int year = 2023;
+  double version = 3.2;
+  
+  print('Welcome to \$name programming!');
+  print('Released in \$year, current version: \$version');
+}</code></pre>
+          
+          <h3>Running Dart Code:</h3>
+          <p>Dart provides multiple ways to execute your code, from running scripts directly to compiling them into executable binaries. Understanding these different execution methods helps you choose the right approach for development, testing, and production deployment. The dart command-line tool is your primary interface for running and managing Dart programs.</p>
+          <pre><code># Run Dart file
+dart run main.dart
+
+# Run Dart file directly
+dart main.dart
+
+# Compile to executable
+dart compile exe main.dart</code></pre>
+          
+          <h3>Dart Development Tools:</h3>
+          <ul>
+            <li><strong>VS Code:</strong> Install Dart extension for best experience</li>
+            <li><strong>DartPad:</strong> Online editor at dartpad.dev</li>
+            <li><strong>Dart Analyzer:</strong> Static analysis and error detection</li>
+            <li><strong>Dart Formatter:</strong> Automatic code formatting</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/NrO0CJCbYLA'
+      },
+      {
+        id: 'dart-basics',
+        title: 'Variables & Types',
+        content: `
+          <h2>Dart Variables and Data Types</h2>
+          <p>Dart is a statically typed language with type inference. You can explicitly declare types or let Dart infer them automatically.</p>
+          
+          <h3>Variable Declaration:</h3>
+          <p>Variable declaration in Dart offers flexibility through both explicit type declaration and type inference. You can specify types explicitly for clarity and documentation, or use 'var' to let Dart automatically determine the type based on the assigned value. Understanding the difference between final (runtime constants) and const (compile-time constants) is crucial for efficient memory usage and application performance.</p>
+          <pre><code>// Explicit type declaration
+String name = 'Alice';
+int age = 30;
+double height = 5.8;
+bool isStudent = true;
+
+// Type inference with var
+var city = 'New York';  // String inferred
+var score = 95;         // int inferred
+var price = 19.99;      // double inferred
+
+// Final and const
+final String country = 'USA';      // Runtime constant
+const double pi = 3.14159;         // Compile-time constant</code></pre>
+          
+          <h3>Basic Data Types:</h3>
+          <ul>
+            <li><strong>int:</strong> 64-bit integers (-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807)</li>
+            <li><strong>double:</strong> 64-bit floating-point numbers</li>
+            <li><strong>String:</strong> UTF-16 encoded text</li>
+            <li><strong>bool:</strong> true or false</li>
+            <li><strong>dynamic:</strong> Can hold any type (use sparingly)</li>
+          </ul>
+          
+          <h3>String Operations:</h3>
+          <p>String manipulation is fundamental to most programming tasks, from user interfaces to data processing. Dart provides powerful string features including interpolation, multi-line strings, and raw strings. Understanding these capabilities enables you to work with text data effectively and create dynamic content in your applications.</p>
+          <pre><code>String firstName = 'John';
+String lastName = 'Doe';
+
+// String concatenation
+String fullName = firstName + ' ' + lastName;
+
+// String interpolation
+String greeting = 'Hello, \$firstName \$lastName!';
+String message = 'You have \${score + 10} points';
+
+// Multi-line strings
+String paragraph = '''
+This is a multi-line string.
+It can span multiple lines
+without concatenation.
+''';
+
+// Raw strings (no interpolation)
+String rawString = r'This is a raw string with \n no escaping';</code></pre>
+          
+          <h3>Numbers and Math:</h3>
+          <p>Numerical operations are essential for calculations, data analysis, and algorithm implementation in Dart applications. Dart provides robust support for integers and floating-point numbers, along with comprehensive mathematical functions. Understanding type conversion and mathematical operations is crucial for building applications that handle numerical data accurately.</p>
+          <pre><code>int x = 10;
+double y = 3.14;
+
+// Basic operations
+print(x + 5);     // 15
+print(x * 2);     // 20
+print(y / 2);     // 1.57
+
+// Type conversion
+int intValue = double.parse('3.14').round();  // 3
+String stringValue = 42.toString();           // '42'
+double doubleValue = int.parse('123').toDouble(); // 123.0
+
+// Math operations
+import 'dart:math';
+print(max(10, 20));        // 20
+print(sqrt(16));           // 4.0
+print(pow(2, 3));          // 8.0</code></pre>
+          
+          <h3>Boolean and Logical Operations:</h3>
+          <p>Boolean logic forms the foundation of decision-making in programming, enabling your applications to respond intelligently to different conditions. Dart's logical operators and comparison operators allow you to create complex conditional expressions that control program flow. Understanding boolean operations is essential for implementing business logic and user interactions.</p>
+          <pre><code>bool isAdult = age >= 18;
+bool hasLicense = true;
+bool canDrive = isAdult && hasLicense;
+
+// Logical operators
+bool result1 = true && false;  // false (AND)
+bool result2 = true || false;  // true (OR)
+bool result3 = !true;          // false (NOT)
+
+// Comparison operators
+bool equal = 5 == 5;           // true
+bool notEqual = 5 != 3;        // true
+bool greater = 10 > 5;         // true
+bool lessEqual = 5 <= 10;      // true</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/5xlVP04905w'
+      },
+      {
+        id: 'dart-control-flow',
+        title: 'Control Flow',
+        content: `
+          <h2>Control Flow in Dart</h2>
+          <p>Control flow statements allow you to control the execution path of your Dart programs using conditions and loops.</p>
+          
+          <h3>If Statements:</h3>
+          <p>Conditional statements are the foundation of decision-making in programming, allowing your code to execute different paths based on specific conditions. Dart's if-else syntax is clean and intuitive, supporting complex logical conditions and nested structures. Understanding conditional logic is essential for creating responsive applications that adapt to different scenarios and user inputs.</p>
+          <pre><code>int score = 85;
+
+if (score >= 90) {
+  print('Grade: A');
+} else if (score >= 80) {
+  print('Grade: B');
+} else if (score >= 70) {
+  print('Grade: C');
+} else {
+  print('Grade: F');
+}
+
+// Ternary operator
+String result = score >= 60 ? 'Pass' : 'Fail';
+
+// Null-aware operator
+String? name;
+String displayName = name ?? 'Guest';  // Use 'Guest' if name is null</code></pre>
+          
+          <h3>Switch Statements:</h3>
+          <p>Switch statements provide an elegant way to handle multiple possible values of a single variable, making code more readable than long chains of if-else statements. Dart 3.0 introduces modern switch expressions that return values directly, enabling more concise and functional programming patterns. Switch statements are particularly useful for handling enums, status codes, and menu options.</p>
+          <pre><code>String grade = 'B';
+
+switch (grade) {
+  case 'A':
+    print('Excellent!');
+    break;
+  case 'B':
+    print('Good job!');
+    break;
+  case 'C':
+    print('Average');
+    break;
+  default:
+    print('Keep trying!');
+}
+
+// Switch expressions (Dart 3.0+)
+String feedback = switch (grade) {
+  'A' => 'Excellent!',
+  'B' => 'Good job!',
+  'C' => 'Average',
+  _ => 'Keep trying!'
+};</code></pre>
+          
+          <h3>For Loops:</h3>
+          <p>For loops are essential for iterating over collections and performing repetitive tasks efficiently. Dart offers multiple for loop variants including traditional C-style loops and enhanced for-in loops that work directly with collections. Understanding different loop patterns helps you choose the most appropriate iteration method for your specific use case.</p>
+          <pre><code>// Traditional for loop
+for (int i = 0; i < 5; i++) {
+  print('Count: \$i');
+}
+
+// For-in loop with lists
+List<String> fruits = ['apple', 'banana', 'orange'];
+for (String fruit in fruits) {
+  print('I like \$fruit');
+}
+
+// For-in loop with sets
+Set<int> numbers = {1, 2, 3, 4, 5};
+for (int number in numbers) {
+  print('Number: \$number');
+}
+
+// For-in loop with maps
+Map<String, int> ages = {'Alice': 30, 'Bob': 25, 'Charlie': 35};
+for (MapEntry<String, int> entry in ages.entries) {
+  print('\${entry.key} is \${entry.value} years old');
+}</code></pre>
+          
+          <h3>While and Do-While Loops:</h3>
+          <p>While loops execute code repeatedly as long as a condition remains true, providing more flexibility than for loops when the number of iterations is unknown. Do-while loops guarantee at least one execution before checking the condition, useful for user input validation and menu systems. Understanding loop control statements like break and continue gives you precise control over loop execution.</p>
+          <pre><code>// While loop
+int countdown = 5;
+while (countdown > 0) {
+  print('Countdown: \$countdown');
+  countdown--;
+}
+
+// Do-while loop (executes at least once)
+int number = 0;
+do {
+  print('Number: \$number');
+  number++;
+} while (number < 3);
+
+// Loop control
+for (int i = 0; i < 10; i++) {
+  if (i == 3) continue;    // Skip iteration when i is 3
+  if (i == 7) break;       // Exit loop when i is 7
+  print('i = \$i');
+}</code></pre>
+          
+          <h3>Pattern Matching (Dart 3.0+):</h3>
+          <p>Pattern matching is a powerful feature introduced in Dart 3.0 that allows you to destructure data and match against complex patterns in a single expression. This modern programming paradigm makes code more expressive and safer by exhaustively handling different data shapes. Pattern matching is particularly useful for processing JSON data, handling union types, and implementing functional programming patterns.</p>
+          <pre><code>// Pattern matching with switch
+Object value = 42;
+
+String result = switch (value) {
+  int n when n > 0 => 'Positive integer: \$n',
+  int n when n < 0 => 'Negative integer: \$n',
+  int _ => 'Zero',
+  String s => 'String: \$s',
+  _ => 'Unknown type'
+};
+
+// Destructuring patterns
+var point = (x: 10, y: 20);
+switch (point) {
+  case (x: 0, y: 0):
+    print('Origin');
+  case (x: var x, y: 0):
+    print('On X-axis at \$x');
+  case (x: 0, y: var y):
+    print('On Y-axis at \$y');
+  case (x: var x, y: var y):
+    print('Point at (\$x, \$y)');
+}</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/RMiN59x3uH0'
+      },
+      {
+        id: 'dart-functions',
+        title: 'Functions',
+        content: `
+          <h2>Functions in Dart</h2>
+          <p>Functions are reusable blocks of code that perform specific tasks. Dart supports various types of functions including named parameters, optional parameters, and higher-order functions.</p>
+          
+          <h3>Basic Functions:</h3>
+          <p>Functions in Dart are first-class objects that encapsulate reusable code logic. They can accept parameters, return values, and be assigned to variables or passed as arguments. Understanding function syntax, return types, and the arrow syntax (=>) is fundamental to writing clean, modular Dart code that follows the DRY (Don't Repeat Yourself) principle.</p>
+          <pre><code>// Simple function
+void greet() {
+  print('Hello, World!');
+}
+
+// Function with parameters
+String greetUser(String name) {
+  return 'Hello, \$name!';
+}
+
+// Function with return type inference
+greetWithAge(String name, int age) => 'Hi \$name, you are \$age years old';
+
+// Main function
+void main() {
+  greet();                                    // Hello, World!
+  print(greetUser('Alice'));                  // Hello, Alice!
+  print(greetWithAge('Bob', 30));            // Hi Bob, you are 30 years old
+}</code></pre>
+          
+          <h3>Optional Parameters:</h3>
+          <p>Optional parameters provide flexibility in function design by allowing callers to omit certain arguments. Dart supports optional positional parameters (enclosed in square brackets) and default values for parameters. This feature enables you to create versatile functions that can handle various use cases without function overloading, making your API more user-friendly and reducing code duplication.</p>
+          <pre><code>// Optional positional parameters
+String introduce(String name, [String? title, int? age]) {
+  String result = 'Hello, ';
+  if (title != null) result += '\$title ';
+  result += name;
+  if (age != null) result += ' (\$age years old)';
+  return result;
+}
+
+// Usage
+print(introduce('Alice'));                    // Hello, Alice
+print(introduce('Bob', 'Mr.'));              // Hello, Mr. Bob
+print(introduce('Charlie', 'Dr.', 45));      // Hello, Dr. Charlie (45 years old)
+
+// Default values for optional parameters
+String formatName(String name, [String prefix = 'Mr./Ms.']) {
+  return '\$prefix \$name';
+}
+
+print(formatName('Smith'));                   // Mr./Ms. Smith
+print(formatName('Johnson', 'Dr.'));         // Dr. Johnson</code></pre>
+          
+          <h3>Named Parameters:</h3>
+          <p>Named parameters enhance code readability and reduce errors by allowing you to specify arguments by name rather than position. This is especially valuable for functions with many parameters or when parameter meaning isn't obvious from position alone. The 'required' keyword ensures critical parameters are always provided, while default values handle optional ones.</p>
+          <pre><code>// Named parameters
+String createUser({required String name, String email = '', int age = 0}) {
+  return 'User: \$name, Email: \$email, Age: \$age';
+}
+
+// Usage
+print(createUser(name: 'Alice'));
+print(createUser(name: 'Bob', email: 'bob@example.com'));
+print(createUser(name: 'Charlie', email: 'charlie@example.com', age: 30));
+
+// Mixed positional and named parameters
+void processOrder(String item, int quantity, {bool express = false, String? note}) {
+  print('Processing \$quantity x \$item');
+  if (express) print('Express delivery requested');
+  if (note != null) print('Note: \$note');
+}
+
+processOrder('Laptop', 2, express: true, note: 'Handle with care');</code></pre>
+          
+          <h3>Higher-Order Functions:</h3>
+          <p>Higher-order functions can accept other functions as parameters or return functions as results, enabling powerful functional programming patterns. This concept is essential for working with collections (map, filter, reduce) and creating flexible, reusable code. Understanding higher-order functions opens up advanced programming techniques like callbacks, event handlers, and functional composition.</p>
+          <pre><code>// Function as parameter
+int calculate(int a, int b, int Function(int, int) operation) {
+  return operation(a, b);
+}
+
+int add(int x, int y) => x + y;
+int multiply(int x, int y) => x * y;
+
+// Usage
+print(calculate(5, 3, add));       // 8
+print(calculate(5, 3, multiply));  // 15
+
+// Anonymous functions (lambda)
+print(calculate(10, 2, (x, y) => x - y));  // 8
+
+// Functions with collections
+List<int> numbers = [1, 2, 3, 4, 5];
+
+// Map function
+List<int> doubled = numbers.map((n) => n * 2).toList();
+print(doubled);  // [2, 4, 6, 8, 10]
+
+// Filter function
+List<int> evens = numbers.where((n) => n % 2 == 0).toList();
+print(evens);    // [2, 4]
+
+// Reduce function
+int sum = numbers.reduce((a, b) => a + b);
+print(sum);      // 15</code></pre>
+          
+          <h3>Closures and Lexical Scope:</h3>
+          <p>Closures allow functions to access variables from their enclosing scope even after the outer function has returned, creating powerful patterns for data encapsulation and factory functions. Lexical scoping determines variable accessibility based on where variables are declared in the code structure. Understanding closures is crucial for advanced Dart programming, state management, and creating elegant solutions to complex problems.</p>
+          <pre><code>// Closure example
+Function createMultiplier(int factor) {
+  return (int number) => number * factor;
+}
+
+var doubleIt = createMultiplier(2);
+var tripleIt = createMultiplier(3);
+
+print(doubleIt(5));   // 10
+print(tripleIt(5));   // 15
+
+// Lexical scope
+String globalVar = 'I am global';
+
+void outerFunction() {
+  String outerVar = 'I am outer';
+  
+  void innerFunction() {
+    String innerVar = 'I am inner';
+    print(globalVar);  // Accessible
+    print(outerVar);   // Accessible
+    print(innerVar);   // Accessible
+  }
+  
+  innerFunction();
+}
+
+outerFunction();</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/giO3krBHNes'
+      },
+      {
+        id: 'dart-collections',
+        title: 'Collections',
+        content: `
+          <h2>Dart Collections</h2>
+          <p>Dart provides powerful collection types including Lists, Sets, and Maps. These collections are the foundation for organizing and manipulating data in your applications.</p>
+          
+          <h3>Lists (Arrays):</h3>
+          <p>Lists are ordered collections that can contain duplicate elements, making them ideal for storing sequences of data where order matters. Dart's List class provides comprehensive methods for adding, removing, searching, and iterating through elements. Lists are mutable by default and dynamically sized, offering flexibility for data manipulation while maintaining efficient access patterns through indexing.</p>
+          <pre><code>// Creating lists
+List&lt;String&gt; fruits = ['apple', 'banana', 'orange'];
+List&lt;int&gt; numbers = [1, 2, 3, 4, 5];
+var mixed = ['hello', 42, true, 3.14];  // List&lt;Object&gt;
+
+// List operations
+fruits.add('grape');                    // Add single item
+fruits.addAll(['kiwi', 'mango']);      // Add multiple items
+fruits.insert(0, 'cherry');            // Insert at index
+fruits.remove('banana');               // Remove by value
+String removed = fruits.removeAt(1);   // Remove by index
+
+// List properties and methods
+print('Length: \${fruits.length}');
+print('First: \${fruits.first}');
+print('Last: \${fruits.last}');
+print('Is empty: \${fruits.isEmpty}');
+print('Contains apple: \${fruits.contains('apple')}');
+
+// List iteration
+for (int i = 0; i < fruits.length; i++) {
+  print('Index \$i: \${fruits[i]}');
+}
+
+for (String fruit in fruits) {
+  print('Fruit: \$fruit');
+}
+
+fruits.forEach((fruit) => print('Item: \$fruit'));</code></pre>
+          <p>Lists are incredibly versatile data structures that provide ordered storage with duplicate support, making them essential for sequential data management. Their dynamic sizing and comprehensive method collection enable efficient data manipulation patterns crucial for modern application development.</p>
+          
+          <h3>Sets (Unique Collections):</h3>
+          <p>Sets are collections that automatically ensure all elements are unique, eliminating duplicates and providing efficient membership testing. They support mathematical set operations like union, intersection, and difference, making them perfect for data analysis and comparison tasks. Sets are particularly useful when you need to track distinct items or perform bulk operations on collections without worrying about duplicates.</p>
+          <pre><code>// Creating sets
+Set&lt;String&gt; colors = {'red', 'green', 'blue'};
+Set&lt;int&gt; uniqueNumbers = {1, 2, 3, 2, 1};  // Duplicates removed automatically
+var emptySet = &lt;String&gt;{};  // Empty set
+
+// Set operations
+colors.add('yellow');
+colors.addAll(['purple', 'pink']);
+colors.remove('red');
+
+// Set properties
+print('Length: \${colors.length}');
+print('Contains blue: \${colors.contains('blue')}');
+
+// Set operations (mathematical)
+Set&lt;int&gt; set1 = {1, 2, 3, 4};
+Set&lt;int&gt; set2 = {3, 4, 5, 6};
+
+Set&lt;int&gt; union = set1.union(set2);           // {1, 2, 3, 4, 5, 6}
+Set&lt;int&gt; intersection = set1.intersection(set2); // {3, 4}
+Set&lt;int&gt; difference = set1.difference(set2);     // {1, 2}
+
+print('Union: \$union');
+print('Intersection: \$intersection');
+print('Difference: \$difference');</code></pre>
+          <p>Sets provide automatic duplicate removal and efficient membership testing, making them ideal for tracking unique items and performing mathematical operations. The built-in set operations (union, intersection, difference) enable powerful data analysis and comparison capabilities essential for modern applications.</p>
+          
+          <h3>Maps (Key-Value Pairs):</h3>
+          <p>Maps store data as key-value associations, enabling fast lookups and logical data organization similar to dictionaries or hash tables in other languages. Each key must be unique, but values can be duplicated. Maps are essential for representing structured data, configuration settings, caching, and any scenario where you need to associate related pieces of information efficiently.</p>
+          <pre><code>// Creating maps
+Map&lt;String, int&gt; ages = {
+  'Alice': 30,
+  'Bob': 25,
+  'Charlie': 35
+};
+
+var capitals = {
+  'USA': 'Washington D.C.',
+  'France': 'Paris',
+  'Japan': 'Tokyo'
+};
+
+// Map operations
+ages['David'] = 28;                    // Add/update
+ages.putIfAbsent('Eve', () =&gt; 22);    // Add if key doesn't exist
+ages.remove('Bob');                    // Remove by key
+ages.clear();                          // Remove all
+
+// Map properties and methods
+print('Length: \${capitals.length}');
+print('Keys: \${capitals.keys}');
+print('Values: \${capitals.values}');
+print('Is empty: \${capitals.isEmpty}');
+print('Contains key USA: \${capitals.containsKey('USA')}');
+print('Contains value Paris: \${capitals.containsValue('Paris')}');
+
+// Map iteration
+capitals.forEach((country, capital) {
+  print('\$country: \$capital');
+});
+
+for (MapEntry&lt;String, String&gt; entry in capitals.entries) {
+  print('\${entry.key} -&gt; \${entry.value}');
+}</code></pre>
+          
+          <h3>Collection Methods and Functional Programming:</h3>
+          <p>Dart collections provide powerful functional programming methods like map, where, reduce, and fold that enable declarative data transformation. These methods promote immutable programming patterns and make complex data operations more readable and less error-prone. Understanding functional collection methods is essential for writing modern, expressive Dart code and working effectively with data streams and transformations.</p>
+          <pre><code>List&lt;int&gt; numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// Transform collections
+List&lt;int&gt; doubled = numbers.map((n) =&gt; n * 2).toList();
+List&lt;String&gt; strings = numbers.map((n) =&gt; 'Number \$n').toList();
+
+// Filter collections
+List&lt;int&gt; evens = numbers.where((n) =&gt; n % 2 == 0).toList();
+List&lt;int&gt; greaterThanFive = numbers.where((n) =&gt; n &gt; 5).toList();
+
+// Find elements
+int? firstEven = numbers.firstWhere((n) =&gt; n % 2 == 0, orElse: () =&gt; -1);
+int? lastOdd = numbers.lastWhere((n) =&gt; n % 2 == 1, orElse: () =&gt; -1);
+
+// Check conditions
+bool allPositive = numbers.every((n) =&gt; n &gt; 0);        // true
+bool anyNegative = numbers.any((n) =&gt; n &lt; 0);          // false
+
+// Reduce and fold
+int sum = numbers.reduce((a, b) =&gt; a + b);             // 55
+int product = numbers.fold(1, (a, b) =&gt; a * b);       // 3628800
+
+// Sort collections
+List&lt;String&gt; names = ['Charlie', 'Alice', 'Bob'];
+names.sort();                                          // Alphabetical sort
+print(names);  // [Alice, Bob, Charlie]
+
+List&lt;int&gt; scores = [85, 92, 78, 95, 88];
+scores.sort((a, b) =&gt; b.compareTo(a));               // Descending sort
+print(scores); // [95, 92, 88, 85, 78]</code></pre>
+          
+          <h3>Collection Literals and Spread Operator:</h3>
+          <p>Modern Dart provides elegant syntax for creating and combining collections using spread operators, conditional elements, and collection for-loops. These features enable concise collection construction and transformation while maintaining readability. The spread operator (...) and null-aware spread (...?) are particularly powerful for merging collections and handling nullable data safely in collection contexts.</p>
+          <pre><code>// Collection literals
+var list1 = [1, 2, 3];
+var list2 = [0, ...list1, 4, 5];  // [0, 1, 2, 3, 4, 5]
+
+// Conditional spread
+bool includeExtras = true;
+var items = [
+  'item1',
+  'item2',
+  if (includeExtras) 'extra1',
+  if (includeExtras) 'extra2',
+];
+
+// Collection for-loops
+var listOfSquares = [
+  for (int i = 1; i &lt;= 5; i++) i * i
+]; // [1, 4, 9, 16, 25]
+
+// Null-aware spread
+List&lt;int&gt;? nullableList = null;
+var safeList = [...?nullableList, 1, 2, 3];  // [1, 2, 3]</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/F3JuuYuOUK4'
+      },
+      {
+        id: 'dart-oop',
+        title: 'Object-Oriented Programming',
+        content: `
+          <h2>Object-Oriented Programming in Dart</h2>
+          <p>Dart is a fully object-oriented language. Everything in Dart is an object, and every object is an instance of a class. Learn how to create classes, use inheritance, and implement interfaces.</p>
+          
+          <h3>Classes and Objects:</h3>
+          <p>Classes serve as blueprints for creating objects, encapsulating data (properties) and behavior (methods) into cohesive units. Dart supports various constructor types including default, named, and factory constructors, along with getters and setters for controlled property access. Understanding class definition, object instantiation, and member access is fundamental to object-oriented design and creating maintainable, reusable code structures.</p>
+          <pre><code>// Basic class definition
+class Person {
+  // Properties
+  String name;
+  int age;
+  
+  // Constructor
+  Person(this.name, this.age);
+  
+  // Named constructor
+  Person.baby(this.name) : age = 0;
+  
+  // Method
+  void introduce() {
+    print('Hi, I am \$name and I am \$age years old.');
+  }
+  
+  // Getter
+  String get description => '\$name (\$age years old)';
+  
+  // Setter
+  set updateAge(int newAge) {
+    if (newAge >= 0) {
+      age = newAge;
+    }
+  }
+}
+
+// Creating objects
+Person person1 = Person('Alice', 30);
+Person baby = Person.baby('Charlie');
+
+person1.introduce();                    // Hi, I am Alice and I am 30 years old.
+print(person1.description);            // Alice (30 years old)
+person1.updateAge = 31;</code></pre>
+          
+          <h3>Inheritance:</h3>
+          <p>Inheritance enables classes to inherit properties and methods from parent classes, promoting code reuse and establishing hierarchical relationships between related objects. The 'extends' keyword creates parent-child relationships, while method overriding allows customization of inherited behavior. Super constructors ensure proper initialization of parent class properties, making inheritance a powerful tool for organizing complex object hierarchies.</p>
+          <pre><code>// Base class
+class Animal {
+  String name;
+  int age;
+  
+  Animal(this.name, this.age);
+  
+  void eat() {
+    print('\$name is eating');
+  }
+  
+  void sleep() {
+    print('\$name is sleeping');
+  }
+}
+
+// Derived class
+class Dog extends Animal {
+  String breed;
+  
+  Dog(String name, int age, this.breed) : super(name, age);
+  
+  void bark() {
+    print('\$name is barking');
+  }
+  
+  // Override method
+  @override
+  void eat() {
+    print('\$name the \$breed is eating dog food');
+  }
+}
+
+// Usage
+Dog myDog = Dog('Buddy', 3, 'Golden Retriever');
+myDog.eat();    // Buddy the Golden Retriever is eating dog food
+myDog.bark();   // Buddy is barking
+myDog.sleep();  // Buddy is sleeping</code></pre>
+          
+          <h3>Abstract Classes and Methods:</h3>
+          <p>Abstract classes define contracts that subclasses must implement, containing both concrete methods with implementations and abstract methods that require implementation by derived classes. They cannot be instantiated directly but serve as base classes that enforce consistent interfaces across related classes. Abstract classes are essential for creating frameworks and ensuring that derived classes implement required functionality while sharing common behavior.</p>
+          <pre><code>// Abstract class
+abstract class Shape {
+  String color;
+  
+  Shape(this.color);
+  
+  // Abstract method (must be implemented by subclasses)
+  double calculateArea();
+  
+  // Concrete method
+  void displayInfo() {
+    print('This is a \$color shape with area \${calculateArea()}');
+  }
+}
+
+// Concrete implementation
+class Rectangle extends Shape {
+  double width;
+  double height;
+  
+  Rectangle(String color, this.width, this.height) : super(color);
+  
+  @override
+  double calculateArea() {
+    return width * height;
+  }
+}
+
+class Circle extends Shape {
+  double radius;
+  
+  Circle(String color, this.radius) : super(color);
+  
+  @override
+  double calculateArea() {
+    return 3.14159 * radius * radius;
+  }
+}
+
+// Usage
+Rectangle rect = Rectangle('red', 10, 5);
+Circle circle = Circle('blue', 7);
+
+rect.displayInfo();    // This is a red shape with area 50.0
+circle.displayInfo();  // This is a blue shape with area 153.93791</code></pre>
+          
+          <h3>Interfaces and Mixins:</h3>
+          <p>Interfaces define contracts that classes must implement, enabling multiple inheritance-like behavior and ensuring consistent method signatures across different class hierarchies. Mixins provide a way to share code between classes without traditional inheritance, using the 'with' keyword to add functionality. This combination allows for flexible, modular code design where classes can implement multiple interfaces and incorporate various mixins for enhanced capabilities.</p>
+          <pre><code>// Interface (using abstract class)
+abstract class Flyable {
+  void fly();
+}
+
+abstract class Swimmable {
+  void swim();
+}
+
+// Mixin
+mixin CanRun {
+  void run() {
+    print('Running fast!');
+  }
+}
+
+// Class implementing multiple interfaces and using mixin
+class Duck extends Animal implements Flyable, Swimmable {
+  Duck(String name, int age) : super(name, age);
+  
+  @override
+  void fly() {
+    print('\$name is flying');
+  }
+  
+  @override
+  void swim() {
+    print('\$name is swimming');
+  }
+}
+
+// Class using mixin
+class Horse extends Animal with CanRun {
+  Horse(String name, int age) : super(name, age);
+}
+
+// Usage
+Duck duck = Duck('Donald', 2);
+duck.eat();   // Donald is eating
+duck.fly();   // Donald is flying
+duck.swim();  // Donald is swimming
+
+Horse horse = Horse('Thunder', 5);
+horse.run();  // Running fast!</code></pre>
+          
+          <h3>Encapsulation and Private Members:</h3>
+          <p>Encapsulation protects object data by controlling access through private members (prefixed with underscore) and public methods, ensuring data integrity and preventing unauthorized modifications. Getters and setters provide controlled access to private properties, enabling validation and maintaining object state consistency. This principle is fundamental to creating robust, maintainable code that hides implementation details while providing clean, safe interfaces for object interaction.</p>
+          <pre><code>class BankAccount {
+  String _accountNumber;  // Private (starts with _)
+  double _balance;        // Private
+  
+  BankAccount(this._accountNumber, this._balance);
+  
+  // Public getter
+  double get balance => _balance;
+  
+  // Public getter
+  String get accountNumber => _accountNumber;
+  
+  // Public methods
+  void deposit(double amount) {
+    if (amount > 0) {
+      _balance += amount;
+      print('Deposited \\\$\$amount. New balance: \\\$\$_balance');
+    } else {
+      print('Invalid deposit amount');
+    }
+  }
+  
+  bool withdraw(double amount) {
+    if (amount > 0 && amount <= _balance) {
+      _balance -= amount;
+      print('Withdrew \\\$\$amount. New balance: \\\$\$_balance');
+      return true;
+    } else {
+      print('Insufficient funds or invalid amount');
+      return false;
+    }
+  }
+  
+  // Private method
+  void _validateAccount() {
+    // Internal validation logic
+  }
+}
+
+// Usage
+BankAccount account = BankAccount('123456789', 1000.0);
+account.deposit(500);     // Deposited \$500.0. New balance: \$1500.0
+account.withdraw(200);    // Withdrew \$200.0. New balance: \$1300.0
+print('Balance: \\\$\${account.balance}');  // Balance: \$1300.0
+// account._balance = 5000;  // Error: Private member</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/qPLd6CvKAMg'
+      },
+      {
+        id: 'dart-async',
+        title: 'Async Programming',
+        content: `
+          <h2>Asynchronous Programming in Dart</h2>
+          <p>Dart supports asynchronous programming with Futures, async/await, and Streams. This is essential for handling I/O operations, HTTP requests, and other time-consuming tasks without blocking the main thread.</p>
+          
+          <h3>Futures and async/await:</h3>
+          <p>Futures represent eventual completion of asynchronous operations, allowing non-blocking code execution while waiting for time-consuming tasks like network requests or file I/O. The async/await keywords provide syntactic sugar for working with Futures, making asynchronous code look and behave like synchronous code. Understanding Future.wait for parallel execution and proper error handling with try-catch blocks is essential for efficient asynchronous programming.</p>
+          <pre><code>import 'dart:io';
+
+// Function that returns a Future
+Future<String> fetchUserData(int userId) async {
+  // Simulate network delay
+  await Future.delayed(Duration(seconds: 2));
+  
+  if (userId > 0) {
+    return 'User data for ID: \$userId';
+  } else {
+    throw Exception('Invalid user ID');
+  }
+}
+
+// Using async/await
+Future<void> displayUser() async {
+  try {
+    print('Fetching user data...');
+    String userData = await fetchUserData(123);
+    print(userData);  // User data for ID: 123
+  } catch (e) {
+    print('Error: \$e');
+  }
+}
+
+// Multiple async operations
+Future<void> fetchMultipleData() async {
+  try {
+    // Sequential execution
+    String user = await fetchUserData(1);
+    String profile = await fetchUserProfile(1);
+    
+    // Parallel execution
+    List<String> results = await Future.wait([
+      fetchUserData(2),
+      fetchUserProfile(2),
+    ]);
+    
+    print('Results: \$results');
+  } catch (e) {
+    print('Error in batch operation: \$e');
+  }
+}</code></pre>
+          
+          <h3>Working with HTTP Requests:</h3>
+          <p>HTTP requests are fundamental to modern applications for communicating with web services and APIs, requiring asynchronous handling to prevent UI blocking. Dart's HttpClient provides comprehensive support for GET, POST, PUT, and DELETE operations with proper header management and response handling. Understanding JSON encoding/decoding, status code validation, and resource cleanup with try-finally blocks ensures robust network communication in your applications.</p>
+          <pre><code>import 'dart:convert';
+import 'dart:io';
+
+// HTTP GET request
+Future<Map<String, dynamic>> fetchPost(int postId) async {
+  final client = HttpClient();
+  try {
+    final request = await client.getUrl(
+      Uri.parse('https://jsonplaceholder.typicode.com/posts/\$postId')
+    );
+    final response = await request.close();
+    
+    if (response.statusCode == 200) {
+      final responseBody = await response.transform(utf8.decoder).join();
+      return jsonDecode(responseBody);
+    } else {
+      throw Exception('Failed to load post: \${response.statusCode}');
+    }
+  } finally {
+    client.close();
+  }
+}
+
+// HTTP POST request
+Future<Map<String, dynamic>> createPost({
+  required String title,
+  required String body,
+  required int userId,
+}) async {
+  final client = HttpClient();
+  try {
+    final request = await client.postUrl(
+      Uri.parse('https://jsonplaceholder.typicode.com/posts')
+    );
+    
+    request.headers.set('Content-Type', 'application/json');
+    
+    final postData = {
+      'title': title,
+      'body': body,
+      'userId': userId,
+    };
+    
+    request.write(jsonEncode(postData));
+    final response = await request.close();
+    
+    final responseBody = await response.transform(utf8.decoder).join();
+    return jsonDecode(responseBody);
+  } finally {
+    client.close();
+  }
+}</code></pre>
+          
+          <h3>Streams:</h3>
+          <p>Streams provide a powerful way to handle sequences of asynchronous data, perfect for real-time updates, user input events, or continuous data flow scenarios. Unlike Futures that represent single future values, Streams can emit multiple values over time using async* generators and yield statements. Stream controllers enable creating custom streams with manual data emission, error handling, and stream closure for complete control over asynchronous data flow.</p>
+          <pre><code>import 'dart:async';
+
+// Creating a simple stream
+Stream<int> countDown(int start) async* {
+  for (int i = start; i >= 0; i--) {
+    await Future.delayed(Duration(seconds: 1));
+    yield i;
+  }
+}
+
+// Consuming streams
+Future<void> listenToCountDown() async {
+  await for (int count in countDown(5)) {
+    print('Count: \$count');
+  }
+  print('Blast off!');
+}
+
+// Stream controller for custom streams
+class NumberGenerator {
+  final StreamController<int> _controller = StreamController<int>();
+  
+  Stream<int> get stream => _controller.stream;
+  
+  void addNumber(int number) {
+    _controller.sink.add(number);
+  }
+  
+  void addError(Object error) {
+    _controller.sink.addError(error);
+  }
+  
+  void close() {
+    _controller.close();
+  }
+}
+
+// Using custom stream
+Future<void> useNumberGenerator() async {
+  final generator = NumberGenerator();
+  
+  // Listen to stream
+  generator.stream.listen(
+    (number) => print('Received: \$number'),
+    onError: (error) => print('Error: \$error'),
+    onDone: () => print('Stream closed'),
+  );
+  
+  // Add numbers to stream
+  generator.addNumber(1);
+  generator.addNumber(2);
+  generator.addNumber(3);
+  
+  await Future.delayed(Duration(seconds: 1));
+  generator.close();
+}</code></pre>
+          
+          <h3>Stream Transformations:</h3>
+          <p>Stream transformations enable powerful data manipulation through functional programming methods like map, where, skip, and take, allowing you to filter, transform, and control data flow declaratively. These operations create new streams without modifying the original source, promoting immutable programming patterns. Periodic streams and file reading streams demonstrate practical applications for time-based updates and efficient large file processing without loading entire contents into memory.</p>
+          <pre><code>// Stream transformations
+Future<void> streamTransformations() async {
+  Stream<int> numbers = Stream.fromIterable([1, 2, 3, 4, 5]);
+  
+  // Map transformation
+  Stream<String> strings = numbers.map((n) => 'Number: \$n');
+  await for (String str in strings) {
+    print(str);
+  }
+  
+  // Filter transformation
+  Stream<int> evenNumbers = Stream.fromIterable([1, 2, 3, 4, 5, 6])
+    .where((n) => n % 2 == 0);
+  
+  List<int> evens = await evenNumbers.toList();
+  print('Even numbers: \$evens');  // [2, 4, 6]
+  
+  // Take and skip
+  Stream<int> limitedNumbers = Stream.fromIterable([1, 2, 3, 4, 5])
+    .skip(2)     // Skip first 2 elements
+    .take(2);    // Take next 2 elements
+  
+  List<int> limited = await limitedNumbers.toList();
+  print('Limited: \$limited');  // [3, 4]
+}
+
+// Periodic stream
+Stream<DateTime> periodicUpdates() {
+  return Stream.periodic(
+    Duration(seconds: 1),
+    (count) => DateTime.now(),
+  ).take(5);  // Only emit 5 values
+}
+
+// File reading with streams
+Future<void> readFileAsStream(String filePath) async {
+  final file = File(filePath);
+  
+  await for (String line in file.openRead()
+    .transform(utf8.decoder)
+    .transform(LineSplitter())) {
+    print('Line: \$line');
+  }
+}</code></pre>
+          
+          <h3>Error Handling in Async Code:</h3>
+          <p>Proper error handling in asynchronous code is crucial for building robust applications that gracefully handle network failures, timeouts, and unexpected conditions. Try-catch blocks work seamlessly with async/await syntax, while catchError provides alternative handling for Future chains. Timeout handling prevents indefinite waiting, and specific exception types enable granular error recovery strategies essential for production-ready applications.</p>
+          <pre><code>// Future error handling
+Future<String> riskyOperation() async {
+  await Future.delayed(Duration(seconds: 1));
+  
+  if (DateTime.now().millisecondsSinceEpoch % 2 == 0) {
+    throw Exception('Something went wrong!');
+  }
+  
+  return 'Operation successful';
+}
+
+// Multiple error handling strategies
+Future<void> handleErrors() async {
+  // Try-catch with async/await
+  try {
+    String result = await riskyOperation();
+    print(result);
+  } on Exception catch (e) {
+    print('Caught exception: \$e');
+  } catch (e) {
+    print('Caught error: \$e');
+  }
+  
+  // Using catchError with Future
+  riskyOperation()
+    .then((result) => print('Success: \$result'))
+    .catchError((error) => print('Failed: \$error'));
+  
+  // Timeout handling
+  try {
+    String result = await Future.timeout(
+      riskyOperation(),
+      Duration(seconds: 5),
+    );
+    print('Completed: \$result');
+  } on TimeoutException {
+    print('Operation timed out');
+  } catch (e) {
+    print('Other error: \$e');
+  }
+}</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/SmTCmDMi4BY'
+      },
+      {
+        id: 'dart-null-safety',
+        title: 'Null Safety',
+        content: `
+          <h2>Null Safety in Dart</h2>
+          <p>Dart's sound null safety prevents null reference errors at runtime by making the type system distinguish between nullable and non-nullable types. This eliminates one of the most common sources of programming errors.</p>
+          
+          <h3>Nullable vs Non-nullable Types:</h3>
+          <p>Dart's type system distinguishes between types that can hold null values (nullable, marked with ?) and those that cannot (non-nullable), providing compile-time guarantees about null safety. Non-nullable types must be initialized with actual values and cannot be assigned null, while nullable types explicitly allow null values and require null checks before use. This distinction eliminates null reference exceptions at runtime by catching potential null access at compile time.</p>
+          <pre><code>// Non-nullable types (cannot be null)
+String name = 'Alice';          // Must have a value
+int age = 30;                   // Cannot be null
+List<String> items = [];        // Empty list, but not null
+
+// Nullable types (can be null)
+String? nickname;               // Can be null
+int? score;                     // Can be null
+List<String>? tags;            // Can be null
+
+// Assignment examples
+name = 'Bob';                   // OK
+// name = null;                 // Error: Cannot assign null to non-nullable
+
+nickname = 'Bobby';             // OK
+nickname = null;                // OK - nullable type
+
+// Checking for null
+if (nickname != null) {
+  print('Nickname length: \${nickname.length}');  // Safe to use
+}</code></pre>
+          
+          <h3>Null-aware Operators:</h3>
+          <p>Null-aware operators provide concise, safe ways to work with nullable values without explicit null checks, reducing boilerplate code while maintaining safety. The null-coalescing operator (??) provides default values, null-aware assignment (??=) conditionally assigns values, and null-aware method invocation (?.) prevents calling methods on null objects. The null assertion operator (!) should be used sparingly when you're certain a value isn't null.</p>
+          <pre><code>String? firstName;
+String? lastName;
+
+// Null-coalescing operator (??)
+String displayName = firstName ?? 'Guest';
+print(displayName);  // 'Guest' because firstName is null
+
+// Null-aware assignment (??=)
+firstName ??= 'John';        // Assigns only if firstName is null
+firstName ??= 'Jane';        // Won't assign because firstName is not null
+print(firstName);            // 'John'
+
+// Null-aware method invocation (?.)
+String? message = getMessage();
+int? length = message?.length;           // Returns null if message is null
+String? upper = message?.toUpperCase();  // Returns null if message is null
+
+// Null-aware cascade (..)
+class Person {
+  String? name;
+  int? age;
+  
+  void setName(String n) => name = n;
+  void setAge(int a) => age = a;
+}
+
+Person? person = getPerson();
+person?..setName('Alice')      // Only execute if person is not null
+      ..setAge(30);
+
+// Null assertion operator (!) - Use with caution
+String definitelyNotNull = firstName!;  // Throws if firstName is null
+print('Name: \$definitelyNotNull');</code></pre>
+          
+          <h3>Working with Nullable Collections:</h3>
+          <p>Collections in null-safe Dart can be nullable themselves, contain nullable items, or both, requiring different handling strategies for each scenario. Understanding the difference between List&lt;String&gt;?, List&lt;String?&gt;, and List&lt;String?&gt;? is crucial for proper collection handling. Safe collection operations using null-aware operators and filtering methods like whereType help maintain type safety while working with potentially null collection elements.</p>
+          <pre><code>// Nullable collections vs collections of nullable items
+List<String>? nullableList;           // List itself can be null
+List<String?> listOfNullables = [];   // List of items that can be null
+List<String?>? bothNullable;          // Both list and items can be null
+
+// Safe operations on nullable collections
+nullableList?.add('item');            // Add only if list is not null
+int? length = nullableList?.length;   // Get length safely
+
+// Working with nullable items in collections
+List<String?> names = ['Alice', null, 'Bob', null, 'Charlie'];
+
+// Filter out nulls
+List<String> nonNullNames = names
+  .where((name) => name != null)
+  .cast<String>()
+  .toList();
+print(nonNullNames);  // [Alice, Bob, Charlie]
+
+// Using whereType to filter nulls
+List<String> filteredNames = names.whereType<String>().toList();
+print(filteredNames);  // [Alice, Bob, Charlie]</code></pre>
+          
+          <h3>Late Variables:</h3>
+          <p>Late variables allow declaring non-nullable variables that will be initialized after declaration but before first use, providing flexibility for complex initialization scenarios. They're particularly useful for dependency injection, expensive computations that should be deferred, and circular dependencies. Late final variables can only be assigned once, providing immutability guarantees while allowing delayed initialization patterns essential for framework and library development.</p>
+          <pre><code>// Late non-nullable variables
+class DatabaseConnection {
+  late String connectionString;    // Will be initialized later
+  late Database database;          // Will be initialized later
+  
+  DatabaseConnection() {
+    // Initialize later in constructor or method
+    _initialize();
+  }
+  
+  void _initialize() {
+    connectionString = 'mongodb://localhost:27017';
+    database = Database(connectionString);
+  }
+}
+
+// Late final variables
+class Configuration {
+  late final String apiKey;       // Can only be set once
+  late final int maxRetries;      // Can only be set once
+  
+  Configuration() {
+    apiKey = loadApiKey();        // Must be initialized before use
+    maxRetries = 3;
+  }
+  
+  String loadApiKey() => 'secret-api-key';
+}
+
+// Late initialization with complex logic
+class ExpensiveResource {
+  late final String _data;
+  
+  // Lazy initialization
+  String get data {
+    return _data;  // Will throw if not initialized when accessed
+  }
+  
+  void initializeData() {
+    _data = performExpensiveOperation();
+  }
+  
+  String performExpensiveOperation() {
+    // Simulate expensive computation
+    return 'computed-data';
+  }
+}</code></pre>
+          
+          <h3>Null Safety Best Practices:</h3>
+          <p>Effective null safety requires following established patterns like preferring non-nullable types by default, using required parameters for essential data, and validating input before processing. Safe navigation with null-aware operators, proper default value handling, and leveraging pattern matching create robust, maintainable code. These practices prevent null reference errors while maintaining code readability and ensuring your applications handle edge cases gracefully in production environments.</p>
+          <pre><code>// 1. Use non-nullable types by default
+class User {
+  String name;                    // Non-nullable - always has value
+  String email;                   // Non-nullable - always has value
+  String? phoneNumber;           // Nullable - optional field
+  DateTime createdAt;            // Non-nullable - always has value
+  
+  User({
+    required this.name,          // Required parameter
+    required this.email,         // Required parameter
+    this.phoneNumber,           // Optional parameter
+    DateTime? createdAt,        // Optional with default
+  }) : createdAt = createdAt ?? DateTime.now();
+}
+
+// 2. Validate input and convert to non-nullable
+String? getUserInput() {
+  // Simulate user input that might be null or empty
+  return '';
+}
+
+String processInput() {
+  String? input = getUserInput();
+  
+  // Validate and provide default
+  if (input == null || input.isEmpty) {
+    return 'Default Value';
+  }
+  
+  return input;  // Now guaranteed to be non-null and non-empty
+}
+
+// 3. Use null-aware operators for safe navigation
+class Address {
+  String? street;
+  String? city;
+  String? country;
+}
+
+class Person {
+  String name;
+  Address? address;
+  
+  Person(this.name, [this.address]);
+  
+  String getFullAddress() {
+    return '\${address?.street ?? 'Unknown Street'}, '
+           '\${address?.city ?? 'Unknown City'}, '
+           '\${address?.country ?? 'Unknown Country'}';
+  }
+}
+
+// 4. Pattern matching with null safety
+String processValue(Object? value) {
+  return switch (value) {
+    null => 'No value provided',
+    int n when n > 0 => 'Positive number: \$n',
+    int n => 'Non-positive number: \$n',
+    String s when s.isNotEmpty => 'Text: \$s',
+    String _ => 'Empty string',
+    _ => 'Unknown type: \${value.runtimeType}'
+  };
+}</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/iYhOU9AuaFs'
+      },
+      {
+        id: 'dart-testing',
+        title: 'Testing & Debugging',
+        content: `
+          <h2>Testing and Debugging in Dart</h2>
+          <p>Learn how to write effective tests for your Dart code and debug applications efficiently. Testing ensures code reliability while debugging helps identify and fix issues.</p>
+          
+          <h3>Setting Up Testing:</h3>
+          <p>Setting up a robust testing environment is the foundation of reliable Dart applications, requiring proper project configuration and dependency management. The test package provides the core testing framework, while additional packages like mockito enable advanced testing scenarios. Understanding project structure, test file organization, and basic test anatomy with setUp, tearDown, and group functions creates a solid testing foundation for maintainable code.</p>
+          <pre><code>// pubspec.yaml
+name: my_dart_project
+version: 1.0.0
+
+dependencies:
+  # Your regular dependencies
+
+dev_dependencies:
+  test: ^1.24.0
+  mockito: ^5.4.0
+
+// test/calculator_test.dart
+import 'package:test/test.dart';
+import '../lib/calculator.dart';
+
+void main() {
+  group('Calculator Tests', () {
+    late Calculator calculator;
+    
+    setUp(() {
+      calculator = Calculator();
+    });
+    
+    test('should add two numbers correctly', () {
+      // Arrange
+      int a = 5;
+      int b = 3;
+      
+      // Act
+      int result = calculator.add(a, b);
+      
+      // Assert
+      expect(result, equals(8));
+    });
+    
+    test('should handle negative numbers', () {
+      expect(calculator.add(-5, 3), equals(-2));
+      expect(calculator.add(-5, -3), equals(-8));
+    });
+    
+    test('should multiply correctly', () {
+      expect(calculator.multiply(4, 5), equals(20));
+      expect(calculator.multiply(0, 10), equals(0));
+    });
+  });
+}</code></pre>
+          
+          <h3>Different Types of Tests:</h3>
+          <p>Effective testing involves creating different types of tests to thoroughly validate your code's functionality. Unit tests focus on individual functions or classes, while integration tests verify how components work together. Understanding how to structure test code, organize test groups, and write comprehensive assertions ensures your applications are reliable and maintainable.</p>
+          <pre><code>// lib/user_service.dart
+class UserService {
+  List<User> users = [];
+  
+  void addUser(User user) {
+    if (user.email.isNotEmpty && user.name.isNotEmpty) {
+      users.add(user);
+    } else {
+      throw ArgumentError('User must have name and email');
+    }
+  }
+  
+  User? findUserByEmail(String email) {
+    try {
+      return users.firstWhere((user) => user.email == email);
+    } catch (e) {
+      return null;
+    }
+  }
+  
+  bool deleteUser(String email) {
+    int initialLength = users.length;
+    users.removeWhere((user) => user.email == email);
+    return users.length < initialLength;
+  }
+}
+
+class User {
+  final String name;
+  final String email;
+  
+  User(this.name, this.email);
+  
+  @override
+  bool operator ==(Object other) =>
+    identical(this, other) ||
+    other is User && other.name == name && other.email == email;
+  
+  @override
+  int get hashCode => name.hashCode ^ email.hashCode;
+}
+
+// test/user_service_test.dart
+import 'package:test/test.dart';
+import '../lib/user_service.dart';
+
+void main() {
+  group('UserService', () {
+    late UserService userService;
+    
+    setUp(() {
+      userService = UserService();
+    });
+    
+    group('addUser', () {
+      test('should add valid user', () {
+        User user = User('Alice', 'alice@example.com');
+        
+        userService.addUser(user);
+        
+        expect(userService.users, contains(user));
+        expect(userService.users.length, equals(1));
+      });
+      
+      test('should throw error for invalid user', () {
+        User invalidUser = User('', '');  // Invalid user
+        
+        expect(
+          () => userService.addUser(invalidUser),
+          throwsA(isA<ArgumentError>())
+        );
+      });
+    });
+    
+    group('findUserByEmail', () {
+      test('should find existing user', () {
+        User user = User('Bob', 'bob@example.com');
+        userService.addUser(user);
+        
+        User? found = userService.findUserByEmail('bob@example.com');
+        
+        expect(found, isNotNull);
+        expect(found, equals(user));
+      });
+      
+      test('should return null for non-existing user', () {
+        User? found = userService.findUserByEmail('nonexistent@example.com');
+        
+        expect(found, isNull);
+      });
+    });
+    
+    group('deleteUser', () {
+      test('should delete existing user', () {
+        User user = User('Charlie', 'charlie@example.com');
+        userService.addUser(user);
+        
+        bool deleted = userService.deleteUser('charlie@example.com');
+        
+        expect(deleted, isTrue);
+        expect(userService.users, isEmpty);
+      });
+      
+      test('should return false for non-existing user', () {
+        bool deleted = userService.deleteUser('nonexistent@example.com');
+        
+        expect(deleted, isFalse);
+      });
+    });
+  });
+}</code></pre>
+          
+          <h3>Mocking and Async Testing:</h3>
+          <p>Mocking allows you to simulate external dependencies and control their behavior during testing, enabling you to test your code in isolation. Async testing handles Future-based operations and ensures your asynchronous code works correctly. Understanding mocking and async testing patterns is crucial for testing code that interacts with databases, APIs, and other external services.</p>
+          <pre><code>import 'dart:async';
+import 'package:test/test.dart';
+
+// Service to test
+class ApiService {
+  final HttpClient client;
+  
+  ApiService(this.client);
+  
+  Future<String> fetchData(String endpoint) async {
+    final response = await client.get(endpoint);
+    if (response.statusCode == 200) {
+      return response.body;
+    } else {
+      throw Exception('Failed to fetch data: \${response.statusCode}');
+    }
+  }
+}
+
+// Mock HTTP client
+class MockHttpClient implements HttpClient {
+  String? responseBody;
+  int statusCode = 200;
+  Duration delay = Duration.zero;
+  
+  @override
+  Future<HttpResponse> get(String url) async {
+    await Future.delayed(delay);
+    return MockHttpResponse(responseBody ?? 'default response', statusCode);
+  }
+}
+
+class MockHttpResponse implements HttpResponse {
+  final String body;
+  final int statusCode;
+  
+  MockHttpResponse(this.body, this.statusCode);
+}
+
+// Test with mocks
+void main() {
+  group('ApiService', () {
+    late MockHttpClient mockClient;
+    late ApiService apiService;
+    
+    setUp(() {
+      mockClient = MockHttpClient();
+      apiService = ApiService(mockClient);
+    });
+    
+    test('should fetch data successfully', () async {
+      // Arrange
+      mockClient.responseBody = '{"data": "test"}';
+      mockClient.statusCode = 200;
+      
+      // Act
+      String result = await apiService.fetchData('/test');
+      
+      // Assert
+      expect(result, equals('{"data": "test"}'));
+    });
+    
+    test('should throw exception on error', () async {
+      // Arrange
+      mockClient.statusCode = 404;
+      
+      // Act & Assert
+      expect(
+        () => apiService.fetchData('/test'),
+        throwsA(isA<Exception>())
+      );
+    });
+    
+    test('should handle timeout', () async {
+      // Arrange
+      mockClient.delay = Duration(seconds: 10);
+      
+      // Act & Assert
+      expect(
+        () => apiService.fetchData('/test').timeout(Duration(seconds: 1)),
+        throwsA(isA<TimeoutException>())
+      );
+    });
+  });
+}</code></pre>
+          
+          <h3>Debugging Techniques:</h3>
+          <p>Effective debugging skills help you identify and resolve issues in your Dart applications quickly and efficiently. From simple print statements to sophisticated debugging utilities, understanding various debugging approaches accelerates problem-solving. Mastering debugging techniques reduces development time and improves your ability to maintain complex applications.</p>
+          <pre><code>// 1. Print debugging
+void debugExample() {
+  String name = 'Alice';
+  int age = 30;
+  
+  print('Debug: name = \$name, age = \$age');  // Basic print
+  
+  // Conditional debugging
+  bool isDebugMode = true;
+  if (isDebugMode) {
+    print('Debug mode is enabled');
+  }
+}
+
+// 2. Using assert for debugging
+void validateInput(int value) {
+  assert(value > 0, 'Value must be positive');  // Only runs in debug mode
+  assert(value < 100, 'Value must be less than 100');
+  
+  // Process value
+  print('Processing value: \$value');
+}
+
+// 3. Stack trace debugging
+void demonstrateStackTrace() {
+  try {
+    problemFunction();
+  } catch (e, stackTrace) {
+    print('Error: \$e');
+    print('Stack trace:');
+    print(stackTrace);
+  }
+}
+
+void problemFunction() {
+  throw Exception('Something went wrong!');
+}
+
+// 4. Custom debugging utility
+class Debug {
+  static bool isEnabled = true;
+  
+  static void log(String message, [String? tag]) {
+    if (isEnabled) {
+      String timestamp = DateTime.now().toIso8601String();
+      String tagStr = tag != null ? '[\$tag] ' : '';
+      print('[\$timestamp] \$tagStr\$message');
+    }
+  }
+  
+  static void error(String message, [Object? error, StackTrace? stackTrace]) {
+    if (isEnabled) {
+      log('ERROR: \$message', 'ERROR');
+      if (error != null) {
+        log('Exception: \$error', 'ERROR');
+      }
+      if (stackTrace != null) {
+        log('Stack trace: \$stackTrace', 'ERROR');
+      }
+    }
+  }
+  
+  static void performance(String operation, Function() action) {
+    if (isEnabled) {
+      Stopwatch stopwatch = Stopwatch()..start();
+      action();
+      stopwatch.stop();
+      log('Performance: \$operation took \${stopwatch.elapsedMilliseconds}ms');
+    } else {
+      action();
+    }
+  }
+}
+
+// Usage
+void main() {
+  Debug.log('Application started');
+  
+  try {
+    Debug.performance('Data processing', () {
+      // Some time-consuming operation
+      List<int> numbers = List.generate(1000000, (i) => i);
+      numbers.sort();
+    });
+  } catch (e, stackTrace) {
+    Debug.error('Failed to process data', e, stackTrace);
+  }
+}</code></pre>
+          
+          <h3>Running Tests:</h3>
+          <p>The Dart testing framework provides comprehensive command-line tools for running, organizing, and analyzing your tests with various execution options and reporting formats. Understanding different testing commands, coverage analysis, and continuous testing workflows helps you integrate testing into your development process effectively. Mastering test execution strategies ensures you catch issues early and maintain high code quality throughout the entire development lifecycle.</p>
+          <pre><code># Run all tests
+dart test
+
+# Run specific test file
+dart test test/calculator_test.dart
+
+# Run tests with coverage
+dart test --coverage=coverage
+dart pub global activate coverage
+dart pub global run coverage:format_coverage --lcov --in=coverage --out=coverage/lcov.info --report-on=lib
+
+# Run tests in watch mode (reruns on file changes)
+dart test --reporter=expanded
+
+# Run tests with specific name pattern
+dart test --name="Calculator"
+
+# Run tests with timeout
+dart test --timeout=30s</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/How34FlWKYs'
+      },
+      {
+        id: 'dart-packages',
+        title: 'Packages & pub.dev',
+        content: `
+          <h2>Dart Package Management</h2>
+          <p>Learn how to use existing packages and create your own packages in Dart. The pub.dev ecosystem provides thousands of packages to extend your applications.</p>
+          
+          <h3>Understanding pubspec.yaml:</h3>
+          <p>The pubspec.yaml file is the configuration heart of every Dart project. It defines your project's metadata, dependencies, and build configuration. Think of it as similar to package.json in Node.js or requirements.txt in Python. This file tells Dart which external packages your project needs and what versions to use, ensuring consistent builds across different environments.</p>
+          <pre><code># pubspec.yaml
+name: my_dart_app
+description: A sample Dart application
+version: 1.0.0
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  http: ^1.1.0              # HTTP client for API calls
+  path: ^1.8.3              # Cross-platform path manipulation
+  intl: ^0.19.0             # Internationalization support
+  json_annotation: ^4.8.1   # JSON serialization annotations
+
+dev_dependencies:
+  test: ^1.24.0             # Testing framework
+  build_runner: ^2.4.8      # Code generation
+  json_serializable: ^6.7.1 # JSON serialization code generator
+  lints: ^3.0.0             # Dart linting rules</code></pre>
+          
+          <p>The <code>pubspec.yaml</code> file is the heart of any Dart project. It defines your project's metadata, dependencies, and configuration. The <code>dependencies</code> section contains packages your app needs to run, while <code>dev_dependencies</code> contains tools needed only during development like testing frameworks and code generators.</p>
+          
+          <h3>Managing Dependencies:</h3>
+          <p>Dart's package manager 'pub' provides powerful commands to manage your project dependencies efficiently. These commands handle downloading, updating, and removing packages automatically while maintaining proper version constraints. The pub tool also resolves dependency conflicts and ensures all packages work together harmoniously.</p>
+          <pre><code># Install dependencies
+dart pub get
+
+# Upgrade dependencies to latest compatible versions
+dart pub upgrade
+
+# Add a new dependency
+dart pub add http
+
+# Add a dev dependency
+dart pub add --dev test
+
+# Remove a dependency
+dart pub remove http</code></pre>
+          
+          <p>These <code>pub</code> commands are essential for managing your project's dependencies. <code>dart pub get</code> downloads and installs all dependencies listed in pubspec.yaml. <code>dart pub add</code> automatically adds a package to your pubspec.yaml and installs it, making dependency management much easier than manual editing.</p>
+          
+          <h3>Using Popular Packages:</h3>
+          <p>The pub.dev repository contains thousands of high-quality packages that can accelerate your development. Popular packages like 'http' for API calls, 'path' for file system operations, and 'intl' for internationalization are battle-tested and widely adopted. Learning to leverage these packages effectively can save you countless hours of development time.</p>
+          <pre><code>// Using HTTP package for API calls
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+
+Future<Map<String, dynamic>> fetchUserData(int userId) async {
+  final response = await http.get(
+    Uri.parse('https://jsonplaceholder.typicode.com/users/\$userId'),
+    headers: {'Content-Type': 'application/json'},
+  );
+  
+  if (response.statusCode == 200) {
+    return jsonDecode(response.body);
+  } else {
+    throw Exception('Failed to load user data');
+  }
+}
+
+// Using Path package for file paths
+import 'package:path/path.dart' as path;
+
+void workWithPaths() {
+  String projectPath = path.join('users', 'documents', 'my_project');
+  print('Project path: \$projectPath');
+  
+  String fileName = path.basename('/users/documents/file.txt');
+  print('File name: \$fileName');  // file.txt
+}</code></pre>
+          
+          <p>The <code>http</code> package is one of the most popular packages for making REST API calls. It provides a clean, simple interface for GET, POST, PUT, and DELETE requests. The <code>path</code> package helps you work with file system paths in a cross-platform way, automatically handling differences between Windows, macOS, and Linux path separators.</p>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/QqCvQ-xYNl8'
+      },
+      {
+        id: 'dart-file-io',
+        title: 'File I/O & System',
+        content: `
+          <h2>File I/O and System Operations</h2>
+          <p>Learn how to work with files, directories, and system operations in Dart. Handle file reading/writing, directory manipulation, and environment variables.</p>
+          
+          <h3>Reading Files:</h3>
+          <p>File reading operations in Dart are asynchronous by design to prevent blocking your application's main thread. Dart provides multiple methods to read files depending on your needs - you can read the entire file as a string, process it line by line, or read binary data for images and other media files. Proper error handling is crucial when working with file operations.</p>
+          <pre><code>import 'dart:io';
+
+// Read entire file as string
+Future<void> readTextFile() async {
+  try {
+    File file = File('data/sample.txt');
+    String contents = await file.readAsString();
+    print('File contents: \$contents');
+  } catch (e) {
+    print('Error reading file: \$e');
+  }
+}
+
+// Read file line by line
+Future<void> readFileLines() async {
+  File file = File('data/users.txt');
+  
+  if (await file.exists()) {
+    List<String> lines = await file.readAsLines();
+    for (int i = 0; i < lines.length; i++) {
+      print('Line \${i + 1}: \${lines[i]}');
+    }
+  } else {
+    print('File does not exist');
+  }
+}</code></pre>
+          
+          <p>File reading in Dart is asynchronous by default, which prevents blocking your application while waiting for disk operations. The <code>readAsString()</code> method reads the entire file into memory as a string, while <code>readAsLines()</code> splits the content into a list of strings for line-by-line processing. Always use try-catch blocks when working with files to handle potential I/O errors gracefully.</p>
+          
+          <h3>Writing Files:</h3>
+          <p>Writing files in Dart is straightforward and flexible, supporting various write modes including overwrite and append. Dart automatically handles file creation and can recursively create directory structures if needed. Whether you're saving user data, logging application events, or exporting reports, Dart's file writing capabilities provide robust solutions for data persistence.</p>
+          <pre><code>// Write string to file
+Future<void> writeTextFile() async {
+  File file = File('output/result.txt');
+  
+  // Create directory if it doesn't exist
+  await file.parent.create(recursive: true);
+  
+  String content = 'Hello, Dart File I/O!\nCurrent time: \${DateTime.now()}';
+  
+  try {
+    await file.writeAsString(content);
+    print('File written successfully');
+  } catch (e) {
+    print('Error writing file: \$e');
+  }
+}</code></pre>
+          
+          <p>When writing files, Dart automatically creates the file if it doesn't exist. The <code>file.parent.create(recursive: true)</code> ensures that all parent directories are created if they don't exist. You can use <code>FileMode.append</code> to add content to an existing file, or the default <code>FileMode.write</code> to overwrite the entire file. Always handle potential write permissions and disk space errors.</p>
+          
+          <h3>Directory Operations:</h3>
+          <p>Managing directories and file systems is essential for organizing data and resources in your applications. Dart provides comprehensive directory operations including creation, listing contents, and traversal. These operations work seamlessly across different operating systems, handling platform-specific path separators and permissions automatically.</p>
+          <pre><code>// Working with directories
+Future<void> directoryOperations() async {
+  Directory dataDir = Directory('project_data');
+  
+  // Create directory
+  if (!await dataDir.exists()) {
+    await dataDir.create(recursive: true);
+    print('Directory created: \${dataDir.path}');
+  }
+  
+  // List directory contents
+  await for (FileSystemEntity entity in dataDir.list()) {
+    if (entity is File) {
+      print('File: \${entity.path}');
+    } else if (entity is Directory) {
+      print('Directory: \${entity.path}');
+    }
+  }
+}</code></pre>
+          
+          <p>Directory operations in Dart are powerful and flexible. The <code>create(recursive: true)</code> method works like <code>mkdir -p</code> in Unix systems, creating all necessary parent directories. The <code>list()</code> method returns a stream of <code>FileSystemEntity</code> objects, which you can filter by type (File, Directory, or Link). This approach is memory-efficient for large directories since it processes items one at a time.</p>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/YKdQcT7EgQI'
+      },
+      {
+        id: 'dart-advanced',
+        title: 'Advanced Features',
+        content: `
+          <h2>Advanced Dart Features</h2>
+          <p>Explore advanced Dart features including generics, extensions, isolates, and metaprogramming. These features enable you to write more flexible, reusable, and efficient code.</p>
+          
+          <h3>Generics and Type Parameters:</h3>
+          <p>Generics enable you to write flexible, reusable code that works with multiple types while maintaining compile-time type safety. They prevent runtime type errors and provide excellent IDE support with autocomplete and refactoring. Generics are particularly powerful in collections, data structures, and utility functions where the same logic applies to different data types.</p>
+          <pre><code>// Generic classes
+class Box<T> {
+  T? _item;
+  
+  void put(T item) {
+    _item = item;
+  }
+  
+  T? get() {
+    return _item;
+  }
+  
+  bool get isEmpty => _item == null;
+}
+
+// Usage of generic classes
+void useGenericBox() {
+  Box<String> stringBox = Box<String>();
+  stringBox.put('Hello, Generics!');
+  String? message = stringBox.get();
+  print(message);
+}</code></pre>
+          
+          <p>Generics in Dart allow you to write reusable code that works with multiple types while maintaining type safety. The <code>&lt;T&gt;</code> syntax defines a type parameter that can be any type. When you create a <code>Box&lt;String&gt;</code>, the compiler ensures that only String values can be stored and retrieved, preventing runtime type errors and providing better IDE support with autocomplete and error checking.</p>
+          
+          <h3>Extension Methods:</h3>
+          <p>Extension methods allow you to add new functionality to existing classes without modifying their source code or creating inheritance hierarchies. They're perfect for adding domain-specific methods to built-in types like String, List, or int. Extensions help keep your code clean and enable fluent, readable method chaining while maintaining type safety.</p>
+          <pre><code>// Basic extensions
+extension StringExtensions on String {
+  // Check if string is a valid email
+  bool get isEmail {
+    return RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}\$').hasMatch(this);
+  }
+  
+  // Capitalize first letter
+  String get capitalized {
+    if (isEmpty) return this;
+    return '\${this[0].toUpperCase()}\${substring(1)}';
+  }
+}
+
+// Using extensions
+void useExtensions() {
+  String email = 'user@example.com';
+  print('Is email: \${email.isEmail}');  // true
+  
+  String text = 'hello world';
+  print('Capitalized: \${text.capitalized}');  // Hello world
+}</code></pre>
+          
+          <p>Extension methods let you add functionality to existing classes without modifying their source code or creating wrapper classes. They're particularly useful for adding domain-specific functionality to built-in types like String, List, or int. Extensions are resolved at compile time, so there's no runtime performance cost. They help keep your code clean and readable by allowing method chaining on familiar types.</p>
+          
+          <h3>Isolates for Parallel Processing:</h3>
+          <p>Isolates are Dart's approach to concurrent programming, providing true parallelism without shared memory concerns. Each isolate runs in its own memory space and communicates through message passing, eliminating race conditions and making concurrent programming safer. Isolates are ideal for CPU-intensive tasks that would otherwise freeze your application's user interface.</p>
+          <pre><code>import 'dart:isolate';
+
+// CPU-intensive function
+int fibonacci(int n) {
+  if (n <= 1) return n;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+// Function to run in isolate
+void fibonacciIsolate(SendPort sendPort) {
+  ReceivePort receivePort = ReceivePort();
+  sendPort.send(receivePort.sendPort);
+  
+  receivePort.listen((message) {
+    if (message is int) {
+      int result = fibonacci(message);
+      sendPort.send(result);
+    }
+  });
+}</code></pre>
+          
+          <p>Isolates are Dart's approach to parallel processing, similar to threads in other languages but completely isolated with no shared memory. Each isolate has its own memory space and communicates only through message passing using SendPort and ReceivePort. This design eliminates race conditions and makes concurrent programming safer. Isolates are perfect for CPU-intensive tasks like image processing, cryptography, or complex calculations that would otherwise block the main UI thread.</p>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/RMiN59x3uH0'
       }
     ]
   }
