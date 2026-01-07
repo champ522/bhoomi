@@ -12,7 +12,6 @@ import styles from '../styles/HeroBanner.module.css';
 const HeroBanner = () => {
   const swiperRef = useRef(null);
   const canvasRef = useRef(null);
-  const globeBackgroundRef = useRef(null);
 
   // Right side images array
   const rightImages = [
@@ -24,12 +23,12 @@ const HeroBanner = () => {
   const slides = [
     {
       id: 1,
-      title: "Transform Your",
-      highlight: "Digital Future",
-      subtitle: "Innovative Solutions for Modern Businesses",
-      description: "We create cutting-edge software solutions that drive growth, enhance efficiency, and transform your business for the digital age.",
-      buttonText: "Get Started",
-      buttonLink: "/contact"
+      title: "Innovation Meets",
+      highlight: "Excellence",
+      subtitle: "Your Trusted Technology Partner",
+      description: "Join hundreds of satisfied clients who have transformed their businesses with our comprehensive technology solutions and expert guidance.",
+      buttonText: "View Portfolio",
+      buttonLink: "/our-clients"
     },
     {
       id: 2,
@@ -42,12 +41,12 @@ const HeroBanner = () => {
     },
     {
       id: 3,
-      title: "Innovation Meets",
-      highlight: "Excellence",
-      subtitle: "Your Trusted Technology Partner",
-      description: "Join hundreds of satisfied clients who have transformed their businesses with our comprehensive technology solutions and expert guidance.",
-      buttonText: "View Portfolio",
-      buttonLink: "/our-clients"
+      title: "Transform Your",
+      highlight: "Digital Future",
+      subtitle: "Innovative Solutions for Modern Businesses",
+      description: "We create cutting-edge software solutions that drive growth, enhance efficiency, and transform your business for the digital age.",
+      buttonText: "Get Started",
+      buttonLink: "/contact"
     }
   ];
 
@@ -162,86 +161,35 @@ const HeroBanner = () => {
     };
   }, []);
 
-  // 3D Globe Background Effect
-  useEffect(() => {
-    const container = globeBackgroundRef.current;
-    if (!container) return;
-
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(
-      75,
-      container.clientWidth / container.clientHeight,
-      0.1,
-      1000
-    );
-    camera.position.z = 15;
-
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.setPixelRatio(window.devicePixelRatio);
-    container.appendChild(renderer.domElement);
-
-    const geometry = new THREE.IcosahedronGeometry(6, 3);
-
-    // Mobile view detection for opacity
-    const isMobile = window.innerWidth < 768;
-    const wireframeOpacity = isMobile ? 0.5 : 0.1;
-
-    const wireframeMaterial = new THREE.MeshBasicMaterial({
-      color: 0x28a745,
-      wireframe: true,
-      transparent: true,
-      opacity: wireframeOpacity
-    });
-    const wireframeSphere = new THREE.Mesh(geometry, wireframeMaterial);
-    scene.add(wireframeSphere);
-
-    const pointsMaterial = new THREE.PointsMaterial({
-      color: 0x28a745,
-      size: 0.15,
-      sizeAttenuation: true
-    });
-    const pointsSphere = new THREE.Points(geometry, pointsMaterial);
-    scene.add(pointsSphere);
-
-    function animateGlobe() {
-      requestAnimationFrame(animateGlobe);
-      pointsSphere.rotation.y += 0.005;
-      wireframeSphere.rotation.y += 0.005;
-      pointsSphere.rotation.x += 0.002;
-      wireframeSphere.rotation.x += 0.002;
-      renderer.render(scene, camera);
-    }
-    animateGlobe();
-
-    const handleResize = () => {
-      camera.aspect = container.clientWidth / container.clientHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(container.clientWidth, container.clientHeight);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      if (container && renderer.domElement) {
-        container.removeChild(renderer.domElement);
-      }
-      renderer.dispose();
-      geometry.dispose();
-      wireframeMaterial.dispose();
-      pointsMaterial.dispose();
-    };
-  }, []);
-
 
   return (
     <section className={styles.heroBanner}>
       {/* Particle Background */}
       <div ref={canvasRef} className={styles.particleCanvas} />
       
-      {/* 3D Globe Background */}
-      <div ref={globeBackgroundRef} className={styles.globeBackground} />
+      {/* 3D Cube */}
+      <div className={styles.cubeContainer}>
+        <div className={styles.cube}>
+          <div className={`${styles.face} ${styles.front}`}>
+            <img src="/images/sliderimg1.png" alt="Bhoomi Tech" className={styles.faceImage} />
+          </div>
+          <div className={`${styles.face} ${styles.back}`}>
+            <img src="/images/sliderimg2.png" alt="Bhoomi Tech" className={styles.faceImage} />
+          </div>
+          <div className={`${styles.face} ${styles.right}`}>
+            <img src="/images/dmarketing.png" alt="Bhoomi Tech" className={styles.faceImage} />
+          </div>
+          <div className={`${styles.face} ${styles.left}`}>
+            <img src="/images/socialmediaa.png" alt="Bhoomi Tech" className={styles.faceImage} />
+          </div>
+          <div className={`${styles.face} ${styles.top}`}>
+            <img src="/images/appdev.png" alt="Bhoomi Tech" className={styles.faceImage} />
+          </div>
+          <div className={`${styles.face} ${styles.bottom}`}>
+            <img src="/images/softdev.png" alt="Bhoomi Tech" className={styles.faceImage} />
+          </div>
+        </div>
+      </div>
       
       <Swiper
         ref={swiperRef}

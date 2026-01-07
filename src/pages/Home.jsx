@@ -15,12 +15,14 @@ import Blog from '../components/Blog';
 import CallToAction from '../components/CallToAction';
 import Certifications from '../components/Certifications';
 import InstagramReelsSection from '../components/InstagramReelsSection';
+import Partnership from '../components/Partnership';
 
 const Home = () => {
   return (
     <>
       <HeroBanner />
       {/* <Wave /> */}
+      <Partnership />
       <AboutUs />
       <Services />
       <Features />

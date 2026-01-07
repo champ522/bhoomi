@@ -9,8 +9,8 @@ const OurClientsPage = () => {
   const [activeTab, setActiveTab] = useState('All Clients');
   const [statsRef, isStatsVisible] = useIntersectionObserver({ threshold: 0.3 });
 
-  const projectsCount = useCounter(250, 2000, isStatsVisible);
-  const clientsCount = useCounter(300, 2000, isStatsVisible);
+  const projectsCount = useCounter(900, 2000, isStatsVisible);
+  const clientsCount = useCounter(700, 2000, isStatsVisible);
   const countriesCount = useCounter(50, 2000, isStatsVisible);
   const satisfactionCount = useCounter(98, 2000, isStatsVisible);
 

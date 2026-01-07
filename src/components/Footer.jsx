@@ -14,7 +14,7 @@ const Footer = () => {
           <div className={styles.footerColumn}>
             <Link to="/" className={styles.logoSection}>
               <img 
-                src="/images/bhoomilogo.png" 
+                src="/images/bhoomi-black.png" 
                 alt="BhoomiTech Logo" 
                 className={styles.logoImage}
                 onError={(e) => {

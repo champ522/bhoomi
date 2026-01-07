@@ -283,7 +283,7 @@ const Header = () => {
             </li>
 
             <li className={styles.navItem}>
-              <Link to="/our-clients" className={styles.navLink}>Our Clients</Link>
+              <Link to="/our-clients" className={styles.navLink}>Our Project</Link>
             </li>
             <li className={styles.navItem}>
               <Link to="/career" className={styles.navLink}>Career</Link>

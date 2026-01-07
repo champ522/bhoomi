@@ -17,7 +17,8 @@ const Services = () => {
     {
       id: 1,
       title: "Website Development",
-      description: "We create visually stunning, user-friendly websites optimized for performance and conversions. From corporate sites to landing pages, our designs reflect your brand identity and engage your audience.",
+      description: "We create visually stunning, user-friendly websites optimized for performance and conversions. From corporate sites to landing pages, our designs reflect your brand identity.",
+      tags: ["Responsive Design", "SEO Optimized", "Fast Loading", "Custom CMS"],
       bgImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
       route: "/web-development",
       icon: (
@@ -31,7 +32,8 @@ const Services = () => {
     {
       id: 2,
       title: "App Development",
-      description: "Build powerful iOS and Android applications with intuitive interfaces and robust functionality. We specialize in Flutter, React Native, and native development for seamless cross-platform experiences.",
+      description: "Build powerful iOS and Android applications with intuitive interfaces and robust functionality. We specialize in Flutter, React Native, and native development.",
+      tags: ["iOS & Android", "Cross-Platform", "Native Apps", "UI/UX Design"],
       bgImage: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&h=300&fit=crop",
       route: "/mobile-app-development",
       icon: (
@@ -44,7 +46,8 @@ const Services = () => {
     {
       id: 3,
       title: "Digital Marketing",
-      description: "Drive measurable growth with data-driven digital marketing strategies. From SEO and PPC to content marketing and social media campaigns, we help you reach your target audience effectively.",
+      description: "Drive measurable growth with data-driven digital marketing strategies. From SEO and PPC to content marketing and social media campaigns.",
+      tags: ["SEO", "PPC Campaigns", "Content Marketing", "Analytics"],
       bgImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
       route: "/digital-marketing",
       icon: (
@@ -58,7 +61,8 @@ const Services = () => {
     {
       id: 4,
       title: "Social Media Marketing",
-      description: "Build meaningful connections with your audience across Instagram, Facebook, LinkedIn, and more. Our strategic social media campaigns boost brand awareness and drive customer engagement.",
+      description: "Build meaningful connections with your audience across Instagram, Facebook, LinkedIn, and more. Our strategic campaigns boost brand awareness.",
+      tags: ["Instagram", "Facebook", "LinkedIn", "Brand Strategy"],
       bgImage: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&h=300&fit=crop",
       route: "/social-media-marketing",
       icon: (
@@ -70,7 +74,8 @@ const Services = () => {
     {
       id: 5,
       title: "Application Development",
-      description: "Scalable web applications with robust backends and intuitive frontends for complex business needs. We deliver Custom Solutions, Cloud Ready applications, seamless API Integration, and Secure infrastructure for your business growth.",
+      description: "Scalable web applications with robust backends and intuitive frontends for complex business needs. We deliver Custom Solutions and Cloud Ready applications.",
+      tags: ["Custom Solutions", "Cloud Ready", "API Integration", "Secure"],
       bgImage: "https://images.unsplash.com/photo-1581276879432-15e50529f34b?w=500&h=300&fit=crop",
       route: "/web-development",
       icon: (
@@ -85,7 +90,8 @@ const Services = () => {
     {
       id: 6,
       title: "Software Development",
-      description: "Tailored software solutions designed specifically for your unique business requirements and workflows. Our approach includes Bespoke Solutions, Agile methodology, Integration Ready systems, and ongoing Maintenance support.",
+      description: "Tailored software solutions designed specifically for your unique business requirements and workflows. Our approach includes Bespoke Solutions.",
+      tags: ["Custom Built", "Agile Process", "Easy Integration", "Support"],
       bgImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&h=300&fit=crop",
       route: "/software-development",
       icon: (
@@ -125,14 +131,13 @@ const Services = () => {
                 >
                   <div className={styles.cardOverlay}>
                     <div className={styles.frontContent}>
-                      <div className={styles.frontImageContainer}>
-                        <img 
-                          src={serviceImages[index]} 
-                          alt={service.title}
-                          className={styles.frontImage}
-                        />
-                      </div>
                       <h3 className={styles.frontTitle}>{service.title}</h3>
+                      <p className={styles.frontDescription}>{service.description}</p>
+                      <div className={styles.tagsContainer}>
+                        {service.tags.map((tag, tagIndex) => (
+                          <span key={tagIndex} className={styles.tag}>{tag}</span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
