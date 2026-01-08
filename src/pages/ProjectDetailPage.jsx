@@ -25,7 +25,7 @@ const ProjectDetailPage = () => {
         'SMS & Email Notifications'
       ],
       technologies: ['React', 'Node.js', 'MongoDB', 'Google Maps API'],
-      demoLink: ''
+      demoLink: 'https://delhiparcel.com/'
     },
     2: {
       title: 'Bhoomi Cloud',
@@ -44,7 +44,7 @@ const ProjectDetailPage = () => {
         'Activity Monitoring'
       ],
       technologies: ['React', 'AWS S3', 'Node.js', 'PostgreSQL'],
-      demoLink: ''
+      demoLink: 'https://crm.bhoomi.cloud/authentication/login'
     },
     3: {
       title: 'Rupiya Maker',
@@ -63,12 +63,12 @@ const ProjectDetailPage = () => {
         'Reports & Analytics'
       ],
       technologies: ['React', 'Node.js', 'MySQL', 'Twilio API'],
-      demoLink: ''
+      demoLink: 'https://rupiyamaker.com/'
     },
     4: {
       title: 'Hospital Soft',
       category: 'Hospital Software',
-      image: '/images/hospitalsoft.png',
+      image: '/images/hospitalimg.png',
       description: 'Hospital Soft is a comprehensive hospital management system designed to digitize and streamline all aspects of healthcare operations. From patient registration to discharge, the platform manages appointments, medical records, billing, pharmacy inventory, and staff scheduling. Built with healthcare professionals in mind, it ensures HIPAA compliance while providing intuitive interfaces for doctors, nurses, and administrative staff.',
       working: 'Patients register at the front desk or online, creating their medical records in the system. Doctors access patient history, add diagnoses, and prescribe medications through the EMR module. The pharmacy receives prescriptions electronically and manages inventory automatically. The billing module generates invoices based on treatments and services rendered. Lab technicians upload test results directly to patient files. The system maintains complete audit trails and ensures data privacy through role-based access controls.',
       modules: [
@@ -82,26 +82,30 @@ const ProjectDetailPage = () => {
         'Staff Management'
       ],
       technologies: ['React', 'Node.js', 'MongoDB', 'HL7 Integration'],
-      demoLink: ''
+      demoLink: 'https://hospital.bdtask-demo.com/login'
     },
     5: {
       title: 'SDRC Print',
-      category: 'Custom Software',
+      category: 'Website',
       image: '/images/sdrcprint.png',
-      description: 'SDRC Print is a specialized printing and design management system tailored for print shops and design studios. The platform handles order management, design file processing, production scheduling, and customer relationship management. With integrated pricing calculators and job tracking, it helps printing businesses operate more efficiently while delivering exceptional customer service.',
-      working: 'Customers submit print orders through the web portal with specifications and design files. The system automatically calculates pricing based on quantity, materials, and finishing options. Design files are reviewed and approved through the platform. Production schedules are generated automatically, optimizing machine utilization. Order status updates are sent to customers throughout the production process. The inventory module tracks paper stock, ink, and other supplies, triggering reorder alerts when needed.',
+      description: 'SD RC Print is a professional document verification service platform specializing in authenticating Registration Certificates (RCs), Driving Licenses (DLs), and related vehicle documentation. The platform combines cutting-edge technology with professional manual checks to deliver highly accurate verification results aligned with official government databases and regulatory standards. Founded with the vision of making document verification faster, easier, and more accurate, SD RC Print serves a wide range of industries ensuring complete transparency, security, and trust.',
+      working: 'The platform provides a multi-layer verification process to ensure document authenticity. Users submit RCs, DLs, or other vehicle documents through the online portal. The system cross-references submitted documents with official government databases using automated verification tools. Each document undergoes professional manual checks by trained verification specialists. The verification process checks for document genuineness, validity, ownership history, and legal status. Results are delivered quickly with detailed verification reports. The platform maintains strict data privacy and security standards, handling all client information with complete confidentiality in compliance with data protection laws.',
       modules: [
-        'Order Management',
-        'Design File Upload & Review',
-        'Pricing Calculator',
-        'Production Scheduling',
-        'Inventory Tracking',
-        'Customer Portal',
-        'Invoice & Billing',
-        'Delivery Management'
+        'RC Verification System',
+        'DL Verification Module',
+        'Vehicle History Checks',
+        'Document Authentication',
+        'Government Database Integration',
+        'Multi-layer Verification Process',
+        'Custom Document Solutions',
+        'Secure Data Management',
+        'Report Generation',
+        'Client Dashboard',
+        'Background Check Services',
+        'Fleet Management Support'
       ],
-      technologies: ['React', 'Node.js', 'MySQL', 'AWS S3'],
-      demoLink: ''
+      technologies: ['React', 'Node.js', 'MySQL', 'Government API Integration'],
+      demoLink: 'https://www.sdrcprint.site/index.html'
     },
     6: {
       title: 'Bhoomi The Real Estate',
@@ -120,7 +124,7 @@ const ProjectDetailPage = () => {
         'Push Notifications'
       ],
       technologies: ['React Native', 'Node.js', 'MongoDB', 'Google Maps API'],
-      demoLink: ''
+      demoLink: 'https://play.google.com/store/apps/details?id=com.bhoomi.app.bhoomi_app&hl=en_IN'
     },
     7: {
       title: 'Dexterous Services',
@@ -139,7 +143,7 @@ const ProjectDetailPage = () => {
         'Provider Dashboard'
       ],
       technologies: ['React Native', 'Node.js', 'PostgreSQL', 'Socket.io'],
-      demoLink: ''
+      demoLink: 'https://dexterousfacilityservices.in/'
     },
     8: {
       title: 'SPOT2 - Food Delivery',
@@ -158,7 +162,7 @@ const ProjectDetailPage = () => {
         'Promo Code System'
       ],
       technologies: ['React Native', 'Node.js', 'MongoDB', 'Firebase'],
-      demoLink: ''
+      demoLink: 'https://play.google.com/store/apps/details?id=hash.code.spot2delivery&pcampaignid=web_share'
     },
     9: {
       title: 'Jobsworld',
@@ -177,7 +181,7 @@ const ProjectDetailPage = () => {
         'Interview Scheduler'
       ],
       technologies: ['React Native', 'Python', 'Django', 'PostgreSQL'],
-      demoLink: ''
+      demoLink: 'https://play.google.com/store/apps/details?id=com.app.jobsworld'
     },
     10: {
       title: 'EV Smart',
@@ -196,26 +200,30 @@ const ProjectDetailPage = () => {
         'Station Management Dashboard'
       ],
       technologies: ['React Native', 'Node.js', 'MongoDB', 'Google Maps API'],
-      demoLink: ''
+      demoLink: 'https://play.google.com/store/apps/details?id=hash.code.evsmart'
     },
     11: {
-      title: 'Rasan Online',
-      category: 'Mobile Application',
-      image: '/images/rasan.jpg',
-      description: 'Rasan Online is a grocery delivery application that brings fresh groceries and daily essentials to customers\' doorsteps. With a vast product catalog, scheduled delivery options, and quality assurance, it makes grocery shopping convenient and time-saving. The app supports both individual customers and bulk orders for businesses.',
-      working: 'Customers browse through categorized product listings with detailed descriptions and images. They add items to cart and select delivery time slots. The system processes orders and assigns them to nearby stores or warehouses. Delivery executives pick, pack, and deliver orders. Customers track their delivery in real-time. The app supports multiple payment options including cash on delivery. Users can create shopping lists, reorder previous purchases, and set up subscription-based deliveries for regular items.',
+      title: 'Aevitas Recycling',
+      category: 'Website',
+      image: '/images/avitaslogo.png',
+      description: 'Aevitas Recycling LLP, founded in 2024, is a comprehensive waste management platform designed to transform the way we manage e-Waste, Battery Waste, Plastic Waste, Tyre Waste, and Hazardous waste. The platform provides Extended Producer Responsibility (EPR) compliance management services, reverse logistics, and asset liquidation services. With a pan-India footprint and a network of certified recyclers, Aevitas ensures transparent and compliant waste recycling solutions.',
+      working: 'The platform operates as a Producer Responsibility Organization (PRO) that facilitates the collection, channelization, and recycling of various waste streams. Producers register on the platform to fulfill their EPR obligations. Aevitas provides end-to-end waste management services including waste collection through reverse logistics, documentation, EPR certification, and channelization to authorized recyclers. The system maintains complete transparency with tracking mechanisms and compliance reports. Asset liquidation services help organizations dispose of redundant IT and Telecom equipment responsibly.',
       modules: [
-        'Product Catalog',
-        'Category Browsing',
-        'Cart Management',
-        'Time Slot Booking',
-        'Order Tracking',
-        'Multiple Payment Options',
-        'Shopping Lists',
-        'Subscription Orders'
+        'EPR Compliance Management',
+        'Producer Responsibility Organization (PRO)',
+        'Reverse Logistics System',
+        'Asset Liquidation Services',
+        'E-Waste Management',
+        'Battery Waste Recycling',
+        'Plastic Waste Solutions',
+        'Tyre Waste Management',
+        'Hazardous Waste Handling',
+        'Network of Recyclers',
+        'Waste Collection Tracking',
+        'Compliance Reporting'
       ],
-      technologies: ['React Native', 'Node.js', 'MongoDB', 'Razorpay'],
-      demoLink: ''
+      technologies: ['React', 'Node.js', 'MySQL', 'Google Maps API'],
+      demoLink: 'https://aevitasrecycling.in/'
     },
     12: {
       title: 'Voice Today News',
@@ -234,7 +242,7 @@ const ProjectDetailPage = () => {
         'Multi-language Support'
       ],
       technologies: ['React Native', 'Node.js', 'Redis', 'News API'],
-      demoLink: ''
+      demoLink: 'https://play.google.com/store/apps/details?id=bhoomi.tech.voicetodaynews.webview_news&hl=en_IN'
     },
     13: {
       title: 'GrabTO',
@@ -253,7 +261,7 @@ const ProjectDetailPage = () => {
         'Multi-service Dashboard'
       ],
       technologies: ['React Native', 'Node.js', 'PostgreSQL', 'Socket.io'],
-      demoLink: ''
+      demoLink: 'https://apps.apple.com/us/app/grabto-a-booking-app/id6505039756'
     },
     14: {
       title: 'Doctcare Services',
@@ -272,7 +280,7 @@ const ProjectDetailPage = () => {
         'Payment Integration'
       ],
       technologies: ['React Native', 'Node.js', 'MongoDB', 'WebRTC'],
-      demoLink: ''
+      demoLink: 'https://play.google.com/store/apps/details?id=bhoomi.app.doctcare.doctcare_app'
     },
     15: {
       title: 'Brolight Production',
@@ -291,26 +299,32 @@ const ProjectDetailPage = () => {
         'Responsive Design'
       ],
       technologies: ['React', 'Next.js', 'Tailwind CSS', 'Vimeo API'],
-      demoLink: ''
+      demoLink: 'https://brolightproduction.in/'
     },
     16: {
-      title: 'Banke Bihari Astrology',
-      category: 'Website',
-      image: '/images/bankeastro.png',
-      description: 'Banke Bihari Astrology is a comprehensive astrology consultation website offering personalized horoscope readings, birth chart analysis, and astrological guidance. The platform connects users with experienced astrologers for online consultations and provides daily horoscope updates, gemstone recommendations, and remedial solutions.',
-      working: 'Users enter their birth details to generate personalized horoscope charts. The website displays daily, weekly, and monthly horoscopes for all zodiac signs. Visitors can book consultations with astrologers through the online scheduling system. Astrologers provide detailed readings via video calls or chat. The platform offers e-commerce functionality for purchasing gemstones and religious items. Blog section publishes astrological articles and planetary transit updates. Payment gateway integration enables secure transactions.',
+      title: 'WCAC Services',
+      category: 'E-commerce Website',
+      image: '/images/wcac.webp',
+      description: 'WCAC (Web Communication And Cyber) is a comprehensive e-commerce platform specializing in IT products, electronic components, and computer peripherals. The platform offers an exclusive range of monitors, keyboards, mice, RAM, SSDs, graphics cards, cabinets, SMPS, and various electronic chips and components. With a focus on high-quality products, competitive pricing, and excellent customer service, WCAC provides free shipping across India, easy returns, and warranty-backed products. The platform ensures customers get genuine products at guaranteed lowest market rates.',
+      working: 'The e-commerce platform allows users to browse through categorized product listings including monitors, peripherals, storage devices, and electronic components. Customers can search products by category, brand, or specifications. Each product page displays detailed specifications, high-quality images, pricing, warranty information, and stock availability. Users add items to cart and proceed to checkout with multiple payment options. The platform provides order tracking from purchase to delivery. Customer accounts maintain order history and wishlists. The system integrates with inventory management for real-time stock updates. Return and replacement requests are handled through the customer portal with easy refund processes.',
       modules: [
-        'Horoscope Generator',
-        'Birth Chart Analysis',
-        'Astrologer Booking System',
-        'Video/Chat Consultations',
-        'E-commerce for Gemstones',
-        'Daily Horoscope Updates',
-        'Blog & Articles',
-        'Payment Gateway'
+        'Product Catalog Management',
+        'Category-based Navigation',
+        'Advanced Search & Filters',
+        'Shopping Cart',
+        'Secure Checkout',
+        'Multiple Payment Gateway',
+        'Order Tracking System',
+        'Customer Account Portal',
+        'Wishlist Management',
+        'Inventory Management',
+        'Return & Refund System',
+        'Warranty Management',
+        'Review & Ratings',
+        'Free Shipping Module'
       ],
-      technologies: ['React', 'Node.js', 'MySQL', 'Stripe'],
-      demoLink: ''
+      technologies: ['React', 'Node.js', 'MongoDB', 'Razorpay', 'AWS S3'],
+      demoLink: 'https://wcac.in/'
     },
     17: {
       title: 'EaseToLoan',
@@ -329,7 +343,7 @@ const ProjectDetailPage = () => {
         'Agent Dashboard'
       ],
       technologies: ['React', 'Node.js', 'PostgreSQL', 'AWS S3'],
-      demoLink: ''
+      demoLink: 'https://easetoloan.com/'
     },
     18: {
       title: 'EscapeQuest',
@@ -348,7 +362,7 @@ const ProjectDetailPage = () => {
         'Corporate Packages'
       ],
       technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      demoLink: ''
+      demoLink: 'https://escapequestrails.com/'
     },
     19: {
       title: 'KD Immigration',
@@ -367,45 +381,53 @@ const ProjectDetailPage = () => {
         'Multi-country Support'
       ],
       technologies: ['React', 'Node.js', 'MySQL', 'Calendly API'],
-      demoLink: ''
+      demoLink: 'https://kdimmigrationservices.com/'
     },
     20: {
-      title: 'SkyMover',
+      title: 'SPAKS LUBE PVT. LTD.',
       category: 'Website',
-      image: '/images/skymover.png',
-      description: 'SkyMover is a comprehensive moving and relocation services website that connects customers with professional movers. The platform offers instant quote generation, service booking, and move management tools. From packing to transportation to unpacking, it provides end-to-end relocation solutions for residential and commercial moves.',
-      working: 'Customers enter move details including source, destination, and inventory through an interactive form. The system generates instant cost estimates based on distance and volume. Users can customize services by adding packing, storage, or insurance. The booking calendar shows available moving dates. Once booked, customers receive a move coordinator who manages the entire process. Real-time tracking shows the location of belongings during transit. Payment milestones are set up with partial payment options. Post-move surveys collect feedback.',
+      image: '/images/spaks.jpg',
+      description: 'SPAKS LUBE Private Limited is a leading manufacturer of advanced waterproofing solutions and industrial coatings based in Alwar, Rajasthan. The company specializes in manufacturing products tailored for overhead and underground water tanks, high-pressure pipelines, and critical infrastructure. With patented waterproofing technology and state-of-the-art manufacturing facilities, SPAKS LUBE delivers innovative products that meet stringent quality standards. Their comprehensive product range includes primers, enamel paints, surface fillers, sealants, emulsion, distemper, floor coatings, anti-corrosive coatings, specialty coatings, waterproofing solutions, rust removers, and industrial cleaning agents.',
+      working: 'The website showcases SPAKS LUBE\'s complete product portfolio organized by categories. Visitors can browse through detailed product information including technical specifications, applications, and usage guidelines. Each product page provides comprehensive details about features, benefits, and technical data sheets. The platform highlights their patented waterproofing technology and research innovations. Quality certifications and laboratory test reports demonstrate product reliability and safety standards. Professional onsite application services information is available for customers requiring installation support. The contact system enables customers to request quotes, technical assistance, and product samples. The website emphasizes their commitment to quality, customer-centric approach, sustainability, innovation, and integrity.',
       modules: [
-        'Instant Quote Generator',
-        'Inventory Calculator',
-        'Service Customization',
-        'Booking Calendar',
-        'Move Coordination Dashboard',
-        'Real-time Shipment Tracking',
-        'Payment Milestones',
-        'Customer Feedback System'
+        'Product Catalog System',
+        'Category-wise Product Display',
+        'Technical Data Sheets Repository',
+        'Product Specifications Database',
+        'Application Guidelines',
+        'Quality Certifications Showcase',
+        'Patent Information Portal',
+        'Quote Request System',
+        'Contact & Inquiry Management',
+        'Professional Services Information',
+        'Company Profile & Values',
+        'Location & Contact Details'
       ],
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'Google Maps API'],
-      demoLink: ''
+      technologies: ['PHP', 'MySQL', 'Bootstrap', 'JavaScript'],
+      demoLink: 'https://www.spakslube.com/'
     },
     21: {
-      title: 'Red Pepper Films',
+      title: 'Mitera - The Event',
       category: 'Website',
-      image: '/images/redpepper.png',
-      description: 'Red Pepper Films is a creative agency website showcasing film production, advertising, and digital content creation services. The site features an impressive portfolio of work, client testimonials, and behind-the-scenes content. With cinematic design and smooth transitions, it reflects the creative excellence of the production house.',
-      working: 'The website opens with a striking video reel highlighting best work. Portfolio section categorizes projects by type - commercials, documentaries, music videos, etc. Each project page includes the full video, client brief, creative approach, and results achieved. The team section profiles directors, cinematographers, and creative staff. A project planner tool helps clients outline their requirements. The blog shares industry insights and production updates. Contact forms enable quote requests with file upload for creative briefs.',
+      image: '/images/miteralogo.png',
+      description: 'MITÉRA is a premium event management company that creates unforgettable experiences through a perfect blend of creativity, logistics, and technology. Specializing in end-to-end event solutions, MITÉRA delivers everything from corporate events and exhibitions to experiential marketing, brand activations, weddings, and curated experiences. With the tagline "CREATE. IMAGINE. CELEBRATE.", the company is known for crafting events that move people and brands. Their comprehensive services include event production, AV content, media buying, star-studded experiences, and curated gifts. MITÉRA has been featured in major publications including Times of India, The Hindu, Deccan Herald, and many more.',
+      working: 'The website showcases MITÉRA\'s diverse portfolio across corporate and experiential events. Visitors can explore various service categories including Experiential Marketing & Brand Activations, Exhibitions & Trade Shows, Corporate & Public Events, Event Production & Tech, AV Content & Media Buying, Curated Gifts & Event Collaterals, and Star Studded Experiences. Each service page details their approach and past work. The portfolio section displays successful projects with visual galleries. Testimonials from satisfied clients including corporate managers, brand managers, and individuals highlight their excellence. The contact system allows potential clients to share event details and requirements. The platform emphasizes their commitment to detail, perfection, and creating lasting impressions regardless of event size.',
       modules: [
-        'Video Portfolio',
-        'Project Case Studies',
-        'Team Profiles',
-        'Project Planner Tool',
+        'Service Portfolio Showcase',
+        'Event Category Pages',
+        'Project Gallery',
         'Client Testimonials',
-        'Blog & Insights',
-        'Quote Request Form',
-        'Creative Brief Upload'
+        'Contact & Inquiry Form',
+        'Event Planning Consultation',
+        'Press & Media Coverage',
+        'Company Story Section',
+        'Newsletter Subscription',
+        'Social Media Integration',
+        'WhatsApp Contact Widget',
+        'Responsive Design'
       ],
-      technologies: ['React', 'Next.js', 'Sanity CMS', 'Cloudflare Stream'],
-      demoLink: ''
+      technologies: ['PHP', 'Bootstrap', 'JavaScript', 'MySQL'],
+      demoLink: 'https://miteraedge.com/'
     },
     22: {
       title: 'GenNextMedia',
@@ -424,26 +446,32 @@ const ProjectDetailPage = () => {
         'Lead Capture Forms'
       ],
       technologies: ['React', 'Node.js', 'MongoDB', 'Google Analytics API'],
-      demoLink: ''
+      demoLink: 'https://gennextmediagroup.com/'
     },
     23: {
       title: 'Ax4 Group',
       category: 'Website',
       image: '/images/afourgroup.png',
-      description: 'Ax4 Group is a corporate website for a business conglomerate with interests in real estate, hospitality, and technology. The site presents the group\'s diverse portfolio, leadership team, corporate values, and career opportunities. With professional design and comprehensive information architecture, it serves as the digital face of the organization.',
-      working: 'The website structure includes dedicated sections for each business vertical. The real estate division showcases ongoing and completed projects with virtual tours. Hospitality section features hotel properties with booking integration. Technology division highlights software products and services. The about section profiles the leadership team and company history. Investor relations area provides financial reports and shareholder information. Career portal lists job openings with online application facility. News section publishes press releases and company updates.',
+      description: 'Ax4 Group (Jhankaar Chamak Detergent) is a professionally managed detergent manufacturing company established in 2012, operating facilities in Naraina Industrial Area, New Delhi, and Bahadurgarh, Haryana. The company is one of India\'s most trusted brands specializing in home care and personal care products, with a tagline "Joy of Clean." Ax4 Group has positioned itself as one of the largest exporters of cosmetics and toiletries from India. The company focuses on providing comprehensive detergent manufacturing solutions including contract manufacturing, private label manufacturing, custom formulations, bulk supply, and eco-friendly cleaning solutions with a commitment to quality, innovation, and customer satisfaction.',
+      working: 'The website showcases Ax4 Group\'s comprehensive manufacturing and service capabilities. Visitors can explore various service offerings including Contract Manufacturing where companies outsource production, Private Label Manufacturing for custom branding and packaging, Custom Formulation Services for eco-friendly and specialized detergents, Bulk Detergent Supply for industrial and commercial needs, and Additional Services covering product testing, quality assurance, and regulatory compliance. The platform highlights their expertise in eco-friendly detergents, concentrated formulations, and smart detergents with enzyme-based technologies. Customer testimonials emphasize their excellent cleaning power, gentle formulations, and reliable business partnerships. The contact system allows potential clients to request estimates and detailed information about their manufacturing capabilities.',
       modules: [
-        'Multi-division Portfolio',
-        'Virtual Property Tours',
-        'Hotel Booking Integration',
-        'Leadership Profiles',
-        'Investor Relations Portal',
-        'Career Portal',
-        'News & Press Releases',
-        'Contact Management'
+        'Service Portfolio Display',
+        'Contract Manufacturing Information',
+        'Private Label Solutions',
+        'Custom Formulation Services',
+        'Bulk Supply Management',
+        'Product Catalog',
+        'About Company Section',
+        'Third Party Manufacturing',
+        'Quality Standards Showcase',
+        'Customer Testimonials',
+        'Estimate Request System',
+        'Contact & Inquiry Form',
+        'Company Statistics Display',
+        'Responsive Design'
       ],
-      technologies: ['React', 'Node.js', 'MySQL', 'Strapi CMS'],
-      demoLink: ''
+      technologies: ['PHP', 'MySQL', 'Bootstrap', 'JavaScript'],
+      demoLink: 'https://ax4group.com/'
     },
     24: {
       title: 'Bhoomi TechZone',
@@ -462,7 +490,7 @@ const ProjectDetailPage = () => {
         'Analytics Dashboard'
       ],
       technologies: ['React', 'Node.js', 'PostgreSQL', 'Redis'],
-      demoLink: ''
+      demoLink: 'https://crm.bhoomi.cloud/admin/authentication'
     },
     25: {
       title: 'Bhoomi Real Estate CRM',
@@ -481,7 +509,276 @@ const ProjectDetailPage = () => {
         'Sales Analytics'
       ],
       technologies: ['React', 'Node.js', 'MongoDB', 'AWS S3'],
-      demoLink: ''
+      demoLink: 'https://www.bhoomitherealestate.com/'
+    },
+    26: {
+      title: 'Kanika - Taxi Booking',
+      category: 'Mobile Application',
+      image: '/images/kanika.webp',
+      description: 'Kanika is a comprehensive taxi booking mobile application designed to provide seamless urban transportation solutions. The app connects passengers with professional drivers, offering reliable, safe, and affordable ride-hailing services. With real-time tracking, multiple vehicle options, and secure payment integration, Kanika delivers an exceptional travel experience. The platform features intelligent driver-passenger matching algorithms, dynamic pricing, ride scheduling, and comprehensive safety measures including emergency assistance and ride sharing options.',
+      working: 'Passengers download the app and create their profile with basic information. They enter their pickup location and destination to view estimated fares and available vehicle types including economy, premium, and shared rides. Once a ride is booked, the system automatically assigns the nearest available driver based on location, ratings, and vehicle type. Passengers can track the driver\'s arrival in real-time via GPS. During the ride, live tracking shows the route and estimated arrival time. Payment is processed automatically through saved payment methods including digital wallets, cards, or cash on delivery. After completion, both passengers and drivers rate each other, maintaining service quality. The app includes safety features like emergency SOS button, ride sharing with contacts, and trip details sharing. Drivers receive ride requests through their dedicated app, can accept or decline bookings, and navigate using integrated GPS.',
+      modules: [
+        'User Registration & Profile',
+        'Real-time Location Tracking',
+        'Ride Booking System',
+        'Multiple Vehicle Options',
+        'Fare Estimation Calculator',
+        'Driver Matching Algorithm',
+        'Live GPS Navigation',
+        'In-app Messaging',
+        'Multiple Payment Gateway',
+        'Digital Wallet Integration',
+        'Ride History & Receipts',
+        'Rating & Review System',
+        'Ride Scheduling',
+        'Emergency SOS Button',
+        'Ride Sharing Features',
+        'Promo Code & Discounts',
+        'Trip Sharing with Contacts',
+        'Driver Dashboard',
+        'Earnings & Reports',
+        'Push Notifications'
+      ],
+      technologies: ['React Native', 'Node.js', 'MongoDB', 'Google Maps API', 'Socket.io'],
+      demoLink: 'https://play.google.com/store/apps/details?id=com.techravinder.kanikapartner&hl=en_IN'
+    },
+    27: {
+      title: 'HobosWorld',
+      category: 'Mobile Application',
+      image: '/images/hobosworld.webp',
+      description: 'Hobos World is a comprehensive travel companion and community platform designed to inspire, connect, and empower travelers worldwide. The app combines curated content discovery with social networking features, allowing users to explore trending destinations, watch intro videos, and discover travel categories tailored to their interests. Users can create and share their own travel videos and blogs, showcasing hidden gems, detailed itineraries, and unique experiences. With features like user stories, travel tips, destination highlights, and community engagement through likes, follows, and comments, Hobos World transforms how people plan, share, and experience travel adventures.',
+      working: 'Users download the app and create their travel profile with preferences and interests. The home feed displays curated content organized into categories like "Popular Now," "Intro Videos," "Trending Destinations," and "Travel Blogs." Users can explore destination-specific content, watch video guides, and read travel stories from fellow travelers. The app allows users to create their own travel content by recording videos or writing blogs about their trips, hidden spots, and travel tips. Content can be enriched with location tags, categories, and descriptions. Other users engage with the content through likes, comments, and follows, building a vibrant travel community. Users can save their favorite destinations and posts to collections for future reference. The discover section helps find inspiration based on interests, while search functionality enables finding specific destinations or users. Push notifications keep users updated about trending content, new followers, and engagement on their posts. The app includes account management features, privacy controls, and data deletion options for complete transparency.',
+      modules: [
+        'User Profile & Registration',
+        'Content Discovery Feed',
+        'Trending Destinations',
+        'Intro Videos Section',
+        'Category-based Browsing',
+        'User Stories & Blogs',
+        'Video Creation & Upload',
+        'Blog Writing Platform',
+        'Location Tagging',
+        'Save & Collections',
+        'Social Engagement (Likes, Comments, Follows)',
+        'Search & Explore',
+        'Push Notifications',
+        'Travel Tips Section',
+        'Destination Highlights',
+        'User Following System',
+        'Content Categorization',
+        'Privacy Policy Integration',
+        'Account Management',
+        'Data Deletion Controls'
+      ],
+      technologies: ['React Native', 'Node.js', 'MongoDB', 'AWS S3', 'Firebase'],
+      demoLink: 'https://play.google.com/store/apps/details?id=com.bhoomitechzone.hobosworld&hl=en_IN'
+    },
+    28: {
+      title: 'Welzon Ride',
+      category: 'Mobile Application',
+      image: '/images/welzon.webp',
+      description: 'Welzon Ride is a smart navigation companion designed to provide seamless location tracking and route guidance for daily commutes and travel exploration. The app leverages real-time GPS technology to deliver accurate positioning, live location updates, and turn-by-turn navigation support. With an interactive map interface, users can easily search and explore locations while viewing detailed address information. The app features smart navigation capabilities including compass integration for direction guidance, route planning, and precise geocoding for address lookup. Privacy-focused with user-controlled permissions, Welzon Ride ensures location access only when needed with secure data handling. The clean, modern interface makes navigation intuitive and hassle-free, perfect for city navigation, finding addresses, location sharing, and travel planning.',
+      working: 'Users download and install the app, granting necessary location permissions for core functionality. Upon launching, the app displays an interactive map with the user\'s current location marked using real-time GPS tracking. Users can search for destinations by entering addresses or place names, with the geocoding feature converting addresses into precise coordinates. The navigation system provides turn-by-turn directions with visual and audio guidance, while the integrated compass helps users maintain proper orientation. Live location updates ensure accuracy throughout the journey, adjusting routes dynamically based on current position. Users can explore nearby places, view detailed address information, and plan routes before starting their trip. The app operates efficiently with network connectivity for map data while maintaining privacy through secure data handling. Location tracking can be controlled by users through permission settings, with data only accessed when the app is actively in use. The clean interface displays relevant information clearly, including distance, estimated time, and route alternatives.',
+      modules: [
+        'Real-Time GPS Tracking',
+        'Live Location Updates',
+        'Turn-by-Turn Navigation',
+        'Interactive Map Interface',
+        'Location Search & Explore',
+        'Address Information Display',
+        'Compass Integration',
+        'Route Planning',
+        'Geocoding Services',
+        'Precise Address Lookup',
+        'Direction Guidance',
+        'Location Sharing',
+        'User Permission Controls',
+        'Secure Data Handling',
+        'Network Connectivity Management',
+        'Map Data Loading',
+        'Distance Calculation',
+        'ETA Estimation',
+        'Route Alternatives',
+        'Privacy Settings'
+      ],
+      technologies: ['React Native', 'Google Maps API', 'Node.js', 'MongoDB', 'Firebase'],
+      demoLink: 'https://play.google.com/store/apps/details?id=com.bhoomitechzone.welzonride&hl=en_IN'
+    },
+    29: {
+      title: 'RiDeal Driver',
+      category: 'Mobile Application',
+      image: '/images/rideal.webp',
+      description: 'RiDeal Driver is a comprehensive driver partner application designed for licensed drivers to receive nearby ride requests and maximize their earning potential with flexible working hours. The app provides detailed trip information, easy navigation, and transparent earnings tracking directly on the driver\'s phone. With a simple availability toggle, drivers can go online or offline with a single tap, controlling when they want to accept rides. The app displays pickup and drop locations on an interactive map with in-app navigation support to guide drivers along the best routes.',
+      working: 'Licensed drivers download and register on the app, completing their profile with necessary documents and vehicle information. After verification, drivers can toggle their availability status to go online and start receiving ride requests from nearby passengers. When a ride request comes in, the app displays the pickup location, destination, estimated distance, and fare details. Drivers can choose to accept or decline the request based on their preference. Upon accepting, the app shows the complete route to the pickup location with turn-by-turn navigation support. Drivers follow the in-app navigation to reach the passenger, confirm pickup through the app, and then navigate to the drop-off destination. Throughout the trip, real-time tracking ensures security for both driver and passenger. After completing the trip, drivers can view trip earnings, distance covered, and duration. Passengers can rate the driver and provide feedback, helping maintain service quality. The earnings dashboard displays daily, weekly, and monthly income with detailed breakdowns. Drivers can access their complete trip history, view past rides, and analyze performance metrics to optimize their working hours and earnings potential.',
+      modules: [
+        'Driver Registration & Verification',
+        'Profile & Document Management',
+        'Availability Toggle (Online/Offline)',
+        'Nearby Ride Request Notifications',
+        'Trip Details Display',
+        'Pickup & Drop Location Mapping',
+        'Accept/Decline Ride Options',
+        'In-App Navigation',
+        'Turn-by-Turn Route Guidance',
+        'Real-Time Trip Tracking',
+        'Pickup Confirmation',
+        'Trip Completion',
+        'Earnings Dashboard',
+        'Trip History',
+        'Passenger Ratings & Feedback',
+        'Performance Analytics',
+        'Daily/Weekly/Monthly Earnings Reports',
+        'Distance & Duration Tracking',
+        'Secure Payment Processing',
+        'Driver Support & Help'
+      ],
+      technologies: ['React Native', 'Google Maps API', 'Node.js', 'MongoDB', 'Socket.io', 'Firebase'],
+      demoLink: 'https://play.google.com/store/apps/details?id=com.bhoomitechzone.ridealpartner&hl=en_IN'
+    },
+    30: {
+      title: 'Fixs Vendor',
+      category: 'Mobile Application',
+      image: '/images/fixs.webp',
+      description: 'Fixs Vendor (Nexitech Solutions Vendor App) is a comprehensive business management platform designed for home service professionals to efficiently manage bookings, customers, and daily operations in one centralized location. The app empowers service providers including home cleaning, plumbing, electrical services, carpentry, beauty, wellness, and appliance repair professionals with powerful tools to grow their business. Service providers can receive real-time booking requests from customers, update their availability, and track appointments through an intuitive interface.',
+      working: 'Service professionals download and register on the app, creating their professional profile with service details, portfolio images, working hours, and service areas. After verification, vendors receive real-time notifications whenever customers submit booking requests through the platform. The integrated calendar displays all appointments and helps vendors organize their schedule efficiently. Vendors can accept or decline booking requests based on their availability and capacity. Upon accepting, they can view complete customer details, service requirements, and appointment information. Throughout the service lifecycle, vendors update the booking status to keep customers informed. The app tracks the progress from booking confirmation to service completion. After completing a service, vendors mark it as complete in the system, triggering payment processing. The earnings dashboard provides real-time tracking of payments, transaction history, and basic earning summaries with daily, weekly, and monthly breakdowns. Vendors can access reports about completed jobs, view customer reviews and ratings, and analyze their performance metrics. The portfolio management section allows vendors to showcase their work with images and relevant information, helping attract more customers. Service area settings enable vendors to define their operational zones, while availability settings let them control when they receive bookings.',
+      modules: [
+        'Vendor Registration & Profile Setup',
+        'Service Listing Management',
+        'Portfolio & Image Gallery',
+        'Service Area Configuration',
+        'Working Hours & Availability Settings',
+        'Booking Request Notifications',
+        'Integrated Calendar Scheduling',
+        'Accept/Decline Booking Options',
+        'Booking Dashboard',
+        'Service Status Updates',
+        'Customer Communication',
+        'Appointment Tracking',
+        'Job Completion Management',
+        'Payment Tracking',
+        'Transaction History',
+        'Earnings Dashboard',
+        'Daily/Weekly/Monthly Reports',
+        'Customer Reviews & Ratings',
+        'Performance Analytics',
+        'Vendor Support & Help'
+      ],
+      technologies: ['React Native', 'Node.js', 'MongoDB', 'Firebase', 'Push Notifications'],
+      demoLink: 'https://play.google.com/store/apps/details?id=com.bhoomitechzone.fixsvendor&hl=en_IN'
+    },
+    31: {
+      title: 'Skills Boost',
+      category: 'LMS Software',
+      image: '/images/skillsboost.png',
+      description: 'Skills Boost is India\'s fastest-growing EdTech institute and comprehensive learning management platform dedicated to empowering youth with job-ready skills and transforming careers through practical, affordable, and accessible education. The platform offers industry-relevant certification programs across Digital Marketing, Data Science, Web Development, Python, Graphic Designing, Video Editing, and more. With 70,000+ total learners and partnerships with top companies like Deloitte, Samsung, Accenture, Jio, and Axis Bank, Skills Boost provides a complete ecosystem for skill development.',
+      working: 'Students and professionals visit the Skills Boost website and browse through various certification programs including Digital Marketing, Data Analytics, Software Development, and specialized skill degrees. After selecting a course, users can book a free demo session to understand the curriculum and learning approach. Upon enrollment, learners gain access to a structured learning path with 3-6 months of online live training sessions conducted by experienced industry professionals. The platform provides comprehensive course materials accessible 24/7, allowing students to learn at their own pace and schedule. Each program includes hands-on projects and real-world case studies to ensure practical understanding of concepts. Students participate in live interactive sessions where expert faculty members explain concepts, conduct Q&A sessions, and provide personalized guidance. The platform offers hybrid training combining theoretical knowledge with practical applications. Learners work on industry-led projects and internship opportunities to gain real-world experience. Throughout the course, students receive mentorship from senior professionals like Data Analysts, Digital Marketers, and Data Scientists. Assessment tests and assignments help track progress and understanding. Upon completion, students earn globally recognized certifications that add credibility to their profiles. The career assistance team provides 100% job placement support with resume building, interview preparation, and connections to top hiring companies. Students can track their learning progress, access recorded sessions, download study materials, and interact with peers through the platform. The referral program rewards students for bringing in new learners, and special offers like free laptops incentivize enrollment.',
+      modules: [
+        'Course Catalog & Discovery',
+        'Course Enrollment & Registration',
+        'Student Dashboard',
+        'Live Training Sessions',
+        'Video Lectures & Recorded Content',
+        '24/7 Study Material Access',
+        'Interactive Learning Tools',
+        'Hands-on Projects & Assignments',
+        'Real-world Case Studies',
+        'Industry-Led Internships',
+        'Expert Mentorship Program',
+        'Progress Tracking & Analytics',
+        'Assessment & Testing Module',
+        'Certification Management',
+        'Career Assistance Portal',
+        'Resume Building Tools',
+        'Interview Preparation Resources',
+        'Job Placement Support',
+        'Student Reviews & Testimonials',
+        'Referral & Rewards Program',
+        'Payment & Pricing Management',
+        'Student Support & Help Desk',
+        'Faculty Management System',
+        'Course Syllabus Management',
+        'Student Community Forum'
+      ],
+      technologies: ['React', 'Node.js', 'MongoDB', 'AWS', 'WebRTC', 'Payment Gateway'],
+      demoLink: 'https://www.skillsboost.in/'
+    },
+    32: {
+      title: 'Globengle - Tours & Travels',
+      category: 'Website',
+      image: '/images/globengle.png',
+      description: 'Globengle is a comprehensive travel and tourism platform that curates personalized journeys matching travelers\' dreams, personality, and pace. The platform goes beyond traditional trip planning by offering handcrafted itineraries, global partnerships with local expertise, and end-to-end travel care. Globengle features diverse travel services including Group Tours, Voyages, Business Travel, Destination Celebrations, Educational Travel (Eduwings for Study Abroad), and Private Charter services.',
+      working: 'Visitors land on the Globengle website and browse through featured destinations and travel packages organized by categories including popular destinations, group tours, hassle-free escapes, and beyond leisure services. Users can explore detailed destination pages for countries like Turkey, Egypt, Europe, Dubai, Bali, and Asian explorers, viewing comprehensive itineraries with day-wise breakdowns, duration, cities covered, and per-person pricing. The platform showcases handcrafted group departures with departure dates, availability status, and all-inclusive pricing starting from INR 30,000 to INR 1,45,000 depending on the destination. Users interested in specific packages can contact the team via phone (+91 99104-05255) or email (info@globengel.com) to discuss customization options. For hassle-free travel, the platform highlights visa-free and e-Visa destinations for Indian travelers including Bhutan, Mauritius, Sri Lanka, and Malaysia with starting prices. The Beyond Holidays section caters to specialized travel needs including education travel (study abroad programs), corporate travel for business meetings and conferences, and destination celebrations for weddings and special events. Users can sign up for newsletters to stay inspired with travel tips, destination guides, and exclusive offers.',
+      modules: [
+        'Destination Discovery & Browsing',
+        'Package Search & Filtering',
+        'Detailed Itinerary Display',
+        'Day-wise Tour Planning',
+        'Group Tour Listings',
+        'Pricing & Availability Management',
+        'Visa-Free Destinations Section',
+        'Hassle-Free Escapes Showcase',
+        'Business Travel Solutions',
+        'Corporate Event Planning',
+        'Destination Celebration Services',
+        'Wedding & Event Packages',
+        'Education Travel (Study Abroad)',
+        'Private Charter Bookings',
+        'Voyage & Cruise Packages',
+        'Customer Testimonials',
+        'Newsletter Subscription',
+        'Contact & Inquiry Management',
+        'Quote Request System',
+        'Pre-trip Consultation',
+        'On-ground Concierge Support',
+        'Travel Insurance Integration',
+        'Documentation Assistance',
+        'Partner Network Management',
+        'Blog & Travel Guides'
+      ],
+      technologies: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'MongoDB', 'AWS S3', 'Email Integration'],
+      demoLink: 'https://www.globengel.com/'
+    },
+    33: {
+      title: 'School Plus',
+      category: 'LMS Software',
+      image: '/images/schoolplus.jpeg',
+      description: 'School Plus is a comprehensive cloud-based school management ERP system designed to streamline and automate all administrative, academic, and communication activities within educational institutions. The platform provides a unified solution for managing student information, attendance tracking, fee collection, examination management, timetable scheduling, and parent-teacher communication. With role-based access for administrators, teachers, students, and parents, School Plus ensures secure and efficient management of school operations. The system includes modules for admissions, student records, staff management, library management, transport management, hostel management, and financial accounting.',
+      working: 'School administrators access the system through the login portal with their credentials and role-based permissions. The dashboard provides an overview of key metrics including total students, staff, pending fees, upcoming events, and attendance statistics. Administrators manage the complete student lifecycle starting from online admission applications, enrollment, class allocation, and ID card generation. The student information system maintains comprehensive records including personal details, academic history, medical information, and parent contacts. Teachers log in to mark daily attendance, update lesson plans, assign homework, conduct online assessments, and enter examination marks. The examination module supports creating exam schedules, generating hall tickets, recording marks, calculating grades, and publishing results with automatic report card generation. The timetable management system creates conflict-free schedules for classes, teachers, and subjects with automatic substitution management. Fee management allows administrators to define fee structures, generate invoices, track payments, send reminders for pending dues, and generate financial reports. Parents receive login credentials to access their child\'s attendance, academic performance, fee status, homework assignments, and important announcements. The SMS and email notification system sends automated alerts for attendance, fee reminders, exam schedules, and emergency communications. The library module manages book cataloging, issue/return tracking, fine calculation, and digital library resources. Transport management tracks routes, vehicle details, driver information, and student transport allocation with GPS integration. The staff management module handles employee records, payroll processing, leave management, and performance evaluations. Reports and analytics provide insights into academic performance, financial health, attendance trends, and operational efficiency enabling data-driven decision making.',
+      modules: [
+        'Student Admission & Enrollment',
+        'Student Information System',
+        'Attendance Management',
+        'Timetable Scheduling',
+        'Class & Section Management',
+        'Teacher Portal',
+        'Lesson Planning',
+        'Homework & Assignments',
+        'Examination Management',
+        'Marks Entry & Grading',
+        'Report Card Generation',
+        'Fee Management',
+        'Payment Gateway Integration',
+        'Fee Receipt Generation',
+        'Parent Portal',
+        'Student Portal',
+        'SMS & Email Notifications',
+        'Library Management',
+        'Book Issue/Return Tracking',
+        'Transport Management',
+        'Vehicle & Route Tracking',
+        'Hostel Management',
+        'Staff Management',
+        'Payroll Processing',
+        'Leave Management',
+        'Event Management',
+        'Notice Board',
+        'Certificate Generation',
+        'ID Card Generation',
+        'Reports & Analytics',
+        'Data Backup & Security'
+      ],
+      technologies: ['PHP', 'Laravel', 'MySQL', 'Bootstrap', 'JavaScript', 'Cloud Hosting'],
+      demoLink: 'https://prastutischool.cloud/login'
     }
   };
 
@@ -522,7 +819,12 @@ const ProjectDetailPage = () => {
             <div className={styles.projectImageWrapper}>
               <img src={project.image} alt={project.title} className={styles.projectImage} />
               <a href={project.demoLink || '#'} target="_blank" rel="noopener noreferrer" className={styles.launchDemoButton}>
-                <span>Launch Demo</span>
+                <svg className={styles.linkIcon} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+                <span>Demo Link</span>
               </a>
             </div>
             <div className={styles.projectInfo}>

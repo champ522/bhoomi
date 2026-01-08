@@ -171,22 +171,22 @@ const HeroBanner = () => {
       <div className={styles.cubeContainer}>
         <div className={styles.cube}>
           <div className={`${styles.face} ${styles.front}`}>
-            <img src="/images/sliderimg1.png" alt="Bhoomi Tech" className={styles.faceImage} />
+            <img src="/images/bhoomi-black.png" alt="Bhoomi Tech" className={styles.faceImage} />
           </div>
           <div className={`${styles.face} ${styles.back}`}>
-            <img src="/images/sliderimg2.png" alt="Bhoomi Tech" className={styles.faceImage} />
+            <img src="/images/bhoomi-black.png" alt="Bhoomi Tech" className={styles.faceImage} />
           </div>
           <div className={`${styles.face} ${styles.right}`}>
-            <img src="/images/dmarketing.png" alt="Bhoomi Tech" className={styles.faceImage} />
+            <img src="/images/bhoomi-black.png" alt="Bhoomi Tech" className={styles.faceImage} />
           </div>
           <div className={`${styles.face} ${styles.left}`}>
-            <img src="/images/socialmediaa.png" alt="Bhoomi Tech" className={styles.faceImage} />
+            <img src="/images/bhoomi-black.png" alt="Bhoomi Tech" className={styles.faceImage} />
           </div>
           <div className={`${styles.face} ${styles.top}`}>
-            <img src="/images/appdev.png" alt="Bhoomi Tech" className={styles.faceImage} />
+            <img src="/images/bhoomi-black.png" alt="Bhoomi Tech" className={styles.faceImage} />
           </div>
           <div className={`${styles.face} ${styles.bottom}`}>
-            <img src="/images/softdev.png" alt="Bhoomi Tech" className={styles.faceImage} />
+            <img src="/images/bhoomi-black.png" alt="Bhoomi Tech" className={styles.faceImage} />
           </div>
         </div>
       </div>

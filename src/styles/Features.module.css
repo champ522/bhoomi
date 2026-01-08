@@ -81,6 +81,14 @@
   justify-content: center;
 }
 
+/* Feature Card Link Wrapper */
+.featureCardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+}
+
 /* Feature Card Styles */
 .featureCard {
   background: white;

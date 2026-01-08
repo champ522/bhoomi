@@ -45,7 +45,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: transparent;
+  background: white;
   opacity: 0.9;
   border: 2px solid;
   border-color: #9ff8bc;
@@ -63,37 +63,37 @@
 
 .front {
   transform: translateZ(125px);
-  background: transparent;
+  background: white;
   background-image: linear-gradient(160deg, #ffff 0%, #fff 100%);
 }
 
 .back {
   transform: rotateY(180deg) translateZ(125px);
-  background: transparent;
-  /* background-image: linear-gradient(160deg, #ebf7fd 0%, #d8f5f1 100%); */
+  background: white;
+  background-image: linear-gradient(160deg, #ebf7fd 0%, #d8f5f1 100%);
 }
 
 .right {
   transform: rotateY(90deg) translateZ(125px);
-  background: transparent;
+  background: white;
   background-image: linear-gradient(160deg, #ffff 0%, #fff 100%);
 }
 
 .left {
   transform: rotateY(-90deg) translateZ(125px);
-  background: transparent;
+  background: white;
   background-image: linear-gradient(160deg, #ffff 0%, #fff 100%);
 }
 
 .top {
   transform: rotateX(90deg) translateZ(125px);
-  background: transparent;
+  background: white;
   background-image: linear-gradient(160deg, #ffff 0%, #fff 100%);
 }
 
 .bottom {
   transform: rotateX(-90deg) translateZ(125px);
-  background: transparent;
+  background: white;
   background-image: linear-gradient(160deg, #ffff 0%, #fff 100%);
 }
 
@@ -599,27 +599,27 @@
   }
 
   .front {
-    transform: translateZ(70px);
+    transform: translateZ(100px);
   }
 
   .back {
-    transform: rotateY(180deg) translateZ(70px);
+    transform: rotateY(180deg) translateZ(100px);
   }
 
   .right {
-    transform: rotateY(90deg) translateZ(70px);
+    transform: rotateY(90deg) translateZ(100px);
   }
 
   .left {
-    transform: rotateY(-90deg) translateZ(70px);
+    transform: rotateY(-90deg) translateZ(100px);
   }
 
   .top {
-    transform: rotateX(90deg) translateZ(70px);
+    transform: rotateX(90deg) translateZ(100px);
   }
 
   .bottom {
-    transform: rotateX(-90deg) translateZ(70px);
+    transform: rotateX(-90deg) translateZ(100px);
   }
 
   .imageContent {

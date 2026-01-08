@@ -48,7 +48,7 @@ const OurClientsPage = () => {
       id: 4,
       title: 'Hospital Soft',
       category: 'Hospital Softwares',
-      image: '/images/hospitalsoft.png'
+      image: '/images/hospitalimg.png'
     },
     {
       id: 5,
@@ -88,9 +88,9 @@ const OurClientsPage = () => {
     },
     {
         id: 11,
-        title: 'Rasan Online',
-        category: 'Mobile Applications',
-        image: '/images/rasan.jpg'
+        title: 'Aevitas Recycling',
+        category: 'Websites',
+        image: '/images/avitaslogo.png'
     },
     {
         id: 12,
@@ -118,9 +118,9 @@ const OurClientsPage = () => {
     },
     {
         id: 16,
-        title: 'Banke Bihari Astrology',
+        title: 'WCAC Services',
         category: 'Websites',
-        image: '/images/bankeastro.png'
+        image: '/images/wcac.webp'
     },
     {
         id: 17,
@@ -142,15 +142,15 @@ const OurClientsPage = () => {
     },
     {
         id: 20,
-        title: 'SkyMover',
+        title: 'SPAKS LUBE PVT. LTD.',
         category: 'Websites',
-        image: '/images/skymover.png'
+        image: '/images/spaks.jpg'
     },
     {
         id: 21,
-        title: 'Red Pepper Films',
+        title: 'Mitera - The Event',
         category: 'Websites',
-        image: '/images/redpepper.png'
+        image: '/images/miteralogo.png'
     },
     {
         id: 22,
@@ -175,6 +175,54 @@ const OurClientsPage = () => {
         title: 'Bhoomi Real Estate CRM',
         category: 'CRM Softwares',
         image: '/images/bhoomirealestate.png'
+    },
+    {
+        id: 26,
+        title: 'Kanika - Taxi Booking',
+        category: 'Mobile Applications',
+        image: '/images/kanika.webp'
+    },
+    {
+        id: 27,
+        title: 'HobosWorld',
+        category: 'Mobile Applications',
+        image: '/images/hobosworld.webp'
+    },
+    {
+        id: 28,
+        title: 'Welzon Ride',
+        category: 'Mobile Applications',
+        image: '/images/welzon.webp'
+    },
+    {
+        id: 29,
+        title: 'RiDeal Driver',
+        category: 'Mobile Applications',
+        image: '/images/rideal.webp'
+    },
+    {
+        id: 30,
+        title: 'Fixs Vendor',
+        category: 'Mobile Applications',
+        image: '/images/fixs.webp'
+    },
+    {
+        id: 31,
+        title: 'Skills Boost',
+        category: 'LMS Softwares',
+        image: '/images/skillsboost.png'
+    },
+    {
+        id: 32,
+        title: 'Globengle - Tours & Travels',
+        category: 'Websites',
+        image: '/images/globengle.png'
+    },
+    {
+        id: 33,
+        title: 'School Plus',
+        category: 'LMS Softwares',
+        image: '/images/schoolplus.jpeg'
     }
   ];
 
@@ -230,17 +278,27 @@ const OurClientsPage = () => {
       {/* Projects Section */}
       <section className={styles.projectsSection}>
         <div className={styles.container}>
+          <div className={styles.projectsHeader}>
+            <h2 className={styles.sectionTitle}>Our Projects Portfolio</h2>
+            <p className={styles.sectionSubtitle}>Explore our diverse range of successful projects across different categories</p>
+          </div>
+          
           {/* Filter Tabs */}
-          <div className={styles.filterTabs}>
-            {tabs.map((tab) => (
-              <button
-                key={tab}
-                className={`${styles.tabButton} ${activeTab === tab ? styles.activeTab : ''}`}
-                onClick={() => setActiveTab(tab)}
-              >
-                {tab}
-              </button>
-            ))}
+          <div className={styles.filterSection}>
+            <h3 className={styles.filterHeading}>Search by Category</h3>
+            <div className={styles.filterTabs}>
+              {tabs.map((tab) => (
+                <button
+                  key={tab}
+                  className={`${styles.tabButton} ${activeTab === tab ? styles.activeTab : ''}`}
+                  onClick={() => setActiveTab(tab)}
+                >
+                  <span className={styles.shadow}></span>
+                  <span className={styles.edge}></span>
+                  <span className={styles.front}>{tab}</span>
+                </button>
+              ))}
+            </div>
           </div>
 
           <div className={styles.projectsGrid}>
