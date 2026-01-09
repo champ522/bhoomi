@@ -223,6 +223,108 @@ const OurClientsPage = () => {
         title: 'School Plus',
         category: 'LMS Softwares',
         image: '/images/schoolplus.jpeg'
+    },
+    {
+      id: 34,
+      title: 'Hortizi Solutions',
+      category: 'Websites',
+      image: '/images/hortizi.png'
+    },
+    {
+      id: 35,
+      title: 'CareerVeda',
+      category: 'LMS Softwares',
+      image: '/images/careerveda.png'
+    },
+    {
+      id: 36,
+      title: 'Rishee Ayurveda',
+      category: 'Websites',
+      image: '/images/rishi.jpeg'
+    },
+    {
+      id: 37,
+      title: 'ASPB Services',
+      category: 'Websites',
+      image: '/images/aspb.png'
+    },
+    {
+      id: 38,
+      title: 'ShubhKaryaJodi',
+      category: 'Websites',
+      image: '/images/jodi.png'
+    },
+    {
+      id: 39,
+      title: 'LBSATI Education',
+      category: 'LMS Softwares',
+      image: '/images/lbsati.png'
+    },
+    {
+      id: 40,
+      title: 'Satkartar Travels',
+      category: 'Websites',
+      image: '/images/satkartar.png'
+    },
+    {
+      id: 41,
+      title: 'Doon E-Paper',
+      category: 'Websites',
+      image: '/images/doon.png'
+    },
+    {
+      id: 42,
+      title: 'Smart Farm Fresh',
+      category: 'Websites',
+      image: '/images/farm.png'
+    },
+    {
+      id: 43,
+      title: 'Jesus Biotech',
+      category: 'Hospital Softwares',
+      image: '/images/jesus.png'
+    },
+    {
+      id: 44,
+      title: 'Tribus Security',
+      category: 'Websites',
+      image: '/images/tsgg.png'
+    },
+    {
+      id: 45,
+      title: 'Steward Techno',
+      category: 'Websites',
+      image: '/images/steward.png'
+    },
+    {
+      id: 46,
+      title: 'BABYLON ENGINEERING',
+      category: 'Websites',
+      image: '/images/bes.png'
+    },
+    {
+      id: 47,
+      title: 'Money Wind Solutions',
+      category: 'Websites',
+      image: '/images/moneywind.png'
+    },
+    {
+      id: 48,
+      title: 'Damaru EXIM',
+      category: 'Websites',
+      image: '/images/damaru.png'
+    },
+    {
+      id: 49,
+      title: 'CareerInfra Education',
+      category: 'LMS Softwares',
+      image: '/images/careerinfra.png'
+    },
+    {
+      id: 50,
+      title: 'DLS Export & Import',
+      category: 'Websites',
+      image: '/images/dls.png'
     }
   ];
 

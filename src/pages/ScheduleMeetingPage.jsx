@@ -99,9 +99,10 @@ const ScheduleMeetingPage = () => {
   ];
 
   const staffMembers = [
-    { id: 1, name: 's Rai' },
-    { id: 2, name: 'John Doe' },
-    { id: 3, name: 'Jane Smith' }
+    { id: 1, name: 'Rishabh Savita' },
+    { id: 2, name: 'Surya Pratap' },
+    { id: 3, name: 'Anurag Solanki' },
+    { id: 4, name: 'Faizal Rizvi' }
   ];
 
   const timeSlots = [

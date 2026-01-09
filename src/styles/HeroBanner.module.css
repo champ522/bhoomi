@@ -522,6 +522,7 @@
   gap: 15px;
 }
 
+
 .customBullet {
   width: 60px !important;
   height: 4px !important;
@@ -590,6 +591,7 @@
     height: 200px;
     left: 50%;
     right: auto;
+    top: 35%;
     transform: translate(-50%, -50%);
   }
 
@@ -623,7 +625,7 @@
   }
 
   .imageContent {
-    display: flex;
+    display: none;
   }
 
   .contentWrapper {
@@ -654,6 +656,7 @@
     width: 40px;
     height: 40px;
     backdrop-filter: blur(0px);
+    display: none;
   }
 
   .swiperButtonPrev {
@@ -669,16 +672,17 @@
   }
 
   .slideTitle{
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   .slideSubtitle{
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
   }
 
   .slideDescription{
     margin-bottom: 3rem;
     text-align: center;
+    display: none;
   }
 }
 
@@ -686,7 +690,7 @@
   .container {
     padding: 0 15px;
     position: relative;
-    top: 70px;
+    top: 200px;
   }
 
   .slideButtons {
