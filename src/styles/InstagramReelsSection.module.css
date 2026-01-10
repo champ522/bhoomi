@@ -233,16 +233,17 @@
 }
 
 /* Tablet Styles */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .sectionTitle {
     font-size: 2rem;
+    line-height: 1.5;
   }
 
   .sectionDescription {
     font-size: 1.06rem;
   }
 
-  .reelsGrid {
+  /* .reelsGrid {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
@@ -250,7 +251,7 @@
   .loadingGrid {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
-  }
+  } */
 }
 
 /* Desktop Styles */

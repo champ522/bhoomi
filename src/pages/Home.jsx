@@ -16,6 +16,7 @@ import CallToAction from '../components/CallToAction';
 import Certifications from '../components/Certifications';
 import InstagramReelsSection from '../components/InstagramReelsSection';
 import Partnership from '../components/Partnership';
+import IdeasIntoTechnology from '../components/IdeasIntoTechnology';
 
 const Home = () => {
   return (
@@ -35,6 +36,7 @@ const Home = () => {
       <Testimonials />
       <Blog />
       <InstagramReelsSection />
+      <IdeasIntoTechnology />
       <CallToAction />
       <Certifications />
     </>

@@ -85,7 +85,7 @@
 
 @media (max-width: 768px) {
   .certificationsSection {
-    padding: 0px 0;
+    padding: 0px 0 40px 0;
   }
 
   .certificationItem {
@@ -100,7 +100,7 @@
 
 @media (max-width: 480px) {
   .certificationsSection {
-    padding: 0px 0;
+    padding: 0px 0 40px 0;
   }
 
   .certificationItem {

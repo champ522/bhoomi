@@ -67,6 +67,23 @@ const Footer = () => {
                 </svg>
               </a>
             </div>
+
+            {/* Wave Text Animation */}
+            <div className={styles.waveTextContainer}>
+              <h1 className={styles.waveText}>
+                <span>L</span>
+                <span>e</span>
+                <span>t</span>
+                <span>'</span>
+                <span>s</span>
+                <span>&nbsp;</span>
+                <span>S</span>
+                <span>t</span>
+                <span>a</span>
+                <span>r</span>
+                <span>t</span>
+              </h1>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -87,7 +104,7 @@ const Footer = () => {
           <div className={styles.footerColumn}>
             <h3 className={styles.columnTitle}>Our Services</h3>
             <ul className={styles.linkList}>
-              <li><Link to="/web-development" className={styles.footerLink}>Web Development</Link></li>
+              <li><Link to="/web-development" className={styles.footerLink}>Web Design</Link></li>
               <li><Link to="/mobile-app-development" className={styles.footerLink}>Mobile Apps</Link></li>
               <li><Link to="/website-design" className={styles.footerLink}>Website Design</Link></li>
               <li><Link to="/technology" className={styles.footerLink}>Technology</Link></li>
