@@ -3008,6 +3008,7 @@ export const courses = [
         content: `
           <h2>Installing Laravel</h2>
           <p>Learn how to install Laravel and set up your development environment for building modern web applications.</p>
+          <p>Laravel offers multiple installation methods to suit different development workflows and preferences.</p>
           
           <h3>System Requirements:</h3>
           <ul>
@@ -3017,19 +3018,76 @@ export const courses = [
             <li><strong>Database:</strong> MySQL, PostgreSQL, SQLite, or SQL Server</li>
           </ul>
           
-          <h3>Installation Methods:</h3>
+          <pre><code># Check PHP version
+php -v
+
+# Check Composer installation
+composer --version
+
+# Install Composer (if not installed)
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"</code></pre>
+          
+          <p><strong>Prerequisites:</strong> Ensure PHP 8.0+ and Composer are installed before proceeding with Laravel installation.</p>
+          
+          <h3>Installation via Composer:</h3>
           <ul>
             <li><strong>Composer Create-Project:</strong> Traditional installation</li>
             <li><strong>Laravel Installer:</strong> Global Laravel installer</li>
             <li><strong>Laravel Sail:</strong> Docker-based development environment</li>
           </ul>
           
-          <h3>Development Tools:</h3>
+          <pre><code># Method 1: Composer Create-Project (Recommended)
+composer create-project laravel/laravel my-app
+cd my-app
+php artisan serve
+
+# Method 2: Laravel Installer (Global)
+composer global require laravel/installer
+laravel new my-app
+cd my-app
+php artisan serve
+
+# Method 3: Laravel Sail (Docker)
+curl -s https://laravel.build/my-app | bash
+cd my-app
+./vendor/bin/sail up
+
+# Access application
+# http://localhost:8000 (php artisan serve)
+# http://localhost (Laravel Sail)</code></pre>
+          
+          <p><strong>Quick Start:</strong> Composer create-project is fastest for most users. Laravel Sail perfect for Docker-based development.</p>
+          
+          <h3>Environment Configuration:</h3>
           <ul>
-            <li><strong>Laravel Valet:</strong> Mac development environment</li>
-            <li><strong>Homestead:</strong> Vagrant virtual machine</li>
-            <li><strong>XAMPP/WAMP:</strong> Local server packages</li>
+            <li><strong>.env File:</strong> Environment-specific settings</li>
+            <li><strong>APP_KEY:</strong> Application encryption key</li>
+            <li><strong>Database Connection:</strong> DB credentials</li>
+            <li><strong>Mail Configuration:</strong> Email settings</li>
           </ul>
+          
+          <pre><code># .env file configuration
+APP_NAME=MyLaravelApp
+APP_ENV=local
+APP_KEY=base64:generated_key_here
+APP_DEBUG=true
+APP_URL=http://localhost
+
+# Database Configuration
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel_db
+DB_USERNAME=root
+DB_PASSWORD=
+
+# Generate Application Key
+php artisan key:generate
+
+# Clear Configuration Cache
+php artisan config:clear</code></pre>
           
           <h3>Project Structure:</h3>
           <ul>
@@ -3041,6 +3099,66 @@ export const courses = [
             <li><strong>routes/:</strong> Route definitions</li>
             <li><strong>storage/:</strong> Logs, cache, uploaded files</li>
           </ul>
+          
+          <pre><code>laravel-project/
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/      # Application controllers
+│   │   └── Middleware/       # HTTP middleware
+│   ├── Models/              # Eloquent models
+│   └── Providers/           # Service providers
+├── config/                  # Configuration files
+│   ├── app.php
+│   ├── database.php
+│   └── mail.php
+├── database/
+│   ├── migrations/          # Database migrations
+│   ├── seeders/             # Database seeders
+│   └── factories/           # Model factories
+├── public/                  # Public web directory
+│   ├── index.php            # Entry point
+│   └── css/                 # Public assets
+├── resources/
+│   ├── views/               # Blade templates
+│   ├── css/                 # Source CSS
+│   └── js/                  # Source JavaScript
+├── routes/
+│   ├── web.php              # Web routes
+│   ├── api.php              # API routes
+│   └── console.php          # Console commands
+├── storage/
+│   ├── app/                 # Application files
+│   ├── logs/                # Log files
+│   └── framework/           # Framework cache
+├── tests/                   # Automated tests
+├── vendor/                  # Composer dependencies
+├── .env                     # Environment configuration
+├── artisan                  # Artisan CLI
+├── composer.json            # PHP dependencies
+└── package.json             # Node dependencies</code></pre>
+          
+          <h3>Running the Application:</h3>
+          <ul>
+            <li><strong>Development Server:</strong> php artisan serve</li>
+            <li><strong>Custom Port:</strong> php artisan serve --port=8080</li>
+            <li><strong>Custom Host:</strong> php artisan serve --host=0.0.0.0</li>
+          </ul>
+          
+          <pre><code># Start development server
+php artisan serve
+# Server started: http://127.0.0.1:8000
+
+# Custom port
+php artisan serve --port=8080
+
+# Make accessible from network
+php artisan serve --host=0.0.0.0 --port=8000
+
+# View all artisan commands
+php artisan list
+
+# Get help for specific command
+php artisan help migrate</code></pre>
         `,
         videoUrl: 'https://www.youtube.com/embed/rIfdg_Ot-LI'
       },
@@ -3050,6 +3168,7 @@ export const courses = [
         content: `
           <h2>Laravel Routing System</h2>
           <p>Laravel routing provides a clean, expressive way to define your application's URL structure and handle HTTP requests efficiently.</p>
+          <p>Routes are defined in the routes/web.php and routes/api.php files.</p>
           
           <h3>Basic Routing:</h3>
           <ul>
@@ -3059,6 +3178,51 @@ export const courses = [
             <li><strong>DELETE Routes:</strong> Remove data</li>
           </ul>
           
+          <pre><code>// routes/web.php
+
+// Basic GET route
+Route::get('/', function () {
+    return view('welcome');
+});
+
+// Route returning string
+Route::get('/hello', function () {
+    return 'Hello World!';
+});
+
+// Route returning JSON
+Route::get('/api/users', function () {
+    return ['John', 'Jane', 'Bob'];
+});
+
+// POST route
+Route::post('/users', function () {
+    // Handle form submission
+    return 'User created';
+});
+
+// PUT/PATCH route
+Route::put('/users/{id}', function ($id) {
+    return "Updating user {$id}";
+});
+
+// DELETE route
+Route::delete('/users/{id}', function ($id) {
+    return "Deleting user {$id}";
+});
+
+// Match multiple HTTP verbs
+Route::match(['get', 'post'], '/form', function () {
+    return 'Handle GET or POST';
+});
+
+// Any HTTP verb
+Route::any('/endpoint', function () {
+    return 'Handle any HTTP method';
+});</code></pre>
+          
+          <p><strong>Route Files:</strong> web.php for web routes with session/CSRF. api.php for stateless API routes.</p>
+          
           <h3>Route Parameters:</h3>
           <ul>
             <li><strong>Required Parameters:</strong> /user/{id}</li>
@@ -3066,20 +3230,210 @@ export const courses = [
             <li><strong>Regular Expression Constraints:</strong> where() method</li>
           </ul>
           
+          <pre><code>// Required parameter
+Route::get('/user/{id}', function ($id) {
+    return "User ID: {$id}";
+});
+
+// Multiple parameters
+Route::get('/posts/{post}/comments/{comment}', function ($post, $comment) {
+    return "Post {$post}, Comment {$comment}";
+});
+
+// Optional parameter
+Route::get('/user/{name?}', function ($name = 'Guest') {
+    return "Hello, {$name}!";
+});
+
+// Parameter with default value
+Route::get('/page/{page?}', function ($page = 1) {
+    return "Page {$page}";
+});
+
+// Regular expression constraints
+Route::get('/user/{id}', function ($id) {
+    return "User {$id}";
+})->where('id', '[0-9]+');
+
+Route::get('/user/{name}', function ($name) {
+    return "User {$name}";
+})->where('name', '[A-Za-z]+');
+
+// Multiple constraints
+Route::get('/post/{id}/{slug}', function ($id, $slug) {
+    return "Post {$id}: {$slug}";
+})->where(['id' => '[0-9]+', 'slug' => '[a-z-]+']);
+
+// Global constraint pattern
+Route::pattern('id', '[0-9]+');</code></pre>
+          
+          <h3>Named Routes:</h3>
+          <ul>
+            <li><strong>Route Names:</strong> Give routes memorable names</li>
+            <li><strong>URL Generation:</strong> Generate URLs from route names</li>
+            <li><strong>Redirects:</strong> Redirect to named routes</li>
+          </ul>
+          
+          <pre><code>// Named routes
+Route::get('/profile', function () {
+    return 'Profile page';
+})->name('profile');
+
+Route::get('/user/{id}', function ($id) {
+    return "User {$id}";
+})->name('user.show');
+
+// Generate URL from route name
+$url = route('profile');
+// Output: http://localhost/profile
+
+$url = route('user.show', ['id' => 1]);
+// Output: http://localhost/user/1
+
+// Redirect to named route
+return redirect()->route('profile');
+return redirect()->route('user.show', ['id' => 5]);
+
+// Check current route
+if (request()->routeIs('profile')) {
+    // Current route is 'profile'
+}</code></pre>
+          
           <h3>Controllers:</h3>
           <ul>
+            <li><strong>Basic Controllers:</strong> Organize route logic</li>
             <li><strong>Resource Controllers:</strong> CRUD operations</li>
             <li><strong>Single Action Controllers:</strong> __invoke() method</li>
             <li><strong>Controller Middleware:</strong> Route protection</li>
-            <li><strong>Dependency Injection:</strong> Service container integration</li>
           </ul>
+          
+          <pre><code>// Create controller
+php artisan make:controller UserController
+
+// app/Http/Controllers/UserController.php
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class UserController extends Controller
+{
+    public function index()
+    {
+        return view('users.index');
+    }
+    
+    public function show($id)
+    {
+        return "Showing user {$id}";
+    }
+    
+    public function store(Request $request)
+    {
+        // Create new user
+        return redirect()->route('users.index');
+    }
+}
+
+// Route to controller method
+Route::get('/users', [UserController::class, 'index']);
+Route::get('/users/{id}', [UserController::class, 'show']);
+Route::post('/users', [UserController::class, 'store']);
+
+// Resource controller (all CRUD routes)
+php artisan make:controller PostController --resource
+
+Route::resource('posts', PostController::class);
+// Creates routes: index, create, store, show, edit, update, destroy
+
+// Single action controller
+php artisan make:controller ShowProfile --invokable
+
+class ShowProfile extends Controller
+{
+    public function __invoke($id)
+    {
+        return "Profile {$id}";
+    }
+}
+
+Route::get('/profile/{id}', ShowProfile::class);</code></pre>
+          
+          <h3>Route Groups:</h3>
+          <ul>
+            <li><strong>Prefix:</strong> Add prefix to multiple routes</li>
+            <li><strong>Middleware:</strong> Apply middleware to route group</li>
+            <li><strong>Namespace:</strong> Group controllers by namespace</li>
+          </ul>
+          
+          <pre><code>// Route prefix
+Route::prefix('admin')->group(function () {
+    Route::get('/users', function () {
+        // Matches: /admin/users
+    });
+    Route::get('/posts', function () {
+        // Matches: /admin/posts
+    });
+});
+
+// Route middleware
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', function () {
+        // Only authenticated users
+    });
+});
+
+// Combined prefix and middleware
+Route::prefix('admin')
+    ->middleware(['auth', 'admin'])
+    ->group(function () {
+        Route::get('/users', [AdminController::class, 'users']);
+        Route::get('/settings', [AdminController::class, 'settings']);
+    });
+
+// Named route group
+Route::name('admin.')->group(function () {
+    Route::get('/users', function () {
+        // Route name: admin.users
+    })->name('users');
+});</code></pre>
           
           <h3>Route Model Binding:</h3>
           <ul>
             <li><strong>Implicit Binding:</strong> Automatic model resolution</li>
             <li><strong>Explicit Binding:</strong> Custom binding logic</li>
-            <li><strong>Route Caching:</strong> Performance optimization</li>
           </ul>
+          
+          <pre><code>// Implicit binding
+Route::get('/user/{user}', function (App\Models\User $user) {
+    // Automatically retrieves user by ID
+    return $user->email;
+});
+
+Route::get('/post/{post}', function (App\Models\Post $post) {
+    return $post;
+});
+
+// Custom key for binding
+Route::get('/post/{post:slug}', function (App\Models\Post $post) {
+    // Bind by slug instead of ID
+    return $post;
+});
+
+// In model (default binding key)
+public function getRouteKeyName()
+{
+    return 'slug'; // Use slug for all route bindings
+}
+
+// Explicit binding in RouteServiceProvider
+public function boot()
+{
+    Route::model('user', User::class);
+    
+    Route::bind('post', function ($value) {
+        return Post::where('slug', $value)->firstOrFail();
+    });
+}</code></pre>
         `,
         videoUrl: 'https://www.youtube.com/embed/pRtQUDCjjTc'
       },
@@ -3089,25 +3443,165 @@ export const courses = [
         content: `
           <h2>Blade Templating Engine</h2>
           <p>Blade is Laravel's powerful templating engine that allows you to create beautiful, maintainable templates with PHP seamlessly integrated.</p>
+          <p>Blade templates are stored in resources/views and use the .blade.php extension.</p>
           
-          <h3>Blade Features:</h3>
+          <h3>Displaying Data:</h3>
           <ul>
-            <li><strong>Template Inheritance:</strong> Extend layouts and sections</li>
-            <li><strong>Data Display:</strong> Escaped and unescaped output</li>
-            <li><strong>Control Structures:</strong> Loops, conditionals</li>
-            <li><strong>Components:</strong> Reusable UI elements</li>
-            <li><strong>Includes:</strong> Partial template inclusion</li>
+            <li><strong>Escaped Output:</strong> {{ $variable }} - Safe HTML output</li>
+            <li><strong>Unescaped Output:</strong> {!! $html !!} - Raw HTML</li>
+            <li><strong>JSON Output:</strong> @json($array) - JavaScript embedding</li>
           </ul>
           
-          <h3>Blade Directives:</h3>
+          <pre><code>{{-- resources/views/welcome.blade.php --}}
+
+{{-- Escaped output (prevents XSS) --}}
+<h1>{{ $title }}</h1>
+<p>{{ $description }}</p>
+
+{{-- Output with default value --}}
+<p>{{ $name ?? 'Guest' }}</p>
+
+{{-- Raw HTML output --}}
+<div>{!! $htmlContent !!}</div>
+
+{{-- Display if exists --}}
+{{ $user->name ?? 'Anonymous' }}
+
+{{-- Blade comments (not rendered in HTML) --}}
+{{-- This is a comment --}}
+
+{{-- JSON for JavaScript --}}
+<script>
+    var user = @json($user);
+    var config = @json($config);
+</script></code></pre>
+          
+          <p><strong>Security:</strong> Always use {{ }} for user input to prevent XSS attacks. Only use {!! !!} for trusted HTML content.</p>
+          
+          <h3>Template Inheritance:</h3>
           <ul>
-            <li><strong>@if, @else, @endif:</strong> Conditional statements</li>
-            <li><strong>@foreach, @endforeach:</strong> Loop iterations</li>
-            <li><strong>@extends, @section:</strong> Template inheritance</li>
-            <li><strong>@include:</strong> Include sub-views</li>
-            <li><strong>@yield:</strong> Define content sections</li>
-            <li><strong>@csrf:</strong> CSRF token inclusion</li>
+            <li><strong>@extends:</strong> Extend a parent layout</li>
+            <li><strong>@section:</strong> Define content sections</li>
+            <li><strong>@yield:</strong> Display section content</li>
+            <li><strong>@parent:</strong> Include parent section content</li>
           </ul>
+          
+          <pre><code>{{-- resources/views/layouts/app.blade.php --}}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@yield('title', 'Default Title')</title>
+    <link rel="stylesheet" href="/css/app.css">
+    @stack('styles')
+</head>
+<body>
+    <nav>
+        @include('partials.navigation')
+    </nav>
+    
+    <main>
+        @yield('content')
+    </main>
+    
+    <footer>
+        @include('partials.footer')
+    </footer>
+    
+    <script src="/js/app.js"></script>
+    @stack('scripts')
+</body>
+</html>
+
+{{-- resources/views/pages/home.blade.php --}}
+@extends('layouts.app')
+
+@section('title', 'Home Page')
+
+@section('content')
+    <h1>Welcome to Home Page</h1>
+    <p>This is the home page content.</p>
+@endsection
+
+@push('scripts')
+    <script>
+        console.log('Home page loaded');
+    </script>
+@endpush</code></pre>
+          
+          <h3>Control Structures:</h3>
+          <ul>
+            <li><strong>@if, @elseif, @else:</strong> Conditional statements</li>
+            <li><strong>@foreach, @for, @while:</strong> Loops</li>
+            <li><strong>@switch:</strong> Switch statements</li>
+            <li><strong>@empty, @isset:</strong> Variable checks</li>
+          </ul>
+          
+          <pre><code>{{-- Conditional statements --}}
+@if($user->isAdmin())
+    <p>Welcome Admin!</p>
+@elseif($user->isModerator())
+    <p>Welcome Moderator!</p>
+@else
+    <p>Welcome User!</p>
+@endif
+
+{{-- Unless (opposite of if) --}}
+@unless($user->isPremium())
+    <p>Upgrade to premium!</p>
+@endunless
+
+{{-- Authentication checks --}}
+@auth
+    <p>You are logged in</p>
+@endauth
+
+@guest
+    <p>Please login</p>
+@endguest
+
+{{-- Foreach loop --}}
+@foreach($users as $user)
+    <div class="user">
+        <h3>{{ $user->name }}</h3>
+        <p>{{ $user->email }}</p>
+    </div>
+@endforeach
+
+{{-- Foreach with loop variable --}}
+@foreach($posts as $post)
+    <div class="post">
+        <h2>{{ $post->title }}</h2>
+        
+        @if($loop->first)
+            <span class="badge">First Post</span>
+        @endif
+        
+        @if($loop->last)
+            <span class="badge">Last Post</span>
+        @endif
+        
+        <small>{{ $loop->iteration }} of {{ $loop->count }}</small>
+    </div>
+@endforeach
+
+{{-- Forelse (foreach with empty state) --}}
+@forelse($products as $product)
+    <div class="product">{{ $product->name }}</div>
+@empty
+    <p>No products found</p>
+@endforelse
+
+{{-- Switch statement --}}
+@switch($role)
+    @case('admin')
+        <p>Admin Dashboard</p>
+        @break
+    @case('user')
+        <p>User Dashboard</p>
+        @break
+    @default
+        <p>Guest Dashboard</p>
+@endswitch</code></pre>
           
           <h3>Blade Components:</h3>
           <ul>
@@ -3117,12 +3611,156 @@ export const courses = [
             <li><strong>Slots:</strong> Flexible content injection</li>
           </ul>
           
-          <h3>Advanced Features:</h3>
+          <pre><code>{{-- Create component --}}
+php artisan make:component Alert
+
+{{-- resources/views/components/alert.blade.php --}}
+<div {{ $attributes->merge(['class' => 'alert']) }}>
+    <div class="alert-icon">{{ $icon ?? '!' }}</div>
+    <div class="alert-content">
+        <h4>{{ $title }}</h4>
+        {{ $slot }}
+    </div>
+</div>
+
+{{-- Using component --}}
+<x-alert type="success" class="mb-4">
+    <x-slot:title>Success!</x-slot:title>
+    <x-slot:icon>✓</x-slot:icon>
+    Your action was successful.
+</x-alert>
+
+{{-- Class-based component --}}
+// app/View/Components/Alert.php
+namespace App\View\Components;
+
+use Illuminate\View\Component;
+
+class Alert extends Component
+{
+    public $type;
+    public $message;
+    
+    public function __construct($type = 'info', $message = '')
+    {
+        $this->type = $type;
+        $this->message = $message;
+    }
+    
+    public function getIconClass()
+    {
+        return match($this->type) {
+            'success' => 'icon-check',
+            'error' => 'icon-x',
+            'warning' => 'icon-alert',
+            default => 'icon-info'
+        };
+    }
+    
+    public function render()
+    {
+        return view('components.alert');
+    }
+}
+
+{{-- Using in blade --}}
+<x-alert type="success" message="Operation successful!" />
+
+{{-- Card component with slots --}}
+<x-card>
+    <x-slot:header>
+        <h3>Card Title</h3>
+    </x-slot:header>
+    
+    <p>Card body content goes here.</p>
+    
+    <x-slot:footer>
+        <button>Action</button>
+    </x-slot:footer>
+</x-card></code></pre>
+          
+          <h3>Includes & Partials:</h3>
           <ul>
-            <li><strong>Custom Directives:</strong> Create your own Blade directives</li>
-            <li><strong>Template Caching:</strong> Improved performance</li>
-            <li><strong>Asset Compilation:</strong> Laravel Mix integration</li>
+            <li><strong>@include:</strong> Include sub-views</li>
+            <li><strong>@includeIf:</strong> Include if exists</li>
+            <li><strong>@includeWhen:</strong> Conditional include</li>
           </ul>
+          
+          <pre><code>{{-- resources/views/partials/navigation.blade.php --}}
+<nav class="navbar">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+</nav>
+
+{{-- Include partial --}}
+@include('partials.navigation')
+
+{{-- Include with data --}}
+@include('partials.user-card', ['user' => $user])
+
+{{-- Include if exists --}}
+@includeIf('partials.sidebar')
+
+{{-- Conditional include --}}
+@includeWhen($user->isAdmin(), 'partials.admin-panel')
+
+{{-- Include first existing view --}}
+@includeFirst(['partials.custom-nav', 'partials.navigation'])
+
+{{-- Loop and include --}}
+@each('partials.comment', $comments, 'comment')</code></pre>
+          
+          <h3>Additional Blade Features:</h3>
+          <ul>
+            <li><strong>@csrf:</strong> CSRF token for forms</li>
+            <li><strong>@method:</strong> HTTP method spoofing</li>
+            <li><strong>@error:</strong> Display validation errors</li>
+            <li><strong>@can:</strong> Authorization checks</li>
+          </ul>
+          
+          <pre><code>{{-- CSRF Protection --}}
+<form method="POST" action="/users">
+    @csrf
+    <input type="text" name="name">
+    <button type="submit">Submit</button>
+</form>
+
+{{-- HTTP Method Spoofing --}}
+<form method="POST" action="/users/1">
+    @csrf
+    @method('PUT')
+    <button type="submit">Update</button>
+</form>
+
+<form method="POST" action="/users/1">
+    @csrf
+    @method('DELETE')
+    <button type="submit">Delete</button>
+</form>
+
+{{-- Validation errors --}}
+@error('email')
+    <div class="alert alert-danger">{{ $message }}</div>
+@enderror
+
+{{-- Authorization --}}
+@can('edit', $post)
+    <a href="/posts/{{ $post->id }}/edit">Edit</a>
+@endcan
+
+@cannot('delete', $post)
+    <p>You cannot delete this post</p>
+@endcannot
+
+{{-- Environment checks --}}
+@production
+    {{-- Production only code --}}
+@endproduction
+
+@env('local')
+    {{-- Local environment only --}}
+@endenv</code></pre>
         `,
         videoUrl: 'https://www.youtube.com/embed/eWJVx2K4fjM'
       },
@@ -3132,39 +3770,372 @@ export const courses = [
         content: `
           <h2>Laravel Eloquent ORM</h2>
           <p>Eloquent is Laravel's built-in Object-Relational Mapping (ORM) that provides an elegant ActiveRecord implementation for working with your database.</p>
+          <p>Each database table has a corresponding Model that interacts with that table.</p>
           
-          <h3>Model Features:</h3>
+          <h3>Creating Models:</h3>
           <ul>
-            <li><strong>Active Record Pattern:</strong> Models represent database tables</li>
-            <li><strong>Mass Assignment:</strong> Fillable and guarded properties</li>
-            <li><strong>Timestamps:</strong> Automatic created_at and updated_at</li>
-            <li><strong>Soft Deletes:</strong> Mark records as deleted without removing</li>
-            <li><strong>Attributes:</strong> Accessors and mutators for data transformation</li>
+            <li><strong>Artisan Command:</strong> Generate model files</li>
+            <li><strong>Model Conventions:</strong> Singular, PascalCase names</li>
+            <li><strong>Table Names:</strong> Plural, snake_case (auto-derived)</li>
+            <li><strong>Primary Keys:</strong> 'id' by default</li>
           </ul>
           
-          <h3>Query Builder Integration:</h3>
+          <pre><code># Create model
+php artisan make:model Post
+
+# Create model with migration
+php artisan make:model Post -m
+
+# Create model with migration, factory, and seeder
+php artisan make:model Post -mfs
+
+# Create model with all (migration, factory, seeder, controller)
+php artisan make:model Post --all
+
+// app/Models/Post.php
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Post extends Model
+{
+    // Table name (if not following convention)
+    protected $table = 'blog_posts';
+    
+    // Primary key (if not 'id')
+    protected $primaryKey = 'post_id';
+    
+    // Disable auto-incrementing
+    public $incrementing = false;
+    
+    // Key type
+    protected $keyType = 'string';
+    
+    // Disable timestamps
+    public $timestamps = false;
+    
+    // Mass assignable attributes
+    protected $fillable = [
+        'title',
+        'content',
+        'author_id',
+        'published_at'
+    ];
+    
+    // Hidden attributes (for JSON)
+    protected $hidden = [
+        'password',
+        'remember_token'
+    ];
+    
+    // Cast attributes to types
+    protected $casts = [
+        'published_at' => 'datetime',
+        'is_published' => 'boolean',
+        'metadata' => 'array'
+    ];
+}</code></pre>
+          
+          <p><strong>Model Conventions:</strong> Model 'Post' maps to table 'posts', Model 'UserProfile' maps to 'user_profiles'.</p>
+          
+          <h3>Basic CRUD Operations:</h3>
           <ul>
-            <li><strong>Fluent Interface:</strong> Method chaining for queries</li>
-            <li><strong>Eager Loading:</strong> Solve N+1 query problems</li>
-            <li><strong>Lazy Loading:</strong> Load relationships on demand</li>
-            <li><strong>Query Scopes:</strong> Reusable query logic</li>
+            <li><strong>Create:</strong> Insert new records</li>
+            <li><strong>Read:</strong> Query and retrieve records</li>
+            <li><strong>Update:</strong> Modify existing records</li>
+            <li><strong>Delete:</strong> Remove records</li>
           </ul>
           
-          <h3>Relationships:</h3>
+          <pre><code>// CREATE - Insert new record
+$post = new Post();
+$post->title = 'My First Post';
+$post->content = 'This is the content';
+$post->save();
+
+// Create with mass assignment
+$post = Post::create([
+    'title' => 'My Post',
+    'content' => 'Content here',
+    'author_id' => 1
+]);
+
+// READ - Retrieve all records
+$posts = Post::all();
+
+// Find by primary key
+$post = Post::find(1);
+$post = Post::findOrFail(1); // Throws exception if not found
+
+// Find by other column
+$post = Post::where('title', 'My Post')->first();
+
+// Get multiple posts
+$posts = Post::where('is_published', true)->get();
+
+// Pagination
+$posts = Post::paginate(15);
+
+// UPDATE - Modify existing record
+$post = Post::find(1);
+$post->title = 'Updated Title';
+$post->save();
+
+// Mass update
+Post::where('author_id', 1)
+    ->update(['is_published' => true]);
+
+// Update or create
+Post::updateOrCreate(
+    ['title' => 'My Post'],
+    ['content' => 'Updated content']
+);
+
+// DELETE - Remove record
+$post = Post::find(1);
+$post->delete();
+
+// Delete by primary key
+Post::destroy(1);
+Post::destroy([1, 2, 3]);
+
+// Delete with query
+Post::where('views', '<', 100)->delete();</code></pre>
+          
+          <h3>Query Builder Methods:</h3>
+          <ul>
+            <li><strong>Where Clauses:</strong> Filter records</li>
+            <li><strong>Ordering:</strong> Sort results</li>
+            <li><strong>Limiting:</strong> Limit result count</li>
+            <li><strong>Aggregates:</strong> Count, sum, avg, etc.</li>
+          </ul>
+          
+          <pre><code>// WHERE clauses
+$posts = Post::where('is_published', true)->get();
+$posts = Post::where('views', '>', 100)->get();
+$posts = Post::where('title', 'like', '%Laravel%')->get();
+
+// Multiple conditions
+$posts = Post::where('is_published', true)
+              ->where('views', '>', 100)
+              ->get();
+
+// OR conditions
+$posts = Post::where('author_id', 1)
+              ->orWhere('author_id', 2)
+              ->get();
+
+// WhereIn
+$posts = Post::whereIn('category_id', [1, 2, 3])->get();
+
+// WhereBetween
+$posts = Post::whereBetween('created_at', [$start, $end])->get();
+
+// WhereNull
+$posts = Post::whereNull('deleted_at')->get();
+
+// ORDERING
+$posts = Post::orderBy('created_at', 'desc')->get();
+$posts = Post::latest()->get(); // Order by created_at desc
+$posts = Post::oldest()->get(); // Order by created_at asc
+
+// LIMITING
+$posts = Post::take(5)->get();
+$posts = Post::skip(10)->take(5)->get();
+
+// AGGREGATES
+$count = Post::count();
+$max = Post::max('views');
+$min = Post::min('views');
+$avg = Post::avg('views');
+$sum = Post::sum('views');
+
+// EXISTS
+if (Post::where('slug', $slug)->exists()) {
+    // Post exists
+}</code></pre>
+          
+          <h3>Eloquent Relationships:</h3>
           <ul>
             <li><strong>One-to-One:</strong> hasOne() and belongsTo()</li>
             <li><strong>One-to-Many:</strong> hasMany() and belongsTo()</li>
             <li><strong>Many-to-Many:</strong> belongsToMany()</li>
-            <li><strong>Polymorphic Relations:</strong> Flexible relationships</li>
+            <li><strong>Polymorphic:</strong> Flexible relationships</li>
           </ul>
           
-          <h3>Advanced Features:</h3>
+          <pre><code>// ONE-TO-ONE
+// User model
+class User extends Model
+{
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
+    }
+}
+
+// Profile model
+class Profile extends Model
+{
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+}
+
+// Usage
+$user = User::find(1);
+$profile = $user->profile;
+$user = $profile->user;
+
+// ONE-TO-MANY
+// Post model
+class Post extends Model
+{
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+}
+
+// Comment model
+class Comment extends Model
+{
+    public function post()
+    {
+        return $this->belongsTo(Post::class);
+    }
+}
+
+// Usage
+$post = Post::find(1);
+$comments = $post->comments;
+$post = $comment->post;
+
+// Create related model
+$post->comments()->create([
+    'content' => 'Great post!',
+    'user_id' => 1
+]);
+
+// MANY-TO-MANY
+// User model
+class User extends Model
+{
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
+}
+
+// Role model
+class Role extends Model
+{
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
+}
+
+// Usage
+$user = User::find(1);
+$roles = $user->roles;
+
+// Attach roles to user
+$user->roles()->attach([1, 2, 3]);
+
+// Detach roles
+$user->roles()->detach([1, 2]);
+
+// Sync roles (replace all)
+$user->roles()->sync([1, 2, 3]);
+
+// Pivot table data
+$user->roles()->attach(1, ['expires_at' => now()->addYear()]);</code></pre>
+          
+          <h3>Eager Loading (N+1 Problem):</h3>
           <ul>
-            <li><strong>Model Events:</strong> Hooks for model operations</li>
-            <li><strong>Observers:</strong> Separate event handling logic</li>
-            <li><strong>Collections:</strong> Powerful data manipulation</li>
-            <li><strong>Model Factories:</strong> Generate test data</li>
+            <li><strong>with():</strong> Eager load relationships</li>
+            <li><strong>load():</strong> Lazy eager loading</li>
+            <li><strong>Nested Relationships:</strong> Load deep relationships</li>
           </ul>
+          
+          <pre><code>// WITHOUT eager loading (N+1 problem)
+$posts = Post::all();
+foreach ($posts as $post) {
+    echo $post->author->name; // Queries database each time
+}
+
+// WITH eager loading (2 queries total)
+$posts = Post::with('author')->get();
+foreach ($posts as $post) {
+    echo $post->author->name; // No additional queries
+}
+
+// Multiple relationships
+$posts = Post::with(['author', 'comments', 'tags'])->get();
+
+// Nested relationships
+$posts = Post::with('comments.user')->get();
+
+// Conditional eager loading
+$posts = Post::with(['comments' => function ($query) {
+    $query->where('approved', true)->orderBy('created_at', 'desc');
+}])->get();
+
+// Lazy eager loading
+$posts = Post::all();
+$posts->load('author');</code></pre>
+          
+          <h3>Accessors & Mutators:</h3>
+          <ul>
+            <li><strong>Accessors:</strong> Transform attributes when retrieving</li>
+            <li><strong>Mutators:</strong> Transform attributes when setting</li>
+            <li><strong>Attribute Casting:</strong> Auto-type conversion</li>
+          </ul>
+          
+          <pre><code>// Accessors (get data)
+class User extends Model
+{
+    // Get full name
+    protected function fullName(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => $this->first_name . ' ' . $this->last_name
+        );
+    }
+    
+    // Format title
+    protected function title(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => ucfirst($value)
+        );
+    }
+}
+
+// Usage
+$user = User::find(1);
+echo $user->full_name; // John Doe
+echo $user->title; // Formatted Title
+
+// Mutators (set data)
+protected function password(): Attribute
+{
+    return Attribute::make(
+        set: fn ($value) => bcrypt($value)
+    );
+}
+
+// Usage
+$user->password = 'secret'; // Automatically hashed
+
+// Combined accessor and mutator
+protected function firstName(): Attribute
+{
+    return Attribute::make(
+        get: fn ($value) => ucfirst($value),
+        set: fn ($value) => strtolower($value)
+    );
+}</code></pre>
         `,
         videoUrl: 'https://www.youtube.com/embed/qJqt3CzqtVA'
       },
@@ -3174,38 +4145,222 @@ export const courses = [
         content: `
           <h2>Database Migrations</h2>
           <p>Laravel migrations are version control for your database, allowing you to define and share your application's database schema with your team.</p>
+          <p>Migrations allow you to easily modify your database schema without manually writing SQL.</p>
           
-          <h3>Migration Benefits:</h3>
+          <h3>Creating Migrations:</h3>
           <ul>
-            <li><strong>Version Control:</strong> Track database changes</li>
-            <li><strong>Team Collaboration:</strong> Share schema changes</li>
-            <li><strong>Environment Sync:</strong> Keep databases in sync</li>
-            <li><strong>Rollback Capability:</strong> Undo schema changes</li>
+            <li><strong>Artisan Command:</strong> Generate migration files</li>
+            <li><strong>Migration File:</strong> Timestamp-named file in database/migrations</li>
+            <li><strong>Up Method:</strong> Define schema changes</li>
+            <li><strong>Down Method:</strong> Reverse the changes</li>
           </ul>
           
-          <h3>Schema Builder:</h3>
+          <pre><code># Create migration
+php artisan make:migration create_posts_table
+
+# Create migration with model
+php artisan make:model Post -m
+
+# database/migrations/2026_01_11_create_posts_table.php
+use Illuminate\\Database\\Migrations\\Migration;
+use Illuminate\\Database\\Schema\\Blueprint;
+use Illuminate\\Support\\Facades\\Schema;
+
+return new class extends Migration
+{
+    public function up()
+    {
+        Schema::create('posts', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->text('content');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->boolean('is_published')->default(false);
+            $table->integer('views')->default(0);
+            $table->timestamps();
+        });
+    }
+    
+    public function down()
+    {
+        Schema::dropIfExists('posts');
+    }
+};
+
+# Run migrations
+php artisan migrate
+
+# Rollback last migration
+php artisan migrate:rollback
+
+# Rollback all migrations
+php artisan migrate:reset
+
+# Rollback and re-run
+php artisan migrate:refresh
+
+# Fresh migration (drop all tables)
+php artisan migrate:fresh</code></pre>
+          
+          <p><strong>Migration Benefits:</strong> Version control for database, team collaboration, easy rollback, environment synchronization.</p>
+          
+          <h3>Schema Builder - Column Types:</h3>
           <ul>
-            <li><strong>Table Creation:</strong> Create new tables</li>
-            <li><strong>Column Types:</strong> String, integer, boolean, timestamps</li>
-            <li><strong>Indexes:</strong> Primary keys, unique constraints, indexes</li>
-            <li><strong>Foreign Keys:</strong> Define relationships between tables</li>
-            <li><strong>Table Modifications:</strong> Add, modify, drop columns</li>
+            <li><strong>Strings:</strong> string, text, char</li>
+            <li><strong>Numbers:</strong> integer, bigInteger, decimal, float</li>
+            <li><strong>Dates:</strong> date, datetime, timestamp</li>
+            <li><strong>Boolean:</strong> boolean</li>
+            <li><strong>Special:</strong> json, binary, enum</li>
           </ul>
+          
+          <pre><code># Add columns to existing table
+php artisan make:migration add_columns_to_posts_table --table=posts
+
+public function up()
+{
+    Schema::table('posts', function (Blueprint $table) {
+        // String columns
+        $table->string('title', 255);
+        $table->text('content');
+        $table->char('code', 10);
+        
+        // Number columns
+        $table->integer('views');
+        $table->bigInteger('downloads');
+        $table->decimal('price', 8, 2);
+        $table->float('rating', 3, 1);
+        
+        // Date columns
+        $table->date('published_date');
+        $table->datetime('published_at');
+        $table->timestamp('created_at');
+        
+        // Boolean
+        $table->boolean('is_active');
+        
+        // Special types
+        $table->json('metadata');
+        $table->enum('status', ['draft', 'published', 'archived']);
+        
+        // Auto-incrementing ID
+        $table->id();
+        
+        // Foreign keys
+        $table->foreignId('user_id')->constrained();
+        $table->foreignId('category_id')
+              ->constrained()
+              ->onDelete('cascade');
+        
+        // Indexes
+        $table->string('email')->unique();
+        $table->string('slug')->index();
+        
+        // Nullable
+        $table->string('description')->nullable();
+        
+        // Default values
+        $table->boolean('is_published')->default(false);
+        
+        // Timestamps
+        $table->timestamps(); // created_at, updated_at
+        $table->softDeletes(); // deleted_at
+    });
+}</code></pre>
           
           <h3>Database Seeding:</h3>
           <ul>
             <li><strong>Seeders:</strong> Populate tables with sample data</li>
             <li><strong>Model Factories:</strong> Generate fake data for testing</li>
-            <li><strong>Database Testing:</strong> RefreshDatabase trait</li>
+            <li><strong>Faker:</strong> Generate realistic fake data</li>
           </ul>
+          
+          <pre><code># Create seeder
+php artisan make:seeder UserSeeder
+
+// database/seeders/UserSeeder.php
+use App\\Models\\User;
+
+class UserSeeder extends Seeder
+{
+    public function run()
+    {
+        // Create specific user
+        User::create([
+            'name' => 'John Doe',
+            'email' => 'john@example.com',
+            'password' => bcrypt('password')
+        ]);
+        
+        // Create multiple users using factory
+        User::factory()->count(50)->create();
+    }
+}
+
+# Create factory
+php artisan make:factory PostFactory
+
+// database/factories/PostFactory.php
+class PostFactory extends Factory
+{
+    public function definition()
+    {
+        return [
+            'title' => $this->faker->sentence(),
+            'content' => $this->faker->paragraphs(3, true),
+            'user_id' => User::factory(),
+            'is_published' => $this->faker->boolean(),
+            'views' => $this->faker->numberBetween(0, 1000),
+        ];
+    }
+}
+
+// Run seeders
+php artisan db:seed
+php artisan db:seed --class=UserSeeder
+
+// Run migrations with seeding
+php artisan migrate --seed
+php artisan migrate:fresh --seed</code></pre>
           
           <h3>Query Builder:</h3>
           <ul>
             <li><strong>Fluent Interface:</strong> Build complex queries</li>
-            <li><strong>Raw Queries:</strong> Execute custom SQL when needed</li>
-            <li><strong>Transactions:</strong> Database transaction support</li>
-            <li><strong>Multiple Connections:</strong> Work with multiple databases</li>
+            <li><strong>Raw Queries:</strong> Execute custom SQL</li>
+            <li><strong>Transactions:</strong> Database transactions</li>
           </ul>
+          
+          <pre><code>use Illuminate\\Support\\Facades\\DB;
+
+// SELECT queries
+$users = DB::table('users')->get();
+$user = DB::table('users')->where('email', $email)->first();
+$count = DB::table('users')->count();
+
+// INSERT
+DB::table('users')->insert([
+    'name' => 'John',
+    'email' => 'john@example.com'
+]);
+
+// UPDATE
+DB::table('users')
+    ->where('id', 1)
+    ->update(['name' => 'Updated Name']);
+
+// DELETE
+DB::table('users')->where('id', 1)->delete();
+
+// Joins
+$users = DB::table('users')
+    ->join('posts', 'users.id', '=', 'posts.user_id')
+    ->select('users.*', 'posts.title')
+    ->get();
+
+// Transactions
+DB::transaction(function () {
+    DB::table('users')->update(['votes' => 1]);
+    DB::table('posts')->delete();
+});</code></pre>
         `,
         videoUrl: 'https://www.youtube.com/embed/4RHUwzGWRAw'
       },
@@ -3215,39 +4370,303 @@ export const courses = [
         content: `
           <h2>Laravel Authentication System</h2>
           <p>Laravel provides a complete authentication system out of the box, including user registration, login, password reset, and email verification.</p>
+          <p>Laravel makes implementing authentication very simple with starter kits like Breeze and Jetstream.</p>
           
-          <h3>Authentication Features:</h3>
+          <h3>Laravel Breeze Installation:</h3>
           <ul>
-            <li><strong>User Registration:</strong> Built-in registration system</li>
-            <li><strong>Login/Logout:</strong> Session-based authentication</li>
-            <li><strong>Password Reset:</strong> Email-based password recovery</li>
-            <li><strong>Email Verification:</strong> Verify user email addresses</li>
-            <li><strong>Remember Me:</strong> Persistent login sessions</li>
+            <li><strong>Lightweight:</strong> Minimal authentication scaffolding</li>
+            <li><strong>Blade Templates:</strong> Simple blade views</li>
+            <li><strong>Tailwind CSS:</strong> Modern styling</li>
+            <li><strong>Quick Setup:</strong> Ready in minutes</li>
           </ul>
           
-          <h3>Laravel Breeze & Jetstream:</h3>
+          <pre><code># Install Laravel Breeze
+composer require laravel/breeze --dev
+
+# Install Breeze scaffolding
+php artisan breeze:install
+
+# Options available:
+# - blade (Blade with Alpine)
+# - react (React with Inertia)
+# - vue (Vue with Inertia)
+# - api (API only)
+
+# Install dependencies and build assets
+npm install
+npm run dev
+
+# Run migrations
+php artisan migrate
+
+# Authentication routes are now available:
+# /login
+# /register
+# /forgot-password
+# /reset-password
+# /verify-email
+# /dashboard</code></pre>
+          
+          <p><strong>Breeze Features:</strong> Login, registration, password reset, email verification, and profile management out of the box.</p>
+          
+          <h3>Manual Authentication:</h3>
           <ul>
-            <li><strong>Laravel Breeze:</strong> Simple authentication scaffolding</li>
-            <li><strong>Laravel Jetstream:</strong> Advanced authentication with teams</li>
-            <li><strong>Inertia.js:</strong> Modern single-page applications</li>
-            <li><strong>Livewire:</strong> Dynamic interfaces without JavaScript</li>
+            <li><strong>Auth Facade:</strong> Authenticate users</li>
+            <li><strong>Auth::attempt():</strong> Login with credentials</li>
+            <li><strong>Auth::user():</strong> Get authenticated user</li>
+            <li><strong>Auth::logout():</strong> Logout user</li>
           </ul>
           
-          <h3>Authorization:</h3>
+          <pre><code>use Illuminate\\Support\\Facades\\Auth;
+
+// Login user
+public function login(Request $request)
+{
+    $credentials = $request->only('email', 'password');
+    
+    if (Auth::attempt($credentials)) {
+        $request->session()->regenerate();
+        return redirect()->intended('dashboard');
+    }
+    
+    return back()->withErrors([
+        'email' => 'Invalid credentials.',
+    ]);
+}
+
+// Login with remember me
+if (Auth::attempt($credentials, $remember = true)) {
+    // User logged in with remember me
+}
+
+// Get authenticated user
+$user = Auth::user();
+$id = Auth::id();
+
+// Check if authenticated
+if (Auth::check()) {
+    // User is logged in
+}
+
+// Logout
+public function logout(Request $request)
+{
+    Auth::logout();
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+    return redirect('/');
+}
+
+// Login specific user instance
+Auth::login($user);
+
+// Login user by ID
+Auth::loginUsingId(1);</code></pre>
+          
+          <h3>Protecting Routes:</h3>
+          <ul>
+            <li><strong>auth Middleware:</strong> Require authentication</li>
+            <li><strong>guest Middleware:</strong> Only for guests</li>
+            <li><strong>verified Middleware:</strong> Email verification required</li>
+          </ul>
+          
+          <pre><code>// Protect routes with auth middleware
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware('auth');
+
+// Protect multiple routes
+Route::middleware(['auth'])->group(function () {
+    Route::get('/profile', [ProfileController::class, 'show']);
+    Route::get('/settings', [SettingsController::class, 'index']);
+});
+
+// Guest only routes
+Route::middleware(['guest'])->group(function () {
+    Route::get('/login', [AuthController::class, 'showLogin']);
+    Route::get('/register', [AuthController::class, 'showRegister']);
+});
+
+// Email verification required
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified']);
+
+// In controller constructor
+class ProfileController extends Controller
+{
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+}
+
+// Redirect if authenticated
+Route::get('/login', function () {
+    return view('auth.login');
+})->middleware('guest');</code></pre>
+          
+          <h3>Authorization with Gates:</h3>
           <ul>
             <li><strong>Gates:</strong> Simple closure-based authorization</li>
-            <li><strong>Policies:</strong> Class-based authorization logic</li>
-            <li><strong>Middleware:</strong> Route-level protection</li>
-            <li><strong>Blade Directives:</strong> Template-level authorization</li>
+            <li><strong>Define Gates:</strong> In AuthServiceProvider</li>
+            <li><strong>Check Gates:</strong> Gate::allows() or Gate::denies()</li>
           </ul>
           
-          <h3>API Authentication:</h3>
+          <pre><code>// app/Providers/AuthServiceProvider.php
+use Illuminate\\Support\\Facades\\Gate;
+
+public function boot()
+{
+    // Define gate
+    Gate::define('update-post', function (User $user, Post $post) {
+        return $user->id === $post->user_id;
+    });
+    
+    // Admin gate
+    Gate::define('admin-access', function (User $user) {
+        return $user->is_admin;
+    });
+    
+    // Before gate (super admin)
+    Gate::before(function ($user, $ability) {
+        if ($user->isSuperAdmin()) {
+            return true;
+        }
+    });
+}
+
+// Check gate in controller
+public function update(Post $post)
+{
+    if (Gate::allows('update-post', $post)) {
+        // User can update post
+    }
+    
+    if (Gate::denies('update-post', $post)) {
+        abort(403);
+    }
+    
+    // Or use authorize helper
+    Gate::authorize('update-post', $post);
+}
+
+// In Blade templates
+@can('update-post', $post)
+    <a href="/posts/{{ $post->id }}/edit">Edit</a>
+@endcan
+
+@cannot('delete-post', $post)
+    <p>You cannot delete this post</p>
+@endcannot</code></pre>
+          
+          <h3>Authorization with Policies:</h3>
           <ul>
-            <li><strong>Sanctum:</strong> API token authentication</li>
-            <li><strong>Passport:</strong> Full OAuth2 server implementation</li>
-            <li><strong>JWT:</strong> JSON Web Token authentication</li>
-            <li><strong>Guard Configuration:</strong> Multiple authentication systems</li>
+            <li><strong>Policies:</strong> Class-based authorization for models</li>
+            <li><strong>Create Policy:</strong> Artisan command</li>
+            <li><strong>Policy Methods:</strong> view, create, update, delete</li>
           </ul>
+          
+          <pre><code># Create policy
+php artisan make:policy PostPolicy --model=Post
+
+// app/Policies/PostPolicy.php
+class PostPolicy
+{
+    public function view(User $user, Post $post)
+    {
+        return true; // Anyone can view
+    }
+    
+    public function create(User $user)
+    {
+        return $user->is_verified;
+    }
+    
+    public function update(User $user, Post $post)
+    {
+        return $user->id === $post->user_id;
+    }
+    
+    public function delete(User $user, Post $post)
+    {
+        return $user->id === $post->user_id || $user->is_admin;
+    }
+}
+
+// Register policy in AuthServiceProvider
+protected $policies = [
+    Post::class => PostPolicy::class,
+];
+
+// Use in controller
+public function update(Request $request, Post $post)
+{
+    $this->authorize('update', $post);
+    
+    // Or check manually
+    if ($request->user()->cannot('update', $post)) {
+        abort(403);
+    }
+    
+    $post->update($request->all());
+}
+
+// In Blade
+@can('update', $post)
+    <a href="/posts/{{ $post->id }}/edit">Edit</a>
+@endcan
+
+// Check multiple policies
+@canany(['update', 'delete'], $post)
+    <div class="actions">...</div>
+@endcanany</code></pre>
+          
+          <h3>API Authentication with Sanctum:</h3>
+          <ul>
+            <li><strong>Laravel Sanctum:</strong> Simple API token authentication</li>
+            <li><strong>Personal Access Tokens:</strong> User-specific tokens</li>
+            <li><strong>SPA Authentication:</strong> Cookie-based auth for SPAs</li>
+          </ul>
+          
+          <pre><code># Install Sanctum
+composer require laravel/sanctum
+
+php artisan vendor:publish --provider="Laravel\\Sanctum\\SanctumServiceProvider"
+
+php artisan migrate
+
+// Add to api middleware in app/Http/Kernel.php
+'api' => [
+    \\Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful::class,
+    'throttle:api',
+    \\Illuminate\\Routing\\Middleware\\SubstituteBindings::class,
+],
+
+// Create token for user
+$token = $user->createToken('token-name')->plainTextToken;
+
+// Create token with abilities
+$token = $user->createToken('token-name', ['post:create', 'post:update'])
+              ->plainTextToken;
+
+// Protect API routes
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/user', function (Request $request) {
+        return $request->user();
+    });
+    
+    Route::apiResource('posts', PostController::class);
+});
+
+// Revoke tokens
+$user->tokens()->delete(); // Delete all tokens
+$user->currentAccessToken()->delete(); // Delete current token
+
+// Check token abilities
+if ($user->tokenCan('post:create')) {
+    // Token has ability
+}</code></pre>
         `,
         videoUrl: 'https://www.youtube.com/embed/th6LsKxf8fY'
       },
@@ -3256,41 +4675,340 @@ export const courses = [
         title: 'Forms & Validation',
         content: `
           <h2>Laravel Forms and Validation</h2>
-          <p>Laravel provides powerful tools for building forms and validating user input with simple, expressive syntax and comprehensive validation rules.</p>
+          <p>Laravel provides powerful form handling and validation features to ensure data integrity and security.</p>
+          <p>Forms include CSRF protection, file uploads, and comprehensive validation rules.</p>
           
-          <h3>Form Building:</h3>
+          <h3>Creating Forms in Blade:</h3>
           <ul>
-            <li><strong>Blade Forms:</strong> HTML forms with Blade helpers</li>
-            <li><strong>CSRF Protection:</strong> Built-in CSRF token handling</li>
-            <li><strong>Method Spoofing:</strong> HTTP verb simulation</li>
-            <li><strong>File Uploads:</strong> Handle file upload forms</li>
-            <li><strong>Form Requests:</strong> Dedicated request classes</li>
+            <li><strong>@csrf:</strong> CSRF token for security</li>
+            <li><strong>@method:</strong> Spoof HTTP methods (PUT, PATCH, DELETE)</li>
+            <li><strong>Old Input:</strong> Preserve form data on errors</li>
+            <li><strong>Error Display:</strong> Show validation errors</li>
           </ul>
           
-          <h3>Validation Rules:</h3>
+          <pre><code>&lt;!-- Create form --&gt;
+&lt;form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data"&gt;
+    @csrf
+    
+    &lt;div&gt;
+        &lt;label for="title"&gt;Title:&lt;/label&gt;
+        &lt;input type="text" name="title" id="title" value="{{ old('title') }}"&gt;
+        
+        @error('title')
+            &lt;span class="error"&gt;{{ $message }}&lt;/span&gt;
+        @enderror
+    &lt;/div&gt;
+    
+    &lt;div&gt;
+        &lt;label for="content"&gt;Content:&lt;/label&gt;
+        &lt;textarea name="content" id="content"&gt;{{ old('content') }}&lt;/textarea&gt;
+        
+        @error('content')
+            &lt;span class="error"&gt;{{ $message }}&lt;/span&gt;
+        @enderror
+    &lt;/div&gt;
+    
+    &lt;div&gt;
+        &lt;label for="image"&gt;Image:&lt;/label&gt;
+        &lt;input type="file" name="image" id="image"&gt;
+        
+        @error('image')
+            &lt;span class="error"&gt;{{ $message }}&lt;/span&gt;
+        @enderror
+    &lt;/div&gt;
+    
+    &lt;button type="submit"&gt;Create Post&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;!-- Update form (PUT method) --&gt;
+&lt;form action="{{ route('posts.update', $post) }}" method="POST"&gt;
+    @csrf
+    @method('PUT')
+    
+    &lt;input type="text" name="title" value="{{ old('title', $post-&gt;title) }}"&gt;
+    &lt;button type="submit"&gt;Update&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;!-- Delete form --&gt;
+&lt;form action="{{ route('posts.destroy', $post) }}" method="POST"&gt;
+    @csrf
+    @method('DELETE')
+    &lt;button type="submit"&gt;Delete&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;!-- Display all errors --&gt;
+@if ($errors-&gt;any())
+    &lt;div class="alert alert-danger"&gt;
+        &lt;ul&gt;
+            @foreach ($errors-&gt;all() as $error)
+                &lt;li&gt;{{ $error }}&lt;/li&gt;
+            @endforeach
+        &lt;/ul&gt;
+    &lt;/div&gt;
+@endif</code></pre>
+          
+          <p><strong>CSRF Protection:</strong> @csrf directive generates a hidden token field that Laravel validates on form submission to prevent cross-site request forgery attacks.</p>
+          
+          <h3>Controller Validation:</h3>
           <ul>
-            <li><strong>Basic Rules:</strong> required, email, numeric, string</li>
-            <li><strong>Size Rules:</strong> min, max, between for strings/numbers</li>
-            <li><strong>Database Rules:</strong> unique, exists for database validation</li>
-            <li><strong>File Rules:</strong> image, mimes, file size validation</li>
-            <li><strong>Custom Rules:</strong> Create your own validation rules</li>
+            <li><strong>validate() Method:</strong> Simple inline validation</li>
+            <li><strong>Validation Rules:</strong> Array of rules per field</li>
+            <li><strong>Auto-Redirect:</strong> Redirects back with errors</li>
+            <li><strong>Validated Data:</strong> Returns only validated fields</li>
           </ul>
           
-          <h3>Form Request Classes:</h3>
+          <pre><code>use Illuminate\\Http\\Request;
+
+public function store(Request $request)
+{
+    // Validate request data
+    $validated = $request->validate([
+        'title' => 'required|string|max:255|unique:posts',
+        'content' => 'required|string|min:10',
+        'category_id' => 'required|exists:categories,id',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+        'status' => 'required|in:draft,published',
+        'published_at' => 'nullable|date|after:today',
+        'tags' => 'array|min:1',
+        'tags.*' => 'string|max:50',
+    ]);
+    
+    // Create post with validated data only
+    $post = Post::create($validated);
+    
+    return redirect()->route('posts.show', $post)
+                     ->with('success', 'Post created successfully!');
+}
+
+// Validation with custom messages
+$request->validate([
+    'title' => 'required|max:255',
+    'email' => 'required|email',
+], [
+    'title.required' => 'Please enter a title',
+    'title.max' => 'Title cannot exceed 255 characters',
+    'email.required' => 'Email is required',
+    'email.email' => 'Please enter a valid email',
+]);
+
+// Validation with custom attributes
+$request->validate([
+    'email' => 'required|email',
+], [], [
+    'email' => 'email address',
+]);</code></pre>
+          
+          <h3>Form Request Validation:</h3>
           <ul>
-            <li><strong>Validation Logic:</strong> Centralized validation rules</li>
-            <li><strong>Authorization:</strong> Request-level authorization</li>
-            <li><strong>Error Handling:</strong> Automatic error response</li>
-            <li><strong>Custom Messages:</strong> Personalized error messages</li>
+            <li><strong>Dedicated Class:</strong> Separate validation logic</li>
+            <li><strong>Authorization:</strong> Built-in authorization check</li>
+            <li><strong>Reusable:</strong> Use across multiple controllers</li>
+            <li><strong>Type Hinting:</strong> Automatic injection</li>
           </ul>
           
-          <h3>Error Handling:</h3>
+          <pre><code># Create Form Request
+php artisan make:request StorePostRequest
+
+// app/Http/Requests/StorePostRequest.php
+namespace App\\Http\\Requests;
+
+use Illuminate\\Foundation\\Http\\FormRequest;
+
+class StorePostRequest extends FormRequest
+{
+    public function authorize()
+    {
+        // Authorization logic
+        return auth()->check();
+    }
+    
+    public function rules()
+    {
+        return [
+            'title' => 'required|string|max:255|unique:posts',
+            'content' => 'required|string|min:10',
+            'category_id' => 'required|exists:categories,id',
+            'image' => 'nullable|image|max:2048',
+            'tags' => 'array',
+            'tags.*' => 'string|max:50',
+        ];
+    }
+    
+    public function messages()
+    {
+        return [
+            'title.required' => 'Post title is required',
+            'title.unique' => 'This title is already taken',
+            'content.min' => 'Content must be at least 10 characters',
+        ];
+    }
+    
+    public function attributes()
+    {
+        return [
+            'category_id' => 'category',
+        ];
+    }
+    
+    // Prepare data before validation
+    protected function prepareForValidation()
+    {
+        $this->merge([
+            'slug' => Str::slug($this->title),
+        ]);
+    }
+}
+
+// Use in controller
+public function store(StorePostRequest $request)
+{
+    // Validation already done automatically
+    $validated = $request->validated();
+    
+    $post = Post::create($validated);
+    
+    return redirect()->route('posts.show', $post);
+}</code></pre>
+          
+          <h3>Common Validation Rules:</h3>
           <ul>
-            <li><strong>Error Bags:</strong> Organize validation errors</li>
-            <li><strong>Old Input:</strong> Preserve form data on validation failure</li>
-            <li><strong>Error Display:</strong> Show errors in Blade templates</li>
-            <li><strong>AJAX Validation:</strong> Handle validation in JavaScript</li>
+            <li><strong>required:</strong> Field must be present</li>
+            <li><strong>email:</strong> Valid email format</li>
+            <li><strong>unique:</strong> Unique in database</li>
+            <li><strong>exists:</strong> Value exists in database</li>
           </ul>
+          
+          <pre><code>// String validation
+'name' => 'required|string|min:3|max:255'
+'slug' => 'required|alpha_dash|unique:posts'
+'description' => 'nullable|string'
+
+// Numeric validation
+'age' => 'required|integer|min:18|max:100'
+'price' => 'required|numeric|between:0,999.99'
+'quantity' => 'required|digits:4'
+
+// Date validation
+'birthdate' => 'required|date|before:today'
+'published_at' => 'nullable|date|after:today'
+'event_date' => 'required|date_format:Y-m-d'
+
+// File validation
+'avatar' => 'required|image|mimes:jpeg,png|max:2048'
+'document' => 'required|file|mimes:pdf,doc,docx|max:10240'
+
+// Array validation
+'tags' => 'required|array|min:1|max:5'
+'tags.*' => 'string|max:50'
+'items.*.name' => 'required|string'
+'items.*.quantity' => 'required|integer|min:1'
+
+// Boolean validation
+'terms' => 'accepted'
+'is_active' => 'boolean'
+
+// Relationship validation
+'category_id' => 'required|exists:categories,id'
+'user_id' => 'required|exists:users,id,deleted_at,NULL'
+
+// Conditional validation
+'email' => 'required_if:contact_method,email'
+'phone' => 'required_unless:contact_method,email'
+'other_reason' => 'required_with:reason,other'
+
+// Regex validation
+'username' => ['required', 'regex:/^[a-zA-Z0-9_]+$/']
+'hex_color' => ['required', 'regex:/^#[0-9A-F]{6}$/i']</code></pre>
+          
+          <h3>Custom Validation Rules:</h3>
+          <ul>
+            <li><strong>Rule Objects:</strong> Reusable custom rules</li>
+            <li><strong>Closures:</strong> Inline custom validation</li>
+            <li><strong>passes() Method:</strong> Validation logic</li>
+            <li><strong>message() Method:</strong> Error message</li>
+          </ul>
+          
+          <pre><code># Create custom rule
+php artisan make:rule Uppercase
+
+// app/Rules/Uppercase.php
+namespace App\\Rules;
+
+use Illuminate\\Contracts\\Validation\\Rule;
+
+class Uppercase implements Rule
+{
+    public function passes($attribute, $value)
+    {
+        return strtoupper($value) === $value;
+    }
+    
+    public function message()
+    {
+        return 'The :attribute must be uppercase.';
+    }
+}
+
+// Use custom rule
+use App\\Rules\\Uppercase;
+
+$request->validate([
+    'code' => ['required', new Uppercase],
+]);
+
+// Closure-based validation
+$request->validate([
+    'title' => [
+        'required',
+        function ($attribute, $value, $fail) {
+            if (strtoupper($value) !== $value) {
+                $fail('The '.$attribute.' must be uppercase.');
+            }
+        },
+    ],
+]);</code></pre>
+          
+          <h3>File Upload Handling:</h3>
+          <ul>
+            <li><strong>store() Method:</strong> Save uploaded files</li>
+            <li><strong>Storage Facade:</strong> File system operations</li>
+            <li><strong>Public Disk:</strong> Publicly accessible files</li>
+          </ul>
+          
+          <pre><code>public function store(Request $request)
+{
+    $request->validate([
+        'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        'document' => 'nullable|file|mimes:pdf|max:5120',
+    ]);
+    
+    // Store file in storage/app/public/images
+    $imagePath = $request->file('image')->store('images', 'public');
+    
+    // Store with custom name
+    $imagePath = $request->file('image')
+                         ->storeAs('images', 'custom-name.jpg', 'public');
+    
+    // Get original filename
+    $originalName = $request->file('image')->getClientOriginalName();
+    
+    // Get file extension
+    $extension = $request->file('image')->extension();
+    
+    // Create post with file path
+    $post = Post::create([
+        'title' => $request->title,
+        'image_path' => $imagePath,
+    ]);
+    
+    return redirect()->route('posts.show', $post);
+}
+
+// Access uploaded file URL
+&lt;img src="{{ asset('storage/' . $post-&gt;image_path) }}" alt="Post Image"&gt;
+
+# Create symbolic link for storage (one time setup)
+php artisan storage:link</code></pre>
         `,
         videoUrl: 'https://www.youtube.com/embed/H3pij8VzPDk'
       },
@@ -3300,22 +5018,222 @@ export const courses = [
         content: `
           <h2>Laravel API Development</h2>
           <p>Laravel excels at building robust RESTful APIs with built-in tools for authentication, rate limiting, and API resource transformation.</p>
+          <p>Build powerful APIs with JSON responses, resource transformation, and comprehensive error handling.</p>
           
-          <h3>API Routes:</h3>
+          <h3>API Routes Setup:</h3>
           <ul>
-            <li><strong>API Route Group:</strong> routes/api.php for API endpoints</li>
-            <li><strong>Resource Routes:</strong> Automatic CRUD route generation</li>
-            <li><strong>Route Model Binding:</strong> Automatic model injection</li>
-            <li><strong>Rate Limiting:</strong> Protect API from abuse</li>
+            <li><strong>routes/api.php:</strong> Define API endpoints</li>
+            <li><strong>Resource Routes:</strong> Automatic CRUD operations</li>
+            <li><strong>Route Prefixes:</strong> /api prefix automatically added</li>
+            <li><strong>API Middleware:</strong> JSON responses, throttling</li>
           </ul>
+          
+          <pre><code>// routes/api.php
+use App\Http\Controllers\Api\PostController;
+use App\Http\Controllers\Api\UserController;
+
+// Simple API routes
+Route::get('/posts', [PostController::class, 'index']);
+Route::get('/posts/{post}', [PostController::class, 'show']);
+Route::post('/posts', [PostController::class, 'store']);
+Route::put('/posts/{post}', [PostController::class, 'update']);
+Route::delete('/posts/{post}', [PostController::class, 'destroy']);
+
+// API Resource routes (creates all CRUD routes)
+Route::apiResource('posts', PostController::class);
+
+// Multiple resources
+Route::apiResources([
+    'posts' => PostController::class,
+    'users' => UserController::class,
+]);
+
+// Nested resources
+Route::apiResource('posts.comments', CommentController::class);
+
+// Protected routes
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/user', function (Request $request) {
+        return $request->user();
+    });
+    
+    Route::apiResource('posts', PostController::class);
+});
+
+// API versioning
+Route::prefix('v1')->group(function () {
+    Route::apiResource('posts', PostController::class);
+});
+
+Route::prefix('v2')->group(function () {
+    Route::apiResource('posts', PostV2Controller::class);
+});</code></pre>
+          
+          <p><strong>API Routes:</strong> All routes in routes/api.php automatically get /api prefix and api middleware group applied, returning JSON responses.</p>
+          
+          <h3>API Controllers:</h3>
+          <ul>
+            <li><strong>--api Flag:</strong> Creates controller without create/edit methods</li>
+            <li><strong>JSON Responses:</strong> Return JSON formatted data</li>
+            <li><strong>Status Codes:</strong> HTTP status codes (200, 201, 404, 422)</li>
+            <li><strong>Error Handling:</strong> Consistent error responses</li>
+          </ul>
+          
+          <pre><code># Create API controller
+php artisan make:controller Api/PostController --api --model=Post
+
+// app/Http/Controllers/Api/PostController.php
+namespace App\\Http\\Controllers\\Api;
+
+use App\\Http\\Controllers\\Controller;
+use App\\Models\\Post;
+use Illuminate\\Http\\Request;
+
+class PostController extends Controller
+{
+    // GET /api/posts
+    public function index()
+    {
+        $posts = Post::with('user', 'category')->paginate(15);
+        
+        return response()->json($posts);
+    }
+    
+    // GET /api/posts/{post}
+    public function show(Post $post)
+    {
+        $post->load('user', 'comments');
+        
+        return response()->json($post);
+    }
+    
+    // POST /api/posts
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'content' => 'required|string',
+            'category_id' => 'required|exists:categories,id',
+        ]);
+        
+        $post = Post::create($validated);
+        
+        return response()->json($post, 201);
+    }
+    
+    // PUT /api/posts/{post}
+    public function update(Request $request, Post $post)
+    {
+        $validated = $request->validate([
+            'title' => 'sometimes|string|max:255',
+            'content' => 'sometimes|string',
+        ]);
+        
+        $post->update($validated);
+        
+        return response()->json($post);
+    }
+    
+    // DELETE /api/posts/{post}
+    public function destroy(Post $post)
+    {
+        $post->delete();
+        
+        return response()->json([
+            'message' => 'Post deleted successfully'
+        ], 200);
+    }
+}</code></pre>
           
           <h3>API Resources:</h3>
           <ul>
-            <li><strong>Resource Classes:</strong> Transform models to JSON</li>
-            <li><strong>Resource Collections:</strong> Transform model collections</li>
+            <li><strong>Resource Classes:</strong> Transform model data for JSON responses</li>
+            <li><strong>Resource Collections:</strong> Transform arrays of data</li>
             <li><strong>Conditional Attributes:</strong> Include data based on conditions</li>
-            <li><strong>Resource Relationships:</strong> Include related data efficiently</li>
+            <li><strong>Relationships:</strong> Include related data efficiently</li>
           </ul>
+          
+          <pre><code># Create API Resource
+php artisan make:resource PostResource
+
+// app/Http/Resources/PostResource.php
+namespace App\\Http\\Resources;
+
+use Illuminate\\Http\\Resources\\Json\\JsonResource;
+
+class PostResource extends JsonResource
+{
+    public function toArray($request)
+    {
+        return [
+            'id' => $this->id,
+            'title' => $this->title,
+            'content' => $this->content,
+            'slug' => $this->slug,
+            'published_at' => $this->published_at?->format('Y-m-d'),
+            'created_at' => $this->created_at->diffForHumans(),
+            
+            // Relationships
+            'author' => new UserResource($this->whenLoaded('user')),
+            'category' => $this->category?->name,
+            'comments' => CommentResource::collection($this->whenLoaded('comments')),
+            
+            // Conditional attributes
+            'is_published' => $this->when($this->published_at, true),
+            'edit_url' => $this->when(
+                $request->user()?->can('update', $this->resource),
+                route('posts.edit', $this->id)
+            ),
+            
+            // Links
+            'links' => [
+                'self' => route('api.posts.show', $this->id),
+            ],
+        ];
+    }
+}
+
+// Use in controller
+public function index()
+{
+    $posts = Post::with('user', 'category')->paginate();
+    
+    return PostResource::collection($posts);
+}
+
+public function show(Post $post)
+{
+    return new PostResource($post->load('user', 'comments'));
+}</code></pre>
+          
+          <h3>Rate Limiting:</h3>
+          <ul>
+            <li><strong>Throttle Middleware:</strong> Limit request frequency</li>
+            <li><strong>Custom Limits:</strong> Different limits per route</li>
+            <li><strong>API Throttling:</strong> Prevent API abuse</li>
+          </ul>
+          
+          <pre><code>// app/Providers/RouteServiceProvider.php
+use Illuminate\\Cache\\RateLimiting\\Limit;
+use Illuminate\\Support\\Facades\\RateLimiter;
+
+public function boot()
+{
+    // Default API rate limit
+    RateLimiter::for('api', function (Request $request) {
+        return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
+    });
+    
+    // Custom rate limit
+    RateLimiter::for('uploads', function (Request $request) {
+        return Limit::perMinute(10)->by($request->user()->id);
+    });
+}
+
+// Use in routes
+Route::middleware(['throttle:api'])->group(function () {
+    Route::apiResource('posts', PostController::class);
+});</code></pre>
           
           <h3>API Authentication:</h3>
           <ul>
@@ -3324,6 +5242,38 @@ export const courses = [
             <li><strong>API Token Abilities:</strong> Scope-based permissions</li>
             <li><strong>SPA Authentication:</strong> Single-page application auth</li>
           </ul>
+          
+          <pre><code>// Login endpoint
+Route::post('/login', function (Request $request) {
+    $request->validate([
+        'email' => 'required|email',
+        'password' => 'required',
+    ]);
+    
+    $user = User::where('email', $request->email)->first();
+    
+    if (!$user || !Hash::check($request->password, $user->password)) {
+        return response()->json([
+            'message' => 'Invalid credentials'
+        ], 401);
+    }
+    
+    $token = $user->createToken('api-token')->plainTextToken;
+    
+    return response()->json([
+        'user' => new UserResource($user),
+        'token' => $token,
+    ]);
+});
+
+// Protected routes
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/user', function (Request $request) {
+        return new UserResource($request->user());
+    });
+    
+    Route::apiResource('posts', PostController::class);
+});</code></pre>
           
           <h3>API Best Practices:</h3>
           <ul>
@@ -3342,39 +5292,315 @@ export const courses = [
         content: `
           <h2>Laravel Testing</h2>
           <p>Laravel is built with testing in mind, providing excellent support for unit testing, feature testing, and browser testing with PHPUnit and Laravel Dusk.</p>
+          <p>Write comprehensive tests to ensure code quality and catch bugs early in development.</p>
           
-          <h3>Testing Types:</h3>
+          <h3>Creating Tests:</h3>
           <ul>
-            <li><strong>Unit Tests:</strong> Test individual classes and methods</li>
-            <li><strong>Feature Tests:</strong> Test application features and HTTP requests</li>
-            <li><strong>Browser Tests:</strong> Test JavaScript interactions with Dusk</li>
-            <li><strong>Database Testing:</strong> Test database interactions</li>
+            <li><strong>PHPUnit:</strong> Built-in testing framework</li>
+            <li><strong>Feature Tests:</strong> Test HTTP requests and responses</li>
+            <li><strong>Unit Tests:</strong> Test individual methods and classes</li>
+            <li><strong>Test Location:</strong> tests/Feature and tests/Unit directories</li>
           </ul>
           
-          <h3>Testing Tools:</h3>
+          <pre><code># Create a feature test
+php artisan make:test PostTest
+
+# Create a unit test
+php artisan make:test UserTest --unit
+
+# Run all tests
+php artisan test
+
+# Run specific test file
+php artisan test tests/Feature/PostTest.php
+
+# Run tests with coverage
+php artisan test --coverage
+
+# Run tests in parallel
+php artisan test --parallel</code></pre>
+          
+          <h3>Feature Tests (HTTP Testing):</h3>
           <ul>
-            <li><strong>PHPUnit:</strong> PHP testing framework integration</li>
-            <li><strong>Laravel Dusk:</strong> Browser automation and testing</li>
-            <li><strong>HTTP Testing:</strong> Test API endpoints and responses</li>
-            <li><strong>Mocking:</strong> Mock dependencies and external services</li>
+            <li><strong>HTTP Requests:</strong> Test GET, POST, PUT, DELETE requests</li>
+            <li><strong>Response Assertions:</strong> Verify status codes, content</li>
+            <li><strong>Authentication:</strong> Test as authenticated user</li>
+            <li><strong>Session/Cookies:</strong> Test session data and cookies</li>
           </ul>
+          
+          <pre><code>// tests/Feature/PostTest.php
+namespace Tests\\Feature;
+
+use Tests\\TestCase;
+use App\\Models\\User;
+use App\\Models\\Post;
+use Illuminate\\Foundation\\Testing\\RefreshDatabase;
+
+class PostTest extends TestCase
+{
+    use RefreshDatabase; // Reset database after each test
+    
+    public function test_user_can_view_posts()
+    {
+        $post = Post::factory()->create();
+        
+        $response = $this->get('/posts');
+        
+        $response->assertStatus(200);
+        $response->assertSee($post->title);
+    }
+    
+    public function test_user_can_create_post()
+    {
+        $user = User::factory()->create();
+        
+        $response = $this->actingAs($user)->post('/posts', [
+            'title' => 'Test Post',
+            'content' => 'This is test content',
+        ]);
+        
+        $response->assertStatus(302);
+        $response->assertRedirect('/posts');
+        
+        $this->assertDatabaseHas('posts', [
+            'title' => 'Test Post',
+            'user_id' => $user->id,
+        ]);
+    }
+    
+    public function test_post_validation_errors()
+    {
+        $user = User::factory()->create();
+        
+        $response = $this->actingAs($user)->post('/posts', [
+            'title' => '', // Empty title
+        ]);
+        
+        $response->assertStatus(302);
+        $response->assertSessionHasErrors(['title']);
+    }
+    
+    public function test_user_can_update_own_post()
+    {
+        $user = User::factory()->create();
+        $post = Post::factory()->create(['user_id' => $user->id]);
+        
+        $response = $this->actingAs($user)->put("/posts/{$post->id}", [
+            'title' => 'Updated Title',
+            'content' => 'Updated content',
+        ]);
+        
+        $response->assertStatus(302);
+        
+        $this->assertDatabaseHas('posts', [
+            'id' => $post->id,
+            'title' => 'Updated Title',
+        ]);
+    }
+    
+    public function test_user_cannot_delete_other_users_post()
+    {
+        $user1 = User::factory()->create();
+        $user2 = User::factory()->create();
+        $post = Post::factory()->create(['user_id' => $user1->id]);
+        
+        $response = $this->actingAs($user2)->delete("/posts/{$post->id}");
+        
+        $response->assertStatus(403); // Forbidden
+        
+        $this->assertDatabaseHas('posts', ['id' => $post->id]);
+    }
+}</code></pre>
+          
+          <p><strong>RefreshDatabase Trait:</strong> Automatically migrates and rolls back the database between each test, ensuring a clean state for every test.</p>
+          
+          <h3>API Testing:</h3>
+          <ul>
+            <li><strong>JSON Responses:</strong> Test API endpoints</li>
+            <li><strong>assertJson:</strong> Verify JSON structure</li>
+            <li><strong>API Authentication:</strong> Test with tokens</li>
+          </ul>
+          
+          <pre><code>public function test_api_returns_posts()
+{
+    $posts = Post::factory()->count(3)->create();
+    
+    $response = $this->getJson('/api/posts');
+    
+    $response->assertStatus(200);
+    $response->assertJsonCount(3, 'data');
+    $response->assertJsonStructure([
+        'data' => [
+            '*' => ['id', 'title', 'content', 'created_at']
+        ]
+    ]);
+}
+
+public function test_authenticated_user_can_create_post_via_api()
+{
+    $user = User::factory()->create();
+    $token = $user->createToken('test-token')->plainTextToken;
+    
+    $response = $this->withToken($token)->postJson('/api/posts', [
+        'title' => 'API Test Post',
+        'content' => 'Content from API',
+    ]);
+    
+    $response->assertStatus(201);
+    $response->assertJson([
+        'title' => 'API Test Post',
+    ]);
+}
+
+public function test_unauthenticated_request_returns_401()
+{
+    $response = $this->postJson('/api/posts', [
+        'title' => 'Test',
+    ]);
+    
+    $response->assertStatus(401);
+}</code></pre>
+          
+          <h3>Unit Tests:</h3>
+          <ul>
+            <li><strong>Test Classes:</strong> Test individual methods</li>
+            <li><strong>No HTTP:</strong> Direct method testing</li>
+            <li><strong>Mocking:</strong> Mock dependencies</li>
+          </ul>
+          
+          <pre><code>// tests/Unit/UserTest.php
+namespace Tests\\Unit;
+
+use PHPUnit\\Framework\\TestCase;
+use App\\Models\\User;
+
+class UserTest extends TestCase
+{
+    public function test_user_has_full_name_attribute()
+    {
+        $user = new User([
+            'first_name' => 'John',
+            'last_name' => 'Doe',
+        ]);
+        
+        $this->assertEquals('John Doe', $user->full_name);
+    }
+    
+    public function test_user_can_determine_if_admin()
+    {
+        $adminUser = new User(['role' => 'admin']);
+        $regularUser = new User(['role' => 'user']);
+        
+        $this->assertTrue($adminUser->isAdmin());
+        $this->assertFalse($regularUser->isAdmin());
+    }
+}</code></pre>
           
           <h3>Database Testing:</h3>
           <ul>
-            <li><strong>RefreshDatabase:</strong> Reset database between tests</li>
-            <li><strong>Database Transactions:</strong> Rollback changes after tests</li>
-            <li><strong>Model Factories:</strong> Generate test data efficiently</li>
-            <li><strong>Seeder Testing:</strong> Test database seeders</li>
+            <li><strong>assertDatabaseHas:</strong> Check record exists</li>
+            <li><strong>assertDatabaseMissing:</strong> Check record doesn't exist</li>
+            <li><strong>assertDatabaseCount:</strong> Count records</li>
           </ul>
           
-          <h3>Testing Best Practices:</h3>
+          <pre><code>public function test_post_is_saved_to_database()
+{
+    $post = Post::create([
+        'title' => 'Test Post',
+        'content' => 'Content',
+    ]);
+    
+    $this->assertDatabaseHas('posts', [
+        'title' => 'Test Post',
+    ]);
+    
+    $this->assertDatabaseCount('posts', 1);
+}
+
+public function test_soft_delete_works()
+{
+    $post = Post::factory()->create();
+    
+    $post->delete();
+    
+    $this->assertSoftDeleted('posts', [
+        'id' => $post->id,
+    ]);
+}</code></pre>
+          
+          <h3>Model Factories for Testing:</h3>
           <ul>
-            <li><strong>Test Organization:</strong> Organize tests logically</li>
-            <li><strong>Test Data:</strong> Use factories for consistent test data</li>
-            <li><strong>Assertions:</strong> Use appropriate assertion methods</li>
-            <li><strong>Test Coverage:</strong> Ensure comprehensive test coverage</li>
-            <li><strong>Continuous Integration:</strong> Automated testing workflows</li>
+            <li><strong>Generate Test Data:</strong> Create models easily</li>
+            <li><strong>Relationships:</strong> Create related models</li>
+            <li><strong>States:</strong> Create specific model states</li>
           </ul>
+          
+          <pre><code>// database/factories/PostFactory.php
+namespace Database\\Factories;
+
+use Illuminate\\Database\\Eloquent\\Factories\\Factory;
+
+class PostFactory extends Factory
+{
+    public function definition()
+    {
+        return [
+            'title' => $this->faker->sentence,
+            'content' => $this->faker->paragraphs(3, true),
+            'user_id' => User::factory(),
+            'status' => 'published',
+        ];
+    }
+    
+    public function draft()
+    {
+        return $this->state([
+            'status' => 'draft',
+        ]);
+    }
+}
+
+// Use in tests
+$post = Post::factory()->create(); // Single post
+$posts = Post::factory()->count(10)->create(); // 10 posts
+$draft = Post::factory()->draft()->create(); // Draft post
+$post = Post::factory()->for($user)->create(); // Post for specific user</code></pre>
+          
+          <h3>Common Assertions:</h3>
+          <ul>
+            <li><strong>Response:</strong> assertStatus, assertRedirect, assertSee</li>
+            <li><strong>Database:</strong> assertDatabaseHas, assertDatabaseMissing</li>
+            <li><strong>JSON:</strong> assertJson, assertJsonStructure</li>
+          </ul>
+          
+          <pre><code>// Status assertions
+$response->assertStatus(200);
+$response->assertOk();
+$response->assertCreated(); // 201
+$response->assertNoContent(); // 204
+$response->assertNotFound(); // 404
+
+// Redirect assertions
+$response->assertRedirect('/posts');
+$response->assertRedirectToRoute('posts.index');
+
+// Content assertions
+$response->assertSee('Welcome');
+$response->assertDontSee('Error');
+$response->assertSeeText('Plain text');
+
+// JSON assertions
+$response->assertJson(['success' => true]);
+$response->assertJsonFragment(['email' => 'test@example.com']);
+$response->assertJsonPath('user.name', 'John');
+
+// Session assertions
+$response->assertSessionHas('success');
+$response->assertSessionHasErrors(['email']);
+
+// Authentication assertions
+$this->assertAuthenticated();
+$this->assertGuest();</code></pre>
         `,
         videoUrl: 'https://www.youtube.com/embed/DWnKnGkh7oU'
       },
@@ -3384,43 +5610,328 @@ export const courses = [
         content: `
           <h2>Laravel Deployment</h2>
           <p>Learn how to deploy Laravel applications to production servers with proper configuration, optimization, and security practices.</p>
-          
-          <h3>Pre-deployment Checklist:</h3>
-          <ul>
-            <li><strong>Environment Configuration:</strong> .env file setup</li>
-            <li><strong>App Key Generation:</strong> Secure application encryption key</li>
-            <li><strong>Debug Mode:</strong> Disable debug mode in production</li>
-            <li><strong>Config Caching:</strong> Cache configuration files</li>
-            <li><strong>Route Caching:</strong> Cache application routes</li>
-          </ul>
+          <p>Deploy your Laravel application securely and efficiently with best practices and optimization techniques.</p>
           
           <h3>Server Requirements:</h3>
           <ul>
-            <li><strong>PHP Version:</strong> Compatible PHP version (8.0+)</li>
-            <li><strong>Web Server:</strong> Apache or Nginx configuration</li>
-            <li><strong>Database:</strong> MySQL, PostgreSQL, or other databases</li>
-            <li><strong>PHP Extensions:</strong> Required extensions installed</li>
-            <li><strong>Composer:</strong> Dependency management in production</li>
+            <li><strong>PHP 8.1+:</strong> Modern PHP version</li>
+            <li><strong>Composer:</strong> Dependency management</li>
+            <li><strong>Web Server:</strong> Nginx or Apache</li>
+            <li><strong>Database:</strong> MySQL, PostgreSQL, SQLite</li>
           </ul>
           
-          <h3>Deployment Strategies:</h3>
+          <pre><code># PHP Extensions Required
+php -m | grep -E "BCMath|Ctype|Fileinfo|JSON|Mbstring|OpenSSL|PDO|Tokenizer|XML"
+
+# Required extensions:
+- BCMath
+- Ctype
+- Fileinfo
+- JSON
+- Mbstring
+- OpenSSL
+- PDO
+- Tokenizer
+- XML
+- cURL
+- GD (for image processing)
+
+# Check PHP version
+php -v</code></pre>
+          
+          <h3>Production Environment Setup:</h3>
           <ul>
-            <li><strong>Laravel Forge:</strong> Automated server management</li>
-            <li><strong>Laravel Envoyer:</strong> Zero-downtime deployment</li>
-            <li><strong>Manual Deployment:</strong> Traditional server deployment</li>
-            <li><strong>Docker Deployment:</strong> Containerized applications</li>
-            <li><strong>Cloud Platforms:</strong> AWS, DigitalOcean, Heroku</li>
+            <li><strong>.env Configuration:</strong> Production environment variables</li>
+            <li><strong>Debug Mode:</strong> Disable for security</li>
+            <li><strong>App Key:</strong> Generate secure key</li>
+            <li><strong>Database:</strong> Production database credentials</li>
           </ul>
           
-          <h3>Production Optimization:</h3>
+          <pre><code># Production .env file
+APP_NAME="My Application"
+APP_ENV=production
+APP_KEY=base64:YOUR_GENERATED_KEY_HERE
+APP_DEBUG=false
+APP_URL=https://yourdomain.com
+
+LOG_CHANNEL=stack
+LOG_LEVEL=error
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=production_db
+DB_USERNAME=db_user
+DB_PASSWORD=secure_password
+
+BROADCAST_DRIVER=log
+CACHE_DRIVER=redis
+FILESYSTEM_DISK=s3
+QUEUE_CONNECTION=redis
+SESSION_DRIVER=redis
+SESSION_LIFETIME=120
+
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
+
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=your_username
+MAIL_PASSWORD=your_password
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS="noreply@yourdomain.com"
+MAIL_FROM_NAME="\${APP_NAME}"
+
+# Generate new app key
+php artisan key:generate
+
+# NEVER commit .env to git
+# Add .env to .gitignore</code></pre>
+          
+          <h3>Optimization Commands:</h3>
           <ul>
-            <li><strong>Opcode Caching:</strong> PHP opcode caching (OPcache)</li>
-            <li><strong>Queue Workers:</strong> Background job processing</li>
-            <li><strong>Redis/Memcached:</strong> Application caching</li>
-            <li><strong>CDN Integration:</strong> Content delivery networks</li>
-            <li><strong>Database Optimization:</strong> Query optimization and indexing</li>
-            <li><strong>Monitoring:</strong> Application performance monitoring</li>
+            <li><strong>Config Cache:</strong> Cache configuration files</li>
+            <li><strong>Route Cache:</strong> Cache routes for faster loading</li>
+            <li><strong>View Cache:</strong> Precompile Blade templates</li>
+            <li><strong>Optimize:</strong> Run all optimizations</li>
           </ul>
+          
+          <pre><code># Cache configuration
+php artisan config:cache
+
+# Cache routes
+php artisan route:cache
+
+# Cache views
+php artisan view:cache
+
+# Run all optimizations at once
+php artisan optimize
+
+# Clear all caches (if needed)
+php artisan optimize:clear
+php artisan config:clear
+php artisan route:clear
+php artisan view:clear
+php artisan cache:clear
+
+# Install production dependencies only
+composer install --optimize-autoloader --no-dev
+
+# Optimize autoloader
+composer dump-autoload --optimize</code></pre>
+          
+          <h3>Nginx Configuration:</h3>
+          <ul>
+            <li><strong>Server Block:</strong> Nginx virtual host setup</li>
+            <li><strong>Document Root:</strong> Point to public directory</li>
+            <li><strong>PHP-FPM:</strong> PHP processing configuration</li>
+            <li><strong>SSL/TLS:</strong> HTTPS configuration</li>
+          </ul>
+          
+          <pre><code># /etc/nginx/sites-available/yourdomain.com
+server {
+    listen 80;
+    listen [::]:80;
+    server_name yourdomain.com www.yourdomain.com;
+    return 301 https://$server_name$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name yourdomain.com www.yourdomain.com;
+    root /var/www/yourdomain.com/public;
+
+    # SSL Configuration
+    ssl_certificate /etc/ssl/certs/yourdomain.crt;
+    ssl_certificate_key /etc/ssl/private/yourdomain.key;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-Content-Type-Options "nosniff";
+
+    index index.php;
+
+    charset utf-8;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+
+    error_page 404 /index.php;
+
+    location ~ \\.php$ {
+        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+
+    location ~ /\\.(?!well-known).* {
+        deny all;
+    }
+}
+
+# Enable site
+sudo ln -s /etc/nginx/sites-available/yourdomain.com /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl reload nginx</code></pre>
+          
+          <h3>Apache Configuration:</h3>
+          <ul>
+            <li><strong>Virtual Host:</strong> Apache virtual host setup</li>
+            <li><strong>.htaccess:</strong> URL rewriting rules</li>
+            <li><strong>mod_rewrite:</strong> Enable Apache rewrite module</li>
+          </ul>
+          
+          <pre><code># /etc/apache2/sites-available/yourdomain.com.conf
+<VirtualHost *:80>
+    ServerName yourdomain.com
+    ServerAlias www.yourdomain.com
+    DocumentRoot /var/www/yourdomain.com/public
+
+    <Directory /var/www/yourdomain.com/public>
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    ErrorLog \${APACHE_LOG_DIR}/yourdomain-error.log
+    CustomLog \${APACHE_LOG_DIR}/yourdomain-access.log combined
+</VirtualHost>
+
+# Enable site and modules
+sudo a2enmod rewrite
+sudo a2ensite yourdomain.com.conf
+sudo systemctl reload apache2
+
+# Laravel's public/.htaccess already includes rewrite rules
+# Ensure AllowOverride All is set for .htaccess to work</code></pre>
+          
+          <h3>Database Migration:</h3>
+          <ul>
+            <li><strong>Run Migrations:</strong> Update database schema</li>
+            <li><strong>Seed Data:</strong> Production seeders only</li>
+            <li><strong>Backup:</strong> Always backup before migration</li>
+          </ul>
+          
+          <pre><code># Backup database first
+mysqldump -u username -p database_name > backup.sql
+
+# Run migrations in production
+php artisan migrate --force
+
+# Rollback if needed (use with caution!)
+php artisan migrate:rollback --force
+
+# Fresh migration (DANGER: Drops all tables!)
+php artisan migrate:fresh --force
+
+# Seed production data (if needed)
+php artisan db:seed --class=ProductionSeeder --force</code></pre>
+          
+          <h3>Queue Workers:</h3>
+          <ul>
+            <li><strong>Supervisor:</strong> Process manager for queue workers</li>
+            <li><strong>Background Jobs:</strong> Process queued jobs</li>
+            <li><strong>Auto-restart:</strong> Restart workers on failure</li>
+          </ul>
+          
+          <pre><code># Install Supervisor
+sudo apt-get install supervisor
+
+# Supervisor configuration
+# /etc/supervisor/conf.d/laravel-worker.conf
+[program:laravel-worker]
+process_name=%(program_name)s_%(process_num)02d
+command=php /var/www/yourdomain.com/artisan queue:work redis --sleep=3 --tries=3 --max-time=3600
+autostart=true
+autorestart=true
+stopasgroup=true
+killasgroup=true
+user=www-data
+numprocs=4
+redirect_stderr=true
+stdout_logfile=/var/www/yourdomain.com/storage/logs/worker.log
+stopwaitsecs=3600
+
+# Start supervisor
+sudo supervisorctl reread
+sudo supervisorctl update
+sudo supervisorctl start laravel-worker:*
+
+# Check status
+sudo supervisorctl status
+
+# Restart workers (after deployment)
+php artisan queue:restart</code></pre>
+          
+          <h3>Deployment with Laravel Forge:</h3>
+          <ul>
+            <li><strong>Automated:</strong> One-click deployments</li>
+            <li><strong>Server Management:</strong> Manage servers easily</li>
+            <li><strong>Zero Downtime:</strong> No downtime deployments</li>
+            <li><strong>SSL Certificates:</strong> Free Let's Encrypt SSL</li>
+          </ul>
+          
+          <pre><code># Forge Deployment Script
+cd /home/forge/yourdomain.com
+
+# Enable maintenance mode
+php artisan down --retry=60
+
+# Pull latest code
+git pull origin main
+
+# Install dependencies
+composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev
+
+# Clear and cache
+php artisan optimize:clear
+php artisan optimize
+
+# Run migrations
+php artisan migrate --force
+
+# Restart queue workers
+php artisan queue:restart
+
+# Disable maintenance mode
+php artisan up
+
+echo "Deployment completed successfully!"</code></pre>
+          
+          <h3>Security Best Practices:</h3>
+          <ul>
+            <li><strong>HTTPS Only:</strong> Force SSL/TLS</li>
+            <li><strong>File Permissions:</strong> Secure file permissions</li>
+            <li><strong>Environment Variables:</strong> Never commit .env</li>
+            <li><strong>Regular Updates:</strong> Keep Laravel and dependencies updated</li>
+          </ul>
+          
+          <pre><code># Set proper file permissions
+sudo chown -R www-data:www-data /var/www/yourdomain.com
+sudo find /var/www/yourdomain.com -type f -exec chmod 644 {} \\;
+sudo find /var/www/yourdomain.com -type d -exec chmod 755 {} \\;
+sudo chmod -R 775 /var/www/yourdomain.com/storage
+sudo chmod -R 775 /var/www/yourdomain.com/bootstrap/cache
+
+# Force HTTPS in AppServiceProvider
+public function boot()
+{
+    if ($this->app->environment('production')) {
+        URL::forceScheme('https');
+    }
+}
+
+# Update dependencies regularly
+composer update
+php artisan optimize</code></pre>
         `,
         videoUrl: 'https://www.youtube.com/embed/6g8G3YQtQt4'
       }
@@ -3536,6 +6047,7 @@ export const courses = [
         content: `
           <h2>Getting Started with Bootstrap</h2>
           <p>Learn different ways to include Bootstrap in your projects and set up your development environment for building responsive websites.</p>
+          <p>Choose the installation method that best fits your project requirements and workflow preferences.</p>
           
           <h3>Installation Methods:</h3>
           <ul>
@@ -3545,13 +6057,46 @@ export const courses = [
             <li><strong>Source Files:</strong> Sass source files for customization</li>
           </ul>
           
-          <h3>CDN Setup:</h3>
+          <pre><code>&lt;!-- CDN Setup (Quickest Method) --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;title&gt;Bootstrap Project&lt;/title&gt;
+  
+  &lt;!-- Bootstrap CSS --&gt;
+  &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="container"&gt;
+    &lt;h1&gt;Hello Bootstrap!&lt;/h1&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Bootstrap JS Bundle with Popper --&gt;
+  &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          
+          <p><strong>Quick Start:</strong> CDN provides instant access to Bootstrap. No build tools required. Perfect for prototyping and learning.</p>
+          
+          <h3>NPM Installation:</h3>
           <ul>
-            <li><strong>CSS Link:</strong> Include Bootstrap CSS in your HTML head</li>
-            <li><strong>JavaScript Bundle:</strong> Include Bootstrap JS before closing body tag</li>
-            <li><strong>Popper.js:</strong> Required for tooltips and popovers</li>
-            <li><strong>Icons:</strong> Bootstrap Icons for scalable vector icons</li>
+            <li><strong>Install Bootstrap:</strong> npm install bootstrap</li>
+            <li><strong>Import CSS:</strong> Import in your main CSS or JS file</li>
+            <li><strong>Import JS:</strong> Import individual components or full bundle</li>
+            <li><strong>Customize:</strong> Import Sass files for customization</li>
           </ul>
+          
+          <pre><code>// Install Bootstrap via npm
+npm install bootstrap
+
+// Import Bootstrap CSS in your main.js
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
+// Or import Sass for customization
+import './scss/custom.scss';</code></pre>
           
           <h3>Basic HTML Template:</h3>
           <ul>
@@ -3560,12 +6105,32 @@ export const courses = [
             <li><strong>Container Classes:</strong> Proper content wrapping</li>
           </ul>
           
-          <h3>Development Setup:</h3>
+          <pre><code>&lt;!-- Starter Template with Bootstrap Container --&gt;
+&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-md-12"&gt;
+      &lt;h1 class="display-4"&gt;Welcome to Bootstrap&lt;/h1&gt;
+      &lt;p class="lead"&gt;Build responsive websites faster.&lt;/p&gt;
+      &lt;button class="btn btn-primary"&gt;Get Started&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          
+          <h3>Sass Customization Setup:</h3>
           <ul>
-            <li><strong>Build Tools:</strong> Webpack, Parcel, or Gulp integration</li>
-            <li><strong>Sass Compilation:</strong> Customize Bootstrap variables</li>
-            <li><strong>Live Reload:</strong> Development server setup</li>
+            <li><strong>Install Sass:</strong> npm install sass</li>
+            <li><strong>Create custom.scss:</strong> Import and override variables</li>
+            <li><strong>Compile Sass:</strong> Build custom Bootstrap version</li>
           </ul>
+          
+          <pre><code>// custom.scss
+// Override Bootstrap variables
+$primary: #ff6b6b;
+$secondary: #4ecdc4;
+$border-radius: 0.5rem;
+
+// Import Bootstrap
+@import "node_modules/bootstrap/scss/bootstrap";</code></pre>
         `,
         videoUrl: 'https://www.youtube.com/embed/O_9u1P5YjVc'
       },
@@ -3575,6 +6140,7 @@ export const courses = [
         content: `
           <h2>Bootstrap Grid System</h2>
           <p>Master Bootstrap's powerful 12-column grid system built with flexbox that adapts to different screen sizes and orientations.</p>
+          <p>The grid system uses containers, rows, and columns to layout and align content. It's built with flexbox and is fully responsive.</p>
           
           <h3>Grid Basics:</h3>
           <ul>
@@ -3583,6 +6149,25 @@ export const courses = [
             <li><strong>Columns:</strong> Content containers with flexible widths</li>
             <li><strong>Gutters:</strong> Spacing between columns</li>
           </ul>
+          
+          <pre><code>&lt;!-- Basic Grid Layout --&gt;
+&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col"&gt;Column 1&lt;/div&gt;
+    &lt;div class="col"&gt;Column 2&lt;/div&gt;
+    &lt;div class="col"&gt;Column 3&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Equal Width Columns --&gt;
+&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col"&gt;1 of 2&lt;/div&gt;
+    &lt;div class="col"&gt;2 of 2&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          
+          <p><strong>Container Types:</strong> .container for fixed-width responsive container. .container-fluid for full-width spanning entire viewport.</p>
           
           <h3>Responsive Breakpoints:</h3>
           <ul>
@@ -3594,6 +6179,16 @@ export const courses = [
             <li><strong>xxl:</strong> Extra extra large devices (≥ 1400px)</li>
           </ul>
           
+          <pre><code>&lt;!-- Responsive Grid Layout --&gt;
+&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;!-- Stack on mobile, 2 columns on tablet, 3 on desktop --&gt;
+    &lt;div class="col-12 col-md-6 col-lg-4"&gt;Column 1&lt;/div&gt;
+    &lt;div class="col-12 col-md-6 col-lg-4"&gt;Column 2&lt;/div&gt;
+    &lt;div class="col-12 col-md-6 col-lg-4"&gt;Column 3&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          
           <h3>Column Classes:</h3>
           <ul>
             <li><strong>Auto Layout:</strong> .col for equal-width columns</li>
@@ -3603,6 +6198,24 @@ export const courses = [
             <li><strong>Column Offsetting:</strong> .offset-* classes</li>
           </ul>
           
+          <pre><code>&lt;!-- Specific Column Widths --&gt;
+&lt;div class="row"&gt;
+  &lt;div class="col-8"&gt;col-8 (66.66%)&lt;/div&gt;
+  &lt;div class="col-4"&gt;col-4 (33.33%)&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Column Ordering --&gt;
+&lt;div class="row"&gt;
+  &lt;div class="col order-3"&gt;First (order-3)&lt;/div&gt;
+  &lt;div class="col order-1"&gt;Second (order-1)&lt;/div&gt;
+  &lt;div class="col order-2"&gt;Third (order-2)&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Column Offsetting --&gt;
+&lt;div class="row"&gt;
+  &lt;div class="col-md-4 offset-md-4"&gt;Centered Column&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          
           <h3>Advanced Grid Features:</h3>
           <ul>
             <li><strong>Nesting:</strong> Grids within grids</li>
@@ -3610,6 +6223,26 @@ export const courses = [
             <li><strong>Auto-sizing:</strong> Content-based column widths</li>
             <li><strong>No Gutters:</strong> .g-0 for tight layouts</li>
           </ul>
+          
+          <pre><code>&lt;!-- Nested Grid --&gt;
+&lt;div class="row"&gt;
+  &lt;div class="col-md-8"&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="col-6"&gt;Nested Column 1&lt;/div&gt;
+      &lt;div class="col-6"&gt;Nested Column 2&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Vertical Alignment --&gt;
+&lt;div class="row align-items-center" style="height: 200px;"&gt;
+  &lt;div class="col"&gt;Vertically Centered&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Remove Gutters --&gt;
+&lt;div class="row g-0"&gt;
+  &lt;div class="col"&gt;No Gutter Column&lt;/div&gt;
+&lt;/div&gt;</code></pre>
         `,
         videoUrl: 'https://www.youtube.com/embed/qmPmwdshCMw'
       },
@@ -3619,6 +6252,7 @@ export const courses = [
         content: `
           <h2>Bootstrap Typography</h2>
           <p>Learn how Bootstrap provides beautiful, consistent typography with heading styles, body text, and powerful text utilities for styling content.</p>
+          <p>Bootstrap includes simple and easily customized typography for headings, body text, lists, and more.</p>
           
           <h3>Headings & Display Text:</h3>
           <ul>
@@ -3628,6 +6262,26 @@ export const courses = [
             <li><strong>Lead Text:</strong> .lead for emphasized paragraphs</li>
           </ul>
           
+          <pre><code>&lt;!-- HTML Headings --&gt;
+&lt;h1&gt;Bootstrap Heading 1&lt;/h1&gt;
+&lt;h2&gt;Bootstrap Heading 2&lt;/h2&gt;
+&lt;h3&gt;Bootstrap Heading 3&lt;/h3&gt;
+
+&lt;!-- Heading Classes --&gt;
+&lt;p class="h1"&gt;Looks like h1&lt;/p&gt;
+&lt;p class="h4"&gt;Looks like h4&lt;/p&gt;
+
+&lt;!-- Display Headings (Larger, lighter) --&gt;
+&lt;h1 class="display-1"&gt;Display 1&lt;/h1&gt;
+&lt;h1 class="display-4"&gt;Display 4&lt;/h1&gt;
+
+&lt;!-- Lead Paragraph --&gt;
+&lt;p class="lead"&gt;
+  This is a lead paragraph. It stands out from regular text.
+&lt;/p&gt;</code></pre>
+          
+          <p><strong>Display Headings:</strong> Larger, more impactful headings with lighter font weight for hero sections and page titles.</p>
+          
           <h3>Text Styling:</h3>
           <ul>
             <li><strong>Font Weight:</strong> .fw-bold, .fw-normal, .fw-light</li>
@@ -3635,6 +6289,25 @@ export const courses = [
             <li><strong>Text Transform:</strong> .text-uppercase, .text-lowercase</li>
             <li><strong>Text Decoration:</strong> .text-decoration-none, .text-decoration-underline</li>
           </ul>
+          
+          <pre><code>&lt;!-- Font Weight --&gt;
+&lt;p class="fw-bold"&gt;Bold text&lt;/p&gt;
+&lt;p class="fw-light"&gt;Light weight text&lt;/p&gt;
+&lt;p class="fw-normal"&gt;Normal weight text&lt;/p&gt;
+
+&lt;!-- Font Style --&gt;
+&lt;p class="fst-italic"&gt;Italic text&lt;/p&gt;
+&lt;p class="fst-normal"&gt;Normal text&lt;/p&gt;
+
+&lt;!-- Text Transform --&gt;
+&lt;p class="text-uppercase"&gt;Uppercase text&lt;/p&gt;
+&lt;p class="text-lowercase"&gt;LOWERCASE TEXT&lt;/p&gt;
+&lt;p class="text-capitalize"&gt;capitalized text&lt;/p&gt;
+
+&lt;!-- Text Decoration --&gt;
+&lt;a href="#" class="text-decoration-none"&gt;Link with no underline&lt;/a&gt;
+&lt;p class="text-decoration-underline"&gt;Underlined text&lt;/p&gt;
+&lt;p class="text-decoration-line-through"&gt;Line through text&lt;/p&gt;</code></pre>
           
           <h3>Text Alignment & Colors:</h3>
           <ul>
@@ -3644,6 +6317,28 @@ export const courses = [
             <li><strong>Text Opacity:</strong> .text-opacity-75, .text-opacity-50</li>
           </ul>
           
+          <pre><code>&lt;!-- Text Alignment --&gt;
+&lt;p class="text-start"&gt;Left aligned text&lt;/p&gt;
+&lt;p class="text-center"&gt;Center aligned text&lt;/p&gt;
+&lt;p class="text-end"&gt;Right aligned text&lt;/p&gt;
+
+&lt;!-- Responsive Alignment --&gt;
+&lt;p class="text-start text-md-center text-lg-end"&gt;
+  Start aligned, center on md, end on lg
+&lt;/p&gt;
+
+&lt;!-- Text Colors --&gt;
+&lt;p class="text-primary"&gt;Primary color text&lt;/p&gt;
+&lt;p class="text-success"&gt;Success color text&lt;/p&gt;
+&lt;p class="text-danger"&gt;Danger color text&lt;/p&gt;
+&lt;p class="text-warning"&gt;Warning color text&lt;/p&gt;
+&lt;p class="text-info"&gt;Info color text&lt;/p&gt;
+&lt;p class="text-muted"&gt;Muted text&lt;/p&gt;
+
+&lt;!-- Text Opacity --&gt;
+&lt;p class="text-primary text-opacity-75"&gt;75% opacity&lt;/p&gt;
+&lt;p class="text-danger text-opacity-50"&gt;50% opacity&lt;/p&gt;</code></pre>
+          
           <h3>Lists & Blockquotes:</h3>
           <ul>
             <li><strong>Unstyled Lists:</strong> .list-unstyled for clean lists</li>
@@ -3651,6 +6346,26 @@ export const courses = [
             <li><strong>Blockquotes:</strong> .blockquote styling</li>
             <li><strong>Abbreviations:</strong> Enhanced abbr element styling</li>
           </ul>
+          
+          <pre><code>&lt;!-- Unstyled List --&gt;
+&lt;ul class="list-unstyled"&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Inline List --&gt;
+&lt;ul class="list-inline"&gt;
+  &lt;li class="list-inline-item"&gt;Item 1&lt;/li&gt;
+  &lt;li class="list-inline-item"&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Blockquote --&gt;
+&lt;blockquote class="blockquote"&gt;
+  &lt;p&gt;A well-known quote, contained in a blockquote element.&lt;/p&gt;
+  &lt;footer class="blockquote-footer"&gt;
+    Someone famous in &lt;cite&gt;Source Title&lt;/cite&gt;
+  &lt;/footer&gt;
+&lt;/blockquote&gt;</code></pre>
         `,
         videoUrl: 'https://www.youtube.com/embed/rQryOSyfXmI'
       },
@@ -3660,6 +6375,7 @@ export const courses = [
         content: `
           <h2>Bootstrap Components</h2>
           <p>Explore Bootstrap's extensive library of prebuilt components including buttons, cards, navigation, forms, and interactive elements.</p>
+          <p>Components are reusable building blocks that help you build interfaces quickly with consistent styling.</p>
           
           <h3>Buttons & Button Groups:</h3>
           <ul>
@@ -3670,6 +6386,31 @@ export const courses = [
             <li><strong>Button Toolbar:</strong> .btn-toolbar for complex layouts</li>
           </ul>
           
+          <pre><code>&lt;!-- Button Styles --&gt;
+&lt;button class="btn btn-primary"&gt;Primary&lt;/button&gt;
+&lt;button class="btn btn-secondary"&gt;Secondary&lt;/button&gt;
+&lt;button class="btn btn-success"&gt;Success&lt;/button&gt;
+&lt;button class="btn btn-danger"&gt;Danger&lt;/button&gt;
+&lt;button class="btn btn-outline-primary"&gt;Outline Primary&lt;/button&gt;
+
+&lt;!-- Button Sizes --&gt;
+&lt;button class="btn btn-primary btn-lg"&gt;Large Button&lt;/button&gt;
+&lt;button class="btn btn-primary"&gt;Default Button&lt;/button&gt;
+&lt;button class="btn btn-primary btn-sm"&gt;Small Button&lt;/button&gt;
+
+&lt;!-- Button States --&gt;
+&lt;button class="btn btn-primary" disabled&gt;Disabled&lt;/button&gt;
+&lt;button class="btn btn-primary active"&gt;Active&lt;/button&gt;
+
+&lt;!-- Button Group --&gt;
+&lt;div class="btn-group" role="group"&gt;
+  &lt;button class="btn btn-primary"&gt;Left&lt;/button&gt;
+  &lt;button class="btn btn-primary"&gt;Middle&lt;/button&gt;
+  &lt;button class="btn btn-primary"&gt;Right&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+          
+          <p><strong>Button Groups:</strong> Combine buttons into a single group for toolbar-style navigation or action groups.</p>
+          
           <h3>Cards & Content:</h3>
           <ul>
             <li><strong>Basic Cards:</strong> .card with header, body, and footer</li>
@@ -3678,6 +6419,33 @@ export const courses = [
             <li><strong>Card Decks:</strong> Equal height card layouts</li>
             <li><strong>Card Columns:</strong> Masonry-style card layouts</li>
           </ul>
+          
+          <pre><code>&lt;!-- Basic Card --&gt;
+&lt;div class="card" style="width: 18rem;"&gt;
+  &lt;img src="image.jpg" class="card-img-top" alt="..."&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h5 class="card-title"&gt;Card title&lt;/h5&gt;
+    &lt;p class="card-text"&gt;Some quick example text.&lt;/p&gt;
+    &lt;a href="#" class="btn btn-primary"&gt;Go somewhere&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Card with Header and Footer --&gt;
+&lt;div class="card"&gt;
+  &lt;div class="card-header"&gt;Featured&lt;/div&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h5 class="card-title"&gt;Special title&lt;/h5&gt;
+    &lt;p class="card-text"&gt;Card content.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="card-footer text-muted"&gt;2 days ago&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Card Group --&gt;
+&lt;div class="card-group"&gt;
+  &lt;div class="card"&gt;...&lt;/div&gt;
+  &lt;div class="card"&gt;...&lt;/div&gt;
+  &lt;div class="card"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
           
           <h3>Alerts & Badges:</h3>
           <ul>
@@ -3688,6 +6456,30 @@ export const courses = [
             <li><strong>Pill Badges:</strong> .badge-pill for rounded badges</li>
           </ul>
           
+          <pre><code>&lt;!-- Alerts --&gt;
+&lt;div class="alert alert-success" role="alert"&gt;
+  Success! Your action was completed.
+&lt;/div&gt;
+&lt;div class="alert alert-danger" role="alert"&gt;
+  Error! Something went wrong.
+&lt;/div&gt;
+&lt;div class="alert alert-warning" role="alert"&gt;
+  Warning! Please check this.
+&lt;/div&gt;
+
+&lt;!-- Dismissible Alert --&gt;
+&lt;div class="alert alert-warning alert-dismissible fade show"&gt;
+  &lt;strong&gt;Warning!&lt;/strong&gt; You should check this.
+  &lt;button type="button" class="btn-close" data-bs-dismiss="alert"&gt;&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;!-- Badges --&gt;
+&lt;h1&gt;Heading &lt;span class="badge bg-primary"&gt;New&lt;/span&gt;&lt;/h1&gt;
+&lt;button class="btn btn-primary"&gt;
+  Notifications &lt;span class="badge bg-light text-dark"&gt;4&lt;/span&gt;
+&lt;/button&gt;
+&lt;span class="badge rounded-pill bg-success"&gt;Pill Badge&lt;/span&gt;</code></pre>
+          
           <h3>Progress & Spinners:</h3>
           <ul>
             <li><strong>Progress Bars:</strong> .progress with animated bars</li>
@@ -3695,6 +6487,30 @@ export const courses = [
             <li><strong>Animated Progress:</strong> .progress-bar-animated</li>
             <li><strong>Loading Spinners:</strong> .spinner-border, .spinner-grow</li>
           </ul>
+          
+          <pre><code>&lt;!-- Progress Bar --&gt;
+&lt;div class="progress"&gt;
+  &lt;div class="progress-bar" style="width: 75%"&gt;75%&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Striped Progress Bar --&gt;
+&lt;div class="progress"&gt;
+  &lt;div class="progress-bar progress-bar-striped" style="width: 60%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Animated Progress --&gt;
+&lt;div class="progress"&gt;
+  &lt;div class="progress-bar progress-bar-striped progress-bar-animated" 
+       style="width: 100%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Spinners --&gt;
+&lt;div class="spinner-border text-primary" role="status"&gt;
+  &lt;span class="visually-hidden"&gt;Loading...&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="spinner-grow text-success" role="status"&gt;
+  &lt;span class="visually-hidden"&gt;Loading...&lt;/span&gt;
+&lt;/div&gt;</code></pre>
         `,
         videoUrl: 'https://www.youtube.com/embed/c9B4TPnak1A'
       },
@@ -3704,6 +6520,7 @@ export const courses = [
         content: `
           <h2>Bootstrap Navigation</h2>
           <p>Create responsive navigation menus, navbars, breadcrumbs, and pagination with Bootstrap's flexible navigation components.</p>
+          <p>Navigation components help users move through your site with consistent, accessible menus and links.</p>
           
           <h3>Navbar Component:</h3>
           <ul>
@@ -3714,6 +6531,42 @@ export const courses = [
             <li><strong>Responsive Navbar:</strong> .navbar-expand-* for breakpoint control</li>
           </ul>
           
+          <pre><code>&lt;!-- Basic Navbar --&gt;
+&lt;nav class="navbar navbar-expand-lg navbar-light bg-light"&gt;
+  &lt;div class="container-fluid"&gt;
+    &lt;a class="navbar-brand" href="#"&gt;Brand&lt;/a&gt;
+    &lt;button class="navbar-toggler" type="button" 
+            data-bs-toggle="collapse" data-bs-target="#navbarNav"&gt;
+      &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class="collapse navbar-collapse" id="navbarNav"&gt;
+      &lt;ul class="navbar-nav"&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link active" href="#"&gt;Home&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link" href="#"&gt;About&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link" href="#"&gt;Services&lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;!-- Dark Navbar --&gt;
+&lt;nav class="navbar navbar-expand-lg navbar-dark bg-dark"&gt;
+  &lt;!-- Content --&gt;
+&lt;/nav&gt;
+
+&lt;!-- Fixed Top Navbar --&gt;
+&lt;nav class="navbar fixed-top navbar-light bg-light"&gt;
+  &lt;!-- Content --&gt;
+&lt;/nav&gt;</code></pre>
+          
+          <p><strong>Responsive Navbar:</strong> Collapses into hamburger menu on mobile. Use .navbar-expand-lg to control breakpoint.</p>
+          
           <h3>Navigation Components:</h3>
           <ul>
             <li><strong>Nav Tabs:</strong> .nav-tabs for tabbed interfaces</li>
@@ -3722,6 +6575,39 @@ export const courses = [
             <li><strong>Vertical Nav:</strong> .flex-column for vertical layouts</li>
             <li><strong>Justified Nav:</strong> .nav-fill, .nav-justified for full-width</li>
           </ul>
+          
+          <pre><code>&lt;!-- Nav Tabs --&gt;
+&lt;ul class="nav nav-tabs"&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link active" href="#"&gt;Active&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link" href="#"&gt;Link&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link disabled"&gt;Disabled&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Nav Pills --&gt;
+&lt;ul class="nav nav-pills"&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link active" href="#"&gt;Active&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link" href="#"&gt;Link&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Vertical Nav --&gt;
+&lt;ul class="nav flex-column"&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link" href="#"&gt;Link 1&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link" href="#"&gt;Link 2&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
           
           <h3>Dropdown Menus:</h3>
           <ul>
@@ -3732,6 +6618,30 @@ export const courses = [
             <li><strong>Dropdown Dividers:</strong> .dropdown-divider for separators</li>
           </ul>
           
+          <pre><code>&lt;!-- Dropdown --&gt;
+&lt;div class="dropdown"&gt;
+  &lt;button class="btn btn-secondary dropdown-toggle" 
+          data-bs-toggle="dropdown"&gt;
+    Dropdown button
+  &lt;/button&gt;
+  &lt;ul class="dropdown-menu"&gt;
+    &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;hr class="dropdown-divider"&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;!-- Dropdown in Navbar --&gt;
+&lt;li class="nav-item dropdown"&gt;
+  &lt;a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"&gt;
+    Dropdown
+  &lt;/a&gt;
+  &lt;ul class="dropdown-menu"&gt;
+    &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/li&gt;</code></pre>
+          
           <h3>Breadcrumb & Pagination:</h3>
           <ul>
             <li><strong>Breadcrumb:</strong> .breadcrumb for navigation trails</li>
@@ -3739,6 +6649,29 @@ export const courses = [
             <li><strong>Pagination:</strong> .pagination for page navigation</li>
             <li><strong>Pagination Sizes:</strong> .pagination-lg, .pagination-sm</li>
           </ul>
+          
+          <pre><code>&lt;!-- Breadcrumb --&gt;
+&lt;nav aria-label="breadcrumb"&gt;
+  &lt;ol class="breadcrumb"&gt;
+    &lt;li class="breadcrumb-item"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="breadcrumb-item"&gt;&lt;a href="#"&gt;Library&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="breadcrumb-item active"&gt;Data&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;
+
+&lt;!-- Pagination --&gt;
+&lt;nav&gt;
+  &lt;ul class="pagination"&gt;
+    &lt;li class="page-item"&gt;&lt;a class="page-link" href="#"&gt;Previous&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="page-item"&gt;&lt;a class="page-link" href="#"&gt;1&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="page-item active"&gt;&lt;a class="page-link" href="#"&gt;2&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="page-item"&gt;&lt;a class="page-link" href="#"&gt;3&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="page-item"&gt;&lt;a class="page-link" href="#"&gt;Next&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;!-- Large Pagination --&gt;
+&lt;ul class="pagination pagination-lg"&gt;...&lt;/ul&gt;</code></pre>
         `,
         videoUrl: 'https://www.youtube.com/embed/gt8zOLQ8A0w'
       },
@@ -3748,6 +6681,7 @@ export const courses = [
         content: `
           <h2>Bootstrap Forms</h2>
           <p>Build beautiful, accessible forms with Bootstrap's form controls, validation states, input groups, and layout options.</p>
+          <p>Forms are essential for user input. Bootstrap provides extensive styling and validation features for form elements.</p>
           
           <h3>Form Controls:</h3>
           <ul>
@@ -3758,6 +6692,52 @@ export const courses = [
             <li><strong>Form File:</strong> .form-control for file inputs</li>
           </ul>
           
+          <pre><code>&lt;!-- Text Input --&gt;
+&lt;div class="mb-3"&gt;
+  &lt;label for="email" class="form-label"&gt;Email address&lt;/label&gt;
+  &lt;input type="email" class="form-control" id="email" 
+         placeholder="name@example.com"&gt;
+&lt;/div&gt;
+
+&lt;!-- Textarea --&gt;
+&lt;div class="mb-3"&gt;
+  &lt;label for="message" class="form-label"&gt;Message&lt;/label&gt;
+  &lt;textarea class="form-control" id="message" rows="3"&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+
+&lt;!-- Select Dropdown --&gt;
+&lt;div class="mb-3"&gt;
+  &lt;label for="country" class="form-label"&gt;Country&lt;/label&gt;
+  &lt;select class="form-select" id="country"&gt;
+    &lt;option selected&gt;Choose...&lt;/option&gt;
+    &lt;option value="1"&gt;USA&lt;/option&gt;
+    &lt;option value="2"&gt;Canada&lt;/option&gt;
+    &lt;option value="3"&gt;UK&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;
+
+&lt;!-- Checkboxes --&gt;
+&lt;div class="form-check"&gt;
+  &lt;input class="form-check-input" type="checkbox" id="check1"&gt;
+  &lt;label class="form-check-label" for="check1"&gt;
+    Remember me
+  &lt;/label&gt;
+&lt;/div&gt;
+
+&lt;!-- Radio Buttons --&gt;
+&lt;div class="form-check"&gt;
+  &lt;input class="form-check-input" type="radio" name="options" id="radio1"&gt;
+  &lt;label class="form-check-label" for="radio1"&gt;
+    Option 1
+  &lt;/label&gt;
+&lt;/div&gt;
+
+&lt;!-- Range Slider --&gt;
+&lt;label for="range" class="form-label"&gt;Range&lt;/label&gt;
+&lt;input type="range" class="form-range" id="range"&gt;</code></pre>
+          
+          <p><strong>Form Controls:</strong> Use .mb-3 for consistent spacing between form elements. Labels improve accessibility.</p>
+          
           <h3>Form Layout:</h3>
           <ul>
             <li><strong>Form Groups:</strong> .mb-3 spacing between form elements</li>
@@ -3765,6 +6745,42 @@ export const courses = [
             <li><strong>Horizontal Forms:</strong> .row and .col-* for horizontal layouts</li>
             <li><strong>Inline Forms:</strong> .row-cols-auto for inline layouts</li>
           </ul>
+          
+          <pre><code>&lt;!-- Horizontal Form --&gt;
+&lt;form&gt;
+  &lt;div class="row mb-3"&gt;
+    &lt;label for="inputEmail" class="col-sm-2 col-form-label"&gt;Email&lt;/label&gt;
+    &lt;div class="col-sm-10"&gt;
+      &lt;input type="email" class="form-control" id="inputEmail"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row mb-3"&gt;
+    &lt;label for="inputPassword" class="col-sm-2 col-form-label"&gt;Password&lt;/label&gt;
+    &lt;div class="col-sm-10"&gt;
+      &lt;input type="password" class="form-control" id="inputPassword"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+
+&lt;!-- Inline Form --&gt;
+&lt;form class="row row-cols-auto g-3 align-items-center"&gt;
+  &lt;div class="col"&gt;
+    &lt;input type="text" class="form-control" placeholder="Username"&gt;
+  &lt;/div&gt;
+  &lt;div class="col"&gt;
+    &lt;button type="submit" class="btn btn-primary"&gt;Submit&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+
+&lt;!-- Grid Form --&gt;
+&lt;div class="row g-3"&gt;
+  &lt;div class="col-md-6"&gt;
+    &lt;input type="text" class="form-control" placeholder="First name"&gt;
+  &lt;/div&gt;
+  &lt;div class="col-md-6"&gt;
+    &lt;input type="text" class="form-control" placeholder="Last name"&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
           
           <h3>Input Groups:</h3>
           <ul>
@@ -3775,6 +6791,34 @@ export const courses = [
             <li><strong>Dropdown Addons:</strong> Dropdown menus in input groups</li>
           </ul>
           
+          <pre><code>&lt;!-- Input with Text Addon --&gt;
+&lt;div class="input-group mb-3"&gt;
+  &lt;span class="input-group-text"&gt;@&lt;/span&gt;
+  &lt;input type="text" class="form-control" placeholder="Username"&gt;
+&lt;/div&gt;
+
+&lt;!-- Input with Button --&gt;
+&lt;div class="input-group mb-3"&gt;
+  &lt;input type="text" class="form-control" placeholder="Search..."&gt;
+  &lt;button class="btn btn-primary" type="button"&gt;Search&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;!-- Input with Dropdown --&gt;
+&lt;div class="input-group mb-3"&gt;
+  &lt;button class="btn btn-outline-secondary dropdown-toggle" 
+          data-bs-toggle="dropdown"&gt;Action&lt;/button&gt;
+  &lt;ul class="dropdown-menu"&gt;
+    &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;input type="text" class="form-control"&gt;
+&lt;/div&gt;
+
+&lt;!-- Large Input Group --&gt;
+&lt;div class="input-group input-group-lg"&gt;
+  &lt;span class="input-group-text"&gt;$&lt;/span&gt;
+  &lt;input type="text" class="form-control"&gt;
+&lt;/div&gt;</code></pre>
+          
           <h3>Form Validation:</h3>
           <ul>
             <li><strong>Validation Classes:</strong> .is-valid, .is-invalid states</li>
@@ -3783,6 +6827,33 @@ export const courses = [
             <li><strong>Server-side Validation:</strong> .was-validated class</li>
             <li><strong>Custom Validation:</strong> JavaScript validation integration</li>
           </ul>
+          
+          <pre><code>&lt;!-- Valid Input --&gt;
+&lt;div class="mb-3"&gt;
+  &lt;label for="validInput" class="form-label"&gt;Valid input&lt;/label&gt;
+  &lt;input type="text" class="form-control is-valid" id="validInput" 
+         value="Correct value"&gt;
+  &lt;div class="valid-feedback"&gt;Looks good!&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Invalid Input --&gt;
+&lt;div class="mb-3"&gt;
+  &lt;label for="invalidInput" class="form-label"&gt;Invalid input&lt;/label&gt;
+  &lt;input type="text" class="form-control is-invalid" id="invalidInput"&gt;
+  &lt;div class="invalid-feedback"&gt;
+    Please provide a valid value.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Form with Validation --&gt;
+&lt;form class="needs-validation" novalidate&gt;
+  &lt;div class="mb-3"&gt;
+    &lt;label for="username" class="form-label"&gt;Username&lt;/label&gt;
+    &lt;input type="text" class="form-control" id="username" required&gt;
+    &lt;div class="invalid-feedback"&gt;Username is required.&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class="btn btn-primary" type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
         `,
         videoUrl: 'https://www.youtube.com/embed/3CyCMJ7c8b0'
       },
@@ -3792,6 +6863,7 @@ export const courses = [
         content: `
           <h2>Bootstrap Utility Classes</h2>
           <p>Master Bootstrap's comprehensive utility classes for spacing, colors, positioning, display, and more to fine-tune your designs efficiently.</p>
+          <p>Utility classes are single-purpose helpers that provide quick styling without writing custom CSS.</p>
           
           <h3>Spacing Utilities:</h3>
           <ul>
@@ -3802,6 +6874,29 @@ export const courses = [
             <li><strong>Auto Margins:</strong> .mx-auto, .ms-auto for centering</li>
           </ul>
           
+          <pre><code>&lt;!-- Margin Examples --&gt;
+&lt;div class="m-3"&gt;Margin on all sides (1rem)&lt;/div&gt;
+&lt;div class="mt-4"&gt;Margin top (1.5rem)&lt;/div&gt;
+&lt;div class="mb-2"&gt;Margin bottom (0.5rem)&lt;/div&gt;
+&lt;div class="mx-auto"&gt;Centered horizontally&lt;/div&gt;
+&lt;div class="my-5"&gt;Vertical margins (3rem)&lt;/div&gt;
+
+&lt;!-- Padding Examples --&gt;
+&lt;div class="p-3"&gt;Padding on all sides&lt;/div&gt;
+&lt;div class="pt-2"&gt;Padding top&lt;/div&gt;
+&lt;div class="px-4"&gt;Horizontal padding&lt;/div&gt;
+&lt;div class="py-3"&gt;Vertical padding&lt;/div&gt;
+
+&lt;!-- Spacing Scale --&gt;
+&lt;div class="m-0"&gt;0rem&lt;/div&gt;
+&lt;div class="m-1"&gt;0.25rem&lt;/div&gt;
+&lt;div class="m-2"&gt;0.5rem&lt;/div&gt;
+&lt;div class="m-3"&gt;1rem&lt;/div&gt;
+&lt;div class="m-4"&gt;1.5rem&lt;/div&gt;
+&lt;div class="m-5"&gt;3rem&lt;/div&gt;</code></pre>
+          
+          <p><strong>Spacing Scale:</strong> 0 = 0, 1 = 0.25rem, 2 = 0.5rem, 3 = 1rem, 4 = 1.5rem, 5 = 3rem. Use mx-auto to center elements.</p>
+          
           <h3>Color Utilities:</h3>
           <ul>
             <li><strong>Text Colors:</strong> .text-primary, .text-secondary, .text-success</li>
@@ -3809,6 +6904,33 @@ export const courses = [
             <li><strong>Color Opacity:</strong> .bg-opacity-*, .text-opacity-*</li>
             <li><strong>Gradient Backgrounds:</strong> .bg-gradient for smooth gradients</li>
           </ul>
+          
+          <pre><code>&lt;!-- Text Colors --&gt;
+&lt;p class="text-primary"&gt;Primary text&lt;/p&gt;
+&lt;p class="text-secondary"&gt;Secondary text&lt;/p&gt;
+&lt;p class="text-success"&gt;Success text&lt;/p&gt;
+&lt;p class="text-danger"&gt;Danger text&lt;/p&gt;
+&lt;p class="text-warning"&gt;Warning text&lt;/p&gt;
+&lt;p class="text-info"&gt;Info text&lt;/p&gt;
+&lt;p class="text-light bg-dark"&gt;Light text&lt;/p&gt;
+&lt;p class="text-dark"&gt;Dark text&lt;/p&gt;
+&lt;p class="text-muted"&gt;Muted text&lt;/p&gt;
+&lt;p class="text-white bg-dark"&gt;White text&lt;/p&gt;
+
+&lt;!-- Background Colors --&gt;
+&lt;div class="bg-primary text-white p-3"&gt;Primary background&lt;/div&gt;
+&lt;div class="bg-success text-white p-3"&gt;Success background&lt;/div&gt;
+&lt;div class="bg-danger text-white p-3"&gt;Danger background&lt;/div&gt;
+&lt;div class="bg-light p-3"&gt;Light background&lt;/div&gt;
+&lt;div class="bg-dark text-white p-3"&gt;Dark background&lt;/div&gt;
+
+&lt;!-- Color Opacity --&gt;
+&lt;div class="bg-success bg-opacity-75 p-3"&gt;75% opacity&lt;/div&gt;
+&lt;div class="bg-primary bg-opacity-50 p-3"&gt;50% opacity&lt;/div&gt;
+&lt;div class="bg-danger bg-opacity-25 p-3"&gt;25% opacity&lt;/div&gt;
+
+&lt;!-- Gradient Background --&gt;
+&lt;div class="bg-primary bg-gradient text-white p-3"&gt;Gradient&lt;/div&gt;</code></pre>
           
           <h3>Display & Positioning:</h3>
           <ul>
@@ -3819,6 +6941,31 @@ export const courses = [
             <li><strong>Z-index:</strong> .z-index-* for layering control</li>
           </ul>
           
+          <pre><code>&lt;!-- Display Utilities --&gt;
+&lt;div class="d-none"&gt;Hidden&lt;/div&gt;
+&lt;div class="d-block"&gt;Block display&lt;/div&gt;
+&lt;div class="d-inline"&gt;Inline display&lt;/div&gt;
+&lt;div class="d-inline-block"&gt;Inline-block&lt;/div&gt;
+&lt;div class="d-flex"&gt;Flex container&lt;/div&gt;
+&lt;div class="d-grid"&gt;Grid container&lt;/div&gt;
+
+&lt;!-- Responsive Display --&gt;
+&lt;div class="d-none d-md-block"&gt;Hidden on mobile, visible on md+&lt;/div&gt;
+&lt;div class="d-block d-lg-none"&gt;Visible on mobile, hidden on lg+&lt;/div&gt;
+
+&lt;!-- Positioning --&gt;
+&lt;div class="position-relative"&gt;
+  &lt;div class="position-absolute top-0 start-0"&gt;Top left&lt;/div&gt;
+  &lt;div class="position-absolute top-0 end-0"&gt;Top right&lt;/div&gt;
+  &lt;div class="position-absolute bottom-0 start-0"&gt;Bottom left&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Fixed Position --&gt;
+&lt;div class="position-fixed top-0 end-0 p-3"&gt;Fixed notification&lt;/div&gt;
+
+&lt;!-- Sticky Position --&gt;
+&lt;div class="position-sticky top-0"&gt;Sticky header&lt;/div&gt;</code></pre>
+          
           <h3>Flexbox & Sizing:</h3>
           <ul>
             <li><strong>Flex Direction:</strong> .flex-row, .flex-column</li>
@@ -3827,6 +6974,34 @@ export const courses = [
             <li><strong>Width/Height:</strong> .w-25, .w-50, .h-100</li>
             <li><strong>Max Width/Height:</strong> .mw-100, .mh-100</li>
           </ul>
+          
+          <pre><code>&lt;!-- Flex Container --&gt;
+&lt;div class="d-flex justify-content-center align-items-center" 
+     style="height: 200px;"&gt;
+  &lt;div&gt;Centered content&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Flex Direction --&gt;
+&lt;div class="d-flex flex-row"&gt;Horizontal layout&lt;/div&gt;
+&lt;div class="d-flex flex-column"&gt;Vertical layout&lt;/div&gt;
+
+&lt;!-- Justify Content --&gt;
+&lt;div class="d-flex justify-content-start"&gt;Start&lt;/div&gt;
+&lt;div class="d-flex justify-content-center"&gt;Center&lt;/div&gt;
+&lt;div class="d-flex justify-content-end"&gt;End&lt;/div&gt;
+&lt;div class="d-flex justify-content-between"&gt;Space between&lt;/div&gt;
+&lt;div class="d-flex justify-content-around"&gt;Space around&lt;/div&gt;
+
+&lt;!-- Sizing --&gt;
+&lt;div class="w-25"&gt;25% width&lt;/div&gt;
+&lt;div class="w-50"&gt;50% width&lt;/div&gt;
+&lt;div class="w-75"&gt;75% width&lt;/div&gt;
+&lt;div class="w-100"&gt;100% width&lt;/div&gt;
+&lt;div class="h-100"&gt;100% height&lt;/div&gt;
+
+&lt;!-- Max Width --&gt;
+&lt;div class="mw-100"&gt;Max width 100%&lt;/div&gt;
+&lt;img src="image.jpg" class="mw-100" alt="Responsive image"&gt;</code></pre>
         `,
         videoUrl: 'https://www.youtube.com/embed/Jja6vWzgNJE'
       },
@@ -3836,6 +7011,7 @@ export const courses = [
         content: `
           <h2>Bootstrap JavaScript Components</h2>
           <p>Learn to use Bootstrap's interactive JavaScript components including modals, tooltips, popovers, carousels, and collapse functionality.</p>
+          <p>JavaScript components add interactivity to your website without writing custom JavaScript code.</p>
           
           <h3>Modal Component:</h3>
           <ul>
@@ -3846,6 +7022,41 @@ export const courses = [
             <li><strong>Modal Options:</strong> Backdrop, keyboard, focus configuration</li>
           </ul>
           
+          <pre><code>&lt;!-- Modal Trigger Button --&gt;
+&lt;button type="button" class="btn btn-primary" 
+        data-bs-toggle="modal" data-bs-target="#exampleModal"&gt;
+  Launch Modal
+&lt;/button&gt;
+
+&lt;!-- Modal Structure --&gt;
+&lt;div class="modal fade" id="exampleModal" tabindex="-1"&gt;
+  &lt;div class="modal-dialog"&gt;
+    &lt;div class="modal-content"&gt;
+      &lt;div class="modal-header"&gt;
+        &lt;h5 class="modal-title"&gt;Modal title&lt;/h5&gt;
+        &lt;button type="button" class="btn-close" 
+                data-bs-dismiss="modal"&gt;&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class="modal-body"&gt;
+        &lt;p&gt;Modal body text goes here.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="modal-footer"&gt;
+        &lt;button type="button" class="btn btn-secondary" 
+                data-bs-dismiss="modal"&gt;Close&lt;/button&gt;
+        &lt;button type="button" class="btn btn-primary"&gt;Save changes&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Large Modal --&gt;
+&lt;div class="modal-dialog modal-lg"&gt;...&lt;/div&gt;
+
+&lt;!-- Centered Modal --&gt;
+&lt;div class="modal-dialog modal-dialog-centered"&gt;...&lt;/div&gt;</code></pre>
+          
+          <p><strong>Modals:</strong> Dialog windows that appear on top of content. Use data attributes or JavaScript API to control them.</p>
+          
           <h3>Tooltips & Popovers:</h3>
           <ul>
             <li><strong>Tooltip Initialization:</strong> JavaScript initialization required</li>
@@ -3854,6 +7065,41 @@ export const courses = [
             <li><strong>Trigger Options:</strong> click, hover, focus triggers</li>
             <li><strong>Custom Styling:</strong> CSS customization options</li>
           </ul>
+          
+          <pre><code>&lt;!-- Tooltip --&gt;
+&lt;button type="button" class="btn btn-secondary" 
+        data-bs-toggle="tooltip" data-bs-placement="top"
+        title="Tooltip on top"&gt;
+  Hover me
+&lt;/button&gt;
+
+&lt;!-- Initialize Tooltips with JavaScript --&gt;
+&lt;script&gt;
+var tooltipTriggerList = [].slice.call(
+  document.querySelectorAll('[data-bs-toggle="tooltip"]')
+);
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl);
+});
+&lt;/script&gt;
+
+&lt;!-- Popover --&gt;
+&lt;button type="button" class="btn btn-danger" 
+        data-bs-toggle="popover" 
+        data-bs-title="Popover title"
+        data-bs-content="Popover body content."&gt;
+  Click me
+&lt;/button&gt;
+
+&lt;!-- Initialize Popovers --&gt;
+&lt;script&gt;
+var popoverTriggerList = [].slice.call(
+  document.querySelectorAll('[data-bs-toggle="popover"]')
+);
+var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+  return new bootstrap.Popover(popoverTriggerEl);
+});
+&lt;/script&gt;</code></pre>
           
           <h3>Carousel Component:</h3>
           <ul>
@@ -3864,6 +7110,44 @@ export const courses = [
             <li><strong>Carousel Options:</strong> Autoplay, interval, animation</li>
           </ul>
           
+          <pre><code>&lt;!-- Carousel --&gt;
+&lt;div id="carouselExample" class="carousel slide" data-bs-ride="carousel"&gt;
+  &lt;!-- Indicators --&gt;
+  &lt;div class="carousel-indicators"&gt;
+    &lt;button data-bs-target="#carouselExample" data-bs-slide-to="0" 
+            class="active"&gt;&lt;/button&gt;
+    &lt;button data-bs-target="#carouselExample" data-bs-slide-to="1"&gt;&lt;/button&gt;
+    &lt;button data-bs-target="#carouselExample" data-bs-slide-to="2"&gt;&lt;/button&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Slides --&gt;
+  &lt;div class="carousel-inner"&gt;
+    &lt;div class="carousel-item active"&gt;
+      &lt;img src="slide1.jpg" class="d-block w-100" alt="..."&gt;
+      &lt;div class="carousel-caption"&gt;
+        &lt;h5&gt;First slide label&lt;/h5&gt;
+        &lt;p&gt;Some description text.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel-item"&gt;
+      &lt;img src="slide2.jpg" class="d-block w-100" alt="..."&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel-item"&gt;
+      &lt;img src="slide3.jpg" class="d-block w-100" alt="..."&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Controls --&gt;
+  &lt;button class="carousel-control-prev" data-bs-target="#carouselExample" 
+          data-bs-slide="prev"&gt;
+    &lt;span class="carousel-control-prev-icon"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class="carousel-control-next" data-bs-target="#carouselExample" 
+          data-bs-slide="next"&gt;
+    &lt;span class="carousel-control-next-icon"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+          
           <h3>Collapse & Accordion:</h3>
           <ul>
             <li><strong>Collapse Toggle:</strong> data-bs-toggle="collapse"</li>
@@ -3872,6 +7156,50 @@ export const courses = [
             <li><strong>Accordion Items:</strong> .accordion-item structure</li>
             <li><strong>Multiple Collapse:</strong> Independent collapsible sections</li>
           </ul>
+          
+          <pre><code>&lt;!-- Simple Collapse --&gt;
+&lt;button class="btn btn-primary" data-bs-toggle="collapse" 
+        data-bs-target="#collapseExample"&gt;
+  Toggle Content
+&lt;/button&gt;
+&lt;div class="collapse" id="collapseExample"&gt;
+  &lt;div class="card card-body"&gt;
+    Collapsible content goes here.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Accordion --&gt;
+&lt;div class="accordion" id="accordionExample"&gt;
+  &lt;div class="accordion-item"&gt;
+    &lt;h2 class="accordion-header"&gt;
+      &lt;button class="accordion-button" data-bs-toggle="collapse" 
+              data-bs-target="#collapseOne"&gt;
+        Accordion Item #1
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div id="collapseOne" class="accordion-collapse collapse show" 
+         data-bs-parent="#accordionExample"&gt;
+      &lt;div class="accordion-body"&gt;
+        Content for item 1.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="accordion-item"&gt;
+    &lt;h2 class="accordion-header"&gt;
+      &lt;button class="accordion-button collapsed" data-bs-toggle="collapse" 
+              data-bs-target="#collapseTwo"&gt;
+        Accordion Item #2
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div id="collapseTwo" class="accordion-collapse collapse" 
+         data-bs-parent="#accordionExample"&gt;
+      &lt;div class="accordion-body"&gt;
+        Content for item 2.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
         `,
         videoUrl: 'https://www.youtube.com/embed/VENo7jExUXI'
       },
@@ -3881,6 +7209,7 @@ export const courses = [
         content: `
           <h2>Responsive Design Mastery</h2>
           <p>Master responsive web design with Bootstrap's mobile-first approach, breakpoint system, and responsive utilities for all device sizes.</p>
+          <p>Bootstrap is built mobile-first, starting with mobile styles and scaling up to larger screens using media queries.</p>
           
           <h3>Mobile-First Philosophy:</h3>
           <ul>
@@ -3889,6 +7218,26 @@ export const courses = [
             <li><strong>Performance:</strong> Faster loading on mobile devices</li>
             <li><strong>User Experience:</strong> Optimized for touch interfaces</li>
           </ul>
+          
+          <pre><code>&lt;!-- Mobile-First Example --&gt;
+&lt;!-- Default: Full width on mobile --&gt;
+&lt;div class="col-12 col-md-6 col-lg-4"&gt;
+  &lt;!-- 
+    Mobile (xs): 100% width (col-12)
+    Tablet (md): 50% width (col-md-6) 
+    Desktop (lg): 33.33% width (col-lg-4)
+  --&gt;
+&lt;/div&gt;
+
+&lt;!-- Typography Mobile-First --&gt;
+&lt;h1 class="display-6 display-md-4 display-lg-1"&gt;
+  Responsive Heading
+&lt;/h1&gt;
+
+&lt;!-- Image Mobile-First --&gt;
+&lt;img src="image.jpg" class="img-fluid" alt="Responsive image"&gt;</code></pre>
+          
+          <p><strong>Mobile-First:</strong> Base styles apply to all screens. Add breakpoint-specific classes to override for larger screens.</p>
           
           <h3>Responsive Breakpoints:</h3>
           <ul>
@@ -3900,6 +7249,26 @@ export const courses = [
             <li><strong>Extra Extra Large:</strong> ≥ 1400px (xxl prefix)</li>
           </ul>
           
+          <pre><code>&lt;!-- Responsive Grid Layout --&gt;
+&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;!-- Stack on mobile, 2 cols on tablet, 4 cols on desktop --&gt;
+    &lt;div class="col-12 col-sm-6 col-lg-3"&gt;Column 1&lt;/div&gt;
+    &lt;div class="col-12 col-sm-6 col-lg-3"&gt;Column 2&lt;/div&gt;
+    &lt;div class="col-12 col-sm-6 col-lg-3"&gt;Column 3&lt;/div&gt;
+    &lt;div class="col-12 col-sm-6 col-lg-3"&gt;Column 4&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Responsive Container --&gt;
+&lt;div class="container"&gt;Fixed width at each breakpoint&lt;/div&gt;
+&lt;div class="container-fluid"&gt;Full width at all breakpoints&lt;/div&gt;
+&lt;div class="container-md"&gt;Fluid until md, then fixed&lt;/div&gt;
+
+&lt;!-- Breakpoint Containers --&gt;
+&lt;div class="container-sm"&gt;100% wide until small breakpoint&lt;/div&gt;
+&lt;div class="container-lg"&gt;100% wide until large breakpoint&lt;/div&gt;</code></pre>
+          
           <h3>Responsive Utilities:</h3>
           <ul>
             <li><strong>Display Controls:</strong> .d-none .d-md-block for show/hide</li>
@@ -3909,6 +7278,41 @@ export const courses = [
             <li><strong>Grid Columns:</strong> .col-12 .col-md-6 .col-lg-4</li>
           </ul>
           
+          <pre><code>&lt;!-- Hide/Show at Different Breakpoints --&gt;
+&lt;div class="d-none d-md-block"&gt;
+  Hidden on mobile, visible on md and up
+&lt;/div&gt;
+&lt;div class="d-block d-lg-none"&gt;
+  Visible until lg, then hidden
+&lt;/div&gt;
+&lt;div class="d-none d-sm-block d-xl-none"&gt;
+  Hidden on xs, visible sm-lg, hidden xl+
+&lt;/div&gt;
+
+&lt;!-- Responsive Text Alignment --&gt;
+&lt;p class="text-center text-md-start text-lg-end"&gt;
+  Center on mobile, left on md, right on lg
+&lt;/p&gt;
+
+&lt;!-- Responsive Spacing --&gt;
+&lt;div class="p-2 p-md-3 p-lg-5"&gt;
+  Small padding on mobile, medium on tablet, large on desktop
+&lt;/div&gt;
+&lt;div class="mt-3 mt-md-4 mt-lg-5"&gt;
+  Responsive top margin
+&lt;/div&gt;
+
+&lt;!-- Responsive Flexbox --&gt;
+&lt;div class="d-flex flex-column flex-md-row"&gt;
+  &lt;div&gt;Stacked on mobile&lt;/div&gt;
+  &lt;div&gt;Horizontal on tablet+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Responsive Float --&gt;
+&lt;div class="float-none float-md-start float-lg-end"&gt;
+  No float on mobile, left on md, right on lg
+&lt;/div&gt;</code></pre>
+          
           <h3>Responsive Images & Media:</h3>
           <ul>
             <li><strong>Responsive Images:</strong> .img-fluid for scalable images</li>
@@ -3916,6 +7320,70 @@ export const courses = [
             <li><strong>Responsive Embeds:</strong> .ratio for videos and embeds</li>
             <li><strong>Object Fit:</strong> .object-fit-cover utilities</li>
           </ul>
+          
+          <pre><code>&lt;!-- Responsive Image --&gt;
+&lt;img src="image.jpg" class="img-fluid" alt="Responsive image"&gt;
+
+&lt;!-- Image with Max Width --&gt;
+&lt;img src="large.jpg" class="img-fluid" style="max-width: 500px;" alt="..."&gt;
+
+&lt;!-- Rounded Image --&gt;
+&lt;img src="profile.jpg" class="img-fluid rounded" alt="..."&gt;
+&lt;img src="avatar.jpg" class="img-fluid rounded-circle" alt="..."&gt;
+&lt;img src="photo.jpg" class="img-thumbnail" alt="..."&gt;
+
+&lt;!-- Responsive Video Embed (16:9) --&gt;
+&lt;div class="ratio ratio-16x9"&gt;
+  &lt;iframe src="https://www.youtube.com/embed/..." 
+          allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;!-- Responsive Video Embed (4:3) --&gt;
+&lt;div class="ratio ratio-4x3"&gt;
+  &lt;iframe src="video.mp4"&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;!-- Responsive Video Embed (1:1) --&gt;
+&lt;div class="ratio ratio-1x1"&gt;
+  &lt;iframe src="square-video.mp4"&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;!-- Object Fit --&gt;
+&lt;img src="image.jpg" class="object-fit-cover" style="width: 200px; height: 200px;"&gt;
+&lt;img src="image.jpg" class="object-fit-contain" style="width: 200px; height: 200px;"&gt;</code></pre>
+          
+          <h3>Responsive Tables:</h3>
+          <ul>
+            <li><strong>Responsive Table:</strong> .table-responsive for scrollable tables</li>
+            <li><strong>Breakpoint Tables:</strong> .table-responsive-md, .table-responsive-lg</li>
+          </ul>
+          
+          <pre><code>&lt;!-- Responsive Table --&gt;
+&lt;div class="table-responsive"&gt;
+  &lt;table class="table"&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;#&lt;/th&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Email&lt;/th&gt;
+        &lt;th&gt;Status&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;1&lt;/td&gt;
+        &lt;td&gt;John Doe&lt;/td&gt;
+        &lt;td&gt;john@example.com&lt;/td&gt;
+        &lt;td&gt;Active&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+
+&lt;!-- Responsive at Specific Breakpoint --&gt;
+&lt;div class="table-responsive-md"&gt;
+  &lt;table class="table"&gt;...&lt;/table&gt;
+&lt;/div&gt;</code></pre>
         `,
         videoUrl: 'https://www.youtube.com/embed/Wny_NAxjhhs'
       },
@@ -3925,6 +7393,7 @@ export const courses = [
         content: `
           <h2>Customizing Bootstrap</h2>
           <p>Learn how to customize Bootstrap with Sass variables, create custom builds, override default styles, and maintain your own design system.</p>
+          <p>Bootstrap is highly customizable. You can modify colors, fonts, spacing, and components to match your brand identity.</p>
           
           <h3>Sass Customization:</h3>
           <ul>
@@ -3935,6 +7404,57 @@ export const courses = [
             <li><strong>Sass Maps:</strong> Extend utility classes and variants</li>
           </ul>
           
+          <pre><code>// custom.scss - Override Bootstrap Variables
+
+// 1. Include Bootstrap functions first
+@import "node_modules/bootstrap/scss/functions";
+
+// 2. Override default variables
+$primary: #ff6b6b;
+$secondary: #4ecdc4;
+$success: #51cf66;
+$info: #339af0;
+$warning: #ffd43b;
+$danger: #ff6b6b;
+
+// Typography
+$font-family-base: 'Inter', sans-serif;
+$headings-font-family: 'Poppins', sans-serif;
+$font-size-base: 1rem;
+$line-height-base: 1.6;
+
+// Spacing
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 4,
+  7: $spacer * 5
+);
+
+// Border radius
+$border-radius: 0.5rem;
+$border-radius-sm: 0.25rem;
+$border-radius-lg: 1rem;
+
+// 3. Include Bootstrap
+@import "node_modules/bootstrap/scss/bootstrap";
+
+// 4. Add custom styles
+.custom-button {
+  background: linear-gradient(135deg, $primary, $secondary);
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  border-radius: $border-radius;
+}</code></pre>
+          
+          <p><strong>Customization Process:</strong> Import functions first, override variables, then import Bootstrap. This ensures your customizations are applied.</p>
+          
           <h3>CSS Custom Properties:</h3>
           <ul>
             <li><strong>CSS Variables:</strong> Runtime customization with CSS custom properties</li>
@@ -3942,6 +7462,46 @@ export const courses = [
             <li><strong>Dynamic Theming:</strong> Switch themes with JavaScript</li>
             <li><strong>Component Theming:</strong> Per-component customization</li>
           </ul>
+          
+          <pre><code>/* Custom CSS Variables */
+:root {
+  --bs-primary: #ff6b6b;
+  --bs-secondary: #4ecdc4;
+  --bs-body-bg: #ffffff;
+  --bs-body-color: #212529;
+  --custom-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Variables */
+[data-bs-theme="dark"] {
+  --bs-body-bg: #1a1a1a;
+  --bs-body-color: #ffffff;
+  --bs-primary: #ff8787;
+}
+
+/* Using Custom Variables */
+.custom-card {
+  background: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  box-shadow: var(--custom-shadow);
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+/* JavaScript Theme Switcher */
+&lt;script&gt;
+const toggleTheme = () => {
+  const html = document.documentElement;
+  const currentTheme = html.getAttribute('data-bs-theme');
+  html.setAttribute('data-bs-theme', 
+    currentTheme === 'dark' ? 'light' : 'dark'
+  );
+};
+&lt;/script&gt;
+
+&lt;button onclick="toggleTheme()" class="btn btn-primary"&gt;
+  Toggle Theme
+&lt;/button&gt;</code></pre>
           
           <h3>Custom Components:</h3>
           <ul>
@@ -3951,6 +7511,65 @@ export const courses = [
             <li><strong>JavaScript Integration:</strong> Custom interactive components</li>
           </ul>
           
+          <pre><code>// custom-components.scss
+
+// Custom Card Component
+.custom-card {
+  @extend .card;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .custom-card-header {
+    background: linear-gradient(135deg, $primary, $secondary);
+    color: white;
+    padding: 1.5rem;
+    border-radius: $border-radius $border-radius 0 0;
+  }
+}
+
+// Custom Button with Icon
+.btn-icon {
+  @extend .btn;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  
+  i {
+    font-size: 1.2em;
+  }
+}
+
+// Custom Badge
+.badge-custom {
+  @extend .badge;
+  background: linear-gradient(135deg, $primary, $secondary);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-weight: 600;
+}</code></pre>
+          
+          <pre><code>&lt;!-- Using Custom Components --&gt;
+&lt;div class="custom-card"&gt;
+  &lt;div class="custom-card-header"&gt;
+    &lt;h3&gt;Custom Card Title&lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;div class="card-body"&gt;
+    &lt;p&gt;Card content with custom styling&lt;/p&gt;
+    &lt;button class="btn-icon btn-primary"&gt;
+      &lt;i class="bi bi-download"&gt;&lt;/i&gt;
+      Download
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;span class="badge-custom"&gt;New Feature&lt;/span&gt;</code></pre>
+          
           <h3>Build Tools & Workflow:</h3>
           <ul>
             <li><strong>Webpack Integration:</strong> Modern build tool setup</li>
@@ -3959,6 +7578,69 @@ export const courses = [
             <li><strong>Design Tokens:</strong> Maintain consistent design system</li>
             <li><strong>Version Control:</strong> Managing custom Bootstrap versions</li>
           </ul>
+          
+          <pre><code>// package.json
+{
+  "scripts": {
+    "sass": "sass --watch src/scss:dist/css",
+    "build:css": "sass src/scss/custom.scss dist/css/custom.css --style compressed",
+    "watch": "npm run sass"
+  },
+  "devDependencies": {
+    "bootstrap": "^5.3.0",
+    "sass": "^1.62.0"
+  }
+}
+
+// Project Structure
+project/
+├── src/
+│   └── scss/
+│       ├── custom.scss          // Main custom file
+│       ├── _variables.scss      // Variable overrides
+│       ├── _components.scss     // Custom components
+│       └── _utilities.scss      // Custom utilities
+├── dist/
+│   └── css/
+│       └── custom.css           // Compiled CSS
+└── package.json
+
+// Build Command
+npm run build:css
+
+// Watch for Changes
+npm run watch</code></pre>
+          
+          <pre><code>// _variables.scss - Organized variable overrides
+
+// Brand Colors
+$primary: #ff6b6b;
+$secondary: #4ecdc4;
+$accent: #ffd43b;
+
+// Neutral Colors
+$gray-100: #f8f9fa;
+$gray-900: #212529;
+
+// Component Specific
+$btn-padding-y: 0.75rem;
+$btn-padding-x: 1.5rem;
+$card-border-radius: 1rem;
+$modal-content-border-radius: 1rem;
+
+// _components.scss - Custom component styles
+.hero-section {
+  background: linear-gradient(135deg, $primary, $secondary);
+  padding: 4rem 0;
+  color: white;
+}
+
+// _utilities.scss - Custom utility classes
+.text-gradient {
+  background: linear-gradient(135deg, $primary, $secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}</code></pre>
         `,
         videoUrl: 'https://www.youtube.com/embed/6Ovw43Dkp44'
       }

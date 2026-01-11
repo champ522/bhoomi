@@ -27,12 +27,6 @@ const OurClientsPage = () => {
 
   const projects = [
     {
-      id: 1,
-      title: 'Delhi Parcel',
-      category: 'Custom Softwares',
-      image: '/images/delhiparcel.png'
-    },
-    {
       id: 2,
       title: 'Bhoomi Cloud',
       category: 'Custom Softwares',
@@ -325,6 +319,12 @@ const OurClientsPage = () => {
       title: 'DLS Export & Import',
       category: 'Websites',
       image: '/images/dls.png'
+    },
+    {
+      id: 1,
+      title: 'Delhi Parcel',
+      category: 'Custom Softwares',
+      image: '/images/delhiparcel.png'
     }
   ];
 
