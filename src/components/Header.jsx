@@ -291,6 +291,12 @@ const Header = () => {
             <li className={styles.navItem}>
               <Link to="/contact" className={styles.navLink}>Contact Us</Link>
             </li>
+            <li className={`${styles.navItem} ${styles.mobileOnly} ${styles.featured}`}>
+              <Link to="/lms" className={`${styles.navLink} ${styles.featuredLink}`}>
+                Learning Hub
+                <span className={styles.newBadge}>NEW</span>
+              </Link>
+            </li>
           </ul>
         </nav>
 

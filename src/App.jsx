@@ -149,6 +149,7 @@ function App() {
         <Route path="/lms" element={<LMSHome key="lms-home" />} />
         <Route path="/lms/course/:courseId" element={<CoursePage key="course-page" />} />
         <Route path="/lms/course/:courseId/lesson/:lessonId" element={<LessonPage key="lesson-page" />} />
+        <Route path="/lms/course/:courseId/exercise" element={<LessonPage key="exercise-page" />} />
       </Routes>
       <Footer />
     </Router>

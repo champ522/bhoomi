@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { getQuestionsByCourseId } from '../data/interviews';
 import styles from '../styles/lms.module.css';
 
 /**
@@ -9,6 +10,14 @@ import styles from '../styles/lms.module.css';
  */
 const Sidebar = ({ course, currentLessonId, isOpen, onLessonClick }) => {
   const { courseId } = useParams();
+  const exerciseData = getQuestionsByCourseId(courseId);
+  
+  // Debug log
+  console.log('Sidebar Debug:', {
+    courseId,
+    hasExerciseData: !!exerciseData,
+    questionsCount: exerciseData?.questions?.length
+  });
 
   return (
     <>
@@ -44,6 +53,28 @@ const Sidebar = ({ course, currentLessonId, isOpen, onLessonClick }) => {
                 </Link>
               </li>
             ))}
+            
+            {/* Exercise Tab */}
+            {exerciseData && (
+              <li className={styles.lessonListItem}>
+                <Link
+                  to={`/lms/course/${courseId}/exercise`}
+                  className={`${styles.lessonLink} ${styles.exerciseLink} ${
+                    currentLessonId === 'exercise' ? styles.activeLessonLink : ''
+                  }`}
+                  onClick={onLessonClick}
+                >
+                  <div className={styles.lessonDetails}>
+                    <span className={styles.lessonTitle}>📝 Exercise</span>
+                  </div>
+                  {currentLessonId === 'exercise' && (
+                    <div className={styles.activeIndicator}>
+                      <div className={styles.activeCircle}></div>
+                    </div>
+                  )}
+                </Link>
+              </li>
+            )}
           </ul>
         </nav>
 

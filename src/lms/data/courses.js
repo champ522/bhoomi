@@ -115,6 +115,31 @@ export const courses = [
             <li><strong>&lt;ins&gt;</strong> - Inserted text</li>
           </ul>
           
+          <pre><code>&lt;!-- Basic HTML Element Structure --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;HTML Elements Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Main Heading&lt;/h1&gt;
+  &lt;p&gt;This is a paragraph with &lt;strong&gt;bold text&lt;/strong&gt; and &lt;em&gt;italic text&lt;/em&gt;.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          
+          <p><strong>Element Syntax:</strong> Every HTML element follows the pattern: opening tag + content + closing tag. Some elements are self-closing like &lt;img&gt; and &lt;br&gt;.</p>
+          
+          <h3>Text Formatting Examples:</h3>
+          <pre><code>&lt;!-- Text Formatting Examples --&gt;
+&lt;p&gt;&lt;strong&gt;This text is important&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This text is emphasized&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;mark&gt;This text is highlighted&lt;/mark&gt;&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;This text is deleted&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;&lt;ins&gt;This text is inserted&lt;/ins&gt;&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;This is smaller text&lt;/small&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sub&gt;Subscript&lt;/sub&gt; and &lt;sup&gt;Superscript&lt;/sup&gt;&lt;/p&gt;</code></pre>
+          
           <h3>List Elements:</h3>
           <ul>
             <li><strong>&lt;ul&gt;</strong> - Unordered list (bullets)</li>
@@ -122,6 +147,42 @@ export const courses = [
             <li><strong>&lt;li&gt;</strong> - List items</li>
             <li><strong>&lt;dl&gt;</strong> - Description list</li>
           </ul>
+          
+          <pre><code>&lt;!-- Unordered List --&gt;
+&lt;ul&gt;
+  &lt;li&gt;First item&lt;/li&gt;
+  &lt;li&gt;Second item&lt;/li&gt;
+  &lt;li&gt;Third item&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Ordered List --&gt;
+&lt;ol&gt;
+  &lt;li&gt;Step one&lt;/li&gt;
+  &lt;li&gt;Step two&lt;/li&gt;
+  &lt;li&gt;Step three&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- Nested Lists --&gt;
+&lt;ul&gt;
+  &lt;li&gt;Main item 1
+    &lt;ul&gt;
+      &lt;li&gt;Sub item 1.1&lt;/li&gt;
+      &lt;li&gt;Sub item 1.2&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Main item 2&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          
+          <h3>Heading Elements:</h3>
+          <pre><code>&lt;!-- Heading Hierarchy --&gt;
+&lt;h1&gt;Main Page Title (Only one per page)&lt;/h1&gt;
+&lt;h2&gt;Section Title&lt;/h2&gt;
+&lt;h3&gt;Subsection Title&lt;/h3&gt;
+&lt;h4&gt;Minor Heading&lt;/h4&gt;
+&lt;h5&gt;Small Heading&lt;/h5&gt;
+&lt;h6&gt;Smallest Heading&lt;/h6&gt;</code></pre>
+          
+          <p><strong>Best Practice:</strong> Always use semantic elements that describe their content. Use heading hierarchy properly for SEO and accessibility.</p>
         `,
       },
       {
@@ -157,6 +218,91 @@ export const courses = [
           
           <h3>Form Validation:</h3>
           <p>HTML5 provides built-in form validation attributes like required, pattern, min, max, and maxlength to ensure data quality without JavaScript.</p>
+          
+          <pre><code>&lt;!-- Basic Contact Form --&gt;
+&lt;form action="/submit" method="POST"&gt;
+  &lt;label for="name"&gt;Name:&lt;/label&gt;
+  &lt;input type="text" id="name" name="name" required&gt;
+  
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email" required&gt;
+  
+  &lt;label for="message"&gt;Message:&lt;/label&gt;
+  &lt;textarea id="message" name="message" rows="5" required&gt;&lt;/textarea&gt;
+  
+  &lt;button type="submit"&gt;Send Message&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+          
+          <p><strong>Form Attributes:</strong> The 'action' specifies where to send data, 'method' determines how (GET or POST). Always use POST for sensitive data.</p>
+          
+          <h3>Different Input Types Examples:</h3>
+          <pre><code>&lt;!-- Various Input Types --&gt;
+&lt;form&gt;
+  &lt;!-- Text Input --&gt;
+  &lt;input type="text" placeholder="Enter your name" required&gt;
+  
+  &lt;!-- Email with Validation --&gt;
+  &lt;input type="email" placeholder="email@example.com" required&gt;
+  
+  &lt;!-- Password --&gt;
+  &lt;input type="password" minlength="8" required&gt;
+  
+  &lt;!-- Number with Range --&gt;
+  &lt;input type="number" min="1" max="100" value="50"&gt;
+  
+  &lt;!-- Date Picker --&gt;
+  &lt;input type="date" min="2024-01-01"&gt;
+  
+  &lt;!-- File Upload --&gt;
+  &lt;input type="file" accept=".pdf,.doc,.docx"&gt;
+  
+  &lt;!-- Checkbox --&gt;
+  &lt;input type="checkbox" id="agree" name="agree"&gt;
+  &lt;label for="agree"&gt;I agree to terms&lt;/label&gt;
+  
+  &lt;!-- Radio Buttons --&gt;
+  &lt;input type="radio" id="male" name="gender" value="male"&gt;
+  &lt;label for="male"&gt;Male&lt;/label&gt;
+  &lt;input type="radio" id="female" name="gender" value="female"&gt;
+  &lt;label for="female"&gt;Female&lt;/label&gt;
+&lt;/form&gt;</code></pre>
+          
+          <h3>Select Dropdown and Textarea:</h3>
+          <pre><code>&lt;!-- Dropdown Select --&gt;
+&lt;label for="country"&gt;Country:&lt;/label&gt;
+&lt;select id="country" name="country" required&gt;
+  &lt;option value=""&gt;Select a country&lt;/option&gt;
+  &lt;option value="usa"&gt;United States&lt;/option&gt;
+  &lt;option value="uk"&gt;United Kingdom&lt;/option&gt;
+  &lt;option value="india"&gt;India&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;!-- Textarea for Long Text --&gt;
+&lt;label for="comments"&gt;Comments:&lt;/label&gt;
+&lt;textarea id="comments" name="comments" rows="4" cols="50" 
+          placeholder="Enter your comments here..."&gt;&lt;/textarea&gt;</code></pre>
+          
+          <h3>Form Validation Attributes:</h3>
+          <pre><code>&lt;!-- Built-in HTML5 Validation --&gt;
+&lt;form&gt;
+  &lt;!-- Required Field --&gt;
+  &lt;input type="text" required&gt;
+  
+  &lt;!-- Pattern Matching (Phone) --&gt;
+  &lt;input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
+         placeholder="123-456-7890"&gt;
+  
+  &lt;!-- Min and Max Length --&gt;
+  &lt;input type="text" minlength="3" maxlength="20"&gt;
+  
+  &lt;!-- Email Validation --&gt;
+  &lt;input type="email" placeholder="user@domain.com"&gt;
+  
+  &lt;!-- URL Validation --&gt;
+  &lt;input type="url" placeholder="https://example.com"&gt;
+&lt;/form&gt;</code></pre>
+          
+          <p><strong>Accessibility Tip:</strong> Always use labels with forms for screen reader compatibility. The 'for' attribute should match the input's 'id'.</p>
         `,
       },
       {
@@ -193,6 +339,78 @@ export const courses = [
           
           <h3>Microdata and Schema:</h3>
           <p>Semantic HTML works well with structured data markup (Schema.org) to provide even more context to search engines about your content.</p>
+          
+          <pre><code>&lt;!-- Traditional Non-Semantic Layout --&gt;
+&lt;div id="header"&gt;
+  &lt;div id="nav"&gt;Navigation&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="main"&gt;
+  &lt;div class="article"&gt;Content&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="footer"&gt;Footer&lt;/div&gt;</code></pre>
+          
+          <pre><code>&lt;!-- Modern Semantic HTML5 Layout --&gt;
+&lt;header&gt;
+  &lt;nav&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+  &lt;article&gt;
+    &lt;header&gt;
+      &lt;h1&gt;Article Title&lt;/h1&gt;
+      &lt;time datetime="2026-01-12"&gt;January 12, 2026&lt;/time&gt;
+    &lt;/header&gt;
+    
+    &lt;section&gt;
+      &lt;h2&gt;Section Heading&lt;/h2&gt;
+      &lt;p&gt;Article content goes here...&lt;/p&gt;
+    &lt;/section&gt;
+    
+    &lt;footer&gt;
+      &lt;p&gt;Written by John Doe&lt;/p&gt;
+    &lt;/footer&gt;
+  &lt;/article&gt;
+  
+  &lt;aside&gt;
+    &lt;h3&gt;Related Articles&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Related Article 1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Related Article 2&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/aside&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+  &lt;p&gt;&copy; 2026 Company Name. All rights reserved.&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+          
+          <p><strong>Why Semantic HTML Matters:</strong> Screen readers can navigate by landmarks (header, nav, main, footer). Search engines better understand content structure.</p>
+          
+          <h3>Figure and Figcaption:</h3>
+          <pre><code>&lt;!-- Self-contained Image with Caption --&gt;
+&lt;figure&gt;
+  &lt;img src="diagram.jpg" alt="Website structure diagram"&gt;
+  &lt;figcaption&gt;Fig 1. Modern website structure using semantic HTML5&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+          
+          <h3>Time Element:</h3>
+          <pre><code>&lt;!-- Machine-readable Dates --&gt;
+&lt;p&gt;Published on &lt;time datetime="2026-01-12T14:30:00"&gt;January 12, 2026 at 2:30 PM&lt;/time&gt;&lt;/p&gt;
+&lt;p&gt;Event starts &lt;time datetime="2026-06-15"&gt;June 15, 2026&lt;/time&gt;&lt;/p&gt;</code></pre>
+          
+          <h3>Address Element:</h3>
+          <pre><code>&lt;!-- Contact Information --&gt;
+&lt;address&gt;
+  &lt;p&gt;Contact us at:&lt;/p&gt;
+  &lt;p&gt;Email: &lt;a href="mailto:info@example.com"&gt;info@example.com&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;Phone: &lt;a href="tel:+1234567890"&gt;+1 (234) 567-890&lt;/a&gt;&lt;/p&gt;
+&lt;/address&gt;</code></pre>
         `,
       },
       {
@@ -220,13 +438,102 @@ export const courses = [
             <li><strong>scope:</strong> Defines which cells the header applies to</li>
           </ul>
           
-          <h2>HTML Lists - Organizing Content</h2>
+          
+          <pre><code>&lt;!-- Basic HTML Table --&gt;
+&lt;table border="1"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Product&lt;/th&gt;
+      &lt;th&gt;Price&lt;/th&gt;
+      &lt;th&gt;Quantity&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Laptop&lt;/td&gt;
+      &lt;td&gt;$999&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Mouse&lt;/td&gt;
+      &lt;td&gt;$25&lt;/td&gt;
+      &lt;td&gt;20&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td colspan="2"&gt;Total Items:&lt;/td&gt;
+      &lt;td&gt;25&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+          
+          <p><strong>Table Structure:</strong> Use thead for headers, tbody for main content, and tfoot for summary rows. This improves accessibility and styling options.</p>
+          
+          <h3>Table with Colspan and Rowspan:</h3>
+          <pre><code>&lt;!-- Advanced Table with Spanning Cells --&gt;
+&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th colspan="2"&gt;Contact Details&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;John Doe&lt;/td&gt;
+    &lt;td&gt;Email: john@example.com&lt;/td&gt;
+    &lt;td&gt;Phone: 123-456-7890&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td rowspan="2"&gt;Jane Smith&lt;/td&gt;
+    &lt;td&gt;Email: jane@example.com&lt;/td&gt;
+    &lt;td&gt;Phone: 098-765-4321&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td colspan="2"&gt;Address: 123 Main St, City, Country&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+          
+
+     <h2>HTML Lists - Organizing Content</h2>
+          <p>HTML lists are fundamental for organizing and presenting information in a structured way. Whether you're creating navigation menus, feature lists, or step-by-step instructions, lists help make your content scannable and easy to understand for both users and search engines.</p>
+          
           <h3>Types of Lists:</h3>
           <ul>
             <li><strong>Ordered Lists (&lt;ol&gt;):</strong> Numbered or lettered items</li>
             <li><strong>Unordered Lists (&lt;ul&gt;):</strong> Bulleted items</li>
             <li><strong>Description Lists (&lt;dl&gt;):</strong> Term and description pairs</li>
           </ul>
+          <h3>List Examples:</h3>
+          <pre><code>&lt;!-- Ordered List with Different Numbering --&gt;
+&lt;ol type="A"&gt;
+  &lt;li&gt;First item&lt;/li&gt;
+  &lt;li&gt;Second item&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ol type="I"&gt;
+  &lt;li&gt;Roman numeral item&lt;/li&gt;
+  &lt;li&gt;Another item&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- Start from specific number --&gt;
+&lt;ol start="5"&gt;
+  &lt;li&gt;Item five&lt;/li&gt;
+  &lt;li&gt;Item six&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+          
+          <h3>Description List:</h3>
+          <pre><code>&lt;!-- Description List (Term and Definition pairs) --&gt;
+&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;HyperText Markup Language - structure of web pages&lt;/dd&gt;
+  
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;Cascading Style Sheets - styling and layout&lt;/dd&gt;
+  
+  &lt;dt&gt;JavaScript&lt;/dt&gt;
+  &lt;dd&gt;Programming language for interactive web pages&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+          
+          <p><strong>Use Cases:</strong> Tables for tabular data only, not for layout. Lists for navigation menus, features, steps, or any sequential/grouped content.</p>
         `,
       },
       {
@@ -234,7 +541,7 @@ export const courses = [
         title: 'Media & Links',
         content: `
           <h2>Working with Images</h2>
-          <p>Images make websites more engaging and informative. HTML provides several ways to include and optimize images for web use.</p>
+          <p>Images make websites more engaging and informative. HTML provides several ways to include and optimize images for web use. From basic image tags to responsive images and lazy loading, modern HTML offers powerful tools to enhance visual content while maintaining excellent performance across all devices and connection speeds.</p>
           
           <h3>Image Best Practices:</h3>
           <ul>
@@ -245,6 +552,8 @@ export const courses = [
           </ul>
           
           <h2>Creating Links</h2>
+          <p>Links are the foundation of web navigation, connecting pages and creating the interconnected web we know today. HTML anchors enable users to navigate between pages, jump to specific sections, send emails, or initiate phone calls, making websites interactive and user-friendly across all devices.</p>
+          
           <h3>Types of Links:</h3>
           <ul>
             <li><strong>External Links:</strong> To other websites</li>
@@ -255,7 +564,7 @@ export const courses = [
           </ul>
           
           <h2>Audio and Video</h2>
-          <p>HTML5 introduced native support for multimedia without plugins.</p>
+          <p>HTML5 introduced native support for multimedia without plugins, revolutionizing how we embed audio and video content on websites. With built-in media elements, you can create rich multimedia experiences with custom controls, multiple format support, and accessibility features, all without relying on third-party plugins like Flash.</p>
           
           <h3>Media Attributes:</h3>
           <ul>
@@ -264,6 +573,91 @@ export const courses = [
             <li><strong>loop:</strong> Repeats the media</li>
             <li><strong>muted:</strong> Starts with audio muted</li>
           </ul>
+          
+          <pre><code>&lt;!-- Basic Image --&gt;
+&lt;img src="images/photo.jpg" alt="Description of image" width="600" height="400"&gt;
+
+&lt;!-- Responsive Image with srcset --&gt;
+&lt;img src="image-small.jpg" 
+     srcset="image-small.jpg 400w, 
+             image-medium.jpg 800w, 
+             image-large.jpg 1200w"
+     sizes="(max-width: 400px) 400px, 
+            (max-width: 800px) 800px, 
+            1200px"
+     alt="Responsive image example"&gt;
+
+&lt;!-- Image with Lazy Loading --&gt;
+&lt;img src="image.jpg" alt="Lazy loaded image" loading="lazy"&gt;</code></pre>
+          
+          <p><strong>Image Optimization:</strong> Always include alt text for accessibility. Use appropriate formats: JPEG for photos, PNG for graphics with transparency, WebP for best compression.</p>
+          
+          <h3>Link Examples:</h3>
+          <pre><code>&lt;!-- External Link --&gt;
+&lt;a href="https://www.example.com" target="_blank" rel="noopener noreferrer"&gt;
+  Visit Example Website
+&lt;/a&gt;
+
+&lt;!-- Internal Link --&gt;
+&lt;a href="about.html"&gt;About Us&lt;/a&gt;
+
+&lt;!-- Anchor Link (Jump to section) --&gt;
+&lt;a href="#contact"&gt;Go to Contact Section&lt;/a&gt;
+
+&lt;!-- Email Link --&gt;
+&lt;a href="mailto:info@example.com"&gt;Send Email&lt;/a&gt;
+
+&lt;!-- Phone Link --&gt;
+&lt;a href="tel:+1234567890"&gt;Call Us: (123) 456-7890&lt;/a&gt;
+
+&lt;!-- Download Link --&gt;
+&lt;a href="document.pdf" download&gt;Download PDF&lt;/a&gt;</code></pre>
+          
+          <h3>Video Element:</h3>
+          <pre><code>&lt;!-- HTML5 Video with Multiple Sources --&gt;
+&lt;video width="640" height="360" controls poster="thumbnail.jpg"&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  &lt;source src="video.webm" type="video/webm"&gt;
+  &lt;track src="subtitles_en.vtt" kind="subtitles" srclang="en" label="English"&gt;
+  Your browser does not support the video tag.
+&lt;/video&gt;
+
+&lt;!-- Video with Autoplay (muted) --&gt;
+&lt;video autoplay muted loop playsinline&gt;
+  &lt;source src="background.mp4" type="video/mp4"&gt;
+&lt;/video&gt;</code></pre>
+          
+          <h3>Audio Element:</h3>
+          <pre><code>&lt;!-- HTML5 Audio Player --&gt;
+&lt;audio controls&gt;
+  &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+  &lt;source src="audio.ogg" type="audio/ogg"&gt;
+  Your browser does not support the audio element.
+&lt;/audio&gt;
+
+&lt;!-- Audio with Preload --&gt;
+&lt;audio controls preload="metadata"&gt;
+  &lt;source src="podcast.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;</code></pre>
+          
+          <h3>Embedded Content:</h3>
+          <pre><code>&lt;!-- YouTube Video Embed --&gt;
+&lt;iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/VIDEO_ID" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen&gt;
+&lt;/iframe&gt;
+
+&lt;!-- Google Maps Embed --&gt;
+&lt;iframe src="https://www.google.com/maps/embed?pb=..." 
+        width="600" height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy"&gt;
+&lt;/iframe&gt;</code></pre>
+          
+          <p><strong>Best Practices:</strong> Use target="_blank" with rel="noopener noreferrer" for security. Always provide multiple source formats for broader browser support.</p>
         `,
       },
       {
@@ -299,6 +693,120 @@ export const courses = [
             <li><strong>Service Worker:</strong> Offline functionality</li>
             <li><strong>Web App Manifest:</strong> Installation prompts</li>
           </ul>
+          
+          <pre><code>&lt;!-- Data Attributes --&gt;
+&lt;div class="product" 
+     data-product-id="12345" 
+     data-product-name="Laptop" 
+     data-price="999.99" 
+     data-category="electronics"&gt;
+  Product Information
+&lt;/div&gt;
+
+&lt;button data-action="delete" data-id="42"&gt;Delete Item&lt;/button&gt;
+
+&lt;script&gt;
+  // Access data attributes in JavaScript
+  const product = document.querySelector('.product');
+  console.log(product.dataset.productId); // "12345"
+  console.log(product.dataset.price); // "999.99"
+&lt;/script&gt;</code></pre>
+          
+          <p><strong>Data Attributes:</strong> Store custom data in HTML elements accessible via JavaScript. Perfect for configuration, IDs, and metadata.</p>
+          
+          <h3>Essential Meta Tags:</h3>
+          <pre><code>&lt;!-- Essential SEO Meta Tags --&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;meta name="description" content="Learn web development with comprehensive tutorials on HTML, CSS, and JavaScript"&gt;
+  &lt;meta name="keywords" content="web development, HTML, CSS, JavaScript, tutorials"&gt;
+  &lt;meta name="author" content="Your Name"&gt;
+  
+  &lt;!-- Open Graph for Social Media --&gt;
+  &lt;meta property="og:title" content="Web Development Course"&gt;
+  &lt;meta property="og:description" content="Master modern web development"&gt;
+  &lt;meta property="og:image" content="https://example.com/image.jpg"&gt;
+  &lt;meta property="og:url" content="https://example.com/course"&gt;
+  &lt;meta property="og:type" content="website"&gt;
+  
+  &lt;!-- Twitter Card --&gt;
+  &lt;meta name="twitter:card" content="summary_large_image"&gt;
+  &lt;meta name="twitter:title" content="Web Development Course"&gt;
+  &lt;meta name="twitter:description" content="Master modern web development"&gt;
+  &lt;meta name="twitter:image" content="https://example.com/image.jpg"&gt;
+&lt;/head&gt;</code></pre>
+          
+          <h3>ARIA Accessibility:</h3>
+          <pre><code>&lt;!-- ARIA Labels and Roles --&gt;
+&lt;button aria-label="Close dialog" aria-pressed="false"&gt;
+  &lt;span aria-hidden="true"&gt;×&lt;/span&gt;
+&lt;/button&gt;
+
+&lt;nav aria-label="Main navigation"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="/" aria-current="page"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/about"&gt;About&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;div role="alert" aria-live="assertive"&gt;
+  Form submitted successfully!
+&lt;/div&gt;
+
+&lt;input type="text" 
+       aria-label="Search" 
+       aria-describedby="search-hint" 
+       aria-required="true"&gt;
+&lt;span id="search-hint"&gt;Enter at least 3 characters&lt;/span&gt;</code></pre>
+          
+          <h3>HTML5 Canvas:</h3>
+          <pre><code>&lt;!-- Canvas for Graphics --&gt;
+&lt;canvas id="myCanvas" width="400" height="300"&gt;
+  Your browser does not support Canvas.
+&lt;/canvas&gt;
+
+&lt;script&gt;
+  const canvas = document.getElementById('myCanvas');
+  const ctx = canvas.getContext('2d');
+  
+  // Draw rectangle
+  ctx.fillStyle = '#3498db';
+  ctx.fillRect(50, 50, 200, 100);
+  
+  // Draw circle
+  ctx.beginPath();
+  ctx.arc(200, 150, 50, 0, 2 * Math.PI);
+  ctx.fillStyle = '#e74c3c';
+  ctx.fill();
+&lt;/script&gt;</code></pre>
+          
+          <h3>Local Storage:</h3>
+          <pre><code>&lt;!-- Using Local Storage --&gt;
+&lt;script&gt;
+  // Save data
+  localStorage.setItem('username', 'JohnDoe');
+  localStorage.setItem('theme', 'dark');
+  
+  // Retrieve data
+  const username = localStorage.getItem('username');
+  const theme = localStorage.getItem('theme');
+  
+  // Save object as JSON
+  const user = { name: 'John', age: 30 };
+  localStorage.setItem('user', JSON.stringify(user));
+  
+  // Retrieve and parse JSON
+  const savedUser = JSON.parse(localStorage.getItem('user'));
+  
+  // Remove item
+  localStorage.removeItem('username');
+  
+  // Clear all
+  localStorage.clear();
+&lt;/script&gt;</code></pre>
+          
+          <p><strong>Progressive Enhancement:</strong> Start with semantic HTML that works everywhere, then enhance with CSS and JavaScript for better experiences.</p>
         `,
       },
       {
@@ -503,8 +1011,71 @@ export const courses = [
             <li><strong>Inline CSS:</strong> Style attribute on individual elements (use sparingly)</li>
           </ul>
           
+          <pre><code>&lt;!-- External CSS (Best Practice) --&gt;
+&lt;head&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+
+&lt;!-- Internal CSS --&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+    h1 {
+      color: #333;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;!-- Inline CSS (Use Sparingly) --&gt;
+&lt;p style="color: red; font-size: 18px;"&gt;This is inline styled text&lt;/p&gt;</code></pre>
+          
           <h3>CSS Syntax Rules:</h3>
           <p>CSS follows a simple syntax: selector { property: value; }. Multiple declarations are separated by semicolons, and rules are case-insensitive (except for class/ID names).</p>
+          
+          <pre><code>/* CSS Syntax Structure */
+selector {
+  property: value;
+  another-property: another-value;
+}
+
+/* Example: Styling a heading */
+h1 {
+  color: #2c3e50;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Multiple selectors */
+h1, h2, h3 {
+  font-family: 'Helvetica', sans-serif;
+  line-height: 1.5;
+}</code></pre>
+          
+          <h3>CSS Colors:</h3>
+          <pre><code>/* Different ways to specify colors */
+.color-examples {
+  /* Named colors */
+  color: red;
+  
+  /* Hexadecimal */
+  background-color: #3498db;
+  
+  /* RGB */
+  border-color: rgb(255, 99, 71);
+  
+  /* RGBA (with transparency) */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  /* HSL */
+  color: hsl(200, 70%, 50%);
+  
+  /* HSLA (with transparency) */
+  background: hsla(200, 70%, 50%, 0.5);
+}</code></pre>
         `,
       },
       {
@@ -512,7 +1083,7 @@ export const courses = [
         title: 'Selectors',
         content: `
           <h2>CSS Selectors</h2>
-          <p>Selectors are used to target specific HTML elements that you want to style. There are various types of selectors in CSS.</p>
+          <p>Selectors are the foundation of CSS, allowing you to target specific HTML elements that you want to style. Mastering selectors gives you precise control over your design and enables you to write clean, efficient stylesheets that are easy to maintain and scale.</p>
           
           <h3>Types of Selectors:</h3>
           <ul>
@@ -522,6 +1093,108 @@ export const courses = [
             <li><strong>Attribute Selector:</strong> Targets elements with specific attributes</li>
             <li><strong>Pseudo-classes:</strong> Target element states (:hover, :active)</li>
           </ul>
+          
+          <pre><code>/* Element Selector */
+p {
+  color: #333;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+}
+
+/* Class Selector */
+.btn {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border-radius: 5px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ID Selector */
+#header {
+  background-color: #f8f9fa;
+  height: 80px;
+}
+
+#footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+}</code></pre>
+          
+          <h3>Combinator Selectors:</h3>
+          <pre><code>/* Descendant Selector (space) */
+div p {
+  color: blue;
+}
+
+/* Child Selector (>) */
+ul > li {
+  list-style: none;
+}
+
+/* Adjacent Sibling (+) */
+h1 + p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* General Sibling (~) */
+h1 ~ p {
+  margin-top: 10px;
+}</code></pre>
+          
+          <h3>Pseudo-classes:</h3>
+          <pre><code>/* Link states */
+a:link {
+  color: #3498db;
+}
+
+a:visited {
+  color: #9b59b6;
+}
+
+a:hover {
+  color: #e74c3c;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #c0392b;
+}
+
+/* Form states */
+input:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+input:disabled {
+  background-color: #ecf0f1;
+  cursor: not-allowed;
+}
+
+/* Structural pseudo-classes */
+li:first-child {
+  font-weight: bold;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+tr:nth-child(even) {
+  background-color: #f8f9fa;
+}</code></pre>
         `,
       },
       {
@@ -529,7 +1202,7 @@ export const courses = [
         title: 'Box Model',
         content: `
           <h2>CSS Box Model</h2>
-          <p>The CSS box model describes how elements are structured and how space is distributed around them. Every element is a rectangular box.</p>
+          <p>The CSS box model is a fundamental concept that describes how elements are structured and how space is distributed around them. Understanding the box model is crucial for creating precise layouts and controlling spacing in your designs, as every element on a webpage is essentially a rectangular box with content, padding, borders, and margins.</p>
           
           <h3>Box Model Components:</h3>
           <ul>
@@ -539,8 +1212,101 @@ export const courses = [
             <li><strong>Margin:</strong> Space outside the border</li>
           </ul>
           
+          <pre><code>/* Box Model Example */
+.box {
+  /* Content area */
+  width: 300px;
+  height: 200px;
+  
+  /* Padding - space inside the border */
+  padding: 20px;
+  /* or individually */
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  /* or shorthand: top right bottom left */
+  padding: 10px 20px 10px 20px;
+  
+  /* Border */
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  
+  /* Margin - space outside the border */
+  margin: 20px;
+  /* or individually */
+  margin-top: 20px;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-left: auto;
+}</code></pre>
+          
           <h3>Box Sizing:</h3>
           <p>The box-sizing property controls how the total width and height are calculated.</p>
+          
+          <pre><code>/* Default box-sizing: content-box */
+.content-box {
+  box-sizing: content-box;
+  width: 300px;  /* Total width = 300px + padding + border */
+  padding: 20px;
+  border: 5px solid black;
+  /* Actual width = 350px (300 + 20*2 + 5*2) */
+}
+
+/* border-box (Recommended) */
+.border-box {
+  box-sizing: border-box;
+  width: 300px;  /* Total width = 300px (includes padding and border) */
+  padding: 20px;
+  border: 5px solid black;
+  /* Actual width = 300px */
+}
+
+/* Apply to all elements (Best Practice) */
+*, *::before, *::after {
+  box-sizing: border-box;
+}</code></pre>
+          
+          <h3>Margin and Padding Shorthand:</h3>
+          <pre><code>/* Padding Shorthand */
+.element {
+  /* All sides */
+  padding: 20px;
+  
+  /* Vertical | Horizontal */
+  padding: 20px 40px;
+  
+  /* Top | Right | Bottom | Left */
+  padding: 10px 20px 15px 25px;
+  
+  /* Top | Horizontal | Bottom */
+  padding: 10px 20px 15px;
+}
+
+/* Margin Shorthand (same pattern) */
+.element {
+  margin: 20px;  /* All sides */
+  margin: 20px 40px;  /* Vertical | Horizontal */
+  margin: 10px 20px 15px 25px;  /* Top | Right | Bottom | Left */
+}</code></pre>
+          
+          <h3>Margin Collapsing:</h3>
+          <pre><code>/* Vertical margins collapse */
+.box1 {
+  margin-bottom: 30px;
+}
+
+.box2 {
+  margin-top: 20px;
+}
+/* The space between box1 and box2 will be 30px, not 50px */
+
+/* Prevent margin collapse */
+.container {
+  overflow: hidden;  /* Creates new BFC */
+  /* or */
+  display: flow-root;  /* Modern solution */
+}</code></pre>
         `,
       },
       {
@@ -548,7 +1314,7 @@ export const courses = [
         title: 'Flexbox',
         content: `
           <h2>CSS Flexbox</h2>
-          <p>Flexbox is a powerful layout method that allows you to arrange elements in a flexible way. It's perfect for creating responsive layouts.</p>
+          <p>Flexbox is a revolutionary one-dimensional layout method that allows you to arrange elements in a flexible and responsive way. It simplifies complex layouts that were previously difficult with floats and positioning, making it perfect for creating navigation bars, card layouts, and centering elements both vertically and horizontally with ease.</p>
           
           <h3>Flex Container Properties:</h3>
           <ul>
@@ -558,6 +1324,110 @@ export const courses = [
             <li><strong>align-items:</strong> Controls cross axis alignment</li>
             <li><strong>flex-wrap:</strong> Controls whether items wrap</li>
           </ul>
+          
+          <pre><code>/* Basic Flexbox Container */
+.flex-container {
+  display: flex;
+  
+  /* Direction of flex items */
+  flex-direction: row;  /* default: left to right */
+  /* flex-direction: column; - top to bottom */
+  /* flex-direction: row-reverse; - right to left */
+  /* flex-direction: column-reverse; - bottom to top */
+  
+  /* Main axis alignment */
+  justify-content: flex-start;  /* default */
+  /* justify-content: center; - center items */
+  /* justify-content: flex-end; - align to end */
+  /* justify-content: space-between; - space between items */
+  /* justify-content: space-around; - space around items */
+  /* justify-content: space-evenly; - equal space */
+  
+  /* Cross axis alignment */
+  align-items: stretch;  /* default */
+  /* align-items: center; - center vertically */
+  /* align-items: flex-start; - align to top */
+  /* align-items: flex-end; - align to bottom */
+  /* align-items: baseline; - align to text baseline */
+  
+  /* Wrapping */
+  flex-wrap: nowrap;  /* default - no wrapping */
+  /* flex-wrap: wrap; - wrap to next line */
+  /* flex-wrap: wrap-reverse; - wrap in reverse */
+}</code></pre>
+          
+          <h3>Flex Item Properties:</h3>
+          <pre><code>/* Flex Item Control */
+.flex-item {
+  /* Grow factor - how much item grows */
+  flex-grow: 1;  /* default: 0 */
+  
+  /* Shrink factor - how much item shrinks */
+  flex-shrink: 1;  /* default: 1 */
+  
+  /* Base size before growing/shrinking */
+  flex-basis: auto;  /* default */
+  /* flex-basis: 200px; - fixed base size */
+  /* flex-basis: 0; - ignore content size */
+  
+  /* Shorthand: grow | shrink | basis */
+  flex: 1 1 auto;  /* default */
+  flex: 1;  /* grow: 1, shrink: 1, basis: 0 */
+  flex: 0 0 200px;  /* fixed 200px width */
+  
+  /* Individual alignment */
+  align-self: center;  /* Override container's align-items */
+  /* align-self: flex-start | flex-end | stretch */
+  
+  /* Order */
+  order: 0;  /* default - change visual order */
+}</code></pre>
+          
+          <h3>Practical Flexbox Examples:</h3>
+          <pre><code>/* Center Content Perfectly */
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;  /* Modern spacing */
+  list-style: none;
+}
+
+/* Card Layout */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  flex: 1 1 300px;  /* Flexible cards with 300px minimum */
+  max-width: 400px;
+}
+
+/* Equal Height Columns */
+.columns {
+  display: flex;
+  gap: 20px;
+}
+
+.column {
+  flex: 1;  /* Equal width columns */
+  padding: 20px;
+}</code></pre>
         `,
       },
       {
@@ -565,7 +1435,7 @@ export const courses = [
         title: 'Grid Layout',
         content: `
           <h2>CSS Grid - Two-Dimensional Layouts</h2>
-          <p>CSS Grid is a powerful layout system that allows you to create complex two-dimensional layouts with ease. Unlike Flexbox which is one-dimensional, Grid excels at both rows and columns.</p>
+          <p>CSS Grid is the most powerful layout system available in CSS, allowing you to create complex two-dimensional layouts with both rows and columns simultaneously. Unlike Flexbox which excels at one-dimensional layouts, Grid revolutionizes page layout by enabling you to design intricate responsive layouts with minimal code, making it the go-to choice for complete page structures and complex design systems.</p>
           
           <h3>Grid vs Flexbox:</h3>
           <ul>
@@ -574,6 +1444,31 @@ export const courses = [
             <li><strong>Grid:</strong> Better for page layouts</li>
             <li><strong>Flexbox:</strong> Better for component layouts</li>
           </ul>
+          
+          <pre><code>/* Basic Grid Container */
+.grid-container {
+  display: grid;
+  
+  /* Define columns */
+  grid-template-columns: 200px 200px 200px;  /* 3 fixed columns */
+  /* or with repeat */
+  grid-template-columns: repeat(3, 200px);
+  /* or with fractions */
+  grid-template-columns: 1fr 1fr 1fr;  /* Equal width */
+  grid-template-columns: 1fr 2fr 1fr;  /* Middle column twice as wide */
+  /* or auto-fit */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  
+  /* Define rows */
+  grid-template-rows: 100px 200px;
+  grid-template-rows: auto 1fr auto;  /* Header, content, footer */
+  
+  /* Gap between items */
+  gap: 20px;  /* Both row and column gap */
+  /* or separately */
+  row-gap: 20px;
+  column-gap: 30px;
+}</code></pre>
           
           <h3>Grid Container Properties:</h3>
           <ul>
@@ -584,12 +1479,97 @@ export const courses = [
             <li><strong>grid-template-areas:</strong> Named grid areas</li>
           </ul>
           
+          <pre><code>/* Grid Template Areas */
+.layout {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header header"
+    "sidebar main aside"
+    "footer footer footer";
+  gap: 20px;
+  min-height: 100vh;
+}
+
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main { grid-area: main; }
+.aside { grid-area: aside; }
+.footer { grid-area: footer; }</code></pre>
+          
           <h3>Grid Item Properties:</h3>
           <ul>
             <li><strong>grid-column:</strong> Column span and position</li>
             <li><strong>grid-row:</strong> Row span and position</li>
             <li><strong>grid-area:</strong> Named area placement</li>
           </ul>
+          
+          <pre><code>/* Grid Item Positioning */
+.grid-item {
+  /* Span multiple columns */
+  grid-column: 1 / 3;  /* Start at line 1, end at line 3 */
+  grid-column: span 2;  /* Span 2 columns */
+  grid-column: 1 / -1;  /* Start to end */
+  
+  /* Span multiple rows */
+  grid-row: 1 / 3;
+  grid-row: span 2;
+  
+  /* Shorthand */
+  grid-area: 1 / 1 / 3 / 3;  /* row-start / col-start / row-end / col-end */
+  
+  /* Alignment */
+  justify-self: center;  /* Horizontal alignment */
+  align-self: center;  /* Vertical alignment */
+}</code></pre>
+          
+          <h3>Practical Grid Examples:</h3>
+          <pre><code>/* Responsive Image Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+/* Holy Grail Layout */
+.holy-grail {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header header"
+    "nav main aside"
+    "footer footer footer";
+  min-height: 100vh;
+  gap: 10px;
+}
+
+/* Dashboard Layout */
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+}
+
+.widget-large {
+  grid-column: span 8;
+}
+
+.widget-small {
+  grid-column: span 4;
+}
+
+/* Card Grid with Featured Item */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.featured-card {
+  grid-column: 1 / -1;  /* Full width */
+}</code></pre>
         `,
       },
       {
@@ -597,7 +1577,7 @@ export const courses = [
         title: 'Animations',
         content: `
           <h2>CSS Animations and Transitions</h2>
-          <p>CSS animations and transitions bring life to your web pages by enabling smooth changes between different states of elements.</p>
+          <p>CSS animations and transitions bring life and interactivity to your web pages by enabling smooth, performant changes between different states of elements. From simple hover effects to complex keyframe animations, CSS provides powerful tools to create engaging user experiences without the need for JavaScript, improving both performance and user engagement.</p>
           
           <h3>CSS Transitions:</h3>
           <ul>
@@ -607,8 +1587,90 @@ export const courses = [
             <li><strong>transition-delay:</strong> Wait time before starting</li>
           </ul>
           
+          <pre><code>/* Basic Transition */
+.button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #2980b9;
+}
+
+/* Multiple Properties */
+.card {
+  transform: scale(1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Transition All Properties */
+.element {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Different Timing Functions */
+.ease { transition-timing-function: ease; }  /* Slow-fast-slow */
+.linear { transition-timing-function: linear; }  /* Constant speed */
+.ease-in { transition-timing-function: ease-in; }  /* Slow start */
+.ease-out { transition-timing-function: ease-out; }  /* Slow end */
+.ease-in-out { transition-timing-function: ease-in-out; }  /* Slow start and end */
+
+/* Cubic Bezier (Custom) */
+.custom {
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}</code></pre>
+          
           <h3>CSS Keyframes:</h3>
           <p>Keyframes allow you to create complex animations by defining specific points in the animation sequence.</p>
+          
+          <pre><code>/* Define Keyframes */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Using Percentage Keyframes */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Complex Animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  75% {
+    transform: translateY(-5px);
+  }
+}</code></pre>
           
           <h3>Animation Properties:</h3>
           <ul>
@@ -619,12 +1681,74 @@ export const courses = [
             <li><strong>animation-fill-mode:</strong> What happens before/after</li>
           </ul>
           
+          <pre><code>/* Apply Animation */
+.animated-element {
+  animation-name: slideIn;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-delay: 0.5s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  
+  /* Shorthand */
+  animation: slideIn 1s ease-out 0.5s 1 normal forwards;
+}
+
+/* Infinite Animation */
+.spinner {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Multiple Animations */
+.complex {
+  animation: 
+    slideIn 1s ease-out,
+    fadeIn 1s ease-out,
+    pulse 2s ease-in-out infinite;
+}</code></pre>
+          
           <h3>Performance Tips:</h3>
           <ul>
             <li>Animate transform and opacity for best performance</li>
             <li>Use will-change property for complex animations</li>
             <li>Avoid animating layout properties (width, height)</li>
           </ul>
+          
+          <pre><code>/* Performance Optimized Animations */
+.optimized {
+  /* Hint browser about upcoming changes */
+  will-change: transform, opacity;
+  
+  /* Use transform instead of position */
+  animation: moveOptimized 1s ease;
+}
+
+@keyframes moveOptimized {
+  from {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate(100px, 0);
+    opacity: 1;
+  }
+}
+
+/* Loading Spinner Example */
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}</code></pre>
         `,
       },
       {
@@ -632,7 +1756,7 @@ export const courses = [
         title: 'Responsive Design',
         content: `
           <h2>Responsive Web Design</h2>
-          <p>Responsive design ensures your website looks and works great on all devices - from mobile phones to large desktop screens.</p>
+          <p>Responsive design ensures your website looks and works beautifully on all devices - from smartphones to tablets to large desktop screens. By using flexible grids, fluid images, and media queries, you create adaptive layouts that automatically adjust to different screen sizes, providing an optimal viewing experience that keeps users engaged regardless of how they access your site.</p>
           
           <h3>Core Principles:</h3>
           <ul>
@@ -641,6 +1765,49 @@ export const courses = [
             <li><strong>Media Queries:</strong> Apply different styles for different screen sizes</li>
             <li><strong>Mobile-First Approach:</strong> Start with mobile design, then enhance for larger screens</li>
           </ul>
+          
+          <pre><code>/* Mobile-First Approach */
+/* Base styles for mobile (default) */
+.container {
+  width: 100%;
+  padding: 15px;
+}
+
+.column {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Tablet screens (768px and up) */
+@media (min-width: 768px) {
+  .container {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+  
+  .column {
+    width: 48%;
+    display: inline-block;
+  }
+}
+
+/* Desktop screens (1024px and up) */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1200px;
+  }
+  
+  .column {
+    width: 30%;
+  }
+}
+
+/* Large screens (1440px and up) */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1400px;
+  }
+}</code></pre>
           
           <h3>CSS Units for Responsive Design:</h3>
           <ul>
@@ -651,20 +1818,117 @@ export const courses = [
             <li><strong>Viewport Units:</strong> vw (viewport width), vh (viewport height)</li>
           </ul>
           
+          <pre><code>/* Responsive Units Examples */
+.responsive-text {
+  /* rem - relative to root font size */
+  font-size: 1rem;  /* 16px if root is 16px */
+  padding: 1.5rem;  /* 24px */
+  
+  /* em - relative to parent font size */
+  margin-bottom: 2em;  /* 32px if font-size is 16px */
+}
+
+/* Viewport Units */
+.hero {
+  height: 100vh;  /* Full viewport height */
+  width: 100vw;   /* Full viewport width */
+}
+
+.section {
+  padding: 5vh 5vw;  /* Responsive padding */
+}
+
+/* Fluid Typography */
+.fluid-text {
+  font-size: calc(16px + 1vw);  /* Scales with viewport */
+  font-size: clamp(16px, 4vw, 32px);  /* Min, preferred, max */
+}
+
+/* Percentage-based Layout */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid-item {
+  width: 100%;  /* Mobile: full width */
+}
+
+@media (min-width: 768px) {
+  .grid-item {
+    width: 50%;  /* Tablet: 2 columns */
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-item {
+    width: 33.333%;  /* Desktop: 3 columns */
+  }
+}</code></pre>
+          
           <h3>Common Breakpoints:</h3>
           <ul>
             <li><strong>Mobile:</strong> 320px - 768px</li>
             <li><strong>Tablet:</strong> 769px - 1024px</li>
             <li><strong>Desktop:</strong> 1025px+</li>
           </ul>
+          
+          <pre><code>/* Responsive Images */
+img {
+  max-width: 100%;
+  height: auto;  /* Maintain aspect ratio */
+  display: block;
+}
+
+/* Picture Element for Art Direction */
+.responsive-image {
+  width: 100%;
+  height: auto;
+}
+
+/* Media Query Types */
+@media screen and (max-width: 768px) {
+  /* Styles for screens smaller than 768px */
+}
+
+@media print {
+  /* Styles for printing */
+  .no-print { display: none; }
+}
+
+@media (orientation: landscape) {
+  /* Styles for landscape orientation */
+}
+
+@media (orientation: portrait) {
+  /* Styles for portrait orientation */
+}
+
+/* Combined Media Queries */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Styles for tablets only */
+}
+
+/* Responsive Navigation */
+.nav {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}</code></pre>
         `,
       },
       {
         id: 'css-variables',
         title: 'Variables',
         content: `
-          <h2>CSS Custom Properties</h2>
-          <p>CSS Custom Properties (also known as CSS Variables) allow you to store values that can be reused throughout your stylesheet, making maintenance easier and enabling dynamic theming.</p>
+          <h2>CSS Custom Properties (Variables)</h2>
+          <p>CSS Custom Properties, commonly known as CSS Variables, revolutionize stylesheet maintenance by allowing you to store and reuse values throughout your entire stylesheet. They enable dynamic theming, reduce code duplication, and can be manipulated with JavaScript for interactive experiences, making your CSS more maintainable, scalable, and powerful than ever before.</p>
           
           <h3>Benefits of CSS Variables:</h3>
           <ul>
@@ -675,12 +1939,95 @@ export const courses = [
             <li><strong>Fallback Values:</strong> Provide defaults for unsupported browsers</li>
           </ul>
           
+          <pre><code>/* Define Global Variables */
+:root {
+  /* Colors */
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --text-color: #333;
+  --bg-color: #ffffff;
+  --error-color: #e74c3c;
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  
+  /* Typography */
+  --font-primary: 'Roboto', sans-serif;
+  --font-heading: 'Montserrat', sans-serif;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  
+  /* Borders */
+  --border-radius: 4px;
+  --border-radius-lg: 8px;
+  --border-width: 1px;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 8px rgba(0,0,0,0.15);
+  --shadow-lg: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Use Variables */
+.button {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius);
+  font-family: var(--font-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.button:hover {
+  box-shadow: var(--shadow-md);
+}</code></pre>
+          
           <h3>Syntax:</h3>
           <ul>
             <li><strong>Declaration:</strong> --variable-name: value;</li>
             <li><strong>Usage:</strong> var(--variable-name, fallback)</li>
             <li><strong>Scope:</strong> :root for global, or any selector for local</li>
           </ul>
+          
+          <pre><code>/* Fallback Values */
+.element {
+  /* If --primary-color not defined, use blue */
+  color: var(--primary-color, blue);
+  
+  /* Nested fallbacks */
+  background: var(--bg-color, var(--fallback-color, white));
+}
+
+/* Local (Scoped) Variables */
+.card {
+  --card-bg: #f8f9fa;
+  --card-padding: 20px;
+  
+  background-color: var(--card-bg);
+  padding: var(--card-padding);
+}
+
+.card.dark {
+  --card-bg: #333;
+  --text-color: white;
+}
+
+/* Calculations with Variables */
+:root {
+  --base-size: 16px;
+  --scale: 1.5;
+}
+
+.heading {
+  font-size: calc(var(--base-size) * var(--scale));
+  margin-bottom: calc(var(--base-size) / 2);
+}</code></pre>
           
           <h3>Use Cases:</h3>
           <ul>
@@ -689,6 +2036,50 @@ export const courses = [
             <li><strong>Typography:</strong> Font sizes and line heights</li>
             <li><strong>Component Variants:</strong> Different versions of same component</li>
           </ul>
+          
+          <pre><code>/* Dark Theme Toggle */
+:root {
+  --bg: white;
+  --text: #333;
+}
+
+[data-theme="dark"] {
+  --bg: #1a1a1a;
+  --text: #f0f0f0;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Component Variants */
+.btn {
+  --btn-bg: var(--primary-color);
+  --btn-text: white;
+  
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  padding: var(--spacing-sm) var(--spacing-md);
+}
+
+.btn--secondary {
+  --btn-bg: var(--secondary-color);
+}
+
+.btn--outline {
+  --btn-bg: transparent;
+  --btn-text: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+/* JavaScript Integration */
+/* 
+document.documentElement.style.setProperty('--primary-color', '#e74c3c');
+const primaryColor = getComputedStyle(document.documentElement)
+  .getPropertyValue('--primary-color');
+*/</code></pre>
         `,
       },
       {
@@ -696,7 +2087,7 @@ export const courses = [
         title: 'Advanced Selectors',
         content: `
           <h2>Advanced CSS Selectors</h2>
-          <p>Master advanced CSS selectors to target elements with precision and create more maintainable stylesheets.</p>
+          <p>Master advanced CSS selectors to target elements with surgical precision and create more maintainable, efficient stylesheets. These powerful selectors reduce the need for extra classes and IDs, enabling you to write cleaner HTML while achieving complex styling patterns with elegant, reusable CSS that adapts to content changes automatically.</p>
           
           <h3>Attribute Selectors:</h3>
           <ul>
@@ -708,6 +2099,51 @@ export const courses = [
             <li><strong>[attr~="value"]:</strong> Word in space-separated list</li>
           </ul>
           
+          <pre><code>/* Attribute Selectors */
+/* Elements with specific attribute */
+input[required] {
+  border-color: red;
+}
+
+/* Exact match */
+a[href="https://example.com"] {
+  color: green;
+}
+
+/* Starts with */
+a[href^="https"] {
+  /* External secure links */
+  padding-right: 20px;
+}
+
+a[href^="mailto:"] {
+  /* Email links */
+  text-decoration: underline;
+}
+
+/* Ends with */
+a[href$=".pdf"] {
+  /* PDF links */
+  background: url('pdf-icon.png') no-repeat right;
+}
+
+img[src$=".jpg"],
+img[src$=".png"] {
+  border: 2px solid #ddd;
+}
+
+/* Contains */
+[class*="btn-"] {
+  /* All button variants */
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+/* Word in list */
+[class~="active"] {
+  font-weight: bold;
+}</code></pre>
+          
           <h3>Pseudo-classes:</h3>
           <ul>
             <li><strong>:nth-child():</strong> Select by position</li>
@@ -718,6 +2154,88 @@ export const courses = [
             <li><strong>:where():</strong> Zero specificity matching</li>
           </ul>
           
+          <pre><code>/* Structural Pseudo-classes */
+/* First and last child */
+li:first-child {
+  border-top: 2px solid #3498db;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+/* Nth child patterns */
+tr:nth-child(odd) {
+  background-color: #f8f9fa;
+}
+
+tr:nth-child(even) {
+  background-color: white;
+}
+
+/* Every 3rd item */
+.grid-item:nth-child(3n) {
+  margin-right: 0;
+}
+
+/* First 3 items */
+.item:nth-child(-n+3) {
+  font-weight: bold;
+}
+
+/* All except first 3 */
+.item:nth-child(n+4) {
+  opacity: 0.7;
+}
+
+/* Nth-of-type */
+p:nth-of-type(2) {
+  /* Second paragraph */
+  font-size: 1.2rem;
+}
+
+/* Not selector */
+button:not(.disabled) {
+  cursor: pointer;
+}
+
+li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+/* Multiple exclusions */
+input:not([type="checkbox"]):not([type="radio"]) {
+  width: 100%;
+}
+
+/* Modern selectors */
+/* :is() - matches any */
+:is(h1, h2, h3) {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Same as: h1, h2, h3 but more readable */
+:is(.header, .footer) :is(a, button) {
+  color: white;
+}
+
+/* :where() - zero specificity */
+:where(h1, h2, h3) {
+  margin-top: 0;
+}
+
+/* :has() - parent selector (new) */
+/* Card that has an image */
+.card:has(img) {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+
+/* Form with invalid input */
+form:has(input:invalid) {
+  border-color: red;
+}</code></pre>
+          
           <h3>Pseudo-elements:</h3>
           <ul>
             <li><strong>::before:</strong> Insert content before element</li>
@@ -726,6 +2244,64 @@ export const courses = [
             <li><strong>::first-letter:</strong> First letter of text</li>
             <li><strong>::selection:</strong> Selected text</li>
           </ul>
+          
+          <pre><code>/* Pseudo-elements */
+/* Before and After */
+.quote::before {
+  content: '"';
+  font-size: 3rem;
+  color: #3498db;
+  line-height: 0;
+}
+
+.quote::after {
+  content: '"';
+  font-size: 3rem;
+  color: #3498db;
+}
+
+/* Decorative elements */
+.btn::after {
+  content: ' →';
+}
+
+/* Icons */
+.external-link::after {
+  content: '\\2197';  /* Unicode arrow */
+  margin-left: 5px;
+}
+
+/* Clearfix */
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* First letter and line */
+.article::first-letter {
+  font-size: 3rem;
+  float: left;
+  line-height: 1;
+  margin-right: 10px;
+}
+
+.article::first-line {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* Selection */
+::selection {
+  background-color: #3498db;
+  color: white;
+}
+
+/* Placeholder */
+input::placeholder {
+  color: #95a5a6;
+  font-style: italic;
+}</code></pre>
         `,
       },
       {
@@ -733,7 +2309,7 @@ export const courses = [
         title: 'Best Practices',
         content: `
           <h2>CSS Architecture and Best Practices</h2>
-          <p>Writing maintainable CSS requires following established patterns and methodologies. Learn industry-standard approaches to organizing your CSS.</p>
+          <p>Writing maintainable, scalable CSS requires following established patterns and methodologies that have been proven in large-scale applications. Learn industry-standard approaches to organizing your CSS code, naming conventions, and architectural patterns that make your stylesheets easier to understand, maintain, and extend as your project grows from a simple website to a complex application.</p>
           
           <h3>CSS Methodologies:</h3>
           <ul>
@@ -743,6 +2319,48 @@ export const courses = [
             <li><strong>Atomic CSS:</strong> Small, single-purpose classes</li>
             <li><strong>CSS-in-JS:</strong> JavaScript-based styling solutions</li>
           </ul>
+          
+          <pre><code>/* BEM (Block Element Modifier) Methodology */
+/* Block - Standalone component */
+.card { }
+
+/* Element - Part of the block */
+.card__header { }
+.card__title { }
+.card__body { }
+.card__footer { }
+
+/* Modifier - Variation of block or element */
+.card--featured { }
+.card--large { }
+.card__title--bold { }
+
+/* Example Implementation */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.card__header {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.card__title {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.card--featured {
+  border-color: #3498db;
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.2);
+}
+
+.card__title--bold {
+  font-weight: 700;
+}</code></pre>
           
           <h3>BEM Methodology:</h3>
           <ul>
@@ -760,6 +2378,80 @@ export const courses = [
             <li><strong>Themes:</strong> Color schemes and variations</li>
           </ul>
           
+          <pre><code>/* File Structure Organization */
+/*
+styles/
+├── 1-base/
+│   ├── _reset.css
+│   ├── _typography.css
+│   └── _variables.css
+├── 2-layout/
+│   ├── _grid.css
+│   ├── _header.css
+│   └── _footer.css
+├── 3-components/
+│   ├── _buttons.css
+│   ├── _cards.css
+│   └── _forms.css
+├── 4-utilities/
+│   ├── _spacing.css
+│   └── _helpers.css
+└── main.css
+*/
+
+/* Base Styles */
+/* _reset.css */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* _typography.css */
+:root {
+  --font-primary: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+/* Utility Classes */
+/* Spacing utilities */
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+
+/* Display utilities */
+.d-block { display: block; }
+.d-inline { display: inline; }
+.d-flex { display: flex; }
+.d-grid { display: grid; }
+.d-none { display: none; }
+
+/* Text utilities */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-bold { font-weight: bold; }
+.text-uppercase { text-transform: uppercase; }</code></pre>
+          
           <h3>Performance Best Practices:</h3>
           <ul>
             <li><strong>Minimize CSS:</strong> Remove unused styles</li>
@@ -767,6 +2459,81 @@ export const courses = [
             <li><strong>Critical CSS:</strong> Load above-the-fold styles first</li>
             <li><strong>CSS Loading:</strong> Use preload for important stylesheets</li>
           </ul>
+          
+          <pre><code>/* Performance Best Practices */
+
+/* ❌ Avoid overly specific selectors */
+body div.container .content article p span.highlight {
+  color: red;
+}
+
+/* ✅ Use simpler, more maintainable selectors */
+.highlight {
+  color: red;
+}
+
+/* ❌ Avoid universal selectors when possible */
+* {
+  border: 1px solid red;  /* Slow! */
+}
+
+/* ✅ Be specific */
+.debug-mode * {
+  border: 1px solid red;
+}
+
+/* Critical CSS in <head> */
+/*
+<style>
+  /* Inline critical above-the-fold styles */
+  body { margin: 0; font-family: sans-serif; }
+  .header { background: #333; padding: 20px; }
+</style>
+
+<!-- Async load full stylesheet -->
+<link rel="preload" href="styles.css" as="style" 
+      onload="this.onload=null;this.rel='stylesheet'">
+*/
+
+/* Naming Conventions Best Practices */
+/* ✅ Good - Descriptive and clear */
+.btn-primary { }
+.card-header { }
+.user-profile-avatar { }
+
+/* ❌ Avoid - Cryptic or generic */
+.b1 { }
+.div1 { }
+.style1 { }
+
+/* Code Organization */
+/* Group related properties */
+.element {
+  /* Positioning */
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  
+  /* Display & Box Model */
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  margin: 10px 0;
+  
+  /* Typography */
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+  
+  /* Visual */
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  
+  /* Animation */
+  transition: all 0.3s ease;
+}</code></pre>
         `,
       }
     ]
@@ -892,7 +2659,7 @@ export const courses = [
         title: 'Variables & Types',
         content: `
           <h2>JavaScript Variables</h2>
-          <p>Variables are containers for storing data values. JavaScript uses dynamic typing, meaning you don't need to declare variable types explicitly.</p>
+          <p>Variables are containers for storing data values in JavaScript. With ES6 and beyond, JavaScript offers multiple ways to declare variables, each with different scoping rules and behaviors that affect how your code executes and maintains state.</p>
           
           <h3>Variable Declarations:</h3>
           <ul>
@@ -900,6 +2667,20 @@ export const courses = [
             <li><strong>let</strong> - Block scoped, cannot be redeclared, not hoisted</li>
             <li><strong>const</strong> - Block scoped, cannot be reassigned, not hoisted</li>
           </ul>
+          
+          <pre><code>// Variable Declarations
+let name = "John";  // Can be reassigned
+const age = 30;     // Cannot be reassigned
+var city = "NYC";   // Old style, avoid in modern code
+
+// Type Examples
+let string = "Hello World";
+let number = 42;
+let boolean = true;
+let undefined_var;
+let null_var = null;
+let array = [1, 2, 3];
+let object = { name: "John", age: 30 };</code></pre>
           
           <h3>JavaScript Data Types:</h3>
           <h4>Primitive Types:</h4>
@@ -920,16 +2701,23 @@ export const courses = [
             <li><strong>Function:</strong> Reusable blocks of code</li>
           </ul>
           
+          <pre><code>// Type Checking
+console.log(typeof "Hello");  // "string"
+console.log(typeof 42);       // "number"
+console.log(typeof true);     // "boolean"
+console.log(typeof {});       // "object"
+console.log(Array.isArray([]));  // true</code></pre>
+          
           <h3>Type Checking:</h3>
           <p>Use the <code>typeof</code> operator to check variable types. Objects require additional checking since arrays and null return "object".</p>
-        `
+        `,
       },
       {
         id: 'js-operators-control',
         title: 'Operators & Control',
         content: `
           <h2>JavaScript Operators</h2>
-          <p>Operators are used to perform operations on variables and values. JavaScript includes arithmetic, comparison, logical, and assignment operators.</p>
+          <p>Operators are special symbols that perform operations on variables and values. JavaScript provides a comprehensive set of operators including arithmetic, comparison, logical, and assignment operators that enable you to manipulate data and control program flow effectively.</p>
           
           <h3>Arithmetic Operators:</h3>
           <ul>
@@ -942,6 +2730,20 @@ export const courses = [
             <li><strong>++</strong> Increment</li>
             <li><strong>--</strong> Decrement</li>
           </ul>
+          
+          <pre><code>// Arithmetic Operations
+let x = 10, y = 3;
+console.log(x + y);   // 13
+console.log(x - y);   // 7
+console.log(x * y);   // 30
+console.log(x / y);   // 3.333...
+console.log(x % y);   // 1
+console.log(x ** y);  // 1000
+
+// Comparison Operators
+console.log(5 === 5);    // true (strict equal)
+console.log(5 == "5");   // true (loose equal)
+console.log(5 !== "5");  // true (strict not equal)</code></pre>
           
           <h3>Comparison Operators:</h3>
           <ul>
@@ -963,6 +2765,25 @@ export const courses = [
             <li><strong>Ternary operator:</strong> Shorthand for simple if...else</li>
           </ul>
           
+          <pre><code>// If-Else Statement
+let age = 18;
+if (age >= 18) {
+  console.log("Adult");
+} else {
+  console.log("Minor");
+}
+
+// Ternary Operator
+let status = age >= 18 ? "Adult" : "Minor";
+
+// Switch Statement
+let day = 2;
+switch(day) {
+  case 1: console.log("Monday"); break;
+  case 2: console.log("Tuesday"); break;
+  default: console.log("Other day");
+}</code></pre>
+          
           <h4>Loops:</h4>
           <ul>
             <li><strong>for:</strong> Loop with initialization, condition, increment</li>
@@ -971,14 +2792,32 @@ export const courses = [
             <li><strong>for...in:</strong> Loop through object properties</li>
             <li><strong>for...of:</strong> Loop through iterable values</li>
           </ul>
-        `
+          
+          <pre><code>// For Loop
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+
+// While Loop
+let count = 0;
+while (count < 3) {
+  console.log(count);
+  count++;
+}
+
+// For...of Loop (Arrays)
+let arr = [1, 2, 3];
+for (let num of arr) {
+  console.log(num);
+}</code></pre>
+        `,
       },
       {
         id: 'js-functions-scope',
         title: 'Functions & Scope',
         content: `
           <h2>JavaScript Functions</h2>
-          <p>Functions are one of the fundamental building blocks in JavaScript. A function is a reusable block of code designed to perform a particular task.</p>
+          <p>Functions are fundamental building blocks in JavaScript that encapsulate reusable code. They are first-class citizens, meaning they can be assigned to variables, passed as arguments, and returned from other functions, enabling powerful programming patterns like callbacks and higher-order functions.</p>
           
           <h3>Function Declaration Methods:</h3>
           <ul>
@@ -988,6 +2827,27 @@ export const courses = [
             <li><strong>Method:</strong> Function as object property</li>
           </ul>
           
+          <pre><code>// Function Declaration
+function greet(name) {
+  return \`Hello, \${name}!\`;
+}
+
+// Function Expression
+const add = function(a, b) {
+  return a + b;
+};
+
+// Arrow Function
+const multiply = (a, b) => a * b;
+
+// Method
+const person = {
+  name: "John",
+  sayHi() {
+    return \`Hi, I'm \${this.name}\`;
+  }
+};</code></pre>
+          
           <h3>Function Parameters:</h3>
           <ul>
             <li><strong>Required Parameters:</strong> Must be provided when calling</li>
@@ -996,7 +2856,23 @@ export const courses = [
             <li><strong>Destructuring:</strong> Extract values from objects/arrays</li>
           </ul>
           
-          <h3>JavaScript Scope:</h3>
+          <pre><code>// Default Parameters
+function greet(name = "Guest") {
+  return \`Hello, \${name}!\`;
+}
+
+// Rest Parameters
+function sum(...numbers) {
+  return numbers.reduce((a, b) => a + b, 0);
+}
+console.log(sum(1, 2, 3, 4));  // 10
+
+// Destructuring
+function getUser({name, age}) {
+  return \`\${name} is \${age} years old\`;
+}</code></pre>
+          
+          <h3>JavaScript Scope</h3>
           <p>Scope determines where variables can be accessed in your code. JavaScript has function scope and block scope.</p>
           
           <h4>Types of Scope:</h4>
@@ -1007,19 +2883,48 @@ export const courses = [
             <li><strong>Module Scope:</strong> Variables accessible within module</li>
           </ul>
           
+          <pre><code>// Scope Example
+let global = "Global";  // Global scope
+
+function outer() {
+  let outerVar = "Outer";  // Function scope
+  
+  function inner() {
+    let innerVar = "Inner";  // Function scope
+    console.log(global, outerVar, innerVar);  // All accessible
+  }
+  inner();
+}</code></pre>
+          
           <h3>Closures:</h3>
           <p>A closure is a function that has access to variables in its outer (enclosing) scope even after the outer function has returned. This is a powerful feature for data privacy and function factories.</p>
           
+          <pre><code>// Closure Example
+function counter() {
+  let count = 0;
+  return function() {
+    return ++count;
+  };
+}
+const increment = counter();
+console.log(increment());  // 1
+console.log(increment());  // 2</code></pre>
+          
           <h3>Higher-Order Functions:</h3>
           <p>Functions that take other functions as arguments or return functions. Common examples include map(), filter(), reduce(), and forEach().</p>
-        `
+          
+          <pre><code>// Higher-Order Function
+const numbers = [1, 2, 3, 4];
+const doubled = numbers.map(n => n * 2);  // [2, 4, 6, 8]
+const even = numbers.filter(n => n % 2 === 0);  // [2, 4]</code></pre>
+        `,
       },
       {
         id: 'js-objects-arrays',
         title: 'Objects & Arrays',
         content: `
           <h2>JavaScript Objects</h2>
-          <p>Objects are collections of related data and functionality. They store data as key-value pairs and are the foundation of JavaScript programming.</p>
+          <p>Objects are collections of related data and functionality stored as key-value pairs. They form the foundation of JavaScript's data structures and object-oriented programming capabilities, allowing you to model real-world entities and organize complex data efficiently.</p>
           
           <h3>Object Creation:</h3>
           <ul>
@@ -1029,6 +2934,23 @@ export const courses = [
             <li><strong>Class Syntax:</strong> ES6 class-based object creation</li>
           </ul>
           
+          <pre><code>// Object Literal
+const person = {
+  name: "John",
+  age: 30,
+  greet() {
+    return \`Hi, I'm \${this.name}\`;
+  }
+};
+
+// Access Properties
+console.log(person.name);  // "John"
+console.log(person["age"]);  // 30
+
+// Add/Modify Properties
+person.city = "NYC";
+person.age = 31;</code></pre>
+          
           <h3>Working with Objects:</h3>
           <ul>
             <li><strong>Property Access:</strong> Dot notation and bracket notation</li>
@@ -1037,8 +2959,8 @@ export const courses = [
             <li><strong>Property Enumeration:</strong> Loop through properties</li>
           </ul>
           
-          <h3>JavaScript Arrays</h3>
-          <p>Arrays are ordered lists of values. They're objects with special properties and methods for handling indexed data.</p>
+          <h2>JavaScript Arrays</h2>
+          <p>Arrays are ordered lists of values that can hold multiple items of any type. They're versatile data structures essential for managing collections of data, with powerful built-in methods for manipulation and transformation.</p>
           
           <h3>Array Methods:</h3>
           <h4>Mutating Methods (Change Original Array):</h4>
@@ -1052,6 +2974,19 @@ export const courses = [
             <li><strong>reverse():</strong> Reverse element order</li>
           </ul>
           
+          <pre><code>// Array Creation & Methods
+const fruits = ["apple", "banana", "orange"];
+
+fruits.push("mango");  // Add to end
+fruits.pop();  // Remove from end
+fruits.unshift("grape");  // Add to beginning
+
+// Modern Array Methods
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map(n => n * 2);  // [2,4,6,8,10]
+const evens = numbers.filter(n => n % 2 === 0);  // [2,4]
+const sum = numbers.reduce((a, b) => a + b, 0);  // 15</code></pre>
+          
           <h4>Non-Mutating Methods (Return New Array):</h4>
           <ul>
             <li><strong>concat():</strong> Join arrays</li>
@@ -1063,14 +2998,26 @@ export const courses = [
           
           <h3>Object and Array Destructuring:</h3>
           <p>ES6 feature that allows extracting values from objects and arrays into distinct variables, making code cleaner and more readable.</p>
-        `
+          
+          <pre><code>// Object Destructuring
+const user = { name: "John", age: 30, city: "NYC" };
+const { name, age } = user;
+
+// Array Destructuring
+const colors = ["red", "green", "blue"];
+const [first, second] = colors;
+
+// Spread Operator
+const arr1 = [1, 2];
+const arr2 = [...arr1, 3, 4];  // [1,2,3,4]</code></pre>
+        `,
       },
       {
         id: 'js-dom-manipulation',
         title: 'DOM Manipulation',
         content: `
           <h2>Document Object Model (DOM)</h2>
-          <p>The DOM is a programming interface for web documents. It represents the page structure as a tree of objects that JavaScript can manipulate to change content, structure, and styling.</p>
+          <p>The DOM is a programming interface that represents HTML documents as a tree structure of objects. JavaScript can manipulate this tree to dynamically change content, structure, and styling, enabling interactive and responsive web applications without page reloads.</p>
           
           <h3>Understanding the DOM:</h3>
           <ul>
@@ -1079,6 +3026,15 @@ export const courses = [
             <li><strong>Attributes:</strong> Properties of elements like id, class</li>
             <li><strong>Text Nodes:</strong> The actual text content</li>
           </ul>
+          
+          <pre><code>// Selecting Elements
+const header = document.getElementById('header');
+const buttons = document.getElementsByClassName('btn');
+const paragraphs = document.getElementsByTagName('p');
+
+// Modern Selectors (Recommended)
+const element = document.querySelector('.myClass');
+const elements = document.querySelectorAll('.item');</code></pre>
           
           <h3>Selecting DOM Elements:</h3>
           <ul>
@@ -1096,6 +3052,19 @@ export const courses = [
             <li><strong>textContent:</strong> Get/set text content</li>
             <li><strong>innerText:</strong> Get/set visible text</li>
           </ul>
+          
+          <pre><code>// Content Manipulation
+element.textContent = "New Text";
+element.innerHTML = "<strong>Bold Text</strong>";
+
+// Style Manipulation
+element.style.color = "red";
+element.style.backgroundColor = "yellow";
+
+// Class Manipulation
+element.classList.add('active');
+element.classList.remove('hidden');
+element.classList.toggle('show');</code></pre>
           
           <h4>Attribute Manipulation:</h4>
           <ul>
@@ -1120,14 +3089,27 @@ export const courses = [
             <li><strong>removeChild():</strong> Remove child element</li>
             <li><strong>replaceChild():</strong> Replace existing element</li>
           </ul>
-        `
+          
+          <pre><code>// Creating Elements
+const newDiv = document.createElement('div');
+newDiv.textContent = "Hello World";
+newDiv.className = "container";
+
+// Appending Elements
+document.body.appendChild(newDiv);
+
+// Removing Elements
+parent.removeChild(child);
+// Or modern way:
+element.remove();</code></pre>
+        `,
       },
       {
         id: 'js-events',
         title: 'Events',
         content: `
           <h2>JavaScript Events</h2>
-          <p>Events are actions that happen in the browser - user clicks, page loads, form submissions, etc. JavaScript can respond to these events to create interactive web pages.</p>
+          <p>Events are actions or occurrences that happen in the browser, such as user interactions, page loading, or network responses. JavaScript's event system enables you to create interactive, responsive web applications by detecting and responding to these events in real-time.</p>
           
           <h3>Common Event Types:</h3>
           <h4>Mouse Events:</h4>
@@ -1138,6 +3120,18 @@ export const courses = [
             <li><strong>mouseover/mouseout:</strong> Mouse enters/leaves element</li>
             <li><strong>mousemove:</strong> Mouse moves over element</li>
           </ul>
+          
+          <pre><code>// Event Listener (Modern Way)
+const button = document.querySelector('#myBtn');
+
+button.addEventListener('click', function() {
+  alert('Button clicked!');
+});
+
+// Arrow Function
+button.addEventListener('click', () => {
+  console.log('Clicked');
+});</code></pre>
           
           <h4>Keyboard Events:</h4>
           <ul>
@@ -1153,6 +3147,18 @@ export const courses = [
             <li><strong>focus/blur:</strong> Element gains/loses focus</li>
             <li><strong>input:</strong> Input value being entered</li>
           </ul>
+          
+          <pre><code>// Form Events
+const form = document.querySelector('form');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();  // Prevent form submission
+  console.log('Form submitted');
+});
+
+const input = document.querySelector('input');
+input.addEventListener('input', (e) => {
+  console.log(e.target.value);  // Get input value
+});</code></pre>
           
           <h4>Window Events:</h4>
           <ul>
@@ -1179,20 +3185,28 @@ export const courses = [
             <li><strong>stopPropagation():</strong> Stop event bubbling</li>
           </ul>
           
+          <pre><code>// Event Object
+element.addEventListener('click', (event) => {
+  console.log(event.target);  // Clicked element
+  console.log(event.type);    // "click"
+  event.preventDefault();     // Prevent default
+  event.stopPropagation();    // Stop bubbling
+});</code></pre>
+          
           <h3>Event Propagation:</h3>
           <ul>
             <li><strong>Capturing Phase:</strong> Event travels down DOM tree</li>
             <li><strong>Target Phase:</strong> Event reaches target element</li>
             <li><strong>Bubbling Phase:</strong> Event bubbles up DOM tree</li>
           </ul>
-        `
+        `,
       },
       {
         id: 'js-async-programming',
         title: 'Async Programming',
         content: `
           <h2>Asynchronous JavaScript</h2>
-          <p>JavaScript is single-threaded but can handle asynchronous operations through callbacks, promises, and async/await. This allows non-blocking code execution.</p>
+          <p>JavaScript is single-threaded but can handle asynchronous operations efficiently through callbacks, promises, and async/await. This non-blocking architecture allows your applications to perform time-consuming operations like API calls, file reading, or timers without freezing the user interface.</p>
           
           <h3>Understanding Asynchronous Behavior:</h3>
           <ul>
@@ -1201,6 +3215,19 @@ export const courses = [
             <li><strong>Callback Queue:</strong> Where completed async operations wait</li>
             <li><strong>Event Loop:</strong> Moves items from queue to call stack</li>
           </ul>
+          
+          <pre><code>// setTimeout (Basic Async)
+setTimeout(() => {
+  console.log('Delayed message');
+}, 2000);
+
+// Callbacks
+function fetchData(callback) {
+  setTimeout(() => {
+    callback('Data loaded');
+  }, 1000);
+}
+fetchData((data) => console.log(data));</code></pre>
           
           <h3>Callbacks:</h3>
           <p>Functions passed to other functions to be executed later. Can lead to "callback hell" with nested callbacks.</p>
@@ -1212,6 +3239,23 @@ export const courses = [
             <li><strong>Fulfilled:</strong> Operation completed successfully</li>
             <li><strong>Rejected:</strong> Operation failed</li>
           </ul>
+          
+          <pre><code>// Promise Example
+const promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('Success!');
+  }, 1000);
+});
+
+promise
+  .then(result => console.log(result))
+  .catch(error => console.error(error));
+
+// Fetch API (Returns Promise)
+fetch('https://api.example.com/data')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));</code></pre>
           
           <h4>Promise Methods:</h4>
           <ul>
@@ -1230,6 +3274,19 @@ export const courses = [
             <li><strong>Error Handling:</strong> Use try/catch with async/await</li>
           </ul>
           
+          <pre><code>// Async/Await (Modern Way)
+async function fetchUserData() {
+  try {
+    const response = await fetch('/api/user');
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+fetchUserData();</code></pre>
+          
           <h3>Common Async Operations:</h3>
           <ul>
             <li><strong>fetch():</strong> Make HTTP requests</li>
@@ -1238,14 +3295,14 @@ export const courses = [
             <li><strong>File Reading:</strong> Reading files in Node.js</li>
             <li><strong>Database Operations:</strong> Querying databases</li>
           </ul>
-        `
+        `,
       },
       {
         id: 'js-es6-features',
         title: 'ES6+ Features',
         content: `
           <h2>ECMAScript 2015 (ES6) and Beyond</h2>
-          <p>ES6 introduced many powerful features that modernized JavaScript. Understanding these features is essential for contemporary JavaScript development.</p>
+          <p>ES6 introduced transformative features that revolutionized JavaScript development. Understanding these modern features is essential for writing clean, efficient, and contemporary JavaScript code that takes advantage of the language's powerful capabilities.</p>
           
           <h3>Variable Declarations:</h3>
           <ul>
@@ -1253,6 +3310,13 @@ export const courses = [
             <li><strong>const:</strong> Block-scoped constant declaration</li>
             <li>Both avoid hoisting issues of <code>var</code></li>
           </ul>
+          
+          <pre><code>// let vs const
+let age = 25;  // Can be reassigned
+age = 26;
+
+const name = "John";  // Cannot be reassigned
+// name = "Jane";  // Error!</code></pre>
           
           <h3>Arrow Functions:</h3>
           <ul>
@@ -1262,12 +3326,33 @@ export const courses = [
             <li>No <code>arguments</code> object</li>
           </ul>
           
+          <pre><code>// Arrow Functions
+const add = (a, b) => a + b;
+const square = x => x * x;
+const greet = () => console.log('Hello');
+
+// Array methods with arrows
+const numbers = [1, 2, 3, 4];
+const doubled = numbers.map(n => n * 2);</code></pre>
+          
           <h3>Template Literals:</h3>
           <ul>
             <li>Multi-line strings</li>
-            <li>String interpolation with $&#123;&#125;</li>
+            <li>String interpolation with \${}</li>
             <li>Tagged template literals</li>
           </ul>
+          
+          <pre><code>// Template Literals
+const name = "John";
+const age = 30;
+const message = \`Hello, my name is \${name} and I'm \${age} years old.\`;
+
+// Multi-line
+const html = \`
+  <div>
+    <h1>\${name}</h1>
+  </div>
+\`;</code></pre>
           
           <h3>Destructuring Assignment:</h3>
           <ul>
@@ -1277,12 +3362,32 @@ export const courses = [
             <li><strong>Nested Destructuring:</strong> Extract from nested structures</li>
           </ul>
           
+          <pre><code>// Object Destructuring
+const person = { name: "John", age: 30, city: "NYC" };
+const { name, age } = person;
+
+// Array Destructuring
+const [first, second, ...rest] = [1, 2, 3, 4, 5];
+
+// Default Values
+const { x = 0, y = 0 } = { x: 5 };</code></pre>
+          
           <h3>Enhanced Object Literals:</h3>
           <ul>
             <li><strong>Property Shorthand:</strong> {name} instead of {name: name}</li>
             <li><strong>Method Shorthand:</strong> method() instead of method: function()</li>
             <li><strong>Computed Properties:</strong> Dynamic property names</li>
           </ul>
+          
+          <pre><code>// Object Shorthand
+const name = "John", age = 30;
+const person = { 
+  name,  // Instead of name: name
+  age,
+  greet() {  // Method shorthand
+    return \`Hi, I'm \${this.name}\`;
+  }
+};</code></pre>
           
           <h3>Classes:</h3>
           <ul>
@@ -1293,6 +3398,25 @@ export const courses = [
             <li>Super keyword</li>
           </ul>
           
+          <pre><code>// Classes
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  
+  greet() {
+    return \`Hi, I'm \${this.name}\`;
+  }
+}
+
+class Student extends Person {
+  constructor(name, age, grade) {
+    super(name, age);
+    this.grade = grade;
+  }
+}</code></pre>
+          
           <h3>Modules:</h3>
           <ul>
             <li><strong>import/export:</strong> Module system</li>
@@ -1300,6 +3424,15 @@ export const courses = [
             <li><strong>Default exports:</strong> Export single main item</li>
             <li><strong>Dynamic imports:</strong> Lazy loading modules</li>
           </ul>
+          
+          <pre><code>// Modules (ES6)
+// Export
+export const PI = 3.14159;
+export function add(a, b) { return a + b; }
+export default class Calculator {}
+
+// Import
+import Calculator, { PI, add } from './math.js';</code></pre>
           
           <h3>New Methods and Features:</h3>
           <ul>
@@ -1311,14 +3444,27 @@ export const courses = [
             <li><strong>Iterators:</strong> Custom iteration behavior</li>
             <li><strong>Generators:</strong> Functions that can pause and resume</li>
           </ul>
-        `
+          
+          <pre><code>// Spread Operator
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1, 4, 5];  // [1,2,3,4,5]
+
+// Rest Parameters
+function sum(...numbers) {
+  return numbers.reduce((a, b) => a + b, 0);
+}
+
+// Optional Chaining
+const user = { profile: { name: "John" } };
+const name = user?.profile?.name;</code></pre>
+        `,
       },
       {
         id: 'js-projects-best-practices',
         title: 'Projects & Practices',
         content: `
           <h2>JavaScript Best Practices</h2>
-          <p>Writing clean, maintainable JavaScript code requires following established patterns and best practices. These guidelines help create robust applications.</p>
+          <p>Writing clean, maintainable JavaScript code requires following established patterns and industry standards. These best practices ensure your code is readable, performant, secure, and easy to debug, making it more professional and suitable for team collaboration and long-term maintenance.</p>
           
           <h3>Code Organization:</h3>
           <ul>
@@ -1431,6 +3577,27 @@ export const courses = [
             <li><strong>Hooks:</strong> Modern way to handle state and lifecycle in functional components</li>
           </ul>
           
+          <pre><code>// Simple React Component Example
+import React from 'react';
+
+function Welcome() {
+  return <h1>Hello, React!</h1>;
+}
+
+// Component with State
+function Counter() {
+  const [count, setCount] = React.useState(0);
+  
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>
+        Increment
+      </button>
+    </div>
+  );
+}</code></pre>
+          
           <h3>Prerequisites for React Development:</h3>
           <ul>
             <li><strong>JavaScript Proficiency:</strong> Strong ES6+ knowledge (arrow functions, destructuring, modules)</li>
@@ -1535,6 +3702,22 @@ export const courses = [
             <li><strong>Manual Setup:</strong> Custom Webpack/Babel configuration</li>
           </ul>
           
+          <pre><code>// Create React App
+npx create-react-app my-app
+cd my-app
+npm start
+
+// Vite (Faster alternative)
+npm create vite@latest my-app -- --template react
+cd my-app
+npm install
+npm run dev
+
+// Next.js
+npx create-next-app@latest my-app
+cd my-app
+npm run dev</code></pre>
+          
           <h3>Project Structure:</h3>
           <ul>
             <li><strong>public/:</strong> Static assets and HTML template</li>
@@ -1555,6 +3738,30 @@ export const courses = [
             <li><strong>camelCase Properties:</strong> Use camelCase for HTML attributes</li>
           </ul>
           
+          <pre><code>// Valid JSX - Single parent element
+function App() {
+  return (
+    <div>
+      <h1>Hello React</h1>
+      <p>Welcome to JSX</p>
+    </div>
+  );
+}
+
+// React Fragment - No extra DOM element
+function App() {
+  return (
+    <>
+      <h1>Hello React</h1>
+      <p>Welcome to JSX</p>
+    </>
+  );
+}
+
+// Self-closing tags
+<img src="logo.png" alt="Logo" />
+<input type="text" /></code></pre>
+          
           <h3>JavaScript in JSX:</h3>
           <ul>
             <li><strong>Expressions:</strong> Use curly braces {} for JavaScript expressions</li>
@@ -1562,6 +3769,29 @@ export const courses = [
             <li><strong>Functions:</strong> Call functions within JSX</li>
             <li><strong>Conditional Rendering:</strong> Show/hide elements based on conditions</li>
           </ul>
+          
+          <pre><code>// Using JavaScript in JSX
+function Greeting() {
+  const name = "John";
+  const age = 25;
+  
+  return (
+    <div>
+      <h1>Hello, {name}!</h1>
+      <p>You are {age} years old</p>
+      <p>Next year: {age + 1}</p>
+    </div>
+  );
+}
+
+// Inline styles (object notation)
+function StyledComponent() {
+  return (
+    <div style={{ color: 'blue', fontSize: '20px' }}>
+      Styled text
+    </div>
+  );
+}</code></pre>
           
           <h3>JSX vs HTML Differences:</h3>
           <ul>
@@ -1596,6 +3826,23 @@ export const courses = [
             <li>More verbose than functional components</li>
           </ul>
           
+          <pre><code>// Functional Component (Modern)
+function Welcome(props) {
+  return <h1>Hello, {props.name}!</h1>;
+}
+
+// With Arrow Function
+const Welcome = (props) => {
+  return <h1>Hello, {props.name}!</h1>;
+};
+
+// Class Component (Legacy)
+class Welcome extends React.Component {
+  render() {
+    return <h1>Hello, {this.props.name}!</h1>;
+  }
+}</code></pre>
+          
           <h2>Props (Properties)</h2>
           <p>Props are arguments passed into React components. They are passed to components via HTML attributes and allow components to be dynamic and reusable.</p>
           
@@ -1614,6 +3861,33 @@ export const courses = [
             <li><strong>Children Prop:</strong> Special prop for nested content</li>
             <li><strong>Prop Validation:</strong> Ensure correct prop types</li>
           </ul>
+          
+          <pre><code>// Using Props
+function UserCard({ name, age, city }) {
+  return (
+    <div>
+      <h2>{name}</h2>
+      <p>Age: {age}</p>
+      <p>City: {city}</p>
+    </div>
+  );
+}
+
+// Using Component with Props
+function App() {
+  return (
+    <UserCard 
+      name="John Doe" 
+      age={25} 
+      city="New York" 
+    />
+  );
+}
+
+// Default Props
+function Button({ text = "Click Me", color = "blue" }) {
+  return <button style={{ color }}>{text}</button>;
+}</code></pre>
           
           <h3>Component Composition:</h3>
           <ul>
@@ -1658,6 +3932,38 @@ export const courses = [
             <li>Updates are asynchronous</li>
           </ul>
           
+          <pre><code>// useState Hook
+import { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>
+        Increment
+      </button>
+      <button onClick={() => setCount(0)}>
+        Reset
+      </button>
+    </div>
+  );
+}
+
+// Multiple State Variables
+function Form() {
+  const [name, setName] = useState('');
+  const [age, setAge] = useState(0);
+  
+  return (
+    <form>
+      <input value={name} onChange={(e) => setName(e.target.value)} />
+      <input value={age} onChange={(e) => setAge(e.target.value)} />
+    </form>
+  );
+}</code></pre>
+          
           <h4>useEffect:</h4>
           <ul>
             <li>Perform side effects in components</li>
@@ -1665,6 +3971,31 @@ export const courses = [
             <li>Can be optimized with dependencies</li>
             <li>Replaces componentDidMount, componentDidUpdate, componentWillUnmount</li>
           </ul>
+          
+          <pre><code>// useEffect Hook
+import { useState, useEffect } from 'react';
+
+function DataFetcher() {
+  const [data, setData] = useState(null);
+  
+  // Runs after every render
+  useEffect(() => {
+    fetch('https://api.example.com/data')
+      .then(res => res.json())
+      .then(data => setData(data));
+  }, []); // Empty array = run once
+  
+  return <div>{data}</div>;
+}
+
+// Cleanup function
+function Timer() {
+  useEffect(() => {
+    const id = setInterval(() => console.log('Tick'), 1000);
+    
+    return () => clearInterval(id); // Cleanup
+  }, []);
+}</code></pre>
           
           <h4>Other Important Hooks:</h4>
           <ul>
@@ -1724,6 +4055,37 @@ export const courses = [
             <li><strong>useCallback:</strong> Optimize handler functions</li>
           </ul>
           
+          <pre><code>// Event Handling
+function Button() {
+  const handleClick = () => {
+    console.log('Button clicked!');
+  };
+  
+  return <button onClick={handleClick}>Click Me</button>;
+}
+
+// Passing Arguments
+function ItemList() {
+  const handleDelete = (id) => {
+    console.log('Delete item:', id);
+  };
+  
+  return (
+    <button onClick={() => handleDelete(123)}>
+      Delete
+    </button>
+  );
+}
+
+// Event Object
+function Input() {
+  const handleChange = (e) => {
+    console.log(e.target.value);
+  };
+  
+  return <input onChange={handleChange} />;
+}</code></pre>
+          
           <h3>Form Handling:</h3>
           <h4>Controlled Components:</h4>
           <ul>
@@ -1732,6 +4094,35 @@ export const courses = [
             <li>React controls the input value</li>
             <li>Recommended approach</li>
           </ul>
+          
+          <pre><code>// Controlled Form Component
+function LoginForm() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log({ email, password });
+  };
+  
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Email"
+      />
+      <input
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        placeholder="Password"
+      />
+      <button type="submit">Login</button>
+    </form>
+  );
+}</code></pre>
           
           <h4>Uncontrolled Components:</h4>
           <ul>
@@ -1786,6 +4177,34 @@ export const courses = [
             <li>Cleaner than multiple if/else</li>
           </ul>
           
+          <pre><code>// Conditional Rendering
+function Greeting({ isLoggedIn }) {
+  // if/else
+  if (isLoggedIn) {
+    return <h1>Welcome back!</h1>;
+  } else {
+    return <h1>Please sign in</h1>;
+  }
+}
+
+// Ternary Operator
+function Status({ isOnline }) {
+  return (
+    <div>
+      {isOnline ? <span>Online</span> : <span>Offline</span>}
+    </div>
+  );
+}
+
+// Logical && Operator
+function Notification({ hasMessages }) {
+  return (
+    <div>
+      {hasMessages && <span>You have new messages!</span>}
+    </div>
+  );
+}</code></pre>
+          
           <h2>Rendering Lists</h2>
           <p>Rendering lists is a common pattern in React applications. You typically use the JavaScript map() function to transform an array of data into an array of JSX elements.</p>
           
@@ -1796,6 +4215,38 @@ export const courses = [
             <li><strong>Array.reduce():</strong> Complex transformations</li>
             <li><strong>Nested Lists:</strong> Render lists within lists</li>
           </ul>
+          
+          <pre><code>// Rendering Lists
+function TodoList() {
+  const todos = [
+    { id: 1, text: 'Learn React', done: false },
+    { id: 2, text: 'Build Project', done: false },
+    { id: 3, text: 'Deploy App', done: true }
+  ];
+  
+  return (
+    <ul>
+      {todos.map(todo => (
+        <li key={todo.id}>
+          {todo.text} {todo.done && '✓'}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+// With Filter
+function ActiveTodos({ todos }) {
+  return (
+    <ul>
+      {todos
+        .filter(todo => !todo.done)
+        .map(todo => (
+          <li key={todo.id}>{todo.text}</li>
+        ))}
+    </ul>
+  );
+}</code></pre>
           
           <h3>React Keys:</h3>
           <p>Keys help React identify which items have changed, are added, or are removed. Keys should be given to elements inside the array to give the elements a stable identity.</p>
@@ -1875,6 +4326,32 @@ export const courses = [
             <li>Optimizes performance</li>
           </ul>
           
+          <pre><code>// useEffect Patterns
+import { useEffect, useState } from 'react';
+
+// Runs on every render
+function Component1() {
+  useEffect(() => {
+    console.log('Rendered');
+  });
+}
+
+// Runs once on mount
+function Component2() {
+  useEffect(() => {
+    console.log('Mounted');
+  }, []);
+}
+
+// Runs when count changes
+function Component3() {
+  const [count, setCount] = useState(0);
+  
+  useEffect(() => {
+    document.title = \`Count: \${count}\`;
+  }, [count]);
+}</code></pre>
+          
           <h3>Effect Cleanup:</h3>
           <ul>
             <li><strong>Return Function:</strong> Cleanup function runs before next effect</li>
@@ -1882,6 +4359,34 @@ export const courses = [
             <li><strong>Subscriptions:</strong> Cancel subscriptions</li>
             <li><strong>Timers:</strong> Clear timeouts and intervals</li>
           </ul>
+          
+          <pre><code>// Effect Cleanup
+function Timer() {
+  const [seconds, setSeconds] = useState(0);
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSeconds(s => s + 1);
+    }, 1000);
+    
+    // Cleanup function
+    return () => clearInterval(interval);
+  }, []);
+  
+  return <div>Seconds: {seconds}</div>;
+}
+
+// Event Listener Cleanup
+function WindowSize() {
+  const [width, setWidth] = useState(window.innerWidth);
+  
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+}</code></pre>
           
           <h3>Common Side Effects:</h3>
           <ul>
@@ -1931,6 +4436,35 @@ export const courses = [
             <li><strong>Nested Routes:</strong> Routes within routes</li>
             <li><strong>Index Routes:</strong> Default child routes</li>
           </ul>
+          
+          <pre><code>// React Router Setup
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+
+function App() {
+  return (
+    <BrowserRouter>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/users/123">User</Link>
+      </nav>
+      
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/users/:id" element={<User />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+// Access Route Parameters
+import { useParams } from 'react-router-dom';
+
+function User() {
+  const { id } = useParams();
+  return <h1>User ID: {id}</h1>;
+}</code></pre>
           
           <h3>Navigation Components:</h3>
           <h4>Link Component:</h4>
@@ -2004,6 +4538,34 @@ export const courses = [
             <li>Consider performance implications</li>
           </ul>
           
+          <pre><code>// Context API
+import { createContext, useContext, useState } from 'react';
+
+// Create Context
+const ThemeContext = createContext();
+
+// Provider Component
+function ThemeProvider({ children }) {
+  const [theme, setTheme] = useState('light');
+  
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+}
+
+// Consumer Component
+function Button() {
+  const { theme, setTheme } = useContext(ThemeContext);
+  
+  return (
+    <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+      Current: {theme}
+    </button>
+  );
+}</code></pre>
+          
           <h2>State Management Patterns</h2>
           <p>As React applications grow, managing state becomes more complex. Various patterns and libraries can help organize and manage application state.</p>
           
@@ -2013,6 +4575,35 @@ export const courses = [
             <li><strong>useReducer:</strong> Complex state logic</li>
             <li><strong>Custom Hooks:</strong> Reusable state logic</li>
           </ul>
+          
+          <pre><code>// useReducer for Complex State
+import { useReducer } from 'react';
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return { count: state.count + 1 };
+    case 'decrement':
+      return { count: state.count - 1 };
+    case 'reset':
+      return { count: 0 };
+    default:
+      return state;
+  }
+}
+
+function Counter() {
+  const [state, dispatch] = useReducer(reducer, { count: 0 });
+  
+  return (
+    <div>
+      <p>Count: {state.count}</p>
+      <button onClick={() => dispatch({ type: 'increment' })}>+</button>
+      <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
+      <button onClick={() => dispatch({ type: 'reset' })}>Reset</button>
+    </div>
+  );
+}</code></pre>
           
           <h3>Global State Solutions:</h3>
           <h4>Redux:</h4>
@@ -2086,6 +4677,32 @@ export const courses = [
             <li>Useful when passing functions as props</li>
           </ul>
           
+          <pre><code>// Performance Optimization
+import { memo, useMemo, useCallback } from 'react';
+
+// React.memo - Prevent unnecessary re-renders
+const ExpensiveComponent = memo(({ data }) => {
+  return <div>{data}</div>;
+});
+
+// useMemo - Memoize expensive calculations
+function DataList({ items }) {
+  const sortedItems = useMemo(() => {
+    return items.sort((a, b) => a - b);
+  }, [items]);
+  
+  return <ul>{sortedItems.map(i => <li key={i}>{i}</li>)}</ul>;
+}
+
+// useCallback - Memoize functions
+function Parent() {
+  const handleClick = useCallback(() => {
+    console.log('Clicked');
+  }, []);
+  
+  return <Child onClick={handleClick} />;
+}</code></pre>
+          
           <h3>Code Splitting:</h3>
           <ul>
             <li><strong>React.lazy:</strong> Lazy load components</li>
@@ -2093,6 +4710,35 @@ export const courses = [
             <li><strong>Route-based Splitting:</strong> Split by routes</li>
             <li><strong>Component-based Splitting:</strong> Split large components</li>
           </ul>
+          
+          <pre><code>// Code Splitting with React.lazy
+import { lazy, Suspense } from 'react';
+
+// Lazy load component
+const HeavyComponent = lazy(() => import('./HeavyComponent'));
+
+function App() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <HeavyComponent />
+    </Suspense>
+  );
+}
+
+// Route-based splitting
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
+
+function AppRoutes() {
+  return (
+    <Suspense fallback={<div>Loading page...</div>}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Suspense>
+  );
+}</code></pre>
           
           <h3>Bundle Optimization:</h3>
           <ul>
@@ -2243,6 +4889,29 @@ export const courses = [
           
           <h3>Installing Node.js:</h3>
           <p>Download Node.js from the official website. This includes NPM (Node Package Manager) by default.</p>
+          
+          <pre><code>// Check Node.js installation
+node --version   // v20.10.0
+npm --version    // 10.2.4
+
+// Create your first Node.js app
+// hello.js
+console.log('Hello, Node.js!');
+
+// Run the file
+// node hello.js
+
+// Simple HTTP server
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Hello from Node.js server!');
+});
+
+server.listen(3000, () => {
+  console.log('Server running at http://localhost:3000/');
+});</code></pre>
         `,
         videoUrl: 'https://www.youtube.com/embed/TlB_eWDSMt4'
       },
@@ -2263,6 +4932,33 @@ export const courses = [
           <h3>CommonJS vs ES Modules:</h3>
           <p>Node.js supports both CommonJS (require/module.exports) and ES6 modules (import/export) syntax.</p>
           
+          <pre><code>// CommonJS (Traditional)
+// math.js
+function add(a, b) {
+  return a + b;
+}
+
+module.exports = { add };
+
+// app.js
+const math = require('./math');
+console.log(math.add(5, 3)); // 8
+
+// ES Modules (Modern)
+// math.mjs
+export function add(a, b) {
+  return a + b;
+}
+
+// app.mjs
+import { add } from './math.mjs';
+console.log(add(5, 3)); // 8
+
+// Core Modules
+const fs = require('fs');
+const path = require('path');
+const http = require('http');</code></pre>
+          
           <h3>NPM (Node Package Manager):</h3>
           <ul>
             <li>Install packages: <code>npm install package-name</code></li>
@@ -2270,6 +4966,33 @@ export const courses = [
             <li>Install dev dependencies: <code>npm install --save-dev package-name</code></li>
             <li>Global installation: <code>npm install -g package-name</code></li>
           </ul>
+          
+          <pre><code>// Initialize a new Node.js project
+npm init -y
+
+// Install dependencies
+npm install express
+npm install mongoose dotenv
+
+// Install dev dependencies
+npm install --save-dev nodemon jest
+
+// package.json example
+{
+  "name": "my-app",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.0"
+  }
+}
+
+// Run scripts
+npm start
+npm run dev</code></pre>
         `,
         videoUrl: 'https://www.youtube.com/embed/xHLd36QoS4k'
       },
@@ -2293,6 +5016,36 @@ export const courses = [
             <li>Creating directories: fs.mkdir(), fs.mkdirSync()</li>
             <li>Checking file existence: fs.existsSync(), fs.access()</li>
           </ul>
+          
+          <pre><code>// File System Operations
+const fs = require('fs');
+const path = require('path');
+
+// Read file (Async)
+fs.readFile('data.txt', 'utf8', (err, data) => {
+  if (err) throw err;
+  console.log(data);
+});
+
+// Write file (Async)
+fs.writeFile('output.txt', 'Hello World!', (err) => {
+  if (err) throw err;
+  console.log('File written successfully');
+});
+
+// Read file (Sync)
+const data = fs.readFileSync('data.txt', 'utf8');
+console.log(data);
+
+// Create directory
+fs.mkdir('new-folder', { recursive: true }, (err) => {
+  if (err) throw err;
+});
+
+// Check if file exists
+if (fs.existsSync('data.txt')) {
+  console.log('File exists');
+}</code></pre>
           
           <h3>Best Practices:</h3>
           <ul>
@@ -2323,6 +5076,27 @@ export const courses = [
             <li><strong>Routing:</strong> Handling different URLs and HTTP methods</li>
             <li><strong>Middleware:</strong> Functions that process requests before sending responses</li>
           </ul>
+          
+          <pre><code>// Simple HTTP Server
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  // Handle different routes
+  if (req.url === '/') {
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end('<h1>Home Page</h1>');
+  } else if (req.url === '/api') {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ message: 'API endpoint' }));
+  } else {
+    res.writeHead(404, { 'Content-Type': 'text/html' });
+    res.end('<h1>404 Not Found</h1>');
+  }
+});
+
+server.listen(3000, () => {
+  console.log('Server running on port 3000');
+});</code></pre>
           
           <h3>Status Codes:</h3>
           <ul>
@@ -2357,6 +5131,32 @@ export const courses = [
             <li><strong>Request/Response:</strong> Enhanced req and res objects</li>
           </ul>
           
+          <pre><code>// Express.js Basic Setup
+const express = require('express');
+const app = express();
+
+// Middleware
+app.use(express.json());
+
+// Routes
+app.get('/', (req, res) => {
+  res.send('Hello Express!');
+});
+
+app.get('/api/users', (req, res) => {
+  res.json([{ id: 1, name: 'John' }, { id: 2, name: 'Jane' }]);
+});
+
+app.post('/api/users', (req, res) => {
+  const user = req.body;
+  res.status(201).json(user);
+});
+
+// Start server
+app.listen(3000, () => {
+  console.log('Server running on port 3000');
+});</code></pre>
+          
           <h3>Installation:</h3>
           <p>npm install express</p>
         `,
@@ -2385,6 +5185,39 @@ export const courses = [
             <li><strong>Query Builder:</strong> Chainable query building</li>
           </ul>
           
+          <pre><code>// MongoDB with Mongoose
+const mongoose = require('mongoose');
+
+// Connect to MongoDB
+mongoose.connect('mongodb://localhost/myapp', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+
+// Define Schema
+const userSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  age: { type: Number, min: 0 },
+  createdAt: { type: Date, default: Date.now }
+});
+
+// Create Model
+const User = mongoose.model('User', userSchema);
+
+// Create document
+const newUser = new User({
+  name: 'John Doe',
+  email: 'john@example.com',
+  age: 30
+});
+
+await newUser.save();
+
+// Find documents
+const users = await User.find({ age: { \$gte: 18 } });
+const user = await User.findById(id);</code></pre>
+          
           <h3>Installation:</h3>
           <p>npm install mongoose</p>
         `,
@@ -2410,6 +5243,50 @@ export const courses = [
             <li><strong>Passport.js:</strong> Authentication middleware</li>
             <li><strong>Sessions:</strong> Server-side session management</li>
           </ul>
+          
+          <pre><code>// Authentication with JWT & bcrypt
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+
+// Register user
+app.post('/register', async (req, res) => {
+  const { email, password } = req.body;
+  
+  // Hash password
+  const hashedPassword = await bcrypt.hash(password, 10);
+  
+  // Save user
+  const user = await User.create({ email, password: hashedPassword });
+  res.status(201).json({ message: 'User created' });
+});
+
+// Login
+app.post('/login', async (req, res) => {
+  const { email, password } = req.body;
+  const user = await User.findOne({ email });
+  
+  if (!user || !await bcrypt.compare(password, user.password)) {
+    return res.status(401).json({ error: 'Invalid credentials' });
+  }
+  
+  // Generate JWT
+  const token = jwt.sign({ userId: user._id }, 'secret', { expiresIn: '1h' });
+  res.json({ token });
+});
+
+// Middleware to verify token
+const authMiddleware = (req, res, next) => {
+  const token = req.headers.authorization?.split(' ')[1];
+  if (!token) return res.status(401).json({ error: 'Unauthorized' });
+  
+  try {
+    const decoded = jwt.verify(token, 'secret');
+    req.userId = decoded.userId;
+    next();
+  } catch (err) {
+    res.status(401).json({ error: 'Invalid token' });
+  }
+};</code></pre>
           
           <h3>Security Best Practices:</h3>
           <ul>
@@ -2443,6 +5320,37 @@ export const courses = [
             <li><strong>Chai:</strong> Assertion library</li>
             <li><strong>Supertest:</strong> HTTP assertion library</li>
           </ul>
+          
+          <pre><code>// Testing with Jest
+const request = require('supertest');
+const app = require('./app');
+
+// Unit Test
+test('adds 1 + 2 to equal 3', () => {
+  expect(1 + 2).toBe(3);
+});
+
+// API Test
+describe('GET /api/users', () => {
+  test('should return all users', async () => {
+    const response = await request(app)
+      .get('/api/users')
+      .expect(200)
+      .expect('Content-Type', /json/);
+    
+    expect(response.body).toBeInstanceOf(Array);
+  });
+});
+
+// Test with Mock
+const mockUser = { id: 1, name: 'John' };
+jest.mock('./models/User');
+
+test('should create user', async () => {
+  User.create.mockResolvedValue(mockUser);
+  const result = await createUser({ name: 'John' });
+  expect(result).toEqual(mockUser);
+});</code></pre>
           
           <h3>Best Practices:</h3>
           <ul>
@@ -2480,6 +5388,42 @@ export const courses = [
             <li><strong>Security:</strong> Use helmet.js, rate limiting, input validation</li>
             <li><strong>Performance:</strong> Enable compression, caching</li>
           </ul>
+          
+          <pre><code>// Dockerfile for Node.js
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm ci --only=production
+
+# Copy app files
+COPY . .
+
+# Expose port
+EXPOSE 3000
+
+# Start app
+CMD ["node", "app.js"]
+
+// PM2 ecosystem file
+module.exports = {
+  apps: [{
+    name: 'myapp',
+    script: './app.js',
+    instances: 'max',
+    exec_mode: 'cluster',
+    env: {
+      NODE_ENV: 'production'
+    }
+  }]
+};
+
+// Start with PM2
+// pm2 start ecosystem.config.js</code></pre>
           
           <h3>Docker Containerization:</h3>
           <p>Package your application in containers for consistent deployments.</p>
@@ -18553,6 +21497,1595 @@ void fibonacciIsolate(SendPort sendPort) {
           <p>Isolates are Dart's approach to parallel processing, similar to threads in other languages but completely isolated with no shared memory. Each isolate has its own memory space and communicates only through message passing using SendPort and ReceivePort. This design eliminates race conditions and makes concurrent programming safer. Isolates are perfect for CPU-intensive tasks like image processing, cryptography, or complex calculations that would otherwise block the main UI thread.</p>
         `,
         videoUrl: 'https://www.youtube.com/embed/RMiN59x3uH0'
+      }
+    ]
+  },
+  {
+    id: 'mysql',
+    title: 'MySQL',
+    description: 'MySQL - powerful relational database management system',
+    color: '#00758f',
+    lessons: [
+      {
+        id: 'mysql-intro',
+        title: 'MySQL Intro',
+        content: `
+          <h2>What is MySQL?</h2>
+          <p>MySQL is the world's most popular open-source relational database management system (RDBMS). Created in 1995 by MySQL AB and now owned by Oracle Corporation, MySQL powers millions of websites and applications worldwide including Facebook, Twitter, YouTube, Netflix, and Uber. With over 70 million downloads and deployment in virtually every major organization, MySQL remains the database of choice for web applications, enterprise software, and data-driven solutions.</p>
+          
+          <h3>Why MySQL Dominates Database Technology:</h3>
+          <ul>
+            <li><strong>Industry Standard:</strong> Powers 40% of all websites using databases worldwide</li>
+            <li><strong>Enterprise Trust:</strong> Used by 90% of Fortune 500 companies for mission-critical data</li>
+            <li><strong>Exceptional Performance:</strong> Handles millions of queries per second with optimization</li>
+            <li><strong>Open Source:</strong> Free to use with strong community support and commercial backing</li>
+            <li><strong>ACID Compliance:</strong> Ensures data reliability, consistency, and transaction integrity</li>
+            <li><strong>Scalability:</strong> From small blogs to massive enterprise applications</li>
+            <li><strong>Cross-Platform:</strong> Works seamlessly on Windows, Linux, macOS, and cloud platforms</li>
+          </ul>
+          
+          <h3>Learning Benefits:</h3>
+          <ul>
+            <li><strong>Data Mastery:</strong> Learn to store, organize, and retrieve information efficiently</li>
+            <li><strong>SQL Skills:</strong> Master the universal language of databases used across all platforms</li>
+            <li><strong>Backend Integration:</strong> Connect databases to web applications and APIs</li>
+            <li><strong>Career Essential:</strong> Database skills required for 95% of development positions</li>
+            <li><strong>Problem Solving:</strong> Learn to design efficient data structures and relationships</li>
+            <li><strong>Performance Optimization:</strong> Understand indexing, query optimization, and scaling</li>
+            <li><strong>Security Understanding:</strong> Learn data protection, encryption, and access control</li>
+          </ul>
+          
+          <h3>Prerequisites:</h3>
+          <ul>
+            <li><strong>Basic:</strong> Understanding of data and information organization</li>
+            <li><strong>Helpful:</strong> Programming fundamentals (any language)</li>
+            <li><strong>Recommended:</strong> Command line interface familiarity</li>
+            <li><strong>Bonus:</strong> Web development basics for database integration</li>
+          </ul>
+          
+          <h3>MySQL Features:</h3>
+          <ul>
+            <li><strong>ACID Transactions:</strong> Atomicity, Consistency, Isolation, Durability</li>
+            <li><strong>Replication:</strong> Master-slave and master-master replication</li>
+            <li><strong>Partitioning:</strong> Horizontal and vertical data partitioning</li>
+            <li><strong>Stored Procedures:</strong> Server-side programming for complex logic</li>
+            <li><strong>Triggers:</strong> Automatic actions on data changes</li>
+            <li><strong>Views:</strong> Virtual tables for simplified queries</li>
+            <li><strong>Full-Text Search:</strong> Advanced text searching capabilities</li>
+            <li><strong>JSON Support:</strong> Store and query JSON documents</li>
+          </ul>
+          
+          <h3>What You'll Master:</h3>
+          <ul>
+            <li><strong>Database Design:</strong> Creating efficient table structures and relationships</li>
+            <li><strong>SQL Queries:</strong> SELECT, INSERT, UPDATE, DELETE operations</li>
+            <li><strong>Joins & Relationships:</strong> Connecting data across multiple tables</li>
+            <li><strong>Indexing:</strong> Optimizing query performance</li>
+            <li><strong>Stored Procedures:</strong> Creating reusable database logic</li>
+            <li><strong>Security:</strong> User management, permissions, and data protection</li>
+            <li><strong>Backup & Recovery:</strong> Protecting data and disaster recovery</li>
+            <li><strong>Performance Tuning:</strong> Query optimization and monitoring</li>
+          </ul>
+          
+          <h3>Installation:</h3>
+          <p>Download MySQL Community Server from the official MySQL website. MySQL Workbench provides a graphical interface for database management.</p>
+          
+          <pre><code>-- Check MySQL version
+mysql --version
+
+-- Connect to MySQL
+mysql -u root -p
+
+-- Show databases
+SHOW DATABASES;
+
+-- Create database
+CREATE DATABASE myapp;
+
+-- Use database
+USE myapp;
+
+-- Show tables
+SHOW TABLES;</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/7S_tz1z_5bA'
+      },
+      {
+        id: 'mysql-databases-tables',
+        title: 'Databases & Tables',
+        content: `
+          <h2>Working with Databases and Tables</h2>
+          <p>Databases are containers for organizing related tables, and tables store data in rows and columns. Understanding how to create and manage databases and tables is fundamental to working with MySQL.</p>
+          
+          <h3>Database Operations:</h3>
+          <ul>
+            <li><strong>CREATE DATABASE:</strong> Create a new database</li>
+            <li><strong>DROP DATABASE:</strong> Delete a database</li>
+            <li><strong>USE:</strong> Select a database to work with</li>
+            <li><strong>SHOW DATABASES:</strong> List all databases</li>
+          </ul>
+          
+          <pre><code>-- Create database
+CREATE DATABASE ecommerce;
+
+-- Use database
+USE ecommerce;
+
+-- Create table with constraints
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(50) UNIQUE NOT NULL,
+  email VARCHAR(100) UNIQUE NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE products (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  price DECIMAL(10, 2) NOT NULL,
+  stock INT DEFAULT 0,
+  category VARCHAR(50),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Show table structure
+DESCRIBE users;
+
+-- Show all tables
+SHOW TABLES;
+
+-- Drop table
+DROP TABLE IF EXISTS old_table;</code></pre>
+          
+          <h3>Data Types:</h3>
+          <ul>
+            <li><strong>Numeric:</strong> INT, BIGINT, DECIMAL, FLOAT, DOUBLE</li>
+            <li><strong>String:</strong> VARCHAR, CHAR, TEXT, LONGTEXT</li>
+            <li><strong>Date/Time:</strong> DATE, TIME, DATETIME, TIMESTAMP</li>
+            <li><strong>Binary:</strong> BLOB, LONGBLOB</li>
+            <li><strong>JSON:</strong> JSON data type for document storage</li>
+          </ul>
+          
+          <h3>Constraints:</h3>
+          <ul>
+            <li><strong>PRIMARY KEY:</strong> Unique identifier for each row</li>
+            <li><strong>FOREIGN KEY:</strong> Links to another table</li>
+            <li><strong>UNIQUE:</strong> Ensures unique values</li>
+            <li><strong>NOT NULL:</strong> Requires a value</li>
+            <li><strong>DEFAULT:</strong> Sets default value</li>
+            <li><strong>CHECK:</strong> Validates data conditions</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/HXV3zeQKqGY'
+      },
+      {
+        id: 'mysql-crud',
+        title: 'CRUD Operations',
+        content: `
+          <h2>Create, Read, Update, Delete (CRUD)</h2>
+          <p>CRUD operations are the foundation of database interaction. These four basic operations allow you to manage data in your database.</p>
+          
+          <h3>INSERT - Create Data:</h3>
+          <pre><code>-- Insert single row
+INSERT INTO users (username, email, password)
+VALUES ('john_doe', 'john@example.com', 'hashed_password');
+
+-- Insert multiple rows
+INSERT INTO products (name, price, stock, category)
+VALUES 
+  ('Laptop', 999.99, 10, 'Electronics'),
+  ('Mouse', 29.99, 50, 'Electronics'),
+  ('Desk Chair', 199.99, 15, 'Furniture');</code></pre>
+          
+          <h3>SELECT - Read Data:</h3>
+          <pre><code>-- Select all columns
+SELECT * FROM users;
+
+-- Select specific columns
+SELECT username, email FROM users;
+
+-- WHERE clause
+SELECT * FROM products WHERE price > 50;
+
+-- ORDER BY
+SELECT * FROM products ORDER BY price DESC;
+
+-- LIMIT
+SELECT * FROM products LIMIT 5;
+
+-- LIKE pattern matching
+SELECT * FROM users WHERE email LIKE '%@gmail.com';</code></pre>
+          
+          <h3>UPDATE - Modify Data:</h3>
+          <pre><code>-- Update single row
+UPDATE products
+SET price = 899.99, stock = 8
+WHERE id = 1;
+
+-- Update multiple rows
+UPDATE products
+SET category = 'Tech'
+WHERE category = 'Electronics';
+
+-- Increment values
+UPDATE products
+SET stock = stock + 10
+WHERE id = 1;</code></pre>
+          
+          <h3>DELETE - Remove Data:</h3>
+          <pre><code>-- Delete specific rows
+DELETE FROM users WHERE id = 5;
+
+-- Delete with condition
+DELETE FROM products WHERE stock = 0;
+
+-- Delete all rows (use with caution)
+DELETE FROM temp_table;</code></pre>
+          
+          <h3>Best Practices:</h3>
+          <ul>
+            <li>Always use WHERE clause with UPDATE and DELETE</li>
+            <li>Test SELECT query before UPDATE or DELETE</li>
+            <li>Use transactions for multiple operations</li>
+            <li>Backup data before bulk operations</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/Cz3WcZLRaWc'
+      },
+      {
+        id: 'mysql-joins',
+        title: 'Joins & Relationships',
+        content: `
+          <h2>Table Joins and Relationships</h2>
+          <p>Joins combine data from multiple tables based on related columns. Understanding joins is crucial for working with relational databases.</p>
+          
+          <h3>Types of Joins:</h3>
+          <ul>
+            <li><strong>INNER JOIN:</strong> Returns matching rows from both tables</li>
+            <li><strong>LEFT JOIN:</strong> Returns all rows from left table, matching from right</li>
+            <li><strong>RIGHT JOIN:</strong> Returns all rows from right table, matching from left</li>
+            <li><strong>FULL OUTER JOIN:</strong> Returns all rows from both tables</li>
+            <li><strong>CROSS JOIN:</strong> Cartesian product of both tables</li>
+          </ul>
+          
+          <pre><code>-- Setup example tables
+CREATE TABLE orders (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT,
+  total DECIMAL(10, 2),
+  order_date DATE,
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE order_items (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  order_id INT,
+  product_id INT,
+  quantity INT,
+  FOREIGN KEY (order_id) REFERENCES orders(id),
+  FOREIGN KEY (product_id) REFERENCES products(id)
+);
+
+-- INNER JOIN - Get orders with user info
+SELECT orders.id, users.username, orders.total, orders.order_date
+FROM orders
+INNER JOIN users ON orders.user_id = users.id;
+
+-- LEFT JOIN - All users and their orders (if any)
+SELECT users.username, orders.total
+FROM users
+LEFT JOIN orders ON users.id = orders.user_id;
+
+-- Multiple Joins
+SELECT 
+  users.username,
+  orders.id AS order_id,
+  products.name AS product_name,
+  order_items.quantity
+FROM orders
+INNER JOIN users ON orders.user_id = users.id
+INNER JOIN order_items ON orders.id = order_items.order_id
+INNER JOIN products ON order_items.product_id = products.id;
+
+-- Self Join - Find users in same city
+SELECT u1.username, u2.username, u1.city
+FROM users u1
+INNER JOIN users u2 ON u1.city = u2.city
+WHERE u1.id < u2.id;</code></pre>
+          
+          <h3>Relationship Types:</h3>
+          <ul>
+            <li><strong>One-to-One:</strong> Each row relates to one row (User → Profile)</li>
+            <li><strong>One-to-Many:</strong> One row relates to many (User → Orders)</li>
+            <li><strong>Many-to-Many:</strong> Many relate to many (Students ↔ Courses)</li>
+          </ul>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/9yeOJ0ZMUYw'
+      },
+      {
+        id: 'mysql-aggregate',
+        title: 'Aggregate Functions',
+        content: `
+          <h2>Aggregate Functions and Grouping</h2>
+          <p>Aggregate functions perform calculations on sets of rows and return single values. They're essential for data analysis and reporting.</p>
+          
+          <h3>Common Aggregate Functions:</h3>
+          <pre><code>-- COUNT - Number of rows
+SELECT COUNT(*) FROM users;
+SELECT COUNT(DISTINCT category) FROM products;
+
+-- SUM - Total of numeric column
+SELECT SUM(total) FROM orders;
+SELECT SUM(quantity * price) AS revenue FROM order_items;
+
+-- AVG - Average value
+SELECT AVG(price) FROM products;
+
+-- MIN and MAX
+SELECT MIN(price), MAX(price) FROM products;
+
+-- GROUP BY - Group results
+SELECT category, COUNT(*) AS product_count, AVG(price) AS avg_price
+FROM products
+GROUP BY category;
+
+-- HAVING - Filter groups
+SELECT category, COUNT(*) AS count
+FROM products
+GROUP BY category
+HAVING count > 5;
+
+-- Multiple grouping
+SELECT 
+  YEAR(order_date) AS year,
+  MONTH(order_date) AS month,
+  COUNT(*) AS order_count,
+  SUM(total) AS total_revenue
+FROM orders
+GROUP BY YEAR(order_date), MONTH(order_date)
+ORDER BY year DESC, month DESC;</code></pre>
+          
+          <h3>String Functions:</h3>
+          <pre><code>-- CONCAT
+SELECT CONCAT(first_name, ' ', last_name) AS full_name FROM users;
+
+-- UPPER, LOWER
+SELECT UPPER(username) FROM users;
+
+-- LENGTH
+SELECT username, LENGTH(username) FROM users;
+
+-- SUBSTRING
+SELECT SUBSTRING(email, 1, 5) FROM users;</code></pre>
+          
+          <h3>Date Functions:</h3>
+          <pre><code>-- Current date/time
+SELECT NOW(), CURDATE(), CURTIME();
+
+-- Date arithmetic
+SELECT DATE_ADD(NOW(), INTERVAL 7 DAY);
+SELECT DATEDIFF(NOW(), created_at) AS days_old FROM users;
+
+-- Date formatting
+SELECT DATE_FORMAT(created_at, '%Y-%m-%d') FROM orders;</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/YNLbI_XMEhM'
+      },
+      {
+        id: 'mysql-indexes',
+        title: 'Indexes & Performance',
+        content: `
+          <h2>Indexes and Query Optimization</h2>
+          <p>Indexes dramatically improve query performance by creating fast lookup structures. Understanding when and how to use indexes is crucial for database performance.</p>
+          
+          <h3>Index Types:</h3>
+          <ul>
+            <li><strong>PRIMARY KEY:</strong> Unique index, automatically created</li>
+            <li><strong>UNIQUE:</strong> Ensures unique values with fast lookup</li>
+            <li><strong>INDEX:</strong> Standard index for faster searches</li>
+            <li><strong>FULLTEXT:</strong> For text searching</li>
+            <li><strong>COMPOSITE:</strong> Multiple columns in one index</li>
+          </ul>
+          
+          <pre><code>-- Create index
+CREATE INDEX idx_email ON users(email);
+CREATE INDEX idx_price ON products(price);
+
+-- Composite index
+CREATE INDEX idx_user_date ON orders(user_id, order_date);
+
+-- Unique index
+CREATE UNIQUE INDEX idx_username ON users(username);
+
+-- Full-text index
+CREATE FULLTEXT INDEX idx_description ON products(description);
+
+-- Show indexes
+SHOW INDEXES FROM users;
+
+-- Drop index
+DROP INDEX idx_email ON users;
+
+-- Analyze query performance
+EXPLAIN SELECT * FROM users WHERE email = 'test@example.com';
+
+-- Force index usage
+SELECT * FROM products USE INDEX (idx_price) WHERE price > 100;</code></pre>
+          
+          <h3>Query Optimization Tips:</h3>
+          <ul>
+            <li>Index columns used in WHERE, JOIN, and ORDER BY</li>
+            <li>Avoid SELECT *, specify needed columns</li>
+            <li>Use LIMIT for large result sets</li>
+            <li>Avoid functions on indexed columns in WHERE</li>
+            <li>Use prepared statements to prevent SQL injection</li>
+            <li>Monitor slow queries with slow query log</li>
+          </ul>
+          
+          <pre><code>-- Good query (uses index)
+SELECT id, username FROM users WHERE id = 100;
+
+-- Bad query (function on indexed column)
+SELECT * FROM users WHERE YEAR(created_at) = 2024;
+
+-- Better approach
+SELECT * FROM users 
+WHERE created_at BETWEEN '2024-01-01' AND '2024-12-31';</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/FSa3XXjb9Bc'
+      },
+      {
+        id: 'mysql-transactions',
+        title: 'Transactions & Security',
+        content: `
+          <h2>Transactions and Database Security</h2>
+          <p>Transactions ensure data integrity by grouping multiple operations into a single unit. Security features protect your data from unauthorized access.</p>
+          
+          <h3>ACID Properties:</h3>
+          <ul>
+            <li><strong>Atomicity:</strong> All operations succeed or all fail</li>
+            <li><strong>Consistency:</strong> Database remains in valid state</li>
+            <li><strong>Isolation:</strong> Transactions don't interfere with each other</li>
+            <li><strong>Durability:</strong> Committed data is permanently saved</li>
+          </ul>
+          
+          <pre><code>-- Start transaction
+START TRANSACTION;
+
+-- Multiple operations
+UPDATE products SET stock = stock - 1 WHERE id = 1;
+INSERT INTO orders (user_id, total) VALUES (5, 99.99);
+INSERT INTO order_items (order_id, product_id, quantity) 
+VALUES (LAST_INSERT_ID(), 1, 1);
+
+-- Commit if all successful
+COMMIT;
+
+-- Or rollback if error
+ROLLBACK;
+
+-- Transaction with error handling
+START TRANSACTION;
+
+UPDATE accounts SET balance = balance - 100 WHERE id = 1;
+UPDATE accounts SET balance = balance + 100 WHERE id = 2;
+
+-- Check if both updates were successful
+IF @@ERROR = 0
+  COMMIT;
+ELSE
+  ROLLBACK;
+END IF;</code></pre>
+          
+          <h3>User Management:</h3>
+          <pre><code>-- Create user
+CREATE USER 'appuser'@'localhost' IDENTIFIED BY 'strong_password';
+
+-- Grant privileges
+GRANT SELECT, INSERT, UPDATE ON myapp.* TO 'appuser'@'localhost';
+
+-- Grant all privileges
+GRANT ALL PRIVILEGES ON myapp.* TO 'admin'@'localhost';
+
+-- Show grants
+SHOW GRANTS FOR 'appuser'@'localhost';
+
+-- Revoke privileges
+REVOKE INSERT, UPDATE ON myapp.* FROM 'appuser'@'localhost';
+
+-- Drop user
+DROP USER 'appuser'@'localhost';
+
+-- Change password
+ALTER USER 'appuser'@'localhost' IDENTIFIED BY 'new_password';</code></pre>
+          
+          <h3>Security Best Practices:</h3>
+          <ul>
+            <li>Use strong passwords for database users</li>
+            <li>Grant minimum necessary privileges</li>
+            <li>Use prepared statements to prevent SQL injection</li>
+            <li>Enable SSL/TLS for connections</li>
+            <li>Regular backups and disaster recovery plans</li>
+            <li>Monitor database logs for suspicious activity</li>
+          </ul>
+          
+          <pre><code>-- Backup database
+-- Command line:
+-- mysqldump -u root -p myapp > backup.sql
+
+-- Restore database
+-- mysql -u root -p myapp < backup.sql
+
+-- Show current user
+SELECT CURRENT_USER();</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/zsjvFFKOm3c'
+      },
+      {
+        id: 'mysql-advanced',
+        title: 'Advanced Features',
+        content: `
+          <h2>Advanced MySQL Features</h2>
+          <p>MySQL offers powerful advanced features like stored procedures, triggers, views, and subqueries for complex database operations.</p>
+          
+          <h3>Stored Procedures:</h3>
+          <pre><code>-- Create stored procedure
+DELIMITER //
+CREATE PROCEDURE GetUserOrders(IN userId INT)
+BEGIN
+  SELECT o.id, o.total, o.order_date, p.name
+  FROM orders o
+  JOIN order_items oi ON o.id = oi.order_id
+  JOIN products p ON oi.product_id = p.id
+  WHERE o.user_id = userId;
+END //
+DELIMITER ;
+
+-- Call procedure
+CALL GetUserOrders(5);
+
+-- Procedure with OUT parameter
+DELIMITER //
+CREATE PROCEDURE GetTotalRevenue(OUT total DECIMAL(10,2))
+BEGIN
+  SELECT SUM(total) INTO total FROM orders;
+END //
+DELIMITER ;
+
+-- Call with variable
+CALL GetTotalRevenue(@revenue);
+SELECT @revenue;</code></pre>
+          
+          <h3>Triggers:</h3>
+          <pre><code>-- Create trigger
+DELIMITER //
+CREATE TRIGGER update_stock
+AFTER INSERT ON order_items
+FOR EACH ROW
+BEGIN
+  UPDATE products
+  SET stock = stock - NEW.quantity
+  WHERE id = NEW.product_id;
+END //
+DELIMITER ;
+
+-- Audit trigger
+CREATE TRIGGER user_audit
+AFTER UPDATE ON users
+FOR EACH ROW
+INSERT INTO user_audit_log (user_id, old_email, new_email, changed_at)
+VALUES (OLD.id, OLD.email, NEW.email, NOW());</code></pre>
+          
+          <h3>Views:</h3>
+          <pre><code>-- Create view
+CREATE VIEW user_orders AS
+SELECT 
+  u.username,
+  o.id AS order_id,
+  o.total,
+  o.order_date
+FROM users u
+JOIN orders o ON u.id = o.user_id;
+
+-- Use view
+SELECT * FROM user_orders WHERE username = 'john_doe';
+
+-- Update view
+CREATE OR REPLACE VIEW user_orders AS
+SELECT u.id, u.username, COUNT(o.id) AS order_count
+FROM users u
+LEFT JOIN orders o ON u.id = o.user_id
+GROUP BY u.id, u.username;
+
+-- Drop view
+DROP VIEW user_orders;</code></pre>
+          
+          <h3>Subqueries:</h3>
+          <pre><code>-- Subquery in WHERE
+SELECT * FROM products
+WHERE price > (SELECT AVG(price) FROM products);
+
+-- Subquery in FROM
+SELECT category, avg_price
+FROM (
+  SELECT category, AVG(price) AS avg_price
+  FROM products
+  GROUP BY category
+) AS category_avg
+WHERE avg_price > 100;
+
+-- Correlated subquery
+SELECT username, 
+  (SELECT COUNT(*) FROM orders WHERE user_id = users.id) AS order_count
+FROM users;
+
+-- EXISTS
+SELECT * FROM users
+WHERE EXISTS (SELECT 1 FROM orders WHERE user_id = users.id);</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/tYlFTCTe0_E'
+      }
+    ]
+  },
+  {
+    id: 'mongodb',
+    title: 'MongoDB',
+    description: 'MongoDB - flexible NoSQL database for modern applications',
+    color: '#4db33d',
+    lessons: [
+      {
+        id: 'mongodb-intro',
+        title: 'MongoDB Intro',
+        content: `
+          <h2>What is MongoDB?</h2>
+          <p>MongoDB is a leading NoSQL document-oriented database that revolutionized how developers store and query data. Created in 2007 by MongoDB Inc., it stores data in flexible JSON-like documents instead of traditional tables and rows. Used by giants like Adobe, eBay, Google, Forbes, and Uber, MongoDB powers over 30,000 companies worldwide and is the most popular NoSQL database for modern web applications, microservices, mobile apps, and real-time analytics.</p>
+          
+          <h3>Why MongoDB Leads NoSQL Databases:</h3>
+          <ul>
+            <li><strong>Document Model:</strong> Stores data in flexible JSON-like BSON documents</li>
+            <li><strong>Schema Flexibility:</strong> No rigid schema requirements, adapt as you grow</li>
+            <li><strong>Horizontal Scaling:</strong> Built-in sharding for massive data distribution</li>
+            <li><strong>High Performance:</strong> Fast read/write operations with in-memory processing</li>
+            <li><strong>Developer Friendly:</strong> Natural data structure matching application objects</li>
+            <li><strong>Rich Query Language:</strong> Powerful aggregation framework and full-text search</li>
+            <li><strong>Cloud Native:</strong> MongoDB Atlas provides fully managed cloud database</li>
+          </ul>
+          
+          <h3>Learning Benefits:</h3>
+          <ul>
+            <li><strong>Modern Database:</strong> Master the most popular NoSQL database technology</li>
+            <li><strong>Flexibility:</strong> Learn schema-less design for rapid development</li>
+            <li><strong>Scalability:</strong> Understand horizontal scaling and distributed systems</li>
+            <li><strong>JSON Native:</strong> Work with data in familiar JavaScript object format</li>
+            <li><strong>Real-Time Apps:</strong> Build reactive applications with change streams</li>
+            <li><strong>Career Boost:</strong> MongoDB skills in high demand for modern tech stacks</li>
+            <li><strong>Full-Stack:</strong> Perfect for MERN/MEAN stack development</li>
+          </ul>
+          
+          <h3>Prerequisites:</h3>
+          <ul>
+            <li><strong>Essential:</strong> Basic understanding of databases and JSON</li>
+            <li><strong>Helpful:</strong> JavaScript knowledge for queries and operations</li>
+            <li><strong>Recommended:</strong> Basic understanding of CRUD operations</li>
+            <li><strong>Bonus:</strong> Node.js for building applications with MongoDB</li>
+          </ul>
+          
+          <h3>MongoDB Features:</h3>
+          <ul>
+            <li><strong>Document Store:</strong> BSON (Binary JSON) format for efficient storage</li>
+            <li><strong>Indexing:</strong> Support for compound, geospatial, and text indexes</li>
+            <li><strong>Aggregation:</strong> Powerful data processing pipeline</li>
+            <li><strong>Replication:</strong> Automatic failover with replica sets</li>
+            <li><strong>Sharding:</strong> Horizontal partitioning for large datasets</li>
+            <li><strong>Transactions:</strong> Multi-document ACID transactions</li>
+            <li><strong>Atlas Search:</strong> Full-text search capabilities</li>
+            <li><strong>Change Streams:</strong> Real-time data change notifications</li>
+          </ul>
+          
+          <h3>What You'll Master:</h3>
+          <ul>
+            <li><strong>Document Design:</strong> Creating efficient document structures</li>
+            <li><strong>CRUD Operations:</strong> Insert, find, update, delete documents</li>
+            <li><strong>Queries:</strong> Complex queries with operators and expressions</li>
+            <li><strong>Aggregation:</strong> Data processing with aggregation pipeline</li>
+            <li><strong>Indexing:</strong> Performance optimization with indexes</li>
+            <li><strong>Relationships:</strong> Embedded documents vs references</li>
+            <li><strong>Schema Design:</strong> Best practices for document modeling</li>
+            <li><strong>Integration:</strong> Using MongoDB with Node.js and Mongoose</li>
+          </ul>
+          
+          <h3>Installation:</h3>
+          <p>Install MongoDB Community Server or use MongoDB Atlas (cloud). MongoDB Shell (mongosh) and MongoDB Compass provide interfaces for database interaction.</p>
+          
+          <pre><code>// Check MongoDB version
+mongosh --version
+
+// Connect to MongoDB
+mongosh "mongodb://localhost:27017"
+
+// Show databases
+show dbs
+
+// Create/use database
+use myapp
+
+// Show collections
+show collections
+
+// Basic insert
+db.users.insertOne({ name: "John", age: 30 })</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/ExcRbA7fy_A'
+      },
+      {
+        id: 'mongodb-crud',
+        title: 'CRUD Operations',
+        content: `
+          <h2>MongoDB CRUD Operations</h2>
+          <p>CRUD operations form the foundation of MongoDB interaction. Unlike SQL databases, MongoDB uses method-based syntax for data manipulation.</p>
+          
+          <h3>Create - Insert Documents:</h3>
+          <p>Insert operations add new documents to collections. Use insertOne() for single documents and insertMany() for bulk inserts. MongoDB automatically generates a unique _id field if not provided. Insert operations are atomic at the document level, ensuring data consistency.</p>
+          
+          <pre><code>// Insert single document
+db.users.insertOne({
+  name: "John Doe",
+  email: "john@example.com",
+  age: 30,
+  city: "New York"
+})
+
+// Insert multiple documents
+db.users.insertMany([
+  { name: "Jane Smith", email: "jane@example.com", age: 25 },
+  { name: "Bob Wilson", email: "bob@example.com", age: 35 },
+  { name: "Alice Brown", email: "alice@example.com", age: 28 }
+])
+
+// Insert with custom _id
+db.products.insertOne({
+  _id: "PROD001",
+  name: "Laptop",
+  price: 999.99,
+  stock: 50
+})</code></pre>
+          
+          <h3>Read - Find Documents:</h3>
+          <p>Read operations retrieve documents from collections. find() returns multiple documents matching the query, while findOne() returns a single document. Use projection to select specific fields, sort() to order results, limit() to restrict count, and countDocuments() to get the total number of matching documents.</p>
+          
+          <pre><code>// Find all documents
+db.users.find()
+
+// Find with condition
+db.users.find({ age: 30 })
+
+// Find one document
+db.users.findOne({ email: "john@example.com" })
+
+// Find with multiple conditions
+db.users.find({
+  age: { \$gte: 25, \$lte: 35 },
+  city: "New York"
+})
+
+// Projection (select specific fields)
+db.users.find(
+  { age: { \$gte: 25 } },
+  { name: 1, email: 1, _id: 0 }
+)
+
+// Sort and limit
+db.users.find().sort({ age: -1 }).limit(5)
+
+// Count documents
+db.users.countDocuments({ age: { \$gte: 25 } })</code></pre>
+          
+          <h3>Update - Modify Documents:</h3>
+          <p>Update operations modify existing documents. updateOne() updates the first matching document, while updateMany() updates all matches. Use update operators like $set to change fields, $inc to increment numbers, $unset to remove fields, and $push to add array elements. replaceOne() replaces the entire document structure.</p>
+          
+          <pre><code>// Update single document
+db.users.updateOne(
+  { email: "john@example.com" },
+  { \$set: { age: 31, city: "Boston" } }
+)
+
+// Update multiple documents
+db.users.updateMany(
+  { age: { \$lt: 30 } },
+  { \$set: { status: "young" } }
+)
+
+// Update operators
+db.users.updateOne(
+  { name: "John Doe" },
+  {
+    \$inc: { age: 1 },           // Increment
+    \$set: { city: "LA" },        // Set field
+    \$unset: { status: "" },      // Remove field
+    \$push: { hobbies: "gaming" } // Add to array
+  }
+)
+
+// Replace entire document
+db.users.replaceOne(
+  { _id: ObjectId("...") },
+  { name: "New Name", email: "new@example.com" }
+)</code></pre>
+          
+          <h3>Delete - Remove Documents:</h3>
+          <p>Delete operations remove documents from collections. deleteOne() removes the first matching document, deleteMany() removes all matches. Use deleteMany({}) to remove all documents while keeping the collection and indexes. Use drop() to completely remove the collection including all indexes.</p>
+          
+          <pre><code>// Delete single document
+db.users.deleteOne({ email: "old@example.com" })
+
+// Delete multiple documents
+db.users.deleteMany({ age: { \$lt: 18 } })
+
+// Delete all documents in collection
+db.users.deleteMany({})
+
+// Drop entire collection
+db.users.drop()</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/ofme2o29ngU'
+      },
+      {
+        id: 'mongodb-query-operators',
+        title: 'Query Operators',
+        content: `
+          <h2>MongoDB Query Operators</h2>
+          <p>MongoDB provides powerful operators for building complex queries. These operators enable sophisticated filtering and data manipulation.</p>
+          
+          <h3>Comparison Operators:</h3>
+          <p>Comparison operators filter documents based on field value comparisons. Use $eq for equality, $ne for inequality, $gt/$gte/$lt/$lte for range queries, $in to match any value from an array, and $nin to exclude values. These are the most commonly used operators for basic filtering.</p>
+          
+          <pre><code>// \$eq - Equal to
+db.products.find({ price: { \$eq: 99.99 } })
+
+// \$ne - Not equal to
+db.products.find({ status: { \$ne: "discontinued" } })
+
+// \$gt, \$gte, \$lt, \$lte - Greater/Less than
+db.products.find({ price: { \$gte: 50, \$lte: 200 } })
+
+// \$in - Match any value in array
+db.products.find({ category: { \$in: ["Electronics", "Books"] } })
+
+// \$nin - Not in array
+db.products.find({ status: { \$nin: ["sold", "discontinued"] } })</code></pre>
+          
+          <h3>Logical Operators:</h3>
+          <p>Logical operators combine multiple query conditions. $and requires all conditions to be true, $or requires at least one condition to be true, $not negates a condition, and $nor requires all conditions to be false. These operators enable complex query logic and conditional filtering.</p>
+          
+          <pre><code>// \$and - All conditions must be true
+db.products.find({
+  \$and: [
+    { price: { \$gte: 100 } },
+    { category: "Electronics" }
+  ]
+})
+
+// \$or - At least one condition must be true
+db.products.find({
+  \$or: [
+    { price: { \$lt: 50 } },
+    { category: "Sale" }
+  ]
+})
+
+// \$not - Negates condition
+db.products.find({ price: { \$not: { \$gte: 100 } } })
+
+// \$nor - None of conditions are true
+db.products.find({
+  \$nor: [
+    { price: { \$lt: 10 } },
+    { stock: 0 }
+  ]
+})</code></pre>
+          
+          <h3>Element Operators:</h3>
+          <p>Element operators query based on field existence and data types. $exists checks if a field is present in a document (true) or absent (false), while $type verifies if a field matches a specific BSON data type like string, number, array, or object.</p>
+          
+          <pre><code>// \$exists - Field exists
+db.users.find({ phone: { \$exists: true } })
+
+// \$type - Field type check
+db.products.find({ price: { \$type: "number" } })</code></pre>
+          
+          <h3>Array Operators:</h3>
+          <p>Array operators perform queries on array fields. $all checks if an array contains all specified elements, $elemMatch matches arrays where at least one element satisfies all conditions, and $size filters arrays by their exact length. These operators are essential for working with embedded arrays.</p>
+          
+          <pre><code>// \$all - Array contains all elements
+db.products.find({ tags: { \$all: ["electronic", "sale"] } })
+
+// \$elemMatch - Array element matches all conditions
+db.users.find({
+  scores: { \$elemMatch: { \$gte: 80, \$lte: 90 } }
+})
+
+// \$size - Array length
+db.users.find({ hobbies: { \$size: 3 } })</code></pre>
+          
+          <h3>String Operators:</h3>
+          <p>String operators enable pattern matching and text search. $regex performs regular expression matching with optional flags for case-insensitive searches, while $text provides full-text search capabilities on fields with text indexes. Perfect for search functionality and pattern-based filtering.</p>
+          
+          <pre><code>// \$regex - Regular expression match
+db.users.find({ email: { \$regex: /gmail\.com$/ } })
+db.products.find({ name: { \$regex: "laptop", \$options: "i" } })
+
+// Text search
+db.products.createIndex({ description: "text" })
+db.products.find({ \$text: { \$search: "wireless bluetooth" } })</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/W-WihPoEbR4'
+      },
+      {
+        id: 'mongodb-aggregation',
+        title: 'Aggregation Pipeline',
+        content: `
+          <h2>MongoDB Aggregation Framework</h2>
+          <p>The aggregation pipeline processes documents through multiple stages, transforming and analyzing data. It's MongoDB's most powerful feature for data processing.</p>
+          
+          <h3>Pipeline Stages:</h3>
+          <p>Aggregation pipeline stages process documents sequentially, with each stage transforming data and passing results to the next stage. Common stages include $match for filtering, $group for aggregation calculations, $project for field selection, $sort for ordering, and $limit/$skip for pagination. Stages can be combined in any order to create powerful data transformations.</p>
+          
+          <pre><code>// \$match - Filter documents
+db.orders.aggregate([
+  { \$match: { status: "completed" } }
+])
+
+// \$group - Group by field and calculate
+db.orders.aggregate([
+  {
+    \$group: {
+      _id: "\$customer_id",
+      totalSpent: { \$sum: "\$amount" },
+      orderCount: { \$sum: 1 },
+      avgOrder: { \$avg: "\$amount" }
+    }
+  }
+])
+
+// \$project - Select/reshape fields
+db.users.aggregate([
+  {
+    \$project: {
+      name: 1,
+      email: 1,
+      fullAddress: { \$concat: ["\$street", ", ", "\$city"] }
+    }
+  }
+])
+
+// \$sort - Sort documents
+db.products.aggregate([
+  { \$sort: { price: -1 } }
+])
+
+// \$limit and \$skip - Pagination
+db.products.aggregate([
+  { \$skip: 10 },
+  { \$limit: 5 }
+])</code></pre>
+          
+          <h3>Complex Aggregation Example:</h3>
+          <p>Real-world aggregations often combine multiple stages to generate sophisticated reports and analytics. This example demonstrates a complete sales analysis pipeline that filters data, groups by product, sorts results, limits output, joins with related collections, and reshapes the final output for presentation.</p>
+          
+          <pre><code>// Sales report with multiple stages
+db.orders.aggregate([
+  // Stage 1: Filter completed orders
+  {
+    \$match: {
+      status: "completed",
+      orderDate: { \$gte: ISODate("2024-01-01") }
+    }
+  },
+  // Stage 2: Group by product
+  {
+    \$group: {
+      _id: "\$product_id",
+      totalRevenue: { \$sum: "\$amount" },
+      totalQuantity: { \$sum: "\$quantity" },
+      avgPrice: { \$avg: "\$price" }
+    }
+  },
+  // Stage 3: Sort by revenue
+  {
+    \$sort: { totalRevenue: -1 }
+  },
+  // Stage 4: Limit to top 10
+  {
+    \$limit: 10
+  },
+  // Stage 5: Lookup product details
+  {
+    \$lookup: {
+      from: "products",
+      localField: "_id",
+      foreignField: "_id",
+      as: "productInfo"
+    }
+  },
+  // Stage 6: Reshape output
+  {
+    \$project: {
+      productName: { \$arrayElemAt: ["\$productInfo.name", 0] },
+      totalRevenue: 1,
+      totalQuantity: 1,
+      avgPrice: { \$round: ["\$avgPrice", 2] }
+    }
+  }
+])</code></pre>
+          
+          <h3>Useful Aggregation Operators:</h3>
+          <p>Advanced aggregation operators extend pipeline capabilities. $unwind deconstructs arrays into separate documents, $lookup performs joins with other collections (like SQL JOIN), and $addFields adds computed fields without removing existing ones. These operators enable complex data transformations and multi-collection queries.</p>
+          
+          <pre><code>// \$unwind - Deconstruct array
+db.users.aggregate([
+  { \$unwind: "\$hobbies" }
+])
+
+// \$lookup - Join with another collection
+db.orders.aggregate([
+  {
+    \$lookup: {
+      from: "customers",
+      localField: "customer_id",
+      foreignField: "_id",
+      as: "customerInfo"
+    }
+  }
+])
+
+// \$addFields - Add computed fields
+db.products.aggregate([
+  {
+    \$addFields: {
+      discountedPrice: { \$multiply: ["\$price", 0.9] }
+    }
+  }
+])</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/A3jvoE0jGdE'
+      },
+      {
+        id: 'mongodb-indexing',
+        title: 'Indexes & Performance',
+        content: `
+          <h2>MongoDB Indexing</h2>
+          <p>Indexes improve query performance by creating data structures that allow MongoDB to quickly locate documents. Proper indexing is crucial for production applications.</p>
+          
+          <h3>Index Types:</h3>
+          <p>MongoDB supports various index types optimized for different use cases. Single field indexes speed up queries on one field, compound indexes optimize multi-field queries, unique indexes enforce uniqueness, text indexes enable full-text search, geospatial indexes support location queries, and TTL indexes automatically delete documents after a specified time.</p>
+          
+          <pre><code>// Single field index
+db.users.createIndex({ email: 1 })  // 1 = ascending, -1 = descending
+
+// Compound index (multiple fields)
+db.products.createIndex({ category: 1, price: -1 })
+
+// Unique index
+db.users.createIndex({ email: 1 }, { unique: true })
+
+// Text index for full-text search
+db.articles.createIndex({ title: "text", content: "text" })
+
+// Geospatial index
+db.places.createIndex({ location: "2dsphere" })
+
+// TTL index (auto-delete after time)
+db.sessions.createIndex(
+  { createdAt: 1 },
+  { expireAfterSeconds: 3600 }
+)</code></pre>
+          
+          <h3>Index Management:</h3>
+          <p>Managing indexes involves viewing existing indexes, creating new ones, and removing unused ones. Regular index maintenance ensures optimal performance. Use getIndexes() to view all indexes, dropIndex() to remove specific indexes, and explain() to analyze if queries are using indexes efficiently.</p>
+          
+          <pre><code>// Show all indexes
+db.users.getIndexes()
+
+// Drop index
+db.users.dropIndex("email_1")
+db.users.dropIndex({ email: 1 })
+
+// Drop all indexes (except _id)
+db.users.dropIndexes()
+
+// Check index usage
+db.users.find({ email: "test@example.com" }).explain("executionStats")</code></pre>
+          
+          <h3>Query Performance Analysis:</h3>
+          <p>The explain() method reveals how MongoDB executes queries, showing execution time, documents scanned, and index usage. Use it to identify slow queries and optimize them by adding appropriate indexes. The executionStats mode provides detailed metrics for performance tuning and bottleneck identification.</p>
+          
+          <pre><code>// Explain query execution
+db.products.find({ price: { \$gte: 100 } }).explain()
+
+// Detailed execution stats
+db.products.find({ category: "Electronics" })
+  .explain("executionStats")
+
+// Results show:
+// - executionTimeMillis
+// - totalDocsExamined
+// - totalKeysExamined
+// - indexUsed</code></pre>
+          
+          <h3>Performance Best Practices:</h3>
+          <ul>
+            <li>Create indexes for frequently queried fields</li>
+            <li>Use compound indexes for multiple field queries</li>
+            <li>Index fields used in sort operations</li>
+            <li>Limit number of indexes (each slows writes)</li>
+            <li>Use covered queries (data from index only)</li>
+            <li>Monitor index usage with explain()</li>
+            <li>Drop unused indexes to improve write performance</li>
+          </ul>
+          
+          <pre><code>// Covered query (very fast)
+db.users.find(
+  { email: "test@example.com" },
+  { _id: 0, email: 1, name: 1 }
+).hint("email_1")</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/KF2lcYBfoM0'
+      },
+      {
+        id: 'mongodb-data-modeling',
+        title: 'Data Modeling',
+        content: `
+          <h2>MongoDB Data Modeling</h2>
+          <p>Data modeling in MongoDB differs from relational databases. The flexible document model allows both embedding and referencing data based on your application's access patterns.</p>
+          
+          <h3>Embedded Documents vs References:</h3>
+          <p>Choosing between embedding and referencing is crucial for MongoDB performance. Embed data that's accessed together for faster reads and atomic updates. Use references for large datasets, data accessed independently, or many-to-many relationships. The decision depends on your query patterns and data size.</p>
+          
+          <pre><code>// Embedded (One-to-Few, Data accessed together)
+db.users.insertOne({
+  name: "John Doe",
+  email: "john@example.com",
+  address: {
+    street: "123 Main St",
+    city: "New York",
+    zipCode: "10001"
+  },
+  orders: [
+    { orderId: 1, item: "Laptop", price: 999 },
+    { orderId: 2, item: "Mouse", price: 29 }
+  ]
+})
+
+// References (One-to-Many, Large/independent data)
+// Users collection
+db.users.insertOne({
+  _id: ObjectId("user123"),
+  name: "John Doe",
+  email: "john@example.com"
+})
+
+// Orders collection (separate)
+db.orders.insertMany([
+  {
+    userId: ObjectId("user123"),
+    items: ["Laptop", "Mouse"],
+    total: 1028,
+    date: ISODate("2024-01-15")
+  },
+  {
+    userId: ObjectId("user123"),
+    items: ["Keyboard"],
+    total: 79,
+    date: ISODate("2024-01-20")
+  }
+])</code></pre>
+          
+          <h3>Design Patterns:</h3>
+          <p>MongoDB design patterns solve common data modeling challenges efficiently. The Attribute Pattern handles variable product attributes, Bucket Pattern optimizes time-series data storage, and Subset Pattern improves performance by storing frequently accessed data separately from complete datasets. These patterns help scale applications effectively.</p>
+          
+          <pre><code>// Pattern 1: Attribute Pattern (variable fields)
+db.products.insertOne({
+  name: "Laptop",
+  category: "Electronics",
+  attributes: [
+    { key: "RAM", value: "16GB" },
+    { key: "Storage", value: "512GB SSD" },
+    { key: "Screen", value: "15.6 inch" }
+  ]
+})
+
+// Pattern 2: Bucket Pattern (time-series data)
+db.measurements.insertOne({
+  sensor_id: 123,
+  date: ISODate("2024-01-15"),
+  measurements: [
+    { time: "00:00", temp: 20.5, humidity: 65 },
+    { time: "01:00", temp: 20.3, humidity: 66 },
+    { time: "02:00", temp: 20.1, humidity: 67 }
+  ]
+})
+
+// Pattern 3: Subset Pattern (frequently accessed data)
+db.movies.insertOne({
+  title: "The Matrix",
+  year: 1999,
+  cast: ["Keanu Reeves", "Laurence Fishburne"], // Top actors
+  reviews_summary: {
+    count: 5000,
+    avgRating: 4.5,
+    recentReviews: [ /* Last 10 reviews */ ]
+  }
+  // Full reviews in separate collection
+})</code></pre>
+          
+          <h3>Schema Validation:</h3>
+          <p>Schema validation enforces data quality rules at the database level using JSON Schema. Define required fields, data types, patterns, and value ranges to ensure document consistency. Validation rules prevent invalid data from being inserted or updated, maintaining database integrity even with flexible schemas.</p>
+          
+          <pre><code>// Create collection with validation
+db.createCollection("users", {
+  validator: {
+    \$jsonSchema: {
+      bsonType: "object",
+      required: ["name", "email", "age"],
+      properties: {
+        name: {
+          bsonType: "string",
+          description: "must be a string and is required"
+        },
+        email: {
+          bsonType: "string",
+          pattern: "^.+@.+\\\\.com\$",
+          description: "must be a valid email"
+        },
+        age: {
+          bsonType: "int",
+          minimum: 0,
+          maximum: 150,
+          description: "must be an integer between 0 and 150"
+        }
+      }
+    }
+  }
+})</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/3GHZd0zv170'
+      },
+      {
+        id: 'mongodb-mongoose',
+        title: 'Mongoose ODM',
+        content: `
+          <h2>Using Mongoose with Node.js</h2>
+          <p>Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js. It provides schema validation, middleware, and a more developer-friendly API.</p>
+          
+          <h3>Setup and Connection:</h3>
+          <p>Setting up Mongoose requires installing the package and establishing a connection to your MongoDB database. The connection handles all communication between your Node.js application and MongoDB, supporting both local and cloud databases like MongoDB Atlas.</p>
+          
+          <pre><code>// Install Mongoose
+// npm install mongoose
+
+// Connect to MongoDB
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost:27017/myapp', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log('Connected to MongoDB'))
+.catch(err => console.error('Connection error:', err));</code></pre>
+          
+          <h3>Define Schema and Model:</h3>
+          <p>Schemas define the structure of your documents, including field types, validations, and default values. Models are compiled from schemas and provide an interface for creating, querying, updating, and deleting documents. Mongoose enforces the schema at the application level, ensuring data consistency.</p>
+          
+          <pre><code>// Define User Schema
+const userSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: [true, 'Name is required'],
+    trim: true,
+    minlength: 2,
+    maxlength: 50
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+    lowercase: true,
+    match: /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+\$/
+  },
+  age: {
+    type: Number,
+    min: 0,
+    max: 150
+  },
+  role: {
+    type: String,
+    enum: ['user', 'admin', 'moderator'],
+    default: 'user'
+  },
+  isActive: {
+    type: Boolean,
+    default: true
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
+});
+
+// Create Model
+const User = mongoose.model('User', userSchema);</code></pre>
+          
+          <h3>CRUD with Mongoose:</h3>
+          <p>Mongoose provides elegant methods for CRUD operations with built-in validation and error handling. Methods like save(), create(), find(), updateOne(), and deleteOne() simplify database interactions while maintaining type safety and data integrity through your defined schemas.</p>
+          
+          <pre><code>// Create
+const newUser = new User({
+  name: 'John Doe',
+  email: 'john@example.com',
+  age: 30
+});
+await newUser.save();
+
+// Or use create
+const user = await User.create({
+  name: 'Jane Smith',
+  email: 'jane@example.com',
+  age: 25
+});
+
+// Read
+const users = await User.find({ age: { \$gte: 25 } });
+const user = await User.findOne({ email: 'john@example.com' });
+const userById = await User.findById(userId);
+
+// Update
+await User.updateOne(
+  { email: 'john@example.com' },
+  { \$set: { age: 31 } }
+);
+
+const updated = await User.findByIdAndUpdate(
+  userId,
+  { age: 32 },
+  { new: true } // Return updated document
+);
+
+// Delete
+await User.deleteOne({ email: 'old@example.com' });
+await User.findByIdAndDelete(userId);</code></pre>
+          
+          <h3>Schema Methods and Middleware:</h3>
+          <p>Mongoose allows you to define custom methods on schemas and models for reusable logic. Middleware (pre and post hooks) enables you to execute code before or after specific operations like save, validate, remove, making it perfect for tasks like password hashing, logging, or data transformation.</p>
+          
+          <pre><code>// Instance methods
+userSchema.methods.getFullProfile = function() {
+  return {
+    name: this.name,
+    email: this.email,
+    memberSince: this.createdAt
+  };
+};
+
+// Static methods
+userSchema.statics.findByEmail = function(email) {
+  return this.findOne({ email: email });
+};
+
+// Pre-save middleware
+userSchema.pre('save', async function(next) {
+  // Hash password before saving
+  if (this.isModified('password')) {
+    this.password = await bcrypt.hash(this.password, 10);
+  }
+  next();
+});
+
+// Post-save middleware
+userSchema.post('save', function(doc) {
+  console.log(\`User \${doc.name} was saved\`);
+});</code></pre>
+          
+          <h3>Population (References):</h3>
+          <p>Population is Mongoose's method of automatically replacing specified paths in documents with documents from other collections. Instead of manually fetching related data, populate() performs the join-like operation, making it easy to work with references while maintaining the benefits of document-based storage.</p>
+          
+          <pre><code>// Order Schema with reference
+const orderSchema = new mongoose.Schema({
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  },
+  items: [{
+    product: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Product'
+    },
+    quantity: Number
+  }],
+  total: Number
+});
+
+const Order = mongoose.model('Order', orderSchema);
+
+// Populate user data
+const orders = await Order.find()
+  .populate('user', 'name email')
+  .populate('items.product', 'name price');
+
+// Nested population
+const order = await Order.findById(orderId)
+  .populate({
+    path: 'user',
+    select: 'name email',
+    populate: {
+      path: 'address',
+      select: 'city country'
+    }
+  });</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/DZBGEVgL2eE'
+      },
+      {
+        id: 'mongodb-advanced',
+        title: 'Advanced Features',
+        content: `
+          <h2>Advanced MongoDB Features</h2>
+          <p>MongoDB offers powerful advanced features for production applications including transactions, change streams, and replication.</p>
+          
+          <h3>Transactions:</h3>
+          <p>Transactions ensure ACID compliance for multi-document operations. MongoDB 4.0+ supports multi-document transactions in replica sets, allowing you to perform multiple operations atomically. If any operation fails, the entire transaction is rolled back, maintaining data consistency.</p>
+          
+          <pre><code>// Multi-document transactions (MongoDB 4.0+)
+const session = await mongoose.startSession();
+session.startTransaction();
+
+try {
+  // Transfer money between accounts
+  await Account.updateOne(
+    { _id: fromAccountId },
+    { \$inc: { balance: -amount } },
+    { session }
+  );
+  
+  await Account.updateOne(
+    { _id: toAccountId },
+    { \$inc: { balance: amount } },
+    { session }
+  );
+  
+  // Commit transaction
+  await session.commitTransaction();
+  console.log('Transaction successful');
+} catch (error) {
+  // Rollback on error
+  await session.abortTransaction();
+  console.error('Transaction failed:', error);
+} finally {
+  session.endSession();
+}</code></pre>
+          
+          <h3>Change Streams (Real-time Updates):</h3>
+          <p>Change streams allow applications to access real-time data changes without polling. They provide a powerful way to react to database changes as they occur, perfect for building reactive applications, real-time dashboards, and triggering workflows based on data modifications.</p>
+          
+          <pre><code>// Watch for changes in collection
+const changeStream = db.users.watch();
+
+changeStream.on('change', (change) => {
+  console.log('Change detected:', change);
+  // change.operationType: 'insert', 'update', 'delete'
+  // change.fullDocument: The updated document
+});
+
+// Watch specific operations
+const pipeline = [
+  { \$match: { 'operationType': 'insert' } }
+];
+const insertStream = db.users.watch(pipeline);
+
+// With Mongoose
+const User = mongoose.model('User');
+User.watch().on('change', (data) => {
+  console.log('User changed:', data);
+});</code></pre>
+          
+          <h3>Bulk Operations:</h3>
+          <p>Bulk operations allow you to perform multiple write operations in a single request, significantly improving performance for batch processing. You can combine inserts, updates, and deletes in one bulk operation. Ordered operations stop on first error, while unordered operations continue executing all operations.</p>
+          
+          <pre><code>// Bulk write operations
+const bulkOps = [
+  {
+    insertOne: {
+      document: { name: "User1", email: "user1@example.com" }
+    }
+  },
+  {
+    updateOne: {
+      filter: { email: "user2@example.com" },
+      update: { \$set: { status: "active" } }
+    }
+  },
+  {
+    deleteOne: {
+      filter: { email: "old@example.com" }
+    }
+  }
+];
+
+await db.users.bulkWrite(bulkOps);
+
+// Ordered vs Unordered
+await db.users.bulkWrite(bulkOps, { ordered: false });</code></pre>
+          
+          <h3>GridFS (Large Files):</h3>
+          <p>GridFS is MongoDB's specification for storing and retrieving files larger than the 16MB BSON document size limit. It divides files into chunks and stores each chunk as a separate document, making it ideal for storing images, videos, PDFs, and other large files directly in your MongoDB database.</p>
+          
+          <pre><code>// Store files larger than 16MB
+const mongoose = require('mongoose');
+const Grid = require('gridfs-stream');
+
+// Upload file to GridFS
+const uploadFile = async (filePath) => {
+  const gfs = Grid(mongoose.connection.db, mongoose.mongo);
+  const writestream = gfs.createWriteStream({
+    filename: 'myFile.pdf'
+  });
+  
+  fs.createReadStream(filePath).pipe(writestream);
+  
+  writestream.on('close', (file) => {
+    console.log('File uploaded:', file.filename);
+  });
+};
+
+// Read file from GridFS
+const readFile = async (filename) => {
+  const gfs = Grid(mongoose.connection.db, mongoose.mongo);
+  const readstream = gfs.createReadStream({
+    filename: filename
+  });
+  
+  readstream.pipe(fs.createWriteStream('output.pdf'));
+};</code></pre>
+          
+          <h3>Geospatial Queries:</h3>
+          <p>MongoDB supports geospatial queries for location-based data, enabling you to find nearby places, calculate distances, and perform spatial operations. The 2dsphere index supports queries on spherical geometry for real-world geographic data, perfect for building location-based applications like store locators and delivery systems.</p>
+          
+          <pre><code>// Create 2dsphere index
+db.places.createIndex({ location: "2dsphere" })
+
+// Find nearby places
+db.places.find({
+  location: {
+    \$near: {
+      \$geometry: {
+        type: "Point",
+        coordinates: [-73.9667, 40.78]
+      },
+      \$maxDistance: 5000 // 5km
+    }
+  }
+})
+
+// Find within polygon
+db.places.find({
+  location: {
+    \$geoWithin: {
+      \$geometry: {
+        type: "Polygon",
+        coordinates: [[
+          [-74, 40],
+          [-74, 41],
+          [-73, 41],
+          [-73, 40],
+          [-74, 40]
+        ]]
+      }
+    }
+  }
+})</code></pre>
+        `,
+        videoUrl: 'https://www.youtube.com/embed/leNCfU5SYR8'
       }
     ]
   }
