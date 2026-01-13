@@ -5549,31 +5549,293 @@ module.exports = {
           <h2>PHP Variables and Data Types</h2>
           <p>PHP variables are containers for storing data values. PHP is a loosely typed language - you don't need to declare variable types.</p>
           
-          <h3>Variable Rules:</h3>
-          <ul>
-            <li>Variables start with $ sign</li>
-            <li>Must start with letter or underscore</li>
-            <li>Can contain letters, numbers, and underscores</li>
-            <li>Case-sensitive</li>
-          </ul>
+          <h3>Creating Variables:</h3>
+          <p>Variables in PHP start with a dollar sign ($) followed by the variable name.</p>
+          <pre><code>&lt;?php
+// Variable creation (start with $)
+$name = "John Doe";
+$age = 25;
+$salary = 50000.50;
+$isActive = true;
+
+// Valid variable names
+$firstName = "Alice";
+$first_name = "Bob";
+$_username = "admin";
+$user2 = "test";
+
+// Invalid variable names (commented out)
+// $2user = "invalid";     // Cannot start with number
+// $first-name = "error";  // Cannot contain hyphens
+// $first name = "error";  // Cannot contain spaces
+
+echo $name;     // John Doe
+echo $age;      // 25
+echo $salary;   // 50000.5
+?&gt;</code></pre>
           
-          <h3>PHP Data Types:</h3>
-          <ul>
-            <li><strong>String:</strong> Text data in quotes</li>
-            <li><strong>Integer:</strong> Whole numbers</li>
-            <li><strong>Float:</strong> Decimal numbers</li>
-            <li><strong>Boolean:</strong> true or false</li>
-            <li><strong>Array:</strong> Collection of values</li>
-            <li><strong>Object:</strong> Instance of a class</li>
-            <li><strong>NULL:</strong> Variable with no value</li>
-          </ul>
+          <h3>Data Types with Examples:</h3>
+          <p>PHP supports several data types including strings, integers, floats, booleans, arrays, and NULL.</p>
+          <pre><code>&lt;?php
+// String data type
+$text = "Hello World";
+$quote = 'Single quotes work too';
+$multiline = "This is a
+multiline string";
+
+// Integer data type
+$positive = 123;
+$negative = -456;
+$octal = 0755;        // Octal number
+$hex = 0xFF;          // Hexadecimal number
+
+// Float (double) data type
+$price = 19.99;
+$scientific = 1.2e3;  // 1200
+$negative_float = -45.67;
+
+// Boolean data type
+$isLoggedIn = true;
+$isCompleted = false;
+
+// Array data type
+$colors = ["red", "green", "blue"];
+$person = ["name" => "John", "age" => 30];
+
+// NULL data type
+$empty = null;
+$undefined = NULL;
+
+// Check data types
+echo gettype($text);        // string
+echo gettype($positive);    // integer
+echo gettype($price);       // double
+echo gettype($isLoggedIn);  // boolean
+echo gettype($colors);      // array
+echo gettype($empty);       // NULL
+?&gt;</code></pre>
+          
+          <h3>Type Checking and Conversion:</h3>
+          <p>PHP provides functions to check variable types and convert between types.</p>
+          <pre><code>&lt;?php
+$value = "123";
+
+// Check specific types
+echo is_string($value);    // 1 (true)
+echo is_int($value);       // 0 (false)
+echo is_numeric($value);   // 1 (true)
+
+// Type conversion (casting)
+$number = "456";
+$integer = (int)$number;        // 456
+$float = (float)$number;        // 456.0
+$boolean = (bool)$number;       // true
+$string = (string)$integer;     // "456"
+
+// Automatic type conversion
+$result = "10" + 5;      // 15 (string becomes int)
+$concat = "10" . 5;      // "105" (int becomes string)
+
+// Strict comparison vs loose comparison
+$a = 5;
+$b = "5";
+
+echo $a == $b;           // true (loose comparison)
+echo $a === $b;          // false (strict comparison)
+
+// Testing for empty values
+$empty_string = "";
+$zero = 0;
+$false_val = false;
+
+echo empty($empty_string);   // true
+echo empty($zero);           // true
+echo empty($false_val);      // true
+
+echo isset($undefined_var);  // false
+echo isset($a);             // true
+?&gt;</code></pre>
           
           <h3>Variable Scope:</h3>
+          <pre><code>&lt;?php
+// Global scope
+$globalVar = "I'm global";
+
+function testScope() {
+    // Local scope
+    $localVar = "I'm local";
+    
+    // Access global variable inside function
+    global $globalVar;
+    echo $globalVar;     // Works with global keyword
+    
+    // Using $GLOBALS superglobal
+    echo $GLOBALS['globalVar'];  // Alternative way
+    
+    echo $localVar;      // Works - local variable
+}
+
+testScope();
+echo $globalVar;         // Works - global variable
+// echo $localVar;       // Error - not accessible outside function
+
+// Static variables (retain value between calls)
+function counter() {
+    static $count = 0;
+    $count++;
+    echo "Count: $count\n";
+}
+
+counter();  // Count: 1
+counter();  // Count: 2
+counter();  // Count: 3
+?&gt;</code></pre>
+          
+          <h3>Superglobal Variables:</h3>
+          <p>Superglobals are built-in variables that are always accessible, regardless of scope.</p>
+          <pre><code>&lt;?php
+// $_GET - URL parameters
+// URL: page.php?name=John&age=25
+echo $_GET['name'];        // "John"
+echo $_GET['age'];         // "25"
+
+// $_POST - Form data
+// &lt;form method="POST"&gt;&lt;input name="username"&gt;&lt;/form&gt;
+echo $_POST['username'];   // Form input value
+
+// $_SESSION - Session data
+session_start();
+$_SESSION['user_id'] = 123;
+echo $_SESSION['user_id']; // 123
+
+// $_COOKIE - Cookie data
+setcookie("preferences", "dark_mode");
+echo $_COOKIE['preferences']; // "dark_mode" (on next page load)
+
+// $_SERVER - Server information
+echo $_SERVER['HTTP_HOST'];    // Domain name
+echo $_SERVER['REQUEST_URI'];  // Current page path
+echo $_SERVER['REMOTE_ADDR'];  // Client IP address
+
+// $_FILES - Uploaded files
+// &lt;form method="POST" enctype="multipart/form-data"&gt;
+//   &lt;input type="file" name="upload"&gt;
+// &lt;/form&gt;
+echo $_FILES['upload']['name'];     // Original filename
+echo $_FILES['upload']['size'];     // File size
+echo $_FILES['upload']['tmp_name']; // Temporary file location
+
+// $GLOBALS - Access all global variables
+$test = "Global value";
+function showGlobal() {
+    echo $GLOBALS['test'];  // Access without global keyword
+}
+?&gt;</code></pre>
+          
+          <h3>Working with Variables:</h3>
+          <p>Variables in PHP start with a dollar sign ($) followed by the variable name.</p>
+          <pre><code>&lt;?php
+// Variable variables (dynamic variable names)
+$varName = "message";
+$$varName = "Hello World";  // Creates $message = "Hello World"
+echo $message;               // "Hello World"
+
+// Constants (unchangeable values)
+define("SITE_NAME", "My Website");
+const PI = 3.14159;
+
+echo SITE_NAME;  // "My Website"
+echo PI;         // 3.14159
+
+// Check if constant exists
+if (defined('SITE_NAME')) {
+    echo "Site name is defined";
+}
+
+// Predefined constants
+echo PHP_VERSION;      // PHP version
+echo __FILE__;         // Current file path
+echo __LINE__;         // Current line number
+
+// Variable interpolation in strings
+$name = "Alice";
+$age = 30;
+
+echo "My name is $name and I'm $age years old";
+echo "My name is {$name} and I'm {$age} years old";  // Clearer syntax
+
+// Math with variables
+$price = 100;
+$tax = 0.08;
+$total = $price + ($price * $tax);
+echo "Total: $" . number_format($total, 2);  // Total: $108.00
+?&gt;</code></pre>
+          
+          <h3>Practical Examples:</h3>
+          <p>Here are some practical examples demonstrating common PHP variable usage.</p>
+          <pre><code>&lt;?php
+// User profile data
+$user = [
+    'id' => 1,
+    'username' => 'johndoe',
+    'email' => 'john@example.com',
+    'active' => true,
+    'last_login' => '2024-01-15',
+    'preferences' => [
+        'theme' => 'dark',
+        'language' => 'en',
+        'notifications' => true
+    ]
+];
+
+// Configuration settings
+$config = [
+    'database_host' => 'localhost',
+    'database_name' => 'myapp',
+    'debug_mode' => false,
+    'max_upload_size' => 5 * 1024 * 1024, // 5MB
+    'allowed_extensions' => ['jpg', 'png', 'pdf']
+];
+
+// Form validation
+$errors = [];
+$name = $_POST['name'] ?? '';
+$email = $_POST['email'] ?? '';
+$age = $_POST['age'] ?? 0;
+
+if (empty($name)) {
+    $errors[] = "Name is required";
+}
+
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $errors[] = "Invalid email format";
+}
+
+if (!is_numeric($age) || $age < 1) {
+    $errors[] = "Age must be a positive number";
+}
+
+if (empty($errors)) {
+    echo "Form is valid!";
+} else {
+    foreach ($errors as $error) {
+        echo "Error: $error\n";
+    }
+}
+?&gt;</code></pre>
+          
+          <h3>Quick Reference:</h3>
+          <p>Here is a quick reference for common PHP variable operations.</p>
           <ul>
-            <li><strong>Local:</strong> Inside functions</li>
-            <li><strong>Global:</strong> Outside functions</li>
-            <li><strong>Static:</strong> Retains value between function calls</li>
-            <li><strong>Superglobals:</strong> $_GET, $_POST, $_SESSION, etc.</li>
+            <li><strong>$variable:</strong> Variable declaration (starts with $)</li>
+            <li><strong>gettype($var):</strong> Get variable type</li>
+            <li><strong>is_string(), is_int(), is_bool():</strong> Check specific types</li>
+            <li><strong>(int), (string), (float):</strong> Type casting</li>
+            <li><strong>empty($var):</strong> Check if variable is empty</li>
+            <li><strong>isset($var):</strong> Check if variable is set</li>
+            <li><strong>global $var:</strong> Access global variable in function</li>
+            <li><strong>static $var:</strong> Variable retains value between function calls</li>
+            <li><strong>define("NAME", value):</strong> Create constant</li>
           </ul>
         `,
         videoUrl: 'https://www.youtube.com/embed/1SnPKhCdlsU'
@@ -5585,27 +5847,393 @@ module.exports = {
           <h2>PHP Control Structures</h2>
           <p>Control structures allow you to control the flow of program execution based on conditions and loops.</p>
           
-          <h3>Conditional Statements:</h3>
-          <ul>
-            <li><strong>if:</strong> Execute code if condition is true</li>
-            <li><strong>if...else:</strong> Execute different code blocks</li>
-            <li><strong>if...elseif...else:</strong> Multiple conditions</li>
-            <li><strong>switch:</strong> Compare variable against many values</li>
-            <li><strong>match:</strong> PHP 8+ expression (similar to switch)</li>
-          </ul>
+          <h3>If Statements:</h3>
+          <p>Conditional statements to execute code based on conditions.</p>
+          <pre><code>&lt;?php
+$age = 18;
+$hasLicense = true;
+
+// Simple if statement
+if ($age >= 18) {
+    echo "You are an adult";
+}
+
+// If-else statement
+if ($hasLicense) {
+    echo "You can drive";
+} else {
+    echo "You cannot drive";
+}
+
+// If-elseif-else statement
+$score = 85;
+if ($score >= 90) {
+    echo "Grade A";
+} elseif ($score >= 80) {
+    echo "Grade B";
+} elseif ($score >= 70) {
+    echo "Grade C";
+} else {
+    echo "Grade F";
+}
+
+// Nested conditions
+if ($age >= 18) {
+    if ($hasLicense) {
+        echo "Can drive a car";
+    } else {
+        echo "Need to get license";
+    }
+}
+?&gt;</code></pre>
           
-          <h3>Loops:</h3>
-          <ul>
-            <li><strong>for:</strong> Loop with counter</li>
-            <li><strong>foreach:</strong> Loop through arrays</li>
-            <li><strong>while:</strong> Loop while condition is true</li>
-            <li><strong>do...while:</strong> Execute at least once</li>
-          </ul>
+          <h3>Switch Statement:</h3>
+          <p>Switch statements allow you to execute different code blocks based on the value of a variable.</p>
+          <pre><code>&lt;?php
+$day = "Monday";
+
+// Basic switch
+switch ($day) {
+    case "Monday":
+        echo "Start of work week";
+        break;
+    case "Tuesday":
+    case "Wednesday":
+    case "Thursday":
+        echo "Midweek";
+        break;
+    case "Friday":
+        echo "TGIF!";
+        break;
+    case "Saturday":
+    case "Sunday":
+        echo "Weekend!";
+        break;
+    default:
+        echo "Invalid day";
+}
+
+// Switch with different data types
+$value = 42;
+switch ($value) {
+    case 1:
+        echo "One";
+        break;
+    case "hello":
+        echo "String hello";
+        break;
+    case 42:
+        echo "Answer to everything";
+        break;
+    default:
+        echo "Unknown value";
+}
+?&gt;</code></pre>
           
-          <h3>Loop Control:</h3>
+          <h3>Match Expression (PHP 8+):</h3>
+          <p>Match expressions provide a more concise way to handle multiple conditions compared to switch statements.</p>
+          <pre><code>&lt;?php
+// Modern match syntax
+$status = "pending";
+
+$message = match($status) {
+    "pending" => "Order is being processed",
+    "shipped" => "Order is on the way",
+    "delivered" => "Order has been delivered",
+    "cancelled" => "Order was cancelled",
+    default => "Unknown status"
+};
+
+echo $message;
+
+// Match with multiple values
+$httpCode = 404;
+$response = match($httpCode) {
+    200, 201, 202 => "Success",
+    400, 401, 403 => "Client Error",
+    404 => "Not Found",
+    500, 502, 503 => "Server Error",
+    default => "Unknown Error"
+};
+
+// Match with expressions
+$age = 25;
+$category = match(true) {
+    $age < 13 => "Child",
+    $age < 20 => "Teenager", 
+    $age < 60 => "Adult",
+    default => "Senior"
+};
+
+echo $category; // "Adult"
+?&gt;</code></pre>
+          
+          <h3>For Loops:</h3>
+          <pre><code>&lt;?php
+// Basic for loop
+for ($i = 1; $i <= 5; $i++) {
+    echo "Number: $i\n";
+}
+
+// Counting down
+for ($i = 10; $i > 0; $i--) {
+    echo "Countdown: $i\n";
+}
+
+// Skip numbers
+for ($i = 0; $i <= 20; $i += 2) {
+    echo "Even number: $i\n";
+}
+
+// Nested for loops
+for ($i = 1; $i <= 3; $i++) {
+    for ($j = 1; $j <= 3; $j++) {
+        echo "($i, $j) ";
+    }
+    echo "\n";
+}
+
+// Multiple variables
+for ($i = 0, $j = 10; $i < 5; $i++, $j--) {
+    echo "i=$i, j=$j\n";
+}
+?&gt;</code></pre>
+          
+          <h3>Foreach Loops:</h3>
+          <p>Foreach loops are used to iterate over arrays or objects.</p>
+          <pre><code>&lt;?php
+// Simple array loop
+$fruits = ["apple", "banana", "orange"];
+foreach ($fruits as $fruit) {
+    echo "Fruit: $fruit\n";
+}
+
+// Associative array loop
+$person = ["name" => "John", "age" => 30, "city" => "NYC"];
+foreach ($person as $key => $value) {
+    echo "$key: $value\n";
+}
+
+// Loop with index
+foreach ($fruits as $index => $fruit) {
+    echo "Index $index: $fruit\n";
+}
+
+// Multidimensional array
+$users = [
+    ["name" => "Alice", "age" => 25],
+    ["name" => "Bob", "age" => 30],
+    ["name" => "Carol", "age" => 35]
+];
+
+foreach ($users as $user) {
+    echo $user["name"] . " is " . $user["age"] . " years old\n";
+}
+
+// Modify array values by reference
+$numbers = [1, 2, 3, 4, 5];
+foreach ($numbers as &$number) {
+    $number *= 2; // Double each number
+}
+print_r($numbers); // [2, 4, 6, 8, 10]
+?&gt;</code></pre>
+          
+          <h3>While and Do-While Loops:</h3>
+          <p>While loops execute a block of code as long as a specified condition is true. Do-while loops execute the block at least once before checking the condition.</p>
+          <pre><code>&lt;?php
+// While loop
+$count = 1;
+while ($count <= 5) {
+    echo "Count: $count\n";
+    $count++;
+}
+
+// Do-while loop (executes at least once)
+$number = 10;
+do {
+    echo "Number: $number\n";
+    $number--;
+} while ($number > 5);
+
+// Reading file with while
+$file = fopen("data.txt", "r");
+if ($file) {
+    while (!feof($file)) {
+        $line = fgets($file);
+        echo $line;
+    }
+    fclose($file);
+}
+
+// Infinite loop with break
+$attempts = 0;
+while (true) {
+    $attempts++;
+    if ($attempts > 5) {
+        echo "Max attempts reached";
+        break;
+    }
+    echo "Attempt: $attempts\n";
+}
+?&gt;</code></pre>
+          
+          <h3>Break and Continue:</h3>
+          <p>Break exits a loop prematurely, while continue skips the current iteration and moves to the next one.</p>
+          <pre><code>&lt;?php
+// Break - exit loop
+for ($i = 1; $i <= 10; $i++) {
+    if ($i == 6) {
+        break; // Stop when i equals 6
+    }
+    echo "$i ";
+} // Output: 1 2 3 4 5
+
+// Continue - skip iteration
+for ($i = 1; $i <= 10; $i++) {
+    if ($i % 2 == 0) {
+        continue; // Skip even numbers
+    }
+    echo "$i ";
+} // Output: 1 3 5 7 9
+
+// Nested loops with labeled break
+for ($i = 1; $i <= 3; $i++) {
+    for ($j = 1; $j <= 3; $j++) {
+        if ($i == 2 && $j == 2) {
+            break 2; // Break out of both loops
+        }
+        echo "($i,$j) ";
+    }
+}
+
+// Continue with nested loops
+for ($i = 1; $i <= 3; $i++) {
+    for ($j = 1; $j <= 3; $j++) {
+        if ($j == 2) {
+            continue 2; // Continue outer loop
+        }
+        echo "($i,$j) ";
+    }
+}
+?&gt;</code></pre>
+          
+          <h3>Practical Examples:</h3>
+          <p>Examples demonstrating practical use cases of control flow statements.</p>
+          <pre><code>&lt;?php
+// User input validation
+function validateAge($age) {
+    if (!is_numeric($age)) {
+        return "Age must be a number";
+    } elseif ($age < 0) {
+        return "Age cannot be negative";
+    } elseif ($age > 120) {
+        return "Age seems unrealistic";
+    } else {
+        return "Valid age";
+    }
+}
+
+// Menu system
+function showMenu($choice) {
+    switch ($choice) {
+        case 1:
+            return "View Profile";
+        case 2:
+            return "Edit Settings";
+        case 3:
+            return "Logout";
+        default:
+            return "Invalid choice. Please select 1-3";
+    }
+}
+
+// Processing array data
+$orders = [
+    ["id" => 1, "status" => "pending", "amount" => 100],
+    ["id" => 2, "status" => "completed", "amount" => 250],
+    ["id" => 3, "status" => "cancelled", "amount" => 75],
+];
+
+$totalCompleted = 0;
+$completedCount = 0;
+
+foreach ($orders as $order) {
+    if ($order["status"] == "completed") {
+        $totalCompleted += $order["amount"];
+        $completedCount++;
+    }
+}
+
+echo "Completed orders: $completedCount\n";
+echo "Total revenue: $totalCompleted\n";
+
+// Generating HTML table
+echo "<table><tr><th>ID</th><th>Status</th><th>Amount</th></tr>";
+foreach ($orders as $order) {
+    $class = match($order["status"]) {
+        "completed" => "success",
+        "pending" => "warning", 
+        "cancelled" => "danger",
+        default => ""
+    };
+    
+    echo "<tr class='$class'>";
+    echo "<td>{$order['id']}</td>";
+    echo "<td>{$order['status']}</td>";
+    echo "<td>\${$order['amount']}</td>";
+    echo "</tr>";
+}
+echo "</table>";
+?&gt;</code></pre>
+          
+          <h3>Advanced Control Flow:</h3>
+          <p>Advanced control flow techniques using operators and alternative syntax.</p>
+          <pre><code>&lt;?php
+// Ternary operator (shorthand if-else)
+$age = 20;
+$status = ($age >= 18) ? "adult" : "minor";
+echo $status; // "adult"
+
+// Null coalescing operator (??)
+$username = $_GET['username'] ?? 'guest';
+$config = $userConfig ?? $defaultConfig ?? [];
+
+// Null coalescing assignment operator (??=) - PHP 7.4+
+$data['name'] ??= 'Default Name';
+
+// Spaceship operator (<=> ) - PHP 7+
+function compareValues($a, $b) {
+    return $a <=> $b; // Returns -1, 0, or 1
+}
+
+echo compareValues(5, 10); // -1
+echo compareValues(10, 5); // 1
+echo compareValues(5, 5);  // 0
+
+// Alternative syntax for templates
+if ($loggedIn): ?>
+    <p>Welcome back!</p>
+&lt;?php else: ?>
+    <p>Please login</p>
+&lt;?php endif; ?>
+
+&lt;?php foreach ($items as $item): ?>
+    <div>&lt;?= $item ?></div>
+&lt;?php endforeach; ?>
+?&gt;</code></pre>
+          
+          <h3>Quick Reference:</h3>
+          <p>Summary of common control flow statements and their usage.</p>
           <ul>
+            <li><strong>if ($condition):</strong> Execute if true</li>
+            <li><strong>switch ($var):</strong> Compare against multiple values</li>
+            <li><strong>match ($var):</strong> Modern switch alternative (PHP 8+)</li>
+            <li><strong>for ($i = 0; $i < 10; $i++):</strong> Counter loop</li>
+            <li><strong>foreach ($array as $value):</strong> Array iteration</li>
+            <li><strong>while ($condition):</strong> Loop while true</li>
             <li><strong>break:</strong> Exit loop</li>
             <li><strong>continue:</strong> Skip current iteration</li>
+            <li><strong>$x ? $y : $z:</strong> Ternary operator</li>
           </ul>
         `,
         videoUrl: 'https://www.youtube.com/embed/yXzWfZ4N4xU'
@@ -5617,28 +6245,281 @@ module.exports = {
           <h2>PHP Functions</h2>
           <p>Functions are blocks of code that can be repeatedly used throughout your program. PHP has thousands of built-in functions and you can create your own custom functions.</p>
           
-          <h3>Function Benefits:</h3>
+          <h3>Creating Basic Functions:</h3>
+          <p>Basic functions are defined using the function keyword followed by the function name and parentheses. They can have parameters and return values.</p>
+          <pre><code>&lt;?php
+// Simple function with no parameters
+function sayHello() {
+    return "Hello, World!";
+}
+
+// Function with parameters
+function greetUser($name) {
+    return "Hello, " . $name . "!";
+}
+
+// Function with multiple parameters
+function addNumbers($a, $b) {
+    return $a + $b;
+}
+
+// Using functions
+echo sayHello();              // "Hello, World!"
+echo greetUser("John");       // "Hello, John!"
+echo addNumbers(5, 3);        // 8
+?&gt;</code></pre>
+          
+          <h3>Default Parameters:</h3>
+          <p>Functions can have default values for parameters, which are used if no argument is provided.</p>
+          <pre><code>&lt;?php
+// Function with default values
+function createUser($name, $role = "user", $active = true) {
+    return [
+        "name" => $name,
+        "role" => $role,
+        "active" => $active
+    ];
+}
+
+// Different ways to call
+$user1 = createUser("Alice");                    // Uses defaults
+$user2 = createUser("Bob", "admin");             // Custom role
+$user3 = createUser("Carol", "manager", false);  // All custom
+
+print_r($user1); // ["name" => "Alice", "role" => "user", "active" => true]
+?&gt;</code></pre>
+          
+          <h3>Return Types and Validation:</h3>
+          <p>Functions can specify return types and validate input types (PHP 7+).</p>
+          <pre><code>&lt;?php
+// Function with type hints (PHP 7+)
+function calculateArea(float $width, float $height): float {
+    return $width * $height;
+}
+
+// Function that returns different types
+function processData($data) {
+    if (empty($data)) {
+        return false; // Boolean
+    }
+    
+    if (is_string($data)) {
+        return strtoupper($data); // String
+    }
+    
+    if (is_array($data)) {
+        return count($data); // Integer
+    }
+    
+    return null;
+}
+
+// Usage
+echo calculateArea(5.5, 3.2);      // 17.6
+echo processData("hello");          // "HELLO"
+echo processData([1, 2, 3]);       // 3
+?&gt;</code></pre>
+          
+          <h3>Variable Arguments:</h3>
+          <p>Functions that accept any number of arguments using the ... operator.</p>
+          <pre><code>&lt;?php
+// Function that accepts any number of arguments
+function sum(...$numbers) {
+    $total = 0;
+    foreach ($numbers as $number) {
+        $total += $number;
+    }
+    return $total;
+}
+
+// Different calls
+echo sum(1, 2);                // 3
+echo sum(1, 2, 3, 4);          // 10
+echo sum(10, 20, 30, 40, 50);  // 150
+
+// Function with mixed parameters
+function formatMessage($template, ...$values) {
+    return sprintf($template, ...$values);
+}
+
+echo formatMessage("Hello %s, you have %d messages", "John", 5);
+// "Hello John, you have 5 messages"
+?&gt;</code></pre>
+          
+          <h3>Practical Function Examples:</h3>
+          <p>Examples of functions used in real-world scenarios like validation and formatting.</p>
+          <pre><code>&lt;?php
+// Password validation function
+function validatePassword($password) {
+    $errors = [];
+    
+    if (strlen($password) < 8) {
+        $errors[] = "Password must be at least 8 characters";
+    }
+    
+    if (!preg_match("/[A-Z]/", $password)) {
+        $errors[] = "Password must contain uppercase letter";
+    }
+    
+    if (!preg_match("/[0-9]/", $password)) {
+        $errors[] = "Password must contain a number";
+    }
+    
+    return empty($errors) ? true : $errors;
+}
+
+// Email formatting function
+function formatEmail($firstName, $lastName, $domain = "company.com") {
+    $email = strtolower($firstName . "." . $lastName . "@" . $domain);
+    return $email;
+}
+
+// Usage
+$result = validatePassword("MyPass123");
+if ($result === true) {
+    echo "Password is valid!";
+} else {
+    foreach ($result as $error) {
+        echo $error . "\n";
+    }
+}
+
+echo formatEmail("John", "Doe");              // "john.doe@company.com"
+echo formatEmail("Jane", "Smith", "gmail.com"); // "jane.smith@gmail.com"
+?&gt;</code></pre>
+          
+          <h3>Anonymous Functions (Closures):</h3>
+          <p>Functions without names, often used as callbacks or for encapsulating logic.</p>
+          <pre><code>&lt;?php
+// Simple anonymous function
+$multiply = function($a, $b) {
+    return $a * $b;
+};
+
+echo $multiply(4, 5); // 20
+
+// Anonymous function with use clause
+$tax = 0.08;
+$calculatePrice = function($price) use ($tax) {
+    return $price + ($price * $tax);
+};
+
+echo $calculatePrice(100); // 108
+
+// Using closures with array functions
+$numbers = [1, 2, 3, 4, 5];
+
+$squared = array_map(function($n) {
+    return $n * $n;
+}, $numbers);
+// [1, 4, 9, 16, 25]
+
+$evens = array_filter($numbers, function($n) {
+    return $n % 2 === 0;
+});
+// [2, 4]
+?&gt;</code></pre>
+          
+          <h3>Arrow Functions (PHP 7.4+):</h3>
+          <p>Shorter syntax for anonymous functions using the fn keyword.</p>
+          <pre><code>&lt;?php
+// Short syntax for simple functions
+$numbers = [1, 2, 3, 4, 5];
+
+// Arrow function
+$doubled = array_map(fn($n) => $n * 2, $numbers);
+// [2, 4, 6, 8, 10]
+
+// Comparison with anonymous function
+$tripled_old = array_map(function($n) { return $n * 3; }, $numbers);
+$tripled_new = array_map(fn($n) => $n * 3, $numbers);
+// Both return [3, 6, 9, 12, 15]
+
+// With external variables (automatic capture)
+$multiplier = 4;
+$result = array_map(fn($n) => $n * $multiplier, $numbers);
+// [4, 8, 12, 16, 20]
+?&gt;</code></pre>
+          
+          <h3>Recursive Functions:</h3>
+          <p>Functions that call themselves to solve problems.</p>
+          <pre><code>&lt;?php
+// Calculate factorial
+function factorial($n) {
+    if ($n <= 1) {
+        return 1;
+    }
+    return $n * factorial($n - 1);
+}
+
+// Calculate Fibonacci number
+function fibonacci($n) {
+    if ($n <= 1) {
+        return $n;
+    }
+    return fibonacci($n - 1) + fibonacci($n - 2);
+}
+
+// Directory listing (recursive)
+function listFiles($dir, $indent = 0) {
+    $files = scandir($dir);
+    foreach ($files as $file) {
+        if ($file != "." && $file != "..") {
+            echo str_repeat("  ", $indent) . $file . "\n";
+            if (is_dir($dir . "/" . $file)) {
+                listFiles($dir . "/" . $file, $indent + 1);
+            }
+        }
+    }
+}
+
+echo factorial(5);    // 120
+echo fibonacci(6);    // 8
+// listFiles("/path/to/directory");
+?&gt;</code></pre>
+          
+          <h3>Function Utilities:</h3>
+          <p>PHP provides built-in functions to work with functions themselves.</p>
+          <pre><code>&lt;?php
+// Check if function exists
+if (function_exists('array_map')) {
+    echo "array_map function is available";
+}
+
+// Get function information
+$reflection = new ReflectionFunction('strlen');
+echo $reflection->getNumberOfParameters(); // 1
+
+// Call function dynamically
+$functionName = 'strtoupper';
+echo $functionName('hello'); // "HELLO"
+
+// Call user function with arguments array
+function testFunc($a, $b, $c) {
+    return $a + $b + $c;
+}
+
+echo call_user_func_array('testFunc', [1, 2, 3]); // 6
+?&gt;</code></pre>
+          
+          <h3>Best Practices:</h3>
           <ul>
-            <li><strong>Reusability:</strong> Write once, use many times</li>
-            <li><strong>Organization:</strong> Keep code organized and readable</li>
-            <li><strong>Modularity:</strong> Break complex problems into smaller pieces</li>
-            <li><strong>Testing:</strong> Easier to test individual functions</li>
+            <li><strong>Single Responsibility:</strong> Each function should do one thing well</li>
+            <li><strong>Meaningful Names:</strong> Use descriptive function names</li>
+            <li><strong>Return Values:</strong> Always return a value or null explicitly</li>
+            <li><strong>Type Hints:</strong> Use parameter and return type declarations</li>
+            <li><strong>Documentation:</strong> Comment complex functions with docblocks</li>
+            <li><strong>Error Handling:</strong> Validate inputs and handle edge cases</li>
           </ul>
           
-          <h3>Function Types:</h3>
+          <h3>Quick Reference:</h3>
           <ul>
-            <li><strong>Built-in Functions:</strong> strlen(), array_push(), date(), etc.</li>
-            <li><strong>User-defined Functions:</strong> Custom functions you create</li>
-            <li><strong>Anonymous Functions:</strong> Functions without names (closures)</li>
-            <li><strong>Arrow Functions:</strong> PHP 7.4+ short syntax</li>
-          </ul>
-          
-          <h3>Advanced Concepts:</h3>
-          <ul>
-            <li>Default parameters</li>
-            <li>Variable-length argument lists</li>
-            <li>Return type declarations</li>
-            <li>Function recursion</li>
+            <li><strong>function name():</strong> Basic function declaration</li>
+            <li><strong>function name($param = "default"):</strong> Default parameters</li>
+            <li><strong>function name(...$args):</strong> Variable arguments</li>
+            <li><strong>function($x) { }:</strong> Anonymous function</li>
+            <li><strong>fn($x) => $x * 2:</strong> Arrow function (PHP 7.4+)</li>
+            <li><strong>function_exists($name):</strong> Check if function exists</li>
           </ul>
         `,
         videoUrl: 'https://www.youtube.com/embed/WvZ0x3PJvKE'
@@ -5650,29 +6531,223 @@ module.exports = {
           <h2>PHP Arrays</h2>
           <p>Arrays are used to store multiple values in a single variable. PHP supports both indexed and associative arrays, and provides many built-in functions for array manipulation.</p>
           
-          <h3>Array Types:</h3>
-          <ul>
-            <li><strong>Indexed Arrays:</strong> Arrays with numeric indexes</li>
-            <li><strong>Associative Arrays:</strong> Arrays with named keys</li>
-            <li><strong>Multidimensional Arrays:</strong> Arrays containing other arrays</li>
-          </ul>
+          <h3>Creating Arrays:</h3>
+          <p>Common ways to create arrays in PHP.</p>
+          <pre><code>&lt;?php
+// Indexed Arrays (numeric keys)
+$fruits = ["apple", "banana", "orange"];
+$numbers = array(1, 2, 3, 4, 5);
+
+// Associative Arrays (named keys)
+$user = [
+    "name" => "John",
+    "age" => 25,
+    "city" => "New York"
+];
+
+// Alternative syntax
+$colors = array("red" => "#FF0000", "green" => "#00FF00", "blue" => "#0000FF");
+
+// Mixed array
+$mixed = [0 => "first", "key" => "second", 2 => "third"];
+
+print_r($fruits); // Shows array structure
+?&gt;</code></pre>
           
-          <h3>Array Functions:</h3>
-          <ul>
-            <li><strong>array_push():</strong> Add elements to end</li>
-            <li><strong>array_pop():</strong> Remove last element</li>
-            <li><strong>array_merge():</strong> Combine arrays</li>
-            <li><strong>array_keys():</strong> Get all keys</li>
-            <li><strong>array_values():</strong> Get all values</li>
-            <li><strong>in_array():</strong> Check if value exists</li>
-            <li><strong>sort():</strong> Sort arrays</li>
-          </ul>
+          <h3>Accessing Array Elements:</h3>
+          <p>Access elements in arrays using their index or key.</p>
+          <pre><code>&lt;?php
+// Access by index
+echo $fruits[0]; // "apple"
+echo $fruits[1]; // "banana"
+
+// Access by key
+echo $user["name"]; // "John"
+echo $user["age"];  // 25
+
+// Check if key exists
+if (isset($user["email"])) {
+    echo $user["email"];
+} else {
+    echo "Email not set";
+}
+
+// Get array length
+echo count($fruits); // 3
+echo count($user);   // 3
+?&gt;</code></pre>
           
-          <h3>Advanced Array Operations:</h3>
+          <h3>Adding and Removing Elements:</h3>
+          <p>Use array functions to modify arrays.</p>
+          <pre><code>&lt;?php
+$fruits = ["apple", "banana"];
+
+// Add to end
+$fruits[] = "orange";           // ["apple", "banana", "orange"]
+array_push($fruits, "grape");   // ["apple", "banana", "orange", "grape"]
+
+// Add to beginning
+array_unshift($fruits, "mango"); // ["mango", "apple", "banana", "orange", "grape"]
+
+// Remove from end
+$last = array_pop($fruits);     // "grape", fruits = ["mango", "apple", "banana", "orange"]
+
+// Remove from beginning
+$first = array_shift($fruits);  // "mango", fruits = ["apple", "banana", "orange"]
+
+// Remove specific element
+unset($fruits[1]);              // Removes "banana"
+print_r($fruits);
+?&gt;</code></pre>
+          
+          <h3>Common Array Functions:</h3>
+          <p>Common PHP Array Functions:</p>
+          <pre><code>&lt;?php
+$numbers = [3, 1, 4, 1, 5, 9, 2, 6];
+$words = ["hello", "world", "php", "array"];
+
+// Search and check
+echo in_array(4, $numbers);        // true (1)
+echo array_search(5, $numbers);    // 4 (index position)
+
+// Sort arrays
+sort($numbers);                    // [1, 1, 2, 3, 4, 5, 6, 9]
+rsort($words);                     // Reverse sort
+
+// Get keys and values
+$user = ["name" => "John", "age" => 25, "city" => "NYC"];
+$keys = array_keys($user);         // ["name", "age", "city"]
+$values = array_values($user);     // ["John", 25, "NYC"]
+
+// Combine arrays
+$combined = array_merge($numbers, [10, 11]); // Add more elements
+$flipped = array_flip($user);      // Swap keys and values
+?&gt;</code></pre>
+          
+          <h3>Multidimensional Arrays:</h3>
+          <p>Arrays containing other arrays as elements.</p>
+          <pre><code>&lt;?php
+// 2D Array
+$students = [
+    ["name" => "Alice", "grade" => 85, "subject" => "Math"],
+    ["name" => "Bob", "grade" => 92, "subject" => "Science"],
+    ["name" => "Carol", "grade" => 78, "subject" => "English"]
+];
+
+// Access nested data
+echo $students[0]["name"];     // "Alice"
+echo $students[1]["grade"];    // 92
+
+// Loop through multidimensional array
+foreach ($students as $student) {
+    echo $student["name"] . " scored " . $student["grade"] . " in " . $student["subject"] . "\n";
+}
+
+// Nested associative arrays
+$company = [
+    "employees" => [
+        "developers" => ["John", "Jane", "Bob"],
+        "designers" => ["Alice", "Carol"],
+        "managers" => ["Mike"]
+    ],
+    "departments" => ["IT", "HR", "Finance"]
+];
+
+echo $company["employees"]["developers"][0]; // "John"
+?&gt;</code></pre>
+          
+          <h3>Array Loops:</h3>
+          <p>Iterate over arrays using different loop constructs.</p>
+          <pre><code>&lt;?php
+$fruits = ["apple", "banana", "orange"];
+$user = ["name" => "John", "age" => 25, "city" => "NYC"];
+
+// For loop (indexed arrays)
+for ($i = 0; $i < count($fruits); $i++) {
+    echo $fruits[$i] . " ";
+}
+
+// Foreach loop (values only)
+foreach ($fruits as $fruit) {
+    echo $fruit . " ";
+}
+
+// Foreach loop (keys and values)
+foreach ($user as $key => $value) {
+    echo "$key: $value\n";
+}
+
+// While loop with each() - deprecated in PHP 7.2+
+// Use foreach instead
+?&gt;</code></pre>
+          
+          <h3>Practical Array Examples:</h3>
+          <p>Common real-world scenarios using arrays in PHP.</p>
+          <pre><code>&lt;?php
+// Shopping cart
+$cart = [];
+$cart["item1"] = ["name" => "Laptop", "price" => 999, "qty" => 1];
+$cart["item2"] = ["name" => "Mouse", "price" => 25, "qty" => 2];
+
+// Calculate total
+$total = 0;
+foreach ($cart as $item) {
+    $total += $item["price"] * $item["qty"];
+}
+echo "Total: $" . $total; // Total: $1049
+
+// Filter array
+$ages = [15, 22, 17, 30, 12, 25];
+$adults = array_filter($ages, function($age) {
+    return $age >= 18;
+});
+print_r($adults); // [22, 30, 25]
+
+// Transform array
+$prices = [10, 20, 30];
+$discounted = array_map(function($price) {
+    return $price * 0.9; // 10% discount
+}, $prices);
+print_r($discounted); // [9, 18, 27]
+?&gt;</code></pre>
+          
+          <h3>Array Utility Functions:</h3>
+          <pre><code>&lt;?php
+$data = [1, 2, 3, 4, 5];
+
+// Math functions
+echo array_sum($data);        // 15
+echo array_product($data);    // 120
+echo min($data);              // 1
+echo max($data);              // 5
+
+// String operations
+$words = ["Hello", "World", "PHP"];
+echo implode(" ", $words);    // "Hello World PHP"
+echo implode(", ", $words);   // "Hello, World, PHP"
+
+// Array slice and splice
+$slice = array_slice($data, 1, 3);     // [2, 3, 4]
+array_splice($data, 2, 1, [10, 11]);   // Replace index 2 with [10, 11]
+
+// Unique and count
+$colors = ["red", "blue", "red", "green", "blue"];
+$unique = array_unique($colors);        // ["red", "blue", "green"]
+$counts = array_count_values($colors);  // ["red" => 2, "blue" => 2, "green" => 1]
+?&gt;</code></pre>
+          
+          <h3>Quick Reference:</h3>
+          <p>Common PHP Array Functions:</p>
           <ul>
-            <li>Array mapping and filtering</li>
-            <li>Array searching and sorting</li>
-            <li>Array slicing and splicing</li>
+            <li><strong>count($array):</strong> Get array length</li>
+            <li><strong>array_push($array, $item):</strong> Add to end</li>
+            <li><strong>array_pop($array):</strong> Remove from end</li>
+            <li><strong>in_array($value, $array):</strong> Check if value exists</li>
+            <li><strong>array_merge($array1, $array2):</strong> Combine arrays</li>
+            <li><strong>sort($array):</strong> Sort array</li>
+            <li><strong>array_keys($array):</strong> Get all keys</li>
+            <li><strong>array_values($array):</strong> Get all values</li>
+            <li><strong>implode($separator, $array):</strong> Join array to string</li>
           </ul>
         `,
         videoUrl: 'https://www.youtube.com/embed/VBmzX2dVbww'
@@ -5684,29 +6759,266 @@ module.exports = {
           <h2>PHP String Manipulation</h2>
           <p>Strings are sequences of characters. PHP provides extensive string manipulation functions for processing and formatting text data.</p>
           
-          <h3>String Creation:</h3>
-          <ul>
-            <li><strong>Single Quotes:</strong> Literal strings</li>
-            <li><strong>Double Quotes:</strong> Variable interpolation</li>
-            <li><strong>Heredoc:</strong> Multi-line strings with variables</li>
-            <li><strong>Nowdoc:</strong> Multi-line literal strings</li>
-          </ul>
+          <h3>String Creation Methods:</h3>
+          <p>Learn how to create strings using different syntax options in PHP.</p>
+          <pre><code>&lt;?php
+// Single quotes - literal strings (no variable parsing)
+$name = 'John';
+$greeting1 = 'Hello, $name'; // Output: Hello, $name
+
+// Double quotes - variable interpolation
+$greeting2 = "Hello, $name"; // Output: Hello, John
+$greeting3 = "Hello, {$name}!"; // Better for complex variables
+
+// Concatenation
+$fullGreeting = $greeting2 . " Welcome to PHP!";
+
+// Heredoc - multiline with variables
+$message = <<<EOD
+Dear $name,
+
+Thank you for joining our PHP course.
+This is a multiline message with variables.
+
+Best regards,
+PHP Team
+EOD;
+
+// Nowdoc - multiline literal (like single quotes)
+$template = <<<'EOD'
+This is a literal string.
+$name will not be parsed here.
+EOD;
+
+echo $greeting2; // Hello, John
+echo $fullGreeting; // Hello, John Welcome to PHP!
+?&gt;</code></pre>
           
-          <h3>Common String Functions:</h3>
-          <ul>
-            <li><strong>strlen():</strong> String length</li>
-            <li><strong>substr():</strong> Extract substring</li>
-            <li><strong>str_replace():</strong> Replace text</li>
-            <li><strong>trim():</strong> Remove whitespace</li>
-            <li><strong>strtolower()/strtoupper():</strong> Case conversion</li>
-            <li><strong>explode()/implode():</strong> Split/join strings</li>
-          </ul>
+          <h3>Essential String Functions:</h3>
+          <p>Learn how to manipulate strings using built-in PHP functions.</p>
+          <pre><code>&lt;?php
+$text = "  Hello World PHP Programming  ";
+
+// Length and trimming
+echo strlen($text); // 30 (includes spaces)
+echo strlen(trim($text)); // 26 (without leading/trailing spaces)
+
+// Case conversion
+echo strtolower($text); // "  hello world php programming  "
+echo strtoupper(trim($text)); // "HELLO WORLD PHP PROGRAMMING"
+echo ucfirst(trim(strtolower($text))); // "Hello world php programming"
+echo ucwords(strtolower(trim($text))); // "Hello World Php Programming"
+
+// Substrings
+$cleanText = trim($text);
+echo substr($cleanText, 0, 5); // "Hello"
+echo substr($cleanText, 6, 5); // "World"
+echo substr($cleanText, -11); // "Programming" (from end)
+
+// Search and replace
+echo str_replace("PHP", "JavaScript", $cleanText); // "Hello World JavaScript Programming"
+echo str_ireplace("WORLD", "Universe", $cleanText); // Case-insensitive replace
+
+// Position finding
+echo strpos($cleanText, "World"); // 6 (position of "World")
+echo strpos($cleanText, "Python"); // false (not found)
+?&gt;</code></pre>
           
-          <h3>Pattern Matching:</h3>
+          <h3>String Splitting and Joining:</h3>
+          <p>Learn how to split strings into arrays and join arrays back into strings using PHP.</p>
+          <pre><code>&lt;?php
+// Splitting strings
+$fruits = "apple,banana,orange,grape";
+$fruitArray = explode(",", $fruits);
+print_r($fruitArray); // Array of fruits
+
+$sentence = "PHP is awesome for web development";
+$words = explode(" ", $sentence);
+echo $words[0]; // "PHP"
+echo $words[2]; // "awesome"
+
+// Joining arrays into strings
+$colors = ["red", "green", "blue", "yellow"];
+$colorString = implode(", ", $colors); // "red, green, blue, yellow"
+$htmlList = "<li>" . implode("</li><li>", $colors) . "</li>";
+
+// Advanced splitting with limit
+$data = "name:John|age:25|city:NYC|country:USA";
+$pairs = explode("|", $data);
+$userInfo = [];
+foreach ($pairs as $pair) {
+    list($key, $value) = explode(":", $pair, 2); // Limit to 2 parts
+    $userInfo[$key] = $value;
+}
+print_r($userInfo); // Associative array
+?&gt;</code></pre>
+          
+          <h3>String Formatting and Validation:</h3>
+          <p>Learn how to format strings and validate common data types in PHP.</p>
+          <pre><code>&lt;?php
+// String formatting with sprintf
+$name = "Alice";
+$age = 30;
+$salary = 75000.50;
+
+$formatted = sprintf("Name: %s, Age: %d, Salary: $%.2f", $name, $age, $salary);
+echo $formatted; // "Name: Alice, Age: 30, Salary: $75000.50"
+
+// Number formatting
+echo number_format($salary, 2); // "75,000.50"
+echo number_format(1234567.89, 2, '.', ','); // "1,234,567.89"
+
+// String validation
+$email = "user@example.com";
+$phone = "+1-555-123-4567";
+
+// Check if string contains only letters
+$username = "JohnDoe123";
+if (ctype_alnum($username)) {
+    echo "Valid username (letters and numbers only)";
+}
+
+// Check for email pattern (basic)
+if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo "Valid email format";
+}
+
+// Custom validation
+function isValidPhone($phone) {
+    return preg_match('/^\+?[\d\-\(\)\s]+$/', $phone);
+}
+
+if (isValidPhone($phone)) {
+    echo "Valid phone format";
+}
+?&gt;</code></pre>
+          
+          <h3>Text Processing Example:</h3>
+          <p>Examples of cleaning and formatting user input, generating URL-friendly slugs, and basic text statistics.</p>
+          <pre><code>&lt;?php
+// Clean and format user input
+function cleanUserInput($input) {
+    // Remove extra spaces
+    $cleaned = trim($input);
+    
+    // Remove multiple spaces
+    $cleaned = preg_replace('/\s+/', ' ', $cleaned);
+    
+    // Capitalize first letter of each word
+    $cleaned = ucwords(strtolower($cleaned));
+    
+    return $cleaned;
+}
+
+// URL-friendly slug generation
+function createSlug($text) {
+    $text = strtolower($text);
+    $text = preg_replace('/[^a-z0-9\s]/', '', $text); // Remove special chars
+    $text = preg_replace('/\s+/', '-', trim($text)); // Replace spaces with hyphens
+    return $text;
+}
+
+// Usage examples
+$userInput = "  HELLO    world   FROM    php  ";
+echo cleanUserInput($userInput); // "Hello World From Php"
+
+$title = "My Awesome Blog Post! 2024";
+echo createSlug($title); // "my-awesome-blog-post-2024"
+
+// Word count and text statistics
+$article = "PHP is a popular programming language. It's great for web development.";
+$wordCount = str_word_count($article);
+$charCount = strlen($article);
+$sentenceCount = substr_count($article, '.');
+
+echo "Words: $wordCount, Characters: $charCount, Sentences: $sentenceCount";
+?&gt;</code></pre>
+          
+          <h3>Regular Expressions (Pattern Matching):</h3>
+          <p>Regular expressions allow you to search, match, and manipulate strings based on specific patterns.</p>
+          <pre><code>&lt;?php
+$text = "Contact us at info@example.com or call (555) 123-4567";
+
+// Find email addresses
+if (preg_match('/[\w\.-]+@[\w\.-]+\.\w+/', $text, $matches)) {
+    echo "Found email: " . $matches[0]; // info@example.com
+}
+
+// Find all phone numbers
+preg_match_all('/\(\d{3}\)\s\d{3}-\d{4}/', $text, $phoneMatches);
+foreach ($phoneMatches[0] as $phone) {
+    echo "Found phone: $phone";
+}
+
+// Validate password strength
+function validatePassword($password) {
+    $errors = [];
+    
+    if (strlen($password) < 8) {
+        $errors[] = "Must be at least 8 characters";
+    }
+    
+    if (!preg_match('/[A-Z]/', $password)) {
+        $errors[] = "Must contain uppercase letter";
+    }
+    
+    if (!preg_match('/[a-z]/', $password)) {
+        $errors[] = "Must contain lowercase letter";
+    }
+    
+    if (!preg_match('/\d/', $password)) {
+        $errors[] = "Must contain a number";
+    }
+    
+    return empty($errors) ? "Strong password!" : $errors;
+}
+
+// Test password
+$password = "MyPass123";
+$result = validatePassword($password);
+print_r($result); // "Strong password!" or array of errors
+?&gt;</code></pre>
+          
+          <h3>String Encoding and Security:</h3>
+          <p>Proper encoding is crucial for security and data integrity when handling strings.</p>
+          <pre><code>&lt;?php
+// HTML encoding for security (prevent XSS)
+$userInput = "<script>alert('hack')</script>Hello";
+$safeOutput = htmlspecialchars($userInput, ENT_QUOTES, 'UTF-8');
+echo $safeOutput; // &lt;script&gt;alert('hack')&lt;/script&gt;Hello
+
+// URL encoding
+$searchTerm = "hello world & more";
+$encodedTerm = urlencode($searchTerm); // hello+world+%26+more
+
+// Base64 encoding/decoding
+$message = "Secret message";
+$encoded = base64_encode($message); // U2VjcmV0IG1lc3NhZ2U=
+$decoded = base64_decode($encoded); // "Secret message"
+
+// String hashing
+$plaintext = "password123";
+$hashedPassword = password_hash($plaintext, PASSWORD_DEFAULT);
+echo $hashedPassword; // $2y$10$...
+
+// Verify hash
+if (password_verify($plaintext, $hashedPassword)) {
+    echo "Password is correct!";
+}
+?&gt;</code></pre>
+          
+          <h3>Quick Reference:</h3>
+          <p>Common PHP string functions for everyday use.</p>
           <ul>
-            <li>Regular expressions with preg_match()</li>
-            <li>String searching and positioning</li>
-            <li>Wildcard matching</li>
+            <li><strong>strlen($str):</strong> String length</li>
+            <li><strong>trim($str):</strong> Remove whitespace</li>
+            <li><strong>substr($str, start, length):</strong> Extract part of string</li>
+            <li><strong>str_replace(search, replace, $str):</strong> Replace text</li>
+            <li><strong>explode(delimiter, $str):</strong> Split string into array</li>
+            <li><strong>implode(delimiter, $array):</strong> Join array into string</li>
+            <li><strong>strtolower($str) / strtoupper($str):</strong> Change case</li>
+            <li><strong>htmlspecialchars($str):</strong> Encode HTML entities for security</li>
+            <li><strong>preg_match(pattern, $str):</strong> Regular expression matching</li>
           </ul>
         `,
         videoUrl: 'https://www.youtube.com/embed/ASXUC7Hwmrg'
@@ -5718,28 +7030,285 @@ module.exports = {
           <h2>Handling Forms and User Input</h2>
           <p>PHP excels at processing web forms and handling user input. Learn how to securely collect, validate, and process form data.</p>
           
+          <h3>Basic Form Processing:</h3>
+          <p>Use the $_GET and $_POST superglobals to access form data sent via HTTP GET and POST methods.</p>
+          <h4>Simple Contact Form:</h4>
+          <pre><code>&lt;?php
+// contact.php
+if ($_POST['submit']) {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+    
+    echo "Thank you, $name! Your message has been received.";
+}
+?&gt;
+
+&lt;form method="POST" action=""&gt;
+    &lt;label for="name"&gt;Name:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name" required&gt;
+    
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+    
+    &lt;label for="message"&gt;Message:&lt;/label&gt;
+    &lt;textarea id="message" name="message" required&gt;&lt;/textarea&gt;
+    
+    &lt;button type="submit" name="submit"&gt;Send Message&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+          
+          <h3>Input Validation & Sanitization:</h3>
+          <p>Implement server-side validation and sanitization to ensure data integrity and security.</p>
+          <pre><code>&lt;?php
+function validateForm($data) {
+    $errors = [];
+    
+    // Name validation
+    if (empty(trim($data['name']))) {
+        $errors[] = "Name is required";
+    } elseif (strlen($data['name']) < 2) {
+        $errors[] = "Name must be at least 2 characters";
+    }
+    
+    // Email validation
+    if (empty($data['email'])) {
+        $errors[] = "Email is required";
+    } elseif (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "Invalid email format";
+    }
+    
+    // Age validation
+    if (!is_numeric($data['age']) || $data['age'] < 1 || $data['age'] > 120) {
+        $errors[] = "Please enter a valid age (1-120)";
+    }
+    
+    return $errors;
+}
+
+// Sanitize input
+function sanitizeInput($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+// Usage
+if ($_POST['submit']) {
+    $name = sanitizeInput($_POST['name']);
+    $email = sanitizeInput($_POST['email']);
+    $age = sanitizeInput($_POST['age']);
+    
+    $errors = validateForm($_POST);
+    
+    if (empty($errors)) {
+        echo "Form submitted successfully!";
+        // Process the data (save to database, send email, etc.)
+    } else {
+        foreach ($errors as $error) {
+            echo "&lt;p style='color:red;'&gt;$error&lt;/p&gt;";
+        }
+    }
+}
+?&gt;</code></pre>
+          
+          <h3>File Upload Handling:</h3>
+          <p>Learn how to handle file uploads securely, including validation and storage.</p>
+          <pre><code>&lt;?php
+// file_upload.php
+if ($_POST['upload']) {
+    $uploadDir = 'uploads/';
+    $file = $_FILES['document'];
+    
+    // Check for upload errors
+    if ($file['error'] !== UPLOAD_ERR_OK) {
+        echo "Upload failed with error code " . $file['error'];
+        exit;
+    }
+    
+    // Validate file size (max 5MB)
+    if ($file['size'] > 5 * 1024 * 1024) {
+        echo "File too large. Maximum size is 5MB.";
+        exit;
+    }
+    
+    // Validate file type
+    $allowedTypes = ['image/jpeg', 'image/png', 'application/pdf'];
+    if (!in_array($file['type'], $allowedTypes)) {
+        echo "Invalid file type. Only JPEG, PNG, and PDF allowed.";
+        exit;
+    }
+    
+    // Generate unique filename
+    $filename = uniqid() . '_' . basename($file['name']);
+    $targetPath = $uploadDir . $filename;
+    
+    // Move uploaded file
+    if (move_uploaded_file($file['tmp_name'], $targetPath)) {
+        echo "File uploaded successfully: $filename";
+    } else {
+        echo "Failed to move uploaded file.";
+    }
+}
+?&gt;
+
+&lt;form method="POST" enctype="multipart/form-data"&gt;
+    &lt;label for="document"&gt;Choose file:&lt;/label&gt;
+    &lt;input type="file" id="document" name="document" accept=".jpg,.jpeg,.png,.pdf"&gt;
+    &lt;button type="submit" name="upload"&gt;Upload&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+          
+          <h3>User Registration Form:</h3>
+          <p>Create a user registration form with validation and password hashing.</p>
+          <pre><code>&lt;?php
+// registration.php
+class UserRegistration {
+    public function register($data) {
+        $errors = $this->validate($data);
+        
+        if (empty($errors)) {
+            // Hash password
+            $hashedPassword = password_hash($data['password'], PASSWORD_DEFAULT);
+            
+            // Save to database (simplified)
+            $success = $this->saveUser($data['username'], $data['email'], $hashedPassword);
+            
+            return $success ? "Registration successful!" : "Registration failed.";
+        }
+        
+        return $errors;
+    }
+    
+    private function validate($data) {
+        $errors = [];
+        
+        if (strlen($data['username']) < 3) {
+            $errors[] = "Username must be at least 3 characters";
+        }
+        
+        if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+            $errors[] = "Invalid email format";
+        }
+        
+        if (strlen($data['password']) < 8) {
+            $errors[] = "Password must be at least 8 characters";
+        }
+        
+        if ($data['password'] !== $data['confirm_password']) {
+            $errors[] = "Passwords do not match";
+        }
+        
+        return $errors;
+    }
+    
+    private function saveUser($username, $email, $password) {
+        // Database save logic here
+        return true; // Simplified
+    }
+}
+
+// Handle form submission
+if ($_POST['register']) {
+    $registration = new UserRegistration();
+    $result = $registration->register($_POST);
+    
+    if (is_array($result)) {
+        // Show errors
+        foreach ($result as $error) {
+            echo "&lt;p style='color:red;'&gt;$error&lt;/p&gt;";
+        }
+    } else {
+        // Show success message
+        echo "&lt;p style='color:green;'&gt;$result&lt;/p&gt;";
+    }
+}
+?&gt;</code></pre>
+          
+          <h3>CSRF Protection:</h3>
+          <p>Implement CSRF tokens to protect forms from cross-site request forgery attacks.</p>
+          <pre><code>&lt;?php
+// Generate CSRF token
+session_start();
+if (!isset($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+
+// Validate CSRF token
+function validateCSRF($token) {
+    return isset($_SESSION['csrf_token']) && hash_equals($_SESSION['csrf_token'], $token);
+}
+
+// Form processing with CSRF protection
+if ($_POST['submit']) {
+    if (!validateCSRF($_POST['csrf_token'])) {
+        die("CSRF token validation failed");
+    }
+    
+    // Process form safely
+    echo "Form processed securely!";
+}
+?&gt;
+
+&lt;form method="POST"&gt;
+    &lt;input type="hidden" name="csrf_token" value="&lt;?php echo $_SESSION['csrf_token']; ?&gt;"&gt;
+    &lt;input type="text" name="data" placeholder="Enter data"&gt;
+    &lt;button type="submit" name="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+          
+          <h3>Ajax Form Submission:</h3>
+          <p>Use Ajax to submit forms without reloading the page.</p>
+          <pre><code>&lt;?php
+// ajax_handler.php
+header('Content-Type: application/json');
+
+if ($_POST['action'] === 'contact') {
+    $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+    $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+    
+    if ($name && $email) {
+        // Process the data
+        echo json_encode(['success' => true, 'message' => 'Message sent!']);
+    } else {
+        echo json_encode(['success' => false, 'message' => 'Invalid input']);
+    }
+}
+?&gt;</code></pre>
+
+          <h4>JavaScript for Ajax:</h4>
+          <pre><code>&lt;script&gt;
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(this);
+    formData.append('action', 'contact');
+    
+    fetch('ajax_handler.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('result').innerHTML = data.message;
+        if (data.success) this.reset();
+    });
+});
+&lt;/script&gt;</code></pre>
+          
           <h3>HTTP Methods:</h3>
           <ul>
-            <li><strong>GET:</strong> Data sent in URL parameters ($_GET)</li>
-            <li><strong>POST:</strong> Data sent in request body ($_POST)</li>
-            <li><strong>REQUEST:</strong> Combined GET and POST data ($_REQUEST)</li>
-          </ul>
-          
-          <h3>Input Validation:</h3>
-          <ul>
-            <li>Check for empty fields</li>
-            <li>Validate email addresses</li>
-            <li>Sanitize user input</li>
-            <li>CSRF protection</li>
-            <li>File upload validation</li>
+            <li><strong>GET:</strong> Data visible in URL ($_GET) - use for search, filtering</li>
+            <li><strong>POST:</strong> Data in request body ($_POST) - use for forms, sensitive data</li>
+            <li><strong>REQUEST:</strong> Combined GET and POST ($_REQUEST) - not recommended</li>
           </ul>
           
           <h3>Security Best Practices:</h3>
           <ul>
-            <li>Always validate on server-side</li>
-            <li>Escape output to prevent XSS</li>
-            <li>Use prepared statements for database queries</li>
-            <li>Implement CSRF tokens</li>
+            <li><strong>Always validate server-side</strong> - never trust client-side validation alone</li>
+            <li><strong>Sanitize input</strong> - use htmlspecialchars(), filter_var()</li>
+            <li><strong>Use CSRF tokens</strong> - prevent cross-site request forgery</li>
+            <li><strong>Validate file uploads</strong> - check type, size, and content</li>
+            <li><strong>Hash passwords</strong> - use password_hash() and password_verify()</li>
+            <li><strong>Escape output</strong> - prevent XSS attacks</li>
           </ul>
         `,
         videoUrl: 'https://www.youtube.com/embed/75W34kPgTfc'
@@ -5751,28 +7320,205 @@ module.exports = {
           <h2>PHP and MySQL Integration</h2>
           <p>Learn how to connect PHP applications to MySQL databases using PDO and MySQLi extensions. Perform CRUD operations safely and efficiently.</p>
           
-          <h3>Database Connection Methods:</h3>
-          <ul>
-            <li><strong>PDO:</strong> PHP Data Objects (recommended)</li>
-            <li><strong>MySQLi:</strong> MySQL Improved extension</li>
-            <li><strong>Legacy MySQL:</strong> Deprecated, don't use</li>
-          </ul>
+          <h3>Database Connection (PDO):</h3>
+          <p>PDO is the recommended way to connect to databases in PHP due to its security and flexibility.</p>
+          
+          <pre><code>&lt;?php
+// Database connection with PDO
+$host = 'localhost';
+$dbname = 'myapp';
+$username = 'root';
+$password = '';
+
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connected successfully";
+} catch(PDOException $e) {
+    die("Connection failed: " . $e->getMessage());
+}
+?&gt;</code></pre>
           
           <h3>CRUD Operations:</h3>
+          <p>CRUD stands for Create, Read, Update, and Delete. These are the four basic operations for managing data in a database.</p>
+          <h4>1. Create (INSERT):</h4>
+          <pre><code>&lt;?php
+// Insert new user
+$name = "John Doe";
+$email = "john@example.com";
+
+$sql = "INSERT INTO users (name, email) VALUES (?, ?)";
+$stmt = $pdo->prepare($sql);
+$stmt->execute([$name, $email]);
+
+echo "User created with ID: " . $pdo->lastInsertId();
+?&gt;</code></pre>
+          
+          <h4>2. Read (SELECT):</h4>
+          <pre><code>&lt;?php
+// Fetch all users
+$sql = "SELECT * FROM users";
+$stmt = $pdo->query($sql);
+$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+foreach ($users as $user) {
+    echo $user['name'] . " - " . $user['email'] . "\n";
+}
+
+// Fetch single user by ID
+$id = 1;
+$sql = "SELECT * FROM users WHERE id = ?";
+$stmt = $pdo->prepare($sql);
+$stmt->execute([$id]);
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if ($user) {
+    echo "Found: " . $user['name'];
+}
+?&gt;</code></pre>
+          
+          <h4>3. Update:</h4>
+          <pre><code>&lt;?php
+// Update user information
+$id = 1;
+$newName = "Jane Doe";
+$newEmail = "jane@example.com";
+
+$sql = "UPDATE users SET name = ?, email = ? WHERE id = ?";
+$stmt = $pdo->prepare($sql);
+$stmt->execute([$newName, $newEmail, $id]);
+
+echo "Updated " . $stmt->rowCount() . " records";
+?&gt;</code></pre>
+          
+          <h4>4. Delete:</h4>
+          <pre><code>&lt;?php
+// Delete user
+$id = 1;
+
+$sql = "DELETE FROM users WHERE id = ?";
+$stmt = $pdo->prepare($sql);
+$stmt->execute([$id]);
+
+echo "Deleted " . $stmt->rowCount() . " records";
+?&gt;</code></pre>
+          
+          <h3>Database Connection Class:</h3>
+          <p>Encapsulate database operations in a class for better organization.</p>
+          <pre><code>&lt;?php
+class Database {
+    private $pdo;
+    
+    public function __construct($host, $dbname, $user, $pass) {
+        try {
+            $this->pdo = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
+            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch(PDOException $e) {
+            die("Database connection failed: " . $e->getMessage());
+        }
+    }
+    
+    public function query($sql, $params = []) {
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($params);
+        return $stmt;
+    }
+    
+    public function insert($table, $data) {
+        $keys = implode(',', array_keys($data));
+        $placeholders = ':' . implode(', :', array_keys($data));
+        
+        $sql = "INSERT INTO $table ($keys) VALUES ($placeholders)";
+        return $this->query($sql, $data);
+    }
+}
+
+// Usage
+$db = new Database('localhost', 'myapp', 'root', '');
+$db->insert('users', ['name' => 'Bob', 'email' => 'bob@test.com']);
+?&gt;</code></pre>
+          
+          <h3>Prepared Statements (Security):</h3>
+          <p>Always use prepared statements to prevent SQL injection attacks.</p>
+          <pre><code>&lt;?php
+// SECURE - Using prepared statements
+$email = $_POST['email'];
+$sql = "SELECT * FROM users WHERE email = ?";
+$stmt = $pdo->prepare($sql);
+$stmt->execute([$email]);
+
+// INSECURE - Never do this (SQL Injection risk)
+// $sql = "SELECT * FROM users WHERE email = '$email'";
+
+// Multiple parameters
+$sql = "SELECT * FROM users WHERE age > ? AND city = ?";
+$stmt = $pdo->prepare($sql);
+$stmt->execute([18, 'New York']);
+?&gt;</code></pre>
+          
+          <h3>Error Handling:</h3>
+          <p>Always handle database errors gracefully to avoid exposing sensitive information.</p>
+          <pre><code>&lt;?php
+try {
+    $sql = "INSERT INTO users (name, email) VALUES (?, ?)";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(['John', 'john@example.com']);
+    
+    echo "User created successfully";
+} catch (PDOException $e) {
+    // Log error (don't show to user in production)
+    error_log("Database error: " . $e->getMessage());
+    echo "An error occurred. Please try again.";
+}
+?&gt;</code></pre>
+          
+          <h3>Simple User Registration Example:</h3>
+          <p>This example demonstrates how to register a new user with basic validation and password hashing.</p>
+          <pre><code>&lt;?php
+function registerUser($pdo, $name, $email, $password) {
+    // Validate input
+    if (empty($name) || empty($email) || empty($password)) {
+        return "All fields required";
+    }
+    
+    // Check if email exists
+    $sql = "SELECT COUNT(*) FROM users WHERE email = ?";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([$email]);
+    
+    if ($stmt->fetchColumn() > 0) {
+        return "Email already exists";
+    }
+    
+    // Hash password and insert
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    $sql = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([$name, $email, $hashedPassword]);
+    
+    return "User registered successfully";
+}
+
+// Usage
+$result = registerUser($pdo, 'Alice', 'alice@test.com', 'password123');
+echo $result;
+?&gt;</code></pre>
+          
+          <h3>Database Connection Methods:</h3>
           <ul>
-            <li><strong>Create:</strong> INSERT data into database</li>
-            <li><strong>Read:</strong> SELECT data from database</li>
-            <li><strong>Update:</strong> UPDATE existing records</li>
-            <li><strong>Delete:</strong> DELETE records from database</li>
+            <li><strong>PDO:</strong> PHP Data Objects - recommended for multiple databases</li>
+            <li><strong>MySQLi:</strong> MySQL Improved - MySQL specific, supports both procedural and OOP</li>
+            <li><strong>Legacy MySQL:</strong> Deprecated since PHP 5.5.0, don't use</li>
           </ul>
           
           <h3>Security Best Practices:</h3>
           <ul>
-            <li>Use prepared statements</li>
-            <li>Validate input data</li>
-            <li>Escape output data</li>
-            <li>Use proper error handling</li>
-            <li>Limit database permissions</li>
+            <li><strong>Always use prepared statements</strong> to prevent SQL injection</li>
+            <li><strong>Validate and sanitize</strong> all user input</li>
+            <li><strong>Hash passwords</strong> with password_hash()</li>
+            <li><strong>Use HTTPS</strong> for sensitive data transmission</li>
+            <li><strong>Limit database permissions</strong> - don't use root in production</li>
+            <li><strong>Handle errors gracefully</strong> without exposing system details</li>
           </ul>
         `,
         videoUrl: 'https://www.youtube.com/embed/kEW6f7Pilc4'
@@ -5786,24 +7532,429 @@ module.exports = {
           
           <h3>Sessions vs Cookies:</h3>
           <ul>
-            <li><strong>Sessions:</strong> Server-side storage, more secure</li>
-            <li><strong>Cookies:</strong> Client-side storage, persistent</li>
+            <li><strong>Sessions:</strong> Server-side storage, more secure, temporary</li>
+            <li><strong>Cookies:</strong> Client-side storage, persistent, less secure</li>
+            <li><strong>Use Cases:</strong> Sessions for login state, cookies for preferences</li>
+            <li><strong>Storage Limit:</strong> Sessions unlimited (server), cookies 4KB max</li>
+            <li><strong>Expiration:</strong> Sessions expire when browser closes, cookies configurable</li>
           </ul>
           
-          <h3>Session Features:</h3>
+          <h3>Working with PHP Sessions:</h3>
+          <p>Sessions allow you to store user information on the server and access it across multiple pages.</p>
+          
+          <h4>Basic Session Operations:</h4>
+          <pre><code>&lt;?php
+// Start a session - MUST be called before any HTML output
+session_start();
+
+// Setting session variables
+$_SESSION['username'] = 'john_doe';
+$_SESSION['user_id'] = 123;
+$_SESSION['role'] = 'admin';
+$_SESSION['login_time'] = date('Y-m-d H:i:s');
+
+echo "Session started for user: " . $_SESSION['username'];
+echo "User ID: " . $_SESSION['user_id'];
+echo "Role: " . $_SESSION['role'];
+
+// Check if session variable exists
+if (isset($_SESSION['username'])) {
+    echo "Welcome back, " . $_SESSION['username'];
+} else {
+    echo "Please log in";
+}
+
+// Remove specific session variable
+unset($_SESSION['role']);
+
+// Get session ID
+echo "Session ID: " . session_id();
+
+// Get session name
+echo "Session Name: " . session_name();
+?&gt;</code></pre>
+          
+          <h4>Complete Login System with Sessions:</h4>
+          <pre><code>&lt;?php
+// login.php - Login form processing
+session_start();
+
+// Simple user database (in real app, use database)
+$users = [
+    'admin' => ['password' => 'admin123', 'role' => 'administrator'],
+    'user1' => ['password' => 'pass123', 'role' => 'user'],
+    'manager' => ['password' => 'mgr456', 'role' => 'manager']
+];
+
+if ($_POST['action'] == 'login') {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    
+    // Validate credentials
+    if (isset($users[$username]) && $users[$username]['password'] === $password) {
+        // Set session variables
+        $_SESSION['logged_in'] = true;
+        $_SESSION['username'] = $username;
+        $_SESSION['role'] = $users[$username]['role'];
+        $_SESSION['login_time'] = time();
+        $_SESSION['last_activity'] = time();
+        
+        // Regenerate session ID for security
+        session_regenerate_id(true);
+        
+        header('Location: dashboard.php');
+        exit();
+    } else {
+        $_SESSION['error'] = 'Invalid username or password';
+    }
+}
+
+// dashboard.php - Protected page
+session_start();
+
+// Check if user is logged in
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+    header('Location: login.php');
+    exit();
+}
+
+// Check session timeout (30 minutes)
+$timeout_duration = 1800; // 30 minutes
+if (isset($_SESSION['last_activity']) && 
+    (time() - $_SESSION['last_activity']) > $timeout_duration) {
+    
+    session_unset();
+    session_destroy();
+    header('Location: login.php?timeout=1');
+    exit();
+}
+
+// Update last activity
+$_SESSION['last_activity'] = time();
+
+echo "Welcome to dashboard, " . $_SESSION['username'];
+echo "Your role: " . $_SESSION['role'];
+echo "Login time: " . date('Y-m-d H:i:s', $_SESSION['login_time']);
+
+// logout.php - Logout functionality
+session_start();
+session_unset();     // Remove all session variables
+session_destroy();   // Destroy the session
+setcookie(session_name(), '', time()-3600); // Delete session cookie
+header('Location: login.php');
+?&gt;</code></pre>
+          
+          <h4>Session Security Best Practices:</h4>
+          <pre><code>&lt;?php
+// secure_session.php - Enhanced session security
+session_start();
+
+// Function to secure session
+function secureSession() {
+    // Regenerate session ID periodically
+    if (!isset($_SESSION['created'])) {
+        $_SESSION['created'] = time();
+    } else if (time() - $_SESSION['created'] > 1800) {
+        session_regenerate_id(true);
+        $_SESSION['created'] = time();
+    }
+    
+    // Check user agent and IP for session hijacking prevention
+    if (!isset($_SESSION['user_agent'])) {
+        $_SESSION['user_agent'] = $_SERVER['HTTP_USER_AGENT'];
+    }
+    
+    if ($_SESSION['user_agent'] !== $_SERVER['HTTP_USER_AGENT']) {
+        session_destroy();
+        die('Session security violation detected');
+    }
+    
+    // Optional: Check IP address (be careful with proxy users)
+    if (!isset($_SESSION['ip_address'])) {
+        $_SESSION['ip_address'] = $_SERVER['REMOTE_ADDR'];
+    }
+}
+
+// Session configuration for security
+ini_set('session.cookie_httponly', 1); // Prevent XSS
+ini_set('session.cookie_secure', 1);   // HTTPS only
+ini_set('session.use_only_cookies', 1); // No URL session IDs
+
+secureSession();
+?&gt;</code></pre>
+          
+          <h3>Working with PHP Cookies:</h3>
+          <p>Cookies store small amounts of data in the user's browser and persist across browser sessions.</p>
+          
+          <h4>Basic Cookie Operations:</h4>
+          <pre><code>&lt;?php
+// Setting cookies - must be done before any HTML output
+// setcookie(name, value, expire, path, domain, secure, httponly)
+
+// Simple cookie
+setcookie('username', 'john_doe', time() + 3600); // Expires in 1 hour
+
+// Cookie with all parameters
+setcookie('user_preferences', 'dark_theme', time() + (86400 * 30), '/', 'example.com', true, true);
+// Expires in 30 days, available site-wide, HTTPS only, HTTP only
+
+// Setting multiple cookies
+setcookie('language', 'en', time() + (86400 * 365)); // 1 year
+setcookie('timezone', 'UTC', time() + (86400 * 365));
+setcookie('newsletter', 'subscribed', time() + (86400 * 365));
+
+echo "Cookies have been set!";
+
+// Reading cookies (available on next page load)
+if (isset($_COOKIE['username'])) {
+    echo "Welcome back, " . $_COOKIE['username'];
+}
+
+// Check if cookie exists
+if (isset($_COOKIE['user_preferences'])) {
+    $theme = $_COOKIE['user_preferences'];
+    echo "Your theme preference: " . $theme;
+} else {
+    echo "No theme preference set";
+}
+
+// Deleting cookies (set expiration to past time)
+setcookie('username', '', time() - 3600); // Delete username cookie
+setcookie('old_data', '', time() - 3600, '/'); // Delete with path
+?&gt;</code></pre>
+          
+          <h4>User Preferences System with Cookies:</h4>
+          <pre><code>&lt;?php
+// preferences.php - User preferences system
+class UserPreferences {
+    private $defaultPrefs = [
+        'theme' => 'light',
+        'language' => 'en',
+        'timezone' => 'UTC',
+        'items_per_page' => 10,
+        'newsletter' => 'no'
+    ];
+    
+    public function setPreference($key, $value, $expiry_days = 365) {
+        $expiry = time() + (86400 * $expiry_days);
+        setcookie("pref_$key", $value, $expiry, '/', '', false, true);
+        return "Preference '$key' set to '$value'";
+    }
+    
+    public function getPreference($key) {
+        $cookie_name = "pref_$key";
+        if (isset($_COOKIE[$cookie_name])) {
+            return $_COOKIE[$cookie_name];
+        }
+        return $this->defaultPrefs[$key] ?? null;
+    }
+    
+    public function getAllPreferences() {
+        $prefs = [];
+        foreach ($this->defaultPrefs as $key => $default) {
+            $prefs[$key] = $this->getPreference($key);
+        }
+        return $prefs;
+    }
+    
+    public function deletePreference($key) {
+        setcookie("pref_$key", '', time() - 3600, '/');
+        return "Preference '$key' deleted";
+    }
+    
+    public function resetAllPreferences() {
+        foreach (array_keys($this->defaultPrefs) as $key) {
+            $this->deletePreference($key);
+        }
+        return "All preferences reset to defaults";
+    }
+}
+
+// Usage example
+$prefs = new UserPreferences();
+
+// Handle form submission
+if ($_POST['action'] == 'save_preferences') {
+    $prefs->setPreference('theme', $_POST['theme']);
+    $prefs->setPreference('language', $_POST['language']);
+    $prefs->setPreference('items_per_page', $_POST['items_per_page']);
+    echo "Preferences saved!";
+}
+
+// Display current preferences
+$current_prefs = $prefs->getAllPreferences();
+echo "Current Theme: " . $current_prefs['theme'];
+echo "Current Language: " . $current_prefs['language'];
+echo "Items per page: " . $current_prefs['items_per_page'];
+?&gt;</code></pre>
+          
+          <h4>Shopping Cart with Cookies:</h4>
+          <pre><code>&lt;?php
+// shopping_cart.php - Shopping cart using cookies
+class CookieCart {
+    private $cart_name = 'shopping_cart';
+    private $expiry_days = 7;
+    
+    public function addItem($product_id, $quantity = 1, $price = 0) {
+        $cart = $this->getCart();
+        
+        if (isset($cart[$product_id])) {
+            $cart[$product_id]['quantity'] += $quantity;
+        } else {
+            $cart[$product_id] = [
+                'quantity' => $quantity,
+                'price' => $price,
+                'added_time' => time()
+            ];
+        }
+        
+        $this->saveCart($cart);
+        return "Item added to cart";
+    }
+    
+    public function removeItem($product_id) {
+        $cart = $this->getCart();
+        unset($cart[$product_id]);
+        $this->saveCart($cart);
+        return "Item removed from cart";
+    }
+    
+    public function updateQuantity($product_id, $quantity) {
+        $cart = $this->getCart();
+        if (isset($cart[$product_id])) {
+            if ($quantity <= 0) {
+                unset($cart[$product_id]);
+            } else {
+                $cart[$product_id]['quantity'] = $quantity;
+            }
+            $this->saveCart($cart);
+            return "Quantity updated";
+        }
+        return "Item not found in cart";
+    }
+    
+    public function getCart() {
+        if (isset($_COOKIE[$this->cart_name])) {
+            return json_decode($_COOKIE[$this->cart_name], true) ?? [];
+        }
+        return [];
+    }
+    
+    public function getCartTotal() {
+        $cart = $this->getCart();
+        $total = 0;
+        foreach ($cart as $item) {
+            $total += $item['quantity'] * $item['price'];
+        }
+        return $total;
+    }
+    
+    public function getItemCount() {
+        $cart = $this->getCart();
+        $count = 0;
+        foreach ($cart as $item) {
+            $count += $item['quantity'];
+        }
+        return $count;
+    }
+    
+    public function clearCart() {
+        setcookie($this->cart_name, '', time() - 3600, '/');
+        return "Cart cleared";
+    }
+    
+    private function saveCart($cart) {
+        $cart_json = json_encode($cart);
+        $expiry = time() + (86400 * $this->expiry_days);
+        setcookie($this->cart_name, $cart_json, $expiry, '/', '', false, true);
+    }
+}
+
+// Usage example
+$cart = new CookieCart();
+
+// Add items to cart
+$cart->addItem('product_1', 2, 19.99);
+$cart->addItem('product_2', 1, 39.99);
+
+// Display cart
+$cart_items = $cart->getCart();
+echo "Cart Items: " . count($cart_items);
+echo "Total Items: " . $cart->getItemCount();
+echo "Cart Total: $" . number_format($cart->getCartTotal(), 2);
+
+foreach ($cart_items as $product_id => $item) {
+    echo "Product: $product_id, Quantity: {$item['quantity']}, Price: $" . $item['price'];
+}
+?&gt;</code></pre>
+          
+          <h3>Advanced Session Management:</h3>
+          <pre><code>&lt;?php
+// advanced_sessions.php - Custom session handler
+class DatabaseSessionHandler implements SessionHandlerInterface {
+    private $pdo;
+    
+    public function __construct($pdo) {
+        $this->pdo = $pdo;
+    }
+    
+    public function open($save_path, $session_name) {
+        return true;
+    }
+    
+    public function close() {
+        return true;
+    }
+    
+    public function read($session_id) {
+        $stmt = $this->pdo->prepare("SELECT data FROM sessions WHERE id = ?");
+        $stmt->execute([$session_id]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result ? $result['data'] : '';
+    }
+    
+    public function write($session_id, $session_data) {
+        $stmt = $this->pdo->prepare("
+            INSERT INTO sessions (id, data, timestamp) VALUES (?, ?, ?)
+            ON DUPLICATE KEY UPDATE data = ?, timestamp = ?
+        ");
+        $time = time();
+        return $stmt->execute([$session_id, $session_data, $time, $session_data, $time]);
+    }
+    
+    public function destroy($session_id) {
+        $stmt = $this->pdo->prepare("DELETE FROM sessions WHERE id = ?");
+        return $stmt->execute([$session_id]);
+    }
+    
+    public function gc($maxlifetime) {
+        $stmt = $this->pdo->prepare("DELETE FROM sessions WHERE timestamp < ?");
+        return $stmt->execute([time() - $maxlifetime]);
+    }
+}
+
+// Set custom session handler
+// $pdo = new PDO("mysql:host=localhost;dbname=myapp", $user, $pass);
+// $handler = new DatabaseSessionHandler($pdo);
+// session_set_save_handler($handler, true);
+?&gt;</code></pre>
+          
+          <h3>Session vs Cookie Decision Matrix:</h3>
           <ul>
-            <li>Temporary storage during user visit</li>
-            <li>Unique session ID for each user</li>
-            <li>Automatic expiration</li>
-            <li>Server-side security</li>
+            <li><strong>Use Sessions for:</strong> Login status, temporary user data, secure information</li>
+            <li><strong>Use Cookies for:</strong> User preferences, shopping cart, remember me functionality</li>
+            <li><strong>Security:</strong> Never store passwords in cookies, use sessions for sensitive data</li>
+            <li><strong>Performance:</strong> Cookies reduce server load, sessions provide better security</li>
+            <li><strong>Persistence:</strong> Cookies survive browser restart, sessions don't (by default)</li>
           </ul>
           
-          <h3>Cookie Features:</h3>
+          <h3>Best Practices:</h3>
           <ul>
-            <li>Persistent storage across visits</li>
-            <li>Client-side storage</li>
-            <li>Configurable expiration</li>
-            <li>Domain and path restrictions</li>
+            <li><strong>Security:</strong> Use HTTPS for sensitive cookies, set httpOnly flag</li>
+            <li><strong>Data Size:</strong> Keep cookie data small (4KB limit), use sessions for large data</li>
+            <li><strong>Expiration:</strong> Set appropriate expiration times for both sessions and cookies</li>
+            <li><strong>Validation:</strong> Always validate and sanitize data from cookies and sessions</li>
+            <li><strong>Privacy:</strong> Inform users about cookie usage (GDPR compliance)</li>
           </ul>
         `,
         videoUrl: 'https://www.youtube.com/embed/ZXTp0y_A5DU'
@@ -5815,30 +7966,466 @@ module.exports = {
           <h2>Object-Oriented Programming in PHP</h2>
           <p>Learn the principles of OOP in PHP including classes, objects, inheritance, polymorphism, and advanced OOP concepts for building maintainable applications.</p>
           
-          <h3>OOP Principles:</h3>
-          <ul>
-            <li><strong>Encapsulation:</strong> Bundle data and methods together</li>
-            <li><strong>Inheritance:</strong> Create classes based on existing classes</li>
-            <li><strong>Polymorphism:</strong> Objects of different types with same interface</li>
-            <li><strong>Abstraction:</strong> Hide complex implementation details</li>
-          </ul>
+          <h3>Classes and Objects:</h3>
+          <p>A class is a blueprint for creating objects. Objects are instances of classes that contain both data (properties) and behavior (methods).</p>
           
-          <h3>Key Concepts:</h3>
-          <ul>
-            <li><strong>Classes & Objects:</strong> Blueprint and instances</li>
-            <li><strong>Properties & Methods:</strong> Data and behavior</li>
-            <li><strong>Visibility:</strong> public, private, protected</li>
-            <li><strong>Static Members:</strong> Class-level properties and methods</li>
-            <li><strong>Interfaces & Traits:</strong> Contracts and code reuse</li>
-          </ul>
+          <pre><code><?php
+// Basic Class Example
+class Car {
+    // Properties (Data)
+    public $brand;
+    public $model;
+    public $color;
+    private $engine;
+    
+    // Constructor
+    public function __construct($brand, $model, $color) {
+        $this->brand = $brand;
+        $this->model = $model;
+        $this->color = $color;
+        $this->engine = "V6"; // Default engine
+    }
+    
+    // Methods (Behavior)
+    public function startEngine() {
+        return "The $this->brand $this->model engine is starting...";
+    }
+    
+    public function getCarInfo() {
+        return "$this->color $this->brand $this->model";
+    }
+    
+    // Private method (Encapsulation)
+    private function checkFuel() {
+        return "Checking fuel level...";
+    }
+}
+
+// Creating objects (instances)
+$car1 = new Car("Toyota", "Camry", "Red");
+$car2 = new Car("BMW", "X5", "Black");
+
+// Using objects
+echo $car1->getCarInfo(); // Red Toyota Camry
+echo $car1->startEngine(); // The Toyota Camry engine is starting...
+?></code></pre>
+          
+          <h3>OOP Principles:</h3>
+          
+          <h4>1. Encapsulation:</h4>
+          <p>Bundle data and methods together, controlling access through visibility modifiers (public, private, protected).</p>
+          
+          <pre><code><?php
+class BankAccount {
+    private $balance; // Private - can't be accessed directly
+    protected $accountNumber; // Protected - accessible in subclasses
+    public $ownerName; // Public - accessible everywhere
+    
+    public function __construct($owner, $accountNumber, $initialBalance = 0) {
+        $this->ownerName = $owner;
+        $this->accountNumber = $accountNumber;
+        $this->balance = $initialBalance;
+    }
+    
+    // Public methods to access private data
+    public function deposit($amount) {
+        if ($amount > 0) {
+            $this->balance += $amount;
+            return "Deposited $amount. New balance: $this->balance";
+        }
+        return "Invalid amount";
+    }
+    
+    public function withdraw($amount) {
+        if ($amount > 0 && $amount <= $this->balance) {
+            $this->balance -= $amount;
+            return "Withdrawn $amount. New balance: $this->balance";
+        }
+        return "Insufficient funds or invalid amount";
+    }
+    
+    public function getBalance() {
+        return $this->balance; // Controlled access to private property
+    }
+}
+
+$account = new BankAccount("John Doe", "ACC123", 1000);
+echo $account->deposit(500); // Deposited 500. New balance: 1500
+echo $account->getBalance(); // 1500
+// $account->balance; // This would cause an error - private property
+?></code></pre>
+          
+          <h4>2. Inheritance:</h4>
+          <p>Create new classes based on existing classes, inheriting properties and methods.</p>
+          
+          <pre><code><?php
+// Parent class (Base class)
+class Vehicle {
+    protected $speed = 0;
+    protected $maxSpeed;
+    public $brand;
+    
+    public function __construct($brand, $maxSpeed) {
+        $this->brand = $brand;
+        $this->maxSpeed = $maxSpeed;
+    }
+    
+    public function accelerate($amount) {
+        $newSpeed = $this->speed + $amount;
+        if ($newSpeed <= $this->maxSpeed) {
+            $this->speed = $newSpeed;
+            return "Speed increased to $this->speed km/h";
+        }
+        return "Cannot exceed maximum speed of $this->maxSpeed km/h";
+    }
+    
+    public function getSpeed() {
+        return $this->speed;
+    }
+}
+
+// Child class (Derived class)
+class SportsCar extends Vehicle {
+    private $turboMode = false;
+    
+    public function __construct($brand, $maxSpeed) {
+        parent::__construct($brand, $maxSpeed); // Call parent constructor
+    }
+    
+    // Override parent method
+    public function accelerate($amount) {
+        $boost = $this->turboMode ? $amount * 1.5 : $amount;
+        return parent::accelerate($boost);
+    }
+    
+    // New method specific to SportsCar
+    public function enableTurbo() {
+        $this->turboMode = true;
+        return "Turbo mode enabled!";
+    }
+    
+    public function disableTurbo() {
+        $this->turboMode = false;
+        return "Turbo mode disabled!";
+    }
+}
+
+$ferrari = new SportsCar("Ferrari", 350);
+echo $ferrari->accelerate(50); // Speed increased to 50 km/h
+echo $ferrari->enableTurbo(); // Turbo mode enabled!
+echo $ferrari->accelerate(50); // Speed increased to 125 km/h (with turbo boost)
+?></code></pre>
+          
+          <h4>3. Polymorphism:</h4>
+          <p>Different objects can respond to the same method call in their own way.</p>
+          
+          <pre><code><?php
+// Interface for polymorphism
+interface Animal {
+    public function makeSound();
+    public function move();
+}
+
+class Dog implements Animal {
+    public function makeSound() {
+        return "Woof! Woof!";
+    }
+    
+    public function move() {
+        return "Running on four legs";
+    }
+}
+
+class Cat implements Animal {
+    public function makeSound() {
+        return "Meow! Meow!";
+    }
+    
+    public function move() {
+        return "Sneaking silently";
+    }
+}
+
+class Bird implements Animal {
+    public function makeSound() {
+        return "Tweet! Tweet!";
+    }
+    
+    public function move() {
+        return "Flying in the sky";
+    }
+}
+
+// Polymorphic function
+function animalActions(Animal $animal) {
+    echo "Sound: " . $animal->makeSound() . "\n";
+    echo "Movement: " . $animal->move() . "\n";
+}
+
+// Same function works with different animals
+$dog = new Dog();
+$cat = new Cat();
+$bird = new Bird();
+
+animalActions($dog);  // Sound: Woof! Woof! Movement: Running on four legs
+animalActions($cat);  // Sound: Meow! Meow! Movement: Sneaking silently
+animalActions($bird); // Sound: Tweet! Tweet! Movement: Flying in the sky
+?></code></pre>
+          
+          <h4>4. Abstraction:</h4>
+          <p>Abstract classes provide a base structure that must be implemented by child classes.</p>
+          
+          <pre><code><?php
+// Abstract class
+abstract class DatabaseConnection {
+    protected $host;
+    protected $database;
+    protected $username;
+    
+    public function __construct($host, $database, $username) {
+        $this->host = $host;
+        $this->database = $database;
+        $this->username = $username;
+    }
+    
+    // Concrete method
+    public function getConnectionInfo() {
+        return "Host: $this->host, Database: $this->database";
+    }
+    
+    // Abstract methods - must be implemented by child classes
+    abstract public function connect();
+    abstract public function executeQuery($query);
+    abstract public function disconnect();
+}
+
+// Concrete implementation
+class MySQLConnection extends DatabaseConnection {
+    private $connection;
+    
+    public function connect() {
+        // MySQL specific connection logic
+        $this->connection = "MySQL Connection Established";
+        return "Connected to MySQL database: $this->database";
+    }
+    
+    public function executeQuery($query) {
+        return "Executing MySQL query: $query";
+    }
+    
+    public function disconnect() {
+        $this->connection = null;
+        return "MySQL connection closed";
+    }
+}
+
+class PostgreSQLConnection extends DatabaseConnection {
+    private $connection;
+    
+    public function connect() {
+        // PostgreSQL specific connection logic
+        $this->connection = "PostgreSQL Connection Established";
+        return "Connected to PostgreSQL database: $this->database";
+    }
+    
+    public function executeQuery($query) {
+        return "Executing PostgreSQL query: $query";
+    }
+    
+    public function disconnect() {
+        $this->connection = null;
+        return "PostgreSQL connection closed";
+    }
+}
+
+// Usage
+$mysql = new MySQLConnection("localhost", "myapp", "user");
+$postgres = new PostgreSQLConnection("localhost", "myapp", "user");
+
+echo $mysql->connect(); // Connected to MySQL database: myapp
+echo $postgres->connect(); // Connected to PostgreSQL database: myapp
+?></code></pre>
+          
+          <h3>Static Properties and Methods:</h3>
+          <p>Static members belong to the class itself, not to specific instances.</p>
+          
+          <pre><code><?php
+class Counter {
+    private static $count = 0;
+    public static $maxCount = 100;
+    
+    public function __construct() {
+        self::$count++;
+    }
+    
+    public static function getCount() {
+        return self::$count;
+    }
+    
+    public static function resetCount() {
+        self::$count = 0;
+    }
+    
+    public static function isMaxReached() {
+        return self::$count >= self::$maxCount;
+    }
+}
+
+// Using static methods and properties
+echo Counter::getCount(); // 0
+
+$c1 = new Counter();
+$c2 = new Counter();
+$c3 = new Counter();
+
+echo Counter::getCount(); // 3
+echo Counter::$maxCount; // 100
+
+Counter::resetCount();
+echo Counter::getCount(); // 0
+?></code></pre>
+          
+          <h3>Magic Methods:</h3>
+          <p>Special methods that are automatically called in certain situations.</p>
+          
+          <pre><code><?php
+class MagicExample {
+    private $data = [];
+    
+    // Called when object is created
+    public function __construct($name) {
+        echo "Object created with name: $name\n";
+        $this->data['name'] = $name;
+    }
+    
+    // Called when object is destroyed
+    public function __destruct() {
+        echo "Object destroyed\n";
+    }
+    
+    // Called when accessing non-existent property
+    public function __get($property) {
+        return $this->data[$property] ?? "Property not found";
+    }
+    
+    // Called when setting non-existent property
+    public function __set($property, $value) {
+        $this->data[$property] = $value;
+    }
+    
+    // Called when object is converted to string
+    public function __toString() {
+        return "MagicExample object with data: " . json_encode($this->data);
+    }
+    
+    // Called when calling non-existent method
+    public function __call($method, $args) {
+        return "Called non-existent method: $method with arguments: " . implode(', ', $args);
+    }
+}
+
+$obj = new MagicExample("Test");
+$obj->age = 25; // Calls __set
+echo $obj->age; // Calls __get: 25
+echo $obj; // Calls __toString
+echo $obj->nonExistent("arg1", "arg2"); // Calls __call
+// Object is automatically destroyed at end of script (__destruct called)
+?></code></pre>
+          
+          <h3>Traits (Code Reuse):</h3>
+          <p>Traits allow you to reuse code across multiple classes.</p>
+          
+          <pre><code><?php
+// Trait definition
+trait Logger {
+    public function log($message) {
+        echo date('Y-m-d H:i:s') . " - LOG: $message\n";
+    }
+    
+    public function error($message) {
+        echo date('Y-m-d H:i:s') . " - ERROR: $message\n";
+    }
+}
+
+trait Validator {
+    public function validateEmail($email) {
+        return filter_var($email, FILTER_VALIDATE_EMAIL);
+    }
+    
+    public function validateNotEmpty($value) {
+        return !empty(trim($value));
+    }
+}
+
+// Using traits in classes
+class UserManager {
+    use Logger, Validator; // Use multiple traits
+    
+    public function createUser($name, $email) {
+        if (!$this->validateNotEmpty($name)) {
+            $this->error("Name cannot be empty");
+            return false;
+        }
+        
+        if (!$this->validateEmail($email)) {
+            $this->error("Invalid email format");
+            return false;
+        }
+        
+        $this->log("User created successfully: $name ($email)");
+        return true;
+    }
+}
+
+$userManager = new UserManager();
+$userManager->createUser("John Doe", "john@example.com");
+$userManager->createUser("", "invalid-email");
+?></code></pre>
           
           <h3>Advanced Features:</h3>
           <ul>
-            <li>Namespaces and autoloading</li>
-            <li>Magic methods</li>
-            <li>Exception handling</li>
-            <li>Design patterns</li>
+            <li><strong>Namespaces:</strong> Organize code and avoid naming conflicts</li>
+            <li><strong>Autoloading:</strong> Automatically load class files when needed</li>
+            <li><strong>Exception Handling:</strong> Handle errors gracefully with try-catch blocks</li>
+            <li><strong>Design Patterns:</strong> Singleton, Factory, Observer, Strategy patterns</li>
+            <li><strong>Late Static Binding:</strong> static:: keyword for inheritance</li>
+            <li><strong>Anonymous Classes:</strong> Create classes without names for one-time use</li>
           </ul>
+          
+          <pre><code><?php
+// Namespace example
+namespace App\Models;
+
+class User {
+    // User implementation
+}
+
+namespace App\Controllers;
+
+use App\Models\User; // Import User class
+
+class UserController {
+    public function createUser() {
+        $user = new User(); // Using imported class
+        return $user;
+    }
+}
+
+// Exception handling example
+class CustomException extends Exception {
+    public function getCustomMessage() {
+        return "Custom error: " . $this->getMessage();
+    }
+}
+
+try {
+    throw new CustomException("Something went wrong!");
+} catch (CustomException $e) {
+    echo $e->getCustomMessage();
+} finally {
+    echo "Cleanup code here";
+}
+?></code></pre>
         `,
         videoUrl: 'https://www.youtube.com/embed/Anz0ArcQ5kI'
       }
@@ -5951,10 +8538,10 @@ module.exports = {
         title: 'Installation & Setup',
         content: `
           <h2>Installing Laravel</h2>
-          <p>Learn how to install Laravel and set up your development environment for building modern web applications.</p>
-          <p>Laravel offers multiple installation methods to suit different development workflows and preferences.</p>
-          
+          <p>Learn how to install Laravel and set up your development environment for building modern web applications. Laravel offers multiple installation methods to suit different development workflows and preferences.</p>
+
           <h3>System Requirements:</h3>
+          <p>Ensure your system meets the following requirements before installing Laravel:</p>
           <ul>
             <li><strong>PHP:</strong> >= 8.0</li>
             <li><strong>Composer:</strong> Dependency manager for PHP</li>
@@ -5976,6 +8563,7 @@ php -r "unlink('composer-setup.php');"</code></pre>
           <p><strong>Prerequisites:</strong> Ensure PHP 8.0+ and Composer are installed before proceeding with Laravel installation.</p>
           
           <h3>Installation via Composer:</h3>
+          <p>Laravel can be installed using Composer's create-project command, the Laravel Installer, or Laravel Sail for Docker-based setups.</p>
           <ul>
             <li><strong>Composer Create-Project:</strong> Traditional installation</li>
             <li><strong>Laravel Installer:</strong> Global Laravel installer</li>
@@ -6005,6 +8593,7 @@ cd my-app
           <p><strong>Quick Start:</strong> Composer create-project is fastest for most users. Laravel Sail perfect for Docker-based development.</p>
           
           <h3>Environment Configuration:</h3>
+          <p>Configure your Laravel application using the .env file for environment-specific settings.</p>
           <ul>
             <li><strong>.env File:</strong> Environment-specific settings</li>
             <li><strong>APP_KEY:</strong> Application encryption key</li>
@@ -6034,6 +8623,7 @@ php artisan key:generate
 php artisan config:clear</code></pre>
           
           <h3>Project Structure:</h3>
+          <p>The Laravel project structure is organized to separate concerns and improve maintainability.</p>
           <ul>
             <li><strong>app/:</strong> Application core (Models, Controllers)</li>
             <li><strong>config/:</strong> Configuration files</li>
@@ -6082,6 +8672,7 @@ php artisan config:clear</code></pre>
 └── package.json             # Node dependencies</code></pre>
           
           <h3>Running the Application:</h3>
+          <p>Use Artisan CLI to start the development server and manage your Laravel application.</p>
           <ul>
             <li><strong>Development Server:</strong> php artisan serve</li>
             <li><strong>Custom Port:</strong> php artisan serve --port=8080</li>
@@ -6111,10 +8702,10 @@ php artisan help migrate</code></pre>
         title: 'Routing & Controllers',
         content: `
           <h2>Laravel Routing System</h2>
-          <p>Laravel routing provides a clean, expressive way to define your application's URL structure and handle HTTP requests efficiently.</p>
-          <p>Routes are defined in the routes/web.php and routes/api.php files.</p>
-          
+          <p>Laravel routing provides a clean, expressive way to define your application's URL structure and handle HTTP requests efficiently. Routes are defined in the routes/web.php and routes/api.php files.</p>
+
           <h3>Basic Routing:</h3>
+          <p>Routes are defined in the routes/web.php and routes/api.php files.</p>
           <ul>
             <li><strong>GET Routes:</strong> Display data or pages</li>
             <li><strong>POST Routes:</strong> Submit forms or create data</li>
@@ -6168,6 +8759,7 @@ Route::any('/endpoint', function () {
           <p><strong>Route Files:</strong> web.php for web routes with session/CSRF. api.php for stateless API routes.</p>
           
           <h3>Route Parameters:</h3>
+          <p>Routes can accept parameters to capture dynamic values from the URL.</p>
           <ul>
             <li><strong>Required Parameters:</strong> /user/{id}</li>
             <li><strong>Optional Parameters:</strong> /user/{name?}</li>
@@ -6212,6 +8804,7 @@ Route::get('/post/{id}/{slug}', function ($id, $slug) {
 Route::pattern('id', '[0-9]+');</code></pre>
           
           <h3>Named Routes:</h3>
+          <p>Named routes allow you to assign a name to a route for easier URL generation and redirection.</p>
           <ul>
             <li><strong>Route Names:</strong> Give routes memorable names</li>
             <li><strong>URL Generation:</strong> Generate URLs from route names</li>
@@ -6244,6 +8837,7 @@ if (request()->routeIs('profile')) {
 }</code></pre>
           
           <h3>Controllers:</h3>
+          <p>Controllers group related route logic into classes, improving organization and maintainability.</p>
           <ul>
             <li><strong>Basic Controllers:</strong> Organize route logic</li>
             <li><strong>Resource Controllers:</strong> CRUD operations</li>
@@ -6303,6 +8897,7 @@ class ShowProfile extends Controller
 Route::get('/profile/{id}', ShowProfile::class);</code></pre>
           
           <h3>Route Groups:</h3>
+          <p>Route groups allow you to share common route attributes across multiple routes.</p>
           <ul>
             <li><strong>Prefix:</strong> Add prefix to multiple routes</li>
             <li><strong>Middleware:</strong> Apply middleware to route group</li>
@@ -6342,6 +8937,7 @@ Route::name('admin.')->group(function () {
 });</code></pre>
           
           <h3>Route Model Binding:</h3>
+          <p>Route model binding automatically resolves models from routes, simplifying your controller logic.</p>
           <ul>
             <li><strong>Implicit Binding:</strong> Automatic model resolution</li>
             <li><strong>Explicit Binding:</strong> Custom binding logic</li>
@@ -6386,10 +8982,10 @@ public function boot()
         title: 'Blade Templates',
         content: `
           <h2>Blade Templating Engine</h2>
-          <p>Blade is Laravel's powerful templating engine that allows you to create beautiful, maintainable templates with PHP seamlessly integrated.</p>
-          <p>Blade templates are stored in resources/views and use the .blade.php extension.</p>
-          
+          <p>Blade is Laravel's powerful templating engine that allows you to create beautiful, maintainable templates with PHP seamlessly integrated. Blade templates are stored in resources/views and use the .blade.php extension.</p>
+
           <h3>Displaying Data:</h3>
+          <p>Blade provides several ways to display data safely and efficiently.</p>
           <ul>
             <li><strong>Escaped Output:</strong> {{ $variable }} - Safe HTML output</li>
             <li><strong>Unescaped Output:</strong> {!! $html !!} - Raw HTML</li>
@@ -6423,6 +9019,7 @@ public function boot()
           <p><strong>Security:</strong> Always use {{ }} for user input to prevent XSS attacks. Only use {!! !!} for trusted HTML content.</p>
           
           <h3>Template Inheritance:</h3>
+          <p>Blade allows you to create a base layout and extend it in child views for consistent structure.</p>
           <ul>
             <li><strong>@extends:</strong> Extend a parent layout</li>
             <li><strong>@section:</strong> Define content sections</li>
@@ -6473,6 +9070,7 @@ public function boot()
 @endpush</code></pre>
           
           <h3>Control Structures:</h3>
+          <p>Blade provides directives for common control structures like conditionals and loops.</p>
           <ul>
             <li><strong>@if, @elseif, @else:</strong> Conditional statements</li>
             <li><strong>@foreach, @for, @while:</strong> Loops</li>
@@ -6548,6 +9146,7 @@ public function boot()
 @endswitch</code></pre>
           
           <h3>Blade Components:</h3>
+          <p>Blade components allow you to create reusable UI elements with their own logic and templates.</p>
           <ul>
             <li><strong>Anonymous Components:</strong> Simple reusable templates</li>
             <li><strong>Class-based Components:</strong> Components with PHP logic</li>
@@ -6624,6 +9223,7 @@ class Alert extends Component
 </x-card></code></pre>
           
           <h3>Includes & Partials:</h3>
+          <p>Blade provides several directives for including sub-views and partials.</p>
           <ul>
             <li><strong>@include:</strong> Include sub-views</li>
             <li><strong>@includeIf:</strong> Include if exists</li>
@@ -6656,6 +9256,7 @@ class Alert extends Component
 @each('partials.comment', $comments, 'comment')</code></pre>
           
           <h3>Additional Blade Features:</h3>
+          <p>Blade provides many other useful directives to enhance your templates.</p>
           <ul>
             <li><strong>@csrf:</strong> CSRF token for forms</li>
             <li><strong>@method:</strong> HTTP method spoofing</li>
@@ -6713,10 +9314,10 @@ class Alert extends Component
         title: 'Eloquent ORM',
         content: `
           <h2>Laravel Eloquent ORM</h2>
-          <p>Eloquent is Laravel's built-in Object-Relational Mapping (ORM) that provides an elegant ActiveRecord implementation for working with your database.</p>
-          <p>Each database table has a corresponding Model that interacts with that table.</p>
-          
+          <p>Eloquent is Laravel's built-in Object-Relational Mapping (ORM) that provides an elegant ActiveRecord implementation for working with your database. Each database table has a corresponding Model that interacts with that table.</p>
+
           <h3>Creating Models:</h3>
+          <p>Models represent database tables and provide methods to interact with the data.</p>
           <ul>
             <li><strong>Artisan Command:</strong> Generate model files</li>
             <li><strong>Model Conventions:</strong> Singular, PascalCase names</li>
@@ -6783,6 +9384,7 @@ class Post extends Model
           <p><strong>Model Conventions:</strong> Model 'Post' maps to table 'posts', Model 'UserProfile' maps to 'user_profiles'.</p>
           
           <h3>Basic CRUD Operations:</h3>
+          <p>Eloquent makes it easy to perform Create, Read, Update, and Delete operations on your database records.</p>
           <ul>
             <li><strong>Create:</strong> Insert new records</li>
             <li><strong>Read:</strong> Query and retrieve records</li>
@@ -6846,6 +9448,7 @@ Post::destroy([1, 2, 3]);
 Post::where('views', '<', 100)->delete();</code></pre>
           
           <h3>Query Builder Methods:</h3>
+          <p>Eloquent provides a fluent query builder for constructing database queries.</p>
           <ul>
             <li><strong>Where Clauses:</strong> Filter records</li>
             <li><strong>Ordering:</strong> Sort results</li>
@@ -6899,6 +9502,7 @@ if (Post::where('slug', $slug)->exists()) {
 }</code></pre>
           
           <h3>Eloquent Relationships:</h3>
+          <p>Eloquent makes managing relationships between models simple and intuitive.</p>
           <ul>
             <li><strong>One-to-One:</strong> hasOne() and belongsTo()</li>
             <li><strong>One-to-Many:</strong> hasMany() and belongsTo()</li>
@@ -6996,6 +9600,7 @@ $user->roles()->sync([1, 2, 3]);
 $user->roles()->attach(1, ['expires_at' => now()->addYear()]);</code></pre>
           
           <h3>Eager Loading (N+1 Problem):</h3>
+          <p>Eager loading helps optimize database queries by loading related models upfront, preventing the N+1 query problem.</p>
           <ul>
             <li><strong>with():</strong> Eager load relationships</li>
             <li><strong>load():</strong> Lazy eager loading</li>
@@ -7030,6 +9635,7 @@ $posts = Post::all();
 $posts->load('author');</code></pre>
           
           <h3>Accessors & Mutators:</h3>
+          <p>Eloquent provides a way to format Eloquent attribute values when you retrieve or set them on model instances.</p>
           <ul>
             <li><strong>Accessors:</strong> Transform attributes when retrieving</li>
             <li><strong>Mutators:</strong> Transform attributes when setting</li>
@@ -7088,10 +9694,10 @@ protected function firstName(): Attribute
         title: 'Migrations & DB',
         content: `
           <h2>Database Migrations</h2>
-          <p>Laravel migrations are version control for your database, allowing you to define and share your application's database schema with your team.</p>
-          <p>Migrations allow you to easily modify your database schema without manually writing SQL.</p>
-          
+          <p>Laravel migrations are version control for your database, allowing you to define and share your application's database schema with your team. Migrations allow you to easily modify your database schema without manually writing SQL.</p>
+
           <h3>Creating Migrations:</h3>
+          <p>Use Artisan commands to create migration files stored in database/migrations.</p>
           <ul>
             <li><strong>Artisan Command:</strong> Generate migration files</li>
             <li><strong>Migration File:</strong> Timestamp-named file in database/migrations</li>
@@ -7149,6 +9755,7 @@ php artisan migrate:fresh</code></pre>
           <p><strong>Migration Benefits:</strong> Version control for database, team collaboration, easy rollback, environment synchronization.</p>
           
           <h3>Schema Builder - Column Types:</h3>
+          <p>Laravel's Schema Builder provides a fluent interface for defining database schema.</p>
           <ul>
             <li><strong>Strings:</strong> string, text, char</li>
             <li><strong>Numbers:</strong> integer, bigInteger, decimal, float</li>
@@ -7212,6 +9819,7 @@ public function up()
 }</code></pre>
           
           <h3>Database Seeding:</h3>
+          <p>Database seeders allow you to populate your database with test or sample data using model factories and the Faker library.</p>
           <ul>
             <li><strong>Seeders:</strong> Populate tables with sample data</li>
             <li><strong>Model Factories:</strong> Generate fake data for testing</li>
@@ -7267,6 +9875,7 @@ php artisan migrate --seed
 php artisan migrate:fresh --seed</code></pre>
           
           <h3>Query Builder:</h3>
+          <p>Laravel's Query Builder provides a convenient, fluent interface for building and executing database queries.</p>
           <ul>
             <li><strong>Fluent Interface:</strong> Build complex queries</li>
             <li><strong>Raw Queries:</strong> Execute custom SQL</li>
@@ -7313,10 +9922,10 @@ DB::transaction(function () {
         title: 'Authentication & Authorization',
         content: `
           <h2>Laravel Authentication System</h2>
-          <p>Laravel provides a complete authentication system out of the box, including user registration, login, password reset, and email verification.</p>
-          <p>Laravel makes implementing authentication very simple with starter kits like Breeze and Jetstream.</p>
-          
+          <p>Laravel provides a complete authentication system out of the box, including user registration, login, password reset, and email verification. Laravel makes implementing authentication very simple with starter kits like Breeze and Jetstream.</p>
+
           <h3>Laravel Breeze Installation:</h3>
+          <p>Laravel Breeze is a minimal and simple authentication scaffolding for Laravel applications.</p>
           <ul>
             <li><strong>Lightweight:</strong> Minimal authentication scaffolding</li>
             <li><strong>Blade Templates:</strong> Simple blade views</li>
@@ -7354,6 +9963,7 @@ php artisan migrate
           <p><strong>Breeze Features:</strong> Login, registration, password reset, email verification, and profile management out of the box.</p>
           
           <h3>Manual Authentication:</h3>
+          <p>You can also implement authentication manually using Laravel's Auth facade and middleware.</p>
           <ul>
             <li><strong>Auth Facade:</strong> Authenticate users</li>
             <li><strong>Auth::attempt():</strong> Login with credentials</li>
@@ -7408,6 +10018,7 @@ Auth::login($user);
 Auth::loginUsingId(1);</code></pre>
           
           <h3>Protecting Routes:</h3>
+          <p>Use middleware to protect routes and restrict access based on authentication status.</p>
           <ul>
             <li><strong>auth Middleware:</strong> Require authentication</li>
             <li><strong>guest Middleware:</strong> Only for guests</li>
@@ -7451,6 +10062,7 @@ Route::get('/login', function () {
 })->middleware('guest');</code></pre>
           
           <h3>Authorization with Gates:</h3>
+          <p>Gates provide a simple way to authorize actions based on user permissions.</p>
           <ul>
             <li><strong>Gates:</strong> Simple closure-based authorization</li>
             <li><strong>Define Gates:</strong> In AuthServiceProvider</li>
@@ -7505,6 +10117,7 @@ public function update(Post $post)
 @endcannot</code></pre>
           
           <h3>Authorization with Policies:</h3>
+          <p>Policies are classes that organize authorization logic around a particular model or resource.</p>
           <ul>
             <li><strong>Policies:</strong> Class-based authorization for models</li>
             <li><strong>Create Policy:</strong> Artisan command</li>
@@ -7567,6 +10180,7 @@ public function update(Request $request, Post $post)
 @endcanany</code></pre>
           
           <h3>API Authentication with Sanctum:</h3>
+          <p>Laravel Sanctum provides a lightweight authentication system for SPAs (Single Page Applications), mobile applications, and simple token-based APIs.</p>
           <ul>
             <li><strong>Laravel Sanctum:</strong> Simple API token authentication</li>
             <li><strong>Personal Access Tokens:</strong> User-specific tokens</li>
@@ -7619,10 +10233,10 @@ if ($user->tokenCan('post:create')) {
         title: 'Forms & Validation',
         content: `
           <h2>Laravel Forms and Validation</h2>
-          <p>Laravel provides powerful form handling and validation features to ensure data integrity and security.</p>
-          <p>Forms include CSRF protection, file uploads, and comprehensive validation rules.</p>
-          
+          <p>Laravel provides powerful form handling and validation features to ensure data integrity and security. Forms include CSRF protection, file uploads, and comprehensive validation rules.</p>
+
           <h3>Creating Forms in Blade:</h3>
+          <p>Laravel Blade templates make it easy to create forms with built-in directives.</p>
           <ul>
             <li><strong>@csrf:</strong> CSRF token for security</li>
             <li><strong>@method:</strong> Spoof HTTP methods (PUT, PATCH, DELETE)</li>
@@ -7694,6 +10308,7 @@ if ($user->tokenCan('post:create')) {
           <p><strong>CSRF Protection:</strong> @csrf directive generates a hidden token field that Laravel validates on form submission to prevent cross-site request forgery attacks.</p>
           
           <h3>Controller Validation:</h3>
+          <p>Laravel provides several ways to validate incoming request data in controllers.</p>
           <ul>
             <li><strong>validate() Method:</strong> Simple inline validation</li>
             <li><strong>Validation Rules:</strong> Array of rules per field</li>
@@ -7743,6 +10358,7 @@ $request->validate([
 ]);</code></pre>
           
           <h3>Form Request Validation:</h3>
+          <p>Form Requests are custom request classes that encapsulate validation logic, keeping controllers clean.</p>
           <ul>
             <li><strong>Dedicated Class:</strong> Separate validation logic</li>
             <li><strong>Authorization:</strong> Built-in authorization check</li>
@@ -7815,6 +10431,7 @@ public function store(StorePostRequest $request)
 }</code></pre>
           
           <h3>Common Validation Rules:</h3>
+          <p>Laravel provides a wide range of built-in validation rules to cover most use cases.</p>
           <ul>
             <li><strong>required:</strong> Field must be present</li>
             <li><strong>email:</strong> Valid email format</li>
@@ -7865,6 +10482,7 @@ public function store(StorePostRequest $request)
 'hex_color' => ['required', 'regex:/^#[0-9A-F]{6}$/i']</code></pre>
           
           <h3>Custom Validation Rules:</h3>
+          <p>Laravel allows you to create custom validation rules using rule objects or closures for complex validation logic.</p>
           <ul>
             <li><strong>Rule Objects:</strong> Reusable custom rules</li>
             <li><strong>Closures:</strong> Inline custom validation</li>
@@ -7913,6 +10531,7 @@ $request->validate([
 ]);</code></pre>
           
           <h3>File Upload Handling:</h3>
+          <p>Laravel makes handling file uploads simple with built-in methods for storing and retrieving files.</p>
           <ul>
             <li><strong>store() Method:</strong> Save uploaded files</li>
             <li><strong>Storage Facade:</strong> File system operations</li>
@@ -7961,10 +10580,10 @@ php artisan storage:link</code></pre>
         title: 'API Development',
         content: `
           <h2>Laravel API Development</h2>
-          <p>Laravel excels at building robust RESTful APIs with built-in tools for authentication, rate limiting, and API resource transformation.</p>
-          <p>Build powerful APIs with JSON responses, resource transformation, and comprehensive error handling.</p>
-          
+          <p>Laravel excels at building robust RESTful APIs with built-in tools for authentication, rate limiting, and API resource transformation. Build powerful APIs with JSON responses, resource transformation, and comprehensive error handling.</p>
+
           <h3>API Routes Setup:</h3>
+          <p>API routes are defined in the routes/api.php file and automatically receive the /api prefix and API middleware group.</p>
           <ul>
             <li><strong>routes/api.php:</strong> Define API endpoints</li>
             <li><strong>Resource Routes:</strong> Automatic CRUD operations</li>
@@ -8016,6 +10635,7 @@ Route::prefix('v2')->group(function () {
           <p><strong>API Routes:</strong> All routes in routes/api.php automatically get /api prefix and api middleware group applied, returning JSON responses.</p>
           
           <h3>API Controllers:</h3>
+          <p>API controllers handle HTTP requests and return JSON responses.</p>
           <ul>
             <li><strong>--api Flag:</strong> Creates controller without create/edit methods</li>
             <li><strong>JSON Responses:</strong> Return JSON formatted data</li>
@@ -8090,6 +10710,7 @@ class PostController extends Controller
 }</code></pre>
           
           <h3>API Resources:</h3>
+          <p>Transform your models and collections into JSON responses using API Resources.</p>
           <ul>
             <li><strong>Resource Classes:</strong> Transform model data for JSON responses</li>
             <li><strong>Resource Collections:</strong> Transform arrays of data</li>
@@ -8151,6 +10772,7 @@ public function show(Post $post)
 }</code></pre>
           
           <h3>Rate Limiting:</h3>
+          <p>Protect your APIs from abuse using Laravel's rate limiting features.</p>
           <ul>
             <li><strong>Throttle Middleware:</strong> Limit request frequency</li>
             <li><strong>Custom Limits:</strong> Different limits per route</li>
@@ -8180,6 +10802,7 @@ Route::middleware(['throttle:api'])->group(function () {
 });</code></pre>
           
           <h3>API Authentication:</h3>
+          <p>Secure your APIs using Laravel Sanctum for token-based authentication.</p>
           <ul>
             <li><strong>Laravel Sanctum:</strong> Simple API token authentication</li>
             <li><strong>Personal Access Tokens:</strong> User-specific API tokens</li>
@@ -8220,6 +10843,7 @@ Route::middleware('auth:sanctum')->group(function () {
 });</code></pre>
           
           <h3>API Best Practices:</h3>
+          <p>Follow these best practices when building APIs with Laravel:</p>
           <ul>
             <li><strong>HTTP Status Codes:</strong> Proper response codes</li>
             <li><strong>Error Handling:</strong> Consistent error responses</li>
@@ -8235,10 +10859,10 @@ Route::middleware('auth:sanctum')->group(function () {
         title: 'Testing Laravel',
         content: `
           <h2>Laravel Testing</h2>
-          <p>Laravel is built with testing in mind, providing excellent support for unit testing, feature testing, and browser testing with PHPUnit and Laravel Dusk.</p>
-          <p>Write comprehensive tests to ensure code quality and catch bugs early in development.</p>
-          
+          <p>Laravel is built with testing in mind, providing excellent support for unit testing, feature testing, and browser testing with PHPUnit and Laravel Dusk. Write comprehensive tests to ensure code quality and catch bugs early in development.</p>
+
           <h3>Creating Tests:</h3>
+          <p>Laravel provides a convenient way to generate test files using Artisan commands.</p>
           <ul>
             <li><strong>PHPUnit:</strong> Built-in testing framework</li>
             <li><strong>Feature Tests:</strong> Test HTTP requests and responses</li>
@@ -8265,6 +10889,7 @@ php artisan test --coverage
 php artisan test --parallel</code></pre>
           
           <h3>Feature Tests (HTTP Testing):</h3>
+          <p>Feature tests simulate HTTP requests to your application and verify the responses.</p>
           <ul>
             <li><strong>HTTP Requests:</strong> Test GET, POST, PUT, DELETE requests</li>
             <li><strong>Response Assertions:</strong> Verify status codes, content</li>
@@ -8359,6 +10984,7 @@ class PostTest extends TestCase
           <p><strong>RefreshDatabase Trait:</strong> Automatically migrates and rolls back the database between each test, ensuring a clean state for every test.</p>
           
           <h3>API Testing:</h3>
+          <p>API tests focus on testing your application's API endpoints.</p>
           <ul>
             <li><strong>JSON Responses:</strong> Test API endpoints</li>
             <li><strong>assertJson:</strong> Verify JSON structure</li>
@@ -8406,6 +11032,7 @@ public function test_unauthenticated_request_returns_401()
 }</code></pre>
           
           <h3>Unit Tests:</h3>
+          <p>Unit tests focus on testing individual methods or classes in isolation.</p>
           <ul>
             <li><strong>Test Classes:</strong> Test individual methods</li>
             <li><strong>No HTTP:</strong> Direct method testing</li>
@@ -8441,6 +11068,7 @@ class UserTest extends TestCase
 }</code></pre>
           
           <h3>Database Testing:</h3>
+          <p>Laravel provides assertions to verify database state during tests.</p>
           <ul>
             <li><strong>assertDatabaseHas:</strong> Check record exists</li>
             <li><strong>assertDatabaseMissing:</strong> Check record doesn't exist</li>
@@ -8473,6 +11101,7 @@ public function test_soft_delete_works()
 }</code></pre>
           
           <h3>Model Factories for Testing:</h3>
+          <p>Laravel's model factories allow you to easily generate test data for your models.</p>
           <ul>
             <li><strong>Generate Test Data:</strong> Create models easily</li>
             <li><strong>Relationships:</strong> Create related models</li>
@@ -8511,6 +11140,7 @@ $draft = Post::factory()->draft()->create(); // Draft post
 $post = Post::factory()->for($user)->create(); // Post for specific user</code></pre>
           
           <h3>Common Assertions:</h3>
+          <p>Laravel provides a variety of assertion methods to verify different aspects of your application during testing.</p>
           <ul>
             <li><strong>Response:</strong> assertStatus, assertRedirect, assertSee</li>
             <li><strong>Database:</strong> assertDatabaseHas, assertDatabaseMissing</li>
@@ -8553,10 +11183,10 @@ $this->assertGuest();</code></pre>
         title: 'Deployment',
         content: `
           <h2>Laravel Deployment</h2>
-          <p>Learn how to deploy Laravel applications to production servers with proper configuration, optimization, and security practices.</p>
-          <p>Deploy your Laravel application securely and efficiently with best practices and optimization techniques.</p>
-          
+          <p>Learn how to deploy Laravel applications to production servers with proper configuration, optimization, and security practices. Deploy your Laravel application securely and efficiently with best practices and optimization techniques.</p>
+
           <h3>Server Requirements:</h3>
+          <p>Ensure your server meets the necessary requirements to run Laravel applications smoothly.</p>
           <ul>
             <li><strong>PHP 8.1+:</strong> Modern PHP version</li>
             <li><strong>Composer:</strong> Dependency management</li>
@@ -8584,6 +11214,7 @@ php -m | grep -E "BCMath|Ctype|Fileinfo|JSON|Mbstring|OpenSSL|PDO|Tokenizer|XML"
 php -v</code></pre>
           
           <h3>Production Environment Setup:</h3>
+          <p>Configure your Laravel application for production use by setting environment variables and disabling debug mode.</p>
           <ul>
             <li><strong>.env Configuration:</strong> Production environment variables</li>
             <li><strong>Debug Mode:</strong> Disable for security</li>
@@ -8635,6 +11266,7 @@ php artisan key:generate
 # Add .env to .gitignore</code></pre>
           
           <h3>Optimization Commands:</h3>
+          <p>Optimize your Laravel application for production with caching and autoloader optimizations.</p>
           <ul>
             <li><strong>Config Cache:</strong> Cache configuration files</li>
             <li><strong>Route Cache:</strong> Cache routes for faster loading</li>
@@ -8668,6 +11300,7 @@ composer install --optimize-autoloader --no-dev
 composer dump-autoload --optimize</code></pre>
           
           <h3>Nginx Configuration:</h3>
+          <p>Configure Nginx to serve your Laravel application correctly.</p>
           <ul>
             <li><strong>Server Block:</strong> Nginx virtual host setup</li>
             <li><strong>Document Root:</strong> Point to public directory</li>
@@ -8728,6 +11361,7 @@ sudo nginx -t
 sudo systemctl reload nginx</code></pre>
           
           <h3>Apache Configuration:</h3>
+          <p>Configure Apache to serve your Laravel application correctly.</p>
           <ul>
             <li><strong>Virtual Host:</strong> Apache virtual host setup</li>
             <li><strong>.htaccess:</strong> URL rewriting rules</li>
@@ -8758,6 +11392,7 @@ sudo systemctl reload apache2
 # Ensure AllowOverride All is set for .htaccess to work</code></pre>
           
           <h3>Database Migration:</h3>
+          <p>Ensure your database is properly migrated in production.</p>
           <ul>
             <li><strong>Run Migrations:</strong> Update database schema</li>
             <li><strong>Seed Data:</strong> Production seeders only</li>
@@ -8780,6 +11415,7 @@ php artisan migrate:fresh --force
 php artisan db:seed --class=ProductionSeeder --force</code></pre>
           
           <h3>Queue Workers:</h3>
+          <p>Use Supervisor to manage Laravel queue workers in production for reliable background job processing.</p>
           <ul>
             <li><strong>Supervisor:</strong> Process manager for queue workers</li>
             <li><strong>Background Jobs:</strong> Process queued jobs</li>
@@ -8816,6 +11452,7 @@ sudo supervisorctl status
 php artisan queue:restart</code></pre>
           
           <h3>Deployment with Laravel Forge:</h3>
+          <p>Laravel Forge simplifies server management and deployment with an intuitive interface.</p>
           <ul>
             <li><strong>Automated:</strong> One-click deployments</li>
             <li><strong>Server Management:</strong> Manage servers easily</li>
@@ -8851,6 +11488,7 @@ php artisan up
 echo "Deployment completed successfully!"</code></pre>
           
           <h3>Security Best Practices:</h3>
+          <p>Ensure your Laravel application is secure in production by following these best practices:</p>
           <ul>
             <li><strong>HTTPS Only:</strong> Force SSL/TLS</li>
             <li><strong>File Permissions:</strong> Secure file permissions</li>
@@ -8990,10 +11628,10 @@ php artisan optimize</code></pre>
         title: 'Installation & Setup',
         content: `
           <h2>Getting Started with Bootstrap</h2>
-          <p>Learn different ways to include Bootstrap in your projects and set up your development environment for building responsive websites.</p>
-          <p>Choose the installation method that best fits your project requirements and workflow preferences.</p>
-          
+          <p>Learn different ways to include Bootstrap in your projects and set up your development environment for building responsive websites. Choose the installation method that best fits your project requirements and workflow preferences.</p>
+
           <h3>Installation Methods:</h3>
+          <p>Installation method that best fits your project requirements.</p>
           <ul>
             <li><strong>CDN Links:</strong> Quick setup with hosted CSS and JS files</li>
             <li><strong>Download:</strong> Compiled CSS and JS files</li>
@@ -9025,6 +11663,7 @@ php artisan optimize</code></pre>
           <p><strong>Quick Start:</strong> CDN provides instant access to Bootstrap. No build tools required. Perfect for prototyping and learning.</p>
           
           <h3>NPM Installation:</h3>
+          <p>For modern web development workflows, install Bootstrap via npm to integrate with build tools like Webpack, Vite, or Gulp.</p>
           <ul>
             <li><strong>Install Bootstrap:</strong> npm install bootstrap</li>
             <li><strong>Import CSS:</strong> Import in your main CSS or JS file</li>
@@ -9043,6 +11682,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './scss/custom.scss';</code></pre>
           
           <h3>Basic HTML Template:</h3>
+          <p>Start your Bootstrap project with a proper HTML5 template including necessary meta tags and container classes.</p>
           <ul>
             <li><strong>HTML5 Doctype:</strong> Required for proper rendering</li>
             <li><strong>Viewport Meta Tag:</strong> Essential for responsive behavior</li>
@@ -9061,6 +11701,7 @@ import './scss/custom.scss';</code></pre>
 &lt;/div&gt;</code></pre>
           
           <h3>Sass Customization Setup:</h3>
+          <p>Customize Bootstrap's Sass variables and mixins to create a unique design system.</p>
           <ul>
             <li><strong>Install Sass:</strong> npm install sass</li>
             <li><strong>Create custom.scss:</strong> Import and override variables</li>
@@ -9083,10 +11724,10 @@ $border-radius: 0.5rem;
         title: 'Grid System',
         content: `
           <h2>Bootstrap Grid System</h2>
-          <p>Master Bootstrap's powerful 12-column grid system built with flexbox that adapts to different screen sizes and orientations.</p>
-          <p>The grid system uses containers, rows, and columns to layout and align content. It's built with flexbox and is fully responsive.</p>
-          
+          <p>Master Bootstrap's powerful 12-column grid system built with flexbox that adapts to different screen sizes and orientations. The grid system uses containers, rows, and columns to layout and align content. It's built with flexbox and is fully responsive.</p>
+
           <h3>Grid Basics:</h3>
+          <p>Bootstrap's grid system is based on a 12-column layout. Each column is a container for content and can be sized to span a specific number of columns.</p>
           <ul>
             <li><strong>Containers:</strong> .container and .container-fluid</li>
             <li><strong>Rows:</strong> Horizontal groups of columns</li>
@@ -9114,6 +11755,7 @@ $border-radius: 0.5rem;
           <p><strong>Container Types:</strong> .container for fixed-width responsive container. .container-fluid for full-width spanning entire viewport.</p>
           
           <h3>Responsive Breakpoints:</h3>
+          <p>Bootstrap's grid system includes six default breakpoints for building responsive layouts.</p>
           <ul>
             <li><strong>xs:</strong> Extra small devices (< 576px)</li>
             <li><strong>sm:</strong> Small devices (≥ 576px)</li>
@@ -9134,6 +11776,7 @@ $border-radius: 0.5rem;
 &lt;/div&gt;</code></pre>
           
           <h3>Column Classes:</h3>
+          <p>Bootstrap provides various column classes for controlling the width and behavior of columns in your grid system.</p>
           <ul>
             <li><strong>Auto Layout:</strong> .col for equal-width columns</li>
             <li><strong>Specific Widths:</strong> .col-6 for 50% width</li>
@@ -9161,6 +11804,7 @@ $border-radius: 0.5rem;
 &lt;/div&gt;</code></pre>
           
           <h3>Advanced Grid Features:</h3>
+          <p>Bootstrap's grid system offers advanced features for complex layouts and precise control over alignment and spacing.</p>
           <ul>
             <li><strong>Nesting:</strong> Grids within grids</li>
             <li><strong>Alignment:</strong> Vertical and horizontal alignment</li>
@@ -9195,10 +11839,10 @@ $border-radius: 0.5rem;
         title: 'Typography',
         content: `
           <h2>Bootstrap Typography</h2>
-          <p>Learn how Bootstrap provides beautiful, consistent typography with heading styles, body text, and powerful text utilities for styling content.</p>
-          <p>Bootstrap includes simple and easily customized typography for headings, body text, lists, and more.</p>
-          
+          <p>Learn how Bootstrap provides beautiful, consistent typography with heading styles, body text, and powerful text utilities for styling content. Bootstrap includes simple and easily customized typography for headings, body text, lists, and more.</p>
+
           <h3>Headings & Display Text:</h3>
+          <p>Bootstrap provides a range of heading styles and display text options for creating visually appealing content.</p>
           <ul>
             <li><strong>HTML Headings:</strong> h1 through h6 with custom styling</li>
             <li><strong>Heading Classes:</strong> .h1 through .h6 for any element</li>
@@ -9227,6 +11871,7 @@ $border-radius: 0.5rem;
           <p><strong>Display Headings:</strong> Larger, more impactful headings with lighter font weight for hero sections and page titles.</p>
           
           <h3>Text Styling:</h3>
+          <p>Control font weight, style, transformation, and decoration for your text.</p>
           <ul>
             <li><strong>Font Weight:</strong> .fw-bold, .fw-normal, .fw-light</li>
             <li><strong>Font Style:</strong> .fst-italic, .fst-normal</li>
@@ -9254,6 +11899,7 @@ $border-radius: 0.5rem;
 &lt;p class="text-decoration-line-through"&gt;Line through text&lt;/p&gt;</code></pre>
           
           <h3>Text Alignment & Colors:</h3>
+          <p>Control text alignment and apply color variations to your content.</p>
           <ul>
             <li><strong>Text Alignment:</strong> .text-start, .text-center, .text-end</li>
             <li><strong>Responsive Alignment:</strong> .text-sm-center, .text-md-end</li>
@@ -9284,6 +11930,7 @@ $border-radius: 0.5rem;
 &lt;p class="text-danger text-opacity-50"&gt;50% opacity&lt;/p&gt;</code></pre>
           
           <h3>Lists & Blockquotes:</h3>
+          <p>Bootstrap offers styled lists and blockquotes to enhance content presentation.</p>
           <ul>
             <li><strong>Unstyled Lists:</strong> .list-unstyled for clean lists</li>
             <li><strong>Inline Lists:</strong> .list-inline for horizontal lists</li>
@@ -9318,10 +11965,10 @@ $border-radius: 0.5rem;
         title: 'Components',
         content: `
           <h2>Bootstrap Components</h2>
-          <p>Explore Bootstrap's extensive library of prebuilt components including buttons, cards, navigation, forms, and interactive elements.</p>
-          <p>Components are reusable building blocks that help you build interfaces quickly with consistent styling.</p>
-          
+          <p>Explore Bootstrap's extensive library of prebuilt components including buttons, cards, navigation, forms, and interactive elements. Components are reusable building blocks that help you build interfaces quickly with consistent styling.</p>
+
           <h3>Buttons & Button Groups:</h3>
+          <p>Buttons are used to trigger actions or navigate between pages.</p>
           <ul>
             <li><strong>Button Styles:</strong> .btn-primary, .btn-secondary, .btn-outline-*</li>
             <li><strong>Button Sizes:</strong> .btn-lg, .btn-sm for different sizes</li>
@@ -9356,6 +12003,7 @@ $border-radius: 0.5rem;
           <p><strong>Button Groups:</strong> Combine buttons into a single group for toolbar-style navigation or action groups.</p>
           
           <h3>Cards & Content:</h3>
+          <p>Use cards to display content in a flexible and extensible container with multiple variants.</p>
           <ul>
             <li><strong>Basic Cards:</strong> .card with header, body, and footer</li>
             <li><strong>Card Images:</strong> .card-img-top, .card-img-bottom</li>
@@ -9392,6 +12040,7 @@ $border-radius: 0.5rem;
 &lt;/div&gt;</code></pre>
           
           <h3>Alerts & Badges:</h3>
+          <p>Use alerts to provide feedback messages and badges for counters and labels.</p>
           <ul>
             <li><strong>Alert Types:</strong> Success, danger, warning, info alerts</li>
             <li><strong>Dismissible Alerts:</strong> Closable alert messages</li>
@@ -9425,6 +12074,7 @@ $border-radius: 0.5rem;
 &lt;span class="badge rounded-pill bg-success"&gt;Pill Badge&lt;/span&gt;</code></pre>
           
           <h3>Progress & Spinners:</h3>
+          <p>Visualize progress and loading states with Bootstrap's progress bars and spinners.</p>
           <ul>
             <li><strong>Progress Bars:</strong> .progress with animated bars</li>
             <li><strong>Striped Progress:</strong> .progress-bar-striped styling</li>
@@ -9463,10 +12113,10 @@ $border-radius: 0.5rem;
         title: 'Navigation',
         content: `
           <h2>Bootstrap Navigation</h2>
-          <p>Create responsive navigation menus, navbars, breadcrumbs, and pagination with Bootstrap's flexible navigation components.</p>
-          <p>Navigation components help users move through your site with consistent, accessible menus and links.</p>
-          
+          <p>Create responsive navigation menus, navbars, breadcrumbs, and pagination with Bootstrap's flexible navigation components. Navigation components help users move through your site with consistent, accessible menus and links.</p>
+
           <h3>Navbar Component:</h3>
+          <p>Bootstrap's navbar component is a responsive navigation bar that can be customized with various themes and positioning options.</p>
           <ul>
             <li><strong>Navbar Structure:</strong> .navbar with brand, nav, and collapsible content</li>
             <li><strong>Navbar Colors:</strong> .navbar-light, .navbar-dark themes</li>
@@ -9512,6 +12162,7 @@ $border-radius: 0.5rem;
           <p><strong>Responsive Navbar:</strong> Collapses into hamburger menu on mobile. Use .navbar-expand-lg to control breakpoint.</p>
           
           <h3>Navigation Components:</h3>
+          <p>Bootstrap provides various navigation components to help users move through your site.</p>
           <ul>
             <li><strong>Nav Tabs:</strong> .nav-tabs for tabbed interfaces</li>
             <li><strong>Nav Pills:</strong> .nav-pills for pill-style navigation</li>
@@ -9554,6 +12205,7 @@ $border-radius: 0.5rem;
 &lt;/ul&gt;</code></pre>
           
           <h3>Dropdown Menus:</h3>
+          <p>Bootstrap's dropdown component allows you to create toggleable menus for navigation and actions.</p>
           <ul>
             <li><strong>Dropdown Toggle:</strong> .dropdown-toggle for dropdown triggers</li>
             <li><strong>Dropdown Menu:</strong> .dropdown-menu container</li>
@@ -9587,6 +12239,7 @@ $border-radius: 0.5rem;
 &lt;/li&gt;</code></pre>
           
           <h3>Breadcrumb & Pagination:</h3>
+          <p>Bootstrap provides components for breadcrumb navigation and pagination controls to enhance user experience.</p>
           <ul>
             <li><strong>Breadcrumb:</strong> .breadcrumb for navigation trails</li>
             <li><strong>Breadcrumb Items:</strong> .breadcrumb-item styling</li>
@@ -9624,10 +12277,10 @@ $border-radius: 0.5rem;
         title: 'Forms',
         content: `
           <h2>Bootstrap Forms</h2>
-          <p>Build beautiful, accessible forms with Bootstrap's form controls, validation states, input groups, and layout options.</p>
-          <p>Forms are essential for user input. Bootstrap provides extensive styling and validation features for form elements.</p>
-          
+          <p>Build beautiful, accessible forms with Bootstrap's form controls, validation states, input groups, and layout options. Forms are essential for user input. Bootstrap provides extensive styling and validation features for form elements.</p>
+
           <h3>Form Controls:</h3>
+          <p>Bootstrap provides a wide range of form controls to handle user input effectively.</p>
           <ul>
             <li><strong>Form Control:</strong> .form-control for text inputs, textareas</li>
             <li><strong>Form Select:</strong> .form-select for dropdown selects</li>
@@ -9683,6 +12336,7 @@ $border-radius: 0.5rem;
           <p><strong>Form Controls:</strong> Use .mb-3 for consistent spacing between form elements. Labels improve accessibility.</p>
           
           <h3>Form Layout:</h3>
+          <p>Bootstrap provides various layout options for forms including horizontal, inline, and grid-based layouts.</p>
           <ul>
             <li><strong>Form Groups:</strong> .mb-3 spacing between form elements</li>
             <li><strong>Form Grid:</strong> Use grid classes for form layouts</li>
@@ -9727,6 +12381,7 @@ $border-radius: 0.5rem;
 &lt;/div&gt;</code></pre>
           
           <h3>Input Groups:</h3>
+          <p>Enhance form inputs with text, buttons, or dropdowns using Bootstrap's input group component.</p>
           <ul>
             <li><strong>Input Group:</strong> .input-group for enhanced inputs</li>
             <li><strong>Input Group Text:</strong> .input-group-text for addons</li>
@@ -9764,6 +12419,7 @@ $border-radius: 0.5rem;
 &lt;/div&gt;</code></pre>
           
           <h3>Form Validation:</h3>
+          <p>Ensure user input accuracy with Bootstrap's built-in validation styles and feedback messages.</p>
           <ul>
             <li><strong>Validation Classes:</strong> .is-valid, .is-invalid states</li>
             <li><strong>Valid Feedback:</strong> .valid-feedback for success messages</li>
@@ -9806,10 +12462,10 @@ $border-radius: 0.5rem;
         title: 'Utilities',
         content: `
           <h2>Bootstrap Utility Classes</h2>
-          <p>Master Bootstrap's comprehensive utility classes for spacing, colors, positioning, display, and more to fine-tune your designs efficiently.</p>
-          <p>Utility classes are single-purpose helpers that provide quick styling without writing custom CSS.</p>
-          
+          <p>Master Bootstrap's comprehensive utility classes for spacing, colors, positioning, display, and more to fine-tune your designs efficiently. Utility classes are single-purpose helpers that provide quick styling without writing custom CSS.</p>
+
           <h3>Spacing Utilities:</h3>
+          <p>Control spacing around elements using margin and padding utility classes.</p>
           <ul>
             <li><strong>Margin:</strong> .m-* classes for all sides (0-5)</li>
             <li><strong>Padding:</strong> .p-* classes for all sides (0-5)</li>
@@ -9842,6 +12498,7 @@ $border-radius: 0.5rem;
           <p><strong>Spacing Scale:</strong> 0 = 0, 1 = 0.25rem, 2 = 0.5rem, 3 = 1rem, 4 = 1.5rem, 5 = 3rem. Use mx-auto to center elements.</p>
           
           <h3>Color Utilities:</h3>
+          <p>Control text and background colors with Bootstrap's color utility classes.</p> 
           <ul>
             <li><strong>Text Colors:</strong> .text-primary, .text-secondary, .text-success</li>
             <li><strong>Background Colors:</strong> .bg-primary, .bg-light, .bg-dark</li>
@@ -9877,6 +12534,7 @@ $border-radius: 0.5rem;
 &lt;div class="bg-primary bg-gradient text-white p-3"&gt;Gradient&lt;/div&gt;</code></pre>
           
           <h3>Display & Positioning:</h3>
+          <p>Control element display and positioning with Bootstrap's utility classes for visibility, positioning, and layering.</p>
           <ul>
             <li><strong>Display:</strong> .d-none, .d-block, .d-flex, .d-grid</li>
             <li><strong>Responsive Display:</strong> .d-md-block, .d-lg-none</li>
@@ -9911,6 +12569,7 @@ $border-radius: 0.5rem;
 &lt;div class="position-sticky top-0"&gt;Sticky header&lt;/div&gt;</code></pre>
           
           <h3>Flexbox & Sizing:</h3>
+          <p>Use Bootstrap's flexbox utilities to create flexible layouts and control element sizing with width and height classes.</p>
           <ul>
             <li><strong>Flex Direction:</strong> .flex-row, .flex-column</li>
             <li><strong>Justify Content:</strong> .justify-content-center, .justify-content-between</li>
@@ -9954,10 +12613,10 @@ $border-radius: 0.5rem;
         title: 'JS Components',
         content: `
           <h2>Bootstrap JavaScript Components</h2>
-          <p>Learn to use Bootstrap's interactive JavaScript components including modals, tooltips, popovers, carousels, and collapse functionality.</p>
-          <p>JavaScript components add interactivity to your website without writing custom JavaScript code.</p>
-          
+          <p>Learn to use Bootstrap's interactive JavaScript components including modals, tooltips, popovers, carousels, and collapse functionality. JavaScript components add interactivity to your website without writing custom JavaScript code.</p>
+
           <h3>Modal Component:</h3>
+          <p>Modals are dialog windows that appear on top of content. Use data attributes or JavaScript API to control them.</p>
           <ul>
             <li><strong>Modal Structure:</strong> .modal with .modal-dialog and .modal-content</li>
             <li><strong>Modal Sizes:</strong> .modal-lg, .modal-sm, .modal-xl</li>
@@ -10002,6 +12661,7 @@ $border-radius: 0.5rem;
           <p><strong>Modals:</strong> Dialog windows that appear on top of content. Use data attributes or JavaScript API to control them.</p>
           
           <h3>Tooltips & Popovers:</h3>
+          <p>Add informative tooltips and popovers to elements using Bootstrap's JavaScript components.</p>
           <ul>
             <li><strong>Tooltip Initialization:</strong> JavaScript initialization required</li>
             <li><strong>Tooltip Placement:</strong> top, bottom, left, right positioning</li>
@@ -10046,6 +12706,7 @@ var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
 &lt;/script&gt;</code></pre>
           
           <h3>Carousel Component:</h3>
+          <p>Create responsive carousels for cycling through images or content with Bootstrap's carousel component.</p>
           <ul>
             <li><strong>Carousel Structure:</strong> .carousel with .carousel-inner</li>
             <li><strong>Carousel Items:</strong> .carousel-item with images/content</li>
@@ -10093,6 +12754,7 @@ var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
 &lt;/div&gt;</code></pre>
           
           <h3>Collapse & Accordion:</h3>
+          <p>Easily create collapsible content and accordions for better content organization.</p>
           <ul>
             <li><strong>Collapse Toggle:</strong> data-bs-toggle="collapse"</li>
             <li><strong>Collapse Target:</strong> data-bs-target for collapsible content</li>
@@ -10152,10 +12814,10 @@ var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
         title: 'Responsive Design',
         content: `
           <h2>Responsive Design Mastery</h2>
-          <p>Master responsive web design with Bootstrap's mobile-first approach, breakpoint system, and responsive utilities for all device sizes.</p>
-          <p>Bootstrap is built mobile-first, starting with mobile styles and scaling up to larger screens using media queries.</p>
+          <p>Master responsive web design with Bootstrap's mobile-first approach, breakpoint system, and responsive utilities for all device sizes. Bootstrap is built mobile-first, starting with mobile styles and scaling up to larger screens using media queries.</p>
           
           <h3>Mobile-First Philosophy:</h3>
+          <p>Starting with mobile styles and scaling up to larger screens using media queries.</p>
           <ul>
             <li><strong>Base Styles:</strong> Start with mobile styles as foundation</li>
             <li><strong>Progressive Enhancement:</strong> Add larger screen enhancements</li>
@@ -10184,6 +12846,7 @@ var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
           <p><strong>Mobile-First:</strong> Base styles apply to all screens. Add breakpoint-specific classes to override for larger screens.</p>
           
           <h3>Responsive Breakpoints:</h3>
+          <p>Bootstrap's default breakpoints for responsive design:</p>
           <ul>
             <li><strong>Extra Small:</strong> < 576px (default, no prefix)</li>
             <li><strong>Small:</strong> ≥ 576px (sm prefix)</li>
@@ -10214,6 +12877,7 @@ var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
 &lt;div class="container-lg"&gt;100% wide until large breakpoint&lt;/div&gt;</code></pre>
           
           <h3>Responsive Utilities:</h3>
+          <p>Use Bootstrap's responsive utility classes to show/hide elements, align text, and adjust spacing based on screen size.</p>
           <ul>
             <li><strong>Display Controls:</strong> .d-none .d-md-block for show/hide</li>
             <li><strong>Text Alignment:</strong> .text-center .text-md-start</li>
@@ -10258,6 +12922,7 @@ var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
 &lt;/div&gt;</code></pre>
           
           <h3>Responsive Images & Media:</h3>
+          <p>Make images and media responsive using Bootstrap's utility classes.</p>
           <ul>
             <li><strong>Responsive Images:</strong> .img-fluid for scalable images</li>
             <li><strong>Image Shapes:</strong> .rounded, .img-thumbnail styling</li>
@@ -10297,6 +12962,7 @@ var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
 &lt;img src="image.jpg" class="object-fit-contain" style="width: 200px; height: 200px;"&gt;</code></pre>
           
           <h3>Responsive Tables:</h3>
+          <p>Make tables responsive by using the .table-responsive class or specific breakpoint classes.</p>
           <ul>
             <li><strong>Responsive Table:</strong> .table-responsive for scrollable tables</li>
             <li><strong>Breakpoint Tables:</strong> .table-responsive-md, .table-responsive-lg</li>
@@ -10336,10 +13002,10 @@ var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
         title: 'Customization',
         content: `
           <h2>Customizing Bootstrap</h2>
-          <p>Learn how to customize Bootstrap with Sass variables, create custom builds, override default styles, and maintain your own design system.</p>
-          <p>Bootstrap is highly customizable. You can modify colors, fonts, spacing, and components to match your brand identity.</p>
-          
+          <p>Learn how to customize Bootstrap with Sass variables, create custom builds, override default styles, and maintain your own design system. Bootstrap is highly customizable. You can modify colors, fonts, spacing, and components to match your brand identity.</p>
+
           <h3>Sass Customization:</h3>
+          <p>Customize Bootstrap's Sass variables to change the look and feel of your project.</p>
           <ul>
             <li><strong>Variable Override:</strong> Customize colors, fonts, and spacing</li>
             <li><strong>Theme Colors:</strong> Define custom primary, secondary colors</li>
@@ -10400,6 +13066,7 @@ $border-radius-lg: 1rem;
           <p><strong>Customization Process:</strong> Import functions first, override variables, then import Bootstrap. This ensures your customizations are applied.</p>
           
           <h3>CSS Custom Properties:</h3>
+          <p>Utilize CSS variables for dynamic theming and runtime customization of Bootstrap styles.</p>
           <ul>
             <li><strong>CSS Variables:</strong> Runtime customization with CSS custom properties</li>
             <li><strong>Dark Mode:</strong> Implement dark theme variations</li>
@@ -10448,6 +13115,7 @@ const toggleTheme = () => {
 &lt;/button&gt;</code></pre>
           
           <h3>Custom Components:</h3>
+          <p>Create your own Bootstrap-styled components using Sass and utility classes.</p>
           <ul>
             <li><strong>Component Architecture:</strong> Follow Bootstrap patterns</li>
             <li><strong>Utility Integration:</strong> Use Bootstrap utilities in custom components</li>
@@ -10515,6 +13183,7 @@ const toggleTheme = () => {
 &lt;span class="badge-custom"&gt;New Feature&lt;/span&gt;</code></pre>
           
           <h3>Build Tools & Workflow:</h3>
+          <p>Integrate Bootstrap customization into modern build tools like Webpack, Gulp, or npm scripts for efficient development workflows.</p>
           <ul>
             <li><strong>Webpack Integration:</strong> Modern build tool setup</li>
             <li><strong>PostCSS Processing:</strong> Additional CSS processing</li>
@@ -10701,10 +13370,10 @@ $modal-content-border-radius: 1rem;
         title: 'Installation & Setup',
         content: `
           <h2>Installing Tailwind CSS</h2>
-          <p>Learn different ways to install and configure Tailwind CSS in your projects, from CDN to build tools integration.</p>
-          <p>Choose the installation method that best fits your project setup and development workflow preferences.</p>
-          
+          <p>Learn different ways to install and configure Tailwind CSS in your projects, from CDN to build tools integration. Choose the installation method that best fits your project setup and development workflow preferences.</p>
+        
           <h3>Installation Methods:</h3>
+          <p>Choose the installation method that best fits your project setup.</p>
           <ul>
             <li><strong>Tailwind CLI:</strong> Standalone CLI tool (recommended)</li>
             <li><strong>PostCSS Plugin:</strong> Integrate with existing build tools</li>
@@ -10725,6 +13394,7 @@ npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch</code></pre>
           <p><strong>Quick Start:</strong> CDN provides instant access to Tailwind classes. CLI installation offers full customization control with optimized builds for production.</p>
           
           <h3>Tailwind CLI Setup:</h3>
+          <p>Install and configure Tailwind CSS using the command line interface.</p>
           <ul>
             <li><strong>Install:</strong> npm install -D tailwindcss</li>
             <li><strong>Initialize:</strong> npx tailwindcss init</li>
@@ -10746,6 +13416,7 @@ module.exports = {
 }</code></pre>
           
           <h3>Configuration File:</h3>
+          <p>Customize Tailwind's default settings in tailwind.config.js.</p>
           <ul>
             <li><strong>Content Paths:</strong> Specify HTML/template files</li>
             <li><strong>Theme Customization:</strong> Colors, fonts, spacing</li>
@@ -10766,6 +13437,7 @@ module.exports = {
 }</code></pre>
           
           <h3>CSS Input File:</h3>
+          <p>Import Tailwind layers and add custom styles using the @layer directive.</p>
           <ul>
             <li><strong>@tailwind base:</strong> Normalize/reset styles</li>
             <li><strong>@tailwind components:</strong> Component layer</li>
@@ -10780,10 +13452,10 @@ module.exports = {
         title: 'Utility Classes',
         content: `
           <h2>Tailwind CSS Utility Classes</h2>
-          <p>Master the fundamental utility classes that form the building blocks of Tailwind CSS designs, from spacing to typography.</p>
-          <p>Utility classes provide atomic building blocks that combine to create any design without writing custom CSS.</p>
-          
+          <p>Master the fundamental utility classes that form the building blocks of Tailwind CSS designs, from spacing to typography. Utility classes provide atomic building blocks that combine to create any design without writing custom CSS.</p>
+
           <h3>Spacing Utilities:</h3>
+          <p>Control margin, padding, and space between elements using Tailwind's spacing utilities.</p>
           <ul>
             <li><strong>Margin:</strong> m-4, mt-2, mr-6, mb-8, ml-1, mx-auto, my-4</li>
             <li><strong>Padding:</strong> p-4, pt-2, pr-6, pb-8, pl-1, px-4, py-2</li>
@@ -10803,6 +13475,7 @@ module.exports = {
           <p><strong>Spacing Logic:</strong> Numbers multiply by 0.25rem (4px). mx-auto centers horizontally. space-y adds vertical gaps between children.</p>
           
           <h3>Sizing Utilities:</h3>
+          <p>Control element dimensions with Tailwind's sizing utilities.</p>
           <ul>
             <li><strong>Width:</strong> w-full, w-1/2, w-64, w-screen, w-min, w-max</li>
             <li><strong>Height:</strong> h-full, h-screen, h-64, h-min, h-max</li>
@@ -10816,6 +13489,7 @@ module.exports = {
 &lt;div class="max-w-md mx-auto"&gt;Max width container&lt;/div&gt;</code></pre>
           
           <h3>Typography Utilities:</h3>
+          <p>Control text appearance with Tailwind's typography utilities.</p>
           <ul>
             <li><strong>Font Family:</strong> font-sans, font-serif, font-mono</li>
             <li><strong>Font Size:</strong> text-xs, text-sm, text-base, text-lg, text-xl, text-2xl, text-3xl</li>
@@ -10831,6 +13505,7 @@ module.exports = {
 &lt;code class="font-mono text-sm bg-gray-100"&gt;Code snippet&lt;/code&gt;</code></pre>
           
           <h3>Color System:</h3>
+          <p>Understand Tailwind's color system and how to apply consistent color themes across your designs.</p>
           <ul>
             <li><strong>Color Palette:</strong> Gray, red, yellow, green, blue, indigo, purple, pink</li>
             <li><strong>Color Scale:</strong> 50, 100, 200, 300, 400, 500, 600, 700, 800, 900</li>
@@ -10852,10 +13527,10 @@ module.exports = {
         title: 'Layout & Positioning',
         content: `
           <h2>Layout and Positioning with Tailwind</h2>
-          <p>Learn how to create complex layouts using Tailwind's layout utilities including Flexbox, Grid, positioning, and display properties.</p>
-          <p>Modern web layouts are built with Flexbox for 1D layouts and Grid for 2D layouts, both fully supported by Tailwind.</p>
-          
+          <p>Learn how to create complex layouts using Tailwind's layout utilities including Flexbox, Grid, positioning, and display properties. Modern web layouts are built with Flexbox for 1D layouts and Grid for 2D layouts, both fully supported by Tailwind.</p>
+
           <h3>Display Utilities:</h3>
+          <p>Positioning utilities allow you to control the position of elements on the page.</p>
           <ul>
             <li><strong>Block/Inline:</strong> block, inline-block, inline, hidden</li>
             <li><strong>Flex:</strong> flex, inline-flex for flexbox containers</li>
@@ -10864,6 +13539,7 @@ module.exports = {
           </ul>
           
           <h3>Flexbox Utilities:</h3>
+          <p>Flexbox utilities allow you to create flexible, responsive layouts with ease.</p>
           <ul>
             <li><strong>Flex Direction:</strong> flex-row, flex-col, flex-row-reverse, flex-col-reverse</li>
             <li><strong>Flex Wrap:</strong> flex-wrap, flex-nowrap, flex-wrap-reverse</li>
@@ -10890,6 +13566,7 @@ module.exports = {
           <p><strong>Flexbox Benefits:</strong> Perfect for navigation bars, card layouts, and centering content. justify controls horizontal alignment, items controls vertical.</p>
           
           <h3>CSS Grid Utilities:</h3>
+          <p>Grid utilities allow you to create complex 2D layouts with ease.</p>
           <ul>
             <li><strong>Grid Template Columns:</strong> grid-cols-1, grid-cols-2, grid-cols-3, grid-cols-12</li>
             <li><strong>Grid Template Rows:</strong> grid-rows-1, grid-rows-2, grid-rows-6</li>
@@ -10912,6 +13589,7 @@ module.exports = {
 &lt;/div&gt;</code></pre>
           
           <h3>Positioning Utilities:</h3>
+          <p>Positioning utilities allow you to control the position of elements on the page.</p>
           <ul>
             <li><strong>Position:</strong> static, fixed, absolute, relative, sticky</li>
             <li><strong>Top/Right/Bottom/Left:</strong> top-0, right-4, bottom-2, left-8</li>
@@ -10940,10 +13618,10 @@ module.exports = {
         title: 'Responsive Design',
         content: `
           <h2>Responsive Design with Tailwind CSS</h2>
-          <p>Create responsive layouts using Tailwind's mobile-first breakpoint system and responsive utility variants.</p>
-          <p>Mobile-first approach ensures optimal performance and user experience across all device sizes.</p>
-          
+          <p>Create responsive layouts using Tailwind's mobile-first breakpoint system and responsive utility variants. Mobile-first approach ensures optimal performance and user experience across all device sizes.</p>
+
           <h3>Breakpoint System:</h3>
+          <p>Each breakpoint includes all larger sizes. Use these prefixes to apply styles at specific screen sizes.</p>
           <ul>
             <li><strong>sm:</strong> 640px and up (small devices)</li>
             <li><strong>md:</strong> 768px and up (medium devices)</li>
@@ -10967,6 +13645,7 @@ module.exports = {
           <p><strong>Mobile-First Logic:</strong> Base styles apply to all sizes. Breakpoint prefixes override for larger screens. Each breakpoint includes all larger sizes.</p>
           
           <h3>Responsive Utilities:</h3>
+          <p>Use responsive variants to adjust styles at different breakpoints.</p>
           <ul>
             <li><strong>Mobile First:</strong> Base styles apply to all screen sizes</li>
             <li><strong>Breakpoint Prefixes:</strong> sm:text-lg, md:w-1/2, lg:flex-row</li>
@@ -10987,6 +13666,7 @@ module.exports = {
 &lt;/nav&gt;</code></pre>
           
           <h3>Common Responsive Patterns:</h3>
+          <p>Explore common responsive design patterns implemented with Tailwind CSS.</p>
           <ul>
             <li><strong>Navigation:</strong> Hidden mobile menu, visible desktop nav</li>
             <li><strong>Grid Layouts:</strong> Single column mobile, multi-column desktop</li>
@@ -11005,6 +13685,7 @@ module.exports = {
 &lt;/div&gt;</code></pre>
           
           <h3>Responsive Design Strategy:</h3>
+          <p>Adopt a mobile-first mindset to ensure optimal user experience across all devices.</p>
           <ul>
             <li><strong>Mobile First:</strong> Design for mobile, enhance for desktop</li>
             <li><strong>Progressive Enhancement:</strong> Add complexity at larger screens</li>
@@ -11020,10 +13701,10 @@ module.exports = {
         title: 'Components',
         content: `
           <h2>Building Components with Tailwind CSS</h2>
-          <p>Learn how to create reusable components using Tailwind utilities and extract repetitive patterns with @apply directive.</p>
-          <p>Components are built by composing utility classes, then optionally extracted using @apply for reusability.</p>
-          
+          <p>Learn how to create reusable components using Tailwind utilities and extract repetitive patterns with @apply directive. Components are built by composing utility classes, then optionally extracted using @apply for reusability.</p>
+
           <h3>Component Approach:</h3>
+          <p>There are multiple ways to create components in Tailwind CSS:</p>
           <ul>
             <li><strong>Utility Composition:</strong> Combine utilities to create components</li>
             <li><strong>Template Reuse:</strong> Copy and paste component markup</li>
@@ -11043,6 +13724,7 @@ module.exports = {
           <p><strong>Button Pattern:</strong> Background color, hover state, text styling, padding, rounded corners, and smooth transitions combined into reusable button design.</p>
           
           <h3>Common Component Patterns:</h3>
+          <p>Explore common UI components built with Tailwind CSS utility classes.</p>
           <ul>
             <li><strong>Buttons:</strong> Base styles with size and color variants</li>
             <li><strong>Cards:</strong> Container with header, body, and footer sections</li>
@@ -11064,6 +13746,7 @@ module.exports = {
 &lt;/div&gt;</code></pre>
           
           <h3>@apply Directive:</h3>
+          <p>Use the @apply directive in your CSS to extract common utility patterns into reusable classes.</p>
           <ul>
             <li><strong>Extract Utilities:</strong> Combine multiple utilities into a single class</li>
             <li><strong>Component Layer:</strong> Add custom component classes</li>
@@ -11087,6 +13770,7 @@ module.exports = {
 }</code></pre>
           
           <h3>Component Libraries:</h3>
+          <p>Explore popular Tailwind component libraries to speed up development with pre-built components.</p>
           <ul>
             <li><strong>Headless UI:</strong> Unstyled, accessible components</li>
             <li><strong>Tailwind UI:</strong> Official component library</li>
@@ -11101,10 +13785,10 @@ module.exports = {
         title: 'States & Variants',
         content: `
           <h2>Interactive States and Variants</h2>
-          <p>Master Tailwind's state variants for creating interactive user interfaces including hover, focus, active states, and more.</p>
-          <p>State variants allow you to conditionally apply styles based on element states, creating dynamic and engaging user experiences.</p>
-          
+          <p>Master Tailwind's state variants for creating interactive user interfaces including hover, focus, active states, and more. State variants allow you to conditionally apply styles based on element states, creating dynamic and engaging user experiences.</p>
+
           <h3>Pseudo-class Variants:</h3>
+          <p>These variants allow you to apply styles based on the state of an element, such as hover, focus, active, and visited.</p>
           <ul>
             <li><strong>Hover:</strong> hover:bg-blue-500, hover:text-white</li>
             <li><strong>Focus:</strong> focus:outline-none, focus:ring-2, focus:ring-blue-500</li>
@@ -11131,6 +13815,7 @@ module.exports = {
           <p><strong>State Flow:</strong> Normal → Hover → Active → Focus. Use transition-colors for smooth state changes. disabled: variant prevents interaction and shows visual feedback.</p>
           
           <h3>Group Variants:</h3>
+          <p>Group variants allow you to style child elements based on the state of a parent element.</p>
           <ul>
             <li><strong>Group Hover:</strong> group-hover:text-blue-500 (child changes on parent hover)</li>
             <li><strong>Group Focus:</strong> group-focus:opacity-100</li>
@@ -11156,6 +13841,7 @@ module.exports = {
           <p><strong>Group Pattern:</strong> Parent gets group class, children use group-hover: variants. Perfect for cards, navigation items, and interactive containers.</p>
           
           <h3>Peer Variants:</h3>
+          <p>Peer variants allow you to style sibling elements based on the state of a peer element, such as a checkbox or radio button.</p>
           <ul>
             <li><strong>Peer Checked:</strong> peer-checked:bg-blue-500 (sibling state changes)</li>
             <li><strong>Peer Focus:</strong> peer-focus:text-blue-600</li>
@@ -11181,6 +13867,7 @@ module.exports = {
 &lt;/div&gt;</code></pre>
           
           <h3>Form States:</h3>
+          <p>Form states allow you to style form elements based on their current state, such as focus, invalid, or checked.</p>
           <ul>
             <li><strong>Required:</strong> required:border-red-500</li>
             <li><strong>Invalid:</strong> invalid:border-red-500, invalid:text-red-600</li>
@@ -11211,6 +13898,7 @@ module.exports = {
 &lt;/label&gt;</code></pre>
           
           <h3>Advanced Variants:</h3>
+          <p>Advanced variants allow for more complex styling and responsive design patterns.</p>
           <ul>
             <li><strong>First/Last Child:</strong> first:mt-0, last:mb-0</li>
             <li><strong>Even/Odd:</strong> even:bg-gray-50, odd:bg-white</li>
@@ -11248,13 +13936,11 @@ module.exports = {
         title: 'Customization',
         content: `
           <h2>Customizing Tailwind CSS Theme</h2>
-          <p>Learn how to customize Tailwind's default design system by modifying the configuration file to match your brand and design requirements.</p>
-          <p>Theme customization allows you to create a consistent design system that reflects your brand identity and project needs.</p>
-          
+          <p>Learn how to customize Tailwind's default design system by modifying the configuration file to match your brand and design requirements. Theme customization allows you to create a consistent design system that reflects your brand identity and project needs.</p>
+
           <h3>Configuration Structure</h3>
-          <p>Understanding the tailwind.config.js structure is essential for effective customization and maintaining organized theme settings.</p>
-          <p>The configuration file controls every aspect of your design system from colors to spacing and component generation.</p>
-          
+          <p>Understanding the tailwind.config.js structure is essential for effective customization and maintaining organized theme settings. The configuration file controls every aspect of your design system from colors to spacing and component generation.</p>
+
           <ul>
             <li><strong>Theme Object:</strong> Customize design tokens and values</li>
             <li><strong>Extend vs Replace:</strong> Extend existing values or completely replace them</li>
@@ -11288,9 +13974,8 @@ module.exports = {
           <p><strong>Structure Logic:</strong> theme replaces defaults, extend adds to defaults. Use extend to keep existing Tailwind colors while adding your brand colors.</p>
           
           <h3>Custom Colors</h3>
-          <p>Creating custom color palettes ensures brand consistency and provides semantic meaning to your design elements.</p>
-          <p>Tailwind's color system supports both simple hex values and full 50-900 scales for comprehensive color management.</p>
-          
+          <p>Creating custom color palettes ensures brand consistency and provides semantic meaning to your design elements. Tailwind's color system supports both simple hex values and full 50-900 scales for comprehensive color management.</p>
+
           <ul>
             <li><strong>Brand Colors:</strong> Define primary, secondary color palettes</li>
             <li><strong>Color Scales:</strong> Create custom 50-900 color scales</li>
@@ -11326,9 +14011,8 @@ module.exports = {
 &lt;button class="bg-success text-white"&gt;Success&lt;/button&gt;</code></pre>
           
           <h3>Typography Customization</h3>
-          <p>Custom typography settings establish your brand's voice and ensure consistent text styling across all components.</p>
-          <p>Font families, sizes, and weights work together to create a cohesive typographic hierarchy for better readability.</p>
-          
+          <p>Custom typography settings establish your brand's voice and ensure consistent text styling across all components. Font families, sizes, and weights work together to create a cohesive typographic hierarchy for better readability.</p>
+
           <ul>
             <li><strong>Font Families:</strong> Add custom web fonts</li>
             <li><strong>Font Sizes:</strong> Custom type scale</li>
@@ -11365,9 +14049,8 @@ module.exports = {
 &lt;p class="font-brand text-base font-normal"&gt;Body text&lt;/p&gt;</code></pre>
           
           <h3>Spacing & Sizing</h3>
-          <p>Custom spacing and sizing values create consistent layouts and help maintain proper visual rhythm throughout your design.</p>
-          <p>Tailwind's spacing system extends to margins, padding, dimensions, and visual effects like shadows and border radius.</p>
-          
+          <p>Custom spacing and sizing values create consistent layouts and help maintain proper visual rhythm throughout your design. Tailwind's spacing system extends to margins, padding, dimensions, and visual effects like shadows and border radius.</p>
+
           <ul>
             <li><strong>Spacing Scale:</strong> Custom margin/padding values</li>
             <li><strong>Width/Height:</strong> Custom sizing options</li>
@@ -11403,9 +14086,8 @@ module.exports = {
 &lt;div class="w-88 h-18"&gt;Custom dimensions&lt;/div&gt;</code></pre>
           
           <h3>Advanced Customization</h3>
-          <p>Advanced customization techniques allow you to create unique utility classes and extend Tailwind's capabilities beyond default offerings.</p>
-          <p>These methods include custom utilities, plugins, and arbitrary values for handling specific design requirements and one-off customizations.</p>
-          
+          <p>Advanced customization techniques allow you to create unique utility classes and extend Tailwind's capabilities beyond default offerings. These methods include custom utilities, plugins, and arbitrary values for handling specific design requirements and one-off customizations.</p>
+
           <ul>
             <li><strong>Custom Utilities:</strong> Add your own utility classes</li>
             <li><strong>Plugin System:</strong> Create and use plugins</li>
@@ -11458,13 +14140,10 @@ module.exports = {
         title: 'Animations',
         content: `
           <h2>Animations and Transitions</h2>
-          <p>Create smooth animations and transitions using Tailwind's built-in animation utilities and transition classes.</p>
-          <p>Animations enhance user experience by providing visual feedback and creating engaging interactions that feel natural and polished.</p>
-          
+          <p>Create smooth animations and transitions using Tailwind's built-in animation utilities and transition classes. Animations enhance user experience by providing visual feedback and creating engaging interactions that feel natural and polished.</p>
+
           <h3>Transition Utilities</h3>
-          <p>Transitions provide smooth changes between different states, making interactions feel natural rather than abrupt and jarring.</p>
-          <p>Tailwind's transition system covers properties, duration, timing functions, and delays for complete animation control.</p>
-          
+          <p>Transitions provide smooth changes between different states, making interactions feel natural rather than abrupt and jarring. Tailwind's transition system covers properties, duration, timing functions, and delays for complete animation control.</p>
           <ul>
             <li><strong>Transition:</strong> transition-none, transition-all, transition</li>
             <li><strong>Transition Property:</strong> transition-colors, transition-opacity, transition-transform</li>
@@ -11495,9 +14174,8 @@ module.exports = {
           <p><strong>Transition Tips:</strong> Use transition-colors for backgrounds, transition-transform for scaling/moving, transition-all for multiple properties. Duration-300 is ideal for most interactions.</p>
           
           <h3>Transform Utilities</h3>
-          <p>Transform utilities allow you to scale, rotate, translate, and skew elements for dynamic visual effects without affecting layout flow.</p>
-          <p>Transforms work seamlessly with transitions to create smooth animations and can be combined for complex effects.</p>
-          
+          <p>Transform utilities allow you to scale, rotate, translate, and skew elements for dynamic visual effects without affecting layout flow. Transforms work seamlessly with transitions to create smooth animations and can be combined for complex effects.</p>
+
           <ul>
             <li><strong>Scale:</strong> scale-50, scale-75, scale-90, scale-95, scale-100, scale-105, scale-110, scale-125, scale-150</li>
             <li><strong>Rotate:</strong> rotate-0, rotate-1, rotate-2, rotate-3, rotate-6, rotate-12, rotate-45, rotate-90, rotate-180</li>
@@ -11527,9 +14205,7 @@ module.exports = {
 &lt;/div&gt;</code></pre>
           
           <h3>Built-in Animations</h3>
-          <p>Tailwind provides ready-to-use animations for common UI patterns like loading states and attention-grabbing elements.</p>
-          <p>These animations are optimized for performance and accessibility, providing consistent behavior across all browsers.</p>
-          
+          <p>Tailwind provides ready-to-use animations for common UI patterns like loading states and attention-grabbing elements. These animations are optimized for performance and accessibility, providing consistent behavior across all browsers.</p>
           <ul>
             <li><strong>Spin:</strong> animate-spin for loading spinners</li>
             <li><strong>Ping:</strong> animate-ping for notification badges</li>
@@ -11558,9 +14234,7 @@ module.exports = {
 &lt;div class="w-4 h-4 bg-green-500 rounded-full animate-bounce"&gt;&lt;/div&gt;</code></pre>
           
           <h3>Custom Animations</h3>
-          <p>Create unique animations by defining custom keyframes and adding them to your Tailwind configuration for reusable effects.</p>
-          <p>Custom animations provide complete control over timing, easing, and complex multi-step animation sequences.</p>
-          
+          <p>Create unique animations by defining custom keyframes and adding them to your Tailwind configuration for reusable effects. Custom animations provide complete control over timing, easing, and complex multi-step animation sequences.</p>
           <ul>
             <li><strong>Keyframe Animation:</strong> Define custom @keyframes in CSS</li>
             <li><strong>Animation Configuration:</strong> Add animations to Tailwind config</li>
@@ -11602,9 +14276,8 @@ module.exports = {
 &lt;div class="animate-fade-in-up"&gt;Fade In Up&lt;/div&gt;</code></pre>
           
           <h3>Animation Patterns</h3>
-          <p>Common animation patterns provide consistent user experience across different interface elements and interactions.</p>
-          <p>These patterns follow UX best practices for timing, easing, and visual hierarchy to guide user attention effectively.</p>
-          
+          <p>Common animation patterns provide consistent user experience across different interface elements and interactions. These patterns follow UX best practices for timing, easing, and visual hierarchy to guide user attention effectively.</p>
+         
           <ul>
             <li><strong>Hover Effects:</strong> hover:scale-105 transition-transform</li>
             <li><strong>Loading States:</strong> animate-pulse for content loading</li>
@@ -11642,13 +14315,11 @@ module.exports = {
         title: 'Dark Mode',
         content: `
           <h2>Dark Mode with Tailwind CSS</h2>
-          <p>Implement dark mode in your applications using Tailwind's dark mode utilities to provide users with theme flexibility.</p>
-          <p>Dark mode reduces eye strain in low-light environments and has become an essential feature for modern web applications.</p>
-          
+          <p>Implement dark mode in your applications using Tailwind's dark mode utilities to provide users with theme flexibility. Dark mode reduces eye strain in low-light environments and has become an essential feature for modern web applications.</p>
+    
           <h3>Dark Mode Setup</h3>
-          <p>Configure Tailwind to enable dark mode functionality using either automatic system detection or manual toggle control.</p>
-          <p>Proper setup ensures seamless theme switching and maintains consistent styling across all application states.</p>
-          
+          <p>Configure Tailwind to enable dark mode functionality using either automatic system detection or manual toggle control. Proper setup ensures seamless theme switching and maintains consistent styling across all application states.</p>
+
           <ul>
             <li><strong>Configuration:</strong> Enable dark mode in tailwind.config.js</li>
             <li><strong>Class Strategy:</strong> dark:* variants based on 'dark' class</li>
@@ -11684,9 +14355,8 @@ module.exports = {
           <p><strong>Setup Tips:</strong> Use 'class' strategy for manual control, 'media' for automatic system preference detection. Class strategy provides more flexibility for custom toggles.</p>
           
           <h3>Dark Mode Utilities</h3>
-          <p>Apply dark mode variants to any Tailwind utility by prefixing it with 'dark:' to create theme-aware styling.</p>
-          <p>Dark mode utilities automatically activate when the dark class is present or system preferences detect dark mode.</p>
-          
+          <p>Apply dark mode variants to any Tailwind utility by prefixing it with 'dark:' to create theme-aware styling. Dark mode utilities automatically activate when the dark class is present or system preferences detect dark mode.</p>
+
           <ul>
             <li><strong>Background Colors:</strong> bg-white dark:bg-gray-900</li>
             <li><strong>Text Colors:</strong> text-gray-900 dark:text-white</li>
@@ -11714,9 +14384,8 @@ module.exports = {
 &lt;/nav&gt;</code></pre>
           
           <h3>Color Strategy</h3>
-          <p>Develop a systematic approach to colors that ensures proper contrast and readability in both light and dark themes.</p>
-          <p>Effective color strategy maintains brand consistency while providing optimal user experience across different lighting conditions.</p>
-          
+          <p>Develop a systematic approach to colors that ensures proper contrast and readability in both light and dark themes. Effective color strategy maintains brand consistency while providing optimal user experience across different lighting conditions.</p>
+
           <ul>
             <li><strong>Semantic Colors:</strong> Define light/dark color variables</li>
             <li><strong>Contrast Ratios:</strong> Ensure accessibility in both modes</li>
@@ -11760,9 +14429,8 @@ module.exports = {
 &lt;/div&gt;</code></pre>
           
           <h3>Implementation Patterns</h3>
-          <p>Implement robust dark mode functionality with proper state management, user preference detection, and smooth transitions.</p>
-          <p>Modern dark mode implementation should respect system preferences while allowing manual override and persistent storage.</p>
-          
+          <p>Implement robust dark mode functionality with proper state management, user preference detection, and smooth transitions. Modern dark mode implementation should respect system preferences while allowing manual override and persistent storage.</p>
+
           <ul>
             <li><strong>System Preference:</strong> Respect user's OS setting</li>
             <li><strong>Manual Override:</strong> Allow user to choose preference</li>
@@ -11822,9 +14490,7 @@ class DarkModeToggle {
 &lt;/style&gt;</code></pre>
           
           <h3>Best Practices</h3>
-          <p>Follow accessibility guidelines and performance best practices to create inclusive and efficient dark mode implementations.</p>
-          <p>Thorough testing and attention to detail ensure dark mode enhances rather than hinders the user experience.</p>
-          
+          <p>Follow accessibility guidelines and performance best practices to create inclusive and efficient dark mode implementations. Thorough testing and attention to detail ensure dark mode enhances rather than hinders the user experience.</p>
           <ul>
             <li><strong>Accessibility:</strong> Maintain WCAG contrast requirements</li>
             <li><strong>Performance:</strong> Optimize for both themes</li>
@@ -11868,13 +14534,11 @@ class DarkModeToggle {
         title: 'Optimization',
         content: `
           <h2>Optimizing Tailwind for Production</h2>
-          <p>Optimize Tailwind CSS for production by removing unused styles, minimizing file sizes, and improving performance for faster loading.</p>
-          <p>Production optimization reduces CSS bundle sizes by up to 95% and significantly improves website loading speed and user experience.</p>
-          
+          <p>Optimize Tailwind CSS for production by removing unused styles, minimizing file sizes, and improving performance for faster loading. Production optimization reduces CSS bundle sizes by up to 95% and significantly improves website loading speed and user experience.</p>
+
           <h3>Content Configuration</h3>
-          <p>Configure Tailwind to scan your project files and identify which CSS classes are actually used in your application.</p>
-          <p>Proper content configuration ensures only necessary styles are included while preventing accidental removal of dynamic classes.</p>
-          
+          <p>Configure Tailwind to scan your project files and identify which CSS classes are actually used in your application. Proper content configuration ensures only necessary styles are included while preventing accidental removal of dynamic classes.</p>
+
           <ul>
             <li><strong>Content Paths:</strong> Specify all template/component files</li>
             <li><strong>File Extensions:</strong> Include .html, .js, .jsx, .ts, .tsx, .vue</li>
@@ -11926,9 +14590,8 @@ content: ["./src/**/*.{html,ts,css,scss,sass,less,styl}"]</code></pre>
           <p><strong>Content Tips:</strong> Include all file types where Tailwind classes might appear. Use safelist for dynamic classes, and blocklist to exclude unnecessary utilities.</p>
           
           <h3>PurgeCSS Integration</h3>
-          <p>Tailwind includes built-in CSS purging that automatically removes unused styles based on your content configuration.</p>
-          <p>Advanced purging options provide fine-grained control over which styles are kept and which are removed from the final build.</p>
-          
+          <p>Tailwind includes built-in CSS purging that automatically removes unused styles based on your content configuration. Advanced purging options provide fine-grained control over which styles are kept and which are removed from the final build.</p>
+
           <ul>
             <li><strong>Automatic Purging:</strong> Built-in CSS purging in Tailwind CLI</li>
             <li><strong>Safe Extraction:</strong> Intelligent class name detection</li>
@@ -11984,9 +14647,8 @@ module.exports = {
 }</code></pre>
           
           <h3>Build Optimization</h3>
-          <p>Implement additional optimization strategies to further reduce file sizes and improve loading performance across all devices.</p>
-          <p>Build optimization combines CSS minification, compression, and delivery strategies for maximum performance gains.</p>
-          
+          <p>Implement additional optimization strategies to further reduce file sizes and improve loading performance across all devices. Build optimization combines CSS minification, compression, and delivery strategies for maximum performance gains.</p>
+
           <ul>
             <li><strong>CSS Minification:</strong> Compress generated CSS</li>
             <li><strong>Gzip Compression:</strong> Enable gzip on web server</li>
@@ -12047,9 +14709,7 @@ module.exports = {
 &lt;noscript&gt;&lt;link rel="stylesheet" href="/css/tailwind.css"&gt;&lt;/noscript&gt;</code></pre>
           
           <h3>Performance Strategies</h3>
-          <p>Advanced performance strategies maximize Tailwind's efficiency through intelligent compilation and strategic code organization.</p>
-          <p>Modern build tools and techniques ensure optimal CSS delivery while maintaining developer experience and code maintainability.</p>
-          
+          <p>Advanced performance strategies maximize Tailwind's efficiency through intelligent compilation and strategic code organization. Modern build tools and techniques ensure optimal CSS delivery while maintaining developer experience and code maintainability.</p>
           <ul>
             <li><strong>JIT Mode:</strong> Just-in-Time compilation for faster builds</li>
             <li><strong>Component Extraction:</strong> Use @apply for repeated patterns</li>
@@ -12118,9 +14778,7 @@ self.addEventListener('fetch', event => {
 });</code></pre>
           
           <h3>Monitoring & Analysis</h3>
-          <p>Track and analyze your Tailwind CSS bundle performance to identify optimization opportunities and measure improvements.</p>
-          <p>Regular monitoring ensures your optimizations remain effective as your application grows and evolves over time.</p>
-          
+          <p>Track and analyze your Tailwind CSS bundle performance to identify optimization opportunities and measure improvements. Regular monitoring ensures your optimizations remain effective as your application grows and evolves over time.</p>
           <ul>
             <li><strong>Bundle Analysis:</strong> Analyze CSS file sizes</li>
             <li><strong>Performance Metrics:</strong> Monitor page load times</li>
@@ -12304,9 +14962,8 @@ module.exports = {
           <p>Learn the fundamental syntax and structure of Java programs, including variables, data types, operators, and basic program structure.</p>
           
           <h3>Java Program Structure</h3>
-          <p>Every Java program follows a specific structure with class declarations, main method, and optional package/import statements.</p>
-          <p>Understanding this fundamental structure is essential for writing any Java application, from simple programs to complex enterprise systems.</p>
-          
+          <p>Every Java program follows a specific structure with class declarations, main method, and optional package/import statements. Understanding this fundamental structure is essential for writing any Java application, from simple programs to complex enterprise systems.</p>
+
           <pre><code>// Complete Java program structure
 package com.example;           // Optional package declaration
 import java.util.Scanner;      // Import statements
@@ -12325,9 +14982,8 @@ public class HelloWorld {      // Class declaration
           <p><strong>Explanation:</strong> Java programs must be contained within classes, and execution starts from the main method. The class name must match the filename. Package declarations organize classes into namespaces, while import statements allow access to classes from other packages. The main method signature must be exactly as shown for the JVM to recognize it as the entry point.</p>
           
           <h3>Java Data Types</h3>
-          <p>Java is a statically-typed language that supports primitive data types for efficiency and reference types for complex objects.</p>
-          <p>Primitive types are stored directly in memory while reference types store addresses to objects, forming the foundation of Java's type system.</p>
-          
+          <p>Java is a statically-typed language that supports primitive data types for efficiency and reference types for complex objects. Primitive types are stored directly in memory while reference types store addresses to objects, forming the foundation of Java's type system.</p>
+
           <pre><code>// Primitive data types
 byte smallNumber = 100;        // 8-bit integer (-128 to 127)
 short mediumNumber = 30000;    // 16-bit integer (-32,768 to 32,767)
@@ -12347,9 +15003,7 @@ int[] numbers = {1, 2, 3, 4};  // Array object</code></pre>
           <p><strong>Explanation:</strong> Primitive types store actual values directly in memory and are more efficient for basic operations. Reference types store memory addresses pointing to objects on the heap. Java provides wrapper classes (Integer, Double, etc.) that allow primitive types to be treated as objects when needed for collections or generic programming.</p>
           
           <h3>Variables and Constants</h3>
-          <p>Variables in Java store data that can change during program execution, while constants hold immutable values declared with the final keyword.</p>
-          <p>Proper variable naming and scope understanding ensures clean, maintainable code that follows Java conventions and best practices.</p>
-          
+          <p>Variables in Java store data that can change during program execution, while constants hold immutable values declared with the final keyword. Proper variable naming and scope understanding ensures clean, maintainable code that follows Java conventions and best practices.</p>
           <pre><code>// Variable declarations and initialization
 int age;                       // Declaration only
 age = 25;                      // Assignment
@@ -12375,9 +15029,7 @@ public class VariableScope {
           <p><strong>Explanation:</strong> Variables must be declared with a specific type and can be initialized immediately or later. The final keyword creates constants that cannot be reassigned after initialization. Local variables exist only within their method, instance variables belong to object instances, and class variables are shared across all instances of a class.</p>
           
           <h3>Java Operators</h3>
-          <p>Java operators perform operations on variables and values, including arithmetic calculations, logical comparisons, and assignment operations.</p>
-          <p>Understanding operator precedence and different operator types is crucial for writing correct expressions and controlling program logic effectively.</p>
-          
+          <p>Java operators perform operations on variables and values, including arithmetic calculations, logical comparisons, and assignment operations. Understanding operator precedence and different operator types is crucial for writing correct expressions and controlling program logic effectively.</p>
           <pre><code>// Arithmetic operators
 int a = 10, b = 3;
 int sum = a + b;        // Addition: 13
@@ -12417,9 +15069,8 @@ count++;              // Increment by 1
           <p>Master Java's control flow statements to control program execution, make decisions, and create loops for repetitive tasks.</p>
           
           <h3>If-Else Statements</h3>
-          <p>If-else statements allow your program to make decisions based on conditions, executing different code blocks depending on whether a condition is true or false.</p>
-          <p>This is fundamental for creating responsive programs that can handle different scenarios and user inputs dynamically.</p>
-          
+          <p>If-else statements allow your program to make decisions based on conditions, executing different code blocks depending on whether a condition is true or false. This is fundamental for creating responsive programs that can handle different scenarios and user inputs dynamically.</p>
+
           <pre><code>// Simple if statement
 int age = 18;
 if (age >= 18) {
@@ -12439,9 +15090,7 @@ if (score >= 90) {
           <p><strong>Explanation:</strong> If-else statements evaluate boolean conditions sequentially. The first condition that evaluates to true executes its corresponding block, and subsequent conditions are skipped. This creates a decision tree that allows programs to respond appropriately to different situations and data values.</p>
           
           <h3>Switch Statements</h3>
-          <p>Switch statements provide an elegant way to handle multiple possible values of a variable, offering better readability than long if-else chains.</p>
-          <p>They work best when you need to compare a single variable against several constant values and execute different code for each case.</p>
-          
+          <p>Switch statements provide an elegant way to handle multiple possible values of a variable, offering better readability than long if-else chains. They work best when you need to compare a single variable against several constant values and execute different code for each case.</p>
           <pre><code>// Traditional switch statement
 int day = 3;
 switch (day) {
@@ -12461,9 +15110,7 @@ switch (day) {
           <p><strong>Explanation:</strong> Switch statements compare a variable against multiple case values using equality comparison. The break statement prevents fall-through to the next case. The default case handles any value not explicitly covered by the other cases, ensuring your program handles unexpected inputs gracefully.</p>
           
           <h3>For Loops</h3>
-          <p>For loops are perfect when you know exactly how many times you want to repeat a block of code, providing initialization, condition, and increment in one line.</p>
-          <p>They offer precise control over iteration and are commonly used for array traversal, counting operations, and generating sequences.</p>
-          
+          <p>For loops are perfect when you know exactly how many times you want to repeat a block of code, providing initialization, condition, and increment in one line. They offer precise control over iteration and are commonly used for array traversal, counting operations, and generating sequences.</p>
           <pre><code>// Basic for loop
 for (int i = 0; i &lt; 5; i++) {
     System.out.println("Count: " + i);
@@ -12478,9 +15125,7 @@ for (int num : numbers) {
           <p><strong>Explanation:</strong> The traditional for loop consists of initialization (int i = 0), condition (i < 5), and increment (i++) phases. Enhanced for loops simplify iteration over arrays and collections by automatically handling the indexing, making code more readable and less error-prone when you don't need index values.</p>
           
           <h3>While and Do-While Loops</h3>
-          <p>While loops continue executing as long as a condition remains true, making them ideal for situations where the number of iterations is unknown.</p>
-          <p>Do-while loops guarantee at least one execution before checking the condition, useful when you need to perform an action before validation.</p>
-          
+          <p>While loops continue executing as long as a condition remains true, making them ideal for situations where the number of iterations is unknown. Do-while loops guarantee at least one execution before checking the condition, useful when you need to perform an action before validation.</p>
           <pre><code>// While loop
 int count = 0;
 while (count &lt; 3) {
@@ -12498,9 +15143,7 @@ do {
           <p><strong>Explanation:</strong> While loops check the condition before each iteration, potentially executing zero times if the condition is initially false. Do-while loops execute the body first, then check the condition, guaranteeing at least one execution. This difference is crucial for input validation and menu-driven programs.</p>
           
           <h3>Break and Continue Statements</h3>
-          <p>Break and continue statements provide fine-grained control over loop execution, allowing you to exit loops early or skip specific iterations.</p>
-          <p>These control statements help optimize program flow and handle special cases without complex conditional logic within loop bodies.</p>
-          
+          <p>Break and continue statements provide fine-grained control over loop execution, allowing you to exit loops early or skip specific iterations. These control statements help optimize program flow and handle special cases without complex conditional logic within loop bodies.</p>
           <pre><code>// Break statement
 for (int i = 0; i &lt; 10; i++) {
     if (i == 5) {
@@ -12529,9 +15172,7 @@ for (int i = 0; i &lt; 5; i++) {
           <p>Arrays are fundamental data structures in Java that store multiple values of the same type in a single variable, providing efficient access to elements using indices.</p>
           
           <h3>Array Declaration and Initialization</h3>
-          <p>Array declaration creates a reference variable, while initialization allocates memory and assigns values to array elements.</p>
-          <p>Understanding different initialization methods is crucial for efficient memory usage and proper data organization in your Java programs.</p>
-          
+          <p>Array declaration creates a reference variable, while initialization allocates memory and assigns values to array elements. Understanding different initialization methods is crucial for efficient memory usage and proper data organization in your Java programs.</p>
           <pre><code>// Array declaration and initialization
 int[] numbers = new int[5];  // Creates array of size 5 with default values (0)
 int[] values = {10, 20, 30, 40, 50};  // Direct initialization with values
@@ -12546,9 +15187,7 @@ double[] scores = new double[] {85.5, 92.0, 78.5};</code></pre>
           <p><strong>Explanation:</strong> Arrays can be declared using dataType[] arrayName or dataType arrayName[] syntax, though the first is preferred. The new operator allocates memory for the specified number of elements, initializing them with default values (0 for numbers, null for objects, false for booleans). Direct initialization with curly braces creates and populates the array simultaneously.</p>
           
           <h3>Array Access and Modification</h3>
-          <p>Array elements are accessed using zero-based indexing, where the first element is at index 0 and the last at length-1.</p>
-          <p>Proper index management prevents ArrayIndexOutOfBoundsException and ensures safe data manipulation throughout your program execution.</p>
-          
+          <p>Array elements are accessed using zero-based indexing, where the first element is at index 0 and the last at length-1. Proper index management prevents ArrayIndexOutOfBoundsException and ensures safe data manipulation throughout your program execution.</p>
           <pre><code>// Array access and modification
 int[] numbers = {10, 20, 30, 40, 50};
 
@@ -12564,9 +15203,7 @@ System.out.println("Modified array: " + Arrays.toString(numbers));</code></pre>
           <p><strong>Explanation:</strong> Array indexing starts at 0, so an array of length n has valid indices from 0 to n-1. The length property returns the number of elements in the array. Accessing an invalid index throws ArrayIndexOutOfBoundsException. Arrays.toString() provides a convenient way to display array contents for debugging purposes.</p>
           
           <h3>Array Traversal</h3>
-          <p>Array traversal involves visiting each element systematically using loops, essential for processing all data within the array structure.</p>
-          <p>Different traversal methods offer varying levels of control and readability, allowing you to choose the best approach for your specific use case.</p>
-          
+          <p>Array traversal involves visiting each element systematically using loops, essential for processing all data within the array structure. Different traversal methods offer varying levels of control and readability, allowing you to choose the best approach for your specific use case.</p>
           <pre><code>// Different ways to traverse arrays
 int[] numbers = {5, 10, 15, 20, 25};
 
@@ -12590,9 +15227,7 @@ while (index &lt; numbers.length) {
           <p><strong>Explanation:</strong> Traditional for loops provide index access, useful when you need to modify elements or track positions. Enhanced for loops (for-each) offer cleaner syntax when you only need element values without indices. While loops give maximum control over iteration conditions but require manual index management.</p>
           
           <h3>Multi-Dimensional Arrays</h3>
-          <p>Multi-dimensional arrays store arrays within arrays, creating matrix-like structures perfect for representing tables, grids, and mathematical matrices.</p>
-          <p>They provide organized data storage for complex data relationships while maintaining the simplicity of array access patterns.</p>
-          
+          <p>Multi-dimensional arrays store arrays within arrays, creating matrix-like structures perfect for representing tables, grids, and mathematical matrices. They provide organized data storage for complex data relationships while maintaining the simplicity of array access patterns.</p>
           <pre><code>// 2D array declaration and initialization
 int[][] matrix = new int[3][4];  // 3 rows, 4 columns
 int[][] grid = {
@@ -12616,9 +15251,7 @@ for (int i = 0; i &lt; grid.length; i++) {
           <p><strong>Explanation:</strong> 2D arrays use double indexing [row][column] for element access. The outer array contains references to inner arrays, allowing for jagged arrays where rows can have different lengths. Nested loops are commonly used for traversing multi-dimensional arrays, with the outer loop handling rows and inner loop handling columns.</p>
           
           <h3>Array Utility Methods</h3>
-          <p>Java's Arrays class provides powerful utility methods for common array operations like sorting, searching, and comparison.</p>
-          <p>These built-in methods offer optimized implementations that save development time and provide reliable functionality for array manipulation.</p>
-          
+          <p>Java's Arrays class provides powerful utility methods for common array operations like sorting, searching, and comparison. These built-in methods offer optimized implementations that save development time and provide reliable functionality for array manipulation.</p>
           <pre><code>import java.util.Arrays;
 
 int[] numbers = {64, 34, 25, 12, 22, 11, 90};
@@ -12651,9 +15284,7 @@ Arrays.fill(filled, 100);  // All elements become 100</code></pre>
           <p>Java is fundamentally object-oriented. Learn the core principles of OOP: classes, objects, encapsulation, inheritance, polymorphism, and abstraction.</p>
           
           <h3>Classes and Objects</h3>
-          <p>Classes serve as blueprints that define the structure and behavior of objects, while objects are actual instances of classes with specific data values.</p>
-          <p>Understanding the relationship between classes and objects is fundamental to object-oriented programming and effective software design patterns.</p>
-          
+          <p>Classes serve as blueprints that define the structure and behavior of objects, while objects are actual instances of classes with specific data values. Understanding the relationship between classes and objects is fundamental to object-oriented programming and effective software design patterns.</p>
           <pre><code>// Class definition
 public class Student {
     // Instance variables (attributes)
@@ -12694,9 +15325,7 @@ public class Main {
           <p><strong>Explanation:</strong> Classes define the template with attributes (instance variables) and methods (behaviors). Constructors initialize objects with specific values. The \`this\` keyword refers to the current object instance. Objects are created using the \`new\` keyword, and each object has its own copy of instance variables while sharing the same methods defined in the class.</p>
           
           <h3>Encapsulation</h3>
-          <p>Encapsulation bundles data and methods together while restricting direct access to internal object details through access modifiers.</p>
-          <p>This principle promotes data security, code maintainability, and flexibility by controlling how object data is accessed and modified.</p>
-          
+          <p>Encapsulation bundles data and methods together while restricting direct access to internal object details through access modifiers. This principle promotes data security, code maintainability, and flexibility by controlling how object data is accessed and modified.</p>
           <pre><code>public class BankAccount {
     // Private data members (encapsulated)
     private String accountNumber;
@@ -12747,9 +15376,7 @@ public class Main {
           <p><strong>Explanation:</strong> Private fields prevent direct external access to sensitive data. Public getter and setter methods provide controlled access with validation logic. This encapsulation prevents invalid states (like negative balances) and maintains data integrity. Access modifiers (private, protected, public) control the visibility and accessibility of class members.</p>
           
           <h3>Inheritance</h3>
-          <p>Inheritance allows classes to inherit properties and methods from parent classes, promoting code reusability and establishing hierarchical relationships.</p>
-          <p>The \`extends\` keyword creates subclasses that can add new features while inheriting existing functionality from their superclass.</p>
-          
+          <p>Inheritance allows classes to inherit properties and methods from parent classes, promoting code reusability and establishing hierarchical relationships. The \`extends\` keyword creates subclasses that can add new features while inheriting existing functionality from their superclass.</p>
           <pre><code>// Parent class (Superclass)
 public class Vehicle {
     protected String brand;
@@ -12803,9 +15430,7 @@ public class Car extends Vehicle {
           <p><strong>Explanation:</strong> The Car class inherits all non-private members from Vehicle using \`extends\`. The \`super\` keyword accesses parent class constructors and methods. Method overriding (@Override) allows subclasses to provide specific implementations. Protected access modifier allows access by subclasses while maintaining encapsulation from other classes.</p>
           
           <h3>Polymorphism</h3>
-          <p>Polymorphism allows objects of different classes to be treated uniformly through a common interface, enabling flexible and extensible code design.</p>
-          <p>This principle supports method overloading (compile-time) and method overriding (runtime) for dynamic behavior based on actual object types.</p>
-          
+          <p>Polymorphism allows objects of different classes to be treated uniformly through a common interface, enabling flexible and extensible code design. This principle supports method overloading (compile-time) and method overriding (runtime) for dynamic behavior based on actual object types.</p>
           <pre><code>// Base class
 class Animal {
     public void makeSound() {
@@ -12866,9 +15491,7 @@ public class PolymorphismDemo {
           <p><strong>Explanation:</strong> Runtime polymorphism occurs when the same method call produces different behaviors based on the actual object type. The JVM determines the correct method to call at runtime (dynamic method dispatch). Method overloading provides compile-time polymorphism with same method names but different parameters. The instanceof operator checks object types before casting.</p>
           
           <h3>Abstraction</h3>
-          <p>Abstraction hides implementation complexity while exposing only essential features through abstract classes and interfaces.</p>
-          <p>This principle allows you to focus on what an object does rather than how it does it, promoting cleaner and more maintainable code architecture.</p>
-          
+          <p>Abstraction hides implementation complexity while exposing only essential features through abstract classes and interfaces. This principle allows you to focus on what an object does rather than how it does it, promoting cleaner and more maintainable code architecture.</p>
           <pre><code>// Abstract class
 abstract class Shape {
     protected String color;
@@ -12960,9 +15583,7 @@ class DrawableCircle extends Circle implements Drawable {
           <p>Strings are one of the most commonly used classes in Java. Learn string creation, manipulation, and best practices for efficient string handling.</p>
           
           <h3>String Creation and Immutability</h3>
-          <p>Java Strings are immutable objects stored in a special memory area called the String Pool for optimization and memory efficiency.</p>
-          <p>Understanding string creation methods and immutability is crucial for writing memory-efficient programs and avoiding common performance pitfalls.</p>
-          
+          <p>Java Strings are immutable objects stored in a special memory area called the String Pool for optimization and memory efficiency. Understanding string creation methods and immutability is crucial for writing memory-efficient programs and avoiding common performance pitfalls.</p>
           <pre><code>// Different ways to create strings
 String str1 = "Hello";                    // String literal (stored in string pool)
 String str2 = "Hello";                    // Same reference as str1
@@ -12989,9 +15610,7 @@ String fromByte = new String(byteArray);</code></pre>
           <p><strong>Explanation:</strong> String literals are automatically stored in the String Pool and reused for memory efficiency. Objects created with \`new\` keyword always create separate instances in heap memory. String immutability means any modification creates a new String object rather than changing the existing one. Always use \`.equals()\` for content comparison and \`==\` only for reference comparison.</p>
           
           <h3>Essential String Methods</h3>
-          <p>Java String class provides numerous built-in methods for text manipulation, searching, and formatting operations.</p>
-          <p>Mastering these methods enables efficient string processing for text analysis, data parsing, and user input validation tasks.</p>
-          
+          <p>Java String class provides numerous built-in methods for text manipulation, searching, and formatting operations. Mastering these methods enables efficient string processing for text analysis, data parsing, and user input validation tasks.</p>
           <pre><code>String text = "  Java Programming Language  ";
 
 // Basic string information
@@ -13030,9 +15649,7 @@ String formatted = String.format("Name: %s, Age: %d", name, age);</code></pre>
           <p><strong>Explanation:</strong> String methods like \`indexOf()\` return -1 if the substring is not found. The \`substring()\` method uses start index (inclusive) and end index (exclusive). \`replaceAll()\` accepts regular expressions for pattern-based replacements. \`String.join()\` provides an efficient way to concatenate multiple strings with a delimiter.</p>
           
           <h3>StringBuilder and StringBuffer</h3>
-          <p>StringBuilder and StringBuffer provide mutable string alternatives for efficient string manipulation when multiple modifications are needed.</p>
-          <p>These classes prevent the performance overhead of creating new String objects for each modification operation.</p>
-          
+          <p>StringBuilder and StringBuffer provide mutable string alternatives for efficient string manipulation when multiple modifications are needed. These classes prevent the performance overhead of creating new String objects for each modification operation.</p>
           <pre><code>// StringBuilder (not thread-safe, faster)
 StringBuilder sb = new StringBuilder();
 sb.append("Hello");
@@ -13076,9 +15693,7 @@ System.out.println("StringBuilder: " + builderTime + "ms");</code></pre>
           <p><strong>Explanation:</strong> StringBuilder maintains an internal character buffer that grows automatically as needed. Methods like \`append()\`, \`insert()\`, and \`delete()\` modify the buffer directly without creating new objects. StringBuffer provides the same functionality with thread-safety through synchronized methods, making it slower but safe for concurrent access.</p>
           
           <h3>String Comparison and Validation</h3>
-          <p>Proper string comparison and validation are essential for data integrity, user authentication, and preventing common programming errors.</p>
-          <p>Understanding different comparison methods helps avoid null pointer exceptions and ensures accurate string processing in applications.</p>
-          
+          <p>Proper string comparison and validation are essential for data integrity, user authentication, and preventing common programming errors. Understanding different comparison methods helps avoid null pointer exceptions and ensures accurate string processing in applications.</p>
           <pre><code>// String comparison methods
 String str1 = "Hello";
 String str2 = "HELLO";
@@ -13117,9 +15732,7 @@ boolean containsJava = text.toLowerCase().contains("java");  // true</code></pre
           <p><strong>Explanation:</strong> \`Objects.equals()\` handles null values safely, preventing NullPointerException. Regular expressions with \`matches()\` provide powerful pattern validation. \`compareTo()\` returns negative, zero, or positive values for lexicographic comparison. \`isBlank()\` (Java 11+) checks for empty or whitespace-only strings more conveniently than \`trim().isEmpty()\`.</p>
           
           <h3>String Performance and Best Practices</h3>
-          <p>Following string best practices ensures optimal memory usage, prevents security vulnerabilities, and improves application performance.</p>
-          <p>These guidelines help avoid common pitfalls like memory leaks, security issues, and performance bottlenecks in string-intensive applications.</p>
-          
+          <p>Following string best practices ensures optimal memory usage, prevents security vulnerabilities, and improves application performance. These guidelines help avoid common pitfalls like memory leaks, security issues, and performance bottlenecks in string-intensive applications.</p>
           <pre><code>// Best practice: Use string literals for constants
 public static final String APP_NAME = "MyApp";  // Stored in string pool
 public static final String VERSION = "1.0.0";
@@ -13175,9 +15788,7 @@ String internedString = new String("Hello").intern();  // Force into string pool
           <p>Exception handling is a powerful mechanism in Java to handle runtime errors and maintain program flow. Learn to write robust applications that gracefully handle errors.</p>
           
           <h3>Try-Catch-Finally Blocks</h3>
-          <p>The try-catch-finally structure provides a systematic way to handle exceptions while ensuring cleanup code always executes.</p>
-          <p>This fundamental pattern separates normal program logic from error handling, making code more readable and maintainable.</p>
-          
+          <p>The try-catch-finally structure provides a systematic way to handle exceptions while ensuring cleanup code always executes. This fundamental pattern separates normal program logic from error handling, making code more readable and maintainable.</p>
           <pre><code>// Basic try-catch example
 public void divideNumbers(int dividend, int divisor) {
     try {
@@ -13216,9 +15827,7 @@ public void fileOperation(String filename) {
           <p><strong>Explanation:</strong> The try block contains code that might throw exceptions. Catch blocks handle specific exception types in order of declaration. The finally block always executes, even if an exception occurs or a return statement is encountered. Multiple catch blocks allow handling different exception types with specific responses.</p>
           
           <h3>Checked vs Unchecked Exceptions</h3>
-          <p>Java categorizes exceptions into checked (compile-time) and unchecked (runtime) exceptions, each requiring different handling approaches.</p>
-          <p>Understanding this distinction helps you write appropriate error handling code and follow Java's exception handling contracts.</p>
-          
+          <p>Java categorizes exceptions into checked (compile-time) and unchecked (runtime) exceptions, each requiring different handling approaches. Understanding this distinction helps you write appropriate error handling code and follow Java's exception handling contracts.</p>
           <pre><code>import java.io.*;
 import java.util.*;
 
@@ -13266,9 +15875,7 @@ public class ExceptionTypes {
           <p><strong>Explanation:</strong> Checked exceptions like IOException must be either handled with try-catch or declared in the method signature using throws. Unchecked exceptions (RuntimeException subclasses) like NullPointerException can occur at runtime and don't require explicit handling. The compiler enforces checked exception handling but allows unchecked exceptions to propagate.</p>
           
           <h3>Try-With-Resources</h3>
-          <p>Try-with-resources automatically manages resource cleanup, eliminating the need for explicit finally blocks in resource management scenarios.</p>
-          <p>This feature ensures resources are properly closed even if exceptions occur, preventing resource leaks and simplifying code structure.</p>
-          
+          <p>Try-with-resources automatically manages resource cleanup, eliminating the need for explicit finally blocks in resource management scenarios. This feature ensures resources are properly closed even if exceptions occur, preventing resource leaks and simplifying code structure.</p>
           <pre><code>import java.io.*;
 import java.sql.*;
 
@@ -13330,9 +15937,7 @@ public void copyFile(String source, String destination) {
           <p><strong>Explanation:</strong> Resources declared in the try-with-resources statement must implement AutoCloseable interface. The close() method is automatically called when exiting the try block, regardless of whether execution completes normally or abruptly. Multiple resources can be declared by separating them with semicolons.</p>
           
           <h3>Throwing and Custom Exceptions</h3>
-          <p>Java allows you to throw exceptions manually and create custom exception classes for specific application scenarios.</p>
-          <p>Custom exceptions provide meaningful error messages and enable precise error handling strategies for domain-specific problems.</p>
-          
+          <p>Java allows you to throw exceptions manually and create custom exception classes for specific application scenarios. Custom exceptions provide meaningful error messages and enable precise error handling strategies for domain-specific problems.</p>
           <pre><code>// Custom checked exception
 class InsufficientFundsException extends Exception {
     private double amount;
@@ -13401,9 +16006,7 @@ public void bankingExample() {
           <p><strong>Explanation:</strong> Custom checked exceptions extend Exception class and must be declared in method signatures. Custom unchecked exceptions extend RuntimeException. The throw keyword manually triggers exceptions with specific messages. Exception constructors can accept messages, causes, and custom data for detailed error reporting.</p>
           
           <h3>Exception Best Practices</h3>
-          <p>Following exception handling best practices ensures robust, maintainable code that gracefully handles errors without compromising security.</p>
-          <p>These guidelines help you write defensive code that fails safely and provides meaningful feedback to users and developers.</p>
-          
+          <p>Following exception handling best practices ensures robust, maintainable code that gracefully handles errors without compromising security. These guidelines help you write defensive code that fails safely and provides meaningful feedback to users and developers.</p>
           <pre><code>import java.util.logging.Logger;
 import java.util.logging.Level;
 
@@ -13500,9 +16103,7 @@ class DatabaseException extends Exception { }</code></pre>
           <p>The Collections Framework provides a unified architecture for storing and manipulating groups of objects. Master Lists, Sets, Maps, and their implementations.</p>
           
           <h3>Collection Hierarchy</h3>
-          <p>Understanding the Collections hierarchy helps you choose the right collection type for your specific use case and programming requirements.</p>
-          <p>Each interface defines specific contracts and behaviors that all implementing classes must follow for consistency and interoperability.</p>
-          
+          <p>Understanding the Collections hierarchy helps you choose the right collection type for your specific use case and programming requirements. Each interface defines specific contracts and behaviors that all implementing classes must follow for consistency and interoperability.</p>
           <ul>
             <li><strong>Collection Interface:</strong> Root interface for all collections</li>
             <li><strong>List Interface:</strong> Ordered collection with duplicates</li>
@@ -13547,9 +16148,7 @@ public class CollectionHierarchyDemo {
           <p><strong>Explanation:</strong> Collection is the root interface providing basic operations like add(), remove(), size(), and contains(). List extends Collection adding indexed access and allowing duplicates. Set extends Collection but ensures uniqueness. Map is separate from Collection hierarchy and stores key-value associations.</p>
           
           <h3>List Implementations</h3>
-          <p>Different List implementations offer varying performance characteristics for common operations like access, insertion, and deletion.</p>
-          <p>Choosing the right implementation based on your usage patterns can significantly impact application performance.</p>
-          
+          <p>Different List implementations offer varying performance characteristics for common operations like access, insertion, and deletion. Choosing the right implementation based on your usage patterns can significantly impact application performance.</p>
           <ul>
             <li><strong>ArrayList:</strong> Dynamic array, fast random access</li>
             <li><strong>LinkedList:</strong> Doubly-linked list, fast insertion/deletion</li>
@@ -13605,9 +16204,7 @@ public class ListImplementations {
           <p><strong>Explanation:</strong> ArrayList provides O(1) random access but O(n) insertion/deletion in middle. LinkedList offers O(1) insertion/deletion at ends but O(n) random access. LinkedList implements Queue and Deque interfaces for specialized operations. Choose ArrayList for frequent access, LinkedList for frequent modifications.</p>
           
           <h3>Set Implementations</h3>
-          <p>Set implementations ensure uniqueness while offering different ordering guarantees and performance characteristics for various use cases.</p>
-          <p>Understanding these differences helps you choose between hash-based, tree-based, or specialized set implementations.</p>
-          
+          <p>Set implementations ensure uniqueness while offering different ordering guarantees and performance characteristics for various use cases. Understanding these differences helps you choose between hash-based, tree-based, or specialized set implementations.</p>
           <ul>
             <li><strong>HashSet:</strong> Hash table based, fast performance</li>
             <li><strong>LinkedHashSet:</strong> Maintains insertion order</li>
@@ -13679,9 +16276,7 @@ public class SetImplementations {
           <p><strong>Explanation:</strong> HashSet offers O(1) average performance for basic operations but no ordering guarantees. LinkedHashSet maintains insertion order with slightly higher memory overhead. TreeSet keeps elements sorted with O(log n) operations and implements NavigableSet interface. EnumSet is highly optimized for enum types using bit vectors.</p>
           
           <h3>Map Implementations</h3>
-          <p>Map implementations provide key-value storage with different performance characteristics and ordering guarantees for diverse application needs.</p>
-          <p>Understanding map implementations helps you choose between hash-based, tree-based, or thread-safe options based on requirements.</p>
-          
+          <p>Map implementations provide key-value storage with different performance characteristics and ordering guarantees for diverse application needs. Understanding map implementations helps you choose between hash-based, tree-based, or thread-safe options based on requirements.</p>
           <ul>
             <li><strong>HashMap:</strong> Hash table based, fast access</li>
             <li><strong>LinkedHashMap:</strong> Maintains insertion or access order</li>
@@ -13771,9 +16366,7 @@ public class MapImplementations {
           <p><strong>Explanation:</strong> HashMap offers O(1) average performance with no ordering. LinkedHashMap maintains insertion or access order for predictable iteration. TreeMap keeps keys sorted with O(log n) operations. ConcurrentHashMap provides thread-safe operations without synchronizing the entire map. Use putIfAbsent(), compute(), and merge() for atomic operations.</p>
           
           <h3>Iterator and Enhanced For Loop</h3>
-          <p>Iterators provide a uniform way to traverse collections safely, while enhanced for loops offer simplified syntax for common iteration patterns.</p>
-          <p>Understanding iterator behavior and fail-fast mechanisms helps prevent concurrent modification exceptions during iteration.</p>
-          
+          <p>Iterators provide a uniform way to traverse collections safely, while enhanced for loops offer simplified syntax for common iteration patterns. Understanding iterator behavior and fail-fast mechanisms helps prevent concurrent modification exceptions during iteration.</p>
           <ul>
             <li><strong>Iterator:</strong> Standard way to traverse collections</li>
             <li><strong>ListIterator:</strong> Bidirectional iterator for lists</li>
@@ -13865,9 +16458,7 @@ public class IterationExamples {
           <p><strong>Explanation:</strong> Enhanced for loops provide clean syntax but don't allow safe element removal. Iterator.remove() is the only safe way to remove elements during iteration. ListIterator allows bidirectional traversal and modification for List implementations. Fail-fast iterators detect concurrent modifications and throw ConcurrentModificationException to prevent data corruption.</p>
           
           <h3>Utility Classes</h3>
-          <p>Collections and Arrays utility classes provide static methods for common operations like sorting, searching, and manipulating collections.</p>
-          <p>These utilities offer optimized implementations and convenient methods that work with any collection type, promoting code reuse.</p>
-          
+          <p>Collections and Arrays utility classes provide static methods for common operations like sorting, searching, and manipulating collections. These utilities offer optimized implementations and convenient methods that work with any collection type, promoting code reuse.</p>
           <ul>
             <li><strong>Collections:</strong> Static utility methods for collections</li>
             <li><strong>Arrays:</strong> Utility methods for arrays</li>
@@ -13994,9 +16585,7 @@ public class UtilityClassesDemo {
           <p>Learn to read from and write to files in Java using various I/O classes and the modern NIO.2 API for efficient file operations.</p>
           
           <h3>File I/O Classes</h3>
-          <p>Java provides multiple approaches for file operations, from traditional stream-based I/O to modern NIO.2 API for enhanced performance.</p>
-          <p>Understanding different I/O classes helps you choose the right approach based on your specific requirements and performance needs.</p>
-          
+          <p>Java provides multiple approaches for file operations, from traditional stream-based I/O to modern NIO.2 API for enhanced performance. Understanding different I/O classes helps you choose the right approach based on your specific requirements and performance needs.</p>
           <ul>
             <li><strong>File Class:</strong> Represent file and directory pathnames</li>
             <li><strong>FileInputStream/FileOutputStream:</strong> Byte-oriented file I/O</li>
@@ -14075,9 +16664,7 @@ public class TraditionalFileIO {
           <p><strong>Explanation:</strong> File class provides file system operations like checking existence and properties. FileReader/FileWriter handle character-based I/O with automatic character encoding. BufferedReader/BufferedWriter improve performance by reducing system calls. PrintWriter offers formatted output capabilities. FileInputStream/FileOutputStream handle raw byte data for binary files.</p>
           
           <h3>Modern NIO.2 API</h3>
-          <p>The NIO.2 API introduced in Java 7 provides more powerful and efficient file operations with better exception handling and atomic operations.</p>
-          <p>Path and Files classes offer improved performance, better error reporting, and support for symbolic links and file attributes.</p>
-          
+          <p>The NIO.2 API introduced in Java 7 provides more powerful and efficient file operations with better exception handling and atomic operations. Path and Files classes offer improved performance, better error reporting, and support for symbolic links and file attributes.</p>
           <ul>
             <li><strong>Path Interface:</strong> Represents file system paths</li>
             <li><strong>Paths Class:</strong> Factory methods for Path objects</li>
@@ -14180,9 +16767,7 @@ public class ModernFileIO {
           <p><strong>Explanation:</strong> Path interface represents file system paths in a more object-oriented way than File class. Files.readString() and Files.readAllLines() provide convenient methods for reading entire files. Files.lines() returns a Stream for memory-efficient processing of large files. DirectoryStream allows iteration over directory contents. Files.walk() provides recursive directory traversal capabilities.</p>
           
           <h3>File Operations</h3>
-          <p>Comprehensive file operations include creating, reading, writing, copying, moving, and deleting files with proper error handling.</p>
-          <p>Modern Java provides both traditional and NIO.2 approaches for these operations, each with specific advantages and use cases.</p>
-          
+          <p>Comprehensive file operations include creating, reading, writing, copying, moving, and deleting files with proper error handling. Modern Java provides both traditional and NIO.2 approaches for these operations, each with specific advantages and use cases.</p>
           <ul>
             <li><strong>File Creation:</strong> createNewFile(), createDirectory()</li>
             <li><strong>File Reading:</strong> Read entire files or line by line</li>
@@ -14349,9 +16934,7 @@ public class FileOperationsDemo {
           <p><strong>Explanation:</strong> File operations should always use try-with-resources for proper resource management. NIO.2 provides atomic operations that either complete successfully or leave the file system unchanged. StandardCopyOption enum provides options for copy/move operations. Files.walk() enables recursive directory traversal with proper ordering for deletion. Properties files provide a standard way to store application configuration.</p>
           
           <h3>Serialization</h3>
-          <p>Object serialization converts Java objects into byte streams for storage or network transmission, with deserialization recreating objects from byte streams.</p>
-          <p>Understanding serialization is crucial for data persistence, caching, and distributed systems where objects need to cross process boundaries.</p>
-          
+          <p>Object serialization converts Java objects into byte streams for storage or network transmission, with deserialization recreating objects from byte streams. Understanding serialization is crucial for data persistence, caching, and distributed systems where objects need to cross process boundaries.</p>
           <ul>
             <li><strong>Object Serialization:</strong> Convert objects to byte stream</li>
             <li><strong>ObjectOutputStream:</strong> Write objects to file</li>
@@ -14515,9 +17098,7 @@ public class SerializationDemo {
           <p><strong>Explanation:</strong> Classes must implement Serializable interface for serialization. serialVersionUID ensures version compatibility during deserialization. Transient fields are excluded from serialization and default to null/zero after deserialization. Custom writeObject/readObject methods allow control over serialization process. Static fields belong to the class, not instances, so they're not serialized.</p>
           
           <h3>Best Practices</h3>
-          <p>Following file I/O best practices ensures efficient, secure, and maintainable code while preventing resource leaks and data corruption.</p>
-          <p>These guidelines help you write robust file handling code that works reliably across different platforms and usage scenarios.</p>
-          
+          <p>Following file I/O best practices ensures efficient, secure, and maintainable code while preventing resource leaks and data corruption. These guidelines help you write robust file handling code that works reliably across different platforms and usage scenarios.</p>
           <ul>
             <li><strong>Resource Management:</strong> Use try-with-resources</li>
             <li><strong>Buffer I/O:</strong> Use buffered streams for better performance</li>
@@ -14738,9 +17319,7 @@ public class FileIOBestPractices {
           <p>Multithreading allows concurrent execution of multiple parts of a program. Learn thread creation, synchronization, and concurrent programming in Java.</p>
           
           <h3>Thread Basics</h3>
-          <p>Understanding thread fundamentals is essential for creating responsive applications that can perform multiple tasks simultaneously.</p>
-          <p>Java provides both Thread class inheritance and Runnable interface implementation for creating and managing threads effectively.</p>
-          
+          <p>Understanding thread fundamentals is essential for creating responsive applications that can perform multiple tasks simultaneously. Java provides both Thread class inheritance and Runnable interface implementation for creating and managing threads effectively.</p>
           <ul>
             <li><strong>Thread Class:</strong> Extend Thread class and override run()</li>
             <li><strong>Runnable Interface:</strong> Implement run() method</li>
@@ -14847,9 +17426,7 @@ public class ThreadBasicsDemo {
           <p><strong>Explanation:</strong> Thread class provides direct threading capability but limits inheritance. Runnable interface is preferred as it allows the class to extend another class. Thread.start() creates a new thread and calls run(), while calling run() directly executes in the current thread. Thread.join() makes the main thread wait for child threads to complete. Thread priorities influence scheduling but don't guarantee execution order.</p>
           
           <h3>Thread Creation</h3>
-          <p>Java offers multiple approaches for thread creation, from basic Thread and Runnable to modern ExecutorService for enterprise applications.</p>
-          <p>Choosing the right approach depends on your application's complexity, scalability requirements, and resource management needs.</p>
-          
+          <p>Java offers multiple approaches for thread creation, from basic Thread and Runnable to modern ExecutorService for enterprise applications. Choosing the right approach depends on your application's complexity, scalability requirements, and resource management needs.</p>
           <ul>
             <li><strong>Extending Thread:</strong> Create subclass of Thread</li>
             <li><strong>Implementing Runnable:</strong> Better approach, supports multiple inheritance</li>
@@ -14978,9 +17555,7 @@ public class ThreadCreationMethods {
           <p><strong>Explanation:</strong> Anonymous Runnable provides flexibility without creating separate classes. Lambda expressions offer concise syntax for simple tasks. ExecutorService manages thread lifecycle automatically and provides better resource control. Thread pools reuse threads for better performance. Callable allows returning values from threads. CompletableFuture supports modern asynchronous programming patterns.</p>
           
           <h3>Thread Synchronization</h3>
-          <p>Synchronization prevents race conditions when multiple threads access shared resources, ensuring data consistency and thread safety.</p>
-          <p>Java provides various synchronization mechanisms from basic synchronized blocks to advanced concurrent utilities for different scenarios.</p>
-          
+          <p>Synchronization prevents race conditions when multiple threads access shared resources, ensuring data consistency and thread safety. Java provides various synchronization mechanisms from basic synchronized blocks to advanced concurrent utilities for different scenarios.</p>
           <ul>
             <li><strong>synchronized Keyword:</strong> Method and block synchronization</li>
             <li><strong>Intrinsic Locks:</strong> Every object has a monitor lock</li>
@@ -15150,9 +17725,7 @@ public class SynchronizationDemo {
           <p><strong>Explanation:</strong> Synchronized methods and blocks ensure only one thread can execute the code at a time. wait() releases the lock and waits, while notify()/notifyAll() wakes up waiting threads. volatile keyword ensures variable changes are visible across threads immediately. The producer-consumer pattern demonstrates coordinated thread communication. Deadlocks occur when threads wait for each other's locks in circular dependency.</p>
           
           <h3>Advanced Concurrency</h3>
-          <p>Java's concurrent utilities provide high-performance alternatives to basic synchronization for scalable multithreaded applications.</p>
-          <p>These advanced tools offer better performance, reduced contention, and specialized functionality for complex concurrent scenarios.</p>
-          
+          <p>Java's concurrent utilities provide high-performance alternatives to basic synchronization for scalable multithreaded applications. These advanced tools offer better performance, reduced contention, and specialized functionality for complex concurrent scenarios.</p>
           <ul>
             <li><strong>java.util.concurrent:</strong> Concurrent collections and utilities</li>
             <li><strong>Locks:</strong> ReentrantLock, ReadWriteLock</li>
@@ -15362,9 +17935,7 @@ public class AdvancedConcurrencyDemo {
           <p><strong>Explanation:</strong> ReentrantLock provides more flexibility than synchronized blocks with tryLock() and timed waits. ReadWriteLock allows multiple concurrent readers or single writer for better performance. Atomic classes use hardware-level compare-and-swap for lock-free operations. CountDownLatch coordinates thread startup and completion. Semaphore controls access to limited resources. ConcurrentHashMap provides thread-safe map operations without locking the entire map.</p>
           
           <h3>Thread Pool and Executors</h3>
-          <p>Thread pools provide efficient thread management by reusing threads and controlling resource consumption in multithreaded applications.</p>
-          <p>ExecutorService abstraction simplifies thread management and provides better control over task execution and lifecycle.</p>
-          
+          <p>Thread pools provide efficient thread management by reusing threads and controlling resource consumption in multithreaded applications. ExecutorService abstraction simplifies thread management and provides better control over task execution and lifecycle.</p>
           <ul>
             <li><strong>ExecutorService:</strong> Manage thread pool</li>
             <li><strong>ThreadPoolExecutor:</strong> Configurable thread pool</li>
@@ -15571,9 +18142,7 @@ public class ThreadPoolDemo {
           <p><strong>Explanation:</strong> ExecutorService manages thread lifecycle automatically and provides different pool types for various scenarios. ThreadPoolExecutor offers fine-grained control over pool behavior, queue management, and rejection policies. ScheduledExecutorService supports delayed and recurring task execution. ForkJoinPool implements work-stealing algorithm for divide-and-conquer problems. Proper shutdown sequence prevents resource leaks.</p>
           
           <h3>Best Practices</h3>
-          <p>Following multithreading best practices prevents common pitfalls like deadlocks, race conditions, and performance bottlenecks.</p>
-          <p>These guidelines ensure robust, scalable, and maintainable multithreaded applications that perform well under various conditions.</p>
-          
+          <p>Following multithreading best practices prevents common pitfalls like deadlocks, race conditions, and performance bottlenecks. These guidelines ensure robust, scalable, and maintainable multithreaded applications that perform well under various conditions.</p>
           <ul>
             <li><strong>Avoid Deadlocks:</strong> Consistent lock ordering</li>
             <li><strong>Minimize Synchronization:</strong> Use concurrent collections</li>
@@ -15796,9 +18365,7 @@ public class MultithreadingBestPractices {
           <p>Generics enable types (classes and interfaces) to be parameters when defining classes, interfaces, and methods. Learn type safety and generic programming in Java.</p>
           
           <h3>Why Generics?</h3>
-          <p>Generics provide compile-time type safety and eliminate the need for explicit type casting in Java collections.</p>
-          <p>They enable writing reusable code that works with different types while maintaining type safety and performance.</p>
-          
+          <p>Generics provide compile-time type safety and eliminate the need for explicit type casting in Java collections. They enable writing reusable code that works with different types while maintaining type safety and performance.</p>
           <ul>
             <li><strong>Type Safety:</strong> Compile-time type checking</li>
             <li><strong>Elimination of Casts:</strong> No need for explicit casting</li>
@@ -15863,9 +18430,7 @@ public class GenericExample {
           <p><strong>Explanation:</strong> Without generics, collections store Object references requiring explicit casting and allowing runtime errors. Generics provide compile-time type checking, eliminating ClassCastException risks. Generic methods use type parameters (&lt;T&gt;) to work with different types safely. The compiler ensures type consistency and generates optimized bytecode.</p>
           
           <h3>Generic Classes</h3>
-          <p>Generic classes use type parameters to create reusable data structures that work with any object type.</p>
-          <p>Type parameters are specified in angle brackets and can have bounds to restrict the allowed types.</p>
-          
+          <p>Generic classes use type parameters to create reusable data structures that work with any object type. Type parameters are specified in angle brackets and can have bounds to restrict the allowed types.</p>
           <ul>
             <li><strong>Type Parameter:</strong> class MyClass&lt;T&gt; { ... }</li>
             <li><strong>Multiple Type Parameters:</strong> class Pair&lt;K, V&gt; { ... }</li>
@@ -16036,9 +18601,7 @@ public class GenericClassDemo {
           <p><strong>Explanation:</strong> Generic classes use type parameters (T, K, V) as placeholders for actual types. Single type parameter &lt;T&gt; creates flexible containers. Multiple parameters &lt;K, V&gt; enable key-value structures like maps. Bounded parameters &lt;T extends Number&gt; restrict types to Number subclasses. Multiple bounds &lt;T extends Class & Interface&gt; require types to satisfy multiple constraints. Diamond operator &lt;&gt; (Java 7+) enables type inference for cleaner code.</p>
           
           <h3>Generic Methods</h3>
-          <p>Generic methods use type parameters to accept and return different types while maintaining type safety.</p>
-          <p>They can be static or instance methods and are independent of the class's generic parameters.</p>
-          
+          <p>Generic methods use type parameters to accept and return different types while maintaining type safety. They can be static or instance methods and are independent of the class's generic parameters.</p>
           <ul>
             <li><strong>Method Declaration:</strong> public &lt;T&gt; void method(T param)</li>
             <li><strong>Type Inference:</strong> Compiler infers types from context</li>
@@ -16216,9 +18779,7 @@ public class GenericMethodExample {
           <p><strong>Explanation:</strong> Generic methods declare type parameters before the return type (&lt;T&gt; void method). They enable type-safe operations on different data types. Type inference allows omitting explicit type arguments when compiler can deduce them. Bounded type parameters (&lt;T extends Comparable&lt;T&gt;&gt;) restrict allowed types. Static generic methods are independent of class generics. Generic constructors can use different type parameters than the class. Functional interfaces (Predicate, Function) work seamlessly with generics.</p>
           
           <h3>Wildcards</h3>
-          <p>Wildcards provide flexibility when working with generic types by representing unknown types in method parameters.</p>
-          <p>They follow the PECS principle: Producer Extends, Consumer Super for maximum API flexibility.</p>
-          
+          <p>Wildcards provide flexibility when working with generic types by representing unknown types in method parameters. They follow the PECS principle: Producer Extends, Consumer Super for maximum API flexibility.</p>
           <ul>
             <li><strong>Unbounded Wildcard:</strong> List&lt;?&gt; - any type</li>
             <li><strong>Upper Bounded:</strong> List&lt;? extends Number&gt; - Number or subclass</li>
@@ -16412,9 +18973,7 @@ public class WildcardExample {
           <p><strong>Explanation:</strong> Unbounded wildcards (List&lt;?&gt;) accept any type but prevent adding elements (except null). Upper bounded wildcards (? extends T) enable reading T or subtypes but prevent adding. Lower bounded wildcards (? super T) enable adding T or subtypes but reading returns Object. PECS principle guides wildcard usage: use extends for producers (output), super for consumers (input). Wildcard capture uses helper methods to convert wildcards to type parameters for modification operations.</p>
           
           <h3>Type Erasure</h3>
-          <p>Type erasure is Java's mechanism for implementing generics while maintaining backward compatibility with pre-generic code.</p>
-          <p>Understanding erasure helps avoid common pitfalls and explains runtime behavior of generic code.</p>
-          
+          <p>Type erasure is Java's mechanism for implementing generics while maintaining backward compatibility with pre-generic code. Understanding erasure helps avoid common pitfalls and explains runtime behavior of generic code.</p>
           <ul>
             <li><strong>Compile-time Feature:</strong> Generic information removed at runtime</li>
             <li><strong>Raw Types:</strong> Generic classes without type parameters</li>
@@ -16648,9 +19207,7 @@ public class TypeErasureDemo {
           <p><strong>Explanation:</strong> Type erasure removes generic type information at runtime for backward compatibility. Generic classes become raw types with Object casts inserted by compiler. Bridge methods maintain polymorphism when extending generic classes. Arrays of generic types are prohibited due to type safety issues. instanceof checks work only on raw types. Static members cannot use class type parameters. Reflection shows erased types but preserves some generic information in specific contexts. Heap pollution occurs when raw types bypass generic type safety.</p>
           
           <h3>Generic Best Practices</h3>
-          <p>Following best practices ensures effective and maintainable use of generics in Java applications.</p>
-          <p>These guidelines help avoid common pitfalls and maximize the benefits of type safety and code reusability.</p>
-          
+          <p>Following best practices ensures effective and maintainable use of generics in Java applications. These guidelines help avoid common pitfalls and maximize the benefits of type safety and code reusability.</p>
           <ul>
             <li><strong>Use Descriptive Names:</strong> T for type, E for element, K for key</li>
             <li><strong>Prefer Generic Types:</strong> Use ArrayList&lt;String&gt; over raw ArrayList</li>
@@ -21598,6 +24155,7 @@ SHOW TABLES;</code></pre>
           <p>Databases are containers for organizing related tables, and tables store data in rows and columns. Understanding how to create and manage databases and tables is fundamental to working with MySQL.</p>
           
           <h3>Database Operations:</h3>
+          <p>Common database operations include creating, selecting, and deleting databases. You can also list all existing databases on the server.</p>
           <ul>
             <li><strong>CREATE DATABASE:</strong> Create a new database</li>
             <li><strong>DROP DATABASE:</strong> Delete a database</li>
@@ -21639,6 +24197,7 @@ SHOW TABLES;
 DROP TABLE IF EXISTS old_table;</code></pre>
           
           <h3>Data Types:</h3>
+          <p>MySQL supports various data types to define the nature of data stored in each column. Choosing the appropriate data type is crucial for optimizing storage and performance.</p> 
           <ul>
             <li><strong>Numeric:</strong> INT, BIGINT, DECIMAL, FLOAT, DOUBLE</li>
             <li><strong>String:</strong> VARCHAR, CHAR, TEXT, LONGTEXT</li>
@@ -21648,6 +24207,7 @@ DROP TABLE IF EXISTS old_table;</code></pre>
           </ul>
           
           <h3>Constraints:</h3>
+          <p>Constraints enforce rules on the data in your tables to maintain data integrity and consistency.</p>
           <ul>
             <li><strong>PRIMARY KEY:</strong> Unique identifier for each row</li>
             <li><strong>FOREIGN KEY:</strong> Links to another table</li>
@@ -21667,6 +24227,7 @@ DROP TABLE IF EXISTS old_table;</code></pre>
           <p>CRUD operations are the foundation of database interaction. These four basic operations allow you to manage data in your database.</p>
           
           <h3>INSERT - Create Data:</h3>
+          <p>Use the INSERT statement to add new records to a table. You can insert single or multiple rows in one query.</p>
           <pre><code>-- Insert single row
 INSERT INTO users (username, email, password)
 VALUES ('john_doe', 'john@example.com', 'hashed_password');
@@ -21679,6 +24240,7 @@ VALUES
   ('Desk Chair', 199.99, 15, 'Furniture');</code></pre>
           
           <h3>SELECT - Read Data:</h3>
+          <p>Use the SELECT statement to retrieve data from tables. You can select all columns or specific columns, apply filters, and sort results.</p>
           <pre><code>-- Select all columns
 SELECT * FROM users;
 
@@ -21698,6 +24260,7 @@ SELECT * FROM products LIMIT 5;
 SELECT * FROM users WHERE email LIKE '%@gmail.com';</code></pre>
           
           <h3>UPDATE - Modify Data:</h3>
+          <p>Use the UPDATE statement to modify existing records in a table. Always use a WHERE clause to avoid updating all rows unintentionally.</p>
           <pre><code>-- Update single row
 UPDATE products
 SET price = 899.99, stock = 8
@@ -21714,6 +24277,7 @@ SET stock = stock + 10
 WHERE id = 1;</code></pre>
           
           <h3>DELETE - Remove Data:</h3>
+          <p>Use the DELETE statement to remove records from a table. Always use a WHERE clause to avoid deleting all rows unintentionally.</p>
           <pre><code>-- Delete specific rows
 DELETE FROM users WHERE id = 5;
 
@@ -21741,6 +24305,7 @@ DELETE FROM temp_table;</code></pre>
           <p>Joins combine data from multiple tables based on related columns. Understanding joins is crucial for working with relational databases.</p>
           
           <h3>Types of Joins:</h3>
+          <p>MySQL supports several types of joins to retrieve related data from multiple tables:</p>
           <ul>
             <li><strong>INNER JOIN:</strong> Returns matching rows from both tables</li>
             <li><strong>LEFT JOIN:</strong> Returns all rows from left table, matching from right</li>
@@ -21795,6 +24360,7 @@ INNER JOIN users u2 ON u1.city = u2.city
 WHERE u1.id < u2.id;</code></pre>
           
           <h3>Relationship Types:</h3>
+          <p>Relational databases use different types of relationships to model real-world data associations:</p>
           <ul>
             <li><strong>One-to-One:</strong> Each row relates to one row (User → Profile)</li>
             <li><strong>One-to-Many:</strong> One row relates to many (User → Orders)</li>
@@ -21811,6 +24377,7 @@ WHERE u1.id < u2.id;</code></pre>
           <p>Aggregate functions perform calculations on sets of rows and return single values. They're essential for data analysis and reporting.</p>
           
           <h3>Common Aggregate Functions:</h3>
+          <p>Here are some of the most commonly used aggregate functions in MySQL:</p>
           <pre><code>-- COUNT - Number of rows
 SELECT COUNT(*) FROM users;
 SELECT COUNT(DISTINCT category) FROM products;
@@ -21847,6 +24414,7 @@ GROUP BY YEAR(order_date), MONTH(order_date)
 ORDER BY year DESC, month DESC;</code></pre>
           
           <h3>String Functions:</h3>
+          <p>MySQL provides several built-in functions for manipulating strings. These functions are useful for formatting and processing text data.</p>
           <pre><code>-- CONCAT
 SELECT CONCAT(first_name, ' ', last_name) AS full_name FROM users;
 
@@ -21860,6 +24428,7 @@ SELECT username, LENGTH(username) FROM users;
 SELECT SUBSTRING(email, 1, 5) FROM users;</code></pre>
           
           <h3>Date Functions:</h3>
+          <p>Date functions help you manipulate and format date and time values in MySQL.</p>
           <pre><code>-- Current date/time
 SELECT NOW(), CURDATE(), CURTIME();
 
@@ -21880,6 +24449,7 @@ SELECT DATE_FORMAT(created_at, '%Y-%m-%d') FROM orders;</code></pre>
           <p>Indexes dramatically improve query performance by creating fast lookup structures. Understanding when and how to use indexes is crucial for database performance.</p>
           
           <h3>Index Types:</h3>
+          <p>MySQL supports several types of indexes, each serving different purposes. Choosing the right index type based on your query patterns can significantly enhance performance.</p>
           <ul>
             <li><strong>PRIMARY KEY:</strong> Unique index, automatically created</li>
             <li><strong>UNIQUE:</strong> Ensures unique values with fast lookup</li>
@@ -21914,6 +24484,7 @@ EXPLAIN SELECT * FROM users WHERE email = 'test@example.com';
 SELECT * FROM products USE INDEX (idx_price) WHERE price > 100;</code></pre>
           
           <h3>Query Optimization Tips:</h3>
+          <p>Optimizing queries is essential for maintaining fast database performance, especially as data volume grows. Here are some best practices to ensure your queries run efficiently:</p>
           <ul>
             <li>Index columns used in WHERE, JOIN, and ORDER BY</li>
             <li>Avoid SELECT *, specify needed columns</li>
@@ -21943,6 +24514,7 @@ WHERE created_at BETWEEN '2024-01-01' AND '2024-12-31';</code></pre>
           <p>Transactions ensure data integrity by grouping multiple operations into a single unit. Security features protect your data from unauthorized access.</p>
           
           <h3>ACID Properties:</h3>
+          <p>ACID Properties are a set of rules that ensure reliable processing of database transactions. Atomicity guarantees that a transaction is fully completed or fully rolled back, Consistency ensures the database remains in a valid state, Isolation prevents transactions from interfering with each other, and Durability ensures that committed data is permanently saved even in case of system failure.</p>
           <ul>
             <li><strong>Atomicity:</strong> All operations succeed or all fail</li>
             <li><strong>Consistency:</strong> Database remains in valid state</li>
@@ -21979,6 +24551,7 @@ ELSE
 END IF;</code></pre>
           
           <h3>User Management:</h3>
+          <p>MySQL provides robust user management features to control access to databases and tables. You can create users, assign privileges, and enforce security policies to protect your data. Proper user management is essential for maintaining database security and ensuring that only authorized users can perform specific actions.</p>
           <pre><code>-- Create user
 CREATE USER 'appuser'@'localhost' IDENTIFIED BY 'strong_password';
 
@@ -22001,6 +24574,7 @@ DROP USER 'appuser'@'localhost';
 ALTER USER 'appuser'@'localhost' IDENTIFIED BY 'new_password';</code></pre>
           
           <h3>Security Best Practices:</h3>
+          <p>Protecting your MySQL database is crucial to prevent unauthorized access and data breaches. Implementing strong security measures helps safeguard sensitive information and maintain the integrity of your database.</p>
           <ul>
             <li>Use strong passwords for database users</li>
             <li>Grant minimum necessary privileges</li>
@@ -22030,6 +24604,7 @@ SELECT CURRENT_USER();</code></pre>
           <p>MySQL offers powerful advanced features like stored procedures, triggers, views, and subqueries for complex database operations.</p>
           
           <h3>Stored Procedures:</h3>
+          <p>Stored Procedures are precompiled collections of SQL statements stored in the database and executed as a single unit. They help improve performance, reduce code repetition, and allow complex business logic to be handled directly within the database.</p>
           <pre><code>-- Create stored procedure
 DELIMITER //
 CREATE PROCEDURE GetUserOrders(IN userId INT)
@@ -22058,6 +24633,7 @@ CALL GetTotalRevenue(@revenue);
 SELECT @revenue;</code></pre>
           
           <h3>Triggers:</h3>
+          <p>Triggers are database objects in MySQL that automatically execute a predefined set of SQL statements when a specific event (INSERT, UPDATE, or DELETE) occurs on a table. They are mainly used to enforce business rules, maintain data integrity, and perform automatic actions in response to data changes.</p>
           <pre><code>-- Create trigger
 DELIMITER //
 CREATE TRIGGER update_stock
@@ -22078,6 +24654,7 @@ INSERT INTO user_audit_log (user_id, old_email, new_email, changed_at)
 VALUES (OLD.id, OLD.email, NEW.email, NOW());</code></pre>
           
           <h3>Views:</h3>
+          <p>Views are virtual tables in MySQL that are created using a SELECT query. They do not store data physically but display data from one or more tables. Views are used to simplify complex queries, enhance security, and provide a consistent way to access data.</p>
           <pre><code>-- Create view
 CREATE VIEW user_orders AS
 SELECT 
@@ -22102,6 +24679,7 @@ GROUP BY u.id, u.username;
 DROP VIEW user_orders;</code></pre>
           
           <h3>Subqueries:</h3>
+          <p>Subqueries are SQL queries written inside another query to retrieve data that the main query depends on. They help in filtering, comparing, or calculating values dynamically based on the result of another query. Subqueries improve query flexibility and allow complex data retrieval in a structured way.</p>
           <pre><code>-- Subquery in WHERE
 SELECT * FROM products
 WHERE price > (SELECT AVG(price) FROM products);

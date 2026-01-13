@@ -1334,6 +1334,10 @@
   .mobileHeader {
     display: flex;
   }
+
+  .lessonLayout{
+    z-index: 99;
+  }
   
   /* Adjust lesson page container */
   .lessonPageContainer {
@@ -1504,7 +1508,7 @@
 
 .lessonContent code {
   background: #f1f5f9;
-  color: #e11d48;
+  /* color: #e11d48; */
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
   font-family: 'Courier New', Monaco, 'Lucida Console', monospace;
