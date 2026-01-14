@@ -1244,6 +1244,98 @@ const ProjectDetailPage = () => {
       ],
       technologies: ['Node.js', 'React.js', 'MongoDB', 'JavaScript','Payment Gateway', 'SEO Tools'],
       demoLink: 'https://dlsimportexport.in/'
+    },
+    51: {
+      title: 'Caloriz Tracker',
+      category: 'Mobile Application',
+      image: '/images/caloriz.png',
+      description: 'Caloriz Tracker is a comprehensive health and fitness mobile application designed to help users track their daily calorie intake, monitor nutrition, and achieve their fitness goals. The app features an extensive food database, barcode scanning for easy food logging, personalized meal planning, and detailed nutritional analysis. With its user-friendly interface and smart tracking capabilities, Caloriz makes healthy eating and weight management simple and effective.',
+      working: 'Users start by setting up their profile with personal information, fitness goals, and dietary preferences. The app calculates daily calorie targets based on their goals (weight loss, gain, or maintenance). Users log their meals by searching the extensive food database, scanning barcodes, or using the quick-add feature for common foods. The app automatically calculates nutritional values including calories, proteins, carbs, fats, vitamins, and minerals. Progress is tracked through visual charts and reports. The app sends smart reminders for meal logging and water intake. Users can create custom recipes and meal plans. The app also integrates with fitness trackers to monitor calories burned during exercise.',
+      modules: [
+        'Food Database & Search',
+        'Barcode Scanner',
+        'Nutrition Tracking',
+        'Calorie Calculator',
+        'Meal Planning',
+        'Progress Analytics',
+        'Custom Recipe Creator',
+        'Water Intake Tracker',
+        'Exercise Integration',
+        'Goal Setting & Monitoring',
+        'Daily/Weekly Reports',
+        'Smart Reminders'
+      ],
+      technologies: ['Flutter', 'Firebase', 'Node.js', 'Food API', 'Barcode Scanner API'],
+      demoLink: 'https://play.google.com/store/apps/details?id=com.bhoomitechzone.caloriz&hl=en_IN'
+    },
+    52: {
+      title: 'Voice of Roads',
+      category: 'Mobile Application',
+      image: '/images/sadakasur.png',
+      description: 'Voice of Roads (Sadak Asur) is an innovative mobile application designed to address road infrastructure issues and traffic problems through citizen participation. The app empowers users to report road damages, traffic violations, accidents, and other road-related issues directly to the concerned authorities. With features like real-time reporting, GPS location tracking, photo/video evidence capture, and direct communication with municipal authorities, Voice of Roads serves as a bridge between citizens and government for better road management and traffic safety.',
+      working: 'Users can quickly report road issues by taking photos or videos of the problem area. The app automatically captures GPS coordinates and timestamp for accurate location tracking. Users categorize the issue type (potholes, traffic signals, accidents, violations, etc.) and add detailed descriptions. The app routes reports to the appropriate local authorities based on location. Users receive updates on the status of their reports and can track resolution progress. The app includes a community feature where users can upvote similar issues in their area. Authorities can respond directly through the app and mark issues as resolved. The app also provides traffic alerts and road condition updates to the community.',
+      modules: [
+        'Issue Reporting System',
+        'GPS Location Tracking',
+        'Photo/Video Capture',
+        'Category Management',
+        'Authority Routing',
+        'Status Tracking',
+        'Community Voting',
+        'Traffic Alerts',
+        'Authority Dashboard',
+        'Real-time Notifications',
+        'Issue Analytics',
+        'User Verification'
+      ],
+      technologies: ['Flutter', 'Firebase', 'Google Maps API', 'Cloud Storage', 'Push Notifications'],
+      demoLink: 'https://play.google.com/store/apps/details?id=com.bhoomitechzone.sadakasur&hl=en_IN'
+    },
+    53: {
+      title: 'Vision Help',
+      category: 'Custom Software',
+      image: '/images/visionhelp.png',
+      description: 'Vision Help is a comprehensive welfare and NGO management platform designed to streamline operations for non-profit organizations and social welfare agencies. The platform facilitates efficient management of beneficiaries, donations, volunteers, programs, and events while ensuring transparency and accountability. With features like donor management, beneficiary tracking, volunteer coordination, and detailed reporting, Vision Help empowers organizations to maximize their social impact and reach more people in need.',
+      working: 'Organizations register and create their profiles with mission, vision, and program details. The platform allows them to create and manage various welfare programs and track beneficiary enrollment. Donors can browse verified organizations, view program details, and make secure donations online. The system tracks donation utilization and provides transparency reports to donors. Volunteer management features help coordinate community service activities. Beneficiaries can apply for programs, track their status, and receive updates. The platform generates comprehensive reports for compliance and impact assessment. Integration with payment gateways ensures secure financial transactions. The system also includes event management for fundraising activities and awareness campaigns.',
+      modules: [
+        'Organization Profile Management',
+        'Program Creation & Management',
+        'Beneficiary Registration & Tracking',
+        'Donor Management System',
+        'Online Donation Processing',
+        'Volunteer Coordination',
+        'Financial Tracking & Reporting',
+        'Document Management',
+        'Event Management',
+        'Impact Analytics',
+        'Compliance Reporting',
+        'Communication Tools'
+      ],
+      technologies: ['React.js', 'Python', 'MongoDB', 'Payment Gateway', 'AWS Cloud', 'Email Services'],
+      demoLink: 'https://visionhelpwelfare.in/'
+    },
+    54: {
+      title: 'IT-WINGS Webtech',
+      category: 'CRM Software',
+      image: '/images/itwings.png',
+      description: 'IT-WINGS Webtech is a comprehensive Customer Relationship Management (CRM) system designed specifically for IT service companies and web development agencies. The platform streamlines client management, project tracking, service delivery, and business operations. With features like lead management, project lifecycle tracking, resource allocation, billing management, and client communication tools, IT-WINGS empowers IT companies to deliver exceptional service while maximizing operational efficiency and client satisfaction.',
+      working: 'The system starts with lead capture and qualification through various channels. Prospects are automatically assigned to sales teams based on criteria. The CRM tracks the entire sales pipeline from initial contact to deal closure. Once a client is onboarded, projects are created with detailed scope, timelines, and resource requirements. Team members are assigned based on skills and availability. The system tracks project progress, milestones, and deliverables in real-time. Client communication is centralized with automated notifications and updates. Billing is automated based on project completion or time tracking. Comprehensive reporting provides insights into sales performance, project profitability, and client satisfaction metrics.',
+      modules: [
+        'Lead Management & Qualification',
+        'Sales Pipeline Tracking',
+        'Client Onboarding System',
+        'Project Management & Tracking',
+        'Resource Allocation',
+        'Time Tracking & Billing',
+        'Client Communication Portal',
+        'Document Management',
+        'Automated Invoicing',
+        'Performance Analytics',
+        'Service Delivery Tracking',
+        'Client Feedback System'
+      ],
+      technologies: ['PHP', 'MySQL', 'JavaScript', 'Bootstrap', 'AJAX', 'Payment Integration'],
+      demoLink: 'https://crm.aivspa.org/admin/'
     }
   };
 

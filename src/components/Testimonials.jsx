@@ -10,7 +10,7 @@ const Testimonials = () => {
       name: "Rajesh Kumar",
       position: "CEO, TechStart Solutions",
       company: "TechStart Solutions",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+      image: "/images/test1.jpeg",
       rating: 5,
       testimonial: "Bhoomi Techzone delivered an exceptional website for our startup. Their attention to detail and technical expertise exceeded our expectations. The team was professional, responsive, and delivered on time."
     },
@@ -19,7 +19,7 @@ const Testimonials = () => {
       name: "Priya Sharma",
       position: "Founder, Creative Studios",
       company: "Creative Studios",
-      image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150&h=150&fit=crop&crop=face",
+      image: "/images/test2.jpeg",
       rating: 5,
       testimonial: "Working with Bhoomi Techzone was a game-changer for our business. They created a beautiful, functional website that perfectly represents our brand. Highly recommended for quality web development services."
     },
@@ -28,7 +28,7 @@ const Testimonials = () => {
       name: "Amit Patel",
       position: "Manager, Digital Solutions",
       company: "Digital Solutions",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+      image: "/images/test5.jpeg",
       rating: 5,
       testimonial: "Outstanding work! The team at Bhoomi Techzone transformed our outdated website into a modern, responsive platform. Their expertise in both design and development is impressive."
     },
@@ -37,7 +37,7 @@ const Testimonials = () => {
       name: "Sneha Gupta",
       position: "Owner, Fashion Hub",
       company: "Fashion Hub",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+      image: "/images/test3.jpeg",
       rating: 5,
       testimonial: "Bhoomi Techzone created our e-commerce website with all the features we needed. The payment integration and admin panel work flawlessly. Great team, great results!"
     },
@@ -46,7 +46,7 @@ const Testimonials = () => {
       name: "Vikram Singh",
       position: "Director, Consulting Firm",
       company: "Consulting Firm",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
+      image: "/images/test4.jpeg",
       rating: 5,
       testimonial: "Professional service from start to finish. The website they built for us has significantly improved our online presence and client engagement. Excellent value for money."
     }

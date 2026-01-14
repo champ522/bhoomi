@@ -33,6 +33,12 @@ const OurClientsPage = () => {
       image: '/images/bhoomicloud.png'
     },
     {
+      id: 54,
+      title: 'IT-WINGS Webtech',
+      category: 'CRM Softwares',
+      image: '/images/itwings.png'
+    },
+    {
       id: 3,
       title: 'Rupiya Maker',
       category: 'CRM Softwares',
@@ -57,22 +63,22 @@ const OurClientsPage = () => {
       image: '/images/bhoomirealestate.png'
     },
     {
-      id: 7,
-      title: 'Dexterous Services',
-      category: 'Mobile Applications',
-      image: '/images/dex.png'
-    },
-    {
-      id: 8,
-      title: 'SPOT2-Food Delivery',
-      category: 'Mobile Applications',
-      image: '/images/spotdelivery.png'
-    },
-    {
-        id: 9,
-        title: 'Jobsworld',
+        id: 51,
+        title: 'Caloriz Tracker',
         category: 'Mobile Applications',
-        image: '/images/jobsworld.jpg'
+        image: '/images/caloriz.png'
+    },
+    {
+        id: 52,
+        title: 'Voice of Roads',
+        category: 'Mobile Applications',
+        image: '/images/sadakasur.png'
+    },
+    {
+        id: 53,
+        title: 'Vision Help',
+        category: 'Custom Softwares',
+        image: '/images/visionhelp.png'
     },
     {
         id: 10,
@@ -199,6 +205,24 @@ const OurClientsPage = () => {
         title: 'Fixs Vendor',
         category: 'Mobile Applications',
         image: '/images/fixs.webp'
+    },
+    {
+      id: 7,
+      title: 'Dexterous Services',
+      category: 'Mobile Applications',
+      image: '/images/dex.png'
+    },
+    {
+      id: 8,
+      title: 'SPOT2-Food Delivery',
+      category: 'Mobile Applications',
+      image: '/images/spotdelivery.png'
+    },
+    {
+        id: 9,
+        title: 'Jobsworld',
+        category: 'Mobile Applications',
+        image: '/images/jobsworld.jpg'
     },
     {
         id: 31,

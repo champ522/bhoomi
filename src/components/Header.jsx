@@ -288,6 +288,9 @@ const Header = () => {
             <li className={styles.navItem}>
               <Link to="/career" className={styles.navLink}>Career</Link>
             </li>
+            <li className={`${styles.navItem} ${styles.mobileOnly}`}>
+              <Link to="/gallery" className={styles.navLink}>Gallery</Link>
+            </li>
             <li className={styles.navItem}>
               <Link to="/contact" className={styles.navLink}>Contact Us</Link>
             </li>

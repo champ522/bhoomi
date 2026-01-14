@@ -494,6 +494,10 @@
     transform: translateY(-1px);
   }
 
+  .projectCard {
+    height: 220px;
+  }
+
   .projectsGrid {
     grid-template-columns: 1fr;
   }

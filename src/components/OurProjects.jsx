@@ -11,7 +11,7 @@ const OurProjects = () => {
       id: 1,
       title: "E-Commerce Platform",
       description: "Modern responsive online shopping platform with advanced features and seamless user experience.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      image: "/images/prod1.png",
       tech: ["React", "Node.js", "MongoDB"],
       link: "/ecommerce-platform"
     },
@@ -19,7 +19,7 @@ const OurProjects = () => {
       id: 2,
       title: "Healthcare App",
       description: "Digital health management system connecting patients with healthcare providers efficiently.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      image: "/images/prod2.png",
       tech: ["React Native", "Firebase", "AI"],
       link: "/healthcare"
     },
@@ -27,7 +27,7 @@ const OurProjects = () => {
       id: 3,
       title: "Financial Dashboard",
       description: "Real-time financial analytics and reporting dashboard with interactive data visualization.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      image: "/images/prod3.png",
       tech: ["Vue.js", "D3.js", "Python"],
       link: "/fintech"
     },
@@ -35,7 +35,7 @@ const OurProjects = () => {
       id: 4,
       title: "Education Portal",
       description: "Comprehensive learning management system with interactive courses and progress tracking.",
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      image: "/images/prod3.jpg",
       tech: ["Angular", "Spring", "MySQL"],
       link: "/edutech"
     },
@@ -43,7 +43,7 @@ const OurProjects = () => {
       id: 5,
       title: "Social Media App",
       description: "Next-generation social networking platform with AI-powered content recommendations.",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      image: "/images/prod4.jpg",
       tech: ["React", "GraphQL", "AWS"],
       link: "/social-media-marketing"
     },
