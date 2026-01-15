@@ -264,7 +264,7 @@ const OurClientsPage = () => {
       id: 37,
       title: 'ASPB Services',
       category: 'Websites',
-      image: '/images/aspb.png'
+      image: '/images/aspbb.png'
     },
     {
       id: 38,
