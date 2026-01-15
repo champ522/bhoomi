@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import HeroBanner from '../components/HeroBanner';
 import Wave from '../components/Wave';
 import AboutUs from '../components/AboutUs';
@@ -17,8 +17,26 @@ import Certifications from '../components/Certifications';
 import InstagramReelsSection from '../components/InstagramReelsSection';
 import Partnership from '../components/Partnership';
 import IdeasIntoTechnology from '../components/IdeasIntoTechnology';
+import ContactModal from '../components/ContactModal';
+import ClientReviews from '../components/ClientReviews';
 
 const Home = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    // Show modal after 3 seconds
+    const timer = setTimeout(() => {
+      setShowModal(true);
+    }, 3000);
+
+    // Cleanup timer if component unmounts
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <>
       <HeroBanner />
@@ -34,11 +52,18 @@ const Home = () => {
       <TechnologyStack />
       <Pricing />
       <Testimonials />
+      <ClientReviews />
       <Blog />
       <InstagramReelsSection />
       <IdeasIntoTechnology />
       <CallToAction />
       <Certifications />
+      
+      {/* Contact Modal */}
+      <ContactModal 
+        isOpen={showModal} 
+        onClose={handleCloseModal} 
+      />
     </>
   );
 };

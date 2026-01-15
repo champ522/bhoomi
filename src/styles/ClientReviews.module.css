@@ -1,0 +1,327 @@
+/* Project Videos Section */
+.clientReviews {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Section */
+.headerContent {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.welcomeSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.welcomeText {
+  font-size: 1.1rem;
+  color: #777;
+  font-weight: 600;
+}
+
+.welcomeLine {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, #0e8d38 0%, #03ba58 100%);
+  border-radius: 2px;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  color: #043b1e;
+  margin-bottom: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.titleHighlight {
+  background: linear-gradient(135deg, #0e8d38 0%, #03ba58 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sectionDescription {
+  font-size: 1.2rem;
+  line-height: 1.7em;
+  color: #777;
+  max-width: 830px;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+/* Videos Grid */
+.videosGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(368px, 1fr));
+  gap: 30px;
+}
+
+/* Video Card */
+.videoCard {
+  background: white;
+  border-radius: 0px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+}
+
+.videoCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Video Container */
+.videoContainer {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.videoThumbnail {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.thumbnailImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.videoThumbnail:hover .thumbnailImage {
+  transform: scale(1.05);
+}
+
+.playButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(7 143 86 / 90%);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.playButton:hover {
+  background: rgb(1, 31, 15);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Video Info */
+.videoInfo {
+  padding: 20px;
+  text-align: center;
+}
+
+.videoInfo h3 {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Video Modal */
+.videoModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+.modalContent {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  /* background: white; */
+  border-radius: 0px;
+  overflow: hidden;
+  animation: slideInUp 0.4s ease;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.closeBtn:hover {
+  background: rgba(255, 0, 0, 0.7);
+  transform: rotate(90deg);
+}
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  height: 450px;
+}
+
+.videoWrapper iframe {
+  border-radius: 0px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .clientReviews {
+    padding: 60px 0;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .sectionDescription {
+    font-size: 1rem;
+  }
+  
+  .videosGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .videoCard {
+    margin: 0 0px;
+  }
+  
+  .videoInfo {
+    padding: 15px;
+  }
+  
+  .videoInfo h3 {
+    font-size: 1rem;
+  }
+  
+  .modalContent {
+    width: 100%;
+    margin: 0px;
+  }
+  
+  .videoWrapper {
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .clientReviews {
+    padding: 40px 0;
+  }
+  
+  .welcomeText {
+    font-size: 0.9rem;
+  }
+  
+  .welcomeLine {
+    width: 40px;
+  }
+  
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+  
+  .sectionDescription {
+    font-size: 0.9rem;
+  }
+  
+  .videosGrid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .videoContainer {
+    height: 180px;
+  }
+  
+  .playButton {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .playButton svg {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .videoInfo {
+    padding: 12px;
+  }
+  
+  .videoInfo h3 {
+    font-size: 0.95rem;
+  }
+  
+  .videoWrapper {
+    height: auto;
+  }
+  
+  .closeBtn {
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+  }
+}

@@ -51,13 +51,6 @@ const GalleryPage = () => {
       description: 'Team building through adventure activities and trekking'
     },
     {
-      id: 8,
-      title: 'Birthday Bash',
-      category: 'Birthday Party',
-      image: '/galleries/gal49.jpeg',
-      description: 'Celebrating team member birthday with cake and fun activities'
-    },
-    {
       id: 9,
       title: 'Relex Moments',
       category: 'Office Trip',
@@ -94,9 +87,9 @@ const GalleryPage = () => {
     },
     {
       id: 14,
-      title: 'Holi Celebration',
+      title: 'Office Celebration',
       category: 'Events',
-      image: '/galleries/gal8.jpg',
+      image: '/galleries/gal61.jpeg',
       description: 'Colorful Holi festival celebration with the team'
     },
     {
@@ -303,6 +296,13 @@ const GalleryPage = () => {
       description: 'Celebrating Independence Day with patriotic fervor'
     },
     {
+      id: 8,
+      title: 'Birthday Bash',
+      category: 'Birthday Party',
+      image: '/galleries/gal63.jpeg',
+      description: 'Celebrating team member birthday with cake and fun activities'
+    },
+    {
       id: 42,
       title: 'Team Bonding',
       category: 'Office Party',
@@ -315,6 +315,55 @@ const GalleryPage = () => {
       category: 'Birthday Party',
       image: '/galleries/gal48.jpeg',
       description: 'Celebrating office birthday with cake and fun activities'
+    },
+    {
+      id: 45,
+      title: 'Cristmas Gifts',
+      category: 'Events',
+      image: '/galleries/gal65.jpeg',
+      description: 'Exchanging gifts and spreading holiday cheer'
+    },
+    {
+      id: 46,
+      title: 'Office Trip Fun',
+      category: 'Office Trip',
+      image: '/galleries/gal68.jpeg',
+      description: 'Enjoying fun moments during the office trip'
+    },
+    {
+      id: 47,
+      title: 'Team Outing',
+      category: 'Office Trip',
+      image: '/galleries/gal67.jpeg',
+      description: 'Relaxing and unwinding during a team outing'
+    },
+    {
+      id: 48,
+      title: 'Employee Recognition',
+      category: 'Events',
+      image: '/galleries/gal62.jpeg',
+      description: 'Honoring employees for their hard work and dedication'
+    },
+    {
+      id: 49,
+      title: 'Cristmas Perks',
+      category: 'Events',
+      image: '/galleries/gal64.jpeg',
+      description: 'Enjoying special perks and treats during the Christmas season'
+    },
+    {
+      id: 50,
+      title: 'Fun Time',
+      category: 'Office Trip',
+      image: '/galleries/gal66.jpeg',
+      description: 'Having fun and relaxing during office breaks'
+    },
+    {
+      id: 51,
+      title: 'Mountain Adventure',
+      category: 'Office Trip',
+      image: '/galleries/gal69.jpeg',
+      description: 'Celebrating office events with enthusiasm and joy'
     }
   ];
 
