@@ -108,6 +108,42 @@
   overflow: hidden;
 }
 
+/* Mobile mode - disable all hover effects */
+.featureItem.mobileMode {
+  cursor: default;
+}
+
+.featureItem.mobileMode:hover {
+  transform: none !important;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff !important;
+  background: #e8e8e8 !important;
+}
+
+.featureItem.mobileMode:hover .featureContent {
+  max-height: 0 !important;
+  opacity: 0 !important;
+  padding: 0 20px !important;
+}
+
+.featureItem.mobileMode:hover .featureIcon {
+  transform: none !important;
+}
+
+.featureItem.mobileMode:hover .dropdownArrow {
+  transform: none !important;
+}
+
+.featureItem.mobileMode .dropdownArrow {
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.featureItem.mobileMode .dropdownArrow:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
 .featureItemActive {
   background: linear-gradient(135deg, #e9eeeb 0%, #abe4bf 100%);
   border-color: rgba(255, 255, 255, 0.6);
@@ -160,27 +196,27 @@
   padding: 0 20px 20px 20px;
 }
 
-/* Desktop hover effect */
+/* Desktop hover effect - only when not in mobile mode */
 @media (min-width: 769px) {
-  .featureItem:hover {
+  .featureItem:not(.mobileMode):hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(235, 243, 235, 0.4);
     border-color: rgba(255, 255, 255, 0.5);
     background: linear-gradient(135deg, #e0e7e2 0%, #aedfbf 100%);
   }
 
-  .featureItem:hover .featureContent {
+  .featureItem:not(.mobileMode):hover .featureContent {
     max-height: 150px;
     opacity: 1;
     padding: 0 20px 20px 20px;
   }
   
-  .featureItem:hover .featureIcon {
+  .featureItem:not(.mobileMode):hover .featureIcon {
     transform: scale(1.1) rotate(10deg);
     box-shadow: 0 5px 20px rgba(234, 238, 235, 0.4);
   }
 
-  .featureItem:hover .dropdownArrow {
+  .featureItem:not(.mobileMode):hover .dropdownArrow {
     transform: rotate(180deg);
   }
 }
@@ -443,43 +479,7 @@
     padding: 0 15px 15px 15px;
   }
 
-  /* Completely disable hover effects on mobile */
-  .featureItem:hover {
-    transform: none !important;
-    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff !important;
-    border-color: initial !important;
-    background: #e8e8e8 !important;
-  }
-
-  .featureItem:hover .featureContent {
-    max-height: 0 !important;
-    opacity: 0 !important;
-    padding: 0 15px !important;
-  }
-
-  .featureItem:hover .featureIcon {
-    transform: none !important;
-    box-shadow: none !important;
-  }
-
-  .featureItem:hover .dropdownArrow {
-    transform: none !important;
-  }
-
-  /* Disable hover on touch devices */
-  @media (hover: none) and (pointer: coarse) {
-    .featureItem:hover {
-      transform: none !important;
-      box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff !important;
-      background: #e8e8e8 !important;
-    }
-
-    .featureItem:hover .featureContent,
-    .featureItem:hover .featureIcon,
-    .featureItem:hover .dropdownArrow {
-      transform: none !important;
-    }
-  }
+  /* Mobile hover completely handled by mobileMode class - see line ~113 */
 
   /* Ensure click-based functionality works on mobile */
   .featureItem {

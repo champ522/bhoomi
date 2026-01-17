@@ -1,9 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../styles/WhyChooseBhoomiTechzone.module.css';
 
 const WhyChooseBhoomiTechzone = () => {
   const [openFeature, setOpenFeature] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const toggleFeature = (featureId, event) => {
     event.preventDefault();
@@ -12,7 +24,33 @@ const WhyChooseBhoomiTechzone = () => {
   };
 
   const handleFeatureClick = (featureId) => (event) => {
-    toggleFeature(featureId, event);
+    // Only handle clicks on mobile
+    if (isMobile) {
+      toggleFeature(featureId, event);
+    }
+  };
+
+  const handleArrowClick = (featureId) => (event) => {
+    // Handle arrow clicks on mobile
+    if (isMobile) {
+      event.preventDefault();
+      event.stopPropagation();
+      setOpenFeature(openFeature === featureId ? null : featureId);
+    }
+  };
+
+  const handleMouseEnter = (featureId) => {
+    // Only handle hover on desktop
+    if (!isMobile) {
+      setOpenFeature(featureId);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    // Only handle hover on desktop
+    if (!isMobile) {
+      setOpenFeature(null);
+    }
   };
   const features = [
     {
@@ -115,9 +153,13 @@ const WhyChooseBhoomiTechzone = () => {
               {features.map((feature) => (
                 <div 
                   key={feature.id} 
-                  className={`${styles.featureItem} ${openFeature === feature.id ? styles.featureItemActive : ''}`}
-                  onClick={handleFeatureClick(feature.id)}
-                  onTouchStart={handleFeatureClick(feature.id)}
+                  className={`${styles.featureItem} ${openFeature === feature.id ? styles.featureItemActive : ''} ${isMobile ? styles.mobileMode : ''}`}
+                  {...(!isMobile ? {
+                    onMouseEnter: () => handleMouseEnter(feature.id),
+                    onMouseLeave: handleMouseLeave
+                  } : {
+                    onClick: handleFeatureClick(feature.id)
+                  })}
                   role="button"
                   tabIndex={0}
                   aria-expanded={openFeature === feature.id}
@@ -128,7 +170,10 @@ const WhyChooseBhoomiTechzone = () => {
                     </div>
                     <div className={styles.featureTitleWrapper}>
                       <h3 className={styles.featureTitle}>{feature.title}</h3>
-                      <div className={styles.dropdownArrow}>
+                      <div 
+                        className={styles.dropdownArrow}
+                        {...(isMobile ? { onClick: handleArrowClick(feature.id) } : {})}
+                      >
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                           <polyline points="6,9 12,15 18,9"/>
                         </svg>
