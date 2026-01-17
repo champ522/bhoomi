@@ -7,12 +7,12 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Rajesh Kumar",
-      position: "CEO, TechStart Solutions",
-      company: "TechStart Solutions",
+      name: "Nitin Rai",
+      position: "CEO, Ev Smart",
+      company: "Ev Smart - The Green Cab",
       image: "/images/test1.jpeg",
       rating: 5,
-      testimonial: "Bhoomi Techzone delivered an exceptional website for our startup. Their attention to detail and technical expertise exceeded our expectations. The team was professional, responsive, and delivered on time."
+      testimonial: "Bhoomi Techzone developed an outstanding cab booking application for our green taxi service. The app includes real-time tracking, seamless payment integration, and user-friendly interface. Their expertise in mobile app development helped us launch our eco-friendly transportation service successfully."
     },
     {
       id: 2,
@@ -25,27 +25,27 @@ const Testimonials = () => {
     },
     {
       id: 3,
-      name: "Amit Patel",
-      position: "Manager, Digital Solutions",
-      company: "Digital Solutions",
+      name: "Sanjay Behra",
+      position: "Founder, Rideal Mobility",
+      company: "Rideal Mobility",
       image: "/images/test5.jpeg",
       rating: 5,
-      testimonial: "Outstanding work! The team at Bhoomi Techzone transformed our outdated website into a modern, responsive platform. Their expertise in both design and development is impressive."
+      testimonial: "Working with Bhoomi Techzone on our ride booking platform was exceptional. The admin panel they created allows us to manage drivers, monitor rides, and track earnings efficiently. The real-time analytics dashboard is a game-changer for our operations."
     },
     {
       id: 4,
-      name: "Sneha Gupta",
-      position: "Owner, Fashion Hub",
-      company: "Fashion Hub",
+      name: "Garima Tuli",
+      position: "CEO, Globengle",
+      company: "Globengle - Tour & Travel",
       image: "/images/test3.jpeg",
       rating: 5,
-      testimonial: "Bhoomi Techzone created our e-commerce website with all the features we needed. The payment integration and admin panel work flawlessly. Great team, great results!"
+      testimonial: "Bhoomi Techzone created our Tour and Travel website with all the features we needed. The payment integration and admin panel work flawlessly. Great team, great results!"
     },
     {
       id: 5,
-      name: "Vikram Singh",
-      position: "Director, Consulting Firm",
-      company: "Consulting Firm",
+      name: "Saurabh Singh",
+      position: "Director, Sauvisha Global",
+      company: "Sauvisha Global Fashion",
       image: "/images/test4.jpeg",
       rating: 5,
       testimonial: "Professional service from start to finish. The website they built for us has significantly improved our online presence and client engagement. Excellent value for money."
