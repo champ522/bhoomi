@@ -8,7 +8,9 @@ const WhyChooseBhoomiTechzone = () => {
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
+      const width = window.innerWidth;
+      const mobile = width <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      setIsMobile(mobile);
     };
     
     checkMobile();
@@ -17,25 +19,22 @@ const WhyChooseBhoomiTechzone = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const toggleFeature = (featureId, event) => {
-    event.preventDefault();
-    event.stopPropagation();
+  const toggleFeature = (featureId) => {
     setOpenFeature(openFeature === featureId ? null : featureId);
   };
 
   const handleFeatureClick = (featureId) => (event) => {
-    // Only handle clicks on mobile
     if (isMobile) {
-      toggleFeature(featureId, event);
+      event.stopPropagation();
+      toggleFeature(featureId);
     }
   };
 
   const handleArrowClick = (featureId) => (event) => {
-    // Handle arrow clicks on mobile
     if (isMobile) {
       event.preventDefault();
       event.stopPropagation();
-      setOpenFeature(openFeature === featureId ? null : featureId);
+      toggleFeature(featureId);
     }
   };
 
@@ -154,12 +153,9 @@ const WhyChooseBhoomiTechzone = () => {
                 <div 
                   key={feature.id} 
                   className={`${styles.featureItem} ${openFeature === feature.id ? styles.featureItemActive : ''} ${isMobile ? styles.mobileMode : ''}`}
-                  {...(!isMobile ? {
-                    onMouseEnter: () => handleMouseEnter(feature.id),
-                    onMouseLeave: handleMouseLeave
-                  } : {
-                    onClick: handleFeatureClick(feature.id)
-                  })}
+                  onClick={handleFeatureClick(feature.id)}
+                  onMouseEnter={!isMobile ? () => handleMouseEnter(feature.id) : undefined}
+                  onMouseLeave={!isMobile ? handleMouseLeave : undefined}
                   role="button"
                   tabIndex={0}
                   aria-expanded={openFeature === feature.id}
@@ -172,7 +168,8 @@ const WhyChooseBhoomiTechzone = () => {
                       <h3 className={styles.featureTitle}>{feature.title}</h3>
                       <div 
                         className={styles.dropdownArrow}
-                        {...(isMobile ? { onClick: handleArrowClick(feature.id) } : {})}
+                        onClick={handleArrowClick(feature.id)}
+                        style={{ cursor: 'pointer' }}
                       >
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                           <polyline points="6,9 12,15 18,9"/>

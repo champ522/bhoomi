@@ -110,7 +110,7 @@
 
 /* Mobile mode - disable all hover effects */
 .featureItem.mobileMode {
-  cursor: default;
+  cursor: pointer !important;
 }
 
 .featureItem.mobileMode:hover {
@@ -134,14 +134,15 @@
 }
 
 .featureItem.mobileMode .dropdownArrow {
-  cursor: pointer;
-  padding: 5px;
+  cursor: pointer !important;
+  padding: 0px !important;
   border-radius: 4px;
   transition: background-color 0.2s ease;
+  user-select: none;
 }
 
-.featureItem.mobileMode .dropdownArrow:hover {
-  background-color: rgba(0,0,0,0.1);
+.featureItem.mobileMode .dropdownArrow:active {
+  background-color: rgba(0,0,0,0.2);
 }
 
 .featureItemActive {
@@ -191,9 +192,30 @@
 }
 
 .featureContentOpen {
-  max-height: 150px;
-  opacity: 1;
-  padding: 0 20px 20px 20px;
+  max-height: 300px !important;
+  opacity: 1 !important;
+  padding: 0 20px 20px 20px !important;
+}
+
+/* Ensure mobile content opens properly with higher specificity */
+.featureItem.mobileMode .featureContentOpen {
+  max-height: 300px !important;
+  opacity: 1 !important;
+  padding: 0 15px 15px 15px !important;
+  display: block !important;
+}
+
+/* Override any hover effects that might be interfering */
+.featureItem.mobileMode:hover .featureContent {
+  max-height: 0 !important;
+  opacity: 0 !important;
+  padding: 0 15px !important;
+}
+
+.featureItem.mobileMode:hover .featureContentOpen {
+  max-height: 300px !important;
+  opacity: 1 !important;
+  padding: 0 15px 15px 15px !important;
 }
 
 /* Desktop hover effect - only when not in mobile mode */
