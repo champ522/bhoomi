@@ -1,34 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from '../styles/Testimonials.module.css';
 
 const Testimonials = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   const testimonials = [
     {
       id: 1,
       name: "Nitin Rai",
-      position: "CEO, Ev Smart",
+      position: "Founder, Ev Smart",
       company: "Ev Smart - The Green Cab",
-      image: "/images/test1.jpeg",
+      image: "/images/clint1.png",
       rating: 5,
       testimonial: "Bhoomi Techzone developed an outstanding cab booking application for our green taxi service. The app includes real-time tracking, seamless payment integration, and user-friendly interface. Their expertise in mobile app development helped us launch our eco-friendly transportation service successfully."
     },
     {
       id: 2,
-      name: "Priya Sharma",
+      name: "Harsh Vishnoi",
       position: "Founder, Creative Studios",
       company: "Creative Studios",
-      image: "/images/test2.jpeg",
+      image: "/images/clint2.png",
       rating: 5,
-      testimonial: "Working with Bhoomi Techzone was a game-changer for our business. They created a beautiful, functional website that perfectly represents our brand. Highly recommended for quality web development services."
+      testimonial: "They provide a wide range of IT services: web development, mobile app development, digital marketing, CRM, HRM software, hospital management systems, school management systems, etc... . Highly recommended for quality development services."
     },
     {
       id: 3,
       name: "Sanjay Behra",
       position: "Founder, Rideal Mobility",
       company: "Rideal Mobility",
-      image: "/images/test5.jpeg",
+      image: "/images/rideal.webp",
       rating: 5,
       testimonial: "Working with Bhoomi Techzone on our ride booking platform was exceptional. The admin panel they created allows us to manage drivers, monitor rides, and track earnings efficiently. The real-time analytics dashboard is a game-changer for our operations."
     },
@@ -49,6 +50,15 @@ const Testimonials = () => {
       image: "/images/test4.jpeg",
       rating: 5,
       testimonial: "Professional service from start to finish. The website they built for us has significantly improved our online presence and client engagement. Excellent value for money."
+    },
+    {
+      id: 6,
+      name: "Reja Khan",
+      position: "Director, School Plus",
+      company: "School Plus",
+      image: "/images/schoolplus.jpeg",
+      rating: 5,
+      testimonial: "Bhoomi Techzone developed a school management system for us. The platform is user-friendly and has streamlined our administrative processes. Their support team is responsive and helpful."
     }
   ];
 
@@ -63,6 +73,17 @@ const Testimonials = () => {
   const goToTestimonial = (index) => {
     setCurrentTestimonial(index);
   };
+
+  // Auto-play functionality
+  useEffect(() => {
+    if (!isPaused) {
+      const interval = setInterval(() => {
+        setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+      }, 4000); // Change slide every 4 seconds
+
+      return () => clearInterval(interval);
+    }
+  }, [isPaused, testimonials.length]);
 
   const renderStars = (rating) => {
     return Array(5).fill(0).map((_, index) => (
@@ -96,7 +117,11 @@ const Testimonials = () => {
         </div>
 
         <div className={styles.testimonialsContainer}>
-          <div className={styles.testimonialCard}>
+          <div 
+            className={styles.testimonialCard}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
             <div className={styles.quoteIcon}>
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>

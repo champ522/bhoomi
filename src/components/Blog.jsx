@@ -255,14 +255,14 @@ const Blog = () => {
 
         {/* Load More Section */}
         <div className={styles.loadMoreSection}>
-          <button className={styles.loadMoreBtn}>
+          <Link to="/blog" className={styles.loadMoreBtn}>
             <span>Load More Articles</span>
             <div className={styles.loadMoreSpinner}>
               <svg viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="10" strokeWidth="2"/>
               </svg>
             </div>
-          </button>
+          </Link>
         </div>
       </div>
     </section>

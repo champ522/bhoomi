@@ -400,6 +400,6 @@
 .closeButton:focus,
 .submitButton:focus,
 .formGroup input:focus {
-  outline: 2px solid #667eea;
+  outline: 2px solid #055f28;
   outline-offset: 2px;
 }

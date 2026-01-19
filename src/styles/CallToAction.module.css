@@ -1,9 +1,9 @@
 .ctaSection {
-  background: linear-gradient(45deg, #b2b3b2, #75be97);
+  background: #facc15;
   padding: 20px 0;
   margin: 50px auto;
   border-radius: 0px;
-  max-width: 1300px;
+  max-width: 1400px;
   position: relative;
   overflow: hidden;
 }
@@ -20,7 +20,7 @@
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 20px;
   position: relative;
@@ -45,8 +45,7 @@
   text-align: center;
   line-height: 1.3;
   margin-bottom: 35px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  color: white;
+  color: black;
   animation: slideInDown 1.2s ease-out;
 }
 

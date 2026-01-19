@@ -14,7 +14,7 @@ const Footer = () => {
           <div className={styles.footerColumn}>
             <Link to="/" className={styles.logoSection}>
               <img 
-                src="/images/bhoomi-black.png" 
+                src="/images/bhoomilogo.png" 
                 alt="BhoomiTech Logo" 
                 className={styles.logoImage}
                 onError={(e) => {
@@ -191,6 +191,13 @@ const Footer = () => {
                 </div>
               </div>
             </div>
+            
+            {/* Custom Button */}
+            <button className={styles.button}>
+              <div className={styles.buttonInner}>
+                <span className={styles.buttonSpan}>Sprint past the competition</span>
+              </div>
+            </button>
           </div>
         </div>
 

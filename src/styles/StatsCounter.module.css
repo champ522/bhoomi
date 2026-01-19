@@ -1,10 +1,10 @@
 /* StatsCounter.module.css */
 .statsSection {
-  padding: 30px 0;
+  padding: 60px 0;
   max-width: 1200px;
-  margin: 50px auto;
+  margin: 60px auto;
   background: #000000;
-  border-radius: 12px;
+  border-radius: 0px;
   position: relative;
   overflow: hidden;
 }
@@ -15,6 +15,47 @@
   padding: 0 20px;
   position: relative;
   z-index: 2;
+}
+
+/* Pattern Background */
+.patternBg {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: repeating-linear-gradient(
+    135deg,
+    #232526 0px,
+    #232526 60px,
+    #23252699 70px,
+    #414345 130px
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.cubeSvg {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  left: -30%;
+  top: -20%;
+  background: transparent;
+  opacity: 0.7;
+  z-index: 1;
+  animation: cubeMove 18s linear infinite alternate;
+}
+
+@keyframes cubeMove {
+  from {
+    transform: translateY(0) scale(1);
+  }
+  to {
+    transform: translateY(-20%) scale(1.02) rotate(1deg);
+  }
 }
 
 .statsGrid {
@@ -42,11 +83,11 @@
 
 
 .statIcon {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   margin: 0 auto 15px;
   background: linear-gradient(135deg, #0e8d38, #03ba58);
-  border-radius: 0% 20% 0% 20%;
+  border-radius: 12%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,7 +97,7 @@
   width: 50px;
   height: 50px;
   color: #ffffff;
-  stroke-width: 2;
+  stroke-width: 1.5px;
 }
 
 
