@@ -12,6 +12,8 @@ const ContactPage = () => {
     message: ''
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -19,10 +21,56 @@ const ContactPage = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+
+    try {
+      // Validate form
+      if (!formData.name || !formData.email || !formData.phone || !formData.subject || !formData.message) {
+        alert('Please fill all fields');
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Create WhatsApp message
+      const message = `New Contact Form Submission:
+
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Subject: ${formData.subject}
+Message: ${formData.message}
+
+Message receive from Bhoomi TechZone Website`;
+
+      // WhatsApp number
+      const whatsappNumber = '918130787194';
+      
+      // Create WhatsApp URL
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+      
+      // Open WhatsApp
+      window.open(whatsappURL, '_blank');
+      
+      // Reset form
+      setFormData({ 
+        name: '', 
+        email: '', 
+        phone: '', 
+        subject: '', 
+        message: '' 
+      });
+      
+      // Show success message
+      alert('Thank you! Redirecting to WhatsApp...');
+      
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -126,8 +174,12 @@ const ContactPage = () => {
                   ></textarea>
                 </div>
 
-                <button type="submit" className={styles.submitBtn}>
-                  Send Message
+                <button 
+                  type="submit" 
+                  className={styles.submitBtn}
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>

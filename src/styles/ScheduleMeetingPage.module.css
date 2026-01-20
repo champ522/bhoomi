@@ -347,6 +347,79 @@
   border-color: #0e8d38;
 }
 
+.timeSlot.bookedSlot {
+  background: #f8f8f8;
+  color: #999;
+  border-color: #ddd;
+  cursor: not-allowed;
+  position: relative;
+  opacity: 0.6;
+}
+
+.timeSlot.bookedSlot:hover {
+  background: #f8f8f8;
+  border-color: #ddd;
+}
+
+.bookedLabel {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #e74c3c;
+  margin-top: 2px;
+}
+
+.staffAvailability {
+  font-size: 0.8rem;
+  color: #0e8d38;
+  font-weight: normal;
+}
+
+.unavailableNotice {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  color: #856404;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
+.alternativeSuggestions {
+  margin-top: 15px;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 4px solid #0e8d38;
+}
+
+.alternativeSuggestions p {
+  margin: 0 0 10px 0;
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.alternativeSlot {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  margin: 4px 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.alternativeSlot:hover {
+  background: #0e8d38;
+  color: white;
+  border-color: #0e8d38;
+}
+
 .timezone {
   display: flex;
   align-items: center;

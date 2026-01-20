@@ -35,7 +35,7 @@ Name: ${formData.name}
 Service: ${formData.service}
 Phone: ${formData.phone}
 
-Message sent from Bhoomi TechZone website`;
+Message receive from Bhoomi TechZone website`;
 
       // WhatsApp number (replace with your actual number)
       const whatsappNumber = '918130787194'; // Replace with your actual WhatsApp number

@@ -29,7 +29,7 @@ const StatsCounter = () => {
     },
     {
       id: 'projects',
-      endValue: 480,
+      endValue: 900,
       label: 'Project Complete',
       suffix: '+',
       icon: (
@@ -44,7 +44,7 @@ const StatsCounter = () => {
     },
     {
       id: 'customers',
-      endValue: 389,
+      endValue: 700,
       label: 'Happy Customers',
       suffix: '+',
       icon: (
