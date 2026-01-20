@@ -56,8 +56,8 @@ const Home = () => {
       <Blog />
       <InstagramReelsSection />
       <IdeasIntoTechnology />
-      <CallToAction />
       <Certifications />
+      <CallToAction />
       
       {/* Contact Modal */}
       <ContactModal 

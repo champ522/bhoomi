@@ -13,7 +13,7 @@ const Testimonials = () => {
       company: "Ev Smart - The Green Cab",
       image: "/images/clint1.png",
       rating: 5,
-      testimonial: "Bhoomi Techzone developed an outstanding cab booking application for our green taxi service. The app includes real-time tracking, seamless payment integration, and user-friendly interface. Their expertise in mobile app development helped us launch our eco-friendly transportation service successfully."
+      testimonial: "Bhoomi Techzone developed an outstanding cab booking application for our green taxi service. The app includes real-time tracking, and user-friendly UI. It helped us launch our business successfully."
     },
     {
       id: 2,
@@ -40,7 +40,7 @@ const Testimonials = () => {
       company: "Globengle - Tour & Travel",
       image: "/images/test3.jpeg",
       rating: 5,
-      testimonial: "Bhoomi Techzone created our Tour and Travel website with all the features we needed. The payment integration and admin panel work flawlessly. Great team, great results!"
+      testimonial: "Bhoomi Techzone created our Tour and Travel website with all the features we needed. The payment integration and admin panel work flawlessly. Great team, great results! Highly recommended."
     },
     {
       id: 5,
@@ -49,7 +49,7 @@ const Testimonials = () => {
       company: "Sauvisha Global Fashion",
       image: "/images/test4.jpeg",
       rating: 5,
-      testimonial: "Professional service from start to finish. The website they built for us has significantly improved our online presence and client engagement. Excellent value for money."
+      testimonial: "Professional service from start to finish. The website they built for us has significantly improved our online presence and client engagement with beautiful design. Excellent value for money."
     },
     {
       id: 6,

@@ -1,7 +1,7 @@
 /* Certifications & Partners Section */
 .certificationsSection {
-  padding: 60px 0;
-  background: #fff;
+  padding: 90px 0 30px 0;
+  background: #ffffff;
   overflow: hidden;
   position: relative;
 }
@@ -36,7 +36,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.95);
+  background: #f7f4f4f8;
   border-radius: 0px;
   padding: 0px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -85,7 +85,7 @@
 
 @media (max-width: 768px) {
   .certificationsSection {
-    padding: 0px 0 40px 0;
+    padding: 50px 0 0px 0;
   }
 
   .certificationItem {
@@ -100,7 +100,7 @@
 
 @media (max-width: 480px) {
   .certificationsSection {
-    padding: 0px 0 40px 0;
+    padding: 50px 0 0px 0;
   }
 
   .certificationItem {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from '../styles/CallToAction.module.css';
 
 const CallToAction = () => {
@@ -14,6 +15,13 @@ const CallToAction = () => {
               From web & mobile development to cloud, DevOps, and dedicated teams — we help businesses build, launch, and scale with confidence.
             </p>
           </div>
+          <Link to="/contact" className={styles.button}>
+            <div className={styles.buttonInner}>
+              <span className={styles.buttonText}>
+                Start your project Today
+              </span>
+            </div>
+          </Link>
         </div>
       </div>
     </section>

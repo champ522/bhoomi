@@ -5,7 +5,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: #e8e8e8;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,12 +20,10 @@
   display: block;
   padding: 2.2rem;
   max-width: 400px;
-  background: linear-gradient(14deg, rgba(0, 36, 30, 0.8) 0%, rgba(24, 65, 31, 0.7) 66%, 
-            rgb(31, 138, 84) 100%), radial-gradient(circle, rgba(2,0,36, 0.5) 0%, 
-            rgba(32, 15, 53, 0.2) 65%, rgba(74, 80, 79, 0.9) 100%);
-  border: 2px solid #fff;
+  background: #e8e8e8;
+  /* border: 2px solid #fff; */
   border-radius: 12px;
-  box-shadow: rgba(0,212,255) 0px 0px 50px -15px;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
   overflow: visible;
   z-index: 1;
   animation: slideInUp 0.4s ease-out;
@@ -40,7 +38,7 @@
   border: none;
   font-size: 28px;
   cursor: pointer;
-  color: #fff;
+  color: #011b0a;
   width: 40px;
   height: 40px;
   display: flex;
@@ -68,7 +66,7 @@
   font-family: 'play', sans-serif;
   font-weight: 600;
   text-align: center;
-  color: #fff;
+  color: #01220c;
   animation-duration: 1.5s;
   overflow: visible;
   transition: .12s;
@@ -81,7 +79,7 @@
 }
 
 .modalHeader p {
-  color: #d8d7d7;
+  color: #011805;
   font-size: 1rem;
   text-align: center;
   font-family: 'play', sans-serif;
@@ -99,17 +97,19 @@
   position: relative;
 }
 
-.formGroup input {
+.formGroup input,
+.formGroup select {
   outline: none;
-  border: 2px solid #ffffff;
+  border: 2px solid #e8e8e8;
+  border-radius: 5px;
   margin: 8px 0;
-  font-family: monospace;
-  background-color: #fff;
-  padding: 6px;
-  font-size: 0.875rem;
+  font-family: 'play', sans-serif;
+  background-color: #e8e8e8;
+  padding: 12px;
+  font-size: 0.895rem;
   line-height: 1.25rem;
   width: 100%;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #c5c5c5;
   box-sizing: border-box;
 }
 
@@ -120,32 +120,45 @@
 
 .formGroup input::placeholder {
   font-family: 'play', sans-serif;
-    transition: opacity .9s;
+  transition: opacity .9s;
+}
+
+.formGroup select {
+  color: #666;
+  cursor: pointer;
+}
+
+.formGroup select option {
+  background-color: #e8e8e8;
+  color: #333;
+  font-family: 'play', sans-serif;
+  padding: 8px;
 }
 .submitButton {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px;
+  padding: 12px 20px;
   background-color: #e8e8e8;
   color: #000301;
   font-size: 1rem;
-  border-radius: 5px;
+  border-radius: 8px;
   font-weight: 600;
   width: fit-content;
   text-transform: uppercase;
   overflow: hidden;
-  border: 2px solid #ffffff;
-  margin: 0px auto;
+  /* border: 2px solid #ffffff; */
+  margin: 10px auto;
   font-family: 'play', sans-serif;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
   cursor: pointer;
 }
 
 .submitButton:hover {
   transition: all 0.2s ease-out;
-  border-radius: 0px;
-  /* box-shadow: 4px 5px 17px -4px #ffffff; */
+  border-radius: 8px;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
 }
 
 .submitButton:hover::before {
@@ -162,7 +175,7 @@
   left: 0%;
   opacity: 0;
   background: #e8e8e8;
-  box-shadow: 0 0 50px 30px #fff;
+  /* box-shadow: 0 0 50px 30px #fff; */
   transform: skewX(-20deg);
 }
 
@@ -188,7 +201,7 @@
   position: absolute;
   width: 3px;
   height: 3px;
-  background: #fff;
+  background: #038b20;
   border-radius: 50%;
   box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 0 4px rgba(255,255,255,0.05), 0 0 10px rgba(255,255,255,0.3);
   animation: animate 3s linear infinite;
@@ -202,7 +215,7 @@
   transform: translateY(-50%);
   width: 80px;
   height: 1px;
-  background: linear-gradient(90deg, #fff, transparent);
+  background: linear-gradient(90deg, #078138, transparent);
 }
 
 .star:nth-child(1) {
@@ -332,7 +345,7 @@
 }
 
 .modalFooter p {
-  color: #dad4d4;
+  color: #011d0a;
   font-size: 1rem;
   text-align: center;
   font-family: 'play', sans-serif;
@@ -342,7 +355,7 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .modalContent {
-    margin: 20px;
+    margin: 0px;
     padding: 30px 25px;
     max-width: none;
     width: auto;
@@ -374,7 +387,7 @@
   
   .modalContent {
     max-width: 350px;
-    padding: 1.5rem;
+    padding: 2.2rem;
   }
   
   .modalHeader h2 {
@@ -391,15 +404,14 @@
   
   .closeButton {
     top: 10px;
-    right: 15px;
-    font-size: 24px;
+    right: 10px;
+    font-size: 40px;
   }
 }
 
 /* Enhanced Focus States for Accessibility */
 .closeButton:focus,
-.submitButton:focus,
-.formGroup input:focus {
-  outline: 2px solid #055f28;
+.submitButton:focus {
+  outline: 2px solid #e8e8e8;
   outline-offset: 2px;
 }

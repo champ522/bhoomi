@@ -1,7 +1,7 @@
 /* Testimonials Component Styles */
 .testimonialsSection {
   padding: 60px 0;
-  background: #ffffff;
+  background: #f7f4f4f8;
   position: relative;
 }
 
@@ -70,18 +70,18 @@
 }
 
 .testimonialCard {
-  background: linear-gradient(145deg, #f8fff9 0%, #ffffff 100%);
-  border-radius: 25px 5px 25px 5px;
+  background: #e8e8e8;
+  border-radius: 25px;
   padding: 50px 40px;
   position: relative;
-  box-shadow: 0 10px 30px rgba(14, 141, 56, 0.1);
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
   transition: all 0.4s ease;
-  border: 1px solid rgba(14, 141, 56, 0.1);
+  /* border: 1px solid rgba(14, 141, 56, 0.1); */
 }
 
 .testimonialCard:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(14, 141, 56, 0.15);
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
 }
 
 .quoteIcon {
@@ -271,7 +271,7 @@
 
   .testimonialCard {
     padding: 35px 25px;
-    border-radius: 20px 5px 20px 5px;
+    border-radius: 25px;
   }
 
   .quoteIcon {

@@ -31,9 +31,9 @@ const Footer = () => {
             </p>
             
             {/* Schedule Appointment Button */}
-            <Link to="/schedule-meeting" className={styles.scheduleBtn}>
+            {/* <Link to="/schedule-meeting" className={styles.scheduleBtn}>
               Quick Appointment
-            </Link>
+            </Link> */}
             
             <div className={styles.socialLinks}>
               <a href="https://www.facebook.com/Bhoomitechzonepvt.ltd" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Facebook">
@@ -193,11 +193,11 @@ const Footer = () => {
             </div>
             
             {/* Custom Button */}
-            <button className={styles.button}>
+            <Link to="/contact" className={styles.button}>
               <div className={styles.buttonInner}>
                 <span className={styles.buttonSpan}>Sprint past the competition</span>
               </div>
-            </button>
+            </Link>
           </div>
         </div>
 

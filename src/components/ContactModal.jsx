@@ -4,7 +4,7 @@ import styles from '../styles/ContactModal.module.css';
 const ContactModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
+    service: '',
     phone: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -22,7 +22,7 @@ const ContactModal = ({ isOpen, onClose }) => {
 
     try {
       // Validate form
-      if (!formData.name || !formData.email || !formData.phone) {
+      if (!formData.name || !formData.service || !formData.phone) {
         alert('Please fill all fields');
         setIsSubmitting(false);
         return;
@@ -32,7 +32,7 @@ const ContactModal = ({ isOpen, onClose }) => {
       const message = `New Contact Form Submission:
       
 Name: ${formData.name}
-Email: ${formData.email}
+Service: ${formData.service}
 Phone: ${formData.phone}
 
 Message sent from Bhoomi TechZone website`;
@@ -48,7 +48,7 @@ Message sent from Bhoomi TechZone website`;
       
       // Close modal and reset form
       onClose();
-      setFormData({ name: '', email: '', phone: '' });
+      setFormData({ name: '', service: '', phone: '' });
       
       // Show success message
       alert('Thank you! Redirecting to WhatsApp...');
@@ -82,6 +82,31 @@ Message sent from Bhoomi TechZone website`;
         </div>
         
         <form onSubmit={handleSubmit} className={styles.modalForm}>
+          
+          <div className={styles.formGroup}>
+            <select
+              id="service"
+              name="service"
+              value={formData.service}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Select Service</option>
+              <option value="Web Development">Web Development</option>
+              <option value="Mobile App Development">Mobile App Development</option>
+              <option value="Website Design">Website Design</option>
+              <option value="E-commerce Platform">E-commerce Platform</option>
+              <option value="Digital Marketing">Digital Marketing</option>
+              <option value="SEO Optimization">SEO Optimization</option>
+              <option value="App Maintenance">App Maintenance</option>
+              <option value="Web Maintenance">Web Maintenance</option>
+              <option value="CRM Systems">CRM Systems</option>
+              <option value="ERP Solutions">ERP Solutions</option>
+              <option value="HRM Software">HRM Software</option>
+              <option value="LMS Software">LMS Software</option>
+            </select>
+          </div>
+          
           <div className={styles.formGroup}>
             <input
               type="text"
@@ -89,19 +114,7 @@ Message sent from Bhoomi TechZone website`;
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="Enter your full name"
-              required
-            />
-          </div>
-          
-          <div className={styles.formGroup}>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Enter your email address"
+              placeholder="Full Name"
               required
             />
           </div>
@@ -113,7 +126,7 @@ Message sent from Bhoomi TechZone website`;
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              placeholder="Enter your phone number"
+              placeholder="Mobile Number"
               required
             />
           </div>

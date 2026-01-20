@@ -149,53 +149,7 @@ const Header = () => {
           onClick={handleNavLinkClick}
         >
           <ul className={styles.navList}>
-            <li className={styles.navItem}>
-              <Link to="/about" className={styles.navLink}>About</Link>
-            </li>
-            
-            {/* Solutions Dropdown */}
-            <li 
-              className={`${styles.navItem} ${styles.hasDropdown}`}
-              onMouseEnter={() => handleDropdownHover('solutions')}
-              onMouseLeave={handleDropdownLeave}
-            >
-              <Link 
-                to="/solutions" 
-                className={styles.navLink}
-                onClick={handleSolutionsClick}
-              >
-                Solutions
-                <svg className={styles.dropdownArrow} viewBox="0 0 24 24">
-                  <path d="M7 10l5 5 5-5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </Link>
-              <div className={`${styles.dropdown} ${activeDropdown === 'solutions' ? styles.dropdownActive : ''}`}>
-                <div className={styles.dropdownContent}>
-                  <div className={styles.dropdownSection}>
-                    <h4 className={styles.dropdownTitle}>Business Solutions</h4>
-                    <Link to="/crm-systems" className={styles.dropdownLink}>CRM Systems</Link>
-                    <Link to="/erp-solutions" className={styles.dropdownLink}>ERP Solutions</Link>
-                    <Link to="/ecommerce-platform" className={styles.dropdownLink}>E-commerce Platforms</Link>
-                    <Link to="/inventory-management" className={styles.dropdownLink}>Inventory Management</Link>
-                  </div>
-                  <div className={styles.dropdownSection}>
-                    <h4 className={styles.dropdownTitle}>Custom Softwares</h4>
-                    <Link to="/hrm-software" className={styles.dropdownLink}>HRM Software</Link>
-                    <Link to="/lms-software" className={styles.dropdownLink}>LMS Software</Link>
-                    <Link to="/billing-software" className={styles.dropdownLink}>Billing Software</Link>
-                    <Link to="/web-applications" className={styles.dropdownLink}>Web Applications</Link>
-                  </div>
-                  <div className={styles.dropdownSection}>
-                    <h4 className={styles.dropdownTitle}>Traditional Solutions</h4>
-                    <Link to="/fintech" className={styles.dropdownLink}>Fintech</Link>
-                    <Link to="/edutech" className={styles.dropdownLink}>Education Tech</Link>
-                    <Link to="/healthcare" className={styles.dropdownLink}>Healthcare Tech</Link>
-                    <Link to="/realestate" className={styles.dropdownLink}>Real Estate</Link>
-                  </div>
-                </div>
-              </div>
-            </li>
-
+           
             {/* Services Dropdown */}
             <li 
               className={`${styles.navItem} ${styles.hasDropdown}`}
@@ -234,6 +188,50 @@ const Header = () => {
                     <Link to="/support" className={styles.dropdownLink}>24/7 Support</Link>
                     <Link to="/app-maintenance" className={styles.dropdownLink}>App Maintenance</Link>
                     <Link to="/web-maintenance" className={styles.dropdownLink}>Web Maintenance</Link>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+
+            {/* Solutions Dropdown */}
+            <li 
+              className={`${styles.navItem} ${styles.hasDropdown}`}
+              onMouseEnter={() => handleDropdownHover('solutions')}
+              onMouseLeave={handleDropdownLeave}
+            >
+              <Link 
+                to="/solutions" 
+                className={styles.navLink}
+                onClick={handleSolutionsClick}
+              >
+                Solutions
+                <svg className={styles.dropdownArrow} viewBox="0 0 24 24">
+                  <path d="M7 10l5 5 5-5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </Link>
+              <div className={`${styles.dropdown} ${activeDropdown === 'solutions' ? styles.dropdownActive : ''}`}>
+                <div className={styles.dropdownContent}>
+                  <div className={styles.dropdownSection}>
+                    <h4 className={styles.dropdownTitle}>Business Solutions</h4>
+                    <Link to="/crm-systems" className={styles.dropdownLink}>CRM Systems</Link>
+                    <Link to="/erp-solutions" className={styles.dropdownLink}>ERP Solutions</Link>
+                    <Link to="/ecommerce-platform" className={styles.dropdownLink}>E-commerce Platforms</Link>
+                    <Link to="/inventory-management" className={styles.dropdownLink}>Inventory Management</Link>
+                  </div>
+                  <div className={styles.dropdownSection}>
+                    <h4 className={styles.dropdownTitle}>Custom Softwares</h4>
+                    <Link to="/hrm-software" className={styles.dropdownLink}>HRM Software</Link>
+                    <Link to="/lms-software" className={styles.dropdownLink}>LMS Software</Link>
+                    <Link to="/billing-software" className={styles.dropdownLink}>Billing Software</Link>
+                    <Link to="/web-applications" className={styles.dropdownLink}>Web Applications</Link>
+                  </div>
+                  <div className={styles.dropdownSection}>
+                    <h4 className={styles.dropdownTitle}>Traditional Solutions</h4>
+                    <Link to="/fintech" className={styles.dropdownLink}>Fintech</Link>
+                    <Link to="/edutech" className={styles.dropdownLink}>Education Tech</Link>
+                    <Link to="/healthcare" className={styles.dropdownLink}>Healthcare Tech</Link>
+                    <Link to="/realestate" className={styles.dropdownLink}>Real Estate</Link>
                   </div>
                 </div>
               </div>
@@ -290,6 +288,9 @@ const Header = () => {
             </li>
             <li className={`${styles.navItem} ${styles.mobileOnly}`}>
               <Link to="/gallery" className={styles.navLink}>Gallery</Link>
+            </li>
+            <li className={styles.navItem}>
+              <Link to="/about" className={styles.navLink}>About</Link>
             </li>
             <li className={styles.navItem}>
               <Link to="/contact" className={styles.navLink}>Contact Us</Link>
