@@ -5,6 +5,7 @@ import styles from '../styles/StartupPage.module.css';
 import TechnologyStack from '../components/TechnologyStack';
 import WorkProcess from '../components/WorkProcess';
 import Testimonials from '../components/Testimonials';
+import CallToAction from '../components/CallToAction';
 import useCounter from '../hooks/useCounter';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
@@ -312,9 +313,10 @@ const StartupPage = () => {
 
       {/* Testimonials Section */}
       <Testimonials />
+      <CallToAction />
 
       {/* CTA Section */}
-      <section className={styles.ctaSection}>
+      {/* <section className={styles.ctaSection}>
         <div className={styles.container}>
           <div className={styles.ctaContent}>
             <h2 className={styles.ctaTitle}>Ready to Build Your Startup?</h2>
@@ -331,7 +333,7 @@ const StartupPage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };

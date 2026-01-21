@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ParticleBanner from '../components/ParticleBanner';
 import styles from '../styles/ContactPage.module.css';
+import CallToAction from '../components/CallToAction';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -283,6 +284,8 @@ Message receive from Bhoomi TechZone Website`;
           </div>
         </div>
       </section>
+
+      <CallToAction />
     </>
   );
 };

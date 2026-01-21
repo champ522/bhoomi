@@ -4,6 +4,7 @@ import ParticleBanner from '../components/ParticleBanner';
 import useCounter from '../hooks/useCounter';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 import styles from '../styles/OurClientsPage.module.css';
+import CallToAction from '../components/CallToAction';
 
 const OurClientsPage = () => {
   const [activeTab, setActiveTab] = useState('All Clients');
@@ -446,6 +447,8 @@ const OurClientsPage = () => {
           </div>
         </div>
       </section>
+
+    <CallToAction />
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ParticleBanner from '../components/ParticleBanner';
+import CallToAction from '../components/CallToAction';
 import styles from '../styles/BlogPage.module.css';
 
 const BlogPage = () => {
@@ -216,6 +217,8 @@ const BlogPage = () => {
           </div>
         </div>
       </section>
+
+      <CallToAction />
     </div>
   );
 };

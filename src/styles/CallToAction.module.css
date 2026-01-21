@@ -1,7 +1,7 @@
 .ctaSection {
-  background: #f7f4f4f8;
-  padding: 50px 0;
-  margin: 50px auto;
+  background: #facc15;
+  padding: 20px 0;
+  margin: 50px auto 0px;
   border-radius: 0px;
   max-width: 1400px;
   position: relative;
@@ -29,7 +29,7 @@
 
 .content {
   display: grid;
-  grid-template-columns: 1fr 400px;
+  grid-template-columns: 1fr 207px;
   gap: 80px;
   align-items: center;
 }
@@ -40,18 +40,17 @@
 }
 
 .title {
-  font-size: 2.3rem;
+  font-size: 2rem;
   font-weight: 600;
-  text-align: center;
   font-family: 'play', sans-serif;
   line-height: 1.4;
-  margin-bottom: 15px;
+  margin-bottom: 0px;
   color: black;
   animation: slideInDown 1.2s ease-out;
 }
 
 .description {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: black;
   text-align: center;
   font-family: 'play', sans-serif;
@@ -93,6 +92,7 @@
   .title {
     font-size: 1.7rem;
     margin-bottom: 15px;
+    text-align: center;
   }
 
   .description {
@@ -128,7 +128,7 @@
   --stone-800: #292524;
   --yellow-400: #facc15;
 
-  font-size: 2rem;
+  font-size: 14px;
   cursor: pointer;
   position: relative;
   font-weight: bold;

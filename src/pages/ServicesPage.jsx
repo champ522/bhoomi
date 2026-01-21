@@ -205,8 +205,8 @@ const ServicesPage = () => {
       <WhyChooseBhoomiTechzone />
       <TechnologyStack />
       <WorkProcess />
-      <CallToAction />
-      <Certifications />               
+      <Certifications />
+      <CallToAction />              
     </>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ParticleBanner from '../components/ParticleBanner';
 import styles from '../styles/CareerPage.module.css';
+import CallToAction from '../components/CallToAction';
 
 const CareerPage = () => {
   const [selectedDepartment, setSelectedDepartment] = useState('all');
@@ -195,6 +196,8 @@ const CareerPage = () => {
           <button className={styles.ctaButton}>Send Your Resume</button>
         </div>
       </section>
+
+      <CallToAction />
     </div>
   );
 };

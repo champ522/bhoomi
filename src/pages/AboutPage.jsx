@@ -7,6 +7,7 @@ import WhyChooseBhoomiTechzone from '../components/WhyChooseBhoomiTechzone';
 import StatsCounter from '../components/StatsCounter';
 import TechnologyStack from '../components/TechnologyStack';
 import Testimonials from '../components/Testimonials';
+import CallToAction from '../components/CallToAction';
 
 const About = () => {
   return (
@@ -91,6 +92,7 @@ const About = () => {
       <StatsCounter />
       <TechnologyStack />
       <Testimonials />
+      <CallToAction />
     </>
   );
 };

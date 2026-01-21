@@ -11,11 +11,11 @@ const CallToAction = () => {
             <h2 className={styles.title}>
               Ready to Turn Your Idea into a Scalable Product?
             </h2>
-            <p className={styles.description}>
+            {/* <p className={styles.description}>
               From web & mobile development to cloud, DevOps, and dedicated teams — we help businesses build, launch, and scale with confidence.
-            </p>
+            </p> */}
           </div>
-          <Link to="/contact" className={styles.button}>
+          <Link to="/schedule-meeting" className={styles.button}>
             <div className={styles.buttonInner}>
               <span className={styles.buttonText}>
                 Start your project Today

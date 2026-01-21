@@ -10,6 +10,7 @@ import styles from '../styles/ManufacturingPage.module.css';
 import TechnologyStack from '../components/TechnologyStack';
 import WorkProcess from '../components/WorkProcess';
 import Testimonials from '../components/Testimonials';
+import CallToAction from '../components/CallToAction';
 import useCounter from '../hooks/useCounter';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
@@ -335,6 +336,7 @@ const ManufacturingPage = () => {
 
       {/* Include other components */}
       <Testimonials />
+      <CallToAction />
     </>
   );
 };
