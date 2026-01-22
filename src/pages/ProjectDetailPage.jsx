@@ -282,6 +282,35 @@ const ProjectDetailPage = () => {
       technologies: ['React Native', 'Node.js', 'MongoDB', 'WebRTC'],
       demoLink: 'https://play.google.com/store/apps/details?id=bhoomi.app.doctcare.doctcare_app'
     },
+    55: {
+      title: 'GharPlot - Buy Ghar & Plot',
+      category: 'Mobile Application',
+      image: '/images/ghrplot.webp',
+      description: 'GharPlot is a comprehensive real estate mobile application that simplifies property buying, selling, and renting across India. The platform connects property seekers with verified listings of residential plots, commercial properties, agricultural land, and houses. With advanced search filters, virtual property tours, EMI calculators, and direct seller communication, GharPlot makes real estate transactions transparent, efficient, and hassle-free. The app features verified property listings with detailed documentation, legal status verification, and location mapping.',
+      working: 'Users begin by creating profiles as buyers, sellers, or agents. Property seekers can search using advanced filters including location, price range, property type, area size, and amenities. Each listing includes high-quality photos, 360-degree virtual tours, property documents, legal verification status, and location on maps. Interested buyers can directly contact sellers or agents through in-app chat and calling features. The EMI calculator helps buyers plan their finances by calculating monthly installments based on loan amount, interest rate, and tenure. Sellers can post their properties with complete documentation and set their asking price. The platform verifies property documents and seller credentials to prevent fraud. Users receive instant notifications for new listings matching their preferences. The app maintains a history of viewed properties and enables users to create wishlists for future reference. Integrated maps show nearby schools, hospitals, markets, and transport facilities.',
+      modules: [
+        'Property Listing & Search',
+        'Advanced Filter System',
+        'Virtual Property Tours (360°)',
+        'EMI Calculator',
+        'Property Documentation Portal',
+        'Legal Verification System',
+        'In-app Chat & Calling',
+        'Location Mapping & Navigation',
+        'Seller Dashboard',
+        'Buyer Dashboard',
+        'Agent Management',
+        'Wishlist & Favorites',
+        'Push Notifications',
+        'Property Comparison Tool',
+        'Nearby Amenities Finder',
+        'Property History & Analytics',
+        'Document Upload & Management',
+        'Price Trend Analysis'
+      ],
+      technologies: ['React Native', 'Node.js', 'MongoDB', 'Google Maps API', 'Firebase'],
+      demoLink: 'https://play.google.com/store/apps/details?id=com.bhoomitechzone.gharplot&hl=en_IN'
+    },
     15: {
       title: 'Brolight Production',
       category: 'Website',

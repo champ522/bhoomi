@@ -365,6 +365,20 @@ const GalleryPage = () => {
       category: 'Office Trip',
       image: '/galleries/gal69.jpeg',
       description: 'Celebrating office events with enthusiasm and joy'
+    },
+    {
+      id: 52,
+      title: 'Gift Exchange',
+      category: 'Office Party',
+      image: '/galleries/hrm1.jpeg',
+      description: 'Exchanging gifts and spreading holiday cheer'
+    },
+    {
+      id: 53,
+      title: 'Solo Enjoyment',
+      category: 'Office Trip',
+      image: '/galleries/hrm2.jpeg',
+      description: 'Taking a moment to enjoy some solo time during the trip'
     }
   ];
 

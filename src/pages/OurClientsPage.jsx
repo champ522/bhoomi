@@ -27,42 +27,7 @@ const OurClientsPage = () => {
   ];
 
   const projects = [
-    {
-      id: 2,
-      title: 'Bhoomi Cloud',
-      category: 'Custom Softwares',
-      image: '/images/bhoomicloud.png'
-    },
-    {
-      id: 54,
-      title: 'IT-WINGS Webtech',
-      category: 'CRM Softwares',
-      image: '/images/itwings.png'
-    },
-    {
-      id: 3,
-      title: 'Rupiya Maker',
-      category: 'CRM Softwares',
-      image: '/images/rupiyamaker.png'
-    },
-    {
-      id: 4,
-      title: 'Hospital Soft',
-      category: 'Hospital Softwares',
-      image: '/images/hospitalimg.png'
-    },
-    {
-      id: 5,
-      title: 'SDRC Print',
-      category: 'Custom Softwares',
-      image: '/images/sdrcprint.png'
-    },
-    {
-      id: 6,
-      title: 'Bhoomi The Real Estate',
-      category: 'Mobile Applications',
-      image: '/images/bhoomirealestate.png'
-    },
+    
     {
         id: 51,
         title: 'Caloriz Tracker',
@@ -70,112 +35,10 @@ const OurClientsPage = () => {
         image: '/images/caloriz.png'
     },
     {
-        id: 52,
-        title: 'Voice of Roads',
+        id: 55,
+        title: 'GharPlot - Buy Ghar & Plot',
         category: 'Mobile Applications',
-        image: '/images/sadakasur.png'
-    },
-    {
-        id: 53,
-        title: 'Vision Help',
-        category: 'Custom Softwares',
-        image: '/images/visionhelp.png'
-    },
-    {
-        id: 10,
-        title: 'EV Smart',
-        category: 'Mobile Applications',
-        image: '/images/evsmart.jpg'
-    },
-    {
-        id: 11,
-        title: 'Aevitas Recycling',
-        category: 'Websites',
-        image: '/images/avitaslogo.png'
-    },
-    {
-        id: 12,
-        title: 'Voice Today News',
-        category: 'Mobile Applications',
-        image: '/images/voicenews.png'
-    },
-    {
-        id: 13,
-        title: 'GrabTO',
-        category: 'Mobile Applications',
-        image: '/images/grabto.jpg'
-    },
-    {
-        id: 14,
-        title: 'Doctcare Services',
-        category: 'Hospital Softwares',
-        image: '/images/doctcare.jpg'
-    },
-    {
-        id: 15,
-        title: 'Brolight Production',
-        category: 'Websites',
-        image: '/images/brolight.jpg'
-    },
-    {
-        id: 16,
-        title: 'WCAC Services',
-        category: 'Websites',
-        image: '/images/wcac.webp'
-    },
-    {
-        id: 17,
-        title: 'EaseToLoan',
-        category: 'Websites',
-        image: '/images/easetoloan.png'
-    },
-    {
-        id: 18,
-        title: 'EscapeQuest',
-        category: 'Websites',
-        image: '/images/escapequest.jpeg'
-    },
-    {
-        id: 19,
-        title: 'KD Immigration',
-        category: 'Websites',
-        image: '/images/kdservices.jpg'
-    },
-    {
-        id: 20,
-        title: 'SPAKS LUBE PVT. LTD.',
-        category: 'Websites',
-        image: '/images/spaks.jpg'
-    },
-    {
-        id: 21,
-        title: 'Mitera - The Event',
-        category: 'Websites',
-        image: '/images/miteralogo.png'
-    },
-    {
-        id: 22,
-        title: 'GenNextMedia',
-        category: 'Websites',
-        image: '/images/genmedia.jpg'
-    },
-    {
-        id: 23,
-        title: 'Ax4 Group',
-        category: 'Websites',
-        image: '/images/afourgroup.png'
-    },
-    {
-        id: 24,
-        title: 'Bhoomi TechZone',
-        category: 'CRM Softwares',
-        image: '/images/bhoomiproject.png'
-    },
-    {
-        id: 25,
-        title: 'Bhoomi Real Estate CRM',
-        category: 'CRM Softwares',
-        image: '/images/bhoomirealestate.png'
+        image: '/images/ghrplot.webp'
     },
     {
         id: 26,
@@ -220,16 +83,70 @@ const OurClientsPage = () => {
       image: '/images/spotdelivery.png'
     },
     {
+        id: 52,
+        title: 'Voice of Road',
+        category: 'Mobile Applications',
+        image: '/images/sadakasur.png'
+    },
+    {
+        id: 10,
+        title: 'EV Smart',
+        category: 'Mobile Applications',
+        image: '/images/evsmart.jpg'
+    },
+    {
         id: 9,
         title: 'Jobsworld',
         category: 'Mobile Applications',
         image: '/images/jobsworld.jpg'
     },
     {
+        id: 12,
+        title: 'Voice Today News',
+        category: 'Mobile Applications',
+        image: '/images/voicenews.png'
+    },
+    {
+        id: 13,
+        title: 'GrabTO',
+        category: 'Mobile Applications',
+        image: '/images/grabto.jpg'
+    },
+    {
+        id: 14,
+        title: 'Doctcare Services',
+        category: 'Hospital Softwares',
+        image: '/images/doctcare.jpg'
+    },
+    {
+        id: 15,
+        title: 'Brolight Production',
+        category: 'Websites',
+        image: '/images/brolight.jpg'
+    },
+    {
+        id: 53,
+        title: 'Vision Help',
+        category: 'Custom Softwares',
+        image: '/images/visionhelp.png'
+    },
+    {
+        id: 21,
+        title: 'Mitera - The Event',
+        category: 'Websites',
+        image: '/images/miteralogo.png'
+    },
+    {
         id: 31,
         title: 'Skills Boost',
         category: 'LMS Softwares',
         image: '/images/skillsboost.png'
+    },
+    {
+      id: 35,
+      title: 'CareerVeda',
+      category: 'LMS Softwares',
+      image: '/images/careerveda.png'
     },
     {
         id: 32,
@@ -244,16 +161,70 @@ const OurClientsPage = () => {
         image: '/images/schoolplus.jpeg'
     },
     {
+        id: 19,
+        title: 'KD Immigration',
+        category: 'Websites',
+        image: '/images/kdservices.jpg'
+    },
+    {
+      id: 49,
+      title: 'CareerInfra Education',
+      category: 'LMS Softwares',
+      image: '/images/careerinfra.png'
+    },
+    {
+      id: 50,
+      title: 'DLS Export & Import',
+      category: 'Websites',
+      image: '/images/dls.png'
+    },
+    {
+        id: 20,
+        title: 'SPAKS LUBE PVT. LTD.',
+        category: 'Websites',
+        image: '/images/spaks.jpg'
+    },
+    {
+        id: 22,
+        title: 'GenNextMedia',
+        category: 'Websites',
+        image: '/images/genmedia.jpg'
+    },
+    {
+        id: 23,
+        title: 'Ax4 Group',
+        category: 'Websites',
+        image: '/images/afourgroup.png'
+    },
+    {
+        id: 24,
+        title: 'Bhoomi TechZone',
+        category: 'CRM Softwares',
+        image: '/images/bhoomiproject.png'
+    },
+    {
+        id: 17,
+        title: 'EaseToLoan',
+        category: 'Websites',
+        image: '/images/easetoloan.png'
+    },
+    {
+        id: 18,
+        title: 'EscapeQuest',
+        category: 'Websites',
+        image: '/images/escapequest.jpeg'
+    },
+    {
+        id: 25,
+        title: 'Bhoomi Real Estate CRM',
+        category: 'CRM Softwares',
+        image: '/images/bhoomirealestate.png'
+    },
+    {
       id: 34,
       title: 'Hortizi Solutions',
       category: 'Websites',
       image: '/images/hortizi.png'
-    },
-    {
-      id: 35,
-      title: 'CareerVeda',
-      category: 'LMS Softwares',
-      image: '/images/careerveda.png'
     },
     {
       id: 36,
@@ -290,6 +261,12 @@ const OurClientsPage = () => {
       title: 'Doon E-Paper',
       category: 'Websites',
       image: '/images/doon.png'
+    },
+    {
+        id: 11,
+        title: 'Aevitas Recycling',
+        category: 'Websites',
+        image: '/images/avitaslogo.png'
     },
     {
       id: 42,
@@ -334,16 +311,46 @@ const OurClientsPage = () => {
       image: '/images/damaru.png'
     },
     {
-      id: 49,
-      title: 'CareerInfra Education',
-      category: 'LMS Softwares',
-      image: '/images/careerinfra.png'
+      id: 2,
+      title: 'Bhoomi Cloud',
+      category: 'Custom Softwares',
+      image: '/images/bhoomicloud.png'
     },
     {
-      id: 50,
-      title: 'DLS Export & Import',
-      category: 'Websites',
-      image: '/images/dls.png'
+      id: 54,
+      title: 'IT-WINGS Webtech',
+      category: 'CRM Softwares',
+      image: '/images/itwings.png'
+    },
+    {
+      id: 3,
+      title: 'Rupiya Maker',
+      category: 'CRM Softwares',
+      image: '/images/rupiyamaker.png'
+    },
+    {
+      id: 4,
+      title: 'Hospital Soft',
+      category: 'Hospital Softwares',
+      image: '/images/hospitalimg.png'
+    },
+    {
+      id: 5,
+      title: 'SDRC Print',
+      category: 'Custom Softwares',
+      image: '/images/sdrcprint.png'
+    },
+    {
+      id: 6,
+      title: 'Bhoomi The Real Estate',
+      category: 'Mobile Applications',
+      image: '/images/bhoomirealestate.png'
+    },
+    {
+        id: 16,
+        title: 'WCAC Services',
+        category: 'Websites',
+        image: '/images/wcac.webp'
     },
     {
       id: 1,
