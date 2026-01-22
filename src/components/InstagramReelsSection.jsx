@@ -7,45 +7,55 @@ const InstagramReelsSection = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [reels, setReels] = useState([]);
   const [error, setError] = useState(null);
+  const [lastUpdated, setLastUpdated] = useState(null);
   const containerRef = useRef(null);
   const scriptLoadedRef = useRef(false);
 
   // Fetch Instagram Reels from backend API
-  useEffect(() => {
-    const fetchReels = async () => {
-      try {
-        setIsLoading(true);
-        setError(null);
+  const fetchReels = async (forceRefresh = false) => {
+    try {
+      setIsLoading(true);
+      setError(null);
 
-        // Replace with your actual backend URL
-        const response = await fetch('http://localhost:5000/api/reels');
-        const result = await response.json();
+      // Replace with your actual backend URL
+      const url = forceRefresh 
+        ? 'http://localhost:5000/api/reels?refresh=true'
+        : 'http://localhost:5000/api/reels';
+      
+      const response = await fetch(url);
+      const result = await response.json();
 
-        if (result.success) {
-          // Transform API data to component format
-          const transformedReels = result.data.map((reel) => ({
-            id: reel.id,
-            url: reel.permalink,
-            embedUrl: `${reel.permalink}embed`,
-            caption: reel.caption || '',
-            thumbnail: reel.thumbnail_url,
-            mediaUrl: reel.media_url,
-            timestamp: reel.timestamp
-          }));
-          
-          setReels(transformedReels);
-        } else {
-          setError(result.error || 'Failed to fetch reels');
-          console.error('Error fetching reels:', result.error);
-        }
-      } catch (err) {
-        setError('Unable to connect to Instagram API');
-        console.error('Error fetching reels:', err);
-      } finally {
-        setIsLoading(false);
+      if (result.success) {
+        // Transform API data to component format
+        const transformedReels = result.data.map((reel) => ({
+          id: reel.id,
+          url: reel.permalink,
+          embedUrl: `${reel.permalink}embed`,
+          caption: reel.caption || '',
+          thumbnail: reel.thumbnail_url,
+          mediaUrl: reel.media_url,
+          timestamp: reel.timestamp
+        }));
+        
+        // Randomly shuffle and select 4 reels
+        const shuffled = [...transformedReels].sort(() => Math.random() - 0.5);
+        const randomFour = shuffled.slice(0, 4);
+        
+        setReels(randomFour);
+        setLastUpdated(new Date());
+      } else {
+        setError(result.error || 'Failed to fetch reels');
+        console.error('Error fetching reels:', result.error);
       }
-    };
+    } catch (err) {
+      setError('Unable to connect to Instagram API');
+      console.error('Error fetching reels:', err);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
+  useEffect(() => {
     fetchReels();
   }, []);
 
@@ -113,6 +123,18 @@ const InstagramReelsSection = () => {
           <p className={styles.sectionDescription}>
             Follow us on Instagram for daily tech tips and behind-the-scenes content.
           </p>
+          {lastUpdated && (
+            <div className={styles.updateInfo}>
+              <span>Last updated: {lastUpdated.toLocaleTimeString()}</span>
+              <button 
+                onClick={() => fetchReels(true)} 
+                className={styles.refreshButton}
+                disabled={isLoading}
+              >
+                {isLoading ? '🔄 Updating...' : '🔄 Refresh'}
+              </button>
+            </div>
+          )}
         </div>
 
         {/* Reels Grid */}
@@ -141,7 +163,7 @@ const InstagramReelsSection = () => {
           {/* Reels Grid */}
           {!isLoading && !error && reels.length > 0 && (
             <div className={styles.reelsGrid}>
-              {reels.slice(0, 8).map((reel) => (
+              {reels.map((reel) => (
                 <div key={reel.id} className={styles.reelCard}>
                   <div className={styles.reelWrapper}>
                     <a 
