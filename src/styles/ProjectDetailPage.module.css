@@ -417,7 +417,11 @@
 
 @media (max-width: 480px) {
   .heroContainer {
-    padding-top: 100px;
+    padding-top: 50px;
+  }
+
+  .heroSection {
+    min-height: 45vh;
   }
 
   .projectTitle {
