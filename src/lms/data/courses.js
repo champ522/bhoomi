@@ -83,7 +83,7 @@ export const courses = [
           <h3>HTML vs Other Technologies:</h3>
           <p>HTML provides structure, CSS handles presentation/styling, and JavaScript adds interactivity. Together, they form the foundation of modern web development. Understanding this separation of concerns is crucial for becoming an effective web developer.</p>
         `,
-        videoUrl: 'https://www.youtube.com/embed/UB1O30fR-EE'
+        // videoUrl: 'https://www.youtube.com/embed/UB1O30fR-EE'
       },
       {
         id: 'html-elements',
@@ -4913,7 +4913,7 @@ server.listen(3000, () => {
   console.log('Server running at http://localhost:3000/');
 });</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/TlB_eWDSMt4'
+        // videoUrl: 'https://www.youtube.com/embed/TlB_eWDSMt4'
       },
       {
         id: 'nodejs-modules',
@@ -4994,7 +4994,7 @@ npm install --save-dev nodemon jest
 npm start
 npm run dev</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/xHLd36QoS4k'
+        // videoUrl: 'https://www.youtube.com/embed/xHLd36QoS4k'
       },
       {
         id: 'nodejs-filesystem',
@@ -5054,7 +5054,7 @@ if (fs.existsSync('data.txt')) {
             <li>Use path module for cross-platform compatibility</li>
           </ul>
         `,
-        videoUrl: 'https://www.youtube.com/embed/U57kU311-nE'
+        // videoUrl: 'https://www.youtube.com/embed/U57kU311-nE'
       },
       {
         id: 'nodejs-http',
@@ -5105,7 +5105,7 @@ server.listen(3000, () => {
             <li>500: Internal Server Error</li>
           </ul>
         `,
-        videoUrl: 'https://www.youtube.com/embed/VShtPwEkDD0'
+        // videoUrl: 'https://www.youtube.com/embed/VShtPwEkDD0'
       },
       {
         id: 'nodejs-express',
@@ -5160,7 +5160,7 @@ app.listen(3000, () => {
           <h3>Installation:</h3>
           <p>npm install express</p>
         `,
-        videoUrl: 'https://www.youtube.com/embed/SccSCuHhOw0'
+        // videoUrl: 'https://www.youtube.com/embed/SccSCuHhOw0'
       },
       {
         id: 'nodejs-mongodb',
@@ -5221,7 +5221,7 @@ const user = await User.findById(id);</code></pre>
           <h3>Installation:</h3>
           <p>npm install mongoose</p>
         `,
-        videoUrl: 'https://www.youtube.com/embed/DZBGEVgL2eE'
+        // videoUrl: 'https://www.youtube.com/embed/DZBGEVgL2eE'
       },
       {
         id: 'nodejs-authentication',
@@ -5297,7 +5297,7 @@ const authMiddleware = (req, res, next) => {
             <li>Validate and sanitize inputs</li>
           </ul>
         `,
-        videoUrl: 'https://www.youtube.com/embed/mbsmsi7l3r4'
+        // videoUrl: 'https://www.youtube.com/embed/mbsmsi7l3r4'
       },
       {
         id: 'nodejs-testing',
@@ -5361,7 +5361,7 @@ test('should create user', async () => {
             <li>Maintain good test coverage</li>
           </ul>
         `,
-        videoUrl: 'https://www.youtube.com/embed/7r4xVDI2vho'
+        // videoUrl: 'https://www.youtube.com/embed/7r4xVDI2vho'
       },
       {
         id: 'nodejs-deployment',
@@ -5428,7 +5428,7 @@ module.exports = {
           <h3>Docker Containerization:</h3>
           <p>Package your application in containers for consistent deployments.</p>
         `,
-        videoUrl: 'https://www.youtube.com/embed/oykl1Ih9pMg'
+        // videoUrl: 'https://www.youtube.com/embed/oykl1Ih9pMg'
       }
     ]
   },
@@ -5540,7 +5540,7 @@ module.exports = {
           <h3>Setting Up PHP:</h3>
           <p>Install XAMPP, WAMP, or MAMP for local development environment with Apache, MySQL, and PHP.</p>
         `,
-        videoUrl: 'https://www.youtube.com/embed/OK_JCtrrv-c'
+        // videoUrl: 'https://www.youtube.com/embed/OK_JCtrrv-c'
       },
       {
         id: 'php-variables-datatypes',
@@ -5838,7 +5838,7 @@ if (empty($errors)) {
             <li><strong>define("NAME", value):</strong> Create constant</li>
           </ul>
         `,
-        videoUrl: 'https://www.youtube.com/embed/1SnPKhCdlsU'
+        // videoUrl: 'https://www.youtube.com/embed/1SnPKhCdlsU'
       },
       {
         id: 'php-control-structures',
@@ -6236,7 +6236,7 @@ if ($loggedIn): ?>
             <li><strong>$x ? $y : $z:</strong> Ternary operator</li>
           </ul>
         `,
-        videoUrl: 'https://www.youtube.com/embed/yXzWfZ4N4xU'
+        // videoUrl: 'https://www.youtube.com/embed/yXzWfZ4N4xU'
       },
       {
         id: 'php-functions',
@@ -6522,7 +6522,7 @@ echo call_user_func_array('testFunc', [1, 2, 3]); // 6
             <li><strong>function_exists($name):</strong> Check if function exists</li>
           </ul>
         `,
-        videoUrl: 'https://www.youtube.com/embed/WvZ0x3PJvKE'
+        // videoUrl: 'https://www.youtube.com/embed/WvZ0x3PJvKE'
       },
       {
         id: 'php-arrays',
@@ -6750,7 +6750,7 @@ $counts = array_count_values($colors);  // ["red" => 2, "blue" => 2, "green" => 
             <li><strong>implode($separator, $array):</strong> Join array to string</li>
           </ul>
         `,
-        videoUrl: 'https://www.youtube.com/embed/VBmzX2dVbww'
+        // videoUrl: 'https://www.youtube.com/embed/VBmzX2dVbww'
       },
       {
         id: 'php-strings',
@@ -7021,7 +7021,7 @@ if (password_verify($plaintext, $hashedPassword)) {
             <li><strong>preg_match(pattern, $str):</strong> Regular expression matching</li>
           </ul>
         `,
-        videoUrl: 'https://www.youtube.com/embed/ASXUC7Hwmrg'
+        // videoUrl: 'https://www.youtube.com/embed/ASXUC7Hwmrg'
       },
       {
         id: 'php-forms',
@@ -7311,7 +7311,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
             <li><strong>Escape output</strong> - prevent XSS attacks</li>
           </ul>
         `,
-        videoUrl: 'https://www.youtube.com/embed/75W34kPgTfc'
+        // videoUrl: 'https://www.youtube.com/embed/75W34kPgTfc'
       },
       {
         id: 'php-mysql',
@@ -7521,7 +7521,7 @@ echo $result;
             <li><strong>Handle errors gracefully</strong> without exposing system details</li>
           </ul>
         `,
-        videoUrl: 'https://www.youtube.com/embed/kEW6f7Pilc4'
+        // videoUrl: 'https://www.youtube.com/embed/kEW6f7Pilc4'
       },
       {
         id: 'php-sessions-cookies',
@@ -7957,7 +7957,7 @@ class DatabaseSessionHandler implements SessionHandlerInterface {
             <li><strong>Privacy:</strong> Inform users about cookie usage (GDPR compliance)</li>
           </ul>
         `,
-        videoUrl: 'https://www.youtube.com/embed/ZXTp0y_A5DU'
+        // videoUrl: 'https://www.youtube.com/embed/ZXTp0y_A5DU'
       },
       {
         id: 'php-oop',
@@ -8427,7 +8427,7 @@ try {
 }
 ?></code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/Anz0ArcQ5kI'
+        // videoUrl: 'https://www.youtube.com/embed/Anz0ArcQ5kI'
       }
     ]
   },
@@ -8531,7 +8531,7 @@ try {
             <li><strong>Ecosystem:</strong> Rich package ecosystem (Packagist)</li>
           </ul>
         `,
-        videoUrl: 'https://www.youtube.com/embed/MFh0Fd7BsjE'
+        // videoUrl: 'https://www.youtube.com/embed/MFh0Fd7BsjE'
       },
       {
         id: 'laravel-installation',
@@ -8695,7 +8695,7 @@ php artisan list
 # Get help for specific command
 php artisan help migrate</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/rIfdg_Ot-LI'
+        // videoUrl: 'https://www.youtube.com/embed/rIfdg_Ot-LI'
       },
       {
         id: 'laravel-routing',
@@ -8975,7 +8975,7 @@ public function boot()
     });
 }</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/pRtQUDCjjTc'
+        // videoUrl: 'https://www.youtube.com/embed/pRtQUDCjjTc'
       },
       {
         id: 'laravel-blade-templates',
@@ -9307,7 +9307,7 @@ class Alert extends Component
     {{-- Local environment only --}}
 @endenv</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/eWJVx2K4fjM'
+        // videoUrl: 'https://www.youtube.com/embed/eWJVx2K4fjM'
       },
       {
         id: 'laravel-eloquent-orm',
@@ -9687,7 +9687,7 @@ protected function firstName(): Attribute
     );
 }</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/qJqt3CzqtVA'
+        // videoUrl: 'https://www.youtube.com/embed/qJqt3CzqtVA'
       },
       {
         id: 'laravel-migrations-database',
@@ -9915,7 +9915,7 @@ DB::transaction(function () {
     DB::table('posts')->delete();
 });</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/4RHUwzGWRAw'
+        // videoUrl: 'https://www.youtube.com/embed/4RHUwzGWRAw'
       },
       {
         id: 'laravel-authentication',
@@ -10226,7 +10226,7 @@ if ($user->tokenCan('post:create')) {
     // Token has ability
 }</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/th6LsKxf8fY'
+        // videoUrl: 'https://www.youtube.com/embed/th6LsKxf8fY'
       },
       {
         id: 'laravel-forms-validation',
@@ -10573,7 +10573,7 @@ $request->validate([
 # Create symbolic link for storage (one time setup)
 php artisan storage:link</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/H3pij8VzPDk'
+        // videoUrl: 'https://www.youtube.com/embed/H3pij8VzPDk'
       },
       {
         id: 'laravel-api-development',
@@ -10852,7 +10852,7 @@ Route::middleware('auth:sanctum')->group(function () {
             <li><strong>Documentation:</strong> API documentation with tools</li>
           </ul>
         `,
-        videoUrl: 'https://www.youtube.com/embed/YGqCZjdgJJk'
+        // videoUrl: 'https://www.youtube.com/embed/YGqCZjdgJJk'
       },
       {
         id: 'laravel-testing',
@@ -11176,7 +11176,7 @@ $response->assertSessionHasErrors(['email']);
 $this->assertAuthenticated();
 $this->assertGuest();</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/DWnKnGkh7oU'
+        // videoUrl: 'https://www.youtube.com/embed/DWnKnGkh7oU'
       },
       {
         id: 'laravel-deployment',
@@ -11515,7 +11515,7 @@ public function boot()
 composer update
 php artisan optimize</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/6g8G3YQtQt4'
+        // videoUrl: 'https://www.youtube.com/embed/6g8G3YQtQt4'
       }
     ]
   },
@@ -11621,7 +11621,7 @@ php artisan optimize</code></pre>
             <li><strong>Bootstrap 3:</strong> Legacy version</li>
           </ul>
         `,
-        videoUrl: 'https://www.youtube.com/embed/4sosXZsdy-s'
+        // videoUrl: 'https://www.youtube.com/embed/4sosXZsdy-s'
       },
       {
         id: 'bootstrap-installation',
@@ -11717,7 +11717,7 @@ $border-radius: 0.5rem;
 // Import Bootstrap
 @import "node_modules/bootstrap/scss/bootstrap";</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/O_9u1P5YjVc'
+        // videoUrl: 'https://www.youtube.com/embed/O_9u1P5YjVc'
       },
       {
         id: 'bootstrap-grid-system',
@@ -11832,7 +11832,7 @@ $border-radius: 0.5rem;
   &lt;div class="col"&gt;No Gutter Column&lt;/div&gt;
 &lt;/div&gt;</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/qmPmwdshCMw'
+        // videoUrl: 'https://www.youtube.com/embed/qmPmwdshCMw'
       },
       {
         id: 'bootstrap-typography',
@@ -11958,7 +11958,7 @@ $border-radius: 0.5rem;
   &lt;/footer&gt;
 &lt;/blockquote&gt;</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/rQryOSyfXmI'
+        // videoUrl: 'https://www.youtube.com/embed/rQryOSyfXmI'
       },
       {
         id: 'bootstrap-components',
@@ -12106,7 +12106,7 @@ $border-radius: 0.5rem;
   &lt;span class="visually-hidden"&gt;Loading...&lt;/span&gt;
 &lt;/div&gt;</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/c9B4TPnak1A'
+        // videoUrl: 'https://www.youtube.com/embed/c9B4TPnak1A'
       },
       {
         id: 'bootstrap-navigation',
@@ -12270,7 +12270,7 @@ $border-radius: 0.5rem;
 &lt;!-- Large Pagination --&gt;
 &lt;ul class="pagination pagination-lg"&gt;...&lt;/ul&gt;</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/gt8zOLQ8A0w'
+        // videoUrl: 'https://www.youtube.com/embed/gt8zOLQ8A0w'
       },
       {
         id: 'bootstrap-forms',
@@ -12455,7 +12455,7 @@ $border-radius: 0.5rem;
   &lt;button class="btn btn-primary" type="submit"&gt;Submit&lt;/button&gt;
 &lt;/form&gt;</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/3CyCMJ7c8b0'
+        // videoUrl: 'https://www.youtube.com/embed/3CyCMJ7c8b0'
       },
       {
         id: 'bootstrap-utilities',
@@ -12606,7 +12606,7 @@ $border-radius: 0.5rem;
 &lt;div class="mw-100"&gt;Max width 100%&lt;/div&gt;
 &lt;img src="image.jpg" class="mw-100" alt="Responsive image"&gt;</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/Jja6vWzgNJE'
+        // videoUrl: 'https://www.youtube.com/embed/Jja6vWzgNJE'
       },
       {
         id: 'bootstrap-javascript',
@@ -12807,7 +12807,7 @@ var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/VENo7jExUXI'
+        // videoUrl: 'https://www.youtube.com/embed/VENo7jExUXI'
       },
       {
         id: 'bootstrap-responsive-design',
@@ -12995,7 +12995,7 @@ var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
   &lt;table class="table"&gt;...&lt;/table&gt;
 &lt;/div&gt;</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/Wny_NAxjhhs'
+        // videoUrl: 'https://www.youtube.com/embed/Wny_NAxjhhs'
       },
       {
         id: 'bootstrap-customization',
@@ -13255,7 +13255,7 @@ $modal-content-border-radius: 1rem;
   -webkit-text-fill-color: transparent;
 }</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/6Ovw43Dkp44'
+        // videoUrl: 'https://www.youtube.com/embed/6Ovw43Dkp44'
       }
     ]
   },
@@ -13363,7 +13363,7 @@ $modal-content-border-radius: 1rem;
             <li><strong>Community:</strong> Large ecosystem and community</li>
           </ul>
         `,
-        videoUrl: 'https://www.youtube.com/embed/UBOj6rqRUME'
+        // videoUrl: 'https://www.youtube.com/embed/UBOj6rqRUME'
       },
       {
         id: 'tailwind-installation',
@@ -13445,7 +13445,7 @@ module.exports = {
             <li><strong>Custom Styles:</strong> Add custom CSS when needed</li>
           </ul>
         `,
-        videoUrl: 'https://www.youtube.com/embed/dFgzHOX84xQ'
+        // videoUrl: 'https://www.youtube.com/embed/dFgzHOX84xQ'
       },
       {
         id: 'tailwind-utility-classes',
@@ -13520,7 +13520,7 @@ module.exports = {
           
           <p><strong>Color Strategy:</strong> Lower numbers = lighter colors. 500 is the base color. Use consistent color combinations for cohesive design.</p>
         `,
-        videoUrl: 'https://www.youtube.com/embed/elgqxmdVms8'
+        // videoUrl: 'https://www.youtube.com/embed/elgqxmdVms8'
       },
       {
         id: 'tailwind-layout',
@@ -13611,7 +13611,7 @@ module.exports = {
           
           <p><strong>Positioning Strategy:</strong> relative creates positioning context. absolute positions relative to nearest positioned parent. fixed positions relative to viewport.</p>
         `,
-        videoUrl: 'https://www.youtube.com/embed/Ff8pihN4oMM'
+        // videoUrl: 'https://www.youtube.com/embed/Ff8pihN4oMM'
       },
       {
         id: 'tailwind-responsive',
@@ -13694,7 +13694,7 @@ module.exports = {
             <li><strong>Performance:</strong> Optimize for slower mobile connections</li>
           </ul>
         `,
-        videoUrl: 'https://www.youtube.com/embed/hX1zUdj4Dw4'
+        // videoUrl: 'https://www.youtube.com/embed/hX1zUdj4Dw4'
       },
       {
         id: 'tailwind-components',
@@ -13778,7 +13778,7 @@ module.exports = {
             <li><strong>Custom Library:</strong> Build your own component system</li>
           </ul>
         `,
-        videoUrl: 'https://www.youtube.com/embed/0m7bIoWSU9c'
+        // videoUrl: 'https://www.youtube.com/embed/0m7bIoWSU9c'
       },
       {
         id: 'tailwind-states-variants',
@@ -13929,7 +13929,7 @@ module.exports = {
           
           <p><strong>Advanced Patterns:</strong> first:/last: removes extra spacing. even:/odd: creates zebra striping. dark: enables theme switching. motion-reduce: respects accessibility preferences.</p>
         `,
-        videoUrl: 'https://www.youtube.com/embed/r5cBUVqOjqQ'
+        // videoUrl: 'https://www.youtube.com/embed/r5cBUVqOjqQ'
       },
       {
         id: 'tailwind-customization',
@@ -14133,7 +14133,7 @@ module.exports = {
           
           <p><strong>Advanced Tips:</strong> Use @layer utilities for custom CSS that integrates with Tailwind's system. Arbitrary values with [] for one-off customizations. Plugins for reusable utility patterns.</p>
         `,
-        videoUrl: 'https://www.youtube.com/embed/MAtaT8BZEAo'
+        // videoUrl: 'https://www.youtube.com/embed/MAtaT8BZEAo'
       },
       {
         id: 'tailwind-animations',
@@ -14308,7 +14308,7 @@ module.exports = {
           
           <p><strong>Animation Guidelines:</strong> Use subtle effects (scale-105 vs scale-150), keep durations under 500ms for interactions, and provide visual feedback for all clickable elements.</p>
         `,
-        videoUrl: 'https://www.youtube.com/embed/4dHarq9dGts'
+        // videoUrl: 'https://www.youtube.com/embed/4dHarq9dGts'
       },
       {
         id: 'tailwind-dark-mode',
@@ -14527,7 +14527,7 @@ class DarkModeToggle {
           
           <p><strong>Dark Mode Guidelines:</strong> Test with real users, maintain 4.5:1 contrast ratio minimum, provide smooth transitions, and ensure all interactive elements remain accessible.</p>
         `,
-        videoUrl: 'https://www.youtube.com/embed/o4Prej0wIZA'
+        // videoUrl: 'https://www.youtube.com/embed/o4Prej0wIZA'
       },
       {
         id: 'tailwind-optimization',
@@ -14843,7 +14843,7 @@ module.exports = {
           
           <p><strong>Optimization Guidelines:</strong> Start with content configuration, enable JIT mode, use @apply sparingly, monitor bundle sizes regularly, and test performance on real devices.</p>
         `,
-        videoUrl: 'https://www.youtube.com/embed/yhv0Aq4nXPU'
+        // videoUrl: 'https://www.youtube.com/embed/yhv0Aq4nXPU'
       }
     ]
   },
@@ -14952,7 +14952,7 @@ module.exports = {
             <li><strong>IDEs:</strong> Eclipse, IntelliJ IDEA, NetBeans, VS Code</li>
           </ul>
         `,
-        videoUrl: 'https://www.youtube.com/embed/eIrMbAQSU34'
+        // videoUrl: 'https://www.youtube.com/embed/eIrMbAQSU34'
       },
       {
         id: 'java-basics',
@@ -15059,7 +15059,7 @@ count++;              // Increment by 1
           
           <p><strong>Explanation:</strong> Arithmetic operators follow standard mathematical precedence (multiplication/division before addition/subtraction). Integer division truncates decimal parts. Comparison operators return boolean values for conditional logic. Logical operators use short-circuit evaluation (stop evaluating when result is determined). Compound assignment operators provide concise ways to modify variables.</p>
         `,
-        videoUrl: 'https://www.youtube.com/embed/UmnCZ7-9yDY'
+        // videoUrl: 'https://www.youtube.com/embed/UmnCZ7-9yDY'
       },
       {
         id: 'java-control-structures',
@@ -15162,7 +15162,7 @@ for (int i = 0; i &lt; 5; i++) {
           
           <p><strong>Explanation:</strong> Break statements immediately terminate the innermost loop and transfer control to the statement following the loop. Continue statements skip the remaining code in the current iteration and move to the next iteration. These statements provide efficient ways to handle exceptions and special cases in repetitive operations.</p>
         `,
-        videoUrl: 'https://www.youtube.com/embed/ldYLYRNaucM'
+        // videoUrl: 'https://www.youtube.com/embed/ldYLYRNaucM'
       },
       {
         id: 'java-arrays',
@@ -15274,7 +15274,7 @@ Arrays.fill(filled, 100);  // All elements become 100</code></pre>
           
           <p><strong>Explanation:</strong> Arrays.sort() uses optimized sorting algorithms like Timsort for object arrays and dual-pivot quicksort for primitives. Arrays.binarySearch() requires a sorted array and returns the index if found, or a negative value indicating insertion point. Arrays.equals() performs element-by-element comparison, while Arrays.copyOf() creates new arrays with specified lengths.</p>
         `,
-        videoUrl: 'https://www.youtube.com/embed/xzjZy8a_-tw'
+        // videoUrl: 'https://www.youtube.com/embed/xzjZy8a_-tw'
       },
       {
         id: 'java-oop-concepts',
@@ -15573,7 +15573,7 @@ class DrawableCircle extends Circle implements Drawable {
           
           <p><strong>Explanation:</strong> Abstract classes cannot be instantiated and may contain both abstract and concrete methods. Subclasses must implement all abstract methods. Interfaces define contracts that implementing classes must follow, supporting multiple inheritance through interface implementation. Default methods in interfaces provide shared implementations while maintaining abstraction principles.</p>
         `,
-        videoUrl: 'https://www.youtube.com/embed/6T_HgnjoYwM'
+        // videoUrl: 'https://www.youtube.com/embed/6T_HgnjoYwM'
       },
       {
         id: 'java-strings',
@@ -15778,7 +15778,7 @@ String internedString = new String("Hello").intern();  // Force into string pool
           
           <p><strong>Explanation:</strong> String literals are automatically interned and reused from the string pool. StringBuilder should be used for multiple concatenations to avoid creating intermediate String objects. \`String.format()\` provides readable and maintainable formatting for complex strings. Null checks should always precede string operations to prevent exceptions. String interning can save memory but should be used judiciously as it affects garbage collection.</p>
         `,
-        videoUrl: 'https://www.youtube.com/embed/zQZ5FmXJdmM'
+        // videoUrl: 'https://www.youtube.com/embed/zQZ5FmXJdmM'
       },
       {
         id: 'java-exception-handling',
@@ -16093,7 +16093,7 @@ class DatabaseException extends Exception { }</code></pre>
           
           <p><strong>Explanation:</strong> Always catch specific exceptions rather than general Exception class. Use logging frameworks to record exception details for debugging. Implement graceful degradation and recovery strategies when possible. Exception chaining preserves the original error context while adding application-specific information. Never catch exceptions without handling them appropriately.</p>
         `,
-        videoUrl: 'https://www.youtube.com/embed/1XAfapkBQjk'
+        // videoUrl: 'https://www.youtube.com/embed/1XAfapkBQjk'
       },
       {
         id: 'java-collections',
@@ -16575,7 +16575,7 @@ public class UtilityClassesDemo {
           
           <p><strong>Explanation:</strong> Collections class provides algorithms that work on any Collection implementation. Comparable interface defines natural ordering for objects, while Comparator allows custom ordering logic. Arrays utilities work specifically with array types. Modern Java offers lambda expressions and method references for concise comparator creation and chaining multiple sort criteria.</p>
         `,
-        videoUrl: 'https://www.youtube.com/embed/rzA7TPISu-g'
+        // videoUrl: 'https://www.youtube.com/embed/rzA7TPISu-g'
       },
       {
         id: 'java-file-handling',
@@ -17309,7 +17309,7 @@ public class FileIOBestPractices {
           
           <p><strong>Explanation:</strong> Try-with-resources automatically closes resources and handles exceptions during closure. Always validate file paths, permissions, and sizes before operations. Specify character encoding explicitly to avoid platform-dependent behavior. Use buffered streams for better I/O performance. Implement atomic operations using temporary files to prevent data corruption. Handle specific exception types for better error reporting and recovery strategies.</p>
         `,
-        videoUrl: 'https://www.youtube.com/embed/ScUJx4aWRi0'
+        // videoUrl: 'https://www.youtube.com/embed/ScUJx4aWRi0'
       },
       {
         id: 'java-multithreading',
@@ -18355,7 +18355,7 @@ public class MultithreadingBestPractices {
           
           <p><strong>Explanation:</strong> Immutable objects eliminate synchronization needs by preventing state changes. ThreadLocal provides per-thread storage without synchronization overhead. Consistent lock ordering prevents deadlocks in multi-resource scenarios. Atomic operations offer lock-free thread safety for simple operations. CompletableFuture enables modern asynchronous programming patterns. Proper exception handling prevents silent thread failures. Always shutdown ExecutorService to prevent resource leaks.</p>
         `,
-        videoUrl: 'https://www.youtube.com/embed/r_MbozD32eo'
+        // videoUrl: 'https://www.youtube.com/embed/r_MbozD32eo'
       },
       {
         id: 'java-generics',
@@ -19506,7 +19506,7 @@ public class GenericBestPracticesDemo {
           
           <p><strong>Explanation:</strong> Use meaningful type parameter names (E for Element, K for Key, V for Value). Always specify generic parameters instead of using raw types for compile-time safety. Apply PECS principle with wildcards for flexible APIs. Use bounded type parameters to enable specific operations. Prefer generic methods over generic classes for utility functions. Combine generics with functional interfaces for powerful abstractions. Design generic wrapper types for better error handling. Follow consistent naming conventions and documentation practices.</p>
         `,
-        videoUrl: 'https://www.youtube.com/embed/K1iu1kXkVoA'
+        // videoUrl: 'https://www.youtube.com/embed/K1iu1kXkVoA'
       }
     ]
   },
@@ -19615,7 +19615,7 @@ python
 # Exit Python
 exit()</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/kqtD5dpn9C8'
+        // videoUrl: 'https://www.youtube.com/embed/kqtD5dpn9C8'
       },
       {
         id: 'python-basics',
@@ -19655,7 +19655,7 @@ full_name = first_name + " " + last_name
 message = f"Hello, {full_name}!"
 print(message)</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/cQT33yu9pY8'
+        // videoUrl: 'https://www.youtube.com/embed/cQT33yu9pY8'
       },
       {
         id: 'python-control-flow',
@@ -19707,7 +19707,7 @@ for i in range(10):
         continue  # Skip this iteration
     print(i)</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/6iF8Xb7Z3wQ'
+        // videoUrl: 'https://www.youtube.com/embed/6iF8Xb7Z3wQ'
       },
       {
         id: 'python-data-structures',
@@ -19761,7 +19761,7 @@ print(person.values())          # Get all values</code></pre>
 squares = [x**2 for x in range(10)]
 even_squares = [x**2 for x in range(10) if x % 2 == 0]</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/AhSvKGTh28Q'
+        // videoUrl: 'https://www.youtube.com/embed/AhSvKGTh28Q'
       },
       {
         id: 'python-functions',
@@ -19825,7 +19825,7 @@ print(math.sqrt(16))
 print(random.randint(1, 10))
 print(datetime.now())</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/9Os0o3wzS_I'
+        // videoUrl: 'https://www.youtube.com/embed/9Os0o3wzS_I'
       },
       {
         id: 'python-oop',
@@ -19888,7 +19888,7 @@ my_car.drive(100)</code></pre>
     def get_balance(self):
         return self._balance</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/JeznW_7DlB0'
+        // videoUrl: 'https://www.youtube.com/embed/JeznW_7DlB0'
       },
       {
         id: 'python-file-handling',
@@ -19958,7 +19958,7 @@ person = {"name": "Alice", "age": 30}
 with open('person.json', 'w') as file:
     json.dump(person, file, indent=2)</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/Uh2ebFW8OYM'
+        // videoUrl: 'https://www.youtube.com/embed/Uh2ebFW8OYM'
       },
       {
         id: 'python-libraries',
@@ -20028,7 +20028,7 @@ values = [10, 15, 8]
 plt.bar(categories, values)
 plt.show()</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/xa4UZdIfph0'
+        // videoUrl: 'https://www.youtube.com/embed/xa4UZdIfph0'
       },
       {
         id: 'python-error-handling',
@@ -20098,7 +20098,7 @@ except AgeError as e:
         print(f"Permission denied to read '{filename}'")
         return None</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/NIWwJbo-9_8'
+        // videoUrl: 'https://www.youtube.com/embed/NIWwJbo-9_8'
       },
       {
         id: 'python-web-scraping',
@@ -20193,7 +20193,7 @@ for i in range(10):
         print(f"Error scraping {url}: {e}")
         return []</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/XVv6mJpFOb0'
+        // videoUrl: 'https://www.youtube.com/embed/XVv6mJpFOb0'
       },
       {
         id: 'python-testing',
@@ -20302,7 +20302,7 @@ def test_edge_cases():
     with pytest.raises(TypeError):
         calculate_sum("invalid", "input")</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/6tNS--WetLI'
+        // videoUrl: 'https://www.youtube.com/embed/6tNS--WetLI'
       },
       {
         id: 'python-automation',
@@ -20458,7 +20458,7 @@ def process_daily_reports():
     
     return None</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/s8XjEuplx_U'
+        // videoUrl: 'https://www.youtube.com/embed/s8XjEuplx_U'
       }
     ]
   },
@@ -20601,7 +20601,7 @@ flutter run</code></pre>
             <li><strong>test/:</strong> Unit and widget tests</li>
           </ul>
         `,
-        videoUrl: 'https://www.youtube.com/embed/Z6KZ3cTGBWw'
+        // videoUrl: 'https://www.youtube.com/embed/Z6KZ3cTGBWw'
       },
       {
         id: 'dart-basics',
@@ -20705,7 +20705,7 @@ int? length = nickname?.length;
 // Null assertion
 String definitelyNotNull = nickname!;  // Use carefully!</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/Ej_Pcr4uC2Q'
+        // videoUrl: 'https://www.youtube.com/embed/Ej_Pcr4uC2Q'
       },
       {
         id: 'flutter-widgets',
@@ -20847,7 +20847,7 @@ MaterialApp(
   home: MyHomePage(),
 )</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/1gDhl4leEzA'
+        // videoUrl: 'https://www.youtube.com/embed/1gDhl4leEzA'
       },
       {
         id: 'stateful-widgets',
@@ -21071,7 +21071,7 @@ class _TodoAppState extends State<TodoApp> {
   }
 }</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/AqCMFXEmf3w'
+        // videoUrl: 'https://www.youtube.com/embed/AqCMFXEmf3w'
       },
       {
         id: 'navigation-routing',
@@ -21278,7 +21278,7 @@ class _TabNavigationExampleState extends State<TabNavigationExample> {
   body: Center(child: Text('Main Content')),
 )</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/nyvwx7o277U'
+        // videoUrl: 'https://www.youtube.com/embed/nyvwx7o277U'
       },
       {
         id: 'flutter-basics-final',
@@ -21527,7 +21527,7 @@ class _HomeScreenState extends State<HomeScreen> {
             <li><strong>Styling:</strong> Custom themes, colors, and layouts</li>
           </ul>
         `,
-        videoUrl: 'https://www.youtube.com/embed/GLSG_Wh_YWc'
+        // videoUrl: 'https://www.youtube.com/embed/GLSG_Wh_YWc'
       },
       {
         id: 'flutter-apis',
@@ -21604,7 +21604,7 @@ import 'dart:convert';</code></pre>
   },
 )</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/aIJU68Phi1w'
+        // videoUrl: 'https://www.youtube.com/embed/aIJU68Phi1w'
       },
       {
         id: 'flutter-storage',
@@ -21711,7 +21711,7 @@ Future<int> deleteUser(int id) async {
   return await db.delete('users', where: 'id = ?', whereArgs: [id]);
 }</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/HefHf5B1YM0'
+        // videoUrl: 'https://www.youtube.com/embed/HefHf5B1YM0'
       },
       {
         id: 'flutter-animation',
@@ -21828,7 +21828,7 @@ class _RotatingWidgetState extends State<RotatingWidget>
   }
 }</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/mdhoIQqS2z0'
+        // videoUrl: 'https://www.youtube.com/embed/mdhoIQqS2z0'
       },
       {
         id: 'flutter-testing',
@@ -21945,7 +21945,7 @@ void main() {
   });
 }</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/RDPnHXjt_iI'
+        // videoUrl: 'https://www.youtube.com/embed/RDPnHXjt_iI'
       },
       {
         id: 'flutter-deployment',
@@ -22052,7 +22052,7 @@ jobs:
     - run: flutter test
     - run: flutter build appbundle --release</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/ciNHhp2dUjE'
+        // videoUrl: 'https://www.youtube.com/embed/ciNHhp2dUjE'
       }
     ]
   },
@@ -22192,7 +22192,7 @@ dart compile exe main.dart</code></pre>
             <li><strong>Dart Formatter:</strong> Automatic code formatting</li>
           </ul>
         `,
-        videoUrl: 'https://www.youtube.com/embed/NrO0CJCbYLA'
+        // videoUrl: 'https://www.youtube.com/embed/NrO0CJCbYLA'
       },
       {
         id: 'dart-basics',
@@ -22287,7 +22287,7 @@ bool notEqual = 5 != 3;        // true
 bool greater = 10 > 5;         // true
 bool lessEqual = 5 <= 10;      // true</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/5xlVP04905w'
+        // videoUrl: 'https://www.youtube.com/embed/5xlVP04905w'
       },
       {
         id: 'dart-control-flow',
@@ -22417,7 +22417,7 @@ switch (point) {
     print('Point at (\$x, \$y)');
 }</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/RMiN59x3uH0'
+        // videoUrl: 'https://www.youtube.com/embed/RMiN59x3uH0'
       },
       {
         id: 'dart-functions',
@@ -22556,7 +22556,7 @@ void outerFunction() {
 
 outerFunction();</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/giO3krBHNes'
+        // videoUrl: 'https://www.youtube.com/embed/giO3krBHNes'
       },
       {
         id: 'dart-collections',
@@ -22722,7 +22722,7 @@ var listOfSquares = [
 List&lt;int&gt;? nullableList = null;
 var safeList = [...?nullableList, 1, 2, 3];  // [1, 2, 3]</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/F3JuuYuOUK4'
+        // videoUrl: 'https://www.youtube.com/embed/F3JuuYuOUK4'
       },
       {
         id: 'dart-oop',
@@ -22953,7 +22953,7 @@ account.withdraw(200);    // Withdrew \$200.0. New balance: \$1300.0
 print('Balance: \\\$\${account.balance}');  // Balance: \$1300.0
 // account._balance = 5000;  // Error: Private member</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/qPLd6CvKAMg'
+        // videoUrl: 'https://www.youtube.com/embed/qPLd6CvKAMg'
       },
       {
         id: 'dart-async',
@@ -23213,7 +23213,7 @@ Future<void> handleErrors() async {
   }
 }</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/SmTCmDMi4BY'
+        // videoUrl: 'https://www.youtube.com/embed/SmTCmDMi4BY'
       },
       {
         id: 'dart-null-safety',
@@ -23423,7 +23423,7 @@ String processValue(Object? value) {
   };
 }</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/iYhOU9AuaFs'
+        // videoUrl: 'https://www.youtube.com/embed/iYhOU9AuaFs'
       },
       {
         id: 'dart-testing',
@@ -23796,7 +23796,7 @@ dart test --name="Calculator"
 # Run tests with timeout
 dart test --timeout=30s</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/How34FlWKYs'
+        // videoUrl: 'https://www.youtube.com/embed/How34FlWKYs'
       },
       {
         id: 'dart-packages',
@@ -23880,7 +23880,7 @@ void workWithPaths() {
           
           <p>The <code>http</code> package is one of the most popular packages for making REST API calls. It provides a clean, simple interface for GET, POST, PUT, and DELETE requests. The <code>path</code> package helps you work with file system paths in a cross-platform way, automatically handling differences between Windows, macOS, and Linux path separators.</p>
         `,
-        videoUrl: 'https://www.youtube.com/embed/QqCvQ-xYNl8'
+        // videoUrl: 'https://www.youtube.com/embed/QqCvQ-xYNl8'
       },
       {
         id: 'dart-file-io',
@@ -23965,7 +23965,7 @@ Future<void> directoryOperations() async {
           
           <p>Directory operations in Dart are powerful and flexible. The <code>create(recursive: true)</code> method works like <code>mkdir -p</code> in Unix systems, creating all necessary parent directories. The <code>list()</code> method returns a stream of <code>FileSystemEntity</code> objects, which you can filter by type (File, Directory, or Link). This approach is memory-efficient for large directories since it processes items one at a time.</p>
         `,
-        videoUrl: 'https://www.youtube.com/embed/YKdQcT7EgQI'
+        // videoUrl: 'https://www.youtube.com/embed/YKdQcT7EgQI'
       },
       {
         id: 'dart-advanced',
@@ -24053,7 +24053,7 @@ void fibonacciIsolate(SendPort sendPort) {
           
           <p>Isolates are Dart's approach to parallel processing, similar to threads in other languages but completely isolated with no shared memory. Each isolate has its own memory space and communicates only through message passing using SendPort and ReceivePort. This design eliminates race conditions and makes concurrent programming safer. Isolates are perfect for CPU-intensive tasks like image processing, cryptography, or complex calculations that would otherwise block the main UI thread.</p>
         `,
-        videoUrl: 'https://www.youtube.com/embed/RMiN59x3uH0'
+        // videoUrl: 'https://www.youtube.com/embed/RMiN59x3uH0'
       }
     ]
   },
@@ -24145,7 +24145,7 @@ USE myapp;
 -- Show tables
 SHOW TABLES;</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/7S_tz1z_5bA'
+        // videoUrl: 'https://www.youtube.com/embed/7S_tz1z_5bA'
       },
       {
         id: 'mysql-databases-tables',
@@ -24217,7 +24217,7 @@ DROP TABLE IF EXISTS old_table;</code></pre>
             <li><strong>CHECK:</strong> Validates data conditions</li>
           </ul>
         `,
-        videoUrl: 'https://www.youtube.com/embed/HXV3zeQKqGY'
+        // videoUrl: 'https://www.youtube.com/embed/HXV3zeQKqGY'
       },
       {
         id: 'mysql-crud',
@@ -24295,7 +24295,7 @@ DELETE FROM temp_table;</code></pre>
             <li>Backup data before bulk operations</li>
           </ul>
         `,
-        videoUrl: 'https://www.youtube.com/embed/Cz3WcZLRaWc'
+        // videoUrl: 'https://www.youtube.com/embed/Cz3WcZLRaWc'
       },
       {
         id: 'mysql-joins',
@@ -24367,7 +24367,7 @@ WHERE u1.id < u2.id;</code></pre>
             <li><strong>Many-to-Many:</strong> Many relate to many (Students ↔ Courses)</li>
           </ul>
         `,
-        videoUrl: 'https://www.youtube.com/embed/9yeOJ0ZMUYw'
+        // videoUrl: 'https://www.youtube.com/embed/9yeOJ0ZMUYw'
       },
       {
         id: 'mysql-aggregate',
@@ -24439,7 +24439,7 @@ SELECT DATEDIFF(NOW(), created_at) AS days_old FROM users;
 -- Date formatting
 SELECT DATE_FORMAT(created_at, '%Y-%m-%d') FROM orders;</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/YNLbI_XMEhM'
+        // videoUrl: 'https://www.youtube.com/embed/YNLbI_XMEhM'
       },
       {
         id: 'mysql-indexes',
@@ -24504,7 +24504,7 @@ SELECT * FROM users WHERE YEAR(created_at) = 2024;
 SELECT * FROM users 
 WHERE created_at BETWEEN '2024-01-01' AND '2024-12-31';</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/FSa3XXjb9Bc'
+        // videoUrl: 'https://www.youtube.com/embed/FSa3XXjb9Bc'
       },
       {
         id: 'mysql-transactions',
@@ -24594,7 +24594,7 @@ ALTER USER 'appuser'@'localhost' IDENTIFIED BY 'new_password';</code></pre>
 -- Show current user
 SELECT CURRENT_USER();</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/zsjvFFKOm3c'
+        // videoUrl: 'https://www.youtube.com/embed/zsjvFFKOm3c'
       },
       {
         id: 'mysql-advanced',
@@ -24702,7 +24702,7 @@ FROM users;
 SELECT * FROM users
 WHERE EXISTS (SELECT 1 FROM orders WHERE user_id = users.id);</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/tYlFTCTe0_E'
+        // videoUrl: 'https://www.youtube.com/embed/tYlFTCTe0_E'
       }
     ]
   },
@@ -24794,7 +24794,7 @@ show collections
 // Basic insert
 db.users.insertOne({ name: "John", age: 30 })</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/ExcRbA7fy_A'
+        // videoUrl: 'https://www.youtube.com/embed/ExcRbA7fy_A'
       },
       {
         id: 'mongodb-crud',
@@ -24906,7 +24906,7 @@ db.users.deleteMany({})
 // Drop entire collection
 db.users.drop()</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/ofme2o29ngU'
+        // videoUrl: 'https://www.youtube.com/embed/ofme2o29ngU'
       },
       {
         id: 'mongodb-query-operators',
@@ -24997,7 +24997,7 @@ db.products.find({ name: { \$regex: "laptop", \$options: "i" } })
 db.products.createIndex({ description: "text" })
 db.products.find({ \$text: { \$search: "wireless bluetooth" } })</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/W-WihPoEbR4'
+        // videoUrl: 'https://www.youtube.com/embed/W-WihPoEbR4'
       },
       {
         id: 'mongodb-aggregation',
@@ -25126,7 +25126,7 @@ db.products.aggregate([
   }
 ])</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/A3jvoE0jGdE'
+        // videoUrl: 'https://www.youtube.com/embed/A3jvoE0jGdE'
       },
       {
         id: 'mongodb-indexing',
@@ -25208,7 +25208,7 @@ db.users.find(
   { _id: 0, email: 1, name: 1 }
 ).hint("email_1")</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/KF2lcYBfoM0'
+        // videoUrl: 'https://www.youtube.com/embed/KF2lcYBfoM0'
       },
       {
         id: 'mongodb-data-modeling',
@@ -25327,7 +25327,7 @@ db.createCollection("users", {
   }
 })</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/3GHZd0zv170'
+        // videoUrl: 'https://www.youtube.com/embed/3GHZd0zv170'
       },
       {
         id: 'mongodb-mongoose',
@@ -25502,7 +25502,7 @@ const order = await Order.findById(orderId)
     }
   });</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/DZBGEVgL2eE'
+        // videoUrl: 'https://www.youtube.com/embed/DZBGEVgL2eE'
       },
       {
         id: 'mongodb-advanced',
@@ -25663,7 +25663,7 @@ db.places.find({
   }
 })</code></pre>
         `,
-        videoUrl: 'https://www.youtube.com/embed/leNCfU5SYR8'
+        // videoUrl: 'https://www.youtube.com/embed/leNCfU5SYR8'
       }
     ]
   }
