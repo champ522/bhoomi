@@ -217,6 +217,38 @@
   backdrop-filter: blur(4px);
 }
 
+/* Unmute Button */
+.unmuteButton {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  z-index: 4;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 12px rgba(228, 227, 227, 0.3);
+}
+
+.unmuteButton:hover {
+  background: rgba(14, 141, 56, 0.9);
+  border-color: #0e8d38;
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(14, 141, 56, 0.4);
+}
+
+.unmuteButton:active {
+  transform: scale(0.95);
+}
+
 .reelCaption {
   position: absolute;
   bottom: 0;

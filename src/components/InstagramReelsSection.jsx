@@ -8,6 +8,7 @@ const InstagramReelsSection = () => {
   const [reels, setReels] = useState([]);
   const [error, setError] = useState(null);
   const [lastUpdated, setLastUpdated] = useState(null);
+  const [isMuted, setIsMuted] = useState(true);
   const containerRef = useRef(null);
   const scriptLoadedRef = useRef(false);
 
@@ -177,7 +178,7 @@ const InstagramReelsSection = () => {
                           className={styles.reelVideo}
                           poster={reel.thumbnail}
                           loop
-                          muted
+                          muted={isMuted}
                           playsInline
                           onMouseEnter={(e) => e.target.play()}
                           onMouseLeave={(e) => {
@@ -188,6 +189,18 @@ const InstagramReelsSection = () => {
                           <source src={reel.mediaUrl} type="video/mp4" />
                           Your browser does not support the video tag.
                         </video>
+                        <button 
+                          className={styles.unmuteButton}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            setIsMuted(!isMuted);
+                          }}
+                          title={isMuted ? 'Unmute' : 'Mute'}
+                        >
+                          {isMuted ? '🔇' : '🔊'}
+                        </button>
+                        
                         <div className={styles.playIcon}>
                           <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
                             <circle cx="24" cy="24" r="24" fill="rgba(0,0,0,0.6)" />
