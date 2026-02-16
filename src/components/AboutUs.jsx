@@ -35,7 +35,7 @@ const AboutUs = () => {
         icons.forEach(icon => {
             const handleMouseEnter = () => orbit.classList.add(styles.paused);
             const handleMouseLeave = () => orbit.classList.remove(styles.paused);
-            
+
             icon.addEventListener("mouseenter", handleMouseEnter);
             icon.addEventListener("mouseleave", handleMouseLeave);
         });
@@ -45,7 +45,7 @@ const AboutUs = () => {
             icons.forEach(icon => {
                 const handleMouseEnter = () => orbit.classList.add(styles.paused);
                 const handleMouseLeave = () => orbit.classList.remove(styles.paused);
-                
+
                 icon.removeEventListener("mouseenter", handleMouseEnter);
                 icon.removeEventListener("mouseleave", handleMouseLeave);
             });
@@ -69,8 +69,11 @@ const AboutUs = () => {
                             businesses through innovative software solutions. Our mission is to bridge
                             the gap between complex technology and simple, effective business solutions.
                             With over 4 years of experience, we have successfully delivered 250+ projects
-                            to satisfied clients across various industries. We specialize in custom software
-                            development, web applications, mobile apps, and cloud solutions.
+                            to satisfied clients across various industries. We specialize in{' '}
+                            <Link to="/software-development" style={{ color: '#28a745', textDecoration: 'none' }}>custom software development</Link>,{' '}
+                            <Link to="/web-development" style={{ color: '#28a745', textDecoration: 'none' }}>website development</Link>,{' '}
+                            <Link to="/mobile-app-development" style={{ color: '#28a745', textDecoration: 'none' }}>mobile app development</Link>, and{' '}
+                            <Link to="/web-application" style={{ color: '#28a745', textDecoration: 'none' }}>web applications</Link>.
                         </p>
                         <p className={styles.description}>
                             Based in Noida, Bhoomi Techzone Pvt. Ltd. has been delivering exceptional IT services since 2023. We partner with businesses to create custom web solutions, mobile applications, and enterprise software that drive growth. Our team of experienced developers and digital strategists combines technical expertise with creative innovation to build solutions that truly make a difference.
@@ -81,9 +84,9 @@ const AboutUs = () => {
                     </div>
                     <div className={styles.imageContent}>
                         <div className={styles.orbitBox}>
-                            <img 
-                                src="/images/girlimg.png" 
-                                className={styles.centerImg} 
+                            <img
+                                src="/images/girlimg.png"
+                                className={styles.centerImg}
                                 alt="man with laptop"
                                 onError={(e) => {
                                     e.target.src = '/images/aboutimg.jpg';

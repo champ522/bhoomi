@@ -92,27 +92,31 @@ const Blog = () => {
             <span className={styles.welcomeText}>Our Blog</span>
             <div className={styles.welcomeLine}></div>
           </div>
-          
+
           <h2 className={styles.sectionTitle}>
             Latest <span className={styles.titleHighlight}>Insights</span> & News
           </h2>
-          
+
           <p className={styles.sectionDescription}>
-            Stay updated with the latest trends, tips, and insights from the world of technology. 
+            Stay updated with the latest trends, tips, and insights from the world of technology.
             Our expert team shares valuable knowledge to help you stay ahead in the digital landscape.
+            Learn from industry leaders like{' '}
+            <a href="https://developer.mozilla.org/en-US/" target="_blank" rel="noopener noreferrer" style={{ color: '#28a745', textDecoration: 'none' }}>MDN Web Docs</a>{' '}
+            and stay informed with{' '}
+            <a href="https://techcrunch.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#28a745', textDecoration: 'none' }}>TechCrunch</a>.
           </p>
         </div>
 
         {/* Featured Post */}
         <div className={styles.featuredSection}>
-          <div 
+          <div
             className={styles.featuredPost}
             onMouseEnter={() => setHoveredPost('featured')}
             onMouseLeave={() => setHoveredPost(null)}
           >
             <div className={styles.featuredImageContainer}>
-              <img 
-                src={featuredPost.image} 
+              <img
+                src={featuredPost.image}
                 alt={featuredPost.title}
                 className={styles.featuredImage}
               />
@@ -121,27 +125,27 @@ const Blog = () => {
                 {featuredPost.category}
               </div>
             </div>
-            
+
             <div className={styles.featuredContent}>
               <div className={styles.featuredMeta}>
                 <span className={styles.author}>{featuredPost.author}</span>
                 <span className={styles.date}>{featuredPost.date}</span>
                 <span className={styles.readTime}>{featuredPost.readTime}</span>
               </div>
-              
+
               <h3 className={styles.featuredTitle}>{featuredPost.title}</h3>
               <p className={styles.featuredExcerpt}>{featuredPost.excerpt}</p>
-              
+
               <div className={styles.featuredTags}>
                 {featuredPost.tags.map((tag, index) => (
                   <span key={index} className={styles.tag}>{tag}</span>
                 ))}
               </div>
-              
+
               <Link to="/blog" className={styles.readMoreBtn}>
                 <span>Read Full Article</span>
                 <svg className={styles.readMoreIcon} viewBox="0 0 24 24">
-                  <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </Link>
             </div>
@@ -191,14 +195,14 @@ const Blog = () => {
           >
             {carouselPosts.map((post) => (
               <SwiperSlide key={post.id}>
-                <article 
+                <article
                   className={styles.carouselCard}
                   onMouseEnter={() => setHoveredPost(post.id)}
                   onMouseLeave={() => setHoveredPost(null)}
                 >
                   <div className={styles.cardImageContainer}>
-                    <img 
-                      src={post.image} 
+                    <img
+                      src={post.image}
                       alt={post.title}
                       className={styles.cardImage}
                     />
@@ -211,21 +215,21 @@ const Blog = () => {
                     {(post.category === 'AI Technology' || post.category === 'Machine Learning') && (
                       <div className={styles.aiIcon}>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
+                          <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" />
                         </svg>
                       </div>
                     )}
                   </div>
-                  
+
                   <div className={styles.cardContent}>
                     <div className={styles.cardMeta}>
                       <span className={styles.cardAuthor}>{post.author}</span>
                       <span className={styles.cardDate}>{post.date}</span>
                     </div>
-                    
+
                     <h4 className={styles.cardTitle}>{post.title}</h4>
                     <p className={styles.cardExcerpt}>{post.excerpt}</p>
-                    
+
                     <div className={styles.cardFooter}>
                       <div className={styles.cardTags}>
                         {post.tags.slice(0, 2).map((tag, index) => (
@@ -259,7 +263,7 @@ const Blog = () => {
             <span>Load More Articles</span>
             <div className={styles.loadMoreSpinner}>
               <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" strokeWidth="2"/>
+                <circle cx="12" cy="12" r="10" strokeWidth="2" />
               </svg>
             </div>
           </Link>

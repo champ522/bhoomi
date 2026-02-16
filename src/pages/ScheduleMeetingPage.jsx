@@ -15,7 +15,7 @@ const ScheduleMeetingPage = () => {
 
   // Configuration data
   const holidays = ['2026-01-26', '2026-03-08', '2026-08-15', '2026-12-25'];
-  
+
   const staffUnavailableDates = {
     'Rishabh Savita': ['2026-01-25', '2026-01-26', '2026-02-15'],
     'Surya Pratap': ['2026-01-22', '2026-02-10'],
@@ -32,18 +32,18 @@ const ScheduleMeetingPage = () => {
   React.useEffect(() => {
     const savedBookings = localStorage.getItem('bhoomitechBookedSlots');
     const savedPreferences = localStorage.getItem('bhoomitechClientPreferences');
-    
+
     if (savedBookings) {
       setBookedSlots(JSON.parse(savedBookings));
     }
     if (savedPreferences) {
       setClientPreferences(JSON.parse(savedPreferences));
     }
-    
+
     // Auto-cleanup old bookings
     cleanupOldBookings();
   }, []);
-  
+
   // Form fields
   const [formData, setFormData] = useState({
     name: '',
@@ -72,11 +72,11 @@ const ScheduleMeetingPage = () => {
   const cleanupOldBookings = () => {
     const cutoffDate = new Date();
     cutoffDate.setDate(cutoffDate.getDate() - 30);
-    
-    const filteredBookings = bookedSlots.filter(booking => 
+
+    const filteredBookings = bookedSlots.filter(booking =>
       new Date(booking.bookedAt) > cutoffDate
     );
-    
+
     if (filteredBookings.length !== bookedSlots.length) {
       setBookedSlots(filteredBookings);
       localStorage.setItem('bhoomitechBookedSlots', JSON.stringify(filteredBookings));
@@ -86,10 +86,10 @@ const ScheduleMeetingPage = () => {
   // Get service-specific time slots
   const getTimeSlotsForService = (service, date) => {
     if (!service || !date) return [];
-    
+
     const day = date.getDay();
     const isWeekend = day === 0 || day === 6;
-    
+
     if (isWeekend) {
       // Weekend hours: 10 AM to 4 PM (every 30 minutes) - All services available
       // Excluding lunch time 2:00 PM to 3:00 PM
@@ -99,7 +99,7 @@ const ScheduleMeetingPage = () => {
         '3:00 PM', '3:30 PM', '4:00 PM'
       ];
     }
-    
+
     // Weekday slots: 9 AM to 6 PM (every 30 minutes)
     // Excluding lunch time 2:00 PM to 3:00 PM
     return [
@@ -119,7 +119,7 @@ const ScheduleMeetingPage = () => {
   // Check if staff is available on date
   const isStaffAvailable = (staff, date) => {
     if (!staff || staff === 'Anyone') return true;
-    
+
     const dateString = date.toISOString().split('T')[0];
     const unavailableDates = staffUnavailableDates[staff] || [];
     return !unavailableDates.includes(dateString);
@@ -127,16 +127,16 @@ const ScheduleMeetingPage = () => {
 
   // Check booking limits
   const canClientBook = (email, date) => {
-    const clientBookings = bookedSlots.filter(booking => 
+    const clientBookings = bookedSlots.filter(booking =>
       booking.details.clientEmail === email
     );
-    
-    const todayBookings = bookedSlots.filter(booking => 
+
+    const todayBookings = bookedSlots.filter(booking =>
       booking.date === date.toDateString() && booking.details.clientEmail === email
     );
 
-    return clientBookings.length < maxBookingsPerClient && 
-           todayBookings.length < maxBookingsPerDay;
+    return clientBookings.length < maxBookingsPerClient &&
+      todayBookings.length < maxBookingsPerDay;
   };
 
   // Check advance booking limits
@@ -144,30 +144,30 @@ const ScheduleMeetingPage = () => {
     const now = new Date();
     const diffHours = (date - now) / (1000 * 60 * 60);
     const diffDays = (date - now) / (1000 * 60 * 60 * 24);
-    
+
     return diffHours >= minAdvanceHours && diffDays <= maxAdvanceDays;
   };
 
   // Get alternative time suggestions
   const getAlternativeTimes = (date, service) => {
     if (!date || !service) return [];
-    
-    const availableSlots = getTimeSlotsForService(service, date).filter(time => 
+
+    const availableSlots = getTimeSlotsForService(service, date).filter(time =>
       !isSlotBooked(date, time)
     );
-    
+
     if (availableSlots.length > 0) {
       return availableSlots.slice(0, 3);
     }
-    
+
     // Check next 3 days for alternatives
     const alternatives = [];
     for (let i = 1; i <= 3 && alternatives.length < 3; i++) {
       const nextDate = new Date(date);
       nextDate.setDate(date.getDate() + i);
-      
+
       if (!isHoliday(nextDate) && isValidBookingDate(nextDate)) {
-        const nextDaySlots = getTimeSlotsForService(service, nextDate).filter(time => 
+        const nextDaySlots = getTimeSlotsForService(service, nextDate).filter(time =>
           !isSlotBooked(nextDate, time)
         );
         if (nextDaySlots.length > 0) {
@@ -178,7 +178,7 @@ const ScheduleMeetingPage = () => {
         }
       }
     }
-    
+
     return alternatives;
   };
 
@@ -186,17 +186,17 @@ const ScheduleMeetingPage = () => {
   const isSlotBooked = (date, time) => {
     if (!date || !time) return false;
     const dateString = date.toDateString();
-    
+
     return bookedSlots.some(booking => {
       const isSameDateAndTime = booking.date === dateString && booking.time === time;
-      
+
       if (!isSameDateAndTime) return false;
-      
+
       // If no staff is selected (Anyone), check if slot is booked for any staff
       if (!selectedStaff) {
         return true;
       }
-      
+
       // If specific staff is selected, only show as booked if it's booked for that staff
       // or if the previous booking was made with "Anyone" (which blocks for all staff)
       return booking.staff === selectedStaff || booking.staff === 'Anyone';
@@ -217,7 +217,7 @@ const ScheduleMeetingPage = () => {
     const updatedBookings = [...bookedSlots, newBooking];
     setBookedSlots(updatedBookings);
     localStorage.setItem('bhoomitechBookedSlots', JSON.stringify(updatedBookings));
-    
+
     // Save client preferences
     saveClientPreferences(details.clientEmail, {
       preferredStaff: selectedStaff || 'Anyone',
@@ -243,20 +243,20 @@ const ScheduleMeetingPage = () => {
 
   // Get optimal staff suggestion
   const getOptimalStaff = (date, service) => {
-    const availableStaff = staffMembers.filter(staff => 
+    const availableStaff = staffMembers.filter(staff =>
       isStaffAvailable(staff.name, date)
     );
-    
+
     if (availableStaff.length === 0) return null;
-    
+
     // Find staff with least bookings on that day
     const staffWorkload = availableStaff.map(staff => ({
       ...staff,
-      dayBookings: bookedSlots.filter(booking => 
+      dayBookings: bookedSlots.filter(booking =>
         booking.date === date.toDateString() && booking.staff === staff.name
       ).length
     }));
-    
+
     staffWorkload.sort((a, b) => a.dayBookings - b.dayBookings);
     return staffWorkload[0];
   };
@@ -304,7 +304,7 @@ const ScheduleMeetingPage = () => {
       if (isSlotBooked(selectedDate, selectedTime)) {
         const alternatives = getAlternativeTimes(selectedDate, selectedService);
         let alertMessage = 'Selected time slot is no longer available.';
-        
+
         if (alternatives.length > 0) {
           alertMessage += '\n\nSuggested alternatives:\n';
           alternatives.forEach((alt, index) => {
@@ -315,7 +315,7 @@ const ScheduleMeetingPage = () => {
             }
           });
         }
-        
+
         alert(alertMessage);
         setIsSubmitting(false);
         return;
@@ -350,10 +350,10 @@ ${formData.specialRequests ? `📝 Special Requests: ${formData.specialRequests}
 
       // WhatsApp number
       const whatsappNumber = '918130787194';
-      
+
       // Create WhatsApp URL
       const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-      
+
       // Save the booking
       saveBooking(selectedDate, selectedTime, {
         service: selectedService.name,
@@ -362,10 +362,10 @@ ${formData.specialRequests ? `📝 Special Requests: ${formData.specialRequests}
         clientMobile: formData.mobile,
         specialRequests: formData.specialRequests
       });
-      
+
       // Open WhatsApp
       window.open(whatsappURL, '_blank');
-      
+
       // Reset form and selections
       setSelectedService(null);
       setSelectedStaff('');
@@ -378,14 +378,14 @@ ${formData.specialRequests ? `📝 Special Requests: ${formData.specialRequests}
         specialRequests: ''
       });
       setSuggestedTimes([]);
-      
+
       // Show success message with booking ID
       alert(`✅ Booking confirmed!
 
 Booking ID: ${Date.now()}
 
 You will receive confirmation on WhatsApp shortly. Keep this booking ID for future reference.`);
-      
+
     } catch (error) {
       console.error('Error:', error);
       alert('Something went wrong. Please try again.');
@@ -397,7 +397,7 @@ You will receive confirmation on WhatsApp shortly. Keep this booking ID for futu
   const services = [
     {
       id: 1,
-      name: 'Web Development',
+      name: 'Web Design & Development',
       duration: '30 min'
     },
     {
@@ -410,11 +410,11 @@ You will receive confirmation on WhatsApp shortly. Keep this booking ID for futu
       name: 'Software Development',
       duration: '30 min'
     },
-    {
-      id: 4,
-      name: 'Website Design',
-      duration: '30 min'
-    },
+    // {
+    //   id: 4,
+    //   name: 'Website Design',
+    //   duration: '30 min'
+    // },
     {
       id: 5,
       name: 'Digital Marketing',
@@ -473,7 +473,7 @@ You will receive confirmation on WhatsApp shortly. Keep this booking ID for futu
     const lastDay = new Date(year, month + 1, 0);
     const daysInMonth = lastDay.getDate();
     const startingDayOfWeek = firstDay.getDay();
-    
+
     return { daysInMonth, startingDayOfWeek };
   };
 
@@ -497,8 +497,8 @@ You will receive confirmation on WhatsApp shortly. Keep this booking ID for futu
   const isToday = (day) => {
     const today = new Date();
     return day === today.getDate() &&
-           currentMonth.getMonth() === today.getMonth() &&
-           currentMonth.getFullYear() === today.getFullYear();
+      currentMonth.getMonth() === today.getMonth() &&
+      currentMonth.getFullYear() === today.getFullYear();
   };
 
   const isPastDate = (day) => {
@@ -510,20 +510,20 @@ You will receive confirmation on WhatsApp shortly. Keep this booking ID for futu
 
   const handleDateClick = (day) => {
     const selected = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), day);
-    
+
     if (isHoliday(selected)) {
       alert('Selected date is a holiday. Please choose another date.');
       return;
     }
-    
+
     if (!isValidBookingDate(selected)) {
       alert(`Please select a date at least ${minAdvanceHours} hours in advance and not more than ${maxAdvanceDays} days ahead.`);
       return;
     }
-    
+
     setSelectedDate(selected);
     setSelectedTime(null); // Reset time when date changes
-    
+
     // Show suggested times if available
     const suggestions = getAlternativeTimes(selected, selectedService);
     setSuggestedTimes(suggestions);
@@ -555,8 +555,8 @@ You will receive confirmation on WhatsApp shortly. Keep this booking ID for futu
                 </div>
                 <p className={styles.serviceDuration}>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2">
-                    <circle cx="12" cy="12" r="10"/>
-                    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
                   </svg>
                   {service.duration}
                 </p>
@@ -567,7 +567,7 @@ You will receive confirmation on WhatsApp shortly. Keep this booking ID for futu
           {/* Calendar and Time Selection - Always visible but inactive initially */}
           <div className={styles.bookingArea}>
             <p className={styles.bookingMessage}>
-              {!selectedService 
+              {!selectedService
                 ? 'Select a service to see available dates and times'
                 : 'Select a date and time for your appointment'}
             </p>
@@ -577,13 +577,13 @@ You will receive confirmation on WhatsApp shortly. Keep this booking ID for futu
               <div className={styles.staffSection}>
                 <label className={styles.sectionLabel}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                    <circle cx="12" cy="7" r="4"/>
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
                   </svg>
                   SELECT STAFF <span className={styles.optional}>(OPTIONAL)</span>
                   {selectedDate && (
                     <span className={styles.staffAvailability}>
-                      {getOptimalStaff(selectedDate, selectedService) && 
+                      {getOptimalStaff(selectedDate, selectedService) &&
                         ` • Suggested: ${getOptimalStaff(selectedDate, selectedService).name}`}
                     </span>
                   )}
@@ -601,8 +601,8 @@ You will receive confirmation on WhatsApp shortly. Keep this booking ID for futu
                   {staffMembers.map((staff) => {
                     const isAvailable = !selectedDate || isStaffAvailable(staff.name, selectedDate);
                     return (
-                      <option 
-                        key={staff.id} 
+                      <option
+                        key={staff.id}
                         value={staff.name}
                         disabled={!isAvailable}
                       >
@@ -611,7 +611,7 @@ You will receive confirmation on WhatsApp shortly. Keep this booking ID for futu
                     );
                   })}
                 </select>
-                
+
                 {/* Staff unavailable notice */}
                 {selectedStaff && selectedDate && !isStaffAvailable(selectedStaff, selectedDate) && (
                   <div className={styles.unavailableNotice}>
@@ -625,17 +625,17 @@ You will receive confirmation on WhatsApp shortly. Keep this booking ID for futu
                 <div className={styles.dateColumn}>
                   <label className={styles.sectionLabel}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2">
-                      <rect x="3" y="4" width="18" height="18" rx="2"/>
-                      <path d="M16 2v4M8 2v4M3 10h18" strokeLinecap="round"/>
+                      <rect x="3" y="4" width="18" height="18" rx="2" />
+                      <path d="M16 2v4M8 2v4M3 10h18" strokeLinecap="round" />
                     </svg>
                     DATE
                   </label>
-                  
+
                   <div className={styles.calendar}>
                     <div className={styles.calendarHeader}>
                       <button onClick={handlePrevMonth} className={styles.monthNav} disabled={!selectedService}>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                          <path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                       </button>
                       <span className={styles.monthYear}>
@@ -643,7 +643,7 @@ You will receive confirmation on WhatsApp shortly. Keep this booking ID for futu
                       </span>
                       <button onClick={handleNextMonth} className={styles.monthNav} disabled={!selectedService}>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                          <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                       </button>
                     </div>
@@ -668,13 +668,10 @@ You will receive confirmation on WhatsApp shortly. Keep this booking ID for futu
                         return (
                           <button
                             key={day}
-                            className={`${styles.dayCell} ${
-                              !isSelected && isTodayDate ? styles.today : ''
-                            } ${
-                              isSelected ? styles.selected : ''
-                            } ${
-                              isPastDate(day) || !selectedService ? styles.disabled : ''
-                            }`}
+                            className={`${styles.dayCell} ${!isSelected && isTodayDate ? styles.today : ''
+                              } ${isSelected ? styles.selected : ''
+                              } ${isPastDate(day) || !selectedService ? styles.disabled : ''
+                              }`}
                             onClick={() => selectedService && !isPastDate(day) && handleDateClick(day)}
                             disabled={isPastDate(day) || !selectedService}
                           >
@@ -690,8 +687,8 @@ You will receive confirmation on WhatsApp shortly. Keep this booking ID for futu
                 <div className={styles.timeColumn}>
                   <label className={styles.sectionLabel}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2">
-                      <circle cx="12" cy="12" r="10"/>
-                      <path d="M12 6V12L16 14" strokeLinecap="round"/>
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M12 6V12L16 14" strokeLinecap="round" />
                     </svg>
                     TIME
                   </label>
@@ -713,18 +710,17 @@ You will receive confirmation on WhatsApp shortly. Keep this booking ID for futu
                       <div className={styles.timeSlots}>
                         {timeSlots.map((time) => {
                           const isBooked = selectedDate && isSlotBooked(selectedDate, time);
-                          const bookingForSlot = selectedDate ? bookedSlots.find(booking => 
-                            booking.date === selectedDate.toDateString() && 
+                          const bookingForSlot = selectedDate ? bookedSlots.find(booking =>
+                            booking.date === selectedDate.toDateString() &&
                             booking.time === time &&
                             (booking.staff === selectedStaff || booking.staff === 'Anyone' || !selectedStaff)
                           ) : null;
-                          
+
                           return (
                             <button
                               key={time}
-                              className={`${styles.timeSlot} ${
-                                selectedTime === time ? styles.selectedTime : ''
-                              } ${isBooked ? styles.bookedSlot : ''}`}
+                              className={`${styles.timeSlot} ${selectedTime === time ? styles.selectedTime : ''
+                                } ${isBooked ? styles.bookedSlot : ''}`}
                               onClick={() => !isBooked && setSelectedTime(time)}
                               disabled={isBooked}
                               title={isBooked ? `This slot is booked${bookingForSlot ? ` for ${bookingForSlot.staff}` : ''}` : ''}
@@ -739,14 +735,14 @@ You will receive confirmation on WhatsApp shortly. Keep this booking ID for futu
                           );
                         })}
                       </div>
-                      
+
                       {/* Alternative suggestions */}
                       {selectedDate && timeSlots.every(time => isSlotBooked(selectedDate, time)) && (
                         <div className={styles.alternativeSuggestions}>
                           <p>All slots are booked for this day. Try these alternatives:</p>
                           {getAlternativeTimes(selectedDate, selectedService).map((alt, index) => (
-                            <button 
-                              key={index} 
+                            <button
+                              key={index}
                               className={styles.alternativeSlot}
                               onClick={() => {
                                 if (alt.date) {
@@ -770,7 +766,7 @@ You will receive confirmation on WhatsApp shortly. Keep this booking ID for futu
             {/* User Details Form - Always visible but inactive initially */}
             <div className={styles.formSection}>
               <h3 className={styles.formTitle}>Add Your Details</h3>
-              
+
               <div className={`${styles.formGrid} ${!selectedService ? styles.inactive : ''}`}>
                 <div className={styles.formGroup}>
                   <label className={styles.formLabel}>Name *</label>
@@ -828,16 +824,16 @@ You will receive confirmation on WhatsApp shortly. Keep this booking ID for futu
                 </div>
               </div>
 
-              <button 
+              <button
                 className={styles.confirmBtn}
                 onClick={handleConfirmBooking}
                 disabled={
                   isSubmitting ||
-                  !selectedService || 
-                  !selectedDate || 
-                  !selectedTime || 
-                  !formData.name.trim() || 
-                  !formData.email.trim() || 
+                  !selectedService ||
+                  !selectedDate ||
+                  !selectedTime ||
+                  !formData.name.trim() ||
+                  !formData.email.trim() ||
                   !formData.mobile.trim()
                 }
               >
