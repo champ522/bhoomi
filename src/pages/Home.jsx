@@ -26,21 +26,21 @@ const CallToAction = lazy(() => import('../components/CallToAction'));
 const ContactModal = lazy(() => import('../components/ContactModal'));
 
 const Home = () => {
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
 
-  useEffect(() => {
-    // Show modal after 3 seconds
-    const timer = setTimeout(() => {
-      setShowModal(true);
-    }, 1000);
+  // useEffect(() => {
+  //   // Show modal after 3 seconds
+  //   const timer = setTimeout(() => {
+  //     setShowModal(true);
+  //   }, 1000);
 
-    // Cleanup timer if component unmounts
-    return () => clearTimeout(timer);
-  }, []);
+  //   // Cleanup timer if component unmounts
+  //   return () => clearTimeout(timer);
+  // }, []);
 
-  const handleCloseModal = () => {
-    setShowModal(false);
-  };
+  // const handleCloseModal = () => {
+  //   setShowModal(false);
+  // };
 
   return (
     <>
@@ -73,13 +73,13 @@ const Home = () => {
         <Certifications />
         <CallToAction />
 
-        {/* Contact Modal */}
-        {showModal && (
+        {/* Contact Modal - DISABLED */}
+        {/* {showModal && (
           <ContactModal
             isOpen={showModal}
             onClose={handleCloseModal}
           />
-        )}
+        )} */}
       </Suspense>
     </>
   );
