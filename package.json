@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
-    "build": "node scripts/generate-sitemap.js && vite build && ./post-build-performance.sh",
+    "build": "node scripts/generate-sitemap.js && vite build",
     "build-only": "vite build",
     "performance": "./post-build-performance.sh",
     "lint": "eslint .",
