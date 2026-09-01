@@ -1,0 +1,210 @@
+<?php
+// Set headers for JSON response
+header('Content-Type: application/json');
+
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    // Get and sanitize form data
+    $fullName = isset($_POST['fullName']) ? trim($_POST['fullName']) : '';
+    $email = isset($_POST['email']) ? trim($_POST['email']) : '';
+    $mobile = isset($_POST['mobile']) ? trim($_POST['mobile']) : '';
+    $countryCode = isset($_POST['countryCode']) ? trim($_POST['countryCode']) : '';
+    $project = isset($_POST['project']) ? trim($_POST['project']) : '';
+    $description = isset($_POST['description']) ? trim($_POST['description']) : '';
+    
+    // Validate required fields
+    if (empty($fullName) || empty($email) || empty($mobile) || empty($project)) {
+        echo json_encode(['success' => false, 'message' => 'Please fill in all required fields.']);
+        exit;
+    }
+    
+    // Validate email format
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo json_encode(['success' => false, 'message' => 'Invalid email address.']);
+        exit;
+    }
+    
+    // Check if running on localhost (development mode)
+    $isLocalhost = in_array($_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1']) || 
+                   strpos($_SERVER['HTTP_HOST'], 'localhost') !== false;
+    
+    // Format project name
+    $projectNames = [
+        'business-website' => 'Business Website / Web Application',
+        'mobile-app' => 'Mobile App for My Business',
+        'ecommerce' => 'Ecommerce Platform (B2C / B2B)',
+        'startup-mvp' => 'Startup Product (MVP / PoC)',
+        'custom-software' => 'Custom Business Software',
+        'software-upgrade' => 'Software Upgrade / Enhancement',
+        'maintenance' => 'Maintenance & Support'
+    ];
+    $projectName = isset($projectNames[$project]) ? $projectNames[$project] : $project;
+    
+    // Reusable email sender (try mail() first, then optional PHPMailer SMTP)
+    function sendHtmlEmail($to, $cc, $subject, $htmlMessage, $plainMessage, $userEmail) {
+        $fromEmail = 'info@bhoomitechzone.in';
+        $fromName = 'Bhoomi Tech Zone';
+        $headers = "From: $fromName <$fromEmail>\r\n";
+        $headers .= "Reply-To: $userEmail\r\n";
+        $headers .= "CC: $cc\r\n";
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+        $headers .= "X-Mailer: PHP/" . phpversion();
+
+        if (mail($to, $subject, $htmlMessage, $headers)) {
+            return [true, null];
+        }
+
+        // Optional: PHPMailer fallback if composer dependencies are available.
+        $autoloadPath = __DIR__ . '/vendor/autoload.php';
+        if (file_exists($autoloadPath)) {
+            require_once $autoloadPath;
+            try {
+                $mail = new PHPMailer\PHPMailer\PHPMailer(true);
+                $mail->isSMTP();
+                $mail->Host = 'smtp.your-provider.com';
+                $mail->SMTPAuth = true;
+                $mail->Username = 'your-smtp-username';
+                $mail->Password = 'your-smtp-password';
+                $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
+                $mail->Port = 587;
+
+                $mail->setFrom($fromEmail, $fromName);
+                $mail->addAddress($to);
+                $mail->addCC($cc);
+                $mail->addReplyTo($userEmail);
+                $mail->isHTML(true);
+                $mail->Subject = $subject;
+                $mail->Body = $htmlMessage;
+                $mail->AltBody = $plainMessage;
+
+                $mail->send();
+                return [true, null];
+            } catch (Exception $e) {
+                return [false, 'PHPMailer error: ' . $e->getMessage()];
+            }
+        }
+
+        return [false, 'mail() failed and PHPMailer not available'];
+    }
+
+    // Prepare email content
+    $to = "info@bhoomitechzone.in";
+    $cc = "sales@bhoomitechzone.in";
+    $subject = "New Project Inquiry from " . $fullName . " (Modal Form)";
+    
+    // Email content
+    $emailContent = "========================================\n";
+    $emailContent .= "NEW PROJECT INQUIRY - MODAL FORM\n";
+    $emailContent .= "========================================\n\n";
+    $emailContent .= "Full Name: " . $fullName . "\n";
+    $emailContent .= "Email: " . $email . "\n";
+    $emailContent .= "Mobile: " . $countryCode . " " . $mobile . "\n";
+    $emailContent .= "Project Type: " . $projectName . "\n";
+    $emailContent .= "Description: " . ($description ? $description : 'Not provided') . "\n\n";
+    $emailContent .= "To: " . $to . "\n";
+    $emailContent .= "CC: " . $cc . "\n";
+    $emailContent .= "Time: " . date('F j, Y, g:i a') . "\n";
+    $emailContent .= "========================================\n";
+    
+    if ($isLocalhost) {
+        // DEVELOPMENT MODE: Save to file instead of sending
+        $logFile = 'test-emails.txt';
+        $result = file_put_contents($logFile, $emailContent . "\n\n", FILE_APPEND);
+        
+        if ($result !== false) {
+            echo json_encode([
+                'success' => true, 
+                'message' => '✓ SUCCESS (Development Mode)\n\nYour form data has been saved to test-emails.txt file.\n\nOn live hosting, this will be sent to:\n• info@bhoomitechzone.in\n• sales@bhoomitechzone.in (CC)'
+            ]);
+        } else {
+            echo json_encode([
+                'success' => false, 
+                'message' => 'Could not save test email. Check folder permissions.'
+            ]);
+        }
+    } else {
+        // PRODUCTION MODE: Send actual email
+    // HTML Email Body
+    $htmlMessage = '
+    <html>
+    <head>
+        <style>
+            body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+            .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+            .header { background-color: #0d6efd; color: white; padding: 20px; text-align: center; border-radius: 5px 5px 0 0; }
+            .content { padding: 20px; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 0 0 5px 5px; }
+            .field { margin-bottom: 15px; padding: 10px; background-color: white; border-radius: 3px; }
+            .label { font-weight: bold; color: #0d6efd; margin-bottom: 5px; }
+            .value { color: #333; }
+            .footer { text-align: center; margin-top: 20px; color: #6c757d; font-size: 12px; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h2 style="margin: 0;">New Project Inquiry</h2>
+                <p style="margin: 5px 0 0 0; font-size: 14px;">BTPLSOFT Website - Modal Form</p>
+            </div>
+            <div class="content">
+                <div class="field">
+                    <div class="label">Full Name:</div>
+                    <div class="value">' . htmlspecialchars($fullName) . '</div>
+                </div>
+                <div class="field">
+                    <div class="label">Email Address:</div>
+                    <div class="value"><a href="mailto:' . htmlspecialchars($email) . '">' . htmlspecialchars($email) . '</a></div>
+                </div>
+                <div class="field">
+                    <div class="label">Mobile Number:</div>
+                    <div class="value">' . htmlspecialchars($countryCode . ' ' . $mobile) . '</div>
+                </div>
+                <div class="field">
+                    <div class="label">Project Type:</div>
+                    <div class="value">' . htmlspecialchars($projectName) . '</div>
+                </div>
+                <div class="field">
+                    <div class="label">Project Description:</div>
+                    <div class="value">' . nl2br(htmlspecialchars($description ? $description : 'Not provided')) . '</div>
+                </div>
+                <div class="footer">
+                    <p>This email was sent from BTPLSOFT website popup modal form</p>
+                    <p>Received on: ' . date('F j, Y, g:i a') . '</p>
+                </div>
+            </div>
+        </div>
+    </body>
+    </html>
+    ';
+    
+    // Plain text version
+    $plainMessage = "New Project Inquiry from BTPLSOFT Website (Modal Form)\n\n" .
+                    "Full Name: " . $fullName . "\n" .
+                    "Email: " . $email . "\n" .
+                    "Mobile Number: " . $countryCode . " " . $mobile . "\n" .
+                    "Project Type: " . $projectName . "\n" .
+                    "Description: " . ($description ? $description : 'Not provided') . "\n\n" .
+                    "Received on: " . date('F j, Y, g:i a');
+    
+        // Send email using reusable helper with fallback logging
+        list($sent, $errorInfo) = sendHtmlEmail($to, $cc, $subject, $htmlMessage, $plainMessage, $email);
+
+        if ($sent) {
+            echo json_encode([
+                'success' => true,
+                'message' => 'Thank you! Your inquiry has been submitted successfully. We will contact you within 24 hours.'
+            ]);
+        } else {
+            error_log('[send-email] email failure: ' . $errorInfo);
+            echo json_encode([
+                'success' => false,
+                'message' => 'Sorry, there was an error sending your message. Please try again or contact us directly at info@bhoomitechzone.in'
+            ]);
+        }
+    }
+    
+} else {
+    echo json_encode(['success' => false, 'message' => 'Invalid request method.']);
+}
+?>

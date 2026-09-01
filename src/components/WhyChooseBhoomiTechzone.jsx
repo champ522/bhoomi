@@ -142,8 +142,7 @@ const WhyChooseBhoomiTechzone = () => {
             Why Choose <span className={styles.titleHighlight}>Bhoomi Techzone</span>?
           </h2>
           <p className={styles.sectionDescription}>
-            We are committed to delivering exceptional technology solutions that drive your business forward. 
-            Here's what makes us the perfect partner for your digital transformation journey.
+            There are hundreds of IT companies out there. Here's why growing businesses keep choosing us - and coming back.
           </p>
         </div>
 
@@ -191,11 +190,15 @@ const WhyChooseBhoomiTechzone = () => {
           <div className={styles.rightContent}>
             <div className={styles.imageContainer}>
               <div className={styles.mainImage}>
-                <img 
-                  src="/images/bhoomilogo.png" 
-                  alt="Bhoomi Techzone - Technology Solutions"
-                  className={styles.heroImage}
-                />
+                <picture>
+                  <source srcSet="/images/bhoomilogo.webp" type="image/webp" />
+                  <img 
+                    src="/images/bhoomilogo.png" width="210" height="63" 
+                    alt="Bhoomi Techzone - Technology Solutions"
+                    className={styles.heroImage}
+                    loading="lazy"
+                  />
+                </picture>
               </div>
 
               {/* Background Decorations */}

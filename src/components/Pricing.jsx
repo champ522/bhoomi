@@ -51,6 +51,54 @@ const Pricing = () => {
       ],
       buttonText: "Get Started",
       popular: false
+    },
+    {
+      id: 4,
+      title: "Mobile Application",
+      price: "14,999",
+      currency: "₹",
+      period: "/-",
+      description: "Take your business mobile with a custom app.",
+      features: [
+        "Works on Both Android & iOS",
+        "Beautiful UI That Users Will Love",
+        "Connect with Your Backend and Database",
+        "We'll Help You Publish to App Stores"
+      ],
+      buttonText: "Get Started",
+      popular: false
+    },
+    {
+      id: 5,
+      title: "CRM Software",
+      price: "24,999",
+      currency: "₹",
+      period: "/-",
+      description: "Manage customers & boost sales effortlessly.",
+      features: [
+        "Track All Your Customers & Leads in One Place",
+        "Monitor Your Sales Pipeline & Performance",
+        "Get Insights with Smart Reports",
+        "Send Emails & Messages Directly"
+      ],
+      buttonText: "Get Started",
+      popular: false
+    },
+    {
+      id: 6,
+      title: "Digital Marketing",
+      price: "9,999",
+      currency: "₹",
+      period: "/month",
+      description: "Grow your online presence and reach more.",
+      features: [
+        "Get Found on Google with SEO",
+        "We Handle Your Social Media Posts & Ads",
+        "Fresh Content Every Month",
+        "See What's Working with Monthly Reports"
+      ],
+      buttonText: "Get Started",
+      popular: false
     }
   ];
 

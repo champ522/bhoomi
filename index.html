@@ -1,16 +1,228 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/images/favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css?family=Arimo:400,700|Cabin:400,500,600,700|Montserrat:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
-    <title>Bhoomi Techzone</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <!-- Basic Meta Tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+
+  <!-- SEO Meta Tags -->
+  <title>Bhoomi Techzone – IT Services Company | Web Dev & Digital</title>
+  <meta name="description"
+    content="Bhoomi Techzone is a trusted IT Services Company offering website development, digital marketing services, and custom software solutions for business growth." />
+  <meta name="keywords" content="IT Services Company, Website Development Company, Digital Marketing Services, Website Development Company, Web Development Services, Best Mobile App Development Company, Best app development company in noida, Software Development Company in Noida, Software Development Services, Website Design Services, Web Design Services, Digital Marketing Services, Digital Marketing Company in noida, Social Media Marketing Services, social media advertising, Content Marketing agencies, SEO Optimization Services, Best SEO Services in noida, best it companies in noida, best it services company in noida, App Maintenance Services, Website Maintenance Services, CRM Software Development, ERP Software Development, Ecommerce Website Development, Inventory Management Software, HRM software development, LMS Software Development, Billing Software Development, Web Application Development, Best FinTech Software Development, EdTech Software Development, Healthcare Software Development, Healthcare software development companies, Real Estate Software Development Services, Software development for startups, Manufacturing Software Development services, Legal Software Development services, IT support services in Noida, ERP Software Development in noida, Best Ecommerce Website Development in noida, Inventory Management Software In Noida, Best HRM software development in Noida, best LMS Software Development in noida, Best Billing Software Development In Noida, Web Application Development In noida, FinTech Software Development in Noida, EdTech Software Development In noida, Real estate IT services in Noida, digital solutions for startups, Retail software development solutions, Retail software development solutions In Noida, Manufacturing Software Development services in Noida, Legal Software Development services In Noida, logistics software development, logistics software development in Noida, business consulting software solutions, IT solutions for consulting firms, digital solutions for nonprofits, Non-Profit Solution Development in Noida, digital marketing agency software solutions, digital marketing agency software solutions In noida, IT company careers in Noida, jobs in software development company in Noida" />
+  <meta name="author" content="Bhoomi Techzone Private Limited" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <!--<link rel="canonical" href="https://bhoomitechzone.in/" />-->
+
+  <meta name="distribution" content="India"/>
+  <meta name="rating" content="General"/>
+  <meta name="audience" content="All"/>
+  <meta name="Revisit-After" content="7 Days">
+
+  <!-- OpenGraph Meta Tags -->
+  <meta property="og:title" content="Bhoomi Techzone – IT Services Company | Web Dev & Digital" />
+  <meta property="og:description"
+    content="Bhoomi Techzone is a leading IT solutions and software development company in Noida offering website development, mobile app development, digital marketing, ERP/CRM solutions, ecommerce development, SEO services, and custom software solutions for startups, enterprises, healthcare, fintech, retail, logistics, and other industries. We deliver innovative, scalable, and result-driven digital solutions to help businesses grow online with advanced technology and expert support.
+     IT Services Company, Website Development Company, Digital Marketing Services, Website Development Company, Web Development Services, Mobile App Development Company, Best app development company in noida, Software Development Company in Noida, Software Development Services, Website Design Services, Web Design Services, Digital Marketing Services, Digital Marketing Company in noida, Social Media Marketing Services, social media advertising, Content Marketing agencies, SEO Optimization Services, Best SEO Services in noida, best it companies in noida, best it services company in noida, App Maintenance Services, Website Maintenance Services, CRM Software Development, ERP Software Development, Ecommerce Website Development, Inventory Management Software, HRM software development, LMS Software Development, Billing Software Development, Web Application Development, Best FinTech Software Development, EdTech Software Development, Healthcare Software Development, Healthcare software development companies, Real Estate Software Development Services, Software development for startups, Manufacturing Software Development services, Legal Software Development services, IT support services in Noida, ERP Software Development in noida, Best Ecommerce Website Development in noida, Inventory Management Software In Noida, Best HRM software development in Noida, best LMS Software Development in noida, Best Billing Software Development In Noida, Web Application Development In noida, FinTech Software Development in Noida, EdTech Software Development In noida, Real estate IT services in Noida, digital solutions for startups, Retail software development solutions, Retail software development solutions In Noida, Manufacturing Software Development services in Noida, Legal Software Development services In Noida, logistics software development, logistics software development in Noida, business consulting software solutions, IT solutions for consulting firms, digital solutions for nonprofits, Non-Profit Solution Development in Noida, digital marketing agency software solutions, digital marketing agency software solutions In noida, IT company careers in Noida, jobs in software development company in Noida" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bhoomitechzone.in/" />
+  <meta property="og:image" content="https://bhoomitechzone.in/images/bhoomi-black.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Bhoomi Techzone Private Limited" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bhoomi Techzone – IT Services Company | Web Dev & Digital" />
+  <meta name="twitter:description"
+    content="Bhoomi Techzone is a trusted IT Services Company offering website development, digital marketing services, and custom software solutions for business growth." />
+  <meta name="twitter:image" content="https://bhoomitechzone.in/images/bhoomi-black.png" />
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = [];
+      t = b.createElement(e); t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '831975063249448');
+    fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Bhoomi Techzone Private Limited",
+      "url": "https://bhoomitechzone.in/",
+      "logo": "https://bhoomitechzone.in/images/favicon.png",
+      "description": "Bhoomi Techzone is a leading IT solutions and software development company in Noida offering website development, mobile app development, digital marketing, SEO services, ERP/CRM solutions, ecommerce development, and custom software solutions for startups and enterprises . IT Services Company, Website Development Company, Digital Marketing Services, Website Development Company, Web Development Services, Best Mobile App Development Company, Best app development company in noida, Software Development Company in Noida, Software Development Services, Website Design Services, Web Design Services, Digital Marketing Services, Digital Marketing Company in noida, Social Media Marketing Services, social media advertising, Content Marketing agencies, SEO Optimization Services, Best SEO Services in noida, best it companies in noida, best it services company in noida, App Maintenance Services, Website Maintenance Services, CRM Software Development, ERP Software Development, Ecommerce Website Development, Inventory Management Software, HRM software development, LMS Software Development, Billing Software Development, Web Application Development, Best FinTech Software Development, EdTech Software Development, Healthcare Software Development, Healthcare software development companies, Real Estate Software Development Services, Software development for startups, Manufacturing Software Development services, Legal Software Development services, IT support services in Noida, ERP Software Development in noida, Best Ecommerce Website Development in noida, Inventory Management Software In Noida, Best HRM software development in Noida, best LMS Software Development in noida, Best Billing Software Development In Noida, Web Application Development In noida, FinTech Software Development in Noida, EdTech Software Development In noida, Real estate IT services in Noida, digital solutions for startups, Retail software development solutions, Retail software development solutions In Noida, Manufacturing Software Development services in Noida, Legal Software Development services In Noida, logistics software development, logistics software development in Noida, business consulting software solutions, IT solutions for consulting firms, digital solutions for nonprofits, Non-Profit Solution Development in Noida, digital marketing agency software solutions, digital marketing agency software solutions In noida, IT company careers in Noida, jobs in software development company in Noida",
+      "serviceArea": "India",
+      "foundingDate": "2020",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "availableLanguage": "English"
+      },
+      "sameAs": [],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Software Development Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Web Development",
+              "description": "Custom website development and web application solutions"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobile App Development",
+              "description": "iOS and Android mobile application development"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Digital Marketing",
+              "description": "SEO, social media marketing, and online advertising services"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom Software Development",
+              "description": "Tailored software solutions for business automation"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+
+ <!-- Google tag (gtag.js) --> 
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-34N7NC7YSG"></script> 
+  <script>
+   window.dataLayer = window.dataLayer || []; 
+   function gtag() {
+    dataLayer.push(arguments);
+    } 
+    gtag('js', new Date()); 
+    gtag('config', 'G-34N7NC7YSG'); 
+  </script>
+
+  <!-- Performance & Resource Hints -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+
+  <!-- Preload Critical Assets -->
+  <link rel="preload" href="/images/bhoomi-black.png" as="image" type="image/png">
+
+  <!-- Critical CSS (Inlined for faster rendering) -->
+  <style>
+    /* Critical above-the-fold CSS */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arimo', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      color: #333;
+      background-color: #fff;
+    }
+
+    #root {
+      min-height: 100vh;
+      display: block;
+    }
+
+    /* Loading indicator */
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-size: 18px;
+      color: #28a745;
+      font-weight: 500;
+    }
+
+    /* Performance optimizations */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Prevent layout shift */
+    img[width][height] {
+      aspect-ratio: attr(width) / attr(height);
+    }
+  </style>
+
+  <!-- Optimized Font Loading with font-display: swap -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Cabin:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800;900&family=Play:wght@400;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Lottie Player (Deferred) -->
+  <script src="https://cdn.jsdelivr.net/npm/@lottiefiles/lottie-player@2.0.8/dist/lottie-player.min.js" defer></script>
+</head>
+
+<body>
+  <!-- SEO Content for Crawlers (Hidden when React loads) -->
+  <noscript>
+    <h1>Bhoomi Techzone – IT Services Company | Web Dev & Digital</h1>
+    <h2>Leading IT Company in India</h2>
+    <p>Bhoomi Techzone is a trusted IT Services Company offering website development, digital marketing services, and
+      custom software solutions for business growth.</p>
+
+    <h2>Our Services</h2>
+    <ul>
+      <li><a href="/web-development">Web Development</a></li>
+      <li><a href="/mobile-app-development">Mobile App Development</a></li>
+      <li><a href="/software-development">Custom Software Development</a></li>
+      <li><a href="/digital-marketing">Digital Marketing</a></li>
+      <li><a href="/seo-optimization">SEO Services</a></li>
+    </ul>
+
+    <p>Contact us today for professional software solutions.</p>
+  </noscript>
+
+  <!-- React Root -->
+  <div id="root"></div>
+
+  <!-- Main Application Script (Module) -->
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>

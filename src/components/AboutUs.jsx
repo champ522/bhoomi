@@ -3,112 +3,127 @@ import { Link } from 'react-router-dom';
 import styles from '../styles/AboutUs.module.css';
 
 const AboutUs = () => {
-    const orbitRef = useRef(null);
+  const orbitRef = useRef(null);
 
-    useEffect(() => {
-        const orbit = orbitRef.current;
-        if (!orbit) return;
+  useEffect(() => {
+    const orbit = orbitRef.current;
+    if (!orbit) return;
 
-        const icons = orbit.querySelectorAll("a");
+    const icons = orbit.querySelectorAll("a");
 
-        function arrangeInCircle() {
-            const radius = orbit.offsetWidth / 2 + 5;
-            const centerX = orbit.offsetWidth / 2;
-            const centerY = orbit.offsetHeight / 2;
-            const total = icons.length;
+    const arrangeInCircle = () => {
+      const radius = orbit.offsetWidth / 2 + 5;
+      const centerX = orbit.offsetWidth / 2;
+      const centerY = orbit.offsetHeight / 2;
+      const total = icons.length;
 
-            icons.forEach((icon, i) => {
-                const angle = (i / total) * (2 * Math.PI);
-                const x = centerX + radius * Math.cos(angle) - icon.offsetWidth / 2;
-                const y = centerY + radius * Math.sin(angle) - icon.offsetHeight / 2;
+      icons.forEach((icon, i) => {
+        const angle = (i / total) * (2 * Math.PI);
+        const x = centerX + radius * Math.cos(angle) - icon.offsetWidth / 2;
+        const y = centerY + radius * Math.sin(angle) - icon.offsetHeight / 2;
 
-                icon.style.left = `${x}px`;
-                icon.style.top = `${y}px`;
-            });
-        }
+        icon.style.left = `${x}px`;
+        icon.style.top = `${y}px`;
+      });
+    };
 
-        arrangeInCircle();
+    arrangeInCircle();
+    window.addEventListener("resize", arrangeInCircle);
 
-        const handleResize = () => arrangeInCircle();
-        window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", arrangeInCircle);
+  }, []);
 
-        icons.forEach(icon => {
-            const handleMouseEnter = () => orbit.classList.add(styles.paused);
-            const handleMouseLeave = () => orbit.classList.remove(styles.paused);
+  return (
+    <section className={styles.aboutSection}>
+      <div className={styles.container}>
+        <div className={styles.aboutContent}>
 
-            icon.addEventListener("mouseenter", handleMouseEnter);
-            icon.addEventListener("mouseleave", handleMouseLeave);
-        });
-
-        return () => {
-            window.removeEventListener("resize", handleResize);
-            icons.forEach(icon => {
-                const handleMouseEnter = () => orbit.classList.add(styles.paused);
-                const handleMouseLeave = () => orbit.classList.remove(styles.paused);
-
-                icon.removeEventListener("mouseenter", handleMouseEnter);
-                icon.removeEventListener("mouseleave", handleMouseLeave);
-            });
-        };
-    }, []);
-
-    return (
-        <section className={styles.aboutSection}>
-            <div className={styles.container}>
-                <div className={styles.aboutContent}>
-                    <div className={styles.textContent}>
-                        <div className={styles.welcomeSection}>
-                            <span className={styles.welcomeText}>Welcome to</span>
-                            <div className={styles.welcomeLine}></div>
-                        </div>
-                        <h2 className={styles.title}>
-                            <span className={styles.highlight}>Bhoomi</span> Techzone Pvt. Ltd.
-                        </h2>
-                        <p className={styles.description}>
-                            We are a passionate team of technology experts dedicated to transforming
-                            businesses through innovative software solutions. Our mission is to bridge
-                            the gap between complex technology and simple, effective business solutions.
-                            With over 4 years of experience, we have successfully delivered 250+ projects
-                            to satisfied clients across various industries. We specialize in{' '}
-                            <Link to="/software-development" style={{ color: '#28a745', textDecoration: 'none' }}>custom software development</Link>,{' '}
-                            <Link to="/web-development" style={{ color: '#28a745', textDecoration: 'none' }}>website development</Link>,{' '}
-                            <Link to="/mobile-app-development" style={{ color: '#28a745', textDecoration: 'none' }}>mobile app development</Link>, and{' '}
-                            <Link to="/web-application" style={{ color: '#28a745', textDecoration: 'none' }}>web applications</Link>.
-                        </p>
-                        <p className={styles.description}>
-                            Based in Noida, Bhoomi Techzone Pvt. Ltd. has been delivering exceptional IT services since 2023. We partner with businesses to create custom web solutions, mobile applications, and enterprise software that drive growth. Our team of experienced developers and digital strategists combines technical expertise with creative innovation to build solutions that truly make a difference.
-                        </p>
-                        <Link to="/about" className={styles.learnMoreBtn}>
-                            Learn More
-                        </Link>
-                    </div>
-                    <div className={styles.imageContent}>
-                        <div className={styles.orbitBox}>
-                            <img
-                                src="/images/girlimg.png"
-                                className={styles.centerImg}
-                                alt="man with laptop"
-                                onError={(e) => {
-                                    e.target.src = '/images/aboutimg.jpg';
-                                }}
-                            />
-                            <div className={styles.orbit} ref={orbitRef}>
-                                <a href="#"><img src="/images/icon1.png" alt="Innovation" /></a>
-                                <a href="#"><img src="/images/icon2.png" alt="Mission" /></a>
-                                <a href="#"><img src="/images/icon3.png" alt="Excellence" /></a>
-                                <a href="#"><img src="/images/icon9.png" alt="Vision" /></a>
-                                <a href="#"><img src="/images/icon4.png" alt="Partnership" /></a>
-                                <a href="#"><img src="/images/icon5.png" alt="Growth" /></a>
-                                <a href="#"><img src="/images/icon6.png" alt="Experience" /></a>
-                                <a href="#"><img src="/images/icon7.png" alt="Creative" /></a>
-                                <a href="#"><img src="/images/icon8.png" alt="Solution" /></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          {/* TEXT SECTION */}
+          <div className={styles.textContent}>
+            <div className={styles.welcomeSection}>
+              <span className={styles.welcomeText}>Welcome to</span>
+              <div className={styles.welcomeLine}></div>
             </div>
-        </section>
-    );
+
+            <h2 className={styles.title}>
+              <span className={styles.highlight}>Bhoomi</span> Techzone Pvt. Ltd.
+            </h2>
+
+            <p className={styles.description}>
+              We are a passionate team of technology experts dedicated to transforming businesses through innovative IT services and cutting-edge software solutions. Our mission is simple ,bridge the gap between complex technology and effective, results-driven business outcomes. As a trusted IT services company in India.
+              we have spent over 4 years delivering{' '}
+              <Link to="/software-development" className={styles.link}>
+                custom software development
+              </Link>,{' '}
+              <Link to="/web-development" className={styles.link}>
+                website development
+              </Link>,{' '}
+              <Link to="/mobile-app-development" className={styles.link}>
+                mobile app development
+              </Link>and {' '}
+              <Link to="/web-application" className={styles.link}>
+                web applications
+              </Link> that actually move the needle for our clients.
+            </p>
+
+            <p className={styles.description}>
+              Based in Noida, Bhoomi Techzone Pvt. Ltd. has been delivering exceptional IT services company since 2023 - and in that time, we have successfully completed 250+ projects for satisfied clients across industries like FinTech, EdTech, Real Estate, Logistics, and Manufacturing. We partner with startups, SMEs, and enterprises to build custom web solutions, mobile applications, and enterprise software that drive real business growth. Our team of experienced developers and digital strategists combines deep technical expertise with creative innovation - because at Bhoomi Techzone, we don't just write code, we build solutions that truly make a difference.
+            </p>
+
+            <Link to="/about" className={styles.learnMoreBtn}>
+              More About Bhoomi Techzone
+            </Link>
+          </div>
+
+          {/* IMAGE SECTION */}
+          <div className={styles.imageContent}>
+            <div className={styles.orbitBox}>
+
+              {/* CENTER IMAGE */}
+              <picture>
+                <source srcSet="/images/girlimg.webp" type="image/webp" />
+                <img
+                  src="/images/girlimg.png"
+                  width="300"
+                  height="400"
+                  className={styles.centerImg}
+                  alt="Bhoomi Techzone Professional Team"
+                  loading="eager"
+                />
+              </picture>
+
+              {/* ORBIT ICONS */}
+              <div className={styles.orbit} ref={orbitRef}>
+                {[
+                  "icon1", "icon2", "icon3", "icon4",
+                  "icon5", "icon6", "icon7", "icon8", "icon9"
+                ].map((icon, index) => (
+                  <Link
+                    key={index}
+                    to="/services"
+                    aria-label={`Service ${index + 1}`}
+                  >
+                    <picture>
+                      <source srcSet={`/images/${icon}.webp`} type="image/webp" />
+                      <img
+                        src={`/images/${icon}.png`}
+                        alt={`Service icon ${index + 1}`}
+                        width="64"
+                        height="64"
+                        loading="lazy"
+                      />
+                    </picture>
+                  </Link>
+                ))}
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default AboutUs;

@@ -11,7 +11,7 @@
   font-weight: 400;
   color: #333333;
   background-color: #ffffff;
-  font-synthesis: none;
+  /*font-synthesis: none;*/
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -85,4 +85,224 @@ body, p, div, section, article, aside, footer {
 /* Headings - Montserrat */
 h1, h2, h3, h4, h5, h6, span, .heading, .title {
   font-family: 'Montserrat', sans-serif;
+}
+
+/* Images - Keep original behavior, no forced sizing */
+
+/* ========================================
+   ACCESSIBILITY IMPROVEMENTS (WCAG 2.1 AA)
+   ======================================== */
+
+/* 1. FOCUS STYLES - Visible keyboard focus indicators */
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 3px solid #28a745;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #28a745;
+  outline-offset: 2px;
+}
+
+/* 2. MINIMUM TOUCH TARGET SIZE - WCAG 2.5.5 */
+button,
+.btn,
+a.button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+  /* min-height: 44px;
+  min-width: 44px; */
+  cursor: pointer;
+}
+
+/* Mobile touch targets - 48x48px recommended */
+@media (hover: none) and (pointer: coarse) {
+  button,
+  .btn,
+  a.button,
+  input[type="submit"],
+  input[type="button"] {
+    min-height: 48px;
+    min-width: 48px;
+    padding: 14px 28px;
+  }
+}
+
+/* 3. SKIP NAVIGATION LINK */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #28a745;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 0 0 4px 0;
+  z-index: 10000;
+  font-weight: bold;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+/* 4. SCREEN READER ONLY TEXT */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* 5. REDUCED MOTION - Respect user preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 6. HIGH CONTRAST MODE SUPPORT */
+@media (prefers-contrast: high) {
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    border: 2px solid currentColor;
+  }
+  
+  *:focus-visible {
+    outline-width: 4px;
+    outline-offset: 3px;
+  }
+}
+
+/* 7. INTERACTIVE ELEMENT SPACING */
+a:not(:last-child),
+button:not(:last-child) {
+  margin-right: 8px;
+}
+
+/* Adequate spacing on mobile */
+@media (max-width: 768px) {
+  a:not(:last-child),
+  button:not(:last-child) {
+    margin-right: 12px;
+    margin-bottom: 12px;
+  }
+}
+
+/* 8. FORM ACCESSIBILITY */
+label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+textarea,
+select {
+  min-height: 44px;
+  padding: 12px;
+  font-size: 16px; /* Prevent zoom on iOS */
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.2s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #28a745;
+  outline: none;
+}
+
+/* Error states */
+input:invalid:not(:placeholder-shown),
+textarea:invalid:not(:placeholder-shown) {
+  border-color: #dc3545;
+}
+
+input:valid:not(:placeholder-shown),
+textarea:valid:not(:placeholder-shown) {
+  border-color: #28a745;
+}
+
+/* 9. TEXT READABILITY */
+/* Removed global max-width - was breaking layout */
+p {
+  line-height: 1.6;
+}
+
+/* Only apply max-width to long-form content articles/blogs */
+article p,
+.blog-content p,
+.article-content p {
+  max-width: 75ch;
+}
+
+/* 10. LINK STYLES - Clearly distinguishable */
+a {
+  color: #d40606;
+  text-decoration: none;
+  font-weight: 500;
+  /* text-decoration-thickness: 1px; */
+  text-underline-offset: 2px;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #1e7e34;
+  /* text-decoration-thickness: 2px; */
+}
+
+/* a:visited {
+  color: #f7f7f7;
+} */
+
+/* Navigation links can be styled differently */
+nav a,
+.nav-link {
+  text-decoration: none;
+}
+
+nav a:hover,
+.nav-link:hover {
+  text-decoration: none;
 }

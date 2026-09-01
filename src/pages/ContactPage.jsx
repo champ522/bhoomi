@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SEOHead from '../components/SEOHead';
 import { Link } from 'react-router-dom';
 import ParticleBanner from '../components/ParticleBanner';
 import styles from '../styles/ContactPage.module.css';
@@ -76,6 +77,12 @@ Message receive from Bhoomi TechZone Website`;
 
   return (
     <>
+      <SEOHead
+        title="Contact Us | Get in Touch - Bhoomi Techzone, Noida"
+        description="Contact Bhoomi Techzone today for web development, mobile app, digital marketing, software solutions. Located in Sector 63, Noida. Call +91 8130787194 or email us."
+        keywords="contact Bhoomi Techzone, IT company contact Noida, web development inquiry, software company contact"
+        canonical="https://bhoomitechzone.in/contact"
+      />
       {/* Contact Banner */}
       <section className={styles.contactBanner}>
         <ParticleBanner />
@@ -84,7 +91,7 @@ Message receive from Bhoomi TechZone Website`;
           <div className={styles.content}>
             <h1 className={styles.title}>Contact Us</h1>
             <p className={styles.subtitle}>
-              Let's discuss how we can help transform your business
+              Let’s turn your ideas into reality. Get in touch with Bhoomi Techzone and let our experts help you build powerful digital solutions for your business.
             </p>
             <div className={styles.breadcrumb}>
               <Link to="/" className={styles.breadcrumbLink}>Home</Link>
@@ -255,7 +262,7 @@ Message receive from Bhoomi TechZone Website`;
           {/* Contact Image Section */}
           <div className={styles.contactImageSection}>
             <img 
-              src="/images/aboutimg.jpg" 
+              src="/images/aboutimg.jpg" width="382" height="273" 
               alt="Contact Us" 
               className={styles.contactImage}
               onError={(e) => {

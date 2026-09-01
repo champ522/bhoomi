@@ -27,7 +27,7 @@
 
 .welcomeText {
   font-size: 1.1rem;
-  color: #777;
+  color: #222;
   font-weight: 600;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .highlight {
-  background: linear-gradient(135deg, #0e8d38 0%, #03ba58 100%);
+  background: linear-gradient(135deg, #043b1e 0%, #043b1e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -56,7 +56,7 @@
 .description {
   font-size: 1rem;
   line-height: 1.7em;
-  color: #777;
+  color: #222;
   margin-bottom: 15px;
   font-weight: 400;
 }
@@ -125,6 +125,7 @@
 .centerImg {
   width: 300px;
   height: 400px;
+  object-fit: contain;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -274,7 +275,7 @@
   
   .learnMoreBtn {
     /* width: 100%; */
-    max-width: 250px;
+    max-width: 287px;
   }
 
   /* Smaller mobile orbit adjustments */
@@ -297,4 +298,18 @@
     width: 40px;
     height: 40px;
   }
+}
+
+.link {
+  color: #d40606;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: none;
+}
+
+.link:focus {
+  outline: 2px solid #d40606;
 }

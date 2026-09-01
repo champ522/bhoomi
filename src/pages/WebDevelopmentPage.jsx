@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHead from '../components/SEOHead';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -16,7 +17,7 @@ import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 const WebDevelopmentPage = () => {
   const [statsRef, isStatsVisible] = useIntersectionObserver();
-  
+
   const websitesCount = useCounter(150, 2000, isStatsVisible);
   const satisfactionCount = useCounter(99, 2000, isStatsVisible);
   const supportCount = useCounter(24, 1500, isStatsVisible);
@@ -28,7 +29,7 @@ const WebDevelopmentPage = () => {
       image: "/images/sliderimg1.png"
     },
     {
-      title: "E-commerce Stores", 
+      title: "E-commerce Stores",
       description: "Full-featured online stores with secure payment processing",
       image: "/images/sliderimg2.png"
     },
@@ -61,15 +62,21 @@ const WebDevelopmentPage = () => {
 
   return (
     <>
+      <SEOHead
+        title="Bhoomi Techzone- Website Development Company"
+        description="Bhoomi Techzone is a leading website development company offering custom web development services to build fast, responsive, and SEO-friendly websites."
+        keywords="Web Development Services, Website Development Company"
+        canonical="https://bhoomitechzone.in/web-development"
+      />
       {/* Web Development Banner */}
       <section className={styles.webDevBanner}>
         <ParticleBanner />
         <div className={styles.overlay}></div>
         <div className={styles.container}>
           <div className={styles.content}>
-            <h1 className={styles.title}>Web Development</h1>
+            <h1 className={styles.title}> Website Development Company - Bhoomi Techzone</h1>
             <p className={styles.subtitle}>
-              Creating stunning, responsive websites that drive business growth
+              Creating stunning, responsive websites that drive real business growth and results.
             </p>
             <div className={styles.breadcrumb}>
               <Link to="/" className={styles.breadcrumbLink}>Home</Link>
@@ -95,16 +102,12 @@ const WebDevelopmentPage = () => {
                 <span className={styles.highlight}>Web </span> Development
               </h2>
               <p className={styles.description}>
-                We specialize in creating custom websites that combine stunning design with powerful functionality. 
-                Our web development team uses cutting-edge technologies to build responsive, fast, and secure websites 
-                that help your business stand out in the digital landscape.
+                As a trusted Website Development Company in Noida, we specialize in creating custom websites that combine stunning design with powerful functionality. Our web development team uses cutting-edge technologies to build responsive, fast, and secure websites tailored to your business needs - helping your brand stand out and perform in today's competitive digital landscape.
               </p>
               <p className={styles.description}>
-                From simple business websites to complex web applications, we deliver solutions that are tailored to 
-                your specific needs. Our development process focuses on user experience, performance optimization, 
-                and scalability to ensure your website grows with your business.
+                From simple business websites to complex web applications, we deliver solutions designed around your specific requirements. Our development process focuses on user experience, performance optimization, and scalability - ensuring your website not only looks great but actively drives traffic, generates leads, and grows alongside your business at every stage.
               </p>
-              
+
               <div className={styles.serviceStats} ref={statsRef}>
                 <div className={styles.stat}>
                   <h3>{websitesCount}+</h3>
@@ -122,7 +125,7 @@ const WebDevelopmentPage = () => {
             </div>
             <div className={styles.imageContent}>
               <lottie-player
-                src="https://lottie.host/97b6e0e6-223c-469d-aece-84a4ae835c37/fTvUjslsAk.json"
+                src="https://assets2.lottiefiles.com/packages/lf20_vnikrcia.json"
                 background="transparent"
                 speed="1"
                 className={styles.serviceImage}
@@ -142,10 +145,10 @@ const WebDevelopmentPage = () => {
           <div className={styles.additionalContent}>
             <h3 className={styles.sectionHeading}>Why is web development important in today's competitive world?</h3>
             <p className={styles.paragraph}>
-              In today's digital-first world, web development has become the cornerstone of business success. A professional website serves as your digital storefront, available 24/7 to showcase your products, services, and brand value to potential customers worldwide. With over 4.9 billion internet users globally, having a strong web presence is no longer optional—it's essential for survival and growth in any competitive market.
+              In today's digital-first world, web development has become the cornerstone of business success. A professional Website Development Company builds your digital storefront - available 24/7 to showcase your products, services, and brand value to potential customers worldwide. With over 4.9 billion internet users globally, having a strong web presence is no longer optional. It is an essential driver of growth and credibility in any competitive market today.
             </p>
             <p className={styles.paragraph}>
-              Modern consumers expect businesses to have a professional online presence. A well-designed website builds credibility, establishes trust, and provides customers with instant access to information about your business. It serves as a powerful marketing tool that can reach audiences far beyond traditional geographical boundaries, enabling small businesses to compete with larger enterprises on a level playing field.
+              Modern customers expect businesses to maintain a professional online presence. A well-developed website builds trust, establishes credibility, and provides visitors with instant access to information about your business. It serves as a powerful marketing tool that can reach audiences beyond traditional geographical boundaries - enabling small businesses to compete effectively with large enterprises on a completely level playing field.
             </p>
 
             <h3 className={styles.sectionHeading}>There are 5 reasons behind website development:</h3>
@@ -156,25 +159,25 @@ const WebDevelopmentPage = () => {
               </div>
               <div className={styles.reason}>
                 <h4 className={styles.reasonTitle}>2. 24/7 Business Accessibility</h4>
-                <p className={styles.reasonText}>Unlike physical stores, websites operate round the clock, allowing customers to access information, make purchases, or contact you anytime, anywhere.</p>
+                <p className={styles.reasonText}>Unlike physical stores, websites operate round the clock - allowing customers to access information, make purchases, or contact you anytime, anywhere.</p>
               </div>
               <div className={styles.reason}>
                 <h4 className={styles.reasonTitle}>3. Cost-Effective Marketing</h4>
-                <p className={styles.reasonText}>Digital marketing through websites is more affordable than traditional advertising methods while offering better targeting and measurable results.</p>
+                <p className={styles.reasonText}>Digital marketing through your website is far more affordable than traditional advertising, while offering better audience targeting and measurable, trackable results.</p>
               </div>
               <div className={styles.reason}>
                 <h4 className={styles.reasonTitle}>4. Competitive Advantage</h4>
-                <p className={styles.reasonText}>A modern, user-friendly website sets you apart from competitors who may lack an online presence or have outdated web solutions.</p>
+                <p className={styles.reasonText}>A modern, user-friendly website sets you apart from competitors who may lack an online presence or rely on outdated web solutions.</p>
               </div>
               <div className={styles.reason}>
                 <h4 className={styles.reasonTitle}>5. Customer Engagement & Analytics</h4>
-                <p className={styles.reasonText}>Websites provide valuable insights into customer behavior, preferences, and demographics, helping you make data-driven business decisions.</p>
+                <p className={styles.reasonText}>Websites provide valuable insights into customer behavior, preferences, and demographics - helping you make smarter, data-driven decisions that fuel business growth.</p>
               </div>
             </div>
 
             <h3 className={styles.sectionHeading}>OUR SERVICES:</h3>
             <p className={styles.paragraph}>
-              Bhoomi Techzone offers comprehensive web development services tailored to meet diverse business needs. Our expert team specializes in creating responsive, SEO-optimized websites that deliver exceptional user experiences across all devices. From simple business websites to complex e-commerce platforms and web applications, we provide end-to-end solutions that drive results.
+              Bhoomi Techzone, a leading Website Development Company, offers comprehensive web development services tailored to meet diverse business needs. Our expert team specializes in creating responsive, <Link to="/seo-optimization">SEO-optimized</Link> websites that deliver exceptional user experiences across all devices - from simple business websites to complex <Link to="/ecommerce-platform">e-commerce platforms</Link> and web applications.
             </p>
             <div className={styles.servicesList}>
               <div className={styles.serviceItem}>• Custom Website Design & Development</div>
@@ -187,73 +190,73 @@ const WebDevelopmentPage = () => {
 
             <h3 className={styles.sectionHeading}>Bhoomi Techzone's PRINCIPLES OF WEB development:</h3>
             <p className={styles.paragraph}>
-              At Bhoomi Techzone, we believe in creating websites that truly serve our clients' needs. Our development philosophy centers around these key principles that guide every project we undertake:
+              At Bhoomi Techzone, we believe in creating websites that truly serve our clients' needs. As a results-driven Website Development Company, our development philosophy centers around these key principles that guide every project we undertake:
             </p>
             <ul className={styles.principlesList}>
               <li className={styles.principleItem}>
-                <strong>User-First Design:</strong> We put your users at the heart of everything we build. Every button, page, and feature is designed with real people in mind, making sure your website is easy to use and enjoyable to navigate.
+                <strong>User-First Design:</strong>  We put your users at the heart of everything we build. Every button, page, and feature is designed with real people in mind - making your website intuitive, easy to use, and effortless to navigate.
               </li>
               <li className={styles.principleItem}>
-                <strong>Speed That Matters:</strong> Nobody likes waiting for slow websites. We optimize every line of code to ensure your site loads lightning-fast, keeping your visitors happy and engaged.
+                <strong>Speed That Matters:</strong> Nobody tolerates slow websites. We optimize every line of code to ensure your site loads at lightning-fast speeds, keeping your visitors happy, engaged, and converting.
               </li>
               <li className={styles.principleItem}>
-                <strong>Mobile-First Thinking:</strong> Since most people browse on their phones these days, we design for mobile devices first, then scale up. Your website will look and work perfectly on any screen size.
+                <strong>Mobile-First Thinking:</strong> Since most people browse on mobile devices, we design for mobile first, then scale up. Your website will look and perform perfectly on any screen size, on any device.
               </li>
               <li className={styles.principleItem}>
-                <strong>Search Engine Friendly:</strong> What's the point of a beautiful website if no one can find it? We build SEO into the foundation of your site, helping you rank higher on Google and attract more visitors.
+                <strong>Search Engine Friendly:</strong> What's the point of a beautiful website no one can find? We build SEO into the foundation of your site - helping you rank higher on Google and consistently attract more visitors.
               </li>
               <li className={styles.principleItem}>
-                <strong>Built to Grow:</strong> Your business will evolve, and your website should too. We create flexible, scalable solutions that can expand with your needs without requiring a complete rebuild.
+                <strong>Built to Grow:</strong> Your business will evolve, and your website should too. We build flexible, scalable solutions that expand with your needs without requiring a costly complete rebuild.
               </li>
               <li className={styles.principleItem}>
-                <strong>Consistency is Key:</strong> Every page, button, and interaction feels familiar and predictable. We maintain visual and functional consistency throughout your entire website, making it easy for users to navigate and understand.
+                <strong>Consistency is Key:</strong> Every page, button, and interaction feels familiar and predictable. We maintain full visual and functional consistency throughout your website, making it easy for users to navigate and understand with confidence.
               </li>
               <li className={styles.principleItem}>
-                <strong>Keep It Simple:</strong> We believe in the power of simplicity. Clean designs, clear messaging, and intuitive interfaces ensure your visitors can find what they need quickly without getting confused or overwhelmed.
+                <strong>Keep It Simple:</strong> We believe in the power of simplicity. Clean design, clear messaging, and intuitive interfaces ensure your visitors find what they need quickly - without confusion or frustration.
               </li>
               <li className={styles.principleItem}>
-                <strong>Always Deliver the Best:</strong> We're not satisfied until it's perfect. From the smallest detail to the overall experience, we strive for excellence in every aspect of your website, ensuring you get nothing but the best quality.
+                <strong>Always Deliver the Best:</strong> Not satisfied until it's perfect. From the smallest detail to the overall experience, we strive for excellence in every aspect of your website - ensuring you get nothing but the very best quality.
               </li>
             </ul>
 
             <h3 className={styles.sectionHeading}>Bhoomi Techzone's essential steps in web design process:</h3>
             <p className={styles.paragraph}>
-              Our systematic approach to web development ensures that every project is delivered on time, within budget, and exceeds client expectations. We follow a proven methodology that combines creativity with technical expertise.
+              Our systematic approach as a trusted Website Development Company ensures that every project is delivered on time, within budget, and exceeds client expectations. We follow a proven, transparent methodology that seamlessly combines creativity with deep technical expertise at every step.
             </p>
             <div className={styles.processList}>
               <div className={styles.processStep}>
                 <div className={styles.stepNumber}>01</div>
                 <div className={styles.stepContent}>
                   <h4 className={styles.stepTitle}>Discovery & Planning</h4>
-                  <p className={styles.stepText}>We start by understanding your business goals, target audience, and project requirements through comprehensive consultation.</p>
+                  <p className={styles.stepText}>We start by understanding your business goals, target audience, and project requirements through a comprehensive consultation and discovery session.</p>
                 </div>
               </div>
               <div className={styles.processStep}>
                 <div className={styles.stepNumber}>02</div>
                 <div className={styles.stepContent}>
                   <h4 className={styles.stepTitle}>Design & Wireframing</h4>
-                  <p className={styles.stepText}>Our design team creates wireframes and mockups that align with your brand identity and user experience goals.</p>
+                  <p className={styles.stepText}>Our design team creates detailed wireframes and mockups that align perfectly with your brand identity and user experience goals.</p>
                 </div>
               </div>
               <div className={styles.processStep}>
                 <div className={styles.stepNumber}>03</div>
                 <div className={styles.stepContent}>
                   <h4 className={styles.stepTitle}>Development & Coding</h4>
-                  <p className={styles.stepText}>Our developers bring designs to life using modern technologies and best coding practices for optimal performance.</p>
+                  <p className={styles.stepText}>Our developers bring designs to life using modern technologies and best coding practices, ensuring optimal performance and clean, maintainable code.</p>
                 </div>
               </div>
               <div className={styles.processStep}>
                 <div className={styles.stepNumber}>04</div>
                 <div className={styles.stepContent}>
                   <h4 className={styles.stepTitle}>Testing & Quality Assurance</h4>
-                  <p className={styles.stepText}>Rigorous testing across different devices and browsers ensures flawless functionality and user experience.</p>
+                  <p className={styles.stepText}>Rigorous testing across different devices and browsers ensures flawless functionality, perfect user experience, and zero performance issues at launch.</p>
                 </div>
               </div>
               <div className={styles.processStep}>
                 <div className={styles.stepNumber}>05</div>
                 <div className={styles.stepContent}>
                   <h4 className={styles.stepTitle}>Launch & Ongoing Support</h4>
-                  <p className={styles.stepText}>We handle the launch process and provide ongoing maintenance and support to keep your website running smoothly.</p>
+                  <p className={styles.stepText}>We handle the complete launch process and provide comprehensive ongoing maintenance and support to keep your website running smoothly always.</p>
                 </div>
               </div>
             </div>
@@ -304,7 +307,7 @@ const WebDevelopmentPage = () => {
               <SwiperSlide key={index}>
                 <div className={styles.projectCard}>
                   <div className={styles.projectImage}>
-                    <img src={project.image} alt={project.title} />
+                    <img src={project.image} alt={project.title} width="350" height="250" loading="lazy" />
                     <div className={styles.projectOverlay}>
                       <Link to="/contact" className={styles.projectButton}>Get Quote</Link>
                     </div>

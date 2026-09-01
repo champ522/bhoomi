@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHead from '../components/SEOHead';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -76,39 +77,15 @@ const FinTechPage = () => {
     }
   ];
 
-  const useCases = [
-    {
-      title: "Mobile Banking Apps",
-      description: "Full-featured mobile banking with account management, transfers, bill payments, and investment tracking.",
-      content: "We develop comprehensive mobile banking solutions that provide users with seamless access to their financial accounts. Our apps include features like real-time transaction tracking, instant fund transfers, bill payments, mobile check deposits, budgeting tools, and investment portfolio management. With biometric authentication and end-to-end encryption, we ensure maximum security while delivering an intuitive user experience.",
-      features: ["Instant Transfers", "Bill Payments", "Investment Tracking", "Biometric Security"],
-      image: "/images/sliderimg1.png"
-    },
-    {
-      title: "Payment Gateway Integration",
-      description: "Seamless payment processing with multiple payment methods, fraud detection, and PCI compliance.",
-      content: "Our payment gateway solutions enable businesses to accept payments securely from multiple sources including credit cards, debit cards, UPI, digital wallets, and net banking. We implement advanced fraud detection algorithms, real-time transaction monitoring, and ensure full PCI-DSS compliance. Our gateways support multiple currencies, recurring payments, and provide detailed analytics for transaction insights.",
-      features: ["Multi-Payment Methods", "Fraud Detection", "PCI-DSS Compliant", "Real-time Analytics"],
-      image: "/images/sliderimg2.png"
-    },
-    {
-      title: "Trading Platforms",
-      description: "Real-time stock trading, cryptocurrency exchanges, and market analysis tools with high performance.",
-      content: "We build high-performance trading platforms that handle real-time market data, execute trades in milliseconds, and provide advanced charting tools. Our solutions support stock trading, cryptocurrency exchanges, forex trading, and derivatives. Features include algorithmic trading, margin trading, stop-loss orders, portfolio analysis, and integration with major exchanges. Built with scalable architecture to handle peak trading volumes.",
-      features: ["Real-time Trading", "Advanced Charts", "Algorithmic Trading", "Multi-Asset Support"],
-      image: "/images/appdev.png"
-    },
-    {
-      title: "RegTech Solutions",
-      description: "Compliance automation, KYC/AML verification, transaction monitoring, and regulatory reporting.",
-      content: "Our RegTech solutions help financial institutions automate compliance processes and meet regulatory requirements efficiently. We implement AI-powered KYC/AML verification, automated transaction monitoring for suspicious activities, risk assessment tools, and automated regulatory reporting. Our solutions reduce compliance costs, minimize human errors, and ensure adherence to global financial regulations including GDPR, MiFID II, and local banking laws.",
-      features: ["KYC/AML Automation", "Transaction Monitoring", "Risk Assessment", "Regulatory Reporting"],
-      image: "/images/dmarketing.png"
-    }
-  ];
 
   return (
     <>
+      <SEOHead
+        title="Bhoomi Techzone - Best FinTech Software Development in Noida"
+        description="At Bhoomi techzone Transform your financial technology with Best FinTech Software Development in Noida. Partner with us for innovative solutions that drive success in FinTech."
+        keywords="Best FinTech Software Development, FinTech Software Development in Noida"
+        canonical="https://bhoomitechzone.in/fintech"
+      />
       {/* FinTech Hero Banner */}
       <section className={styles.heroSection}>
         <ParticleBanner />
@@ -123,16 +100,16 @@ const FinTechPage = () => {
               <span>FinTech</span>
             </div>
             <h1 className={styles.heroTitle}>
-              Transform Finance with
-              <span className={styles.heroHighlight}> Innovative Technology</span>
+              Best
+              <span className={styles.heroHighlight}> FinTech Software </span>
+              Development in Noida
             </h1>
             <p className={styles.heroSubtitle}>
-              Build secure, scalable, and compliant fintech solutions that revolutionize financial services 
-              and create exceptional digital experiences for your customers.
+              Build secure and scalable platforms with the Best FinTech Software Development tailored for modern financial businesses.
             </p>
           </div>
           <div className={styles.heroAnimation}>
-            <img src="/images/finbg.png" alt="FinTech Solutions" />
+            <img src="/images/finbg.png" alt="FinTech Solutions" width="1200" height="400" />
           </div>
         </div>
       </section>
@@ -168,18 +145,13 @@ const FinTechPage = () => {
             <div className={styles.aboutContent}>
               <span className={styles.sectionLabel}>Our Expertise</span>
               <h2 className={styles.sectionTitle}>
-                Leading <span className={styles.highlight}>FinTech Dev</span> Company
+                Leading <span className={styles.highlight}>FinTech Development</span> Company
               </h2>
               <p className={styles.paragraph}>
-                At Bhoomi Techzone, we specialize in developing cutting-edge financial technology solutions 
-                that empower businesses to innovate in the rapidly evolving financial services landscape. Our 
-                expertise spans digital banking, payment processing, blockchain, lending platforms, and more.
+                At Bhoomi Techzone, we assist companies innovate in the rapidly expanding financial environment by offering the <strong style={{ color: 'black' }}>best FinTech software development</strong> <Link to="/services">services</Link>. Digital banking, payment solutions, blockchain, lending platforms, and cutting-edge financial <Link to="/technology">technologies</Link> are among our areas of competence.
               </p>
               <p className={styles.paragraph}>
-                We understand the unique challenges of the financial industry including regulatory compliance, 
-                security requirements, real-time processing, and scalability demands. Our fintech solutions are 
-                built with bank-grade security, seamless user experiences, and robust architectures that handle 
-                millions of transactions reliably.
+                We are aware of the intricacies of the financial industry, including scalability, real-time data processing, security, and compliance. Building safe, scalable, and user-friendly solutions with bank-grade security, flawless performance, and a solid architecture that can effectively handle millions of transactions is the main goal of our <strong style={{ color: 'black' }}>Best FinTech Software Development in Noida</strong>.
               </p>
               <div className={styles.featuresList}>
                 <div className={styles.featureItem}>
@@ -247,34 +219,169 @@ const FinTechPage = () => {
             </h2>
           </div>
           
-          {useCases.map((useCase, index) => (
-            <div 
-              key={index} 
-              className={`${styles.useCaseRow} ${index % 2 === 1 ? styles.reverse : ''}`}
-            >
-              <div className={styles.useCaseContent}>
-                <h3 className={styles.useCaseTitle}>{useCase.title}</h3>
-                <p className={styles.useCaseDescription}>{useCase.description}</p>
-                <p className={styles.useCaseDetails}>{useCase.content}</p>
-                <div className={styles.useCaseFeatures}>
-                  {useCase.features.map((feature, idx) => (
-                    <span key={idx} className={styles.featureTag}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                        <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                      {feature}
-                    </span>
-                  ))}
-                </div>
-                <Link to="/contact" className={styles.useCaseBtn}>
-                  Get Started
-                </Link>
+          {/* Use Case 1: Mobile Banking Apps */}
+          <div className={styles.useCaseRow}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>Mobile Banking Apps</h3>
+              <p className={styles.useCaseDescription}>Full-featured mobile banking with account management, transfers, bill payments, and investment tracking.</p>
+              <p className={styles.useCaseDetails}>We develop feature-rich mobile banking apps with account management, fund transfers, bill payments, and investment tracking. Our solutions include real-time transaction updates, mobile deposits, budgeting tools, and portfolio insights. With biometric authentication and encryption, our <strong style={{ color: 'black' }}>Best FinTech Software Development</strong> ensures top-level security and smooth user experience.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Instant Transfers
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Bill Payments
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Investment Tracking
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Biometric Security
+                </span>
               </div>
-              <div className={styles.useCaseImage}>
-                <img src={useCase.image} alt={useCase.title} />
-              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
             </div>
-          ))}
+            <div className={styles.useCaseImage}>
+              <img src="/images/sliderimg1.png" alt="Best FinTech Software Development" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Use Case 2: Payment Gateway Integration */}
+          <div className={`${styles.useCaseRow} ${styles.reverse}`}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>Payment Gateway Integration</h3>
+              <p className={styles.useCaseDescription}>Seamless payment processing with multiple payment methods, fraud detection, and PCI compliance.</p>
+              <p className={styles.useCaseDetails}>Our payment gateway solutions enable secure and seamless transactions using multiple payment methods like cards, UPI, wallets, and net banking. We implement fraud detection, real-time monitoring, and ensure PCI-DSS compliance. Our <strong style={{ color: 'black' }}>Best FinTech Software Development in Noida</strong> supports multi-currency transactions, recurring payments, and detailed analytics for better financial insights.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Multi-Payment Methods
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Fraud Detection
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  PCI-DSS Compliant
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Real-time Analytics
+                </span>
+              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
+            </div>
+            <div className={styles.useCaseImage}>
+              <img src="/images/sliderimg2.png" alt="Best FinTech Software Development in Noida" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Use Case 3: Trading Platforms */}
+          <div className={styles.useCaseRow}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>Trading Platforms</h3>
+              <p className={styles.useCaseDescription}>Real-time stock trading, cryptocurrency exchanges, and market analysis tools with high performance.</p>
+              <p className={styles.useCaseDetails}>We create high-performance trading platforms with sophisticated charting tools, quick execution, and real-time data processing. With features like algorithmic trading, portfolio management, and risk analysis, our platforms facilitate the trading of stocks, cryptocurrencies, FX, and derivatives. Our scalable solutions manage large trade volumes without experiencing performance problems.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Real-time Trading
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Advanced Charts
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Algorithmic Trading
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Multi-Asset Support
+                </span>
+              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
+            </div>
+            <div className={styles.useCaseImage}>
+              <img src="/images/appdev.png" alt="Trading Platforms" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Use Case 4: RegTech Solutions */}
+          <div className={`${styles.useCaseRow} ${styles.reverse}`}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>RegTech Solutions</h3>
+              <p className={styles.useCaseDescription}>Compliance automation, KYC/AML verification, transaction monitoring, and regulatory reporting.</p>
+              <p className={styles.useCaseDetails}>Our RegTech solutions automate compliance processes including KYC/AML verification, transaction monitoring, and regulatory reporting. Using AI-powered systems, we reduce manual effort, minimize errors, and ensure compliance with global standards like GDPR and financial regulations. Our <strong style={{ color: 'black' }}>Best FinTech Software Development</strong> helps businesses stay secure and compliant.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  KYC/AML Automation
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Transaction Monitoring
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Risk Assessment
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Regulatory Reporting
+                </span>
+              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
+            </div>
+            <div className={styles.useCaseImage}>
+              <img src="/images/dmarketing.png" alt="RegTech Solutions" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -288,8 +395,7 @@ const FinTechPage = () => {
                 <span className={styles.highlight}>Bank-Grade Security</span> & Compliance
               </h2>
               <p className={styles.paragraph}>
-                Security and compliance are at the core of everything we build. Our fintech solutions adhere 
-                to the highest industry standards including PCI-DSS, GDPR, SOC 2, and regional financial regulations.
+                Our <strong style={{ color: 'black' }}>Best FinTech Software Development in Noida</strong> is built on security. To guarantee total data privacy and compliance, we adhere to stringent industry standards including PCI-DSS, GDPR, and SOC 2.
               </p>
               <div className={styles.securityFeatures}>
                 <div className={styles.securityFeature}>

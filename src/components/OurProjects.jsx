@@ -107,8 +107,7 @@ const OurProjects = () => {
             Our <span className={styles.titleHighlight}>Projects</span>
           </h2>
           <p className={styles.sectionDescription}>
-            Discover our latest innovative solutions and successful project implementations 
-            that showcase our expertise in modern technology development.
+            Explore our portfolio of successful projects delivered across industries. As a trusted IT services company in India, Bhoomi Techzone has built scalable, high-performance digital products that drive real business growth - from custom software development and web development to mobile app development and ERP solutions.
           </p>
         </div>
 
@@ -122,7 +121,13 @@ const OurProjects = () => {
               onMouseLeave={handleCardLeave}
             >
               <div className={styles.cardImage}>
-                <img src={project.image} alt={project.title} />
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  width="400"
+                  height="300"
+                  loading={index < 3 ? "eager" : "lazy"}
+                />
               </div>
               
               {/* Diagonal Overlay */}

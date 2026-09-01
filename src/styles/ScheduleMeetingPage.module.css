@@ -231,6 +231,10 @@
   border-radius: 50%;
   transition: background 0.3s ease;
   color: #1a1a2e;
+  /* Override index.css global button resets */
+  min-height: unset;
+  min-width: unset;
+  margin: 0;
 }
 
 .monthNav:hover {
@@ -241,12 +245,20 @@
   font-size: 1.1rem;
   font-weight: 600;
   color: #1a1a2e;
+  /* Override index.css span font-family override */
+  font-family: 'Cabin', sans-serif;
 }
 
 .calendarGrid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 8px;
+}
+
+/* Override index.css global button margin that breaks calendar grid */
+.calendarGrid button:not(:last-child) {
+  margin-right: 0;
+  margin-bottom: 0;
 }
 
 .dayHeader {
@@ -271,6 +283,11 @@
   color: #1a1a2e;
   transition: all 0.3s ease;
   font-weight: 500;
+  /* Override index.css global button resets */
+  min-height: unset;
+  min-width: unset;
+  margin: 0;
+  font-family: 'Cabin', sans-serif;
 }
 
 .dayCell:hover:not(.disabled) {
@@ -324,6 +341,12 @@
   gap: 12px;
 }
 
+/* Override index.css global button margin that breaks time slots grid */
+.timeSlots button:not(:last-child) {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
 .timeSlot {
   padding: 12px;
   border: 2px solid #e9ecef;
@@ -334,6 +357,11 @@
   font-weight: 500;
   color: #1a1a2e;
   transition: all 0.3s ease;
+  /* Override index.css global button resets */
+  min-height: unset;
+  min-width: unset;
+  margin: 0;
+  font-family: 'Cabin', sans-serif;
 }
 
 .timeSlot:hover {
@@ -585,5 +613,29 @@
   .dayCell {
     padding: 8px;
     font-size: 0.85rem;
+    /* Override index.css mobile button overrides */
+    min-height: unset;
+    min-width: unset;
+    margin: 0;
+  }
+
+  .timeSlot {
+    min-height: unset;
+    min-width: unset;
+    margin: 0;
+    padding: 12px;
+  }
+
+  .monthNav {
+    min-height: unset;
+    min-width: unset;
+    margin: 0;
+    padding: 8px;
+  }
+
+  .calendarGrid button:not(:last-child),
+  .timeSlots button:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 0;
   }
 }

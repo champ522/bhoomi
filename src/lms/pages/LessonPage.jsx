@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import SEOHead from '../../components/SEOHead';
 import { useParams, useLocation, Link } from 'react-router-dom';
 import { getCourseById, getLessonById, getNextLesson, getPreviousLesson } from '../data/courses';
 import { getQuestionsByCourseId } from '../data/interviews';
@@ -68,8 +69,21 @@ const LessonPage = () => {
     );
   }
 
+  const seoTitle = isExercise
+    ? `${course.title} Exercise | BhoomiTech Learning Hub`
+    : `Online ${lesson?.title} in Noida | ${course.title} - BhoomiTech`;
+  const seoDescription = isExercise
+    ? `Practice ${course.title} interview questions and test your knowledge with BhoomiTech's interactive exercises.`
+    : `Learn ${lesson?.title} in the ${course.title} on BhoomiTech Learning Hub. Self-paced lesson with examples and code.`;
+
   return (
     <>
+      <SEOHead
+        title={seoTitle}
+        description={seoDescription}
+        keywords={`${course.title} lessons, learn ${course.title}, BhoomiTech LMS, online coding course`}
+        canonical={`https://bhoomitechzone.in/lms/course/${courseId}${isExercise ? '/exercise' : `/lesson/${lessonId}`}`}
+      />
       {/* Learning Interface Banner */}
       <section className={styles.lmsBanner}>
         <ParticleBanner />

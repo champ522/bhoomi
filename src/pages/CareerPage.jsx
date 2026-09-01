@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
+import SEOHead from '../components/SEOHead';
 import ParticleBanner from '../components/ParticleBanner';
 import styles from '../styles/CareerPage.module.css';
+import { Link } from 'react-router-dom';
 import CallToAction from '../components/CallToAction';
 
 const CareerPage = () => {
   const [selectedDepartment, setSelectedDepartment] = useState('all');
+
+  const handleApplyClick = (jobTitle) => {
+    const message = `Hi, I'm interested in applying for the ${jobTitle} position at Bhoomi Techzone. Please let me know if there is any vacancy available!.`;
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/918130787194?text=${encodedMessage}`, '_blank');
+  };
 
   const jobOpenings = [
     {
@@ -69,21 +77,6 @@ const CareerPage = () => {
     }
   ];
 
-  const benefits = [
-    {
-      title: 'Competitive Salary',
-      description: 'Industry-leading compensation packages with performance bonuses'
-    },
-    {
-      title: 'Team Events',
-      description: 'Regular team outings, celebrations, and fun activities'
-    },
-    {
-      title: 'Growth Opportunities',
-      description: 'Clear career progression paths and leadership development'
-    }
-  ];
-
   const departments = ['all', 'Engineering', 'Design', 'Marketing', 'Sales'];
 
   const filteredJobs = selectedDepartment === 'all' 
@@ -92,14 +85,20 @@ const CareerPage = () => {
 
   return (
     <div className={styles.careerPage}>
+      <SEOHead
+        title="IT Company Careers in Noida | Software Jobs in Noida"
+        description="Explore IT company careers in Noida and apply for jobs in software development company in Noida. Grow your career with Bhoomi Techzone today."
+        keywords="jobs in software development company in Noida, IT company careers in Noida"
+        canonical="https://bhoomitechzone.in/career"
+      />
       {/* Hero Section */}
       <section className={styles.heroSection}>
         <ParticleBanner />
         <div className={styles.overlay}></div>
         <div className={styles.heroContent}>
-          <h1 className={styles.heroTitle}>Join Our Team</h1>
+          <h1 className={styles.heroTitle}>Join Our Team | IT Company Careers in Noida</h1>
           <p className={styles.heroSubtitle}>
-            Build Your Career with Bhoomi Techzone - Where Innovation Meets Opportunity
+            Discover exciting <strong style={{ color: 'black' }}>IT company careers in Noida</strong> and explore top <strong style={{ color: 'black' }}>jobs in software development company in Noida</strong>. Join a team where innovation meets growth and build a successful future in tech.
           </p>
         </div>
       </section>
@@ -107,16 +106,33 @@ const CareerPage = () => {
       {/* Why Join Us Section */}
       <section className={styles.whyJoinSection}>
         <div className={styles.container}>
+          <h2 className={styles.sectionTitle}>Build Your Career With Bhoomi Techzone</h2>
           <p className={styles.sectionSubtitle}>
-            We believe in creating an environment where talented individuals can thrive and grow
+            We are always looking for passionate and talented individuals who want to grow in the tech industry. Our <strong style={{ color: 'black' }}>IT company careers in Noida</strong> offer the perfect environment to learn, innovate, and work on real-world projects.
+          </p>
+          <p className={styles.sectionSubtitle}>At Bhoomi Techzone, you will get the opportunity to work on cutting-edge <Link to="/technology">technologies</Link>, collaborate with experienced professionals, and build solutions that create real impact. Whether you're a fresher or an experienced candidate, our <strong style={{ color: 'black' }}>jobs in software development company in Noida</strong> are designed to support your long-term career growth.</p>
+          <h2 className={styles.sectionTitle} style={{marginTop: '20px'}}>Why Join Us</h2>
+          <p className={styles.sectionSubtitle} style={{textAlign: 'center'}} >
+            We believe in creating an environment where talented individuals can thrive and grow.
           </p>
           <div className={styles.benefitsGrid}>
-            {benefits.map((benefit, index) => (
-              <div key={index} className={styles.benefitCard}>
-                <h3 className={styles.benefitTitle}>{benefit.title}</h3>
-                <p className={styles.benefitDescription}>{benefit.description}</p>
-              </div>
-            ))}
+            {/* Benefit 1: Competitive Salary */}
+            <div className={styles.benefitCard}>
+              <h3 className={styles.benefitTitle}>Competitive Salary</h3>
+              <p className={styles.benefitDescription}>We offer industry-standard compensation packages under our <strong style={{ color: 'black' }}>IT company careers in Noida</strong>, ensuring your skills and contributions are valued.</p>
+            </div>
+
+            {/* Benefit 2: Team Events */}
+            <div className={styles.benefitCard}>
+              <h3 className={styles.benefitTitle}>Team Events</h3>
+              <p className={styles.benefitDescription}>Regular team outings, activities, and engagement programs create a positive and collaborative work culture.</p>
+            </div>
+
+            {/* Benefit 3: Growth Opportunities */}
+            <div className={styles.benefitCard}>
+              <h3 className={styles.benefitTitle}>Growth Opportunities</h3>
+              <p className={styles.benefitDescription}>Our <strong style={{ color: 'black' }}>jobs in software development company in Noida</strong> focus on continuous learning, skill development, and career advancement.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -125,8 +141,8 @@ const CareerPage = () => {
       <section className={styles.jobsSection}>
         <div className={styles.container}>
           <h2 className={styles.sectionTitle}>Current Openings</h2>
-          <p className={styles.sectionSubtitle}>
-            Find your perfect role and start your journey with us
+          <p className={styles.sectionSubtitle} style={{ textAlign: 'center' }}>
+            Find your perfect role and start your journey with us. We are hiring for multiple positions under <strong style={{ color: 'black' }}>jobs in software development company in Noida</strong>, including:
           </p>
 
           {/* Department Filter */}
@@ -179,7 +195,7 @@ const CareerPage = () => {
                     ))}
                   </div>
                 </div>
-                <button className={styles.applyButton}>Apply Now</button>
+                <button className={styles.applyButton} onClick={() => handleApplyClick(job.title)}>Apply Now</button>
               </div>
             ))}
           </div>

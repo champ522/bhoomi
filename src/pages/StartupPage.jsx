@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHead from '../components/SEOHead';
 import { Link } from 'react-router-dom';
 import ParticleBanner from '../components/ParticleBanner';
 import styles from '../styles/StartupPage.module.css';
@@ -65,39 +66,14 @@ const StartupPage = () => {
     }
   ];
 
-  const useCases = [
-    {
-      title: "SaaS Platform Development",
-      description: "Build multi-tenant SaaS applications with subscription management, user analytics, and seamless integrations.",
-      content: "We help startups build robust SaaS platforms from the ground up. Our solutions include multi-tenant architecture, subscription billing integration with Stripe/PayPal, user onboarding flows, analytics dashboards, API development, and third-party integrations. We use modern frameworks like React, Node.js, and cloud infrastructure to ensure scalability and performance from day one.",
-      features: ["Multi-tenant Architecture", "Subscription Billing", "Analytics Dashboard", "API Integration"],
-      image: "/images/sliderimg1.png"
-    },
-    {
-      title: "Mobile-First Products",
-      description: "Native and cross-platform mobile apps that provide exceptional user experience on iOS and Android.",
-      content: "We develop mobile-first products that reach your audience wherever they are. Whether you need native iOS/Android apps or cross-platform solutions with React Native/Flutter, we deliver high-performance applications with intuitive UX, offline capabilities, push notifications, in-app purchases, and social authentication. Perfect for startups targeting mobile-first markets.",
-      features: ["Cross-Platform", "Offline Mode", "Push Notifications", "Social Login"],
-      image: "/images/sliderimg2.png"
-    },
-    {
-      title: "Marketplace Platforms",
-      description: "Two-sided marketplace solutions with payments, ratings, search, and real-time matching.",
-      content: "We build comprehensive marketplace platforms that connect buyers and sellers, service providers and customers, or any two-sided market. Our solutions include advanced search and filtering, secure payment processing, rating and review systems, real-time messaging, geolocation features, and admin dashboards for platform management. Scalable architecture handles growth from launch to thousands of transactions.",
-      features: ["Payment Integration", "Rating System", "Real-time Chat", "Admin Dashboard"],
-      image: "/images/appdev.png"
-    },
-    {
-      title: "AI-Powered Solutions",
-      description: "Integrate machine learning, natural language processing, and AI to create intelligent products.",
-      content: "We help startups leverage AI and machine learning to build competitive advantages. Our team implements recommendation engines, chatbots, predictive analytics, computer vision, natural language processing, and automated decision-making systems. Whether you're in e-commerce, healthcare, finance, or education, we'll help you integrate AI capabilities that delight users and drive growth.",
-      features: ["ML Models", "Chatbots", "Recommendations", "Predictive Analytics"],
-      image: "/images/softdev.png"
-    }
-  ];
-
   return (
     <>
+      <SEOHead
+        title="Software Development for Startups | MVP & SaaS Solutions"
+        description="Get software development for startups with scalable MVPs, SaaS platforms, mobile apps, and AI tools. We deliver digital solutions for startups to launch and grow fast."
+        keywords="Software development for startups, digital solutions for startups"
+        canonical="https://bhoomitechzone.in/startups"
+      />
       {/* Startup Hero Banner */}
       <section className={styles.heroSection}>
         <ParticleBanner />
@@ -112,16 +88,16 @@ const StartupPage = () => {
               <span>Startups</span>
             </div>
             <h1 className={styles.heroTitle}>
-              Build Your Startup's
-              <span className={styles.heroHighlight}> Technology Foundation</span>
+              Software 
+              <span className={styles.heroHighlight}> Development </span>
+              for Startups
             </h1>
             <p className={styles.heroSubtitle}>
-              From idea to launch, we help startups build scalable MVPs, secure funding with 
-              impressive products, and scale efficiently with the right technology stack.
+              Accelerate growth with expert <strong style={{ color: 'black' }}>Software development for startups</strong> designed for speed, scalability, and innovation. Our <strong style={{ color: 'black' }}>digital solutions for startups</strong> help you launch faster, attract investors, and scale efficiently. 
             </p>
           </div>
           <div className={styles.heroAnimation}>
-            <img src="/images/startbnr.png" alt="Startup Solutions" />
+            <img src="/images/startbnr.png" alt="Startup Solutions" width="1200" height="400" />
           </div>
         </div>
       </section>
@@ -152,7 +128,7 @@ const StartupPage = () => {
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Startup Solutions We Offer</h2>
             <p className={styles.sectionSubtitle}>
-              Comprehensive technology services tailored for startups at every stage
+              Comprehensive <strong style={{ color: 'black' }}>Software development for startups</strong> designed to support every stage of your journey. Our <strong style={{ color: 'black' }}>digital solutions for startups</strong> help you build, launch, and scale with the right <Link to="/technology">technology</Link> and strategy.
             </p>
           </div>
           <div className={styles.solutionsGrid}>
@@ -173,38 +149,173 @@ const StartupPage = () => {
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>What We Build for Startups</h2>
             <p className={styles.sectionSubtitle}>
-              From MVPs to scalable platforms, we've helped startups across various industries
+              Powerful, scalable products built through expert <strong style={{ color: 'black' }}>Software development for startups</strong> and <strong style={{ color: 'black' }}>digital solutions for startups</strong> to launch, grow, and succeed faster.
             </p>
           </div>
           
-          {useCases.map((useCase, index) => (
-            <div 
-              key={index} 
-              className={`${styles.useCaseRow} ${index % 2 === 1 ? styles.reverse : ''}`}
-            >
-              <div className={styles.useCaseContent}>
-                <h3 className={styles.useCaseTitle}>{useCase.title}</h3>
-                <p className={styles.useCaseDescription}>{useCase.description}</p>
-                <p className={styles.useCaseDetails}>{useCase.content}</p>
-                <div className={styles.useCaseFeatures}>
-                  {useCase.features.map((feature, idx) => (
-                    <span key={idx} className={styles.featureTag}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                        <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                      {feature}
-                    </span>
-                  ))}
-                </div>
-                <Link to="/contact" className={styles.useCaseBtn}>
-                  Get Started
-                </Link>
+          {/* Use Case 1: SaaS Platform Development */}
+          <div className={styles.useCaseRow}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>SaaS Platform Development</h3>
+              <p className={styles.useCaseDescription}>Build multi-tenant SaaS applications with subscription management, user analytics, and seamless integrations.</p>
+              <p className={styles.useCaseDetails}>We offer <strong style={{ color: 'black' }}>Software development for startups</strong> to build scalable SaaS platforms with multi-tenant architecture, subscription billing, and analytics dashboards. Our <strong style={{ color: 'black' }}>digital solutions for startups</strong> include API integrations, secure payment systems, cloud infrastructure, user management, and performance optimization to ensure flexibility, reliability, and long-term scalability for growing businesses from day one.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Multi-tenant Architecture
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Subscription Billing
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Analytics Dashboard
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  API Integration
+                </span>
               </div>
-              <div className={styles.useCaseImage}>
-                <img src={useCase.image} alt={useCase.title} />
-              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
             </div>
-          ))}
+            <div className={styles.useCaseImage}>
+              <img src="/images/sliderimg1.png" alt="Software development for startups" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Use Case 2: Mobile-First Products */}
+          <div className={`${styles.useCaseRow} ${styles.reverse}`}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>Mobile-First Products</h3>
+              <p className={styles.useCaseDescription}>Native and cross-platform <Link to="/mobile-app-development">mobile apps</Link> that provide exceptional user experience on iOS and Android.</p>
+              <p className={styles.useCaseDetails}>Our <strong style={{ color: 'black' }}>Software development for startups</strong>  focuses on building mobile-first applications for iOS and Android using native and cross-platform technologies. We deliver intuitive UX, offline functionality, push notifications, and secure authentication. These <strong style={{ color: 'black' }}>digital solutions for startups</strong>  also include fast performance, seamless updates, and user engagement features to help you reach a wider audience and maximize growth.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Cross-Platform
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Offline Mode
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Push Notifications
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Social Login
+                </span>
+              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
+            </div>
+            <div className={styles.useCaseImage}>
+              <img src="/images/sliderimg2.png" alt="digital solutions for startups" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Use Case 3: Marketplace Platforms */}
+          <div className={styles.useCaseRow}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>Marketplace Platforms</h3>
+              <p className={styles.useCaseDescription}>Two-sided marketplace solutions with payments, ratings, search, and real-time matching.</p>
+              <p className={styles.useCaseDetails}>We develop scalable marketplace platforms through  <strong style={{ color: 'black' }}>Software development for startups</strong> , connecting buyers and sellers with advanced features like smart search filters, secure payments, ratings, and real-time chat. Our <strong style={{ color: 'black' }}>digital solutions for startups</strong> ensure smooth transactions, admin control, analytics dashboards, and platform scalability to handle increasing users and business expansion efficiently.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Payment Integration
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Rating System
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Real-time Chat
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Admin Dashboard
+                </span>
+              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
+            </div>
+            <div className={styles.useCaseImage}>
+              <img src="/images/appdev.png" alt="Software development for startups" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Use Case 4: AI-Powered Solutions */}
+          <div className={`${styles.useCaseRow} ${styles.reverse}`}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>AI-Powered Solutions</h3>
+              <p className={styles.useCaseDescription}>Integrate machine learning, natural language processing, and AI to create intelligent products.</p>
+              <p className={styles.useCaseDetails}>Our <strong style={{ color: 'black' }}>Software development for startups</strong>  includes AI-driven solutions such as chatbots, recommendation engines, predictive analytics, and automation tools. With our <strong style={{ color: 'black' }}>digital solutions for startups</strong>, we help you build intelligent systems that personalize user experiences, automate processes, improve decision-making, and create innovative products that drive engagement, efficiency, and long-term business growth.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  ML Models
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Chatbots
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Recommendations
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Predictive Analytics
+                </span>
+              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
+            </div>
+            <div className={styles.useCaseImage}>
+              <img src="/images/softdev.png" alt="AI-Powered Solutions" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
         </div>
       </section>
 

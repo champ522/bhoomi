@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
+import SEOHead from '../components/SEOHead';
 import { Link } from 'react-router-dom';
 import ParticleBanner from '../components/ParticleBanner';
 import WorkProcess from '../components/WorkProcess';
 import CallToAction from '../components/CallToAction';
 import styles from '../styles/TechnologyPage.module.css';
-import techStyles from '../styles/TechnologyStack.module.css';
 
 const TechnologyPage = () => {
   const [hoveredTech, setHoveredTech] = useState(null);
@@ -206,15 +206,21 @@ const TechnologyPage = () => {
 
   return (
     <div className={styles.technologyPage}>
+      <SEOHead
+        title="Modern Technology Stack | Web, Mobile & Cloud Solutions"
+        description="Explore modern technologies including web, mobile, backend, and cloud tools used to build scalable, secure, and high-performance digital solutions."
+        keywords="technology stack Bhoomi Techzone, React Node.js development, AWS cloud, Flutter app development, Laravel PHP"
+        canonical="https://bhoomitechzone.in/technology"
+      />
       {/* Technology Banner */}
       <section className={styles.technologyBanner}>
         <ParticleBanner />
         <div className={styles.overlay}></div>
         <div className={styles.container}>
           <div className={styles.content}>
-            <h1 className={styles.title}>Technology Stack</h1>
+            <h1 className={styles.title}>Modern Technologies We Use</h1>
             <p className={styles.subtitle}>
-              Cutting-edge technologies powering innovative solutions
+              Leverage cutting-edge tools and frameworks with Bhoomi Techzone to build scalable, secure, and high-performance digital solutions.
             </p>
             <div className={styles.breadcrumb}>
               <Link to="/" className={styles.breadcrumbLink}>Home</Link>
@@ -226,43 +232,42 @@ const TechnologyPage = () => {
       </section>
 
       {/* Technology Stack Section */}
-      <section className={techStyles.techSection}>
-        <div className={techStyles.container}>
+      <section className={styles.techSection}>
+        <div className={styles.container}>
           {/* Header Section */}
-          <div className={techStyles.headerContent}>
-            <div className={techStyles.welcomeSection}>
-              <span className={techStyles.welcomeText}>Our Technology</span>
-              <div className={techStyles.welcomeLine}></div>
+          <div className={styles.headerContent}>
+            <div className={styles.welcomeSection}>
+              <span className={styles.welcomeText}>Our Technology</span>
+              <div className={styles.welcomeLine}></div>
             </div>
             
-            <h2 className={techStyles.sectionTitle}>
-              Technology <span className={techStyles.titleHighlight}>Stack</span> We Use
+            <h2 className={styles.sectionTitle}>
+              Powering <span className={styles.titleHighlight}>Innovation with Advanced</span> Technologies
             </h2>
             
-            <p className={techStyles.sectionDescription}>
-              We leverage cutting-edge technologies and frameworks to build robust, scalable, and 
-              innovative solutions that drive your business forward.
+            <p className={styles.sectionDescription}>
+              At Bhoomi Techzone, we use the latest technologies to deliver powerful and future-ready digital solutions. Our team stays updated with modern tools, frameworks, and industry trends to ensure every project is built with performance, scalability, and security in mind. From web and mobile app development to enterprise software and cloud solutions, we leverage advanced technologies to create innovative products that drive business growth and digital transformation.
             </p>
           </div>
 
           {/* Technology Grid */}
-          <div className={techStyles.techGrid}>
+          <div className={styles.techGrid}>
             {technologies.map((tech) => (
               <div
                 key={tech.id}
-                className={techStyles.techCard}
+                className={styles.techCard}
                 onMouseEnter={() => setHoveredTech(tech.id)}
                 onMouseLeave={() => setHoveredTech(null)}
                 style={{
                   '--tech-color': tech.color
                 }}
               >
-                <div className={techStyles.techIcon}>
+                <div className={styles.techIcon}>
                   {tech.icon}
                 </div>
                 
-                <h3 className={techStyles.techName}>{tech.name}</h3>
-                <p className={techStyles.techDescription}>{tech.description}</p>
+                <h3 className={styles.techName}>{tech.name}</h3>
+                <p className={styles.techDescription}>{tech.description}</p>
               </div>
             ))}
           </div>

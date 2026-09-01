@@ -1,0 +1,134 @@
+# BHOOMI TECHZONE - EMERGENCY SERVER CONFIGURATION
+# CONTACT YOUR HOSTING PROVIDER WITH THIS EXACT CONFIG
+
+# =================================================================
+# FOR NGINX SERVERS (ADD TO /etc/nginx/sites-available/bhoomitechzone.in)
+# =================================================================
+
+# Force WWW redirect (CRITICAL FOR SEO)
+server {
+    listen 80;
+    listen 443 ssl http2;
+    server_name www.bhoomitechzone.in;
+    
+    # IMMEDIATE 301 redirect
+    return 301 https://bhoomitechzone.in$request_uri;
+}
+
+# Main server block
+server {
+    listen 443 ssl http2;
+    server_name bhoomitechzone.in;
+    
+    root /www/wwwroot/BhoomiTechzoneWebsite/bhoomi/bhoomi/dist;
+    index index.html index.php;
+    
+    # SSL Configuration (keep your existing SSL settings)
+    # ssl_certificate /path/to/your/certificate.crt;
+    # ssl_certificate_key /path/to/your/private.key;
+    
+    # Security headers
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+    add_header Link "<https://bhoomitechzone.in/>; rel=canonical" always;
+    
+    # Remove server tokens
+    server_tokens off;
+    
+    # Gzip compression
+    gzip on;
+    gzip_vary on;
+    gzip_min_length 1024;
+    gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript application/x-javascript;
+    
+    # Browser caching for static assets
+    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+        add_header Vary "Accept-Encoding";
+    }
+    
+    # HTML files - no cache for SEO updates
+    location ~* \.html$ {
+        add_header Cache-Control "no-cache, no-store, must-revalidate";
+        add_header Pragma "no-cache";
+        add_header Expires "0";
+        add_header Link "<https://bhoomitechzone.in/>; rel=canonical";
+    }
+    
+    # Service worker
+    location = /sw.js {
+        add_header Cache-Control "no-cache";
+        expires off;
+    }
+    
+    # React SPA routing
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+    
+    # Block access to sensitive files
+    location ~ /\. {
+        deny all;
+        access_log off;
+        log_not_found off;
+    }
+    
+    location ~* \.(conf|log)$ {
+        deny all;
+    }
+}
+
+# =================================================================
+# FOR APACHE SERVERS (ADD TO .htaccess OR VHOST)
+# =================================================================
+
+# <VirtualHost *:80>
+#     ServerName www.bhoomitechzone.in
+#     Redirect 301 / https://bhoomitechzone.in/
+# </VirtualHost>
+# 
+# <VirtualHost *:443>
+#     ServerName www.bhoomitechzone.in
+#     Redirect 301 / https://bhoomitechzone.in/
+# </VirtualHost>
+
+# =================================================================
+# IMMEDIATE ACTIONS REQUIRED:
+# =================================================================
+
+# 1. Send this file to your hosting provider
+# 2. Request: "Please implement WWW canonicalization"
+# 3. Test with: curl -I https://www.bhoomitechzone.in
+# 4. Should return: 301 Moved Permanently (NOT 200 OK)
+
+# =================================================================
+# VERIFICATION COMMANDS:
+# =================================================================
+
+# Test WWW redirect:
+# curl -I https://www.bhoomitechzone.in
+# Should return: Location: https://bhoomitechzone.in/
+
+# Test canonical URL:
+# curl -I https://bhoomitechzone.in
+# Should return: HTTP/2 200
+
+# =================================================================
+# WHY THIS MATTERS FOR SEO:
+# =================================================================
+
+# Current Status: ❌
+# - www.bhoomitechzone.in returns 200 OK
+# - bhoomitechzone.in returns 200 OK
+# - Google sees this as DUPLICATE CONTENT
+# - SEO tools see this as CANONICALIZATION ERROR
+
+# After Fix: ✅
+# - www.bhoomitechzone.in returns 301 → bhoomitechzone.in
+# - bhoomitechzone.in returns 200 OK
+# - Google understands canonical URL
+# - SEO tools see PROPER CANONICALIZATION
+
+# =================================================================

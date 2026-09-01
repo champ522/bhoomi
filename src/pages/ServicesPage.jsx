@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHead from '../components/SEOHead';
 import { Link } from 'react-router-dom';
 import Services from '../components/Services';
 import ParticleBanner from '../components/ParticleBanner';
@@ -12,13 +13,13 @@ import Certifications from '../components/Certifications';
 const ServicesPage = () => {
   // Service images array
   const serviceImages = [
-    "https://lottie.host/97b6e0e6-223c-469d-aece-84a4ae835c37/fTvUjslsAk.json",     // Website Development (Lottie)
-    "https://lottie.host/5ba5bf8c-480d-413f-815c-44bd492dc4a0/1IlpWLqQBh.json",     // App Development (Lottie)
-    "https://lottie.host/f2cbf8b5-afdf-44c1-b7ba-fdc2e779bc8e/s9HI4lqVk8.json",     // Digital Marketing (Lottie)
-    "https://lottie.host/56f58b50-2e9d-4f31-85b9-c36c74ecaf3e/5nDFfRQpCF.json",   // Social Media Marketing
-    "https://lottie.host/c6bef809-2df9-4455-b792-a103dc806aaa/wgaZ50ssdv.json",         // Application Development
-    "https://lottie.host/b331077e-3eb6-481b-9885-50c5e45ac7d8/49Smam5Rrf.json"         // Software Development
-  ];
+  "https://assets2.lottiefiles.com/packages/lf20_vnikrcia.json",
+  "https://assets7.lottiefiles.com/packages/lf20_5ngs2ksb.json",
+  "https://assets2.lottiefiles.com/packages/lf20_jcikwtux.json",
+  "https://assets6.lottiefiles.com/packages/lf20_2cwDXD.json",
+  "https://assets1.lottiefiles.com/packages/lf20_0yfsb3a1.json",
+  "https://assets10.lottiefiles.com/packages/lf20_qp1q7mct.json"
+];
 
   const services = [
     {
@@ -109,6 +110,12 @@ const ServicesPage = () => {
 
   return (
     <>
+      <SEOHead
+        title="Our IT Services | Web, App, Marketing & Software Solutions"
+        description="Explore comprehensive IT services by Bhoomi Techzone: web development, mobile apps, digital marketing, SEO, ERP, CRM, HRM, LMS, billing software and more."
+        keywords="IT services Noida, web development services, app development services, digital marketing services"
+        canonical="https://bhoomitechzone.in/services"
+      />
       {/* Services Banner */}
       <section className={styles.servicesBanner}>
         <ParticleBanner />

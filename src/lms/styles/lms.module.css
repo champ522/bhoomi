@@ -149,7 +149,7 @@
 
 .lessonCount {
   font-size: 0.875rem;
-  color: #64748b;
+  color: #333;
 }
 
 .sidebarNav {
@@ -210,7 +210,7 @@
   justify-content: center;
   font-size: 0.75rem;
   font-weight: 600;
-  color: #64748b;
+  color: #333;
   flex-shrink: 0;
   transition: all 0.15s ease;
 }
@@ -266,7 +266,7 @@
 }
 
 .exerciseDescription {
-  color: #64748b;
+  color: #333;
   font-size: 1.1rem;
   line-height: 1.6;
   margin: 0;
@@ -329,7 +329,7 @@
 
 .progressText {
   font-size: 0.75rem;
-  color: #64748b;
+  color: #333;
 }
 
 /* ==========================================================================
@@ -344,7 +344,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #64748b;
+  color: #333;
   text-decoration: none;
   font-size: 0.875rem;
   padding: 0.5rem 0.75rem;
@@ -374,7 +374,7 @@
 .breadcrumb {
   padding: 1.5rem 2rem 1rem;
   font-size: 0.875rem;
-  color: #64748b;
+  color: #333;
   border-bottom: 1px solid #f1f5f9;
   background: #f8fafc;
 }
@@ -504,13 +504,13 @@
 
 .takeaways p {
   margin: 0 0 1rem;
-  color: #64748b;
+  color: #333;
 }
 
 .takeaways ul {
   margin: 0;
   padding-left: 1.5rem;
-  color: #64748b;
+  color: #333;
 }
 
 .takeaways li {
@@ -664,7 +664,7 @@
 }
 
 .interviewHeader p {
-  color: #64748b;
+  color: #333;
   font-size: 1.1rem;
 }
 
@@ -866,7 +866,7 @@
 
 .reviewNumber {
   font-weight: 600;
-  color: #64748b;
+  color: #333;
   font-size: 0.875rem;
 }
 
@@ -965,7 +965,7 @@
 
 .subtitle {
   font-size: 1.25rem;
-  color: #64748b;
+  color: #333;
   margin: 0;
   max-width: 600px;
   margin-left: auto;
@@ -1011,7 +1011,7 @@
 }
 
 .courseDescription {
-  color: #64748b;
+  color: #333;
   margin: 0 0 1.5rem;
   line-height: 1.6;
 }
@@ -1100,6 +1100,15 @@
   line-height: 1.2;
 }
 
+.sectionSubtitle {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0 auto;
+  max-width: 1100px;
+  text-align: center;
+  line-height: 1.6;
+}
+
 .titleHighlight {
   background: linear-gradient(135deg, #0e8d38 0%, #03ba58 100%);
   -webkit-background-clip: text;
@@ -1158,7 +1167,7 @@
 
 .featureDescription {
   margin: 0;
-  color: #64748b;
+  color: #333;
   line-height: 1.6;
   font-size: 1rem;
 }
@@ -1187,7 +1196,7 @@
 .coursePageDescription {
   margin: 0.5rem 0 1rem;
   font-size: 1.125rem;
-  color: #64748b;
+  color: #333;
   line-height: 1.6;
 }
 
@@ -1281,7 +1290,7 @@
    ========================================================================== */
 .errorMessage {
   text-align: center;
-  padding: 4rem 2rem;
+  padding: 8rem 2rem;
 }
 
 .errorMessage h2 {
@@ -1291,7 +1300,8 @@
 
 .errorMessage p {
   margin: 0 0 2rem;
-  color: #64748b;
+  text-align: center;
+  color: #333;
 }
 
 .backButton {
@@ -1583,7 +1593,7 @@
 }
 
 .lessonContent pre::-webkit-scrollbar-thumb {
-  background: #64748b;
+  background: #333;
   border-radius: 4px;
 }
 
@@ -1666,7 +1676,7 @@ a:focus-visible,
    ========================================================================== */
 .lmsBanner {
   position: relative;
-  height: 450px;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1698,7 +1708,7 @@ a:focus-visible,
 }
 
 .lmsBanner .title {
-  font-size: 2.5rem;
+  font-size: 4rem;
   font-weight: 700;
   color: #050000;
   margin: 0 0 10px 0;

@@ -1,24 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
+
+import SEOHead from '../components/SEOHead';
+// Above-the-fold components - Load immediately
 import HeroBanner from '../components/HeroBanner';
-import Wave from '../components/Wave';
-import AboutUs from '../components/AboutUs';
-import Services from '../components/Services';
-import Features from '../components/Features';
-import WhyChooseBhoomiTechzone from '../components/WhyChooseBhoomiTechzone';
-import StatsCounter from '../components/StatsCounter';
-import WorkProcess from '../components/WorkProcess';
-import OurProjects from '../components/OurProjects';
-import TechnologyStack from '../components/TechnologyStack';
-import Pricing from '../components/Pricing';
-import Testimonials from '../components/Testimonials';
-import Blog from '../components/Blog';
-import CallToAction from '../components/CallToAction';
-import Certifications from '../components/Certifications';
-import InstagramReelsSection from '../components/InstagramReelsSection';
 import Partnership from '../components/Partnership';
-import IdeasIntoTechnology from '../components/IdeasIntoTechnology';
-import ContactModal from '../components/ContactModal';
-import ClientReviews from '../components/ClientReviews';
+import AboutUs from '../components/AboutUs';
+import Pricing from '../components/Pricing'
+import Services from '../components/Services';
+
+// Below-the-fold components - Lazy load
+const Features = lazy(() => import('../components/Features'));
+const WhyChooseBhoomiTechzone = lazy(() => import('../components/WhyChooseBhoomiTechzone'));
+const StatsCounter = lazy(() => import('../components/StatsCounter'));
+const WorkProcess = lazy(() => import('../components/WorkProcess'));
+const OurProjects = lazy(() => import('../components/OurProjects'));
+const TechnologyStack = lazy(() => import('../components/TechnologyStack'));
+// const Pricing = lazy(() => import('../components/Pricing'));
+const Testimonials = lazy(() => import('../components/Testimonials'));
+const ClientReviews = lazy(() => import('../components/ClientReviews'));
+const Blog = lazy(() => import('../components/Blog'));
+const InstagramReelsSection = lazy(() => import('../components/InstagramReelsSection'));
+const IdeasIntoTechnology = lazy(() => import('../components/IdeasIntoTechnology'));
+const Certifications = lazy(() => import('../components/Certifications'));
+const CallToAction = lazy(() => import('../components/CallToAction'));
+const ContactModal = lazy(() => import('../components/ContactModal'));
 
 const Home = () => {
   const [showModal, setShowModal] = useState(false);
@@ -27,7 +32,7 @@ const Home = () => {
     // Show modal after 3 seconds
     const timer = setTimeout(() => {
       setShowModal(true);
-    }, 3000);
+    }, 1000);
 
     // Cleanup timer if component unmounts
     return () => clearTimeout(timer);
@@ -39,31 +44,43 @@ const Home = () => {
 
   return (
     <>
+      <SEOHead
+        title="Bhoomi Techzone – IT Services Company | Web Dev & Digital"
+        description="Bhoomi Techzone is a trusted IT Services Company offering website development, digital marketing services, and custom software solutions for business growth."
+        keywords="IT Services Company, Website Development Company, Digital Marketing Services"
+        canonical="https://bhoomitechzone.in/"
+      />
+      {/* Above-the-fold content - No lazy loading */}
       <HeroBanner />
-      {/* <Wave /> */}
       <Partnership />
       <AboutUs />
-      <Services />
-      <Features />
-      <WhyChooseBhoomiTechzone />
-      <StatsCounter />
-      <WorkProcess />
-      <OurProjects />
-      <TechnologyStack />
       <Pricing />
-      <Testimonials />
-      <ClientReviews />
-      <Blog />
-      <InstagramReelsSection />
-      <IdeasIntoTechnology />
-      <Certifications />
-      <CallToAction />
-      
-      {/* Contact Modal */}
-      <ContactModal 
-        isOpen={showModal} 
-        onClose={handleCloseModal} 
-      />
+      <Services />
+
+      {/* Below-the-fold content - Lazy loaded */}
+      <Suspense fallback={<div style={{ minHeight: '100px' }} />}>
+        <Features />
+        <WhyChooseBhoomiTechzone />
+        <StatsCounter />
+        <WorkProcess />
+        <OurProjects />
+        <TechnologyStack />
+        <Testimonials />
+        <ClientReviews />
+        <Blog />
+        <InstagramReelsSection />
+        <IdeasIntoTechnology />
+        <Certifications />
+        <CallToAction />
+
+        {/* Contact Modal */}
+        {showModal && (
+          <ContactModal
+            isOpen={showModal}
+            onClose={handleCloseModal}
+          />
+        )}
+      </Suspense>
     </>
   );
 };

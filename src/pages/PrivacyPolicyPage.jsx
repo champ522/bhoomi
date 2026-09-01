@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHead from '../components/SEOHead';
 import { Link } from 'react-router-dom';
 import ParticleBanner from '../components/ParticleBanner';
 import styles from '../styles/PrivacyPolicyPage.module.css';
@@ -6,6 +7,12 @@ import styles from '../styles/PrivacyPolicyPage.module.css';
 const PrivacyPolicyPage = () => {
   return (
     <>
+      <SEOHead
+        title="Privacy Policy | Bhoomi Techzone"
+        description="Read Bhoomi Techzone's privacy policy to understand how we collect, use and protect your personal information when you use our website and services."
+        keywords="Bhoomi Techzone privacy policy, data protection policy, personal data policy"
+        canonical="https://bhoomitechzone.in/privacy-policy"
+      />
       {/* Privacy Policy Banner */}
       <section className={styles.privacyBanner}>
         <ParticleBanner />

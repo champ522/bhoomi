@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHead from '../components/SEOHead';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -61,15 +62,21 @@ const InventoryPage = () => {
 
   return (
     <>
+      <SEOHead
+        title="Bhoomi Techzone - Best Inventory Management Software in Noida"
+        description="Find the ideal inventory management software in Noida that meets your business needs, ensuring accurate tracking, automated processes, real-time insights, and efficient resource management."
+        keywords="Inventory Management Software, Inventory Management Software In Noida"
+        canonical="https://bhoomitechzone.in/inventory-management"
+      />
       {/* Inventory Banner */}
       <section className={styles.inventoryBanner}>
         <ParticleBanner />
         <div className={styles.overlay}></div>
         <div className={styles.container}>
           <div className={styles.content}>
-            <h1 className={styles.title}>Inventory Solutions</h1>
+            <h1 className={styles.title}>Inventory Management Software in Noida</h1>
             <p className={styles.subtitle}>
-              Streamline stock management with intelligent inventory solutions
+              Streamline stock management with intelligent inventory solutions that give you real-time control and accuracy. Our Inventory Management Software in Noida helps automate processes, reduce errors, and improve efficiency.
             </p>
             <div className={styles.breadcrumb}>
               <Link to="/" className={styles.breadcrumbLink}>Home</Link>
@@ -105,14 +112,10 @@ const InventoryPage = () => {
                 <span className={styles.highlight}>Inventory </span> Solutions
               </h2>
               <p className={styles.description}>
-                We develop advanced Inventory Management Systems that help businesses track, manage, and optimize 
-                their stock levels efficiently. Our solutions provide real-time visibility into inventory across 
-                multiple locations, automate reordering processes, and prevent stockouts or overstock situations.
+                We provide advanced Inventory Management Software designed to help businesses track, manage, and optimize stock levels efficiently. As a trusted provider of Inventory Management Software in Noida, we deliver solutions with real-time tracking, automated reordering, and accurate inventory control.
               </p>
               <p className={styles.description}>
-                From small warehouses to large distribution centers, our inventory systems streamline operations, 
-                reduce carrying costs, and improve order fulfillment accuracy. Transform your inventory management 
-                with automated tracking, intelligent forecasting, and comprehensive reporting capabilities.
+                From small warehouses to large distribution centers, our inventory systems streamline operations, reduce carrying costs, and improve order fulfillment accuracy. Transform your inventory management with automated tracking, intelligent forecasting, and comprehensive reporting capabilities.
               </p>
               
               <div className={styles.serviceStats} ref={statsRef}>
@@ -136,33 +139,33 @@ const InventoryPage = () => {
           <div className={styles.additionalContent}>
             <h3 className={styles.sectionHeading}>Why is an inventory management system essential for businesses?</h3>
             <p className={styles.paragraph}>
-              Effective inventory management is crucial for maintaining optimal stock levels, reducing costs, and ensuring customer satisfaction. An inventory management system provides real-time visibility into stock movements, automates reordering processes, and helps prevent costly stockouts or excess inventory. It enables businesses to make data-driven decisions, improve cash flow, and optimize warehouse operations.
+              Effective inventory control is critical for business success. Inventory Management Software provides real-time visibility into stock, automates operations, and prevents stockouts or overstocking. It helps improve cash flow, reduce losses, and ensure customer satisfaction.
             </p>
             <p className={styles.paragraph}>
-              Without a proper inventory system, businesses face challenges like inaccurate stock counts, lost sales due to stockouts, excess inventory tying up capital, manual errors in tracking, and inefficient warehouse operations. Our custom inventory solutions eliminate these problems by providing automated tracking, real-time updates, intelligent alerts, and comprehensive analytics to optimize your inventory management.
+              Without a proper system, businesses face issues like inaccurate stock data, manual errors, and inefficient operations. Our Inventory Management Software in Noida solves these challenges with automation, real-time updates, and smart analytics.
             </p>
 
             <h3 className={styles.sectionHeading}>There are 5 key benefits of implementing an inventory management system:</h3>
             <div className={styles.reasonsList}>
               <div className={styles.reason}>
                 <h4 className={styles.reasonTitle}>1. Real-Time Stock Visibility</h4>
-                <p className={styles.reasonText}>Track inventory levels across all locations in real-time, ensuring accurate stock information at all times.</p>
+                <p className={styles.reasonText}>Track inventory across all locations with accurate, real-time updates.</p>
               </div>
               <div className={styles.reason}>
                 <h4 className={styles.reasonTitle}>2. Cost Reduction</h4>
-                <p className={styles.reasonText}>Minimize carrying costs, reduce waste, and optimize stock levels to free up working capital.</p>
+                <p className={styles.reasonText}>Optimize stock levels, reduce waste, and lower storage costs.</p>
               </div>
               <div className={styles.reason}>
                 <h4 className={styles.reasonTitle}>3. Improved Accuracy</h4>
-                <p className={styles.reasonText}>Eliminate manual errors with barcode scanning, automated tracking, and system-driven processes.</p>
+                <p className={styles.reasonText}>Minimize manual errors with automated tracking and barcode integration.</p>
               </div>
               <div className={styles.reason}>
                 <h4 className={styles.reasonTitle}>4. Better Forecasting</h4>
-                <p className={styles.reasonText}>Use historical data and trends to predict demand, optimize reorder points, and prevent stockouts.</p>
+                <p className={styles.reasonText}>Use data insights to predict demand and avoid stock shortages.</p>
               </div>
               <div className={styles.reason}>
                 <h4 className={styles.reasonTitle}>5. Enhanced Productivity</h4>
-                <p className={styles.reasonText}>Automate routine tasks, streamline workflows, and improve warehouse efficiency with optimized processes.</p>
+                <p className={styles.reasonText}>Automate routine tasks and improve overall operational efficiency.</p>
               </div>
             </div>
 
@@ -181,32 +184,32 @@ const InventoryPage = () => {
 
             <h3 className={styles.sectionHeading}>Bhoomi Techzone's PRINCIPLES OF INVENTORY SYSTEM DEVELOPMENT:</h3>
             <p className={styles.paragraph}>
-              At Bhoomi Techzone, we build inventory systems that truly optimize your stock management. Our development approach focuses on creating accurate, efficient, and user-friendly solutions that provide real-time visibility and control:
+              Our approach focuses on delivering reliable Inventory Management Software in Noida with high accuracy, smart automation, and scalable solutions that simplify inventory control and improve business efficiency:
             </p>
             <ul className={styles.principlesList}>
               <li className={styles.principleItem}>
-                <strong>Real-Time Accuracy:</strong> Our systems provide instant updates on stock movements, ensuring you always have accurate inventory data for decision making.
+                <strong>Real-Time Accuracy:</strong> Our system provides instant updates on stock movement, ensuring your inventory data is always accurate. This helps reduce errors, prevent stock mismatches, and improve decision-making.
               </li>
               <li className={styles.principleItem}>
-                <strong>Multi-Location Support:</strong> Manage inventory across multiple warehouses, stores, or locations with centralized visibility and control.
+                <strong>Multi-Location Support:</strong> Easily manage inventory across multiple warehouses, stores, or locations from a single dashboard. Get complete visibility and centralized control over your entire stock.
               </li>
               <li className={styles.principleItem}>
-                <strong>Automated Workflows:</strong> We automate reordering, stock transfers, cycle counts, and other routine tasks to improve efficiency and reduce errors.
+                <strong>Automated Workflows:</strong> We automate routine tasks like reordering, stock transfers, and inventory updates. This saves time, reduces manual work, and improves overall operational efficiency.
               </li>
               <li className={styles.principleItem}>
-                <strong>Barcode Integration:</strong> Seamless barcode and RFID integration enables quick, accurate tracking and reduces manual data entry errors.
+                <strong>Barcode Integration:</strong> Our software supports barcode and RFID technology for fast and error-free inventory tracking. This improves accuracy and speeds up stock handling processes.
               </li>
               <li className={styles.principleItem}>
-                <strong>Intelligent Alerts:</strong> Automated notifications for low stock, overstock, expiry dates, and reorder points keep you informed and proactive.
+                <strong>Intelligent Alerts:</strong> Get real-time notifications for low stock levels, overstock situations, and reorder points. This helps you take timely action and avoid disruptions in operations.
               </li>
               <li className={styles.principleItem}>
-                <strong>Advanced Analytics:</strong> Comprehensive reports and dashboards provide insights into stock turnover, valuation, and optimization opportunities.
+                <strong>Advanced Analytics:</strong> Access detailed reports and insights on stock movement, inventory valuation, and performance trends. These insights help you make smarter business decisions.
               </li>
               <li className={styles.principleItem}>
-                <strong>Integration Ready:</strong> Seamless integration with ERP, accounting, ecommerce, and other business systems for unified operations.
+                <strong>Integration Ready:</strong> Our inventory system easily integrates with <Link to="/erp-solutions">ERP</Link>, <Link to="/ecommerce-platform">ecommerce platforms</Link>, and accounting software, ensuring smooth data flow and unified business operations.
               </li>
               <li className={styles.principleItem}>
-                <strong>Mobile Access:</strong> Manage inventory on-the-go with mobile apps for receiving, picking, counting, and real-time updates.
+                <strong>Mobile Access:</strong> Manage your inventory anytime, anywhere with mobile-friendly solutions. Stay updated with real-time data even when you're on the go.
               </li>
             </ul>
 
@@ -219,35 +222,35 @@ const InventoryPage = () => {
                 <div className={styles.stepNumber}>01</div>
                 <div className={styles.stepContent}>
                   <h4 className={styles.stepTitle}>Process Analysis & Requirements</h4>
-                  <p className={styles.stepText}>We analyze your current inventory processes, warehouse layout, and specific requirements to design a system that fits perfectly.</p>
+                  <p className={styles.stepText}>We study your business operations and inventory needs to design the right solution.</p>
                 </div>
               </div>
               <div className={styles.processStep}>
                 <div className={styles.stepNumber}>02</div>
                 <div className={styles.stepContent}>
                   <h4 className={styles.stepTitle}>System Design & Configuration</h4>
-                  <p className={styles.stepText}>Our team creates detailed system architecture, database design, and workflow configurations optimized for your operations.</p>
+                  <p className={styles.stepText}>We create system architecture and workflows tailored to your business.</p>
                 </div>
               </div>
               <div className={styles.processStep}>
                 <div className={styles.stepNumber}>03</div>
                 <div className={styles.stepContent}>
                   <h4 className={styles.stepTitle}>Development & Customization</h4>
-                  <p className={styles.stepText}>We develop the inventory system with custom features, integrations, and workflows tailored to your business requirements.</p>
+                  <p className={styles.stepText}>We build and customize software with features that match your requirements.</p>
                 </div>
               </div>
               <div className={styles.processStep}>
                 <div className={styles.stepNumber}>04</div>
                 <div className={styles.stepContent}>
                   <h4 className={styles.stepTitle}>Testing & Data Migration</h4>
-                  <p className={styles.stepText}>Comprehensive testing ensures accuracy and reliability, followed by secure migration of existing inventory data.</p>
+                  <p className={styles.stepText}>We ensure accuracy through testing and safely migrate your existing data.</p>
                 </div>
               </div>
               <div className={styles.processStep}>
                 <div className={styles.stepNumber}>05</div>
                 <div className={styles.stepContent}>
                   <h4 className={styles.stepTitle}>Training & Go-Live Support</h4>
-                  <p className={styles.stepText}>We provide thorough training for your team and offer hands-on support during the go-live phase to ensure smooth adoption.</p>
+                  <p className={styles.stepText}>We provide training and ongoing support for smooth system adoption.</p>
                 </div>
               </div>
             </div>
@@ -296,7 +299,7 @@ const InventoryPage = () => {
               <SwiperSlide key={index}>
                 <div className={styles.inventoryCard}>
                   <div className={styles.inventoryImage}>
-                    <img src={feature.image} alt={feature.title} />
+                    <img src={feature.image} alt={feature.title} width="350" height="250" loading="lazy" />
                     <div className={styles.inventoryOverlay}>
                       <Link to="/contact" className={styles.inventoryButton}>Get Started</Link>
                     </div>

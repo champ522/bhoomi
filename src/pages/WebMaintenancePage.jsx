@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHead from '../components/SEOHead';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -61,13 +62,19 @@ const WebMaintenancePage = () => {
 
   return (
     <>
+      <SEOHead
+        title="Bhoomi Techzone - Website Maintenance Services for Secure Fast Websites"
+        description="At Bhoomi Techzone Keep your website secure and up-to-date with our professional maintenance services. Enjoy peace of mind while we manage your site's performance and reliability."
+        keywords="Website Maintenance Services"
+        canonical="https://bhoomitechzone.in/web-maintenance"
+      />
       {/* Web Maintenance Banner */}
       <section className={styles.maintenanceBanner}>
         <ParticleBanner />
         <div className={styles.overlay}></div>
         <div className={styles.container}>
           <div className={styles.content}>
-            <h1 className={styles.title}>Web Maintenance</h1>
+            <h1 className={styles.title}>Website Maintenance Services</h1>
             <p className={styles.subtitle}>
               Keeping your website secure, updated, and performing at its best
             </p>
@@ -92,17 +99,13 @@ const WebMaintenancePage = () => {
                 <div className={styles.welcomeLine}></div>
               </div>
               <h2 className={styles.maintenanceTitle}>
-                <span className={styles.highlight}>Web </span> Maintenance
+                Professional <span className={styles.highlight}>Website Maintenance</span> Services
               </h2>
               <p className={styles.description}>
-                We provide comprehensive website maintenance services to keep your online presence secure, 
-                up-to-date, and running smoothly. Our proactive approach ensures your website remains fast, 
-                secure, and optimized for both users and search engines.
+                We provide comprehensive <Link to="/website-design">Website</Link> Maintenance Services to keep your online presence secure, up-to-date, and running smoothly. Our proactive approach ensures your website remains fast, secure, and optimized for both users and search engines.
               </p>
               <p className={styles.description}>
-                From regular updates and security monitoring to content management and performance optimization, 
-                our team of experts ensures your website stays current with the latest technologies and best 
-                practices. We handle everything so you can focus on your business.
+                Our knowledgeable staff makes sure your website keeps up to date with the newest technology and industry standards through everything from content management and performance optimisation to frequent upgrades and security monitoring. We take care of everything so you can concentrate on expanding your company.
               </p>
               
               <div className={styles.serviceStats} ref={statsRef}>
@@ -140,41 +143,41 @@ const WebMaintenancePage = () => {
 
           {/* Additional Content Sections */}
           <div className={styles.additionalContent}>
-            <h3 className={styles.sectionHeading}>Why is website maintenance essential for your business?</h3>
+            <h3 className={styles.sectionHeading}>Why are Website Maintenance Services essential for your business?</h3>
             <p className={styles.paragraph}>
-              In today's digital landscape, your website is often the first point of contact between your business and potential customers. Regular website maintenance is crucial for ensuring optimal performance, security, and user experience. A well-maintained website not only ranks better in search engines but also builds trust with visitors and converts them into customers.
+              In today’s digital landscape, your website is often the first interaction customers have with your brand. Regular Website Maintenance Services are essential for ensuring optimal performance, strong security, and a seamless user experience. A well-maintained website not only ranks better in search engines but also builds credibility and increases conversions.
             </p>
             <p className={styles.paragraph}>
-              Neglecting website maintenance can lead to serious consequences: security breaches, broken links, slow loading times, outdated content, and poor search rankings. These issues drive visitors away and damage your brand reputation. Our proactive maintenance approach prevents these problems, keeping your website healthy, secure, and performing at its peak.
+              Serious problems including security threats, broken links, sluggish loading times, out-of-date material, and subpar <Link to="/seo-optimization">SEO</Link> performance can result from neglecting maintenance. These issues have the potential to damage your brand's reputation and drive away customers. Our proactive strategy avoids these problems, guaranteeing that your website remains safe, effective, and productive. 
             </p>
 
             <h3 className={styles.sectionHeading}>There are 5 key benefits of regular website maintenance:</h3>
             <div className={styles.reasonsList}>
               <div className={styles.reason}>
                 <h4 className={styles.reasonTitle}>1. Enhanced Security & Protection</h4>
-                <p className={styles.reasonText}>Regular security updates, malware scanning, and vulnerability patching protect your website from cyber threats and data breaches.</p>
+                <p className={styles.reasonText}>Regular updates, malware scanning, and vulnerability fixes protect your website from cyber threats and ensure data safety.</p>
               </div>
               <div className={styles.reason}>
                 <h4 className={styles.reasonTitle}>2. Improved Performance & Speed</h4>
-                <p className={styles.reasonText}>Optimization, caching, and regular maintenance keep your website loading fast, improving user experience and SEO rankings.</p>
+                <p className={styles.reasonText}>Optimization techniques and regular monitoring keep your website fast, improving user experience and SEO rankings.</p>
               </div>
               <div className={styles.reason}>
                 <h4 className={styles.reasonTitle}>3. Better Search Engine Rankings</h4>
-                <p className={styles.reasonText}>Fresh content, technical SEO updates, and performance optimization help your website rank higher in search results.</p>
+                <p className={styles.reasonText}>Updated content, technical SEO improvements, and performance enhancements help your website rank higher in search results.</p>
               </div>
               <div className={styles.reason}>
                 <h4 className={styles.reasonTitle}>4. Reduced Downtime & Data Loss</h4>
-                <p className={styles.reasonText}>Regular backups and proactive monitoring prevent data loss and minimize downtime from technical issues.</p>
+                <p className={styles.reasonText}>Scheduled backups and proactive monitoring minimize downtime and protect your data from unexpected failures.</p>
               </div>
               <div className={styles.reason}>
                 <h4 className={styles.reasonTitle}>5. Professional Brand Image</h4>
-                <p className={styles.reasonText}>An up-to-date, well-functioning website reflects positively on your business and builds customer trust.</p>
+                <p className={styles.reasonText}>A well-maintained website builds trust, improves credibility, and reflects professionalism to your audience.</p>
               </div>
             </div>
 
-            <h3 className={styles.sectionHeading}>OUR SERVICES:</h3>
+            <h3 className={styles.sectionHeading}>Our Website Maintenance Services:</h3>
             <p className={styles.paragraph}>
-              Bhoomi Techzone offers comprehensive website maintenance services designed to keep your online presence secure, fast, and up-to-date. Our expert team provides proactive monitoring, regular updates, content management, and technical support to ensure your website performs optimally 24/7.
+              Bhoomi Techzone offers complete Website Maintenance Services to ensure your website remains secure, fast, and updated. Our expert team provides continuous monitoring, timely updates, and technical support for smooth performance.
             </p>
             <div className={styles.servicesList}>
               <div className={styles.serviceItem}>• 24/7 Website Monitoring</div>
@@ -187,32 +190,32 @@ const WebMaintenancePage = () => {
 
             <h3 className={styles.sectionHeading}>Bhoomi Techzone's PRINCIPLES OF WEB MAINTENANCE:</h3>
             <p className={styles.paragraph}>
-              At Bhoomi Techzone, our website maintenance philosophy is built on prevention, security, and continuous improvement. We believe in keeping websites secure, fast, and up-to-date through proactive care. Our approach ensures reliability, performance, and peace of mind:
+              At Bhoomi Techzone, our Website Maintenance Services are based on prevention, security, and continuous improvement. Our approach ensures your website stays reliable, fast, and secure at all times:
             </p>
             <ul className={styles.principlesList}>
               <li className={styles.principleItem}>
-                <strong>Proactive Security:</strong> We don't wait for threats to strike. Our continuous monitoring and regular security updates protect your website from hackers, malware, and vulnerabilities before they become problems.
+                <strong>Proactive Security:</strong> We continuously monitor and update your website to protect against hackers, malware, and vulnerabilities before they become major issues.
               </li>
               <li className={styles.principleItem}>
-                <strong>Regular Updates:</strong> We keep your CMS, plugins, themes, and all components up-to-date with the latest versions, ensuring compatibility, security, and access to new features.
+                <strong>Regular Updates:</strong> We keep your CMS, plugins, and themes updated to ensure compatibility, security, and access to the latest features.
               </li>
               <li className={styles.principleItem}>
-                <strong>Performance First:</strong> Speed matters. We continuously optimize your website's performance through caching, compression, and code optimization to deliver lightning-fast loading times.
+                <strong>Performance First:</strong> We optimize speed and performance through caching, compression, and technical enhancements for a smooth user experience.
               </li>
               <li className={styles.principleItem}>
-                <strong>Reliable Backups:</strong> We implement automated daily backups stored in multiple locations, ensuring your data is always safe and recoverable in case of emergencies.
+                <strong>Reliable Backups:</strong> We implement automated backups to keep your data secure and easily recoverable in case of emergencies.
               </li>
               <li className={styles.principleItem}>
-                <strong>SEO Optimization:</strong> We maintain and improve your website's SEO health by fixing broken links, optimizing metadata, and ensuring technical SEO best practices are followed.
+                <strong>SEO Optimization:</strong> We maintain your website’s SEO health by fixing technical issues, optimizing metadata, and improving overall performance.
               </li>
               <li className={styles.principleItem}>
-                <strong>Quality Assurance:</strong> Every update and change goes through thorough testing to ensure nothing breaks. We test across different browsers and devices before deployment.
+                <strong>Quality Assurance:</strong> All updates are thoroughly tested across devices and browsers to ensure stability and functionality.
               </li>
               <li className={styles.principleItem}>
-                <strong>Transparent Communication:</strong> We provide detailed reports on all maintenance activities, website health, and recommendations for improvements, keeping you informed every step of the way.
+                <strong>Transparent Communication:</strong> We provide detailed reports and updates, keeping you informed about website performance and improvements.
               </li>
               <li className={styles.principleItem}>
-                <strong>Rapid Response:</strong> When issues arise, our team responds immediately. We prioritize critical problems and resolve them quickly to minimize any impact on your business.
+                <strong>Rapid Response:</strong> Our team quickly addresses issues and resolves them efficiently to minimize any impact on your business.
               </li>
             </ul>
 
@@ -225,35 +228,35 @@ const WebMaintenancePage = () => {
                 <div className={styles.stepNumber}>01</div>
                 <div className={styles.stepContent}>
                   <h4 className={styles.stepTitle}>Website Audit & Assessment</h4>
-                  <p className={styles.stepText}>We conduct a comprehensive audit of your website, analyzing security, performance, SEO, and identifying areas that need attention or improvement.</p>
+                  <p className={styles.stepText}>We begin with a detailed analysis of your website’s performance, security, and SEO health. This helps us identify technical issues, vulnerabilities, and improvement opportunities.</p>
                 </div>
               </div>
               <div className={styles.processStep}>
                 <div className={styles.stepNumber}>02</div>
                 <div className={styles.stepContent}>
                   <h4 className={styles.stepTitle}>Maintenance Plan Development</h4>
-                  <p className={styles.stepText}>Based on the audit, we create a customized maintenance schedule including updates, backups, security checks, and optimization tasks.</p>
+                  <p className={styles.stepText}>Based on the audit, we create a customized maintenance strategy that includes regular updates, backups, security checks, and performance optimization tailored to your website’s needs.</p>
                 </div>
               </div>
               <div className={styles.processStep}>
                 <div className={styles.stepNumber}>03</div>
                 <div className={styles.stepContent}>
                   <h4 className={styles.stepTitle}>Continuous Monitoring & Security</h4>
-                  <p className={styles.stepText}>We implement 24/7 monitoring for uptime, security threats, broken links, and performance issues, ensuring immediate detection and response.</p>
+                  <p className={styles.stepText}>We provide 24/7 monitoring to track uptime, detect security threats, and identify errors in real time. This ensures quick action and prevents potential disruptions.</p>
                 </div>
               </div>
               <div className={styles.processStep}>
                 <div className={styles.stepNumber}>04</div>
                 <div className={styles.stepContent}>
                   <h4 className={styles.stepTitle}>Regular Updates & Optimization</h4>
-                  <p className={styles.stepText}>Scheduled maintenance activities including CMS updates, plugin updates, content updates, and performance optimization are performed regularly.</p>
+                  <p className={styles.stepText}>We perform timely updates for CMS, plugins, and content while continuously optimizing speed, performance, and functionality to keep your website up-to-date.</p>
                 </div>
               </div>
               <div className={styles.processStep}>
                 <div className={styles.stepNumber}>05</div>
                 <div className={styles.stepContent}>
                   <h4 className={styles.stepTitle}>Reporting & Recommendations</h4>
-                  <p className={styles.stepText}>We provide detailed monthly reports on website health, maintenance activities performed, and recommendations for ongoing improvements.</p>
+                  <p className={styles.stepText}>To help you consistently develop your website and get better results, we publish comprehensive performance reports along with practical insights and suggestions.</p>
                 </div>
               </div>
             </div>
@@ -302,7 +305,7 @@ const WebMaintenancePage = () => {
               <SwiperSlide key={index}>
                 <div className={styles.maintenanceCard}>
                   <div className={styles.maintenanceImage}>
-                    <img src={service.image} alt={service.title} />
+                    <img src={service.image} alt={service.title} width="350" height="250" loading="lazy" />
                     <div className={styles.maintenanceOverlay}>
                       <Link to="/contact" className={styles.maintenanceButton}>Get Started</Link>
                     </div>

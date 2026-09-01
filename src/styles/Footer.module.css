@@ -11,7 +11,7 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 60px 10px 0;
+  padding: 40px 10px 0;
   position: relative;
   z-index: 2;
 }
@@ -126,6 +126,10 @@
   transition: transform 0.3s ease;
 }
 
+.socialLinks a {
+  color: white;
+}
+
 /* Wave Text Animation */
 .waveTextContainer {
   margin-top: 15px;
@@ -211,15 +215,20 @@
 }
 
 @keyframes bounceRotate {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0) rotate(0deg) scale(1);
   }
+
   25% {
     transform: translateY(-25px) rotate(-5deg) scale(1.1);
   }
+
   50% {
     transform: translateY(-15px) rotate(5deg) scale(1.05);
   }
+
   75% {
     transform: translateY(-20px) rotate(-3deg) scale(1.08);
   }
@@ -229,6 +238,7 @@
   0% {
     left: -100%;
   }
+
   100% {
     left: 100%;
   }
@@ -249,15 +259,19 @@
   0% {
     color: #ffffff;
   }
+
   25% {
     color: #575858;
   }
+
   50% {
     color: #57c486;
   }
+
   75% {
     color: #030303;
   }
+
   100% {
     color: #055303;
   }
@@ -293,8 +307,8 @@
   display: inline-block;
   position: relative;
   padding-left: 10px;
-   /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); */
-} 
+  /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); */
+}
 
 .footerLink::before {
   content: '▸';
@@ -406,7 +420,7 @@
   color: var(--stone-800);
   transition: transform 150ms ease, box-shadow 150ms ease;
   text-align: center;
-  margin: 40px auto 20px auto;
+  margin: 40px auto 0px auto;
   width: fit-content;
   display: block;
   text-decoration: none;
@@ -483,6 +497,7 @@
   0% {
     background-position: 0 0, 4px 4px;
   }
+
   100% {
     background-position: 8px 0, 12px 4px;
   }
@@ -572,6 +587,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -583,6 +599,7 @@
     opacity: 0;
     transform: translateY(40px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -593,6 +610,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -703,21 +721,21 @@
     display: none;
   }
 
-  .companyDescription{
+  .companyDescription {
     font-size: 1.1rem;
     margin-top: 20px;
     margin-bottom: 35px;
   }
 
-  .footerLink{
+  .footerLink {
     font-size: 1.1rem;
   }
 
-  .contactLabel{
+  .contactLabel {
     font-size: 1.2rem;
   }
 
-  .contactText{
+  .contactText {
     font-size: 1rem;
   }
 }

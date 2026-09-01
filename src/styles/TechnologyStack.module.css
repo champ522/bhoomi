@@ -42,7 +42,7 @@
 
 .welcomeText {
   font-size: 1.1rem;
-  color: #777;
+  color: #222;
   font-weight: 600;
   font-family: 'Cabin', sans-serif;
 }
@@ -66,7 +66,7 @@
 }
 
 .titleHighlight {
-  background: linear-gradient(135deg, #0e8d38 0%, #03ba58 100%);
+  background: linear-gradient(135deg, #043b1e 0%, #043b1e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -76,7 +76,7 @@
 .sectionDescription {
   font-size: 1.2rem;
   line-height: 1.7em;
-  color: #777;
+  color: #222;
   max-width: 830px;
   text-align: center;
   margin: 0 auto;

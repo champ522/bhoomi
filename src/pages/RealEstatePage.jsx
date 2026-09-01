@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHead from '../components/SEOHead';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -74,39 +75,14 @@ const RealEstatePage = () => {
     }
   ];
 
-  const useCases = [
-    {
-      title: "Property Listing Portals",
-      description: "Feature-rich real estate portals with advanced search, filters, and property comparisons.",
-      content: "We develop comprehensive property listing platforms that connect buyers, sellers, and agents seamlessly. Our portals feature advanced search with multiple filters, interactive maps, property comparison tools, saved searches, favorite listings, and instant alerts. Features include mortgage calculators, neighborhood insights, school ratings, and integration with MLS systems. Built with responsive design for optimal viewing across all devices.",
-      features: ["Advanced Search", "Interactive Maps", "Mortgage Calculator", "MLS Integration"],
-      image: "/images/real1.png"
-    },
-    {
-      title: "Property Management Software",
-      description: "Complete property management with tenant portals, rent collection, and maintenance tracking.",
-      content: "Our property management solutions streamline operations for property managers and landlords. Features include tenant onboarding, lease management, automated rent collection, maintenance request tracking, document storage, expense tracking, and financial reporting. Tenant portals allow online payments, maintenance requests, and communication. Integration with accounting software and automated reminders for lease renewals and inspections.",
-      features: ["Tenant Portal", "Rent Collection", "Maintenance Tracking", "Financial Reports"],
-      image: "/images/real3.png"
-    },
-    {
-      title: "Real Estate CRM Systems",
-      description: "Powerful CRM for agents with lead management, automated follow-ups, and sales pipeline tracking.",
-      content: "We build specialized CRM systems tailored for real estate professionals. Our solutions include lead capture from multiple sources, automated lead nurturing, contact management, property matching, email campaigns, task automation, and deal pipeline tracking. Features include calendar integration, mobile apps for on-the-go access, analytics dashboards, and integration with listing platforms for seamless workflow management.",
-      features: ["Lead Management", "Automated Follow-ups", "Pipeline Tracking", "Mobile Access"],
-      image: "/images/real2.png"
-    },
-    {
-      title: "Virtual Tour Platforms",
-      description: "Immersive 3D tours and virtual reality experiences for remote property viewing.",
-      content: "Our virtual tour solutions bring properties to life with immersive 3D walkthroughs and 360° panoramic views. Features include interactive floor plans, virtual staging, measurement tools, VR headset support, and guided tours. Buyers can explore properties remotely at their convenience. Integration with property listings and lead capture forms. Ideal for showcasing properties to remote buyers and increasing engagement rates significantly.",
-      features: ["3D Walkthroughs", "360° Views", "Virtual Staging", "VR Support"],
-      image: "/images/real4.png"
-    }
-  ];
-
   return (
     <>
+      <SEOHead
+        title="Real Estate Software Development Services in Noida"
+        description="Discover top-notch real estate software development services in Noida. Enhance your property management and streamline operations with our expert solutions-Bhoomi Techzone."
+        keywords="Real Estate Software Development Services, Real estate IT services in Noida"
+        canonical="https://bhoomitechzone.in/realestate"
+      />
       {/* Real Estate Hero Banner */}
       <section className={styles.heroSection}>
         <ParticleBanner />
@@ -121,16 +97,16 @@ const RealEstatePage = () => {
               <span>Real Estate</span>
             </div>
             <h1 className={styles.heroTitle}>
-              Smart Real Estate
-              <span className={styles.heroHighlight}> Web & Mobile App Solutions</span>
+              Real Estate
+              <span className={styles.heroHighlight}> Software Development </span>
+              Services
             </h1>
             <p className={styles.heroSubtitle}>
-              Build innovative real estate technology platforms that streamline property transactions, 
-              enhance customer experiences, and drive business growth in the digital age.
+              Build innovative platforms with <strong style={{ color: 'black' }}>Real Estate Software Development Services</strong> to simplify property transactions and boost growth. Our Real estate IT services in Noida deliver scalable, user-friendly solutions for modern real estate businesses.
             </p>
           </div>
           <div className={styles.heroAnimation}>
-            <img src="/images/realestatebnr.png" alt="Real Estate Solutions" />
+            <img src="/images/realestatebnr.png" alt="Real Estate Software Development Services" width="1200" height="400" />
           </div>
         </div>
       </section>
@@ -166,18 +142,13 @@ const RealEstatePage = () => {
             <div className={styles.aboutContent}>
               <span className={styles.sectionLabel}>Our Expertise</span>
               <h2 className={styles.sectionTitle}>
-                Expert <span className={styles.highlight}>Real Estate Tech</span> Solutions
+                Leading <span className={styles.highlight}> Retail Tech </span> Solutions Provider
               </h2>
               <p className={styles.paragraph}>
-                At Bhoomi Techzone, we specialize in developing innovative real estate technology solutions 
-                that transform property management, sales, and customer engagement. Our expertise spans property 
-                portals, management systems, CRM platforms, and virtual tour technologies.
+                At Bhoomi Techzone, we offer cutting-edge <strong style={{ color: 'black' }}>real estate software development services</strong> that revolutionise customer interaction, sales, and property administration. Property <Link to="//web-development">websites</Link>, <Link to="/crm-systems">CRM systems</Link>, management platforms, and virtual tour technologies are just a few of the areas in which we excel at assisting companies in digitising processes and enhancing client relations.
               </p>
               <p className={styles.paragraph}>
-                We understand the unique challenges of the real estate industry including lead management, 
-                property visualization, transaction complexity, and market competition. Our solutions are built 
-                with user-friendly interfaces, powerful search capabilities, and seamless integrations that help 
-                real estate businesses thrive in the digital marketplace.
+                We understand challenges like lead management, property visualization, and market competition. Our <strong style={{ color: 'black' }}>Real estate IT services in Noida</strong> focus on creating intuitive, scalable, and feature-rich solutions with powerful search, seamless integrations, enhanced user experiences, real-time updates, and data-driven insights to drive growth.
               </p>
               <div className={styles.featuresList}>
                 <div className={styles.featureItem}>
@@ -245,34 +216,169 @@ const RealEstatePage = () => {
             </h2>
           </div>
           
-          {useCases.map((useCase, index) => (
-            <div 
-              key={index} 
-              className={`${styles.useCaseRow} ${index % 2 === 1 ? styles.reverse : ''}`}
-            >
-              <div className={styles.useCaseContent}>
-                <h3 className={styles.useCaseTitle}>{useCase.title}</h3>
-                <p className={styles.useCaseDescription}>{useCase.description}</p>
-                <p className={styles.useCaseDetails}>{useCase.content}</p>
-                <div className={styles.useCaseFeatures}>
-                  {useCase.features.map((feature, idx) => (
-                    <span key={idx} className={styles.featureTag}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                        <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                      {feature}
-                    </span>
-                  ))}
-                </div>
-                <Link to="/contact" className={styles.useCaseBtn}>
-                  Get Started
-                </Link>
+          {/* Use Case 1: Property Listing Portals */}
+          <div className={styles.useCaseRow}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>Property Listing Portals</h3>
+              <p className={styles.useCaseDescription}>Feature-rich real estate portals with advanced search, filters, and property comparisons.</p>
+              <p className={styles.useCaseDetails}>Using <strong style={{ color: 'black' }}>real estate Software Development Services</strong>, we create feature-rich platforms that smoothly link buyers, sellers, and agents. Advanced search filters, interactive maps, property comparisons, saved listings, and immediate alerts are all features of our portals. We guarantee mobile-friendly design, MLS connectivity, and features like mortgage calculators and location analytics for improved decision-making with our <strong style={{ color: 'black' }}>real estate IT services in Noida</strong>.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Advanced Search
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Interactive Maps
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Mortgage Calculator
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  MLS Integration
+                </span>
               </div>
-              <div className={styles.useCaseImage}>
-                <img src={useCase.image} alt={useCase.title} />
-              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
             </div>
-          ))}
+            <div className={styles.useCaseImage}>
+              <img src="/images/real1.png" alt="Real Estate Software Development Services" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Use Case 2: Property Management Software */}
+          <div className={`${styles.useCaseRow} ${styles.reverse}`}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>Property Management Software</h3>
+              <p className={styles.useCaseDescription}>Complete property management with tenant portals, rent collection, and maintenance tracking.</p>
+              <p className={styles.useCaseDetails}>Strong property management systems are part of our <strong style={{ color: 'black' }}>real estate software development services</strong> for managers and landlords. Tenant onboarding, rent collection, maintenance monitoring, and financial reporting are among the features. To increase productivity and operational control, we provide automated workflows, tenant portals, safe payments, and smooth interaction with accounting systems with our <strong style={{ color: 'black' }}>real estate IT services in Noida</strong>.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Tenant Portal
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Rent Collection
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Maintenance Tracking
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Financial Reports
+                </span>
+              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
+            </div>
+            <div className={styles.useCaseImage}>
+              <img src="/images/real3.png" alt="real estate software development services" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Use Case 3: Real Estate CRM Systems */}
+          <div className={styles.useCaseRow}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>Real Estate CRM Systems</h3>
+              <p className={styles.useCaseDescription}>Powerful CRM for agents with lead management, automated follow-ups, and sales pipeline tracking.</p>
+              <p className={styles.useCaseDetails}>We build customized CRM platforms using <strong style={{ color: 'black' }}>real estate software development services</strong> to streamline lead management and sales processes. Features include automated follow-ups, pipeline tracking, contact management, and analytics dashboards. Our <strong style={{ color: 'black' }}>Real estate IT services in Noida</strong> help agents improve conversions with smart automation, mobile access, and integration with listing platforms for better productivity.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Lead Management
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Automated Follow-ups
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Pipeline Tracking
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Mobile Access
+                </span>
+              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
+            </div>
+            <div className={styles.useCaseImage}>
+              <img src="/images/real2.png" alt="Real estate IT services in Noida" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Use Case 4: Virtual Tour Platforms */}
+          <div className={`${styles.useCaseRow} ${styles.reverse}`}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>Virtual Tour Platforms</h3>
+              <p className={styles.useCaseDescription}>Immersive 3D tours and virtual reality experiences for remote property viewing.</p>
+              <p className={styles.useCaseDetails}>Our <strong style={{ color: 'black' }}>Real Estate Software Development Services</strong> include immersive virtual tour solutions with 3D walkthroughs and 360° views. These platforms allow buyers to explore properties remotely with features like virtual staging, floor plans, and VR support. With <strong style={{ color: 'black' }}>Real estate IT services in Noida</strong>, we enhance engagement, improve lead generation, and provide interactive property experiences.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  3D Walkthroughs
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  360° Views
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Virtual Staging
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  VR Support
+                </span>
+              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
+            </div>
+            <div className={styles.useCaseImage}>
+              <img src="/images/real4.png" alt="Real estate IT services in Noida" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -286,8 +392,7 @@ const RealEstatePage = () => {
                 <span className={styles.highlight}>Powerful Features</span> for Real Estate Success
               </h2>
               <p className={styles.paragraph}>
-                Our real estate solutions come with advanced features designed to accelerate sales, 
-                improve property management, and deliver exceptional experiences to buyers and sellers.
+                Our <strong style={{ color: 'black' }}>real estate software development services</strong> come with advanced features designed to accelerate sales, improve property management, and deliver exceptional experiences to buyers and sellers, making us a trusted provider of <strong style={{ color: 'black' }}>Real estate IT services in Noida</strong>.
               </p>
               <div className={styles.securityFeatures}>
                 <div className={styles.securityFeature}>

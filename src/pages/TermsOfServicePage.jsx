@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHead from '../components/SEOHead';
 import { Link } from 'react-router-dom';
 import ParticleBanner from '../components/ParticleBanner';
 import styles from '../styles/TermsOfServicePage.module.css';
@@ -6,6 +7,12 @@ import styles from '../styles/TermsOfServicePage.module.css';
 const TermsOfServicePage = () => {
   return (
     <>
+      <SEOHead
+        title="Terms of Service | Bhoomi Techzone"
+        description="Review Bhoomi Techzone's terms of service. Understand the conditions, responsibilities and agreements when using our IT services and digital solutions."
+        keywords="Bhoomi Techzone terms of service, terms and conditions, service agreement"
+        canonical="https://bhoomitechzone.in/terms-of-service" 
+      />
       {/* Terms of Service Banner */}
       <section className={styles.termsBanner}>
         <ParticleBanner />

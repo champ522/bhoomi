@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhoomi Techzone - Trusted IT Company Offering Custom Solutions</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.webp">
+
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- International Telephone Input CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/css/intlTelInput.css">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQDHEXDNC6"></script> <script>   window.dataLayer = window.dataLayer || [];   function gtag(){dataLayer.push(arguments);}   gtag('js', new Date());   gtag('config', 'G-XQDHEXDNC6'); </script>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/bhoomi-black.webp" alt="Bhoomi Techzone Logo" class="logo">
+                </a>
+
+                <!-- Toggle button for mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Menu Items -->
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#packages">Packages</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#portfolio">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                    <a href="tel:+918130787194" class="btn btn-primary ms-lg-3 mt-2 mt-lg-0">
+                        <i class="bi bi-telephone-fill"></i> +91 81307 87194
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Left Side Content -->
+                <div class="col-lg-6 col-md-12 hero-content">
+                    <h1 class="hero-title">Transform Your Vision with Expert Website and App Development</h1>
+                    <p class="hero-description">From intuitive UI/UX design to scalable digital solutions, we deliver
+                        cutting-edge technology tailored to your business needs. Let’s build something amazing together
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="tel:+918130787194" class="btn btn-primary hero-btn-primary">
+                            <i class="bi bi-telephone-fill"></i> Call Now
+                        </a>
+                        <a href="https://wa.me/918130787194" target="_blank"
+                            class="btn btn-outline-light hero-btn-secondary">
+                            <i class="bi bi-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Side Form -->
+                <div class="col-lg-6 col-md-12 hero-form-wrapper">
+                    <div class="hero-form-card">
+                        <h3 class="form-card-title">Tell Us About Your Business Project</h3>
+                        <p class="form-card-description">Fill out the form and our team will get back to you within 24
+                            hours</p>
+                        <form class="hero-form">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="fullName" class="form-label">Full Name <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="fullName" placeholder="Your full name"
+                                        required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="emailAddress" class="form-label">Email-ID <span
+                                            class="text-danger">*</span></label>
+                                    <input type="email" class="form-control" id="emailAddress"
+                                        placeholder="Your Email-ID" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="mobileNumber" class="form-label">Mobile Number <span
+                                            class="text-danger">*</span></label>
+                                    <input type="tel" class="form-control" id="mobileNumber" placeholder="XXX-XXX-XXXX"
+                                        required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="buildProject" class="form-label">What Do You Want to Build? <span
+                                            class="text-danger">*</span></label>
+                                    <select class="form-select" id="buildProject" required>
+                                        <option value="" selected>—Please choose an option—</option>
+                                        <option value="business-website">Business Website / Web Application</option>
+                                        <option value="mobile-app">Mobile App for My Business</option>
+                                        <option value="ecommerce">Ecommerce Platform (B2C / B2B)</option>
+                                        <option value="startup-mvp">Startup Product (MVP / PoC)</option>
+                                        <option value="custom-software">Custom Business Software</option>
+                                        <option value="software-upgrade">Software Upgrade / Enhancement</option>
+                                        <option value="maintenance">Maintenance & Support</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="noteRemark" class="form-label">Project Description</label>
+                                <textarea class="form-control" id="noteRemark" rows="4"
+                                    placeholder="Briefly describe your requirements..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 hero-submit-btn">Request a Project
+                                Consultation</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Left Side - Content -->
+                <div class="col-lg-6 col-md-12 about-content">
+                    <h2 class="section-title">About Us</h2>
+                    <h3 class="about-subtitle">Building Digital Excellence Since 2019</h3>
+                    <p class="about-description">
+                        We are a passionate team of technology experts dedicated to transforming businesses through
+                        innovative software solutions. Our mission is to bridge the gap between complex technology and
+                        simple, effective business solutions. With over 4 years of experience, we have successfully
+                        delivered 300+ projects to satisfied clients across various industries. We provide custom
+                        software development, website development, mobile app development, and web applications.
+                    </p>
+                    <p class="about-description">
+                        With a focus on quality, creativity, and client satisfaction, we've successfully delivered
+                        hundreds of projects across various industries. We don't just build websites; we create digital
+                        experiences that engage, inspire, and convert.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Expert Development Team</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>On-Time Project Delivery</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>24/7 Customer Support</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Affordable Pricing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Stats -->
+                <div class="col-lg-6 col-md-12 about-stats">
+                    <div class="row g-4">
+                        <div class="col-6">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="bi bi-trophy-fill"></i>
+                                </div>
+                                <h3 class="stat-number">300+</h3>
+                                <p class="stat-label">Projects Completed</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="bi bi-people-fill"></i>
+                                </div>
+                                <h3 class="stat-number">280+</h3>
+                                <p class="stat-label">Happy Clients</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="bi bi-award-fill"></i>
+                                </div>
+                                <h3 class="stat-number">98%</h3>
+                                <p class="stat-label">Client Satisfaction Rate</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                                <h3 class="stat-number">4+</h3>
+                                <p class="stat-label">Years Experience</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Comprehensive Digital Solutions For Your Business Growth</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <h3 class="service-title">Web Development</h3>
+                        <p class="service-description">
+                            Build stunning, responsive and high-performance web applications using cutting-edge
+                            technology.
+                        </p>
+                        <a href="#" class="service-btn" data-bs-toggle="modal" data-bs-target="#popupFormModal">Get
+                            Consultation →</a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <h3 class="service-title">App Development</h3>
+                        <p class="service-description">
+                            Build powerful, high-performance mobile apps for iOS and Android with seamless user
+                            experiences.
+                        </p>
+                        <a href="#" class="service-btn" data-bs-toggle="modal" data-bs-target="#popupFormModal">Get
+                            Consultation →</a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <h3 class="service-title">UI/UX Design</h3>
+                        <p class="service-description">
+                            Design beautiful, intuitive interfaces that boost engagement and deliver exceptional user
+                            experiences.
+                        </p>
+                        <a href="#" class="service-btn" data-bs-toggle="modal" data-bs-target="#popupFormModal">Get
+                            Consultation →</a>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <h3 class="service-title">E-Commerce Solutions</h3>
+                        <p class="service-description">
+                            Launch your store with secure payment integration, inventory management, and seamless
+                            shopping experience.
+                        </p>
+                        <a href="#" class="service-btn" data-bs-toggle="modal" data-bs-target="#popupFormModal">Get
+                            Consultation →</a>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <h3 class="service-title">Digital Marketing</h3>
+                        <p class="service-description">
+                            Boost your online presence with strategic marketing campaigns, social media management, and
+                            content creation.
+                        </p>
+                        <a href="#" class="service-btn" data-bs-toggle="modal" data-bs-target="#popupFormModal">Get
+                            Consultation →</a>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <h3 class="service-title">SEO Services</h3>
+                        <p class="service-description">
+                            Boost your website search rankings and drive organic traffic with data-driven SEO strategies
+                            tailored to your business.
+                        </p>
+                        <a href="#" class="service-btn" data-bs-toggle="modal" data-bs-target="#popupFormModal">Get
+                            Consultation →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="packages-section" id="packages">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Our Packages</h2>
+                <p class="section-subtitle">Choose The Perfect Plan For Your Business Needs</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Basic Package -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h3 class="package-name">BASIC</h3>
+                            <div class="package-price">
+                                <span class="currency">₹</span>
+                                <span class="amount">3,999</span>
+                            </div>
+                            <p class="package-subtitle">Perfect for small businesses & personal brands</p>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="bi bi-check-circle-fill"></i> Up to 10 pages</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Mobile-friendly responsive design</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Basic contact form</li>
+                            <li><i class="bi bi-check-circle-fill"></i> WordPress CMS</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Basic on-page SEO setup</li>
+                            <li><i class="bi bi-check-circle-fill"></i> SSL certificate setup</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Delivered in 03–05 business days</li>
+                            <li><i class="bi bi-check-circle-fill"></i> 20 days free support</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Full code ownership — no hidden costs</li>
+                        </ul>
+                        <a href="#" class="package-btn" data-bs-toggle="modal" data-bs-target="#popupFormModal">Get
+                            Started</a>
+                    </div>
+                </div>
+
+                <!-- Professional Package -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card featured">
+                        <div class="popular-badge">Most Popular</div>
+                        <div class="package-header">
+                            <h3 class="package-name">PROFESSIONAL</h3>
+                            <div class="package-price">
+                                <span class="currency">₹</span>
+                                <span class="amount">9,999</span>
+                            </div>
+                            <p class="package-subtitle">Ideal for growing businesses & eCommerce</p>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="bi bi-check-circle-fill"></i> Up to 15 pages</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Custom UI/UX design</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Mobile-first responsive design</li>
+                            <li><i class="bi bi-check-circle-fill"></i> WordPress or custom build</li>
+                            <li><i class="bi bi-check-circle-fill"></i> WooCommerce / eCommerce integration</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Advanced contact forms & lead capture</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Full on-page SEO optimization</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Speed optimization</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Google Analytics integration</li>
+                            <li><i class="bi bi-check-circle-fill"></i> CMS integration</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Social media integration</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Delivered in 08–10 business days</li>
+                            <li><i class="bi bi-check-circle-fill"></i> 30 days free support</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Full code ownership — no hidden costs</li>
+                        </ul>
+                        <a href="#" class="package-btn" data-bs-toggle="modal" data-bs-target="#popupFormModal">Get
+                            Started</a>
+                    </div>
+                </div>
+
+                <!-- Custom Package -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h3 class="package-name">CUSTOM</h3>
+                            <div class="package-price">
+                                <!-- <span class="amount" style="font-size: 2rem;">Custom Quote</span> -->
+                            </div>
+                            <p class="package-subtitle">For large businesses, SaaS, ERP & complex platforms</p>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="bi bi-check-circle-fill"></i> Unlimited pages</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Full custom design & development</li>
+                            <li><i class="bi bi-check-circle-fill"></i> React.js / Laravel / Node.js or your preferred
+                                stack</li>
+                            <li><i class="bi bi-check-circle-fill"></i> eCommerce (B2B or B2C)</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Custom software / SaaS / ERP / Mobile App</li>
+                            <li><i class="bi bi-check-circle-fill"></i> API integrations</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Advanced SEO & performance optimization</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Multi-language support</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Dedicated project manager</li>
+                            <li><i class="bi bi-check-circle-fill"></i> 6 months support</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Priority response</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Scalable architecture</li>
+                            <li><i class="bi bi-check-circle-fill"></i> NDA available on request</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Timeline & pricing based on project scope</li>
+                        </ul>
+                        <a href="#" class="package-btn" data-bs-toggle="modal" data-bs-target="#popupFormModal">Get
+                            Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us-section" id="why-choose-us">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Why Choose Us</h2>
+                <p class="section-subtitle">We Stand Out From The Competition With Our Commitment To Excellence</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Reason 1 -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="reason-card">
+                        <h3 class="reason-title">Fast Delivery</h3>
+                        <p class="reason-description">
+                            We deliver projects on time without compromising on quality. Your deadlines are our
+                            priority.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Reason 2 -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="reason-card">
+                        <h3 class="reason-title">Quality Assured</h3>
+                        <p class="reason-description">
+                            Every project undergoes rigorous testing to ensure bug-free, high-performance solutions.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Reason 3 -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="reason-card">
+                        <h3 class="reason-title">24/7 Support</h3>
+                        <p class="reason-description">
+                            Round-the-clock technical support to assist you whenever you need help or guidance.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Reason 4 -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="reason-card">
+                        <h3 class="reason-title">Affordable Pricing</h3>
+                        <p class="reason-description">
+                            Get premium quality services at competitive prices that fit your budget perfectly.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Reason 5 -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="reason-card">
+                        <h3 class="reason-title">Modern Technology</h3>
+                        <p class="reason-description">
+                            We use the latest technologies and frameworks to build cutting-edge solutions.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Reason 6 -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="reason-card">
+                        <h3 class="reason-title">Scalable Solutions</h3>
+                        <p class="reason-description">
+                            Our solutions grow with your business, ensuring long-term value and flexibility.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Reason 7 -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="reason-card">
+                        <h3 class="reason-title">Expert Team</h3>
+                        <p class="reason-description">
+                            Our team of skilled professionals brings years of experience and expertise.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Reason 8 -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="reason-card">
+                        <h3 class="reason-title">Client Satisfaction</h3>
+                        <p class="reason-description">
+                            Your satisfaction is our success. We go the extra mile to exceed expectations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section" id="portfolio">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Our Work</h2>
+                <p class="section-subtitle">Explore Our Recent Projects And Success Stories</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Project 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=500&h=350&fit=crop"
+                                alt="Team Collaboration Suite">
+                        </div>
+                        <div class="portfolio-content">
+                            <span class="portfolio-category">SaaS Platform</span>
+                            <h3 class="portfolio-title">Team Collaboration Suite</h3>
+                            <h4 class="tech-stack-title">Problem Solved</h4>
+                            <p class="portfolio-description">Delivered a cloud-based SaaS platform for a US-based
+                                startup enabling remote teams to manage projects, assign tasks, and automate workflows -
+                                with role-based access for admins, managers, and team members.</p>
+                            <div class="tech-stack">
+                                <h4 class="tech-stack-title">Tech Stack</h4>
+                                <div class="tech-badges">
+                                    <span class="tech-badge">React.js</span>
+                                    <span class="tech-badge">Node.js</span>
+                                    <span class="tech-badge">AWS</span>
+                                    <span class="tech-badge">PostgreSQL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&h=350&fit=crop"
+                                alt="Digital Payment Gateway">
+                        </div>
+                        <div class="portfolio-content">
+                            <span class="portfolio-category">Fintech</span>
+                            <h3 class="portfolio-title">Digital Payment Gateway</h3>
+                            <h4 class="tech-stack-title">Problem Solved</h4>
+                            <p class="portfolio-description">Built a secure multi-currency payment processing platform
+                                for a fintech client with real-time transaction analytics, automated reconciliation, and
+                                a fraud detection layer integrated via API.</p>
+                            <div class="tech-stack">
+                                <h4 class="tech-stack-title">Tech Stack</h4>
+                                <div class="tech-badges">
+                                    <span class="tech-badge">React.js</span>
+                                    <span class="tech-badge">Python</span>
+                                    <span class="tech-badge">Stripe API</span>
+                                    <span class="tech-badge">MongoDB</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=500&h=350&fit=crop"
+                                alt="Online Food Ordering Platform">
+                        </div>
+                        <div class="portfolio-content">
+                            <span class="portfolio-category">Food & Restaurant</span>
+                            <h3 class="portfolio-title">Online Food Ordering Platform</h3>
+                            <h4 class="tech-stack-title">Problem Solved</h4>
+                            <p class="portfolio-description">Developed a multi-vendor food delivery marketplace with
+                                live order tracking, a dedicated kitchen management dashboard, and a driver dispatch
+                                system — reducing order fulfilment time by 40%.</p>
+                            <div class="tech-stack">
+                                <h4 class="tech-stack-title">Tech Stack</h4>
+                                <div class="tech-badges">
+                                    <span class="tech-badge">React Native</span>
+                                    <span class="tech-badge">Node.js</span>
+                                    <span class="tech-badge">Firebase</span>
+                                    <span class="tech-badge">MySQL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=500&h=350&fit=crop"
+                                alt="Wholesale Distribution Portal">
+                        </div>
+                        <div class="portfolio-content">
+                            <span class="portfolio-category">B2B eCommerce</span>
+                            <h3 class="portfolio-title">Wholesale Distribution Portal</h3>
+                            <h4 class="tech-stack-title">Problem Solved</h4>
+                            <p class="portfolio-description">Delivered a B2B eCommerce portal for a wholesale
+                                distributor allowing bulk ordering, tiered pricing by customer segment, custom product
+                                catalogues, and automated purchase order generation.</p>
+                            <div class="tech-stack">
+                                <h4 class="tech-stack-title">Tech Stack</h4>
+                                <div class="tech-badges">
+                                    <span class="tech-badge">PHP</span>
+                                    <span class="tech-badge">WooCommerce</span>
+                                    <span class="tech-badge">WordPress</span>
+                                    <span class="tech-badge">MySQL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=500&h=350&fit=crop"
+                                alt="Travel Booking & Itinerary Platform">
+                        </div>
+                        <div class="portfolio-content">
+                            <span class="portfolio-category">Tour & Travel</span>
+                            <h3 class="portfolio-title">Travel Booking & Itinerary Platform</h3>
+                            <h4 class="tech-stack-title">Problem Solved</h4>
+                            <p class="portfolio-description">Developed a full-featured travel booking platform for a
+                                tour operator with package management, online booking with payment integration,
+                                automated itinerary generation, and a dedicated agent portal for managing bookings.</p>
+                            <div class="tech-stack">
+                                <h4 class="tech-stack-title">Tech Stack</h4>
+                                <div class="tech-badges">
+                                    <span class="tech-badge">PHP</span>
+                                    <span class="tech-badge">Laravel</span>
+                                    <span class="tech-badge">MySQL</span>
+                                    <span class="tech-badge">Stripe API</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=350&fit=crop"
+                                alt="Enterprise Resource Management System">
+                        </div>
+                        <div class="portfolio-content">
+                            <span class="portfolio-category">ERP Solution</span>
+                            <h3 class="portfolio-title">Enterprise Resource Management System</h3>
+                            <h4 class="tech-stack-title">Problem Solved</h4>
+                            <p class="portfolio-description">Built a fully integrated ERP system for a mid-size
+                                manufacturing company covering inventory management, HR and payroll, finance reporting,
+                                and multi-branch operations — all within a single unified dashboard.</p>
+                            <div class="tech-stack">
+                                <h4 class="tech-stack-title">Tech Stack</h4>
+                                <div class="tech-badges">
+                                    <span class="tech-badge">React.js</span>
+                                    <span class="tech-badge">Laravel</span>
+                                    <span class="tech-badge">MySQL</span>
+                                    <span class="tech-badge">REST API</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work Section -->
+    <section class="how-we-work-section" id="how-we-work">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">How We Work</h2>
+                <p class="section-subtitle">Our Proven Process To Deliver Exceptional Results For Every Project</p>
+            </div>
+
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+
+                <!-- Step 1 -->
+                <div class="timeline-step">
+                    <div class="step-circle">
+                        <span class="step-number">1</span>
+                        <div class="step-icon">
+                            <i class="bi bi-chat-dots"></i>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">Requirement Gathering</h3>
+                        <p class="step-description">We listen carefully to your vision, objectives, and unique
+                            challenges</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="timeline-step">
+                    <div class="step-circle">
+                        <span class="step-number">2</span>
+                        <div class="step-icon">
+                            <i class="bi bi-lightbulb"></i>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">Strategy & Planning</h3>
+                        <p class="step-description">Creating detailed roadmap, wireframes, and technical specifications
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="timeline-step">
+                    <div class="step-circle">
+                        <span class="step-number">3</span>
+                        <div class="step-icon">
+                            <i class="bi bi-code-slash"></i>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">Build & Development</h3>
+                        <p class="step-description">Expert developers transform designs into functional, scalable
+                            solutions</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="timeline-step">
+                    <div class="step-circle">
+                        <span class="step-number">4</span>
+                        <div class="step-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">Quality Assurance</h3>
+                        <p class="step-description">Rigorous testing ensures flawless performance and user experience
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="timeline-step">
+                    <div class="step-circle">
+                        <span class="step-number">5</span>
+                        <div class="step-icon">
+                            <i class="bi bi-rocket-takeoff"></i>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">Launch & Support</h3>
+                        <p class="step-description">Seamless deployment with continuous maintenance and upgrades</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Got questions? We've got answers to help you make informed decisions</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="accordion" id="faqAccordion">
+                        <!-- FAQ 1 -->
+                        <div class="accordion-item faq-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                                    <i class="bi bi-question-circle-fill me-3"></i>
+                                    What services does Bhoomi Techzone offer?
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We offer a comprehensive range of digital solutions including web development,
+                                    mobile app development, UI/UX design, digital marketing, SEO services, e-commerce
+                                    solutions, and custom software development. Our team specializes in creating
+                                    tailored solutions that meet your specific business needs and goals.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div class="accordion-item faq-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                                    <i class="bi bi-question-circle-fill me-3"></i>
+                                    How long does it take to complete a project?
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Project timelines vary depending on the scope and complexity. A simple website
+                                    typically takes 2-4 weeks, while more complex web applications or e-commerce
+                                    platforms may take 2-3 months. We provide detailed project timelines during our
+                                    initial consultation and keep you updated throughout the development process.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="accordion-item faq-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                                    <i class="bi bi-question-circle-fill me-3"></i>
+                                    Do you provide ongoing support and maintenance?
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, absolutely! We offer comprehensive post-launch support and maintenance
+                                    packages. This includes regular updates, security patches, performance monitoring,
+                                    bug fixes, and feature enhancements. We ensure your digital solution stays
+                                    up-to-date, secure, and performs optimally at all times.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 4 -->
+                        <div class="accordion-item faq-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                                    <i class="bi bi-question-circle-fill me-3"></i>
+                                    What is your pricing structure?
+                                </button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our pricing is customized based on your project requirements, scope, and timeline.
+                                    We offer flexible packages including Basic, Standard, and Premium tiers to suit
+                                    different budgets and needs. Contact us for a free consultation and detailed quote.
+                                    We believe in transparent pricing with no hidden costs.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 5 -->
+                        <div class="accordion-item faq-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+                                    <i class="bi bi-question-circle-fill me-3"></i>
+                                    Will my website be mobile-friendly and responsive?
+                                </button>
+                            </h3>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Absolutely! All our websites and applications are built with a mobile-first
+                                    approach, ensuring they look and function perfectly on all devices - smartphones,
+                                    tablets, and desktops. We follow responsive design best practices and conduct
+                                    thorough testing across multiple devices and browsers before launch.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Left Side Content -->
+                <div class="col-lg-6 col-md-12 contact-content">
+                    <h1 class="contact-title">Get In Touch With Us</h1>
+                    <p class="contact-description">Have a project in mind? We'd love to hear from you. Fill out the form
+                        and our team will get back to you within 24 hours.</p>
+                    <div class="contact-buttons">
+                        <a href="tel:+918130787194" class="btn btn-primary contact-btn-primary">
+                            <i class="bi bi-telephone-fill"></i> Call Now
+                        </a>
+                        <a href="https://wa.me/918130787194" target="_blank"
+                            class="btn btn-outline-light contact-btn-secondary">
+                            <i class="bi bi-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Side Form -->
+                <div class="col-lg-6 col-md-12 contact-form-wrapper">
+                    <div class="contact-form-card">
+                        <h3 class="form-card-title">Tell Us About Your Business Project</h3>
+                        <p class="form-card-description">Fill out the form and our team will get back to you within 24
+                            hours</p>
+                        <form class="contact-form">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="contactName" class="form-label">Full Name <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="contactName"
+                                        placeholder="Your full name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="contactEmail" class="form-label">Email-ID <span
+                                            class="text-danger">*</span></label>
+                                    <input type="email" class="form-control" id="contactEmail"
+                                        placeholder="Your Email-ID" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="contactMobile" class="form-label">Mobile Number <span
+                                            class="text-danger">*</span></label>
+                                    <input type="tel" class="form-control" id="contactMobile" placeholder="XXX-XXX-XXXX"
+                                        required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="contactBuildProject" class="form-label">What Do You Want to Build? <span
+                                            class="text-danger">*</span></label>
+                                    <select class="form-select" id="contactBuildProject" required>
+                                        <option value="" selected>—Please choose an option—</option>
+                                        <option value="business-website">Business Website / Web Application</option>
+                                        <option value="mobile-app">Mobile App for My Business</option>
+                                        <option value="ecommerce">Ecommerce Platform (B2C / B2B)</option>
+                                        <option value="startup-mvp">Startup Product (MVP / PoC)</option>
+                                        <option value="custom-software">Custom Business Software</option>
+                                        <option value="software-upgrade">Software Upgrade / Enhancement</option>
+                                        <option value="maintenance">Maintenance & Support</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contactNote" class="form-label">Project Description</label>
+                                <textarea class="form-control" id="contactNote" rows="4"
+                                    placeholder="Briefly describe your requirements..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 contact-submit-btn">Request a Project
+                                Consultation</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-content">
+                <div class="row align-items-center">
+                    <!-- Logo -->
+                    <div class="col-lg-3 col-md-12 text-center text-lg-start mb-3 mb-lg-0">
+                        <a href="index.html" class="footer-logo">
+                            <img src="images/bhoomi-black.webp" alt="Bhoomi Techzone Logo" class="logo">
+                        </a>
+                        <div class="footer-contact-info mt-3">
+                            <p class="mb-2">
+                                <i class="bi bi-telephone-fill"></i>
+                                <a href="tel:+918130787194" class="text-white text-decoration-none ms-2">+91 81307
+                                    87194</a>
+                            </p>
+                            <p class="mb-2">
+                                <i class="bi bi-envelope-fill"></i>
+                                <a href="mailto:info@bhoomitechzone.in"
+                                    class="text-white text-decoration-none ms-2">info@bhoomitechzone.in</a>
+                            </p>
+                            <p class="mb-0">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                <span class="text-white ms-2">A-43, A Block, Sector 63, Noida, Uttar Pradesh
+                                    201301</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Menu Items -->
+                    <div class="col-lg-9 col-md-12">
+                        <ul class="footer-menu">
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#packages">Packages</a></li>
+                            <li><a href="#portfolio">Portfolio</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p class="copyright-text">© 2026 Bhoomi Techzone Pvt. Ltd. All Rights Reserved.</p>
+                <div class="footer-links mt-2">
+                    <a href="https://bhoomitechzone.in/privacy-policy" class="footer-link" target="_blank" >Privacy Policy</a>
+                    <span class="mx-2">|</span>
+                    <a href="https://bhoomitechzone.in/terms-of-service" class="footer-link" target="_blank">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-buttons">
+        <a href="tel:+918130787194" class="floating-btn call-btn" title="Call Now">
+            <i class="bi bi-telephone-fill"></i>
+        </a>
+        <a href="https://wa.me/918130787194" target="_blank" class="floating-btn whatsapp-btn" title="WhatsApp">
+            <i class="bi bi-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Popup Modal Form -->
+    <div class="modal fade" id="popupFormModal" tabindex="-1" aria-labelledby="popupFormModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <button type="button" class="btn-close modal-close-btn" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+                <div class="modal-body">
+                    <h5 class="modal-title" id="popupFormModalLabel">Tell Us About Your Business Project</h5>
+                    <p class="modal-description">Fill out the form and our team will get back to you within 24 hours</p>
+                    <form class="popup-form">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="modalFullName" class="form-label">Full Name <span
+                                        class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="modalFullName" placeholder="Your full name"
+                                    required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="modalEmailAddress" class="form-label">Email-ID <span
+                                        class="text-danger">*</span></label>
+                                <input type="email" class="form-control" id="modalEmailAddress"
+                                    placeholder="Your Email-ID" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="modalMobileNumber" class="form-label">Mobile Number <span
+                                        class="text-danger">*</span></label>
+                                <input type="tel" class="form-control" id="modalMobileNumber" placeholder="XXX-XXX-XXXX"
+                                    required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="modalBuildProject" class="form-label">What Do You Want to Build? <span
+                                        class="text-danger">*</span></label>
+                                <select class="form-select" id="modalBuildProject" required>
+                                    <option value="" selected>—Please choose an option—</option>
+                                    <option value="business-website">Business Website / Web Application</option>
+                                    <option value="mobile-app">Mobile App for My Business</option>
+                                    <option value="ecommerce">Ecommerce Platform (B2C / B2B)</option>
+                                    <option value="startup-mvp">Startup Product (MVP / PoC)</option>
+                                    <option value="custom-software">Custom Business Software</option>
+                                    <option value="software-upgrade">Software Upgrade / Enhancement</option>
+                                    <option value="maintenance">Maintenance & Support</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="modalNoteRemark" class="form-label">Project Description</label>
+                            <textarea class="form-control" id="modalNoteRemark" rows="4"
+                                placeholder="Briefly describe your requirements..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 popup-submit-btn">Request a Project
+                            Consultation</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- International Telephone Input JS -->
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/js/intlTelInput.min.js"></script>
+    <script>
+        // Initialize intl-tel-input for hero form
+        const input = document.querySelector("#mobileNumber");
+        const iti = window.intlTelInput(input, {
+            initialCountry: "in",
+            separateDialCode: true,
+            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/js/utils.js"
+        });
+
+        // Initialize intl-tel-input for contact form
+        const contactInput = document.querySelector("#contactMobile");
+        const contactIti = window.intlTelInput(contactInput, {
+            initialCountry: "in",
+            separateDialCode: true,
+            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/js/utils.js"
+        });
+
+        // Initialize intl-tel-input for modal form
+        const modalInput = document.querySelector("#modalMobileNumber");
+        const modalIti = window.intlTelInput(modalInput, {
+            initialCountry: "in",
+            separateDialCode: true,
+            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/js/utils.js"
+        });
+
+        // Form Validation - Only letters for name fields
+        function validateNameInput(e) {
+            const value = e.target.value;
+            // Allow only letters and spaces
+            e.target.value = value.replace(/[^a-zA-Z\s]/g, '');
+        }
+
+        // Form Validation - Only numbers for mobile fields
+        function validateMobileInput(e) {
+            const value = e.target.value;
+            // Allow only numbers
+            e.target.value = value.replace(/[^0-9]/g, '');
+        }
+
+        // Apply validation to hero form
+        document.getElementById('fullName').addEventListener('input', validateNameInput);
+        document.getElementById('mobileNumber').addEventListener('input', validateMobileInput);
+
+        // Handle hero form submission
+        document.querySelector('.hero-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const submitBtn = this.querySelector('.hero-submit-btn');
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            // Get country code from intl-tel-input
+            const countryCode = iti.getSelectedCountryData().dialCode;
+
+            // Prepare form data
+            const formData = new FormData();
+            formData.append('fullName', document.getElementById('fullName').value);
+            formData.append('email', document.getElementById('emailAddress').value);
+            formData.append('mobile', document.getElementById('mobileNumber').value);
+            formData.append('countryCode', '+' + countryCode);
+            formData.append('project', document.getElementById('buildProject').value);
+            formData.append('description', document.getElementById('noteRemark').value);
+
+            // Send AJAX request
+            fetch('send-hero-email.php', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok: ' + response.status);
+                    }
+                    return response.text();
+                })
+                .then(text => {
+                    try {
+                        const data = JSON.parse(text);
+                        if (data.success) {
+                            alert(data.message);
+                            this.reset();
+                        } else {
+                            alert('Error: ' + data.message);
+                        }
+                    } catch (e) {
+                        console.error('Invalid JSON response:', text);
+                        alert('Server error. Please check if PHP mail function is enabled on your hosting.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Fetch error:', error);
+                    alert('Error: ' + error.message + '. Please make sure you are running this on a PHP server.');
+                })
+                .finally(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalBtnText;
+                });
+        });
+
+        // Apply validation to contact form
+        document.getElementById('contactName').addEventListener('input', validateNameInput);
+        document.getElementById('contactMobile').addEventListener('input', validateMobileInput);
+
+        // Handle contact form submission
+        document.querySelector('.contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const submitBtn = this.querySelector('.contact-submit-btn');
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            // Get country code from intl-tel-input
+            const countryCode = contactIti.getSelectedCountryData().dialCode;
+
+            // Prepare form data
+            const formData = new FormData();
+            formData.append('fullName', document.getElementById('contactName').value);
+            formData.append('email', document.getElementById('contactEmail').value);
+            formData.append('mobile', document.getElementById('contactMobile').value);
+            formData.append('countryCode', '+' + countryCode);
+            formData.append('project', document.getElementById('contactBuildProject').value);
+            formData.append('description', document.getElementById('contactNote').value);
+
+            // Send AJAX request
+            fetch('send-contact-email.php', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok: ' + response.status);
+                    }
+                    return response.text();
+                })
+                .then(text => {
+                    try {
+                        const data = JSON.parse(text);
+                        if (data.success) {
+                            alert(data.message);
+                            this.reset();
+                        } else {
+                            alert('Error: ' + data.message);
+                        }
+                    } catch (e) {
+                        console.error('Invalid JSON response:', text);
+                        alert('Server error. Please check if PHP mail function is enabled on your hosting.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Fetch error:', error);
+                    alert('Error: ' + error.message + '. Please make sure you are running this on a PHP server.');
+                })
+                .finally(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalBtnText;
+                });
+        });
+
+        // Apply validation to modal form
+        document.getElementById('modalFullName').addEventListener('input', validateNameInput);
+        document.getElementById('modalMobileNumber').addEventListener('input', validateMobileInput);
+
+        // Handle modal form submission
+        document.querySelector('.popup-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const submitBtn = this.querySelector('.popup-submit-btn');
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            // Get country code from intl-tel-input
+            const countryCode = modalIti.getSelectedCountryData().dialCode;
+
+            // Prepare form data
+            const formData = new FormData();
+            formData.append('fullName', document.getElementById('modalFullName').value);
+            formData.append('email', document.getElementById('modalEmailAddress').value);
+            formData.append('mobile', document.getElementById('modalMobileNumber').value);
+            formData.append('countryCode', '+' + countryCode);
+            formData.append('project', document.getElementById('modalBuildProject').value);
+            formData.append('description', document.getElementById('modalNoteRemark').value);
+
+            // Send AJAX request
+            fetch('send-email.php', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok: ' + response.status);
+                    }
+                    return response.text();
+                })
+                .then(text => {
+                    try {
+                        const data = JSON.parse(text);
+                        if (data.success) {
+                            alert(data.message);
+                            this.reset();
+                            const modal = bootstrap.Modal.getInstance(document.getElementById('popupFormModal'));
+                            modal.hide();
+                        } else {
+                            alert('Error: ' + data.message);
+                        }
+                    } catch (e) {
+                        console.error('Invalid JSON response:', text);
+                        alert('Server error. Please check if PHP mail function is enabled on your hosting.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Fetch error:', error);
+                    alert('Error: ' + error.message + '. Please make sure you are running this on a PHP server.');
+                })
+                .finally(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalBtnText;
+                });
+        });
+
+        // Show popup modal after 25 seconds on page load
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                const popupModal = new bootstrap.Modal(document.getElementById('popupFormModal'));
+                popupModal.show();
+            }, 25000); // 25 seconds delay
+        });
+    </script>
+</body>
+
+</html>

@@ -27,7 +27,7 @@
 
 .welcomeText {
   font-size: 1.1rem;
-  color: #777;
+  color: #222;
   font-weight: 600;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .titleHighlight {
-  background: linear-gradient(135deg, #0e8d38 0%, #03ba58 100%);
+  background: linear-gradient(135deg, #043b1e 0%, #043b1e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -56,7 +56,7 @@
 .sectionDescription {
   font-size: 1.2rem;
   line-height: 1.7em;
-  color: #777;
+  color: #222;
   max-width: 830px;
   text-align: center;
   margin: 0 auto;
@@ -67,16 +67,47 @@
 .testimonialsContainer {
   max-width: 700px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .testimonialCard {
   background: #e8e8e8;
-  border-radius: 25px;
+  border-radius: 5px;
   padding: 50px 40px;
   position: relative;
   box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
   transition: all 0.4s ease;
   /* border: 1px solid rgba(14, 141, 56, 0.1); */
+}
+
+.slideLeft {
+  animation: slideInFromLeft 0.6s ease-out;
+}
+
+.slideRight {
+  animation: slideInFromRight 0.6s ease-out;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .testimonialCard:hover {
@@ -130,11 +161,13 @@
 .testimonialText {
   font-size: 1rem;
   line-height: 1.6em;
-  color: #777;
-  font-style: italic;
+  color: #222;
+  font-style: italic !important;
   margin: 20px 0 0 0;
+  text-align: center;
   font-weight: 400;
   position: relative;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 /* Client Info */
@@ -186,14 +219,14 @@
 
 .clientPosition {
   font-size: 0.9rem;
-  color: #0e8d38;
+  color: #222;
   margin: 0 0 2px 0;
   font-weight: 500;
 }
 
 .clientCompany {
   font-size: 0.85rem;
-  color: #2c5530;
+  color: #222;
   margin: 0;
   font-weight: 400;
 }
@@ -207,9 +240,20 @@
   margin-top: 40px;
 }
 
+.navigation .navButton,
+.dots .dot {
+  margin: 0;
+  padding: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  flex: 0 0 auto;
+}
+
 .navButton {
   width: 50px;
   height: 50px;
+  min-width: 50px;
+  min-height: 50px;
   border-radius: 50%;
   background: linear-gradient(135deg, #0e8d38, #03ba58);
   border: none;
@@ -236,25 +280,40 @@
 .dots {
   display: flex;
   gap: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
 .dot {
-  width: 12px;
-  height: 5px;
-  border-radius: 0%;
-  border: 2px solid #0e8d38;
-  background: #80e6a2;
+  width: 25px;
+  height: 25px;
+  min-width: 25px;
+  min-height: 25px;
+  border: none;
+  background: transparent;
   cursor: pointer;
-  transition: all 0.3s ease;
   padding: 0;
+  position: relative;
 }
 
-.dot:hover {
+/* Visible small bar */
+.dot::before {
+  content: "";
+  width: 10px;
+  height: 5px;
+  border: 2px solid #0e8d38;
+  background: #80e6a2;
+  display: block;
+  margin: auto;
+  transition: all 0.3s ease;
+}
+
+.dot:hover::before {
   background: rgba(14, 141, 56, 0.3);
   transform: scale(1.2);
 }
 
-.dot.active {
+.dot.active::before {
   background: #0e8d38;
   transform: scale(1.2);
 }
@@ -271,7 +330,7 @@
 
   .testimonialCard {
     padding: 35px 25px;
-    border-radius: 25px;
+    border-radius: 5px;
   }
 
   .quoteIcon {
@@ -302,11 +361,27 @@
   .navButton {
     width: 45px;
     height: 45px;
+    min-width: 45px;
+    min-height: 45px;
   }
 
   .navButton svg {
     width: 18px;
     height: 18px;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .navigation .navButton {
+    padding: 0;
+    margin: 0;
+  }
+
+  .dots .dot {
+    min-width: 10px;
+    min-height: 5px;
+    padding: 0;
+    margin: 0;
   }
 }
 
@@ -329,6 +404,7 @@
 
   .clientName {
     font-size: 1rem;
+    text-align: center;
   }
 
   .clientPosition {

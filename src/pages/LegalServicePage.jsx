@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHead from '../components/SEOHead';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -61,6 +62,12 @@ const LegalServicePage = () => {
 
   return (
     <>
+      <SEOHead
+        title="Legal Software Development Services in Noida"
+        description="Legal software development services in Noida to streamline case management, improve security, and automate workflows with scalable legal tech solutions."
+        keywords="Legal Software Development services, Legal Software Development services In Noida"
+        canonical="https://bhoomitechzone.in/legal-service"
+      />
       {/* Legal Service Hero Section */}
       <section className={styles.heroSection}>
         <ParticleBanner />
@@ -75,9 +82,9 @@ const LegalServicePage = () => {
                 <span className={styles.separator}>/</span>
                 <span className={styles.breadcrumbCurrent}>Legal Service</span>
               </div>
-              <h1 className={styles.heroTitle}>Legal Tech Solutions for Modern Law Practices</h1>
+              <h1 className={styles.heroTitle}>Legal Software Development Services in Noida</h1>
               <p className={styles.heroSubtitle}>
-                Innovative software solutions that empower legal professionals and streamline practice management.
+                Empower your law firm with advanced <strong style={{ color: 'black' }}>Legal Software Development services in Noida</strong> to streamline case management, enhance security, automate workflows, and improve client experience.
               </p>
             </div>
             <div className={styles.heroImage}>
@@ -165,7 +172,7 @@ const LegalServicePage = () => {
                   <div className={styles.reasonIcon}>✓</div>
                   <div className={styles.reasonContent}>
                     <h4>Legal Industry Expertise</h4>
-                    <p>Deep understanding of legal workflows, compliance requirements, and practice management needs.</p>
+                    <p>We offer specialized Legal Software Development <Link to="/services">services</Link> with deep knowledge of legal workflows, case management systems, compliance standards, and law firm operations.</p>
                   </div>
                 </div>
                 
@@ -173,7 +180,7 @@ const LegalServicePage = () => {
                   <div className={styles.reasonIcon}>✓</div>
                   <div className={styles.reasonContent}>
                     <h4>Security & Confidentiality</h4>
-                    <p>Bank-grade encryption and security measures to protect sensitive client information.</p>
+                    <p>Our Legal <Link to="/software-development">Software Development</Link> services in Noida ensure bank-grade encryption, secure access control, and complete protection of sensitive client and case data.</p>
                   </div>
                 </div>
                 
@@ -181,7 +188,7 @@ const LegalServicePage = () => {
                   <div className={styles.reasonIcon}>✓</div>
                   <div className={styles.reasonContent}>
                     <h4>Compliance Ready</h4>
-                    <p>Built-in compliance features for legal ethics, data protection, and regulatory requirements.</p>
+                    <p>We build solutions aligned with legal regulations, data protection laws, and industry compliance requirements to ensure your practice remains secure and audit-ready.</p>
                   </div>
                 </div>
                 
@@ -189,7 +196,7 @@ const LegalServicePage = () => {
                   <div className={styles.reasonIcon}>✓</div>
                   <div className={styles.reasonContent}>
                     <h4>Customizable Solutions</h4>
-                    <p>Flexible platforms tailored to your practice area and specific workflow requirements.</p>
+                    <p>Our platforms are fully flexible and tailored to your legal practice, enabling you to manage cases, documents, and workflows according to your unique requirements.</p>
                   </div>
                 </div>
               </div>
@@ -229,14 +236,14 @@ const LegalServicePage = () => {
       <section className={styles.processSection}>
         <div className={styles.container}>
           <h2 className={styles.processTitle}>Our Legal Software Development Process</h2>
-          <p className={styles.processSubtitle}>A systematic approach ensuring compliant and effective legal solutions</p>
+          <p className={styles.processSubtitle}>A systematic and result-driven approach to deliver secure, scalable, and efficient legal tech solutions that align with your practice requirements:</p>
           
           <div className={styles.processTimeline}>
             <div className={styles.processStep}>
               <div className={styles.stepCircle}>1</div>
               <div className={styles.stepContent}>
                 <h3>Practice Analysis</h3>
-                <p>We analyze your legal practice workflows, case management needs, and compliance requirements to understand challenges.</p>
+                <p>We begin by thoroughly analyzing your legal workflows, case management processes, and compliance requirements. Our team studies how your firm handles cases, documents, billing, and client communication to identify gaps and opportunities for improvement. This helps us build a strong foundation for delivering tailored <strong style={{ color: 'black' }}>Legal Software Development services</strong> that truly match your operational needs.</p>
               </div>
             </div>
             
@@ -244,7 +251,7 @@ const LegalServicePage = () => {
               <div className={styles.stepCircle}>2</div>
               <div className={styles.stepContent}>
                 <h3>Solution Design</h3>
-                <p>Our experts design custom legal technology solutions with security, compliance, and usability at the forefront.</p>
+                <p>Based on the analysis, our experts design customized <strong style={{ color: 'black' }}>Legal Software Development services in Noida</strong> with a focus on usability, scalability, and security. We create detailed system architecture, user flows, and feature planning to ensure the software aligns perfectly with your practice. Our goal is to deliver an intuitive solution that improves productivity and simplifies complex legal processes.</p>
               </div>
             </div>
             
@@ -252,7 +259,7 @@ const LegalServicePage = () => {
               <div className={styles.stepCircle}>3</div>
               <div className={styles.stepContent}>
                 <h3>Development & Testing</h3>
-                <p>We build secure, compliant legal software with rigorous testing for accuracy and reliability.</p>
+                <p>We develop robust and secure legal software using modern technologies and industry best practices. Each module is built with precision and undergoes rigorous testing to ensure accuracy, performance, and reliability. Our <strong style={{ color: 'black' }}>Legal Software Development services</strong> include security testing, functionality checks, and performance optimization to deliver a flawless system.</p>
               </div>
             </div>
             
@@ -260,7 +267,7 @@ const LegalServicePage = () => {
               <div className={styles.stepCircle}>4</div>
               <div className={styles.stepContent}>
                 <h3>Training & Deployment</h3>
-                <p>Comprehensive training for your team and seamless deployment with minimal disruption to operations.</p>
+                <p>Once the system is ready, we provide comprehensive training to your team to ensure smooth adoption. Our deployment process is carefully managed to avoid disruptions in your daily operations. With our <strong style={{ color: 'black' }}>Legal Software Development services in Noida</strong>, we ensure seamless integration with your existing systems and workflows.</p>
               </div>
             </div>
             
@@ -268,7 +275,7 @@ const LegalServicePage = () => {
               <div className={styles.stepCircle}>5</div>
               <div className={styles.stepContent}>
                 <h3>Support & Updates</h3>
-                <p>Ongoing technical support and regular updates to maintain compliance with evolving legal regulations.</p>
+                <p>After deployment, our dedication doesn't stop. To keep your system safe and in compliance with changing legal requirements, we provide ongoing support, upkeep, and frequent upgrades. Our legal software development services guarantee that your software stays current, effective, and in line with your expanding business requirements.</p>
               </div>
             </div>
           </div>
@@ -279,6 +286,7 @@ const LegalServicePage = () => {
       <section className={styles.benefitsSection}>
         <div className={styles.container}>
           <h2 className={styles.benefitsTitle}>Transform Your Legal Practice</h2>
+          <p className={styles.processSubtitle}>Our <strong style={{ color: 'black' }}>Legal Software Development services in Noida</strong> help modern law firms streamline operations, improve efficiency, and deliver better client outcomes with advanced legal technology.</p>
           <div className={styles.benefitsGrid}>
             <div className={styles.benefitCard}>
               <div className={styles.benefitIcon}>
@@ -292,7 +300,7 @@ const LegalServicePage = () => {
                 ></lottie-player>
               </div>
               <h3>Streamlined Case Management</h3>
-              <p>Centralized case tracking, document management, and client communication for improved practice efficiency.</p>
+              <p>Centralize case tracking, document handling, and communication to improve productivity and reduce manual effort with our <strong style={{ color: 'black' }}>Legal Software Development services</strong>.</p>
             </div>
             
             <div className={styles.benefitCard}>
@@ -307,7 +315,7 @@ const LegalServicePage = () => {
                 ></lottie-player>
               </div>
               <h3>Enhanced Security</h3>
-              <p>Protect sensitive client data with enterprise-grade encryption and compliance with legal ethics rules.</p>
+              <p>Protect confidential legal data with advanced encryption, secure storage, and compliance-driven architecture designed for modern law practices.</p>
             </div>
             
             <div className={styles.benefitCard}>
@@ -322,13 +330,13 @@ const LegalServicePage = () => {
                 ></lottie-player>
               </div>
               <h3>Improved Billing Accuracy</h3>
-              <p>Automated time tracking and billing reduce errors and improve revenue capture for your firm.</p>
+              <p>Automate time tracking and billing processes to minimize errors and improve revenue management for your legal firm.</p>
             </div>
             
             <div className={styles.benefitCard}>
               <div className={styles.benefitIcon}>
                 <lottie-player
-                  src="https://lottie.host/5ba5bf8c-480d-413f-815c-44bd492dc4a0/1IlpWLqQBh.json"
+                  src="https://assets7.lottiefiles.com/packages/lf20_khzniaya.json"
                   background="transparent"
                   speed="1"
                   className={styles.benefitLottie}
@@ -337,7 +345,7 @@ const LegalServicePage = () => {
                 ></lottie-player>
               </div>
               <h3>Faster Legal Research</h3>
-              <p>AI-powered research tools reduce time spent on case law analysis and legal research.</p>
+              <p> Use smart tools to simplify legal research, reduce manual work, and improve decision-making speed with technology-driven solutions.</p>
             </div>
             
             <div className={styles.benefitCard}>
@@ -352,7 +360,7 @@ const LegalServicePage = () => {
                 ></lottie-player>
               </div>
               <h3>Document Automation</h3>
-              <p>Generate legal documents and contracts quickly with intelligent templates and clause libraries.</p>
+              <p>Generate contracts, agreements, and legal documents quickly using predefined templates and automation tools.</p>
             </div>
             
             <div className={styles.benefitCard}>
@@ -367,7 +375,7 @@ const LegalServicePage = () => {
                 ></lottie-player>
               </div>
               <h3>Better Client Experience</h3>
-              <p>Client portals and communication tools enhance transparency and improve client satisfaction.</p>
+              <p>Provide client portals, real-time updates, and seamless communication to enhance trust and satisfaction.</p>
             </div>
           </div>
         </div>

@@ -8,7 +8,7 @@
 /* Hero Banner */
 .heroBanner {
   position: relative;
-  height: 450px;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,8 +38,8 @@
 }
 
 .title {
-  font-size: 2.5rem;
-  font-weight: 600;
+  font-size: 4rem;
+  font-weight: 700;
   color: #050000;
   margin: 0 0 10px 0;
   letter-spacing: 2px;
@@ -138,7 +138,7 @@
 .statItem p {
   font-size: 1rem;
   text-align: center;
-  color: #666;
+  color: #333;
 }
 
 /* Projects Section */
@@ -180,21 +180,21 @@
 }
 
 .sectionSubtitle {
-  font-size: 1.2rem;
-  color: #777;
+  font-size: 1.1rem;
+  color: #333;
   margin: 20px auto 0;
   font-weight: 400;
-  text-align: center;
-  max-width: 850px;
+  text-align: justify;
+  max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.7em;
+  line-height: 1.5em;
   animation: fadeIn 1s ease-out 0.3s both;
 }
 
 /* Filter Tabs */
 .filterSection {
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 
 .filterHeading {
@@ -312,6 +312,33 @@
     hsl(145deg 80% 32%) 92%,
     hsl(145deg 80% 18%) 100%
   );
+}
+
+/* Website Sub-filter */
+.subFilterSection {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.subFilterHeading {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.subFilterTabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.subTabButton {
+  display: none;
 }
 
 /* Projects Grid */

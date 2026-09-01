@@ -29,11 +29,15 @@ const IdeasIntoTechnology = () => {
             <source src="/images/videobnr1.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <img 
-            src="/images/vidframe.png" 
-            alt="Video Frame" 
-            className={styles.frameOverlay}
-          />
+          <picture>
+            <source srcSet="/images/vidframe.webp" type="image/webp" />
+            <img 
+              src="/images/vidframe.png" 
+              alt="Video Frame" 
+              className={styles.frameOverlay}
+              loading="lazy"
+            />
+          </picture>
         </div>
       </div>
     </section>

@@ -18,7 +18,7 @@ const Features = () => {
     },
     {
       id: 2,
-      title: "Human Resource Management", 
+      title: "Human Resource Management",
       category: "HRM Software",
       bgImage: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&fit=crop",
       link: "/hrm-software"
@@ -66,7 +66,7 @@ const Features = () => {
             Software <span className={styles.titleHighlight}>Solutions</span>
           </h2>
           <p className={styles.sectionDescription}>
-            Comprehensive software solutions designed to streamline your business operations and drive growth
+            Bhoomi Techzone IT Services Company provide best software solutions designed to streamline your business operations and drive growth
           </p>
         </div>
 
@@ -107,7 +107,7 @@ const Features = () => {
               <SwiperSlide key={feature.id}>
                 <Link to={feature.link} className={styles.featureCardLink}>
                   <div className={styles.featureCard}>
-                    <div 
+                    <div
                       className={styles.cardBackground}
                       style={{ backgroundImage: `url(${feature.bgImage})` }}
                     >
@@ -120,19 +120,19 @@ const Features = () => {
                               <stop offset="100%" stopColor="rgba(92, 184, 92, 0.8)" />
                             </linearGradient>
                           </defs>
-                          <path 
-                            d="M0,300 Q100,200 200,250 T400,200 L400,300 Z" 
+                          <path
+                            d="M0,300 Q100,200 200,250 T400,200 L400,300 Z"
                             fill={`url(#waveGradient-${feature.id})`}
                           />
                         </svg>
                       </div>
                     </div>
-                    
+
                     <div className={styles.cardContent}>
                       <div className={styles.categoryBadge}>
                         {feature.category}
                       </div>
-                      
+
                       <h3 className={styles.featureTitle}>
                         {feature.title}
                       </h3>
@@ -146,13 +146,13 @@ const Features = () => {
           {/* Custom Navigation Buttons */}
           <div className={`${styles.swiperButtonPrev} ${styles.swiperNavButton}`}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M15 18l-6-6 6-6"/>
+              <path d="M15 18l-6-6 6-6" />
             </svg>
           </div>
-          
+
           <div className={`${styles.swiperButtonNext} ${styles.swiperNavButton}`}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M9 18l6-6-6-6"/>
+              <path d="M9 18l6-6-6-6" />
             </svg>
           </div>
 

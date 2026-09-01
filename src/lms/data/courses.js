@@ -7,8 +7,8 @@ export const courses = [
     color: '#e34c26',
     lessons: [
       {
-        id: 'html-intro',
-        title: 'HTML Intro',
+        id: 'html-course',
+        title: 'HTML Course',
         content: `
           <h2>What is HTML?</h2>
           <p>HTML (HyperText Markup Language) is the standard markup language for creating web pages and web applications. It provides the basic building blocks for structuring content on the World Wide Web. As the foundation of all websites, HTML is essential for anyone wanting to enter web development.</p>
@@ -926,8 +926,8 @@ export const courses = [
     color: '#1572b6',
     lessons: [
       {
-        id: 'css-intro',
-        title: 'CSS Intro',
+        id: 'css-course',
+        title: 'CSS Course',
         content: `
           <h2>What is CSS?</h2>
           <p>CSS (Cascading Style Sheets) is a powerful stylesheet language used to describe the presentation, layout, and visual design of HTML documents. CSS transforms plain HTML into beautiful, interactive, and responsive websites that work seamlessly across all devices and screen sizes.</p>
@@ -2545,8 +2545,8 @@ body div.container .content article p span.highlight {
     color: '#f7df1e',
     lessons: [
       {
-        id: 'js-intro',
-        title: 'JS Intro',
+        id: 'javascript-course',
+        title: 'JavaScript Course',
         content: `
           <h2>What is JavaScript?</h2>
           <p>JavaScript is a high-level, dynamic programming language that powers the interactive web. Originally created by Brendan Eich in 1995 for Netscape Navigator, JavaScript has evolved into one of the world's most popular programming languages, running on browsers, servers, mobile devices, and even IoT devices. It's the only programming language that runs natively in web browsers, making it essential for web development.</p>
@@ -3549,8 +3549,8 @@ const name = user?.profile?.name;</code></pre>
     color: '#61dafb',
     lessons: [
       {
-        id: 'react-intro',
-        title: 'React Intro',
+        id: 'react-course',
+        title: 'React Course',
         content: `
           <h2>What is React?</h2>
           <p>React is a powerful JavaScript library for building user interfaces, created by Facebook (now Meta) in 2013. It has revolutionized frontend development by introducing a component-based architecture that makes building complex, interactive web applications more manageable and efficient. React is now used by millions of developers worldwide and powers some of the most popular websites including Facebook, Netflix, Airbnb, Instagram, and WhatsApp Web.</p>
@@ -4798,8 +4798,8 @@ function AppRoutes() {
     color: '#68a063',
     lessons: [
       {
-        id: 'nodejs-intro',
-        title: 'Node.js Intro',
+        id: 'nodejs-course',
+        title: 'Node.js Course',
         content: `
           <h2>What is Node.js?</h2>
           <p>Node.js is a powerful JavaScript runtime built on Chrome's V8 JavaScript engine that revolutionized backend development by bringing JavaScript to the server-side. Created by Ryan Dahl in 2009, Node.js enables developers to use JavaScript for full-stack development, eliminating the need to learn separate languages for frontend and backend. Today, Node.js powers some of the world's largest applications including Netflix, LinkedIn, Uber, PayPal, and NASA, handling millions of requests daily with exceptional performance.</p>
@@ -5439,8 +5439,8 @@ module.exports = {
     color: '#777bb4',
     lessons: [
       {
-        id: 'php-intro',
-        title: 'PHP Intro',
+        id: 'php-course',
+        title: 'PHP Course',
         content: `
           <h2>What is PHP?</h2>
           <p>PHP (PHP: Hypertext Preprocessor) is a powerful, open-source server-side scripting language that has been the backbone of web development for over 25 years. Created by Rasmus Lerdorf in 1995, PHP powers 78.1% of all websites with known server-side programming languages, including tech giants like Facebook, Wikipedia, WordPress, and Slack. With over 5 million developers worldwide and continuous evolution through PHP 8+, it remains one of the most practical and job-ready programming languages for web development.</p>
@@ -8438,8 +8438,8 @@ try {
     color: '#ff2d20',
     lessons: [
       {
-        id: 'laravel-intro',
-        title: 'Laravel Intro',
+        id: 'laravel-course',
+        title: 'Laravel Course',
         content: `
           <h2>What is Laravel?</h2>
           <p>Laravel is a sophisticated, elegant PHP web application framework that has revolutionized modern web development since its creation by Taylor Otwell in 2011. Known as "The PHP Framework For Web Artisans," Laravel combines expressive syntax with powerful features, making it the most popular PHP framework in 2026. With over 3 million developers worldwide and adoption by companies like Disney, Pfizer, and BBC, Laravel has established itself as the gold standard for PHP development, powering everything from startups to Fortune 500 enterprise applications.</p>
@@ -11526,8 +11526,8 @@ php artisan optimize</code></pre>
     color: '#7952b3',
     lessons: [
       {
-        id: 'bootstrap-intro',
-        title: 'Bootstrap Intro',
+        id: 'bootstrap-course',
+        title: 'Bootstrap Course',
         content: `
           <h2>What is Bootstrap?</h2>
           <p>Bootstrap is the world's most popular front-end CSS framework that has revolutionized web development since its creation by Mark Otto and Jacob Thornton at Twitter in 2011. Used by over 22% of all websites globally, Bootstrap provides a comprehensive toolkit of responsive grid systems, pre-built components, and JavaScript plugins that enable developers to create professional, mobile-first websites 10x faster than traditional CSS. With over 158,000 GitHub stars and adoption by companies like Spotify, LinkedIn, and Walmart, Bootstrap has become the industry standard for rapid web development.</p>
@@ -13266,8 +13266,8 @@ $modal-content-border-radius: 1rem;
     color: '#06b6d4',
     lessons: [
       {
-        id: 'tailwind-intro',
-        title: 'Tailwind Intro',
+        id: 'tailwind-course',
+        title: 'Tailwind Course',
         content: `
           <h2>What is Tailwind CSS?</h2>
           <p>Tailwind CSS is a revolutionary utility-first CSS framework that has transformed modern web development since its creation by Adam Wathan in 2017. Unlike traditional frameworks that provide pre-designed components, Tailwind offers low-level utility classes that enable developers to build completely custom designs faster than ever before. With over 70,000 GitHub stars and adoption by companies like Netflix, GitHub, Shopify, and Algolia, Tailwind has become the fastest-growing CSS framework, preferred by 87% of developers who have used it.</p>
@@ -14854,8 +14854,8 @@ module.exports = {
     color: '#f89820',
     lessons: [
       {
-        id: 'java-introduction',
-        title: 'Java Intro',
+        id: 'java-course',
+        title: 'Java Course',
         content: `
           <h2>What is Java?</h2>
           <p>Java is a powerful, object-oriented programming language that has been at the forefront of enterprise software development for over 25 years. Created by James Gosling at Sun Microsystems (now Oracle) in 1995, Java revolutionized programming with its "Write Once, Run Anywhere" philosophy. With over 12 million developers worldwide and powering 3 billion devices globally, Java remains one of the most in-demand programming languages, consistently ranking in the top 3 most popular languages. From Android apps to enterprise systems, from big data processing to cloud microservices, Java powers the digital infrastructure of the modern world.</p>
@@ -19589,8 +19589,8 @@ public class GenericBestPracticesDemo {
     `,
     lessons: [
       {
-        id: 'python-intro',
-        title: 'Introduction to Python',
+        id: 'python-course',
+        title: 'Python Course',
         content: `
           <h2>Welcome to Python Programming</h2>
           <p>Python is a high-level, interpreted programming language known for its simplicity and readability. Created by Guido van Rossum in 1991, Python has become one of the most popular programming languages in the world.</p>
@@ -20541,8 +20541,8 @@ def process_daily_reports():
     `,
     lessons: [
       {
-        id: 'flutter-setup',
-        title: 'Flutter Setup & Environment',
+        id: 'flutter-course',
+        title: 'Flutter Course',
         content: `
           <h2>Setting Up Flutter Development Environment</h2>
           <p>Before we start building Flutter apps, we need to set up our development environment properly. This includes installing Flutter SDK, setting up an IDE, and configuring device emulators.</p>
@@ -22135,8 +22135,8 @@ jobs:
     `,
     lessons: [
       {
-        id: 'dart-intro',
-        title: 'Dart Intro',
+        id: 'dart-course',
+        title: 'Dart Course',
         content: `
           <h2>Welcome to Dart Programming</h2>
           <p>Dart is a modern, object-oriented programming language developed by Google. It's designed to be fast, productive, and portable across multiple platforms including mobile, web, desktop, and server.</p>
@@ -24064,8 +24064,8 @@ void fibonacciIsolate(SendPort sendPort) {
     color: '#00758f',
     lessons: [
       {
-        id: 'mysql-intro',
-        title: 'MySQL Intro',
+        id: 'mysql-course',
+        title: 'MySQL Course',
         content: `
           <h2>What is MySQL?</h2>
           <p>MySQL is the world's most popular open-source relational database management system (RDBMS). Created in 1995 by MySQL AB and now owned by Oracle Corporation, MySQL powers millions of websites and applications worldwide including Facebook, Twitter, YouTube, Netflix, and Uber. With over 70 million downloads and deployment in virtually every major organization, MySQL remains the database of choice for web applications, enterprise software, and data-driven solutions.</p>
@@ -24713,8 +24713,8 @@ WHERE EXISTS (SELECT 1 FROM orders WHERE user_id = users.id);</code></pre>
     color: '#4db33d',
     lessons: [
       {
-        id: 'mongodb-intro',
-        title: 'MongoDB Intro',
+        id: 'mongodb-course',
+        title: 'MongoDB Course',
         content: `
           <h2>What is MongoDB?</h2>
           <p>MongoDB is a leading NoSQL document-oriented database that revolutionized how developers store and query data. Created in 2007 by MongoDB Inc., it stores data in flexible JSON-like documents instead of traditional tables and rows. Used by giants like Adobe, eBay, Google, Forbes, and Uber, MongoDB powers over 30,000 companies worldwide and is the most popular NoSQL database for modern web applications, microservices, mobile apps, and real-time analytics.</p>

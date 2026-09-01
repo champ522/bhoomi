@@ -20,8 +20,8 @@ const InstagramReelsSection = () => {
 
       // Replace with your actual backend URL
       const url = forceRefresh 
-        ? 'http://localhost:5000/api/reels?refresh=true'
-        : 'http://localhost:5000/api/reels';
+        ? 'https://backend.bhoomitechzone.in/api/reels?refresh=true'
+        : 'https://backend.bhoomitechzone.in/api/reels';
       
       const response = await fetch(url);
       const result = await response.json();

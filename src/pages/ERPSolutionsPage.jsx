@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHead from '../components/SEOHead';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -61,13 +62,19 @@ const ERPSolutionsPage = () => {
 
   return (
     <>
+      <SEOHead
+        title="Top ERP Software Development in Noida for Smart Business"
+        description="Transform your organization with our ERP software development in Noida. Experience seamless integration and improved productivity with our innovative solutions - Bhoomi Techzone."
+        keywords="ERP Software Development, ERP Software Development in noida"
+        canonical="https://bhoomitechzone.in/erp-solutions"
+      />
       {/* ERP Solutions Banner */}
       <section className={styles.erpBanner}>
         <ParticleBanner />
         <div className={styles.overlay}></div>
         <div className={styles.container}>
           <div className={styles.content}>
-            <h1 className={styles.title}>ERP Solutions</h1>
+            <h1 className={styles.title}>ERP Software Development Solutions</h1>
             <p className={styles.subtitle}>
               Streamline your business operations with integrated ERP systems
             </p>
@@ -105,14 +112,10 @@ const ERPSolutionsPage = () => {
                 <span className={styles.highlight}>ERP </span> Solutions
               </h2>
               <p className={styles.description}>
-                We develop comprehensive Enterprise Resource Planning (ERP) systems that integrate all your 
-                business processes into a single unified platform. Our ERP solutions streamline operations, 
-                improve efficiency, and provide real-time visibility across finance, HR, inventory, and more.
+                To assist companies in integrating and managing all operations on a single platform, we specialise in ERP software development. Our ERP software development in Noida offers clever solutions that increase productivity, simplify procedures, and offer real-time visibility in a variety of areas, including inventory, finance, and human resources.
               </p>
               <p className={styles.description}>
-                From resource planning to performance tracking, our ERP systems automate workflows, eliminate 
-                data silos, and empower your organization with the tools needed to make informed decisions. 
-                Transform your business with seamless integration and optimized processes.
+                From resource planning to performance tracking, our ERP systems automate workflows, eliminate data silos, and empower your organization with accurate data and insights. With our ERP <Link to="/software-development">Software Development</Link>, you can transform operations, reduce costs, and make better business decisions.
               </p>
               
               <div className={styles.serviceStats} ref={statsRef}>
@@ -136,39 +139,39 @@ const ERPSolutionsPage = () => {
           <div className={styles.additionalContent}>
             <h3 className={styles.sectionHeading}>Why is an ERP system essential for growing businesses?</h3>
             <p className={styles.paragraph}>
-              In today's complex business environment, managing multiple departments and processes efficiently is critical for success. An ERP system serves as the backbone of your organization, integrating finance, HR, inventory, production, and sales into one cohesive platform. It provides real-time data visibility, automates repetitive tasks, and enables data-driven decision making across all levels.
+              In today’s competitive environment, managing multiple departments efficiently is critical. ERP Software Development helps unify all business processes into one system, ensuring smooth data flow and better collaboration. It provides real-time insights, automates repetitive tasks, and supports data-driven decision-making.
             </p>
             <p className={styles.paragraph}>
-              Without a robust ERP system, businesses face challenges like disconnected systems, data inconsistencies, manual errors, and delayed reporting. Our custom ERP solutions address these pain points by centralizing data, automating workflows, standardizing processes, and providing comprehensive insights that drive operational excellence and business growth.
+              Our ERP solutions simplify processes, remove data silos, and provide your company with the resources it needs to make wise decisions, from resource planning to performance monitoring. Transform your company with streamlined operations and smooth integration.
             </p>
 
             <h3 className={styles.sectionHeading}>There are 5 key benefits of implementing an ERP system:</h3>
             <div className={styles.reasonsList}>
               <div className={styles.reason}>
                 <h4 className={styles.reasonTitle}>1. Unified Business Operations</h4>
-                <p className={styles.reasonText}>Integrate all departments and processes on a single platform for seamless collaboration and data flow.</p>
+                <p className={styles.reasonText}>Integrate all departments into one platform for seamless communication and workflow management.</p>
               </div>
               <div className={styles.reason}>
                 <h4 className={styles.reasonTitle}>2. Real-Time Visibility</h4>
-                <p className={styles.reasonText}>Access accurate, up-to-date information across all business functions for better decision making.</p>
+                <p className={styles.reasonText}>Access accurate, real-time data across all functions to improve decision-making.</p>
               </div>
               <div className={styles.reason}>
                 <h4 className={styles.reasonTitle}>3. Enhanced Productivity</h4>
-                <p className={styles.reasonText}>Automate routine tasks, eliminate manual data entry, and free up resources for strategic initiatives.</p>
+                <p className={styles.reasonText}>Automate tasks and reduce manual work to increase efficiency and save time.</p>
               </div>
               <div className={styles.reason}>
                 <h4 className={styles.reasonTitle}>4. Cost Optimization</h4>
-                <p className={styles.reasonText}>Reduce operational costs through improved efficiency, better resource utilization, and waste reduction.</p>
+                <p className={styles.reasonText}>Improve resource utilization and reduce operational costs through better planning and automation.</p>
               </div>
               <div className={styles.reason}>
                 <h4 className={styles.reasonTitle}>5. Scalable Growth</h4>
-                <p className={styles.reasonText}>Scale your operations seamlessly as your business grows without system limitations or performance issues.</p>
+                <p className={styles.reasonText}>Easily scale your business operations as your company grows without system limitations.</p>
               </div>
             </div>
 
             <h3 className={styles.sectionHeading}>OUR ERP MODULES:</h3>
             <p className={styles.paragraph}>
-              Bhoomi Techzone develops modular ERP systems tailored to your specific industry and business requirements. Our solutions include all essential modules to manage your entire enterprise, from financial operations to supply chain, with powerful automation and analytics capabilities.
+              Bhoomi Techzone provides complete ERP Software Development solutions tailored to your business needs.
             </p>
             <div className={styles.servicesList}>
               <div className={styles.serviceItem}>• Financial Management & Accounting</div>
@@ -181,73 +184,73 @@ const ERPSolutionsPage = () => {
 
             <h3 className={styles.sectionHeading}>Bhoomi Techzone's PRINCIPLES OF ERP DEVELOPMENT:</h3>
             <p className={styles.paragraph}>
-              At Bhoomi Techzone, we build ERP systems that truly transform your business operations. Our development approach focuses on creating scalable, flexible, and user-friendly solutions that adapt to your unique processes and drive measurable results:
+              Our tried-and-true ERP development process guarantees adoption and deployment success. In order to provide solutions that generate actual business value, we employ a methodical methodology that integrates system design, change management, and business process analysis:
             </p>
             <ul className={styles.principlesList}>
               <li className={styles.principleItem}>
-                <strong>Modular Architecture:</strong> We design ERP systems with modular components that can be implemented phase-wise, allowing you to start with critical modules and expand gradually.
+                <strong>Modular Architecture:</strong> We design ERP systems with flexible modules that can be implemented step-by-step as per your business needs.
               </li>
               <li className={styles.principleItem}>
-                <strong>Process-Centric Design:</strong> Every business has unique workflows. We customize the ERP to match your processes rather than forcing you to change your operations.
+                <strong>Process-Centric Design:</strong> Our ERP solutions are customized to match your workflows, ensuring smooth adoption and better efficiency.
               </li>
               <li className={styles.principleItem}>
-                <strong>Real-Time Integration:</strong> Our ERP systems provide seamless integration between all modules, ensuring data consistency and real-time updates across departments.
+                <strong>Real-Time Integration:</strong> All modules are connected for seamless data flow and real-time updates across departments.
               </li>
               <li className={styles.principleItem}>
-                <strong>Intelligent Automation:</strong> We automate repetitive tasks, approvals, and workflows to reduce manual effort and minimize errors throughout your operations.
+                <strong>Intelligent Automation:</strong> We automate repetitive tasks and workflows to reduce manual effort and improve accuracy.
               </li>
               <li className={styles.principleItem}>
-                <strong>Scalable Infrastructure:</strong> Our ERP solutions are built to scale with your business, handling increased users, transactions, and data without performance degradation.
+                <strong>Scalable Infrastructure:</strong> Our ERP systems are built to handle growth in users, data, and operations without performance issues.
               </li>
               <li className={styles.principleItem}>
-                <strong>Advanced Analytics:</strong> Built-in business intelligence tools provide actionable insights through dashboards, reports, and predictive analytics.
+                <strong>Advanced Analytics:</strong> We provide dashboards and reports for better insights and smarter business decisions.
               </li>
               <li className={styles.principleItem}>
-                <strong>Cloud & Mobile Ready:</strong> Access your ERP system anytime, anywhere with cloud-based deployment and mobile applications for on-the-go management.
+                <strong>Cloud & Mobile Ready:</strong> Access your ERP system anytime with cloud-based and mobile-friendly solutions.
               </li>
               <li className={styles.principleItem}>
-                <strong>Security & Compliance:</strong> We implement robust security measures, role-based access controls, and ensure compliance with industry regulations.
+                <strong>Security & Compliance:</strong> We ensure strong data security, access control, and compliance with industry standards.
               </li>
             </ul>
 
             <h3 className={styles.sectionHeading}>Bhoomi Techzone's essential steps in ERP development process:</h3>
             <p className={styles.paragraph}>
-              Our proven ERP development methodology ensures successful implementation and adoption. We follow a structured approach that combines business process analysis, system design, and change management to deliver solutions that drive real business value.
+              Our structured approach ensures smooth ERP implementation and long-term success.
             </p>
             <div className={styles.processList}>
               <div className={styles.processStep}>
                 <div className={styles.stepNumber}>01</div>
                 <div className={styles.stepContent}>
                   <h4 className={styles.stepTitle}>Business Process Analysis</h4>
-                  <p className={styles.stepText}>We conduct comprehensive analysis of your current processes, pain points, and requirements to design an ERP system that aligns with your business goals.</p>
+                  <p className={styles.stepText}>We analyze your business workflows and requirements to design the right ERP solution.</p>
                 </div>
               </div>
               <div className={styles.processStep}>
                 <div className={styles.stepNumber}>02</div>
                 <div className={styles.stepContent}>
                   <h4 className={styles.stepTitle}>System Design & Planning</h4>
-                  <p className={styles.stepText}>Our experts create detailed architecture, database design, and implementation roadmap ensuring seamless integration and optimal performance.</p>
+                  <p className={styles.stepText}>We create detailed system architecture and implementation strategies.</p>
                 </div>
               </div>
               <div className={styles.processStep}>
                 <div className={styles.stepNumber}>03</div>
                 <div className={styles.stepContent}>
                   <h4 className={styles.stepTitle}>Development & Customization</h4>
-                  <p className={styles.stepText}>We develop the ERP system with custom modules, workflows, and features tailored to your specific industry and business requirements.</p>
+                  <p className={styles.stepText}>We build and customize ERP modules tailored to your business operations.</p>
                 </div>
               </div>
               <div className={styles.processStep}>
                 <div className={styles.stepNumber}>04</div>
                 <div className={styles.stepContent}>
                   <h4 className={styles.stepTitle}>Testing & Data Migration</h4>
-                  <p className={styles.stepText}>Rigorous testing ensures system reliability, followed by secure data migration from legacy systems with zero data loss.</p>
+                  <p className={styles.stepText}>We ensure system accuracy through testing and securely migrate your data.</p>
                 </div>
               </div>
               <div className={styles.processStep}>
                 <div className={styles.stepNumber}>05</div>
                 <div className={styles.stepContent}>
                   <h4 className={styles.stepTitle}>Deployment & Training</h4>
-                  <p className={styles.stepText}>We manage smooth deployment, provide comprehensive user training, and offer ongoing support to ensure successful ERP adoption.</p>
+                  <p className={styles.stepText}>We handle deployment, provide user training, and offer ongoing support for smooth operations.</p>
                 </div>
               </div>
             </div>
@@ -296,7 +299,7 @@ const ERPSolutionsPage = () => {
               <SwiperSlide key={index}>
                 <div className={styles.erpCard}>
                   <div className={styles.erpImage}>
-                    <img src={feature.image} alt={feature.title} />
+                    <img src={feature.image} alt={feature.title} width="350" height="250" loading="lazy" />
                     <div className={styles.erpOverlay}>
                       <Link to="/contact" className={styles.erpButton}>Get Started</Link>
                     </div>

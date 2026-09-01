@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHead from '../components/SEOHead';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -61,15 +62,21 @@ const CRMSystemsPage = () => {
 
   return (
     <>
+      <SEOHead
+        title="Bhoomi techzone - CRM Software Development for Smart Business Growth"
+        description="Top CRM software development in Noida delivers user-friendly apps tailored to your team. Improve customer insights and workflows fast. Schedule a free demo today now."
+        keywords="CRM Software Development, CRM Software Development in Noida"
+        canonical="https://bhoomitechzone.in/crm-systems"
+      />
       {/* CRM Systems Banner */}
       <section className={styles.crmBanner}>
         <ParticleBanner />
         <div className={styles.overlay}></div>
         <div className={styles.container}>
           <div className={styles.content}>
-            <h1 className={styles.title}>CRM Systems</h1>
+            <h1 className={styles.title}>CRM Software Development Solutions</h1>
             <p className={styles.subtitle}>
-              Transform customer relationships with powerful CRM solutions
+              Transform customer relationships with powerful CRM Software Development in Noida
             </p>
             <div className={styles.breadcrumb}>
               <Link to="/" className={styles.breadcrumbLink}>Home</Link>
@@ -102,17 +109,13 @@ const CRMSystemsPage = () => {
                 <div className={styles.welcomeLine}></div>
               </div>
               <h2 className={styles.crmTitle}>
-                <span className={styles.highlight}>CRM </span> Systems
+                <span className={styles.highlight}>CRM Software </span> Development Solutions
               </h2>
               <p className={styles.description}>
-                We develop custom Customer Relationship Management (CRM) systems that help businesses build 
-                stronger relationships with their customers. Our CRM solutions streamline sales processes, 
-                improve customer service, and provide actionable insights to drive business growth.
+                We specialize in CRM <Link to="/software-development">Software Development</Link> to help businesses build stronger and more meaningful customer relationships. Our custom CRM solutions streamline sales processes, enhance customer support, and provide actionable insights that drive business growth.
               </p>
               <p className={styles.description}>
-                From lead management to customer retention, our CRM systems centralize all customer interactions, 
-                automate workflows, and empower your team with the tools they need to deliver exceptional 
-                customer experiences. Scale your business with data-driven decisions and efficient processes.
+                From lead management to customer retention, our CRM Software Development services in Noida centralize all customer interactions, automate workflows, and empower your team with the tools they need to deliver exceptional customer experiences. Scale your business with efficient processes and data-driven decision-making.
               </p>
               
               <div className={styles.serviceStats} ref={statsRef}>
@@ -136,33 +139,33 @@ const CRMSystemsPage = () => {
           <div className={styles.additionalContent}>
             <h3 className={styles.sectionHeading}>Why is a CRM system essential for modern businesses?</h3>
             <p className={styles.paragraph}>
-              In today's competitive business landscape, managing customer relationships effectively is crucial for success. A CRM system serves as the central hub for all customer interactions, providing a 360-degree view of each customer's journey. It enables businesses to track leads, manage sales pipelines, automate marketing campaigns, and deliver personalized customer experiences at scale.
+              In today’s competitive market, managing customer relationships effectively is critical. CRM Software Development provides a centralized system to manage customer data, track interactions, and improve engagement across all touchpoints. It enables businesses to manage leads, streamline sales pipelines, and deliver personalized experiences.
             </p>
             <p className={styles.paragraph}>
-              Without a proper CRM system, businesses struggle with scattered data, missed opportunities, inefficient processes, and poor customer service. Our custom CRM solutions eliminate these challenges by centralizing information, automating repetitive tasks, and providing actionable insights that help you make informed decisions and build lasting customer relationships.
+              Without a proper CRM system, businesses often face challenges like scattered data, missed opportunities, and inefficient workflows. Our CRM Software Development solutions eliminate these issues by automating processes, organizing data, and delivering valuable insights to support smarter decision-making.
             </p>
 
             <h3 className={styles.sectionHeading}>There are 5 key benefits of implementing a CRM system:</h3>
             <div className={styles.reasonsList}>
               <div className={styles.reason}>
                 <h4 className={styles.reasonTitle}>1. Improved Customer Relationships</h4>
-                <p className={styles.reasonText}>Centralize customer data and interaction history to deliver personalized experiences and build stronger relationships.</p>
+                <p className={styles.reasonText}>Centralize customer information and interaction history to deliver personalized experiences and build long-term relationships.</p>
               </div>
               <div className={styles.reason}>
                 <h4 className={styles.reasonTitle}>2. Increased Sales & Revenue</h4>
-                <p className={styles.reasonText}>Streamline sales processes, track opportunities, and close more deals with efficient pipeline management.</p>
+                <p className={styles.reasonText}>Optimize sales processes, track leads efficiently, and close more deals with better pipeline visibility.</p>
               </div>
               <div className={styles.reason}>
                 <h4 className={styles.reasonTitle}>3. Enhanced Team Collaboration</h4>
-                <p className={styles.reasonText}>Enable seamless communication and collaboration across sales, marketing, and customer service teams.</p>
+                <p className={styles.reasonText}>Enable seamless communication between sales, marketing, and support teams through a unified platform.</p>
               </div>
               <div className={styles.reason}>
                 <h4 className={styles.reasonTitle}>4. Data-Driven Decision Making</h4>
-                <p className={styles.reasonText}>Access real-time analytics, reports, and insights to make informed business decisions and optimize strategies.</p>
+                <p className={styles.reasonText}>Access real-time analytics and reports to make informed business decisions and improve strategies.</p>
               </div>
               <div className={styles.reason}>
                 <h4 className={styles.reasonTitle}>5. Automation & Efficiency</h4>
-                <p className={styles.reasonText}>Automate repetitive tasks, workflows, and communications to save time and focus on strategic activities.</p>
+                <p className={styles.reasonText}>Automate repetitive tasks such as follow-ups and reporting, allowing your team to focus on core business activities.</p>
               </div>
             </div>
 
@@ -181,32 +184,32 @@ const CRMSystemsPage = () => {
 
             <h3 className={styles.sectionHeading}>Bhoomi Techzone's PRINCIPLES OF CRM DEVELOPMENT:</h3>
             <p className={styles.paragraph}>
-              At Bhoomi Techzone, we build CRM systems that truly serve your business needs. Our development approach focuses on creating intuitive, scalable, and feature-rich solutions that empower your team and delight your customers:
+              At Bhoomi Techzone, our approach is focused on building intelligent, scalable, and user-friendly systems that align perfectly with your business goals. We combine modern <Link to="/technology">technology</Link> with practical business understanding to deliver CRM solutions that improve efficiency, enhance customer relationships, and support long-term growth:
             </p>
             <ul className={styles.principlesList}>
               <li className={styles.principleItem}>
-                <strong>User-Centric Design:</strong> We design CRM interfaces that are intuitive and easy to use, ensuring high adoption rates across your team with minimal training required.
+                <strong>User-Centric Design:</strong> We design CRM systems with a simple and intuitive interface so your team can easily adopt and use the platform without extensive training, improving productivity from day one.
               </li>
               <li className={styles.principleItem}>
-                <strong>Customization & Flexibility:</strong> Every business is unique. We build CRM systems that adapt to your specific workflows, processes, and industry requirements rather than forcing you to change.
+                <strong>Customization & Flexibility:</strong> Every business operates differently. Our CRM Software Development solutions are fully customizable to match your workflows, processes, and industry-specific requirements.
               </li>
               <li className={styles.principleItem}>
-                <strong>360-Degree Customer View:</strong> Our CRM systems provide complete visibility into every customer interaction, communication, and transaction across all touchpoints.
+                <strong>360-Degree Customer View:</strong> We provide a complete view of customer data, interactions, and history in one place, helping your team deliver personalized and consistent customer experiences.
               </li>
               <li className={styles.principleItem}>
-                <strong>Automation First:</strong> We automate repetitive tasks like follow-ups, email campaigns, and data entry, freeing your team to focus on building relationships and closing deals.
+                <strong>Automation First:</strong> We save time and free up your team to concentrate on high-value work by automating monotonous processes like data entry, notifications, and follow-ups.
               </li>
               <li className={styles.principleItem}>
-                <strong>Scalable Architecture:</strong> Our CRM solutions grow with your business, handling increasing data volumes and users without compromising performance.
+                <strong>Scalable Architecture:</strong> Our CRM systems are designed to grow with your business, handling increasing users, data, and operations without affecting performance.
               </li>
               <li className={styles.principleItem}>
-                <strong>Integration Capabilities:</strong> We ensure seamless integration with your existing tools like email, calendar, accounting software, and marketing platforms.
+                <strong>Integration Capabilities:</strong> For efficient business operations, we guarantee a simple integration with your current tools, such as marketing software, payment systems, and email platforms.
               </li>
               <li className={styles.principleItem}>
-                <strong>Mobile-First Approach:</strong> Access customer information, update records, and manage activities on-the-go with fully responsive mobile CRM applications.
+                <strong>Mobile-First Approach:</strong> With mobile-friendly and responsive solutions, you can access your CRM at any time and from any location, improving productivity while on the road.
               </li>
               <li className={styles.principleItem}>
-                <strong>Data Security & Privacy:</strong> We implement robust security measures to protect sensitive customer data and ensure compliance with data protection regulations.
+                <strong>Data Security & Privacy:</strong> We use cutting-edge security methods to safeguard private client information and guarantee adherence to data protection regulations.
               </li>
             </ul>
 
@@ -296,7 +299,7 @@ const CRMSystemsPage = () => {
               <SwiperSlide key={index}>
                 <div className={styles.crmCard}>
                   <div className={styles.crmImage}>
-                    <img src={feature.image} alt={feature.title} />
+                    <img src={feature.image} alt={feature.title} width="350" height="250" loading="lazy" />
                     <div className={styles.crmOverlay}>
                       <Link to="/contact" className={styles.crmButton}>Get Started</Link>
                     </div>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SEOHead from '../components/SEOHead';
 import { Link } from 'react-router-dom';
 import styles from '../styles/ScheduleMeetingPage.module.css';
 
@@ -531,12 +532,18 @@ You will receive confirmation on WhatsApp shortly. Keep this booking ID for futu
 
   return (
     <div className={styles.schedulePage}>
+      <SEOHead
+        title="Schedule a Meeting | Book a Free Consultation - Bhoomi Techzone"
+        description="Book a free consultation with Bhoomi Techzone's IT experts. Schedule a meeting today and discuss your web, app, software or digital marketing project requirements."
+        keywords="schedule meeting Bhoomi Techzone, book consultation IT company, free IT consultation Noida"
+        canonical="https://bhoomitechzone.in/schedule-meeting"
+      />
       <div className={styles.container}>
         {/* Service Selection View - Always visible */}
         <div className={styles.serviceSelection}>
           <div className={styles.header}>
             <div className={styles.logoSection}>
-              <img src="/images/bhoomi-black.png" alt="Bhoomi Techzone" className={styles.logo} />
+              <img src="/images/bhoomi-black.png" width="164" height="160" alt="Bhoomi Techzone" className={styles.logo} />
             </div>
             <h1 className={styles.title}>Bhoomi Techzone Services</h1>
             <p className={styles.subtitle}>Select a service to book your consultation</p>

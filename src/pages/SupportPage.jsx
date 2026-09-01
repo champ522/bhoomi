@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHead from '../components/SEOHead';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -24,33 +25,39 @@ const SupportPage = () => {
   const supportTypes = [
     {
       title: "Technical Support",
-      description: "Expert assistance for all your technical challenges and system issues",
+      description: "Get expert assistance for resolving software, hardware, and network-related issues quickly and efficiently.",
       image: "/images/sliderimg1.png"
     },
     {
       title: "System Maintenance", 
-      description: "Proactive monitoring and maintenance to keep your systems running smoothly",
+      description: "Regular monitoring and maintenance ensure your systems stay updated, optimized, and free from performance issues.",
       image: "/images/dmarketing.png"
     },
     {
       title: "Security Monitoring",
-      description: "Round-the-clock security surveillance and threat detection services",
+      description: "Protect your business with real-time threat detection, malware protection, and continuous security monitoring.",
       image: "/images/socialmediaa.png"
     },
     {
       title: "Server Management",
-      description: "Complete server administration and optimization for maximum performance",
+      description: "Complete server administration, performance optimization, and regular updates to ensure smooth operations.",
       image: "/images/sliderimg2.png"
     },
     {
       title: "Emergency Response",
-      description: "Immediate response for critical system failures and urgent issues",
+      description: "Our team provides immediate support for critical system failures to minimize downtime and business impact.",
       image: "/images/socialmediaa.png"
     }
   ];
 
   return (
     <>
+      <SEOHead
+        title="Bhoomi Techzone - IT Support Services in Noida with 24/7 Support"
+        description="Get reliable IT support services in Noida to keep your systems running smoothly. Our dedicated professionals are here to provide efficient solutions for your business."
+        keywords="IT support services in Noida"
+        canonical="https://bhoomitechzone.in/support"
+      />
       {/* Support Hero Section */}
       <section className={styles.heroSection}>
         <ParticleBanner />
@@ -65,9 +72,9 @@ const SupportPage = () => {
                 <span className={styles.separator}>/</span>
                 <span className={styles.breadcrumbCurrent}>24/7 Support</span>
               </div>
-              <h1 className={styles.heroTitle}>Our Support Services</h1>
+              <h1 className={styles.heroTitle}>24/7 IT Support Services in Noida</h1>
               <p className={styles.heroSubtitle}>
-                Round-the-clock expert support to keep your business running smoothly.
+                Round-the-clock expert support to keep your business running smoothly
               </p>
             </div>
             <div className={styles.heroImage}>
@@ -88,16 +95,16 @@ const SupportPage = () => {
       <section className={styles.servicesSection}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Our 24/7 Support Services</h2>
-            <p className={styles.sectionSubtitle}>Comprehensive technical support available around the clock</p>
+            <h2 className={styles.sectionTitle}>Our Support Services</h2>
+            <p className={styles.sectionSubtitle}>We offer a wide range of IT support services in Noida to cover all aspects of your technical infrastructure:</p>
           </div>
           
           <div className={styles.sectionDescription}>
             <p className={styles.descriptionParagraph}>
-              At Bhoomi Techzone, we understand that technology challenges don't follow business hours. That's why our dedicated support team is available 24/7, 365 days a year to ensure your systems run smoothly and your business operations never skip a beat. Our comprehensive support services are designed to prevent issues before they occur and resolve them quickly when they do.
+              At Bhoomi Techzone, we provide reliable IT support services in Noida to ensure your business operations run without interruptions. We understand that technical issues can arise anytime, which is why our expert team is available 24/7, 365 days a year to deliver fast and effective solutions. Our goal is to minimize downtime, improve system performance, and keep your business running efficiently.
             </p>
             <p className={styles.descriptionParagraph}>
-              Whether you're dealing with server downtime, security threats, or routine maintenance needs, our certified professionals bring years of experience and cutting-edge tools to deliver solutions that exceed expectations. We pride ourselves on our rapid response times and proactive approach to system monitoring and maintenance.
+              Our IT support services in Noida are designed to be proactive as well as responsive. We continuously monitor your systems to detect potential issues before they become major problems. From troubleshooting and maintenance to security and server management, we offer complete support tailored to your business needs.
             </p>
           </div>
           
@@ -129,23 +136,23 @@ const SupportPage = () => {
         <div className={styles.container}>
           <div className={styles.whyChooseContent}>
             <div className={styles.whyChooseText}>
-              <h2 className={styles.whyChooseTitle}>Why Choose Our Support</h2>
+              <h2 className={styles.whyChooseTitle}>Why Choose Our IT Support Services in Noida?</h2>
               <div className={styles.whyChooseGrid}>
                 <div className={styles.whyChooseItem}>
                   <h3>24/7 Availability</h3>
-                  <p>Our expert support team is available round the clock to assist you with any technical issues.</p>
+                  <p>Our dedicated team is always available to resolve your technical issues, ensuring uninterrupted business operations.</p>
                 </div>
                 <div className={styles.whyChooseItem}>
-                  <h3>Rapid Response</h3>
-                  <p>Quick response times ensure your business operations are never disrupted for long.</p>
+                  <h3>Rapid Response Time</h3>
+                  <p>We respond quickly to all support requests, reducing downtime and keeping your systems running smoothly.</p>
                 </div>
                 <div className={styles.whyChooseItem}>
                   <h3>Expert Team</h3>
-                  <p>Our certified professionals have extensive experience across various technologies and platforms.</p>
+                  <p>Our certified professionals bring years of experience across multiple technologies and industries.</p>
                 </div>
                 <div className={styles.whyChooseItem}>
                   <h3>Proactive Monitoring</h3>
-                  <p>We monitor your systems continuously to prevent issues before they impact your business.</p>
+                  <p>We continuously monitor your systems to identify and resolve issues before they affect your business.</p>
                 </div>
               </div>
             </div>

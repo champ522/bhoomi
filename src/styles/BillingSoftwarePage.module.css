@@ -3,7 +3,7 @@
 /* Banner Section */
 .billingBanner {
   position: relative;
-  height: 450px;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,7 +36,7 @@
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 700;
   color: #080101;
   margin: 0 0 10px 0;
@@ -45,12 +45,12 @@
 }
 
 .subtitle {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: rgba(10, 1, 1, 0.95);
   margin: 0 0 10px 0;
   font-weight: 300;
   text-align: center;
-  max-width: 700px;
+  max-width: 950px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.6;
@@ -131,7 +131,7 @@
 
 .welcomeText {
   font-size: 1.1rem;
-  color: #777;
+  color: #333;
   font-weight: 600;
   letter-spacing: 1px;
 }
@@ -144,11 +144,11 @@
 }
 
 .billingTitle {
-  font-size: 2rem;
+  font-size: 1.9rem;
   color: #043b1e;
   margin-bottom: 20px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.4;
 }
 
 .highlight {
@@ -157,7 +157,7 @@
 
 .description {
   font-size: 1.06rem;
-  color: #777;
+  color: #333;
   line-height: 1.7em;
   font-weight: 400;
   margin-bottom: 15px;
@@ -192,7 +192,7 @@
 }
 
 .stat p {
-  color: #777;
+  color: #333;
   font-weight: 500;
   font-size: 1rem;
   margin: 0;
@@ -243,7 +243,7 @@
   font-size: 1.06rem;
   font-weight: 400;
   text-align: center;
-  color: #777;
+  color: #333;
   max-width: 830px;
   margin: 0 auto;
   line-height: 1.7em;
@@ -385,7 +385,7 @@
 }
 
 .billingDescription {
-  color: #777;
+  color: #333;
   line-height: 1.6em;
   font-size: 1rem;
   font-weight: 400;
@@ -410,7 +410,7 @@
 
 .paragraph {
   font-size: 1.06rem;
-  color: #777;
+  color: #333;
   line-height: 1.7em;
   font-weight: 400;
   margin-bottom: 15px;
@@ -446,7 +446,7 @@
 }
 
 .reasonText {
-  color: #777;
+  color: #333;
   line-height: 1.7em;
   font-size: 1.06rem;
   font-weight: 400;
@@ -490,7 +490,7 @@
   border-bottom: 1px solid #eee;
   font-size: 1.1rem;
   line-height: 1.7em;
-  color: #777;
+  color: #333;
   position: relative;
   padding-left: 25px;
   text-align: justify;
@@ -563,7 +563,7 @@
 }
 
 .stepText {
-  color: #777;
+  color: #333;
   line-height: 1.6;
   margin: 0;
 }
@@ -603,7 +603,7 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .billingBanner {
-    height: 400px;
+    height: 80vh;
     background-attachment: scroll;
   }
 
@@ -672,7 +672,7 @@
 
 @media (max-width: 480px) {
   .billingBanner {
-    height: 350px;
+    height: 80vh;
   }
 
   .title {

@@ -1,7 +1,8 @@
 /* Contact Banner Section */
 .contactBanner {
   position: relative;
-  height: 450px;
+  /* height: 450px; */
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,7 +35,7 @@
 }
 
 .title {
-  font-size: 2.5rem;
+  font-size: 4rem;
   font-weight: 700;
   color: #050000;
   margin: 0 0 10px 0;
@@ -568,7 +569,7 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .contactBanner {
-    height: 400px;
+    height: 420px;
   }
 
   .title {
@@ -616,7 +617,7 @@
 
 @media (max-width: 480px) {
   .contactBanner {
-    height: 300px;
+    height: 420px;
   }
 
   .title {

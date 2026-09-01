@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHead from '../../components/SEOHead';
 import { Link } from 'react-router-dom';
 import ParticleBanner from '../../components/ParticleBanner';
 import { courses } from '../data/courses';
@@ -11,6 +12,12 @@ import styles from '../styles/lms.module.css';
 const LMSHome = () => {
   return (
     <>
+      <SEOHead
+        title="BhoomiTech Learning Hub | Free IT Courses Online"
+        description="Learn web development, mobile apps, digital marketing and more with BhoomiTech's free online courses. Structured lessons, code examples and practice exercises."
+        keywords="free IT courses online, web development course, programming tutorials, BhoomiTech learning hub"
+        canonical="https://bhoomitechzone.in/lms"
+      />
       {/* LMS Banner */}
       <section className={styles.lmsBanner}>
         <ParticleBanner />
@@ -31,7 +38,14 @@ const LMSHome = () => {
       </section>
 
       <div className={styles.lmsContainer}>
-
+       <div className={styles.headerContent}>
+          <h2 className={styles.sectionTitle}>
+            Explore Our <span className={styles.titleHighlight}>Online IT Courses</span> For your Career
+          </h2>
+          <p className={styles.sectionSubtitle}>
+            Discover industry-focused online IT courses designed to help you build real-world skills in web development, programming, software development, databases, React, Node.js, Python, Flutter, and modern technologies to grow your career.
+          </p>
+        </div>
       <div className={styles.courseGrid}>
         {courses.map(course => (
           <div key={course.id} className={styles.courseCard}>
@@ -60,6 +74,9 @@ const LMSHome = () => {
           <h2 className={styles.sectionTitle}>
             Why Choose Our <span className={styles.titleHighlight}>LMS?</span>
           </h2>
+          <p className={styles.sectionSubtitle}>
+            Our Learning Management System (LMS) offers a comprehensive and engaging learning experience with structured lessons, real-world examples, and practical exercises. Whether you're a beginner or looking to upskill, our LMS provides the tools and resources you need to succeed in the IT industry.
+          </p>
         </div>
         <div className={styles.featureGrid}>
           <div className={styles.feature}>

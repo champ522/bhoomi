@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHead from '../components/SEOHead';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -61,15 +62,21 @@ const WebsiteDesignPage = () => {
 
   return (
     <>
+      <SEOHead
+        title="Why Choose Professional Website Design Services for Busines"
+        description="Get custom website design services that grab attention and drive sales. Our web design pros build responsive sites fast. Start your project today with us!"
+        keywords="Website Design Services, Web Design Services"
+        canonical="https://bhoomitechzone.in/website-design"
+      />
       {/* Website Design Banner */}
       <section className={styles.websiteDesignBanner}>
         <ParticleBanner />
         <div className={styles.overlay}></div>
         <div className={styles.container}>
           <div className={styles.content}>
-            <h1 className={styles.title}>Website Design</h1>
+            <h1 className={styles.title}>Website Design Services</h1>
             <p className={styles.subtitle}>
-              Creative and user-focused designs that captivate your audience
+              Creative and user-focused websites designed to grow your business
             </p>
             <div className={styles.breadcrumb}>
               <Link to="/" className={styles.breadcrumbLink}>Home</Link>
@@ -95,15 +102,10 @@ const WebsiteDesignPage = () => {
                 <span className={styles.highlight}>Website </span> Design
               </h2>
               <p className={styles.description}>
-                We specialize in creating visually stunning and user-centric website designs that not only look 
-                amazing but also deliver exceptional user experiences. Our design team combines creativity with 
-                strategic thinking to create websites that engage visitors, communicate your brand message effectively, 
-                and drive conversions through thoughtful design principles.
+                We provide professional Website Design <Link to="/services">Services</Link> that help businesses establish a strong digital presence with visually appealing and high-performing websites. Our team focuses on creating modern, responsive, and user-friendly designs that reflect your brand identity while ensuring seamless functionality across all devices.
               </p>
               <p className={styles.description}>
-                From modern minimalist designs to bold and vibrant layouts, we craft websites that perfectly 
-                represent your brand identity while ensuring optimal user experience across all devices. Our 
-                design approach focuses on visual hierarchy, intuitive navigation, and compelling calls-to-action.
+                As a trusted provider of Website Design Services, we combine creativity with technical expertise to deliver websites that not only look impressive but also drive engagement and conversions. Our approach to Web Design Services ensures that every design element is purposeful, optimized, and aligned with your business goals.
               </p>
               
               <div className={styles.serviceStats} ref={statsRef}>
@@ -123,7 +125,7 @@ const WebsiteDesignPage = () => {
             </div>
             <div className={styles.imageContent}>
               <lottie-player
-                src="https://lottie.host/a0e96b7f-ae97-44d9-9326-b5be58bd2c64/mTzhsLf5xz.json"
+                src="https://assets9.lottiefiles.com/packages/lf20_jtbfg2nb.json"
                 background="transparent"
                 speed="1"
                 className={styles.serviceImage}
@@ -141,41 +143,41 @@ const WebsiteDesignPage = () => {
 
           {/* Additional Content Sections */}
           <div className={styles.additionalContent}>
-            <h3 className={styles.sectionHeading}>Why is professional website design crucial for your business?</h3>
+            <h3 className={styles.sectionHeading}>Why are website design services important for your business?</h3>
             <p className={styles.paragraph}>
-              In today's digital landscape, your website is often the first impression potential customers have of your business. Professional website design goes far beyond aesthetics—it's about creating an experience that builds trust, communicates your value proposition clearly, and guides visitors toward taking desired actions. A well-designed website serves as your most powerful marketing tool, working 24/7 to attract, engage, and convert visitors into customers.
+              In today’s digital-first world, your website is often the first impression customers have of your business. Professional Website Design Services ensure that your website communicates credibility, builds trust, and engages users effectively from the very first interaction.
             </p>
             <p className={styles.paragraph}>
-              Professional website design directly impacts user behavior, search engine rankings, and business credibility. Studies show that users form opinions about websites within 0.05 seconds, and 94% of first impressions are design-related. A professionally designed website not only captures attention but also reduces bounce rates, increases time on site, and significantly improves conversion rates through strategic design elements and user experience optimization.
+              With expert Web Design Services, businesses can create intuitive user experiences that guide visitors through the website, increasing the chances of conversions and customer retention. A well-designed website not only enhances your brand image but also improves search engine visibility and overall digital performance.
             </p>
 
-            <h3 className={styles.sectionHeading}>Top 5 advantages of professional website design:</h3>
+            <h3 className={styles.sectionHeading}>Top benefits of professional website design services:</h3>
             <div className={styles.reasonsList}>
               <div className={styles.reason}>
-                <h4 className={styles.reasonTitle}>1. Enhanced Brand Credibility</h4>
-                <p className={styles.reasonText}>Professional design establishes trust and credibility, making visitors more likely to engage with your business and make purchasing decisions.</p>
+                <h4 className={styles.reasonTitle}>1. Strong First Impression</h4>
+                <p className={styles.reasonText}>High-quality Website Design Services ensure your website captures attention instantly with visually appealing layouts and engaging design elements that leave a lasting impression on visitors.</p>
               </div>
               <div className={styles.reason}>
-                <h4 className={styles.reasonTitle}>2. Improved User Experience</h4>
-                <p className={styles.reasonText}>Intuitive navigation, clear layouts, and responsive design ensure visitors can easily find information and complete desired actions.</p>
+                <h4 className={styles.reasonTitle}>2. Better User Experience</h4>
+                <p className={styles.reasonText}>Professional Web Design Services focus on intuitive navigation, fast loading speed, and mobile responsiveness, ensuring a smooth and enjoyable experience for users across all devices.</p>
               </div>
               <div className={styles.reason}>
-                <h4 className={styles.reasonTitle}>3. Better Search Engine Rankings</h4>
-                <p className={styles.reasonText}>Well-designed websites with clean code, fast loading times, and mobile optimization rank higher in search engine results.</p>
+                <h4 className={styles.reasonTitle}>3. Improved SEO Performance</h4>
+                <p className={styles.reasonText}>Well-structured Website Design Services help improve your website’s visibility on search engines by implementing <Link to="/seo-optimization">SEO-friendly</Link> design practices and optimized page structures.</p>
               </div>
               <div className={styles.reason}>
-                <h4 className={styles.reasonTitle}>4. Higher Conversion Rates</h4>
-                <p className={styles.reasonText}>Strategic design elements, compelling calls-to-action, and optimized user flows significantly increase conversion rates and sales.</p>
+                <h4 className={styles.reasonTitle}>4. Brand Consistency</h4>
+                <p className={styles.reasonText}>Consistent branding across your website is essential, and our Web Design Services ensure that colors, fonts, and messaging align perfectly with your business identity.</p>
               </div>
               <div className={styles.reason}>
-                <h4 className={styles.reasonTitle}>5. Competitive Market Advantage</h4>
-                <p className={styles.reasonText}>A professionally designed website differentiates your business from competitors and positions you as an industry leader.</p>
+                <h4 className={styles.reasonTitle}>5. Higher Conversion Rates</h4>
+                <p className={styles.reasonText}>Effective Website Design Services are focused on guiding users toward action, whether it’s making a purchase, filling out a form, or contacting your business.</p>
               </div>
             </div>
 
             <h3 className={styles.sectionHeading}>OUR WEBSITE DESIGN SERVICES:</h3>
             <p className={styles.paragraph}>
-              Bhoomi Techzone offers comprehensive website design services that blend creativity with functionality. Our design team specializes in creating custom designs that reflect your brand identity while delivering exceptional user experiences that drive business results and customer engagement.
+              Bhoomi Techzone offers complete Website Design Services tailored to meet diverse business needs. Our team delivers innovative and customized Web Design Services that cover everything from UI/UX design to responsive layouts and performance optimization, ensuring your website stands out in a competitive digital landscape.
             </p>
             <div className={styles.servicesList}>
               <div className={styles.serviceItem}>• Custom Website Design & Branding</div>
@@ -188,73 +190,73 @@ const WebsiteDesignPage = () => {
 
             <h3 className={styles.sectionHeading}>Bhoomi Techzone's PRINCIPLES OF WEBSITE design:</h3>
             <p className={styles.paragraph}>
-              At Bhoomi Techzone, we believe that great website design is the perfect marriage of form and function. Our design philosophy is built on principles that ensure every website we create not only looks stunning but also performs exceptionally:
+              At Bhoomi Techzone, we believe that effective Website Design Services go beyond aesthetics and focus on delivering real business value. Our design philosophy is built on principles that ensure every website is functional, scalable, and user-centric :
             </p>
             <ul className={styles.principlesList}>
               <li className={styles.principleItem}>
-                <strong>User-Centered Design:</strong> We design with your users in mind, conducting research to understand their needs, behaviors, and preferences to create intuitive and engaging experiences.
+                <strong>User-Centered Design:</strong> Our Web Design Services focus on understanding user behavior and creating intuitive interfaces that enhance usability and engagement.
               </li>
               <li className={styles.principleItem}>
-                <strong>Visual Hierarchy & Clarity:</strong> We use design elements like typography, color, and spacing strategically to guide users' attention and make important information easily discoverable.
+                <strong>Responsive Design Approach:</strong> We ensure that all Website Design Services deliver fully responsive websites that perform seamlessly across desktops, tablets, and mobile devices.
               </li>
               <li className={styles.principleItem}>
-                <strong>Brand Consistency:</strong> Every design element reinforces your brand identity, from color schemes and typography to imagery and tone, creating a cohesive brand experience.
+                <strong>Performance Optimization:</strong> Speed and performance are critical, and our Web Design Services are optimized to ensure fast loading times and smooth functionality.
               </li>
               <li className={styles.principleItem}>
-                <strong>Mobile-First Approach:</strong> We design for mobile devices first, then enhance for larger screens, ensuring optimal performance and user experience across all devices and screen sizes.
+                <strong>SEO-Friendly Structure:</strong> Our Website Design Services include clean coding practices and structured layouts that support better search engine rankings.
               </li>
               <li className={styles.principleItem}>
-                <strong>Performance Optimization:</strong> Beautiful designs mean nothing if they don't load fast. We optimize images, code, and design elements to ensure lightning-fast loading times.
+                <strong>Visual Consistency:</strong> We maintain brand consistency through every aspect of our Web Design Services, ensuring a professional and cohesive look.
               </li>
               <li className={styles.principleItem}>
-                <strong>Accessibility Standards:</strong> We design inclusive websites that work for everyone, following accessibility guidelines to ensure your site is usable by people with diverse abilities.
+                <strong>Scalable Design:</strong> Our Website Design Services are built with future growth in mind, allowing easy updates and feature expansions.
               </li>
               <li className={styles.principleItem}>
-                <strong>Conversion-Focused Design:</strong> Every design decision is made with conversion in mind, strategically placing calls-to-action and optimizing user flows to achieve your business goals.
+                <strong>Security Focus:</strong> We implement best practices in all Web Design Services to ensure your website remains secure and protected.
               </li>
               <li className={styles.principleItem}>
-                <strong>Future-Proof Design:</strong> We create designs that remain relevant and effective over time, using timeless design principles while incorporating modern trends appropriately.
+                <strong>Continuous Improvement:</strong> We provide ongoing enhancements as part of our Website Design Services, adapting your website to evolving business needs.
               </li>
             </ul>
 
             <h3 className={styles.sectionHeading}>Bhoomi Techzone's essential steps in website design process:</h3>
             <p className={styles.paragraph}>
-              Our comprehensive design process ensures that every website we create is strategically planned, beautifully executed, and optimized for success. We follow a structured approach that combines creative expertise with user research and data-driven insights.
+              Our structured approach to Website Design Services ensures efficient project execution with clear communication and measurable outcomes. Our Web Design Services follow a systematic process that guarantees quality and consistency.
             </p>
             <div className={styles.processList}>
               <div className={styles.processStep}>
                 <div className={styles.stepNumber}>01</div>
                 <div className={styles.stepContent}>
-                  <h4 className={styles.stepTitle}>Discovery & Research</h4>
-                  <p className={styles.stepText}>We research your industry, competitors, and target audience to understand design preferences and create strategic design briefs.</p>
+                  <h4 className={styles.stepTitle}>Requirement Analysis</h4>
+                  <p className={styles.stepText}>We begin by understanding your business goals, target audience, and design preferences to create a strong foundation for our Website Design Services.</p>
                 </div>
               </div>
               <div className={styles.processStep}>
                 <div className={styles.stepNumber}>02</div>
                 <div className={styles.stepContent}>
-                  <h4 className={styles.stepTitle}>Wireframing & Planning</h4>
-                  <p className={styles.stepText}>We create detailed wireframes and site maps to plan the user journey and establish the foundation for exceptional user experience.</p>
+                  <h4 className={styles.stepTitle}>Wireframing & Design Planning</h4>
+                  <p className={styles.stepText}>Our team develops wireframes and design concepts as part of our Web Design Services, ensuring clarity in layout and user flow before development begins.</p>
                 </div>
               </div>
               <div className={styles.processStep}>
                 <div className={styles.stepNumber}>03</div>
                 <div className={styles.stepContent}>
-                  <h4 className={styles.stepTitle}>Visual Design Creation</h4>
-                  <p className={styles.stepText}>Our designers create stunning visual designs that align with your brand while incorporating modern design trends and best practices.</p>
+                  <h4 className={styles.stepTitle}>Design & Development</h4>
+                  <p className={styles.stepText}>We create visually appealing and functional websites using modern technologies as part of our professional Website Design Services, ensuring a seamless user experience.</p>
                 </div>
               </div>
               <div className={styles.processStep}>
                 <div className={styles.stepNumber}>04</div>
                 <div className={styles.stepContent}>
-                  <h4 className={styles.stepTitle}>Prototyping & Testing</h4>
-                  <p className={styles.stepText}>We create interactive prototypes and conduct usability testing to ensure the design works effectively for your target audience.</p>
+                  <h4 className={styles.stepTitle}>Testing & Optimization</h4>
+                  <p className={styles.stepText}>Our Web Design Services include thorough testing for performance, responsiveness, and usability to ensure your website meets all quality standards.</p>
                 </div>
               </div>
               <div className={styles.processStep}>
                 <div className={styles.stepNumber}>05</div>
                 <div className={styles.stepContent}>
-                  <h4 className={styles.stepTitle}>Finalization & Handoff</h4>
-                  <p className={styles.stepText}>We finalize designs with your feedback and provide comprehensive design specifications for seamless development implementation.</p>
+                  <h4 className={styles.stepTitle}>Launch & Support</h4>
+                  <p className={styles.stepText}>We handle deployment and provide ongoing support as part of our Website Design Services, ensuring your website continues to perform effectively after launch.</p>
                 </div>
               </div>
             </div>
@@ -303,7 +305,7 @@ const WebsiteDesignPage = () => {
               <SwiperSlide key={index}>
                 <div className={styles.projectCard}>
                   <div className={styles.projectImage}>
-                    <img src={project.image} alt={project.title} />
+                    <img src={project.image} alt={project.title} width="350" height="250" loading="lazy" />
                     <div className={styles.projectOverlay}>
                       <Link to="/contact" className={styles.projectButton}>Get Quote</Link>
                     </div>

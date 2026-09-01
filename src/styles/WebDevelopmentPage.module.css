@@ -3,7 +3,7 @@
 /* Banner Section */
 .webDevBanner {
   position: relative;
-  height: 450px;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,7 +36,7 @@
 }
 
 .title {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 700;
   color: #050101;
   margin: 0 0 10px 0;
@@ -50,7 +50,7 @@
   margin: 0 0 10px 0;
   font-weight: 300;
   text-align: center;
-  max-width: 600px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.6;
@@ -135,7 +135,7 @@
 
 .welcomeText {
   font-size: 1.1rem;
-  color: #777;
+  color: #333;
   font-weight: 600;
   /* text-transform: uppercase; */
   letter-spacing: 1px;
@@ -162,7 +162,7 @@
 
 .description {
   font-size: 1.06rem;
-  color: #777;
+  color: #333;
   line-height: 1.7em;
   font-weight: 400;
   margin-bottom: 15px;
@@ -197,7 +197,7 @@
 }
 
 .stat p {
-  color: #777;
+  color: #333;
   font-weight: 500;
   font-size: 1rem;
   margin: 0;
@@ -277,7 +277,7 @@
   font-size: 1.06rem;
   font-weight: 400;
   text-align: center;
-  color: #777;
+  color: #333;
   max-width: 830px;
   margin: 0 auto;
   line-height: 1.7em;
@@ -425,7 +425,7 @@
 }
 
 .projectDescription {
-  color: #777;
+  color: #333;
   line-height: 1.6em;
   font-size: 1rem;
   font-weight: 400;
@@ -450,7 +450,7 @@
 
 .paragraph {
   font-size: 1.06rem;
-  color: #777;
+  color: #333;
   line-height: 1.7em;
   font-weight: 400;
   margin-bottom: 15px;
@@ -487,7 +487,7 @@
 }
 
 .reasonText {
-  color: #777;
+  color: #333;
   line-height: 1.7em;
   font-size: 1.06rem;
   font-weight: 400;
@@ -531,7 +531,7 @@
   border-bottom: 1px solid #eee;
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #666;
+  color: #333;
   position: relative;
   padding-left: 25px;
   text-align: justify;
@@ -604,7 +604,7 @@
 }
 
 .stepText {
-  color: #666;
+  color: #333;
   line-height: 1.6;
   margin: 0;
 }
@@ -644,7 +644,7 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .webDevBanner {
-    height: 400px;
+    height: 80vh;
     background-attachment: scroll;
   }
 
@@ -712,7 +712,7 @@
 
 @media (max-width: 480px) {
   .webDevBanner {
-    height: 350px;
+    height: 80vh;
   }
 
   .title {

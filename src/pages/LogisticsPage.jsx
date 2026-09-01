@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHead from '../components/SEOHead';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -72,39 +73,15 @@ const LogisticsPage = () => {
     }
   ];
 
-  const useCases = [
-    {
-      title: "Transportation Management Systems",
-      description: "Comprehensive TMS for freight management, carrier selection, and cost optimization.",
-      content: "We develop advanced Transportation Management Systems that streamline logistics operations from booking to delivery. Our solutions include automated freight booking, carrier rate comparison, load optimization, multi-modal transportation support, and real-time shipment tracking. Features include integration with carrier APIs, automated dispatch, proof of delivery capture, and comprehensive analytics. Built with scalable architecture to handle high-volume logistics operations efficiently.",
-      features: ["Freight Booking", "Carrier Integration", "Load Optimization", "Real-time Tracking"],
-      image: "/images/log1.png"
-    },
-    {
-      title: "Warehouse Management Solutions",
-      description: "Smart warehouse systems with automated inventory control and optimized picking workflows.",
-      content: "Our warehouse management solutions transform warehouse operations with intelligent automation and optimization. Features include barcode/RFID scanning, bin location management, automated picking and packing workflows, cycle counting, cross-docking, and returns management. Real-time dashboards provide visibility into inventory levels, order status, and warehouse productivity. Integration with ERP systems and automated replenishment ensure optimal stock levels and operational efficiency.",
-      features: ["Inventory Control", "Barcode Scanning", "Pick Optimization", "Real-time Visibility"],
-      image: "/images/log2.png"
-    },
-    {
-      title: "Delivery Management Platforms",
-      description: "End-to-end delivery orchestration with route optimization and customer engagement.",
-      content: "We build specialized delivery management platforms that optimize last-mile logistics and enhance customer experience. Our solutions include intelligent route planning, driver mobile apps, real-time delivery tracking, automated customer notifications, proof of delivery capture, and delivery time slot management. Features include failed delivery handling, return logistics, customer feedback collection, and performance analytics for continuous improvement.",
-      features: ["Route Planning", "Driver Apps", "Customer Tracking", "Proof of Delivery"],
-      image: "/images/log3.png"
-    },
-    {
-      title: "Supply Chain Visibility",
-      description: "Complete supply chain transparency with real-time tracking and predictive analytics.",
-      content: "Our supply chain visibility solutions provide end-to-end transparency across your logistics network. Features include real-time shipment tracking across multiple carriers, milestone-based alerts, predictive ETAs using AI, exception management, and comprehensive analytics dashboards. Integration with IoT sensors for temperature and condition monitoring. Advanced reporting for KPI tracking, cost analysis, and compliance documentation.",
-      features: ["Multi-carrier Tracking", "Predictive ETA", "IoT Integration", "Analytics Dashboard"],
-      image: "/images/logisticbnr.png"
-    }
-  ];
 
   return (
     <>
+      <SEOHead
+        title="Logistics Software Development in Noida"
+        description="Logistics software development in Noida for route optimization, tracking, and supply chain management. Build scalable, efficient logistics solutions today."
+        keywords="logistics software development, logistics software development in Noida"
+        canonical="https://bhoomitechzone.in/logistics"
+      />
       {/* Logistics Hero Banner */}
       <section className={styles.heroSection}>
         <ParticleBanner />
@@ -119,16 +96,16 @@ const LogisticsPage = () => {
               <span>Logistics</span>
             </div>
             <h1 className={styles.heroTitle}>
-              Smart Logistics &
-              <span className={styles.heroHighlight}> Supply Chain Solutions</span>
+              Logistics 
+              <span className={styles.heroHighlight}> Software Development </span>
+              in Noida
             </h1>
             <p className={styles.heroSubtitle}>
-              Transform your logistics operations with intelligent software solutions that optimize 
-              routes, reduce costs, and deliver exceptional supply chain visibility and efficiency.
+              Transform your operations with advanced <strong style={{ color: 'black' }}>logistics software development in Noida</strong> designed to optimize routes, improve tracking, reduce costs, and enhance overall supply chain efficiency.
             </p>
           </div>
           <div className={styles.heroAnimation}>
-            <img src="/images/log4.png" alt="Logistics Solutions" />
+            <img src="/images/log4.png" alt="logistics software development in Noida" width="1200" height="400" />
           </div>
         </div>
       </section>
@@ -167,15 +144,10 @@ const LogisticsPage = () => {
                 Expert <span className={styles.highlight}>Logistics Tech</span> Solutions
               </h2>
               <p className={styles.paragraph}>
-                At Bhoomi Techzone, we specialize in developing innovative logistics and supply chain 
-                software solutions that transform transportation operations. Our expertise spans fleet 
-                management, warehouse optimization, delivery tracking, and supply chain analytics.
+                At Bhoomi Techzone, we specialize in delivering advanced <strong style={{ color: 'black' }}>logistics software development in Noida</strong> that transforms transportation and supply chain operations. Our <strong style={{ color: 'black' }}>logistics software development</strong> expertise includes fleet management, warehouse optimization, delivery tracking, and supply chain analytics to improve efficiency and scalability.
               </p>
               <p className={styles.paragraph}>
-                We understand the unique challenges of logistics including route optimization, 
-                real-time tracking, inventory management, and cost control. Our solutions are built 
-                with robust architecture, real-time data processing, and seamless integrations that help 
-                logistics businesses achieve operational excellence and competitive advantage.
+                We understand the unique challenges of logistics such as route optimization, real-time tracking, inventory management, and cost control. Our <strong style={{ color: 'black' }}>logistics software development in Noida</strong> is built with robust architecture, real-time data processing, and seamless integrations, helping logistics businesses achieve operational excellence and gain a strong competitive advantage.
               </p>
               <div className={styles.featuresList}>
                 <div className={styles.featureItem}>
@@ -218,7 +190,7 @@ const LogisticsPage = () => {
               Comprehensive <span className={styles.highlight}>Logistics Solutions</span>
             </h2>
             <p className={styles.sectionDescription}>
-              From fleet management to last-mile delivery, we deliver innovative logistics technology solutions
+              From fleet management to last-mile delivery, we deliver innovative logistics <Link to="/technology">technology</Link> solutions
             </p>
           </div>
           <div className={styles.solutionsGrid}>
@@ -243,34 +215,169 @@ const LogisticsPage = () => {
             </h2>
           </div>
           
-          {useCases.map((useCase, index) => (
-            <div 
-              key={index} 
-              className={`${styles.useCaseRow} ${index % 2 === 1 ? styles.reverse : ''}`}
-            >
-              <div className={styles.useCaseContent}>
-                <h3 className={styles.useCaseTitle}>{useCase.title}</h3>
-                <p className={styles.useCaseDescription}>{useCase.description}</p>
-                <p className={styles.useCaseDetails}>{useCase.content}</p>
-                <div className={styles.useCaseFeatures}>
-                  {useCase.features.map((feature, idx) => (
-                    <span key={idx} className={styles.featureTag}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                        <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                      {feature}
-                    </span>
-                  ))}
-                </div>
-                <Link to="/contact" className={styles.useCaseBtn}>
-                  Get Started
-                </Link>
+          {/* Use Case 1: Transportation Management Systems */}
+          <div className={styles.useCaseRow}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>Transportation Management Systems</h3>
+              <p className={styles.useCaseDescription}>Comprehensive TMS for freight management, carrier selection, and cost optimization.</p>
+              <p className={styles.useCaseDetails}>Our <strong style={{ color: 'black' }}>logistics software development</strong> services include advanced TMS solutions that streamline freight operations from booking to delivery. With <strong style={{ color: 'black' }}>logistics software development in Noida</strong>, we offer carrier integration, load optimization, automated dispatch, and real-time tracking, helping businesses reduce costs, improve efficiency, and manage high-volume logistics operations seamlessly.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Freight Booking
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Carrier Integration
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Load Optimization
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Real-time Tracking
+                </span>
               </div>
-              <div className={styles.useCaseImage}>
-                <img src={useCase.image} alt={useCase.title} />
-              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
             </div>
-          ))}
+            <div className={styles.useCaseImage}>
+              <img src="/images/log1.png" alt="logistics software development" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Use Case 2: Warehouse Management Solutions */}
+          <div className={`${styles.useCaseRow} ${styles.reverse}`}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>Warehouse Management Solutions</h3>
+              <p className={styles.useCaseDescription}>Smart warehouse systems with automated inventory control and optimized picking workflows.</p>
+              <p className={styles.useCaseDetails}>We deliver smart warehouse systems through <strong style={{ color: 'black' }}>logistics software development</strong> that automate inventory control, picking, and packing processes. Our <strong style={{ color: 'black' }}>logistics software development in Noida</strong> ensures real-time visibility, barcode/RFID tracking, and ERP integration, helping businesses optimize warehouse operations, reduce errors, and maintain accurate stock levels efficiently.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Inventory Control
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Barcode Scanning
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Pick Optimization
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Real-time Visibility
+                </span>
+              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
+            </div>
+            <div className={styles.useCaseImage}>
+              <img src="/images/log2.png" alt="logistics software development in Noida" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Use Case 3: Delivery Management Platforms */}
+          <div className={styles.useCaseRow}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>Delivery Management Platforms</h3>
+              <p className={styles.useCaseDescription}>End-to-end delivery orchestration with route optimization and customer engagement.</p>
+              <p className={styles.useCaseDetails}>Our <strong style={{ color: 'black' }}>logistics software development</strong> solutions include delivery management platforms that optimize last-mile delivery with intelligent routing and real-time tracking. With <strong style={{ color: 'black' }}>logistics software development in Noida</strong>, businesses can manage driver apps, automate notifications, capture proof of delivery, and enhance customer experience while improving delivery speed and efficiency.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Route Planning
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Driver Apps
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Customer Tracking
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Proof of Delivery
+                </span>
+              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
+            </div>
+            <div className={styles.useCaseImage}>
+              <img src="/images/log3.png" alt="logistics software development" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Use Case 4: Supply Chain Visibility */}
+          <div className={`${styles.useCaseRow} ${styles.reverse}`}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>Supply Chain Visibility</h3>
+              <p className={styles.useCaseDescription}>Complete supply chain transparency with real-time tracking and predictive analytics.</p>
+              <p className={styles.useCaseDetails}>We build end-to-end visibility systems using <strong style={{ color: 'black' }}>logistics software development</strong> that provide real-time tracking and predictive insights across your supply chain. Our <strong style={{ color: 'black' }}>logistics software development in Noida</strong> includes multi-carrier integration, AI-based ETA predictions, IoT monitoring, and analytics dashboards to improve decision-making and operational transparency.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Multi-carrier Tracking
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Predictive ETA
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  IoT Integration
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Analytics Dashboard
+                </span>
+              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
+            </div>
+            <div className={styles.useCaseImage}>
+              <img src="/images/logisticbnr.png" alt="Supply Chain Visibility" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
         </div>
       </section>
 

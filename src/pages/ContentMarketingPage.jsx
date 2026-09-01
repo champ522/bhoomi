@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHead from '../components/SEOHead';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -61,6 +62,12 @@ const ContentMarketingPage = () => {
 
   return (
     <>
+      <SEOHead
+        title="Best Content Marketing Agencies for Quality Content Services"
+        description="Boost your online presence with powerful Content Marketing by Bhoomi Techzone. We create engaging content that attracts, converts & retains customers."
+        keywords="Content Marketing, Content Marketing agencies"
+        canonical="https://bhoomitechzone.in/content-marketing"
+      />
       {/* Content Marketing Banner */}
       <section className={styles.webDevBanner}>
         <ParticleBanner />
@@ -69,7 +76,7 @@ const ContentMarketingPage = () => {
           <div className={styles.content}>
             <h1 className={styles.title}>Content Marketing</h1>
             <p className={styles.subtitle}>
-              Strategic content that educates, engages, and converts your audience
+              Strategic Content Marketing that drives traffic, engagement, and conversions. Trusted by leading Content Marketing agencies to build authority and generate quality leads
             </p>
             <div className={styles.breadcrumb}>
               <Link to="/" className={styles.breadcrumbLink}>Home</Link>
@@ -95,10 +102,10 @@ const ContentMarketingPage = () => {
                 <span className={styles.highlight}>Content </span> Marketing
               </h2>
               <p className={styles.description}>
-                We create compelling, valuable content that resonates with your target audience and drives meaningful business results. Our strategic content marketing approach combines storytelling, SEO optimization, and data-driven insights to build brand authority, attract qualified leads, and nurture customer relationships throughout the entire buyer's journey.
+                We create compelling and valuable content that connects with your target audience and delivers measurable business results. Our Content Marketing approach combines storytelling, <Link to="/seo-optimization">SEO optimization</Link>, and data-driven insights to strengthen brand authority, attract high-quality leads, and build long-term customer relationships across every stage of the buyer journey.
               </p>
               <p className={styles.description}>
-                From blog posts and video content to infographics and comprehensive guides, we develop content that not only educates and entertains but also positions your brand as a trusted industry leader. Our content marketing strategies are designed to increase organic visibility, boost engagement rates, and convert readers into loyal customers across all digital touchpoints.
+                From blog articles and video content to infographics and detailed guides, our Content Marketing strategies focus on delivering information that informs and engages. We ensure your brand stands out as an industry leader while improving organic reach, increasing engagement, and turning visitors into loyal customers across all digital platforms.
               </p>
               
               <div className={styles.serviceStats} ref={statsRef}>
@@ -118,7 +125,7 @@ const ContentMarketingPage = () => {
             </div>
             <div className={styles.imageContent}>
               <lottie-player
-                src="https://lottie.host/f6a677c7-d5e2-438d-8e7c-193af9d684f6/AO3NsYqWX9.json"
+                src="https://assets6.lottiefiles.com/packages/lf20_qm8eqzse.json"
                 background="transparent"
                 speed="1"
                 className={styles.serviceImage}
@@ -141,7 +148,7 @@ const ContentMarketingPage = () => {
               In today's information-driven marketplace, consumers are bombarded with over 5,000 advertisements daily, yet 70% of people prefer learning about companies through articles rather than ads. Content marketing has become the cornerstone of successful digital strategies, with businesses that prioritize content marketing experiencing 3x more leads than those relying solely on traditional advertising, while spending 62% less on marketing costs.
             </p>
             <p className={styles.paragraph}>
-              Quality content marketing builds trust, establishes authority, and creates lasting relationships with your audience. Unlike interruptive advertising, content marketing provides genuine value to your prospects, addressing their pain points and guiding them naturally through the buying process. This approach generates 54% more leads than traditional marketing and produces conversion rates that are 6x higher than other digital marketing methods.
+              Quality content marketing builds trust, establishes authority, and creates lasting relationships with your audience. Unlike interruptive advertising, content marketing provides genuine value to your prospects, addressing their pain points and guiding them naturally through the buying process. This approach generates 54% more leads than traditional marketing and produces conversion rates that are 6x higher than other <Link to="/digital-marketing">digital marketing</Link> methods.
             </p>
 
             <h3 className={styles.sectionHeading}>Top 5 benefits of strategic content marketing:</h3>
@@ -300,7 +307,7 @@ const ContentMarketingPage = () => {
               <SwiperSlide key={index}>
                 <div className={styles.projectCard}>
                   <div className={styles.projectImage}>
-                    <img src={project.image} alt={project.title} />
+                    <img src={project.image} alt={project.title} width="350" height="250" loading="lazy" />
                     <div className={styles.projectOverlay}>
                       <Link to="/contact" className={styles.projectButton}>Get Quote</Link>
                     </div>

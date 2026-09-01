@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHead from '../components/SEOHead';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -23,6 +24,12 @@ const NonProfitPage = () => {
 
   return (
     <>
+      <SEOHead
+        title="Bhoomi Techzone-Digital Solutions for Nonprofits in Noida"
+        description="Digital solutions for nonprofits and Non-Profit Solution Development in Noida to improve operations, donor engagement, and impact with secure, scalable platforms."
+        keywords="digital solutions for nonprofits, Non-Profit Solution Development in Noida"
+        canonical="https://bhoomitechzone.in/non-profit"
+      />
       {/* Non-Profit Hero Section */}
       <section className={styles.heroSection}>
         <ParticleBanner />
@@ -37,14 +44,14 @@ const NonProfitPage = () => {
                 <span className={styles.separator}>/</span>
                 <span className={styles.breadcrumbCurrent}>Non-Profit Organizations</span>
               </div>
-              <h1 className={styles.heroTitle}>Empowering Non-Profits Through Technology</h1>
+              <h1 className={styles.heroTitle}>Digital Solutions for Nonprofits in Noida</h1>
               <p className={styles.heroSubtitle}>
-                Affordable, purpose-driven software solutions that help non-profit organizations maximize impact and streamline operations.
+                Empower your mission with <strong style={{ color: 'black' }}>digital solutions for nonprofits</strong> and <strong style={{ color: 'black' }}>Non-Profit Solution Development in Noida</strong> to streamline operations, increase impact, and improve donor engagement.
               </p>
             </div>
             <div className={styles.heroImage}>
               <lottie-player
-                src="https://lottie.host/5ba5bf8c-480d-413f-815c-44bd492dc4a0/1IlpWLqQBh.json"
+                src="https://assets3.lottiefiles.com/packages/lf20_kkflmtur.json"
                 background="transparent"
                 speed="0.7"
                 className={styles.heroLottie}
@@ -127,7 +134,7 @@ const NonProfitPage = () => {
                   <div className={styles.reasonIcon}>✓</div>
                   <div className={styles.reasonContent}>
                     <h4>Mission-Aligned Solutions</h4>
-                    <p>We understand the unique challenges of non-profits and design solutions that amplify your impact.</p>
+                    <p>We deliver purpose-driven <strong style={{ color: 'black' }}>digital solutions for nonprofits</strong> that align with your mission and help you achieve greater impact through technology.</p>
                   </div>
                 </div>
                 
@@ -135,7 +142,7 @@ const NonProfitPage = () => {
                   <div className={styles.reasonIcon}>✓</div>
                   <div className={styles.reasonContent}>
                     <h4>Affordable Pricing</h4>
-                    <p>Special pricing and flexible payment options designed for non-profit budgets.</p>
+                    <p>Our <strong style={{ color: 'black' }}>Non-Profit Solution Development in Noida</strong> offers cost-effective and flexible pricing models designed specifically for non-profit organizations.</p>
                   </div>
                 </div>
                 
@@ -143,7 +150,7 @@ const NonProfitPage = () => {
                   <div className={styles.reasonIcon}>✓</div>
                   <div className={styles.reasonContent}>
                     <h4>Easy to Use</h4>
-                    <p>Intuitive interfaces that require minimal training for staff and volunteers.</p>
+                    <p>We build intuitive platforms that are easy for staff and volunteers to use, reducing the need for extensive training.</p>
                   </div>
                 </div>
                 
@@ -151,7 +158,7 @@ const NonProfitPage = () => {
                   <div className={styles.reasonIcon}>✓</div>
                   <div className={styles.reasonContent}>
                     <h4>Security & Compliance</h4>
-                    <p>Protect donor data with enterprise-grade security and compliance with regulations.</p>
+                    <p>Our <strong style={{ color: 'black' }}>digital solutions for nonprofits</strong> ensure strong data protection, safeguarding donor information with secure and compliant systems.</p>
                   </div>
                 </div>
               </div>
@@ -191,14 +198,14 @@ const NonProfitPage = () => {
       <section className={styles.processSection}>
         <div className={styles.container}>
           <h2 className={styles.processTitle}>Our Non-Profit Solution Development Process</h2>
-          <p className={styles.processSubtitle}>A collaborative approach tailored to your mission and constraints</p>
+          <p className={styles.processSubtitle}>Our collaborative and structured approach ensures successful implementation of <strong style={{ color: 'black' }}>Non-Profit Solution Development in Noida</strong>, helping organizations streamline operations, improve donor engagement, and maximize their social impact through reliable <Link to="/technology">technology</Link>.</p>
           
           <div className={styles.processTimeline}>
             <div className={styles.processStep}>
               <div className={styles.stepCircle}>1</div>
               <div className={styles.stepContent}>
                 <h3>Mission Discovery</h3>
-                <p>We learn about your mission, operations, and specific challenges to design the right solution.</p>
+                <p>We start by understanding your organization’s mission, goals, and operational challenges in detail. This allows us to design impactful <strong style={{ color: 'black' }}>digital solutions for nonprofits</strong> that align with your vision and support long-term growth while addressing real-world challenges faced by your team.</p>
               </div>
             </div>
             
@@ -206,7 +213,7 @@ const NonProfitPage = () => {
               <div className={styles.stepCircle}>2</div>
               <div className={styles.stepContent}>
                 <h3>Budget-Conscious Planning</h3>
-                <p>We create a roadmap that maximizes value within your budget constraints and timeline.</p>
+                <p>We develop a cost-effective roadmap tailored to your financial constraints and priorities. Our approach to <strong style={{ color: 'black' }}>Non-Profit Solution Development in Noida</strong> ensures you receive maximum value without compromising on quality, performance, or essential features.</p>
               </div>
             </div>
             
@@ -214,7 +221,7 @@ const NonProfitPage = () => {
               <div className={styles.stepCircle}>3</div>
               <div className={styles.stepContent}>
                 <h3>Collaborative Development</h3>
-                <p>Our team builds your solution with regular check-ins and opportunities for feedback.</p>
+                <p>Our team builds customized platforms using a collaborative approach, with regular updates and feedback cycles. This ensures the final solution meets your expectations and delivers effective <strong style={{ color: 'black' }}>digital solutions for nonprofits</strong> that are practical, scalable, and easy to use.</p>
               </div>
             </div>
             
@@ -222,7 +229,7 @@ const NonProfitPage = () => {
               <div className={styles.stepCircle}>4</div>
               <div className={styles.stepContent}>
                 <h3>Training & Launch</h3>
-                <p>Comprehensive training for staff and volunteers to ensure smooth adoption and success.</p>
+                <p>We provide comprehensive training for your staff and volunteers, ensuring they can confidently use the system. Our smooth deployment process minimizes disruptions and ensures quick adoption of your new <strong style={{ color: 'black' }}>Non-Profit Solution Development in Noida</strong>.</p>
               </div>
             </div>
             
@@ -230,7 +237,7 @@ const NonProfitPage = () => {
               <div className={styles.stepCircle}>5</div>
               <div className={styles.stepContent}>
                 <h3>Long-Term Partnership</h3>
-                <p>Ongoing support and updates to help your organization grow and evolve over time.</p>
+                <p>We believe in building lasting relationships. Our <strong style={{ color: 'black' }}>digital solutions for nonprofits</strong> include ongoing support, regular updates, and performance enhancements to help your organization adapt, grow, and continue making an impact over time.</p>
               </div>
             </div>
           </div>
@@ -290,7 +297,7 @@ const NonProfitPage = () => {
             <div className={styles.benefitCard}>
               <div className={styles.benefitIcon}>
                 <lottie-player
-                  src="https://lottie.host/e20c14a1-cb35-4c94-9874-be75cab64f47/KLeSJhQyME.json"
+                  src="https://assets9.lottiefiles.com/packages/lf20_3rwasyjy.json"
                   background="transparent"
                   speed="1"
                   className={styles.benefitLottie}
@@ -305,7 +312,7 @@ const NonProfitPage = () => {
             <div className={styles.benefitCard}>
               <div className={styles.benefitIcon}>
                 <lottie-player
-                  src="https://lottie.host/5ba5bf8c-480d-413f-815c-44bd492dc4a0/1IlpWLqQBh.json"
+                  src="https://assets3.lottiefiles.com/packages/lf20_qp1q7mct.json"
                   background="transparent"
                   speed="1"
                   className={styles.benefitLottie}

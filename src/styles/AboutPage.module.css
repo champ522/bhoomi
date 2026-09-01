@@ -1,7 +1,8 @@
 /* About Banner Section */
 .aboutBanner {
   position: relative;
-  height: 450px;
+  /* height: 450px; */
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,7 +38,7 @@
 }
 
 .title {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 700;
   color: black;
   margin: 0 0 10px 0;
@@ -52,7 +53,7 @@
   margin: 0 0 10px 0;
   font-weight: 300;
   text-align: center;
-  max-width: 600px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.6;
@@ -140,7 +141,7 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .aboutBanner {
-    height: 400px;
+    height: 80vh;
     background-attachment: scroll;
   }
 
@@ -151,7 +152,7 @@
 
   .subtitle {
     font-size: 1.1rem;
-    padding: 0 15px;
+    padding: 0 0px;
   }
 
   .breadcrumb {
@@ -161,7 +162,7 @@
 
 @media (max-width: 480px) {
   .aboutBanner {
-    height: 300px;
+    height: 80vh;
   }
 
   .title {
@@ -210,7 +211,7 @@
 
 .welcomeText {
   font-size: 1.1rem;
-  color: #777;
+  color: #222;
   font-weight: 600;
 }
 
@@ -244,7 +245,7 @@
 .description {
   font-size: 1rem;
   line-height: 1.7em;
-  color: #777;
+  color: #222;
   margin-bottom: 15px;
   font-weight: 400;
   animation: fadeInUp 0.8s ease-out 0.5s both;
@@ -351,7 +352,7 @@
 .paragraph {
   font-size: 1rem;
   line-height: 1.7em;
-  color: #777;
+  color: #222;
   margin-bottom: 15px;
   text-align: justify;
   font-weight: 400;

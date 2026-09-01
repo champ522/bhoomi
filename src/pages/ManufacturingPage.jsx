@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHead from '../components/SEOHead';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -69,39 +70,15 @@ const ManufacturingPage = () => {
     }
   ];
 
-  const useCases = [
-    {
-      title: "Smart Factory Solutions",
-      description: "Industry 4.0 manufacturing systems with IoT, AI, and automation integration.",
-      content: "We develop comprehensive smart factory solutions that transform traditional manufacturing into intelligent, connected operations. Our systems integrate IoT sensors, machine learning algorithms, and automation technologies to optimize production efficiency. Features include real-time production monitoring, predictive maintenance, automated quality control, digital twin simulations, and adaptive scheduling. Built with scalable architecture to grow with your manufacturing needs.",
-      features: ["IoT Integration", "Predictive Analytics", "Digital Twins", "Real-time Monitoring"],
-      image: "/images/manu1.png"
-    },
-    {
-      title: "Production Management Systems",
-      description: "Comprehensive production planning, scheduling, and execution management platforms.",
-      content: "Our production management solutions streamline manufacturing operations from planning to execution. Features include advanced production scheduling with constraint optimization, capacity planning, material requirements planning (MRP), work order management, and production tracking. Real-time dashboards provide visibility into production status, bottlenecks, and KPIs. Integration with ERP systems and shop floor equipment ensures seamless data flow and operational efficiency.",
-      features: ["Production Scheduling", "MRP", "Capacity Planning", "KPI Dashboards"],
-      image: "/images/manu2.png"
-    },
-    {
-      title: "Quality Management Systems",
-      description: "Automated quality control with inspection workflows and compliance management.",
-      content: "We build specialized quality management systems that ensure product excellence and regulatory compliance. Our solutions include automated inspection workflows, statistical process control (SPC), non-conformance tracking, corrective action management (CAPA), and audit management. Features include digital checklists, image-based quality inspection, traceability, and comprehensive reporting for ISO, FDA, and other regulatory standards.",
-      features: ["SPC Analysis", "CAPA Management", "Compliance Tracking", "Digital Inspection"],
-      image: "/images/manu3.png"
-    },
-    {
-      title: "Supply Chain Optimization",
-      description: "End-to-end supply chain visibility with demand forecasting and logistics management.",
-      content: "Our supply chain solutions provide complete visibility and control over your manufacturing supply chain. Features include demand forecasting using AI, supplier management, purchase order tracking, inventory optimization, warehouse management, and logistics coordination. Real-time tracking of materials from suppliers to production to delivery. Integration with vendor systems and automated replenishment based on production schedules and inventory levels.",
-      features: ["Demand Forecasting", "Vendor Management", "Warehouse Control", "Logistics Tracking"],
-      image: "/images/manu4.png"
-    }
-  ];
 
   return (
     <>
+      <SEOHead
+        title="Manufacturing Software Development services In Noida"
+        description="Increase productivity with Manufacturing Software Development services in Noida. Obtain real-time, ERP-integrated, smart industrial solutions for expansion."
+        keywords="Manufacturing Software Development services, Manufacturing Software Development services in Noida"
+        canonical="https://bhoomitechzone.in/manufacturing"
+      />
       {/* Manufacturing Hero Banner */}
       <section className={styles.heroSection}>
         <ParticleBanner />
@@ -116,16 +93,16 @@ const ManufacturingPage = () => {
               <span>Manufacturing</span>
             </div>
             <h1 className={styles.heroTitle}>
-              Advanced Manufacturing
-              <span className={styles.heroHighlight}> Software Solutions</span>
+              Manufacturing
+              <span className={styles.heroHighlight}> Software Development </span>
+              Services
             </h1>
             <p className={styles.heroSubtitle}>
-              Transform your manufacturing operations with intelligent software solutions that drive 
-              efficiency, quality, and innovation in the era of Industry 4.0.
+              Our Manufacturing Software Development <Link to="/services">services</Link> in Noida deliver scalable, automated, and data-driven solutions.
             </p>
           </div>
           <div className={styles.heroAnimation}>
-            <img src="/images/manubnr.png" alt="Manufacturing Solutions" />
+            <img src="/images/manubnr.png" alt="Manufacturing Solutions" width="1200" height="400" />
           </div>
         </div>
       </section>
@@ -161,18 +138,13 @@ const ManufacturingPage = () => {
             <div className={styles.aboutContent}>
               <span className={styles.sectionLabel}>Our Expertise</span>
               <h2 className={styles.sectionTitle}>
-                Expert <span className={styles.highlight}>Manufacturing Tech</span> Solutions
+                Expert <span className={styles.highlight}>Manufacturing Technology </span> Solutions
               </h2>
               <p className={styles.paragraph}>
-                At Bhoomi Techzone, we specialize in developing cutting-edge manufacturing software solutions 
-                that transform production operations. Our expertise spans smart factory systems, production 
-                planning, quality management, and supply chain optimization for Industry 4.0.
+                At Bhoomi Techzone, we offer cutting-edge <strong style={{ color: 'black' }}>manufacturing software development services</strong> that use intelligent, scalable, and effective digital technologies to revolutionise industrial processes. We have experience with supply chain optimisation tools, production management systems, smart factory solutions, and quality control platforms.
               </p>
               <p className={styles.paragraph}>
-                We understand the unique challenges of manufacturing including production efficiency, 
-                quality control, inventory management, and equipment maintenance. Our solutions are built 
-                with robust architecture, real-time data processing, and seamless integrations that help 
-                manufacturing businesses achieve operational excellence and competitive advantage.
+                We understand challenges like production efficiency, quality control, <Link to="/inventory-management">inventory management</Link>, and equipment maintenance. Our <strong style={{ color: 'black' }}>Manufacturing Software Development services in Noida</strong> focus on delivering real-time insights, seamless integrations, and intelligent automation to help businesses achieve operational excellence and long-term growth.
               </p>
               <div className={styles.featuresList}>
                 <div className={styles.featureItem}>
@@ -195,7 +167,7 @@ const ManufacturingPage = () => {
             </div>
             <div className={styles.aboutImage}>
               <lottie-player
-                src="https://lottie.host/b331077e-3eb6-481b-9885-50c5e45ac7d8/49Smam5Rrf.json"
+                src="https://assets7.lottiefiles.com/packages/lf20_kyu7xb1v.json"
                 background="transparent"
                 speed="1"
                 loop
@@ -240,34 +212,169 @@ const ManufacturingPage = () => {
             </h2>
           </div>
           
-          {useCases.map((useCase, index) => (
-            <div 
-              key={index} 
-              className={`${styles.useCaseRow} ${index % 2 === 1 ? styles.reverse : ''}`}
-            >
-              <div className={styles.useCaseContent}>
-                <h3 className={styles.useCaseTitle}>{useCase.title}</h3>
-                <p className={styles.useCaseDescription}>{useCase.description}</p>
-                <p className={styles.useCaseDetails}>{useCase.content}</p>
-                <div className={styles.useCaseFeatures}>
-                  {useCase.features.map((feature, idx) => (
-                    <span key={idx} className={styles.featureTag}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                        <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                      {feature}
-                    </span>
-                  ))}
-                </div>
-                <Link to="/contact" className={styles.useCaseBtn}>
-                  Get Started
-                </Link>
+          {/* Use Case 1: Smart Factory Solutions */}
+          <div className={styles.useCaseRow}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>Smart Factory Solutions</h3>
+              <p className={styles.useCaseDescription}>Industry 4.0 manufacturing systems with IoT, AI, and automation integration.</p>
+              <p className={styles.useCaseDetails}>We deliver <strong style={{ color: 'black' }}>manufacturing software development services</strong> to build smart factory systems powered by IoT, AI, and automation. Our <strong style={{ color: 'black' }}>Manufacturing Software Development services in Noida</strong>  include real-time monitoring, predictive maintenance, digital twin technology, and automated quality control to improve efficiency, reduce downtime, and optimize production processes across connected manufacturing environments.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  IoT Integration
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Predictive Analytics
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Digital Twins
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Real-time Monitoring
+                </span>
               </div>
-              <div className={styles.useCaseImage}>
-                <img src={useCase.image} alt={useCase.title} />
-              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
             </div>
-          ))}
+            <div className={styles.useCaseImage}>
+              <img src="/images/manu1.png" alt="manufacturing software development services" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Use Case 2: Production Management Systems */}
+          <div className={`${styles.useCaseRow} ${styles.reverse}`}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>Production Management Systems</h3>
+              <p className={styles.useCaseDescription}>Comprehensive production planning, scheduling, and execution management platforms.</p>
+              <p className={styles.useCaseDetails}>Our <strong style={{ color: 'black' }}>manufacturing software development services</strong>  include advanced production management systems with scheduling, capacity planning, and MRP solutions. With <strong style={{ color: 'black' }}>Manufacturing Software Development services in Noida</strong>, we enable real-time tracking, KPI dashboards, and seamless ERP integration, helping manufacturers streamline operations, reduce bottlenecks, and improve overall productivity and workflow efficiency.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Production Scheduling
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  MRP
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Capacity Planning
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  KPI Dashboards
+                </span>
+              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
+            </div>
+            <div className={styles.useCaseImage}>
+              <img src="/images/manu2.png" alt="manufacturing software development services in Noida" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Use Case 3: Quality Management Systems */}
+          <div className={styles.useCaseRow}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>Quality Management Systems</h3>
+              <p className={styles.useCaseDescription}>Automated quality control with inspection workflows and compliance management.</p>
+              <p className={styles.useCaseDetails}>We build quality control platforms through <strong style={{ color: 'black' }}>manufacturing software development services</strong> that ensure compliance and product excellence. Our <strong style={{ color: 'black' }}>Manufacturing Software Development services in Noida</strong> include SPC analysis, CAPA management, automated inspections, and traceability features, helping businesses maintain high-quality standards and meet regulatory requirements with efficient and reliable processes.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  SPC Analysis
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  CAPA Management
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Compliance Tracking
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Digital Inspection
+                </span>
+              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
+            </div>
+            <div className={styles.useCaseImage}>
+              <img src="/images/manu3.png" alt="Manufacturing Software Development services in Noida" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Use Case 4: Supply Chain Optimization */}
+          <div className={`${styles.useCaseRow} ${styles.reverse}`}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>Supply Chain Optimization</h3>
+              <p className={styles.useCaseDescription}>End-to-end supply chain visibility with demand forecasting and logistics management.</p>
+              <p className={styles.useCaseDetails}>Our <strong style={{ color: 'black' }}>manufacturing software development services</strong> include end-to-end supply chain solutions with demand forecasting, vendor management, and logistics tracking. With <strong style={{ color: 'black' }}>Manufacturing Software Development services in Noida</strong>, we provide real-time visibility, inventory optimization, and automated workflows to improve coordination, reduce costs, and ensure smooth material flow across the supply chain.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Demand Forecasting
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Vendor Management
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Warehouse Control
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Logistics Tracking
+                </span>
+              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
+            </div>
+            <div className={styles.useCaseImage}>
+              <img src="/images/manu4.png" alt="Manufacturing Software Development services" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -281,8 +388,7 @@ const ManufacturingPage = () => {
                 <span className={styles.highlight}>Powerful Features</span> for Manufacturing Excellence
               </h2>
               <p className={styles.paragraph}>
-                Our manufacturing solutions come with advanced features designed to optimize production, 
-                improve quality, and deliver operational excellence across your manufacturing operations.
+                Our <strong style={{ color: 'black' }}>manufacturing software development services</strong> come with advanced features designed to improve efficiency, quality, and operational performance.
               </p>
               <div className={styles.securityFeatures}>
                 <div className={styles.securityFeature}>

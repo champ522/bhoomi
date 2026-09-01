@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHead from '../../components/SEOHead';
 import { useParams, Link } from 'react-router-dom';
 import { getCourseById } from '../data/courses';
 import styles from '../styles/lms.module.css';
@@ -28,6 +29,12 @@ const CoursePage = () => {
 
   return (
     <div className={styles.lmsContainer}>
+      <SEOHead
+        title={`${course.title} Course | BhoomiTech Learning Hub`}
+        description={`Learn ${course.title} with BhoomiTech's free online course. ${course.description} Self-paced lessons with code examples.`}
+        keywords={`${course.title} course, learn ${course.title} online, free ${course.title} tutorial, BhoomiTech`}
+        canonical={`https://bhoomitechzone.in/lms/course/${courseId}`}
+      />
       {/* Breadcrumb Navigation */}
       <nav className={styles.breadcrumb}>
         <Link to="/lms">Home</Link>

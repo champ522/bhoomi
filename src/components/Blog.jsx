@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -6,81 +6,109 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import styles from '../styles/Blog.module.css';
+import API_BASE_URL from '../config/api';
+import { truncateHtml, convertListsToHTML } from '../utils/htmlHelper';
 
 const Blog = () => {
   const [hoveredPost, setHoveredPost] = useState(null);
+  const [blogPosts, setBlogPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const blogPosts = [
-    {
-      id: 1,
-      title: "The Future of Web Development: AI-Powered Coding Revolution",
-      excerpt: "Discover how AI-powered coding assistants like GitHub Copilot and ChatGPT are revolutionizing web development, from automated code generation to intelligent debugging and optimization.",
-      author: "Rakesh Kumar",
-      date: "December 15, 2024",
-      readTime: "5 min read",
-      category: "AI Technology",
-      image: "https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      tags: ["AI", "Web Development", "Automation"]
-    },
-    {
-      id: 2,
-      title: "Building Scalable E-commerce Solutions for Modern Businesses",
-      excerpt: "Learn how to create robust e-commerce platforms that can handle high traffic and provide exceptional user experiences across all devices.",
-      author: "Priya Patel",
-      date: "December 12, 2024",
-      readTime: "8 min read",
-      category: "E-commerce",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      tags: ["E-commerce", "Scalability", "Business"]
-    },
-    {
-      id: 3,
-      title: "Machine Learning in Business: Practical Applications & Benefits",
-      excerpt: "Explore real-world applications of machine learning in business operations, from predictive analytics to customer personalization and automated decision-making systems.",
-      author: "Rahul Gupta",
-      date: "December 10, 2024",
-      readTime: "12 min read",
-      category: "Machine Learning",
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      tags: ["Machine Learning", "Intelligence", "Analytics"]
-    },
-    {
-      id: 4,
-      title: "Cybersecurity Best Practices for Modern Web Applications",
-      excerpt: "Essential security measures every developer should implement to protect web applications from common threats and vulnerabilities.",
-      author: "Anita Desai",
-      date: "December 8, 2024",
-      readTime: "10 min read",
-      category: "Security",
-      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      tags: ["Cybersecurity", "Web Development", "Best Practices"]
-    },
-    {
-      id: 5,
-      title: "The Rise of No-Code Platforms: Opportunities and Limitations",
-      excerpt: "Exploring how no-code platforms are democratizing software development and what this means for traditional developers and businesses.",
-      author: "Vikash Jain",
-      date: "December 5, 2024",
-      readTime: "6 min read",
-      category: "Innovation",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      tags: ["No-Code", "Innovation", "Development"]
-    },
-    {
-      id: 6,
-      title: "Mobile-First Design: Creating Responsive Experiences",
-      excerpt: "Why mobile-first design is crucial for modern websites and how to implement responsive design principles that work across all devices.",
-      author: "Sumitra Nayer",
-      date: "December 3, 2024",
-      readTime: "7 min read",
-      category: "Design",
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      tags: ["Mobile Design", "Responsive", "UX/UI"]
-    }
-  ];
+  // Fetch latest blogs from API
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        setLoading(true);
+        const API_URL = API_BASE_URL;
 
-  const featuredPost = blogPosts[0];
-  const carouselPosts = blogPosts.slice(1);
+        // Fetch featured blogs from the published endpoint
+        const response = await fetch(`${API_URL}/api/blogs/published?featured=true&limit=6`);
+
+        console.log('API URL:', `${API_URL}/api/blogs/published?featured=true&limit=6`);
+        console.log('Response status:', response.status);
+        console.log('Response headers:', response.headers.get('content-type'));
+
+        // Check if response is HTML (error page)
+        const contentType = response.headers.get('content-type');
+        if (contentType && contentType.includes('text/html')) {
+          const htmlText = await response.text();
+          console.error('Server returned HTML instead of JSON. This means the route might not exist on production server.');
+          console.error('HTML response (first 500 chars):', htmlText.substring(0, 500));
+          throw new Error('API endpoint not available. Please redeploy backend server with latest routes.');
+        }
+
+        if (!response.ok) {
+          const errorText = await response.text();
+          console.error('Error response:', errorText);
+          throw new Error(`Failed to fetch blogs: ${response.status} - ${errorText.substring(0, 100)}`);
+        }
+
+        if (!contentType || !contentType.includes('application/json')) {
+          const text = await response.text();
+          console.error('Non-JSON response:', text.substring(0, 200));
+          throw new Error('Server returned non-JSON response');
+        }
+
+        const data = await response.json();
+        console.log('Fetched data:', data);
+
+        // Handle different response formats
+        let blogList = [];
+        if (Array.isArray(data)) {
+          blogList = data;
+        } else if (data && data.success && Array.isArray(data.data)) {
+          blogList = data.data;
+        } else if (data && Array.isArray(data.blogs)) {
+          blogList = data.blogs;
+        } else if (data && Array.isArray(data.data)) {
+          blogList = data.data;
+        }
+
+        // Handle empty blog list
+        if (blogList.length === 0) {
+          console.log('No featured blogs found in database');
+          setBlogPosts([]);
+          setError(null);
+          setLoading(false);
+          return;
+        }
+
+        // Transform API data to match component structure
+        const transformedBlogs = blogList.map(blog => ({
+          id: blog._id || blog.id,
+          slug: blog.slug,
+          title: blog.title,
+          excerpt: blog.description || blog.excerpt || blog.content || '',
+          author: blog.author || 'Bhoomi Techzone',
+          date: blog.createdAt ? new Date(blog.createdAt).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          }) : new Date().toLocaleDateString(),
+          category: blog.category || 'Technology',
+          image: blog.image?.startsWith('http') ? blog.image : `${API_URL}${blog.image?.startsWith('/') ? '' : '/'}${blog.image}`,
+          tags: blog.tags || [],
+          featured: blog.featured || false
+        }));
+
+        console.log('Transformed blogs:', transformedBlogs);
+        setBlogPosts(transformedBlogs);
+        setError(null);
+      } catch (err) {
+        console.error('Error fetching blogs:', err);
+        setError(err.message || 'Failed to load blogs. Please try again later.');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
+
+  // Get featured post (first blog or first featured blog)
+  const featuredPost = blogPosts.find(post => post.featured) || blogPosts[0];
+  const carouselPosts = blogPosts.filter(post => post.id !== featuredPost?.id);
 
   return (
     <section className={styles.blogSection}>
@@ -88,7 +116,6 @@ const Blog = () => {
         {/* Header Section */}
         <div className={styles.headerContent}>
           <div className={styles.welcomeSection}>
-            {/* <div className={styles.welcomeLine}></div> */}
             <span className={styles.welcomeText}>Our Blog</span>
             <div className={styles.welcomeLine}></div>
           </div>
@@ -107,155 +134,192 @@ const Blog = () => {
           </p>
         </div>
 
+        {/* Loading State */}
+        {loading && (
+          <div className={styles.loadingContainer}>
+            <div className={styles.spinner}></div>
+            <p>Loading latest blogs...</p>
+          </div>
+        )}
+
+        {/* Error State */}
+        {error && (
+          <div className={styles.errorContainer}>
+            <p>{error}</p>
+          </div>
+        )}
+
+        {/* No Blogs Available */}
+        {!loading && !error && blogPosts.length === 0 && (
+          <div className={styles.loadingContainer}>
+            <p>No blogs available yet. Check back soon!</p>
+          </div>
+        )}
+
         {/* Featured Post */}
-        <div className={styles.featuredSection}>
-          <div
-            className={styles.featuredPost}
-            onMouseEnter={() => setHoveredPost('featured')}
-            onMouseLeave={() => setHoveredPost(null)}
-          >
-            <div className={styles.featuredImageContainer}>
-              <img
-                src={featuredPost.image}
-                alt={featuredPost.title}
-                className={styles.featuredImage}
-              />
-              <div className={styles.featuredBadge}>Featured</div>
-              <div className={styles.categoryBadge}>
-                {featuredPost.category}
-              </div>
-            </div>
-
-            <div className={styles.featuredContent}>
-              <div className={styles.featuredMeta}>
-                <span className={styles.author}>{featuredPost.author}</span>
-                <span className={styles.date}>{featuredPost.date}</span>
-                <span className={styles.readTime}>{featuredPost.readTime}</span>
+        {!loading && !error && featuredPost && (
+          <div className={styles.featuredSection}>
+            <div
+              className={styles.featuredPost}
+              onMouseEnter={() => setHoveredPost('featured')}
+              onMouseLeave={() => setHoveredPost(null)}
+            >
+              <div className={styles.featuredImageContainer}>
+                <img
+                  src={featuredPost.image}
+                  alt={featuredPost.title}
+                  className={styles.featuredImage}
+                />
+                <div className={styles.featuredBadge}>Featured</div>
+                <div className={styles.categoryBadge}>
+                  {featuredPost.category}
+                </div>
               </div>
 
-              <h3 className={styles.featuredTitle}>{featuredPost.title}</h3>
-              <p className={styles.featuredExcerpt}>{featuredPost.excerpt}</p>
+              <div className={styles.featuredContent}>
+                <div className={styles.featuredMeta}>
+                  <span className={styles.author}>{featuredPost.author}</span>
+                  <span className={styles.date}>{featuredPost.date}</span>
+                </div>
 
-              <div className={styles.featuredTags}>
-                {featuredPost.tags.map((tag, index) => (
-                  <span key={index} className={styles.tag}>{tag}</span>
-                ))}
+                <h3 className={styles.featuredTitle}>{featuredPost.title}</h3>
+
+                <div
+                  className={styles.featuredExcerpt}
+                  dangerouslySetInnerHTML={{
+                     __html: truncateHtml(convertListsToHTML(featuredPost.excerpt || ''), 250)
+                  }}
+                />
+
+                <div className={styles.featuredTags}>
+                  {featuredPost.tags.map((tag, index) => (
+                    <span key={index} className={styles.tag}>{tag}</span>
+                  ))}
+                </div>
+
+                <Link to={`/blog/${featuredPost.slug || featuredPost.id}`} className={styles.readMoreBtn}>
+                  <span>Read Full Article</span>
+                  <svg className={styles.readMoreIcon} viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </Link>
               </div>
-
-              <Link to="/blog" className={styles.readMoreBtn}>
-                <span>Read Full Article</span>
-                <svg className={styles.readMoreIcon} viewBox="0 0 24 24">
-                  <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </Link>
             </div>
           </div>
-        </div>
+        )}
 
         {/* Blog Swiper Carousel */}
-        <div className={styles.carouselSection}>
-          <div className={styles.carouselHeader}>
-            <h3 className={styles.carouselTitle}>Latest Insights & Technology Updates</h3>
+        {!loading && !error && carouselPosts.length > 0 && (
+          <div className={styles.carouselSection}>
+            <div className={styles.carouselHeader}>
+              <h3 className={styles.carouselTitle}>Latest Insights & Technology Updates</h3>
+            </div>
+
+            <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
+              spaceBetween={30}
+              slidesPerView={1}
+              navigation={{
+                nextEl: '.swiper-button-next-custom',
+                prevEl: '.swiper-button-prev-custom',
+              }}
+              pagination={{
+                clickable: true,
+                dynamicBullets: true,
+              }}
+              autoplay={{
+                delay: 4000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+              }}
+              breakpoints={{
+                640: {
+                  slidesPerView: 1,
+                  spaceBetween: 20,
+                },
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 25,
+                },
+                1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 30,
+                },
+              }}
+              loop={true}
+              centeredSlides={false}
+              className={styles.blogSwiper}
+            >
+              {carouselPosts.map((post) => (
+                <SwiperSlide key={post.id}>
+                  <article
+                    className={styles.carouselCard}
+                    onMouseEnter={() => setHoveredPost(post.id)}
+                    onMouseLeave={() => setHoveredPost(null)}
+                  >
+                    <div className={styles.cardImageContainer}>
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className={styles.cardImage}
+                      />
+                      <div className={styles.cardOverlay}>
+                        <Link to={`/blog/${post.slug || post.id}`} className={styles.quickReadBtn}>Quick Read</Link>
+                      </div>
+                      <div className={styles.cardCategory}>
+                        {post.category}
+                      </div>
+
+                      {(post.category === 'AI Technology' || post.category === 'Machine Learning') && (
+                        <div className={styles.aiIcon}>
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" />
+                          </svg>
+                        </div>
+                      )}
+                    </div>
+
+                    <div className={styles.cardContent}>
+                      <div className={styles.cardMeta}>
+                        <span className={styles.cardAuthor}>{post.author}</span>
+                        <span className={styles.cardDate}>{post.date}</span>
+                      </div>
+
+                      <h4 className={styles.cardTitle}>{post.title}</h4>
+
+                      <div
+                        className={styles.cardExcerpt}
+                        dangerouslySetInnerHTML={{
+                          __html: truncateHtml(convertListsToHTML(post.excerpt || ''), 200)
+                        }}
+                      />
+
+                      <div className={styles.cardFooter}>
+                        <div className={styles.cardTags}>
+                          {post.tags.slice(0, 2).map((tag, index) => (
+                            <span key={index} className={styles.smallTag}>{tag}</span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </SwiperSlide>
+              ))}
+
+              <div className="swiper-button-prev-custom">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <polyline points="15,18 9,12 15,6"></polyline>
+                </svg>
+              </div>
+
+              <div className="swiper-button-next-custom">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <polyline points="9,18 15,12 9,6"></polyline>
+                </svg>
+              </div>
+            </Swiper>
           </div>
-
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            spaceBetween={30}
-            slidesPerView={1}
-            navigation={{
-              nextEl: '.swiper-button-next-custom',
-              prevEl: '.swiper-button-prev-custom',
-            }}
-            pagination={{
-              clickable: true,
-              dynamicBullets: true,
-            }}
-            autoplay={{
-              delay: 4000,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            }}
-            breakpoints={{
-              640: {
-                slidesPerView: 1,
-                spaceBetween: 20,
-              },
-              768: {
-                slidesPerView: 2,
-                spaceBetween: 25,
-              },
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-              },
-            }}
-            loop={true}
-            centeredSlides={false}
-            className={styles.blogSwiper}
-          >
-            {carouselPosts.map((post) => (
-              <SwiperSlide key={post.id}>
-                <article
-                  className={styles.carouselCard}
-                  onMouseEnter={() => setHoveredPost(post.id)}
-                  onMouseLeave={() => setHoveredPost(null)}
-                >
-                  <div className={styles.cardImageContainer}>
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className={styles.cardImage}
-                    />
-                    <div className={styles.cardOverlay}>
-                      <Link to="/blog" className={styles.quickReadBtn}>Quick Read</Link>
-                    </div>
-                    <div className={styles.cardCategory}>
-                      {post.category}
-                    </div>
-                    {(post.category === 'AI Technology' || post.category === 'Machine Learning') && (
-                      <div className={styles.aiIcon}>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" />
-                        </svg>
-                      </div>
-                    )}
-                  </div>
-
-                  <div className={styles.cardContent}>
-                    <div className={styles.cardMeta}>
-                      <span className={styles.cardAuthor}>{post.author}</span>
-                      <span className={styles.cardDate}>{post.date}</span>
-                    </div>
-
-                    <h4 className={styles.cardTitle}>{post.title}</h4>
-                    <p className={styles.cardExcerpt}>{post.excerpt}</p>
-
-                    <div className={styles.cardFooter}>
-                      <div className={styles.cardTags}>
-                        {post.tags.slice(0, 2).map((tag, index) => (
-                          <span key={index} className={styles.smallTag}>{tag}</span>
-                        ))}
-                      </div>
-                      <span className={styles.cardReadTime}>{post.readTime}</span>
-                    </div>
-                  </div>
-                </article>
-              </SwiperSlide>
-            ))}
-
-            {/* Custom Navigation Buttons */}
-            <div className="swiper-button-prev-custom">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <polyline points="15,18 9,12 15,6"></polyline>
-              </svg>
-            </div>
-            <div className="swiper-button-next-custom">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <polyline points="9,18 15,12 9,6"></polyline>
-              </svg>
-            </div>
-          </Swiper>
-        </div>
+        )}
 
         {/* Load More Section */}
         <div className={styles.loadMoreSection}>
@@ -273,4 +337,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default Blog

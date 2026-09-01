@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHead from '../components/SEOHead';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -96,39 +97,15 @@ const HealthcarePage = () => {
     }
   ];
 
-  const useCases = [
-    {
-      title: "Patient Management System",
-      description: "Comprehensive patient care coordination with appointment scheduling and medical history tracking.",
-      content: "We develop advanced patient management systems that streamline the entire patient journey from registration to discharge. Our solutions include appointment scheduling, patient portal access, medical history management, lab results integration, prescription tracking, and insurance verification. Features include automated reminders, waitlist management, multi-location support, and seamless integration with existing hospital systems for improved patient care coordination.",
-      features: ["Appointment Scheduling", "Medical Records", "Patient Portal", "Insurance Integration"],
-      image: "/images/care1.png"
-    },
-    {
-      title: "Telemedicine Solutions",
-      description: "Virtual healthcare delivery with secure video consultations and remote patient monitoring.",
-      content: "Our telemedicine platforms enable healthcare providers to deliver quality care remotely. Features include HD video consultations, secure messaging, digital prescriptions, remote vital monitoring, and integration with wearable devices. We implement HIPAA-compliant communication channels, virtual waiting rooms, screen sharing for medical images, and digital payment processing. Our solutions support both scheduled and on-demand consultations with multi-specialty support.",
-      features: ["Video Consultations", "Remote Monitoring", "Digital Prescriptions", "HIPAA Compliant"],
-      image: "/images/care2.png"
-    },
-    {
-      title: "Laboratory Information Systems",
-      description: "Complete lab workflow automation with sample tracking, test management, and result reporting.",
-      content: "We build comprehensive laboratory information systems that automate lab operations from sample collection to result delivery. Our solutions include barcode-based sample tracking, test ordering and scheduling, quality control management, instrument integration, automated result validation, and digital reporting. Features include reference range management, critical value alerts, statistics reporting, and seamless integration with EHR systems for efficient diagnostic workflows.",
-      features: ["Sample Tracking", "Automated Testing", "Result Management", "Instrument Integration"],
-      image: "/images/care3.png"
-    },
-    {
-      title: "Healthcare Mobile Apps",
-      description: "Patient-centric mobile applications for appointment booking, medication reminders, and health tracking.",
-      content: "Our healthcare mobile apps empower patients to take control of their health journey. Features include appointment booking and rescheduling, medication reminders with refill alerts, symptom checkers, health tracking dashboards, lab result access, secure messaging with providers, and telehealth integration. We implement personalized health recommendations, fitness tracking, diet planning, and emergency care locators with offline access capabilities.",
-      features: ["Health Tracking", "Medication Reminders", "Appointment Booking", "Telehealth Access"],
-      image: "/images/care4.png"
-    }
-  ];
 
   return (
     <>
+      <SEOHead
+        title="Healthcare Software Development Companies in Noida"
+        description="Explore leading healthcare software development companies in Noida, specializing in custom solutions that improve efficiency and patient outcomes in the medical field."
+        keywords="Healthcare Software Development, Healthcare software development companies"
+        canonical="https://bhoomitechzone.in/healthcare"
+      />
       {/* Healthcare Hero Banner */}
       <section className={styles.heroSection}>
         <ParticleBanner />
@@ -143,16 +120,16 @@ const HealthcarePage = () => {
               <span>Healthcare</span>
             </div>
             <h1 className={styles.heroTitle}>
-              Better Healthcare with
-              <span className={styles.heroHighlight}> Smart Technology</span>
+              Healthcare Software
+              <span className={styles.heroHighlight}> Development </span>
+              In Noida
             </h1>
             <p className={styles.heroSubtitle}>
-              Build secure, compliant, and innovative healthcare technology solutions that improve 
-              patient outcomes and streamline clinical workflows for modern healthcare delivery.
+              Build secure and compliant systems with expert Healthcare Software Development in Noida for modern medical needs.
             </p>
           </div>
           <div className={styles.heroAnimation}>
-            <img src="/images/healthbnr.png" alt="Healthcare Solutions" />
+            <img src="/images/healthbnr.png" alt="Healthcare Solutions" width="1200" height="400" />
           </div>
         </div>
       </section>
@@ -188,18 +165,13 @@ const HealthcarePage = () => {
             <div className={styles.aboutContent}>
               <span className={styles.sectionLabel}>Our Expertise</span>
               <h2 className={styles.sectionTitle}>
-                Leading <span className={styles.highlight}>Healthcare Tech</span> Expert
+                Leading <span className={styles.highlight}>Healthcare Technology</span> Expert
               </h2>
               <p className={styles.paragraph}>
-                At Bhoomi Techzone, we specialize in developing cutting-edge healthcare technology solutions 
-                that transform patient care and streamline medical operations. Our expertise spans hospital 
-                management systems, telemedicine platforms, electronic health records, and healthcare analytics.
+                At Bhoomi Techzone, we provide advanced <strong style={{ color: 'black' }}>Healthcare Software Development</strong> solutions that improve patient care and streamline medical operations. Our expertise includes hospital management systems, telemedicine platforms, electronic health records (EHR), and healthcare analytics systems.
               </p>
               <p className={styles.paragraph}>
-                We understand the unique challenges of the healthcare industry including regulatory compliance, 
-                data security, interoperability, and patient privacy. Our healthcare solutions are built with 
-                HIPAA compliance, advanced security protocols, and user-friendly interfaces that enhance clinical 
-                workflows and improve patient outcomes.
+                We understand the critical challenges in healthcare such as regulatory compliance, data security, interoperability, and patient privacy. As one of the reliable <strong style={{ color: 'black' }}>Healthcare software development companies</strong>, we build solutions with HIPAA compliance, strong encryption, and user-friendly interfaces that enhance clinical workflows and deliver better patient outcomes.
               </p>
               <div className={styles.featuresList}>
                 <div className={styles.featureItem}>
@@ -267,34 +239,169 @@ const HealthcarePage = () => {
             </h2>
           </div>
           
-          {useCases.map((useCase, index) => (
-            <div 
-              key={index} 
-              className={`${styles.useCaseRow} ${index % 2 === 1 ? styles.reverse : ''}`}
-            >
-              <div className={styles.useCaseContent}>
-                <h3 className={styles.useCaseTitle}>{useCase.title}</h3>
-                <p className={styles.useCaseDescription}>{useCase.description}</p>
-                <p className={styles.useCaseDetails}>{useCase.content}</p>
-                <div className={styles.useCaseFeatures}>
-                  {useCase.features.map((feature, idx) => (
-                    <span key={idx} className={styles.featureTag}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                        <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                      {feature}
-                    </span>
-                  ))}
-                </div>
-                <Link to="/contact" className={styles.useCaseBtn}>
-                  Get Started
-                </Link>
+          {/* Use Case 1: Patient Management System */}
+          <div className={styles.useCaseRow}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>Patient Management System</h3>
+              <p className={styles.useCaseDescription}>Comprehensive patient care coordination with appointment scheduling and medical history tracking.</p>
+              <p className={styles.useCaseDetails}>From registration to discharge, we provide all-inclusive patient management systems that optimise the patient experience. Appointment scheduling, patient portals, monitoring medical histories, lab integration, medication management, and insurance verification are some of our offerings. Healthcare providers may increase patient satisfaction, decrease wait times, and improve collaboration with our <strong style={{ color: 'black' }}>Healthcare Software Development In Noida</strong>.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Appointment Scheduling
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Medical Records
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Patient Portal
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Insurance Integration
+                </span>
               </div>
-              <div className={styles.useCaseImage}>
-                <img src={useCase.image} alt={useCase.title} />
-              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
             </div>
-          ))}
+            <div className={styles.useCaseImage}>
+              <img src="/images/care1.png" alt="Healthcare Software Development" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Use Case 2: Telemedicine Solutions */}
+          <div className={`${styles.useCaseRow} ${styles.reverse}`}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>Telemedicine Solutions</h3>
+              <p className={styles.useCaseDescription}>Virtual healthcare delivery with secure video consultations and remote patient monitoring.</p>
+              <p className={styles.useCaseDetails}>Through secure video consultations and real-time communication, our telemedicine technologies make it possible to deliver healthcare remotely. HD video calls, digital prescriptions, wearable integration, remote patient monitoring, and secure messaging are some of the features. We guarantee HIPAA-compliant communication and flawless virtual care experiences with improved patient involvement and quicker medical response times as a reputable brand among <strong style={{ color: 'black' }}>Healthcare Software Development</strong> firms.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Video Consultations
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Remote Monitoring
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Digital Prescriptions
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  HIPAA Compliant
+                </span>
+              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
+            </div>
+            <div className={styles.useCaseImage}>
+              <img src="/images/care2.png" alt="Healthcare software development companies" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Use Case 3: Laboratory Information Systems */}
+          <div className={styles.useCaseRow}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>Laboratory Information Systems</h3>
+              <p className={styles.useCaseDescription}>Complete lab workflow automation with sample tracking, test management, and result reporting.</p>
+              <p className={styles.useCaseDetails}>We build powerful lab management systems that automate workflows from sample collection to report delivery with high precision and reliability. Features include barcode-based tracking, automated testing processes, result validation, and instrument integration. Our Healthcare Software Development ensures accuracy, efficiency, and seamless integration with EHR systems.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Sample Tracking
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Automated Testing
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Result Management
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Instrument Integration
+                </span>
+              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
+            </div>
+            <div className={styles.useCaseImage}>
+              <img src="/images/care3.png" alt="Healthcare Software Development" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Use Case 4: Healthcare Mobile Apps */}
+          <div className={`${styles.useCaseRow} ${styles.reverse}`}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>Healthcare Mobile Apps</h3>
+              <p className={styles.useCaseDescription}>Patient-centric mobile applications for appointment booking, medication reminders, and health tracking.</p>
+              <p className={styles.useCaseDetails}>We create patient-centric mobile applications as part of our <strong style={{ color: 'black' }}>Healthcare Software Development</strong> services for appointment booking, medication reminders, and health tracking. Features include telehealth access, lab reports, secure messaging, and personalized health insights. Our solutions improve patient engagement and enable better healthcare management anytime, anywhere, with real-time updates, seamless integrations, enhanced data security, and intuitive user experience.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Health Tracking
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Medication Reminders
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Appointment Booking
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Telehealth Access
+                </span>
+              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
+            </div>
+            <div className={styles.useCaseImage}>
+              <img src="/images/care4.png" alt="Healthcare Mobile Apps" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -308,8 +415,7 @@ const HealthcarePage = () => {
                 <span className={styles.highlight}>Powerful Features</span> for Modern Healthcare
               </h2>
               <p className={styles.paragraph}>
-                Our healthcare solutions come packed with advanced features designed to improve patient care, 
-                streamline operations, and ensure compliance with healthcare regulations and data security standards.
+                Our <strong style={{ color: 'black' }}>Healthcare Software Development</strong> solutions are loaded with cutting-edge features that are intended to enhance patient care, optimize operations, and guarantee adherence to data security and healthcare legislation.
               </p>
               <div className={styles.securityFeatures}>
                 <div className={styles.securityFeature}>

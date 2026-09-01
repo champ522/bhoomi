@@ -57,7 +57,7 @@
 /* Hero Section */
 .heroSection {
   position: relative;
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -99,7 +99,7 @@
 }
 
 .heroHighlight {
-  color:  #0f0d02;
+  color:  #054b1c;
   animation: fadeIn 1s ease-out 0.4s backwards;
 }
 
@@ -115,13 +115,13 @@
   display: flex;
   gap: 10px;
   font-size: 14px;
-  color: rgba(5, 2, 2, 0.6);
+  color: #000;
   margin-bottom: 24px;
   animation: slideInLeft 0.8s ease-out;
 }
 
 .breadcrumb a {
-  color: rgba(3, 3, 3, 0.8);
+  color: #000;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -213,7 +213,7 @@
 
 .statLabel {
   font-size: 1.06rem;
-  color: #777;
+  color: #333;
   line-height: 1.7em;
   text-align: center;
   font-weight: 400;
@@ -238,7 +238,7 @@
   gap: 15px;
   margin-bottom: 15px;
   font-size: 1.1rem;
-  color: #777;
+  color: #333;
   font-weight: 600;
 }
 
@@ -272,7 +272,7 @@
 
 .paragraph {
   font-size: 1.06rem;
-  color: #777;
+  color: #333;
   line-height: 1.7em;
   font-weight: 400;
   margin-bottom: 10px;
@@ -325,7 +325,7 @@
 
 .sectionDescription {
   font-size: 1.06rem;
-  color: #777;
+  color: #333;
   line-height: 1.7em;
   text-align: center;
   font-weight: 400;
@@ -437,7 +437,7 @@
 .solutionDescription {
   font-size: 1rem;
   line-height: 1.6;
-  color: #777;
+  color: #333;
   position: relative;
   z-index: 1;
   transition: color 0.4s ease;
@@ -483,7 +483,7 @@
 .useCaseDescription {
   font-size: 1.1rem;
   line-height: 1.7em;
-  color: #777;
+  color: #333;
   margin-bottom: 10px;
   font-weight: 500;
 }
@@ -491,7 +491,7 @@
 .useCaseDetails {
   font-size: 1rem;
   line-height: 1.7em;
-  color: #777;
+  color: #333;
   margin-bottom: 25px;
 }
 
@@ -584,7 +584,7 @@
 
 .securityFeature p {
   font-size: 1rem;
-  color: #777;
+  color: #333;
   line-height: 1.7em;
   font-weight: 400;
 }

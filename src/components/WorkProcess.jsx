@@ -7,7 +7,7 @@ const WorkProcess = () => {
       id: 1,
       step: "Step 1",
       title: "Initial Consultation",
-      description: "Understanding client needs, project objectives, and business goals through detailed discussions and requirement analysis sessions.",
+      description: "We start by understanding your business goals, project objectives, and technical requirements through in-depth discussions - the foundation of every successful IT services engagement at Bhoomi Techzone.",
       icon: (
         <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
           <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="#079538" strokeWidth="2"/>
@@ -19,7 +19,7 @@ const WorkProcess = () => {
       id: 2,
       step: "Step 2",
       title: "Planning & Analysis",
-      description: "Comprehensive requirements gathering, project roadmap creation, and technical feasibility analysis with detailed documentation.",
+      description: "Our IT consulting team prepares a detailed project roadmap, scope document, and technical feasibility analysis - ensuring your custom software development project stays on time and on budget.",
       icon: (
         <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
           <path d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke="#079538" strokeWidth="2"/>
@@ -31,7 +31,7 @@ const WorkProcess = () => {
       id: 3,
       step: "Step 3", 
       title: "Design & Architecture",
-      description: "Creating wireframes, UI/UX designs, system architecture blueprints, and database design with user experience focus.",
+      description: "We create wireframes, UI/UX designs, system architecture blueprints, and database schemas with a user-first approach - applied across every web development and mobile app development project we deliver.",
       icon: (
         <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
           <rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke="#079538" strokeWidth="2"/>
@@ -44,7 +44,7 @@ const WorkProcess = () => {
       id: 4,
       step: "Step 4",
       title: "Development",
-      description: "Clean, scalable coding with industry best practices, version control, and agile development methodology implementation.",
+      description: "Our engineers write clean, scalable code using industry best practices, version control, and agile methodology - building everything from ERP solutions and CRM systems to e-commerce platforms with precision.",
       icon: (
         <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
           <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" stroke="#079538" strokeWidth="2"/>
@@ -118,8 +118,7 @@ const WorkProcess = () => {
             Our <span className={styles.titleHighlight}> Development </span> Process
           </h2>
           <p className={styles.sectionDescription}>
-            Our team follows a comprehensive 8-step development methodology to ensure quality, 
-            efficiency, and client satisfaction throughout the entire software development lifecycle.
+            As a trusted IT services company in India, Bhoomi Techzone follows a proven 8-step development methodology, ensuring quality, efficiency, and complete client satisfaction at every stage of the software development lifecycle.
           </p>
         </div>
 

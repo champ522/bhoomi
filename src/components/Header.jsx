@@ -131,15 +131,19 @@ const Header = () => {
         {/* Logo Section - Left */}
         <div className={styles.logoSection}>
           <Link to="/" className={styles.logo}>
-            <img 
-              src="/images/bhoomi-black.png" 
-              alt="BhoomiTech Logo" 
-              className={styles.logoImage}
-              onError={(e) => {
-                e.target.style.display = 'none';
-                e.target.nextSibling.style.display = 'block';
-              }}
-            />
+            <picture>
+              <source srcSet="/images/bhoomi-black.webp" type="image/webp" />
+              <img 
+                src="/images/bhoomi-black.png" width="164" height="160" 
+                alt="BhoomiTech Logo" 
+                className={styles.logoImage}
+                loading="eager"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.nextSibling.style.display = 'block';
+                }}
+              />
+            </picture>
           </Link>
         </div>
 
@@ -150,6 +154,11 @@ const Header = () => {
         >
           <ul className={styles.navList}>
            
+            {/* About - First Menu Item */}
+            <li className={styles.navItem}>
+              <Link to="/about" className={styles.navLink}>About</Link>
+            </li>
+
             {/* Services Dropdown */}
             <li 
               className={`${styles.navItem} ${styles.hasDropdown}`}
@@ -193,6 +202,10 @@ const Header = () => {
               </div>
             </li>
 
+            {/* Our Project */}
+            <li className={styles.navItem}>
+              <Link to="/our-clients" className={styles.navLink}>Our Project</Link>
+            </li>
 
             {/* Solutions Dropdown */}
             <li 
@@ -201,7 +214,7 @@ const Header = () => {
               onMouseLeave={handleDropdownLeave}
             >
               <Link 
-                to="/solutions" 
+                to="#solutions" 
                 className={styles.navLink}
                 onClick={handleSolutionsClick}
               >
@@ -224,7 +237,7 @@ const Header = () => {
                     <Link to="/hrm-software" className={styles.dropdownLink}>HRM Software</Link>
                     <Link to="/lms-software" className={styles.dropdownLink}>LMS Software</Link>
                     <Link to="/billing-software" className={styles.dropdownLink}>Billing Software</Link>
-                    <Link to="/web-applications" className={styles.dropdownLink}>Web Applications</Link>
+                    <Link to="/web-application" className={styles.dropdownLink}>Web Applications</Link>
                   </div>
                   <div className={styles.dropdownSection}>
                     <h4 className={styles.dropdownTitle}>Traditional Solutions</h4>
@@ -281,16 +294,10 @@ const Header = () => {
             </li>
 
             <li className={styles.navItem}>
-              <Link to="/our-clients" className={styles.navLink}>Our Project</Link>
-            </li>
-            <li className={styles.navItem}>
               <Link to="/career" className={styles.navLink}>Career</Link>
             </li>
             <li className={`${styles.navItem} ${styles.mobileOnly}`}>
               <Link to="/gallery" className={styles.navLink}>Gallery</Link>
-            </li>
-            <li className={styles.navItem}>
-              <Link to="/about" className={styles.navLink}>About</Link>
             </li>
             <li className={styles.navItem}>
               <Link to="/contact" className={styles.navLink}>Contact Us</Link>

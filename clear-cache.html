@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emergency Cache Clear - Bhoomi Techzone</title>
+</head>
+<body>
+    <h1>Cache Clear Tool</h1>
+    <button onclick="clearAllCache()">Clear All Cache</button>
+    <div id="status"></div>
+
+    <script>
+    async function clearAllCache() {
+        const status = document.getElementById('status');
+        status.innerHTML = 'Clearing cache...';
+        
+        try {
+            // Clear all caches
+            if ('caches' in window) {
+                const names = await caches.keys();
+                await Promise.all(names.map(name => caches.delete(name)));
+                status.innerHTML += '<br>✅ ServiceWorker cache cleared';
+            }
+            
+            // Clear storage
+            if (typeof(Storage) !== "undefined") {
+                localStorage.clear();
+                sessionStorage.clear();
+                status.innerHTML += '<br>✅ Local storage cleared';
+            }
+            
+            // Unregister service workers
+            if ('serviceWorker' in navigator) {
+                const registrations = await navigator.serviceWorker.getRegistrations();
+                await Promise.all(registrations.map(reg => reg.unregister()));
+                status.innerHTML += '<br>✅ Service workers unregistered';
+            }
+            
+            status.innerHTML += '<br>✅ All cache cleared! Redirecting to main site...';
+            
+            setTimeout(() => {
+                window.location.href = '/';
+            }, 2000);
+            
+        } catch (error) {
+            status.innerHTML += '<br>❌ Error: ' + error.message;
+        }
+    }
+    </script>
+</body>
+</html>

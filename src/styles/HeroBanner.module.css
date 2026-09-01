@@ -6,6 +6,8 @@
   background-color: #f7f4f4f8;
 }
 
+
+
 .particleCanvas {
   display: block;
   position: absolute;
@@ -58,7 +60,7 @@
   height: 100%;
   object-fit: contain;
   pointer-events: none;
-  border-radius: 50%;
+  border-radius: 0%;
 }
 
 .front {
@@ -201,10 +203,10 @@
 }
 
 .slideTitle {
-  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-size: clamp(1.5rem, 6vw, 2.5rem);
   font-weight: 800;
   color: black;
-  line-height: 1.4;
+  line-height: 1.2;
   margin-bottom: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -246,7 +248,7 @@
 }
 
 .slideSubtitle {
-  font-size: clamp(1.5rem, 3vw, 1.5rem);
+  font-size: clamp(1rem, 3vw, 1.2rem);
   font-family: 'Play', sans-serif;
   font-weight: 600;
   margin-bottom: 2rem;
@@ -708,4 +710,15 @@
   .swiperPagination {
     bottom: 20px;
   }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
 }

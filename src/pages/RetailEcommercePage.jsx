@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHead from '../components/SEOHead';
 import { Link } from 'react-router-dom';
 import ParticleBanner from '../components/ParticleBanner';
 import styles from '../styles/RetailEcommercePage.module.css';
@@ -67,39 +68,14 @@ const RetailEcommercePage = () => {
     }
   ];
 
-  const useCases = [
-    {
-      title: "Fashion E-commerce Store",
-      description: "Complete online fashion retail platform with virtual try-on and personalized recommendations.",
-      content: "We build fashion e-commerce solutions with advanced features like size guides, virtual try-on using AR, outfit recommendations, wishlist management, and easy returns. Our platforms include inventory sync across channels, seasonal collection management, flash sales, and social commerce integration. Features include advanced filtering by size, color, brand, price range, and customer reviews with photo uploads.",
-      features: ["Virtual Try-On", "Size Guide", "Easy Returns", "Social Commerce"],
-      image: "/images/retail1.png"
-    },
-    {
-      title: "Grocery Delivery Platform",
-      description: "On-demand grocery delivery with real-time inventory, scheduled deliveries, and subscription options.",
-      content: "Our grocery platforms enable customers to shop from multiple stores, schedule deliveries, create shopping lists, and set up recurring orders. Features include real-time stock updates, substitute suggestions, smart recommendations based on purchase history, multiple delivery slots, contactless delivery options, and integration with local stores. Admin panel includes delivery route optimization and driver management.",
-      features: ["Real-time Stock", "Scheduled Delivery", "Subscriptions", "Multi-store"],
-      image: "/images/retail2.png"
-    },
-    {
-      title: "Multi-vendor Marketplace",
-      description: "Scalable marketplace connecting multiple sellers with buyers, handling commissions and settlements.",
-      content: "We develop comprehensive multi-vendor marketplaces with seller onboarding, product listing approval workflows, commission management, automated payouts, and dispute resolution. Our solutions include seller dashboards for inventory and sales management, buyer protection policies, rating and review systems, promotional tools for sellers, and admin controls for platform management. Supports multiple business models including commission, subscription, and listing fees.",
-      features: ["Vendor Management", "Commission System", "Seller Dashboard", "Dispute Resolution"],
-      image: "/images/retail3.png"
-    },
-    {
-      title: "Omnichannel Retail Solution",
-      description: "Unified platform connecting online and offline stores with seamless customer experience.",
-      content: "Our omnichannel solutions provide unified inventory management across physical stores and online channels, click-and-collect options, ship-from-store capabilities, and unified customer profiles. Features include in-store digital assistance, endless aisle (order unavailable items from other locations), centralized promotions management, cross-channel analytics, and loyalty programs that work both online and offline. POS integration enables seamless checkout across all touchpoints.",
-      features: ["Unified Inventory", "Click & Collect", "Ship from Store", "Unified Loyalty"],
-      image: "/images/retail4.png"
-    }
-  ];
-
   return (
     <>
+      <SEOHead
+        title="Bhoomi Techzone-Best Retail software development solutions In Noida"
+        description="Retail software development solutions In Noida by Bhoomi Techzone help businesses build scalable e-commerce platforms, streamline operations, and deliver seamless omnichannel shopping experiences."
+        keywords="Retail software development solutions, Retail software development solutions In Noida"
+        canonical="https://bhoomitechzone.in/retail-ecommerce"
+      />
       {/* Retail Hero Banner */}
       <section className={styles.heroSection}>
         <ParticleBanner />
@@ -114,8 +90,9 @@ const RetailEcommercePage = () => {
               <span>Retail & E-commerce</span>
             </div>
             <h1 className={styles.heroTitle}>
-              Retail with
-              <span className={styles.heroHighlight}> e-Commerce Solutions</span>
+              Retail 
+              <span className={styles.heroHighlight}> Software Development </span>
+              Solutions in Noida
             </h1>
             <p className={styles.heroSubtitle}>
               Build powerful e-commerce platforms, omnichannel retail solutions, and innovative 
@@ -123,7 +100,7 @@ const RetailEcommercePage = () => {
             </p>
           </div>
           <div className={styles.heroAnimation}>
-            <img src="/images/ecombnr.png" alt="Retail & E-commerce Solutions" />
+            <img src="/images/ecombnr.png" alt="Retail & E-commerce Solutions" width="1200" height="400" />
           </div>
         </div>
       </section>
@@ -159,18 +136,13 @@ const RetailEcommercePage = () => {
             <div className={styles.aboutContent}>
               <span className={styles.sectionLabel}>Our Expertise</span>
               <h2 className={styles.sectionTitle}>
-                Leading <span className={styles.highlight}>Retail Tech</span> Solutions Provider
+                Leading <span className={styles.highlight}>Retail Technology</span> Solutions Provider
               </h2>
               <p className={styles.paragraph}>
-                At Bhoomi Techzone, we specialize in building cutting-edge e-commerce platforms and retail 
-                technology solutions that transform how businesses sell online and in-store. Our expertise 
-                spans custom e-commerce development, multi-vendor marketplaces, POS systems, and omnichannel solutions.
+                At Bhoomi Techzone, we specialize in delivering advanced <strong style={{ color: 'black' }}>Retail software development solutions in Noida</strong> that help businesses transform how they sell online and in-store. Our expertise includes custom <Link to="/ecommerce-platform">eCommerce platforms</Link>, multi-vendor marketplaces, POS systems, and omnichannel retail solutions designed to improve efficiency and drive growth.
               </p>
               <p className={styles.paragraph}>
-                We understand the unique challenges of retail including inventory management, payment processing, 
-                customer experience, and multi-channel integration. Our retail solutions are built with scalable 
-                architecture, secure payment gateways, mobile-first design, and analytics that help you understand 
-                customer behavior and optimize sales.
+                We understand the unique challenges of the retail industry such as <Link to="/inventory-management">inventory management</Link>, secure payment processing, customer experience, and multi-channel integration. Our <strong style={{ color: 'black' }}>Retail software development solutions</strong> are built with scalable architecture, mobile-first design, secure payment gateways, and real-time analytics to help you understand customer behavior, optimize operations, and increase sales effectively.
               </p>
               <div className={styles.featuresList}>
                 <div className={styles.featureItem}>
@@ -238,34 +210,169 @@ const RetailEcommercePage = () => {
             </h2>
           </div>
           
-          {useCases.map((useCase, index) => (
-            <div 
-              key={index} 
-              className={`${styles.useCaseRow} ${index % 2 === 1 ? styles.reverse : ''}`}
-            >
-              <div className={styles.useCaseContent}>
-                <h3 className={styles.useCaseTitle}>{useCase.title}</h3>
-                <p className={styles.useCaseDescription}>{useCase.description}</p>
-                <p className={styles.useCaseDetails}>{useCase.content}</p>
-                <div className={styles.useCaseFeatures}>
-                  {useCase.features.map((feature, idx) => (
-                    <span key={idx} className={styles.featureTag}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                        <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                      {feature}
-                    </span>
-                  ))}
-                </div>
-                <Link to="/contact" className={styles.useCaseBtn}>
-                  Get Started
-                </Link>
+          {/* Use Case 1: Fashion E-commerce Store */}
+          <div className={styles.useCaseRow}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>Fashion E-commerce Store</h3>
+              <p className={styles.useCaseDescription}>Complete online fashion retail platform with virtual try-on and personalized recommendations.</p>
+              <p className={styles.useCaseDetails}>Our <strong style={{ color: 'black' }}>Retail software development solutions</strong> include building feature-rich fashion eCommerce platforms with AR-based virtual try-on, personalized recommendations, and seamless shopping experiences. These <strong style={{ color: 'black' }}>Retail software development solutions in Noida</strong> offer inventory sync, advanced filters, wishlist features, and social commerce integration to enhance engagement and increase conversions across multiple sales channels.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Virtual Try-On
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Size Guide
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Easy Returns
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Social Commerce
+                </span>
               </div>
-              <div className={styles.useCaseImage}>
-                <img src={useCase.image} alt={useCase.title} />
-              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
             </div>
-          ))}
+            <div className={styles.useCaseImage}>
+              <img src="/images/retail1.png" alt="Retail software development solutions" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Use Case 2: Grocery Delivery Platform */}
+          <div className={`${styles.useCaseRow} ${styles.reverse}`}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>Grocery Delivery Platform</h3>
+              <p className={styles.useCaseDescription}>On-demand grocery delivery with real-time inventory, scheduled deliveries, and subscription options.</p>
+              <p className={styles.useCaseDetails}>We develop on-demand grocery platforms using <strong style={{ color: 'black' }}>Retail software development solutions</strong>  that enable real-time inventory tracking, scheduled deliveries, and subscription-based ordering. Our <strong style={{ color: 'black' }}>Retail software development solutions in Noida</strong>  ensure smooth operations with multi-store integration, smart recommendations, route optimization, and contactless delivery features, helping retailers improve efficiency and customer satisfaction.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Real-time Stock
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Scheduled Delivery
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Subscriptions
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Multi-store
+                </span>
+              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
+            </div>
+            <div className={styles.useCaseImage}>
+              <img src="/images/retail2.png" alt="Retail software development solutions" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Use Case 3: Multi-vendor Marketplace */}
+          <div className={styles.useCaseRow}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>Multi-vendor Marketplace</h3>
+              <p className={styles.useCaseDescription}>Scalable marketplace connecting multiple sellers with buyers, handling commissions and settlements.</p>
+              <p className={styles.useCaseDetails}>Our <strong style={{ color: 'black' }}>Retail software development solutions</strong> help create scalable multi-vendor marketplaces with vendor onboarding, commission systems, and secure payment processing. These <strong style={{ color: 'black' }}>Retail software development solutions in Noida</strong> include seller dashboards, dispute management, automated payouts, and advanced analytics, enabling businesses to efficiently manage multiple vendors while delivering a seamless buying experience.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Vendor Management
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Commission System
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Seller Dashboard
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Dispute Resolution
+                </span>
+              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
+            </div>
+            <div className={styles.useCaseImage}>
+              <img src="/images/retail3.png" alt="Multi-vendor Marketplace" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Use Case 4: Omnichannel Retail Solution */}
+          <div className={`${styles.useCaseRow} ${styles.reverse}`}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>Omnichannel Retail Solution</h3>
+              <p className={styles.useCaseDescription}>Unified platform connecting online and offline stores with seamless customer experience.</p>
+              <p className={styles.useCaseDetails}>We build unified retail systems through <strong style={{ color: 'black' }}>Retail software development solutions</strong> that connect online and offline sales channels seamlessly. Our <strong style={{ color: 'black' }}>Retail software development solutions in Noida</strong> offer real-time inventory sync, click-and-collect, POS integration, and personalized customer experiences, helping businesses deliver consistent shopping journeys and maximize revenue across all platforms.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Unified Inventory
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Click & Collect
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Ship from Store
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Unified Loyalty
+                </span>
+              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
+            </div>
+            <div className={styles.useCaseImage}>
+              <img src="/images/retail4.png" alt="Retail software development solutions in Noida" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -279,8 +386,7 @@ const RetailEcommercePage = () => {
                 <span className={styles.highlight}>Powerful Features</span> for Modern Retails & E-commerce
               </h2>
               <p className={styles.paragraph}>
-                Our retail solutions come with advanced features designed to increase sales, improve customer 
-                experience, and streamline operations across all sales channels.
+                Our cutting-edge features for Retail software development solutions In Noida are intended to boost sales, improve customer satisfaction, and optimize operations throughout all retail channels.
               </p>
               <div className={styles.securityFeatures}>
                 <div className={styles.securityFeature}>

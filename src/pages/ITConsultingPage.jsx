@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHead from '../components/SEOHead';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -61,6 +62,12 @@ const ITConsultingPage = () => {
 
   return (
     <>
+      <SEOHead
+        title="Bhoomi Techzone - Best IT Companies in Noida for Business Solutions"
+        description="The Best IT companies in Noida lead with expert teams in AI, mobile apps, IT consulting and long-term business growth. Check our list and connect with winners today."
+        keywords="Best it companies in noida, Best it services company in noida"
+        canonical="https://bhoomitechzone.in/it-consulting"
+      />
       {/* IT Consulting Hero Section */}
       <section className={styles.heroSection}>
         <ParticleBanner />
@@ -75,9 +82,9 @@ const ITConsultingPage = () => {
                 <span className={styles.separator}>/</span>
                 <span className={styles.breadcrumbCurrent}>IT Consulting</span>
               </div>
-              <h1 className={styles.heroTitle}>IT Consulting Services That Drive Digital Growth</h1>
+              <h1 className={styles.heroTitle}>Best IT Companies in Noida</h1>
               <p className={styles.heroSubtitle}>
-                Expert technology guidance for digital transformation and business growth.
+                Professional technology advice from a Best it companies in Noida for digital transformation and business development. As a leading IT services provider in Noida, we offer strategic IT solutions that connect <Link to="/technology">technology</Link> with your business objectives
               </p>
             </div>
             <div className={styles.heroImage}>
@@ -165,7 +172,7 @@ const ITConsultingPage = () => {
                   <div className={styles.reasonIcon}>✓</div>
                   <div className={styles.reasonContent}>
                     <h4>15+ Years of Excellence</h4>
-                    <p>Decades of experience delivering successful IT transformation projects across industries.</p>
+                    <p>Being among the Best it companies in Noida, we offer years of expertise in executing successful IT transformation initiatives across various sectors</p>
                   </div>
                 </div>
                 
@@ -173,7 +180,7 @@ const ITConsultingPage = () => {
                   <div className={styles.reasonIcon}>✓</div>
                   <div className={styles.reasonContent}>
                     <h4>Certified Experts</h4>
-                    <p>Team of certified professionals with expertise in latest technologies and methodologies.</p>
+                    <p> Our team includes certified professionals with deep expertise, making us a trusted Best IT services company in Noida for modern technology solutions.</p>
                   </div>
                 </div>
                 
@@ -181,7 +188,7 @@ const ITConsultingPage = () => {
                   <div className={styles.reasonIcon}>✓</div>
                   <div className={styles.reasonContent}>
                     <h4>Vendor Neutral Approach</h4>
-                    <p>Unbiased recommendations based on your needs, not vendor partnerships or commissions.</p>
+                    <p>We offer impartial suggestions tailored to your business requirements, fostering transparency and confidence as a leading IT firm in Noida</p>
                   </div>
                 </div>
                 
@@ -189,7 +196,7 @@ const ITConsultingPage = () => {
                   <div className={styles.reasonIcon}>✓</div>
                   <div className={styles.reasonContent}>
                     <h4>ROI-Focused Solutions</h4>
-                    <p>Every recommendation is designed to deliver measurable business value and returns.</p>
+                    <p>Every solution is made to produce quantifiable outcomes, strengthening our standing as Noida's top provider of IT services with an emphasis on corporate expansion.</p>
                   </div>
                 </div>
               </div>
@@ -229,14 +236,13 @@ const ITConsultingPage = () => {
       <section className={styles.processSection}>
         <div className={styles.container}>
           <h2 className={styles.processTitle}>Our Proven IT Consulting Process</h2>
-          <p className={styles.processSubtitle}>A systematic approach that ensures successful technology outcomes</p>
-          
+          <p className={styles.processSubtitle}>A systematic approach followed by one of the Best IT companies in Noida to ensure successful technology outcomes</p>          
           <div className={styles.processTimeline}>
             <div className={styles.processStep}>
               <div className={styles.stepCircle}>1</div>
               <div className={styles.stepContent}>
                 <h3>Discovery & Assessment</h3>
-                <p>We analyze your current IT infrastructure, business processes, and strategic objectives to identify opportunities and challenges.</p>
+                <p>We analyze your IT infrastructure, business operations, and goals to identify opportunities and challenges effectively.</p>
               </div>
             </div>
             
@@ -244,7 +250,7 @@ const ITConsultingPage = () => {
               <div className={styles.stepCircle}>2</div>
               <div className={styles.stepContent}>
                 <h3>Strategy Development</h3>
-                <p>Our experts craft customized IT strategies and technology roadmaps aligned with your business goals and budget.</p>
+                <p>Our experts create customized strategies, positioning us as a Best IT services company in Noida delivering tailored IT roadmaps.</p>
               </div>
             </div>
             
@@ -252,7 +258,7 @@ const ITConsultingPage = () => {
               <div className={styles.stepCircle}>3</div>
               <div className={styles.stepContent}>
                 <h3>Solution Architecture</h3>
-                <p>We design scalable, secure technology architectures that support your strategic objectives and ensure optimal performance.</p>
+                <p>We design scalable and secure systems aligned with your business needs and long-term growth.</p>
               </div>
             </div>
             
@@ -260,7 +266,7 @@ const ITConsultingPage = () => {
               <div className={styles.stepCircle}>4</div>
               <div className={styles.stepContent}>
                 <h3>Implementation Support</h3>
-                <p>We provide expert guidance throughout implementation, ensuring projects meet quality standards and deliver expected outcomes.</p>
+                <p>We guide your team throughout implementation to ensure quality, performance, and successful delivery.</p>
               </div>
             </div>
             
@@ -268,7 +274,7 @@ const ITConsultingPage = () => {
               <div className={styles.stepCircle}>5</div>
               <div className={styles.stepContent}>
                 <h3>Optimization & Support</h3>
-                <p>We monitor performance and provide ongoing optimization to ensure continued value realization and system effectiveness.</p>
+                <p>We continuously monitor systems and optimize performance to maintain efficiency and long-term value.</p>
               </div>
             </div>
           </div>
@@ -292,7 +298,7 @@ const ITConsultingPage = () => {
                 ></lottie-player>
               </div>
               <h3>Strategic Technology Planning</h3>
-              <p>Align technology investments with business objectives for maximum ROI and competitive advantage in your industry.</p>
+              <p>As one of the Best IT companies in Noida, we align technology investments with business goals for better ROI and growth.</p>
             </div>
             
             <div className={styles.benefitCard}>
@@ -307,7 +313,7 @@ const ITConsultingPage = () => {
                 ></lottie-player>
               </div>
               <h3>Risk Mitigation & Security</h3>
-              <p>Identify vulnerabilities and implement robust cybersecurity measures to protect your business assets and reputation.</p>
+              <p>We help secure your business by identifying risks and implementing strong cybersecurity practices as a Best IT services company in Noida.</p>
             </div>
             
             <div className={styles.benefitCard}>
@@ -322,7 +328,7 @@ const ITConsultingPage = () => {
                 ></lottie-player>
               </div>
               <h3>Cost Optimization</h3>
-              <p>Reduce IT spending through strategic planning, vendor management, and elimination of redundant systems and processes.</p>
+              <p>Reduce unnecessary IT expenses with efficient planning and resource optimization strategies.</p>
             </div>
             
             <div className={styles.benefitCard}>
@@ -337,7 +343,7 @@ const ITConsultingPage = () => {
                 ></lottie-player>
               </div>
               <h3>Accelerated Innovation</h3>
-              <p>Fast-track digital initiatives with proven methodologies and expert guidance for faster time-to-market and results.</p>
+              <p>We enable faster innovation with expert guidance and proven IT methodologies.</p>
             </div>
             
             <div className={styles.benefitCard}>
@@ -352,7 +358,7 @@ const ITConsultingPage = () => {
                 ></lottie-player>
               </div>
               <h3>Expert Knowledge Access</h3>
-              <p>Leverage specialized expertise without hiring full-time staff, gaining access to cutting-edge solutions and innovations.</p>
+              <p>Gain access to experienced professionals without the need for full-time hiring.</p>
             </div>
             
             <div className={styles.benefitCard}>
@@ -367,7 +373,7 @@ const ITConsultingPage = () => {
                 ></lottie-player>
               </div>
               <h3>Operational Excellence</h3>
-              <p>Optimize business processes and improve operational efficiency through strategic technology implementation and automation.</p>
+              <p>Improve efficiency and streamline processes through advanced IT solutions and automation.</p>
             </div>
           </div>
         </div>

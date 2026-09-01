@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Emails Viewer</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #0d6efd;
+            font-family: Arial, sans-serif;
+        }
+        .info {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: Arial, sans-serif;
+        }
+        pre {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #dee2e6;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        .btn {
+            background: #0d6efd;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 10px 5px 10px 0;
+            font-family: Arial, sans-serif;
+        }
+        .btn:hover {
+            background: #0b5ed7;
+        }
+        .empty {
+            text-align: center;
+            padding: 40px;
+            color: #6c757d;
+            font-family: Arial, sans-serif;
+        }
+        .success {
+            background: #d1e7dd;
+            color: #0f5132;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📧 Test Emails (Development Mode)</h1>
+        
+        <div class="info">
+            <strong>Development Mode:</strong> While testing on localhost (XAMPP), all form submissions are saved to 
+            <code>test-emails.txt</code> file instead of being sent via email. When you upload to live hosting, 
+            emails will be sent to <strong>info@btplsoft.com</strong> and <strong>sales@bhoomitechzone.in</strong>.
+        </div>
+
+        <button class="btn" onclick="loadEmails()">🔄 Refresh</button>
+        <button class="btn" onclick="clearEmails()" style="background: #dc3545;">🗑️ Clear All</button>
+        <button class="btn" onclick="window.location.href='index.html'" style="background: #6c757d;">← Back to Website</button>
+
+        <div id="content">
+            <div class="empty">Click "Refresh" to load test emails</div>
+        </div>
+    </div>
+
+    <script>
+        function loadEmails() {
+            fetch('test-emails.txt')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('No emails yet');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    if (data.trim() === '') {
+                        document.getElementById('content').innerHTML = 
+                            '<div class="empty">No test emails yet. Submit a form to see it here!</div>';
+                    } else {
+                        document.getElementById('content').innerHTML = 
+                            '<pre>' + escapeHtml(data) + '</pre>';
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('content').innerHTML = 
+                        '<div class="empty">No test emails yet. Submit a form to see it here!<br><br>' + 
+                        '<small>(' + error.message + ')</small></div>';
+                });
+        }
+
+        function clearEmails() {
+            if (confirm('Are you sure you want to clear all test emails?')) {
+                fetch('clear-test-emails.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            document.getElementById('content').innerHTML = 
+                                '<div class="success">✓ All test emails cleared!</div>' +
+                                '<div class="empty">Submit a form to see it here!</div>';
+                        }
+                    })
+                    .catch(error => {
+                        alert('Error: ' + error.message);
+                    });
+            }
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Auto-load on page load
+        loadEmails();
+    </script>
+</body>
+</html>

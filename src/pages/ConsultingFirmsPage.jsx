@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHead from '../components/SEOHead';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -61,6 +62,12 @@ const ConsultingFirmsPage = () => {
 
   return (
     <>
+      <SEOHead
+        title="Business Consulting Software Solutions in Noida"
+        description="Business consulting software solutions and IT solutions for consulting firms to improve efficiency, client delivery, and growth with secure, scalable platforms."
+        keywords="business consulting software solutions, IT solutions for consulting firms"
+        canonical="https://bhoomitechzone.in/consulting-firms"
+      />
       {/* Consulting Firms Hero Section */}
       <section className={styles.heroSection}>
         <ParticleBanner />
@@ -75,9 +82,9 @@ const ConsultingFirmsPage = () => {
                 <span className={styles.separator}>/</span>
                 <span className={styles.breadcrumbCurrent}>Consulting Firms</span>
               </div>
-              <h1 className={styles.heroTitle}>Digital Solutions for Modern Consulting Firms</h1>
+              <h1 className={styles.heroTitle}>Business Consulting Software Solutions</h1>
               <p className={styles.heroSubtitle}>
-                Empower your consulting practice with cutting-edge technology that enhances client delivery and operational efficiency.
+                Empower your firm with advanced <strong style={{ color: 'black' }}>business consulting software solutions</strong> and <strong style={{ color: 'black' }}>IT solutions for consulting firms</strong> to enhance client delivery, streamline operations, and drive growth.
               </p>
             </div>
             <div className={styles.heroImage}>
@@ -159,13 +166,13 @@ const ConsultingFirmsPage = () => {
         <div className={styles.container}>
           <div className={styles.whyChooseContent}>
             <div className={styles.whyChooseText}>
-              <h2 className={styles.whyChooseTitle}>Why Choose Bhoomi for Consulting Firms?</h2>
+              <h2 className={styles.whyChooseTitle}>Why Choose Bhoomi Techzone for Consulting Firms?</h2>
               <div className={styles.chooseReasons}>
                 <div className={styles.chooseReason}>
                   <div className={styles.reasonIcon}>✓</div>
                   <div className={styles.reasonContent}>
                     <h4>Industry Expertise</h4>
-                    <p>Deep understanding of consulting workflows, engagement models, and client delivery processes.</p>
+                    <p>We deliver tailored <strong style={{ color: 'black' }}>business consulting software solutions</strong> with a deep understanding of <Link to="/it-consulting">consulting</Link> workflows, engagement models, and client delivery processes.</p>
                   </div>
                 </div>
                 
@@ -173,7 +180,7 @@ const ConsultingFirmsPage = () => {
                   <div className={styles.reasonIcon}>✓</div>
                   <div className={styles.reasonContent}>
                     <h4>Scalable Solutions</h4>
-                    <p>Platforms that grow with your firm from boutique practices to global consulting powerhouses.</p>
+                    <p>Our <strong style={{ color: 'black' }}>IT solutions for consulting firms</strong> are built to grow with your business, from small <Link to="/it-consulting">consulting teams</Link> to large enterprise firms.</p>
                   </div>
                 </div>
                 
@@ -181,7 +188,7 @@ const ConsultingFirmsPage = () => {
                   <div className={styles.reasonIcon}>✓</div>
                   <div className={styles.reasonContent}>
                     <h4>Client-Centric Design</h4>
-                    <p>User interfaces designed for both consultants and clients to enhance collaboration.</p>
+                    <p>We create intuitive platforms that improve collaboration between consultants and clients for better outcomes.</p>
                   </div>
                 </div>
                 
@@ -189,7 +196,7 @@ const ConsultingFirmsPage = () => {
                   <div className={styles.reasonIcon}>✓</div>
                   <div className={styles.reasonContent}>
                     <h4>Data Security</h4>
-                    <p>Enterprise-grade security to protect sensitive client data and intellectual property.</p>
+                    <p>Our <strong style={{ color: 'black' }}>business consulting software solutions</strong> ensure enterprise-grade security to protect sensitive client data and intellectual property.</p>
                   </div>
                 </div>
               </div>
@@ -229,14 +236,14 @@ const ConsultingFirmsPage = () => {
       <section className={styles.processSection}>
         <div className={styles.container}>
           <h2 className={styles.processTitle}>Our Consulting Firms Development Process</h2>
-          <p className={styles.processSubtitle}>A structured approach ensuring successful technology implementation</p>
+          <p className={styles.processSubtitle}>Our structured approach to delivering <strong style={{ color: 'black' }}>business consulting software solutions</strong> ensures seamless implementation, improved efficiency, and long-term scalability for consulting firms.</p>
           
           <div className={styles.processTimeline}>
             <div className={styles.processStep}>
               <div className={styles.stepCircle}>1</div>
               <div className={styles.stepContent}>
                 <h3>Practice Assessment</h3>
-                <p>We analyze your consulting workflows, client engagement models, and operational challenges to understand needs.</p>
+                <p>We begin by analyzing your consulting workflows, client engagement models, and operational challenges in detail. This helps us identify gaps, inefficiencies, and opportunities where our <strong style={{ color: 'black' }}>IT solutions for consulting firms</strong> can add maximum value and improve performance.</p>
               </div>
             </div>
             
@@ -244,7 +251,7 @@ const ConsultingFirmsPage = () => {
               <div className={styles.stepCircle}>2</div>
               <div className={styles.stepContent}>
                 <h3>Solution Architecture</h3>
-                <p>Our experts design tailored platforms that enhance consulting delivery and client collaboration.</p>
+                <p>Based on the assessment, our experts design scalable and customized <strong style={{ color: 'black' }}>IT solutions for consulting firms</strong> tailored to your business needs. We focus on building flexible architectures that enhance collaboration, streamline processes, and support future growth.</p>
               </div>
             </div>
             
@@ -252,7 +259,7 @@ const ConsultingFirmsPage = () => {
               <div className={styles.stepCircle}>3</div>
               <div className={styles.stepContent}>
                 <h3>Agile Development</h3>
-                <p>We build secure, scalable solutions using agile methodologies with regular feedback cycles.</p>
+                <p>We develop secure and high-performing platforms using agile methodologies, ensuring continuous feedback, faster delivery, and adaptability. Our <strong style={{ color: 'black' }}>business consulting software solutions</strong> are built with modern technologies to deliver reliability, performance, and seamless user experience.</p>
               </div>
             </div>
             
@@ -260,7 +267,7 @@ const ConsultingFirmsPage = () => {
               <div className={styles.stepCircle}>4</div>
               <div className={styles.stepContent}>
                 <h3>Training & Rollout</h3>
-                <p>Comprehensive training for your team and phased deployment to ensure smooth adoption.</p>
+                <p>We ensure smooth system adoption through comprehensive training sessions for your team. Our phased rollout strategy minimizes disruption, allowing your firm to transition efficiently to new <strong style={{ color: 'black' }}>business consulting software solutions</strong> without affecting daily operations.</p>
               </div>
             </div>
             
@@ -268,7 +275,7 @@ const ConsultingFirmsPage = () => {
               <div className={styles.stepCircle}>5</div>
               <div className={styles.stepContent}>
                 <h3>Continuous Enhancement</h3>
-                <p>Ongoing support and feature enhancements based on user feedback and evolving needs.</p>
+                <p>Our work doesn’t stop at deployment. We provide ongoing support, maintenance, and feature enhancements as part of our <strong style={{ color: 'black' }}>IT solutions for consulting firms</strong>, ensuring your system evolves with changing business requirements and industry trends.</p>
               </div>
             </div>
           </div>
@@ -328,7 +335,7 @@ const ConsultingFirmsPage = () => {
             <div className={styles.benefitCard}>
               <div className={styles.benefitIcon}>
                 <lottie-player
-                  src="https://lottie.host/5ba5bf8c-480d-413f-815c-44bd492dc4a0/1IlpWLqQBh.json"
+                  src="https://assets6.lottiefiles.com/packages/lf20_5tkzkblw.json"
                   background="transparent"
                   speed="1"
                   className={styles.benefitLottie}

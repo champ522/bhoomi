@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHead from '../components/SEOHead';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -61,15 +62,21 @@ const SEOOptimizationPage = () => {
 
   return (
     <>
+      <SEOHead
+        title="SEO Optimization Services in Noida for Better Rankings"
+        description="Boost your rankings with expert SEO Optimization Services by Bhoomi Techzone. Drive organic traffic & grow your business online effectively."
+        keywords="SEO Optimization Services, Best SEO Services in noida"
+        canonical="https://bhoomitechzone.in/seo-optimization"
+      />
       {/* SEO Optimization Banner */}
       <section className={styles.webDevBanner}>
         <ParticleBanner />
         <div className={styles.overlay}></div>
         <div className={styles.container}>
           <div className={styles.content}>
-            <h1 className={styles.title}>SEO Optimization</h1>
+            <h1 className={styles.title}>SEO Optimization Services</h1>
             <p className={styles.subtitle}>
-              Drive organic traffic and dominate search engine rankings
+              Result-driven SEO Optimization Services to boost rankings and organic traffic. Recognized for delivering the Best SEO Services in Noida with measurable growth
             </p>
             <div className={styles.breadcrumb}>
               <Link to="/" className={styles.breadcrumbLink}>Home</Link>
@@ -92,13 +99,13 @@ const SEOOptimizationPage = () => {
                 <div className={styles.welcomeLine}></div>
               </div>
               <h2 className={styles.webDevTitle}>
-                <span className={styles.highlight}>SEO </span> Optimization
+                <span className={styles.highlight}>SEO </span> Optimization Services
               </h2>
               <p className={styles.description}>
-                We specialize in comprehensive SEO optimization strategies that boost your website's visibility, drive qualified organic traffic, and increase conversions. Our data-driven approach combines technical expertise, content optimization, and strategic link building to help your business dominate search engine rankings and outperform competitors in your industry.
+                We provide advanced SEO Optimization <Link to="/services">Services</Link> that improve your website visibility, increase organic traffic, and drive real business results. Our approach combines technical SEO, content optimization, and data-driven strategies to help your <Link to="/website-design">website</Link> rank higher on search engines and outperform competitors in your industry.
               </p>
               <p className={styles.description}>
-                From on-page optimization and technical SEO to local search dominance and e-commerce SEO, we deliver measurable results that translate into increased website traffic, higher conversion rates, and sustainable business growth. Our SEO strategies are designed to adapt to search engine algorithm changes while maintaining long-term ranking stability and organic visibility.
+                From on-page improvements and technical fixes to local SEO and <Link to="/ecommerce-platform">eCommerce</Link> optimization, our SEO Optimization Services are designed to deliver measurable growth. As a team delivering the Best SEO Services in Noida, we focus on long-term ranking stability, better user experience, and sustainable organic performance across all major search engines.
               </p>
               
               <div className={styles.serviceStats} ref={statsRef}>
@@ -118,7 +125,7 @@ const SEOOptimizationPage = () => {
             </div>
             <div className={styles.imageContent}>
               <lottie-player
-                src="https://lottie.host/2ac5f1f2-0228-4b73-b217-e57260af9a9e/8Sho0499PI.json"
+                src="https://assets2.lottiefiles.com/packages/lf20_s2lryxtd.json"
                 background="transparent"
                 speed="1"
                 className={styles.serviceImage}
@@ -136,15 +143,15 @@ const SEOOptimizationPage = () => {
 
           {/* Additional Content Sections */}
           <div className={styles.additionalContent}>
-            <h3 className={styles.sectionHeading}>Why is SEO optimization critical for business success?</h3>
+            <h3 className={styles.sectionHeading}>Why are SEO optimization critical for business success?</h3>
             <p className={styles.paragraph}>
-              Search Engine Optimization has become the cornerstone of digital marketing success, with 68% of online experiences beginning with a search engine and 53% of website traffic coming from organic search. Businesses that invest in comprehensive SEO strategies experience 14.6% conversion rates compared to 1.7% for outbound marketing, while 75% of users never scroll past the first page of search results, making top rankings essential for visibility.
+              In today’s digital-first world, most online experiences begin with a search engine, making SEO Optimization Services essential for visibility and growth. Businesses that invest in SEO gain consistent organic traffic, higher conversion rates, and long-term online presence compared to traditional marketing approaches.
             </p>
             <p className={styles.paragraph}>
-              SEO provides long-term sustainable growth with compounding returns on investment. Unlike paid advertising that stops generating traffic when budget runs out, organic rankings continue to drive qualified traffic 24/7. Companies that blog regularly and optimize for search receive 97% more links to their websites and generate 67% more leads than those that don't prioritize SEO optimization.
+              Effective SEO Optimization Services help your website appear in front of users actively searching for your products or services. Unlike paid ads, SEO delivers continuous results without ongoing ad spend. With the Best SEO Services in Noida, businesses can achieve better rankings, stronger credibility, and improved lead generation through organic search.
             </p>
 
-            <h3 className={styles.sectionHeading}>Top 5 benefits of professional SEO optimization:</h3>
+            <h3 className={styles.sectionHeading}>Top 5 benefits of professional SEO optimization Services :</h3>
             <div className={styles.reasonsList}>
               <div className={styles.reason}>
                 <h4 className={styles.reasonTitle}>1. Increased Organic Traffic</h4>
@@ -214,9 +221,9 @@ const SEOOptimizationPage = () => {
               </li>
             </ul>
 
-            <h3 className={styles.sectionHeading}>Bhoomi Techzone's essential steps in SEO optimization process:</h3>
+            <h3 className={styles.sectionHeading}>Bhoomi Techzone's essential steps in SEO optimization Services process:</h3>
             <p className={styles.paragraph}>
-              Our proven SEO optimization methodology ensures successful organic growth through strategic planning, technical implementation, and continuous performance monitoring. We follow a comprehensive approach that maximizes search visibility while building sustainable rankings and driving qualified traffic to your website.
+              Our structured approach ensures successful execution of SEO Optimization Services with consistent improvements in rankings and traffic.
             </p>
             <div className={styles.processList}>
               <div className={styles.processStep}>
@@ -300,7 +307,7 @@ const SEOOptimizationPage = () => {
               <SwiperSlide key={index}>
                 <div className={styles.projectCard}>
                   <div className={styles.projectImage}>
-                    <img src={project.image} alt={project.title} />
+                    <img src={project.image} alt={project.title} width="350" height="250" loading="lazy" />
                     <div className={styles.projectOverlay}>
                       <Link to="/contact" className={styles.projectButton}>Get Quote</Link>
                     </div>

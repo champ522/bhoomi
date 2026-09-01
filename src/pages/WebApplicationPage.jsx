@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHead from '../components/SEOHead';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -61,15 +62,21 @@ const WebApplicationPage = () => {
 
   return (
     <>
+      <SEOHead
+        title="Web Application Development in Noida | Custom Web Apps"
+        description="Elevate your business with our professional web application development in Noida. We build secure, scalable custom solutions that boost growth, efficiency, and user experience."
+        keywords="Web Application Development, Web Application Development In noida"
+        canonical="https://bhoomitechzone.in/web-application"
+      />
       {/* Web Application Banner */}
       <section className={styles.webappBanner}>
         <ParticleBanner />
         <div className={styles.overlay}></div>
         <div className={styles.container}>
           <div className={styles.content}>
-            <h1 className={styles.title}>Customized Web Apps</h1>
+            <h1 className={styles.title}>Web Application Development in Noida</h1>
             <p className={styles.subtitle}>
-              Build powerful, scalable web applications tailored to your business needs
+              Build high-performance solutions with expert <strong style={{ fontWeight: 'bold' }}>Web Application Development in Noida</strong>, designed to streamline operations and enhance user experience. 
             </p>
             <div className={styles.breadcrumb}>
               <Link to="/" className={styles.breadcrumbLink}>Home</Link>
@@ -102,18 +109,13 @@ const WebApplicationPage = () => {
                 <div className={styles.welcomeLine}></div>
               </div>
               <h2 className={styles.webappTitle}>
-                <span className={styles.highlight}>Custom </span> Web Apps
+                Custom <span className={styles.highlight}>Web Application</span> Development Solutions
               </h2>
               <p className={styles.description}>
-                We develop custom web applications that transform your business processes and deliver exceptional 
-                user experiences. Our web apps are built with modern technologies, scalable architectures, and 
-                user-centric design principles to solve complex business challenges and drive digital transformation.
+                We provide advanced Web Application Development <Link to="/services">services</Link> to help businesses build scalable, secure, and high-performing web apps. As a trusted provider of <strong style={{ color: 'black' }}>Web Application Development in Noida</strong>, we create solutions that streamline operations, improve efficiency, and enhance user experience.
               </p>
               <p className={styles.description}>
-                From startups to enterprises, our web applications adapt to your unique requirements and scale with 
-                your growth. Whether you need a customer portal, SaaS platform, internal business tool, or data 
-                analytics dashboard, we create solutions that enhance productivity, improve efficiency, and deliver 
-                measurable business value.
+                From startups to enterprises, our web applications are designed to meet your unique requirements. Our <strong style={{ color: 'black' }}>Web Application Development services</strong> include customer portals, SaaS platforms, dashboards, and enterprise tools that deliver real business value. We focus on delivering future-ready solutions with modern <Link to="/technology">technologies</Link>, ensuring seamless integration, faster performance, and long-term scalability for your business growth.
               </p>
               
               <div className={styles.serviceStats} ref={statsRef}>
@@ -137,18 +139,10 @@ const WebApplicationPage = () => {
           <div className={styles.additionalContent}>
             <h3 className={styles.sectionHeading}>Why are custom web applications essential for modern businesses?</h3>
             <p className={styles.paragraph}>
-              Custom web applications provide tailored solutions that off-the-shelf software cannot match. They address 
-              your specific business processes, integrate seamlessly with existing systems, scale with your growth, and 
-              provide competitive advantages through unique features and workflows. Web applications are accessible from 
-              any device with a browser, require no installation, enable real-time collaboration, and can be updated 
-              instantly without user intervention.
+              Custom web application development offers specialised solutions that precisely match your business procedures. It facilitates workflow automation, enhances teamwork, and integrates systems for increased efficiency. Businesses may create feature-rich apps that support their objectives and provide flawless user experiences across all platforms with the help of professional <strong style={{ color: 'black' }}>Web Application Development in Noida</strong>.
             </p>
             <p className={styles.paragraph}>
-              Businesses without custom web applications often struggle with inefficient processes, manual data entry, 
-              disconnected systems, limited scalability, and inability to adapt software to changing needs. Our custom 
-              web application development eliminates these challenges by creating purpose-built solutions with automated 
-              workflows, seamless integrations, real-time data access, responsive design, and the flexibility to evolve 
-              with your business requirements.
+              Without custom applications, businesses often face inefficiencies, manual work, and limited scalability. Our <strong style={{ color: 'black' }}>Web Application Development in Noida</strong> solves these challenges with secure, scalable, and flexible solutions.With cutting-edge technologies, real-time functionality, and strict security guidelines, we develop high-performing web applications. Our solutions boost efficiency, facilitate long-term digital growth, and improve productivity for both startups and large corporations.
             </p>
 
             <h3 className={styles.sectionHeading}>There are 5 key benefits of custom web application development:</h3>
@@ -177,8 +171,7 @@ const WebApplicationPage = () => {
 
             <h3 className={styles.sectionHeading}>OUR WEB APPLICATION SERVICES:</h3>
             <p className={styles.paragraph}>
-              Bhoomi Techzone develops comprehensive web applications with cutting-edge technologies and best practices. 
-              Our solutions are fully customizable to your business domain, target audience, and technical requirements.
+              Our end-to-end <strong style={{ color: 'black' }}>Web Application Development in Noida</strong> offers scalable, secure, and high-performing solutions that are customized to your company's objectives, guaranteeing smooth integration, increased productivity, and outstanding user experiences across all platforms.
             </p>
             <div className={styles.servicesList}>
               <div className={styles.serviceItem}>• Progressive Web Apps (PWAs)</div>
@@ -191,42 +184,32 @@ const WebApplicationPage = () => {
 
             <h3 className={styles.sectionHeading}>Bhoomi Techzone's PRINCIPLES OF WEB APPLICATION DEVELOPMENT:</h3>
             <p className={styles.paragraph}>
-              At Bhoomi Techzone, we build web applications that deliver exceptional performance, security, and user 
-              experiences. Our development approach focuses on creating robust, scalable, and maintainable solutions 
-              using modern technologies and industry best practices:
+              Our approach focuses on delivering high-quality <strong style={{ color: 'black' }}>Web Application Development in Noida</strong> with a strong emphasis on performance, security, scalability, and user experience. We follow modern development practices to build reliable, future-ready web applications that help businesses grow and adapt in a competitive digital environment :
             </p>
             <ul className={styles.principlesList}>
               <li className={styles.principleItem}>
-                <strong>Modern Tech Stack:</strong> We use cutting-edge technologies like React, Node.js, Angular, Vue, 
-                Python, .NET, and cloud platforms to build fast, reliable, and future-proof web applications.
+                <strong>Modern Tech Stack:</strong> We use advanced technologies like React, Node.js, Angular, and cloud platforms to deliver fast, scalable, and future-ready <strong style={{ color: 'black' }}>Web Application Development</strong> solutions tailored to your business needs.
               </li>
               <li className={styles.principleItem}>
-                <strong>User-Centric Design:</strong> Our applications prioritize user experience with intuitive interfaces, 
-                responsive design, accessibility features, and seamless navigation across all devices.
+                <strong>User-Centric Design:</strong> Our <strong style={{ color: 'black' }}>Web Application Service</strong> prioritizes intuitive, responsive, and user-friendly interfaces that enhance engagement and ensure a seamless experience across all devices.
               </li>
               <li className={styles.principleItem}>
-                <strong>Scalable Architecture:</strong> We design applications with microservices, cloud infrastructure, 
-                load balancing, and database optimization to handle growth and traffic spikes effortlessly.
+                <strong>Scalable Architecture:</strong> We design applications with scalable architecture that can handle increasing users, high traffic, and complex business operations without compromising performance.
               </li>
               <li className={styles.principleItem}>
-                <strong>API-First Approach:</strong> RESTful APIs and GraphQL enable flexible integrations, mobile apps, 
-                third-party connections, and future extensibility without rewriting core functionality.
+                <strong>API-First Approach:</strong> Our development strategy includes flexible API integration, enabling smooth connectivity with mobile apps, third-party tools, and enterprise systems.
               </li>
               <li className={styles.principleItem}>
-                <strong>Security by Design:</strong> Built-in security with encryption, authentication, authorization, 
-                input validation, SQL injection prevention, and regular security audits.
+                <strong>Security by Design:</strong> Security is a core part of our <strong style={{ color: 'black' }}>Web Application Development</strong> process, with strong measures like encryption, authentication, authorization, and data protection to safeguard your business.
               </li>
               <li className={styles.principleItem}>
-                <strong>Real-Time Features:</strong> WebSocket integration enables live updates, real-time notifications, 
-                chat functionality, collaborative editing, and instant data synchronization.
+                <strong>Real-Time Features:</strong> We build applications with real-time capabilities such as live updates, notifications, chat systems, and instant data synchronization to improve efficiency.
               </li>
               <li className={styles.principleItem}>
-                <strong>Performance Optimization:</strong> Code splitting, lazy loading, caching strategies, CDN integration, 
-                and database optimization ensure fast load times and smooth interactions.
+                <strong>Performance Optimization:</strong> Our team ensures high-speed performance with optimized coding practices, caching strategies, and efficient database management.
               </li>
               <li className={styles.principleItem}>
-                <strong>Continuous Deployment:</strong> CI/CD pipelines, automated testing, version control, and monitoring 
-                enable rapid updates, bug fixes, and feature releases with zero downtime.
+                <strong>Continuous Deployment:</strong> We follow continuous integration and deployment practices to deliver regular updates, faster improvements, and scalable <strong style={{ color: 'black' }}>Web Application Development in Noida</strong> solutions.
               </li>
             </ul>
 
@@ -318,7 +301,7 @@ const WebApplicationPage = () => {
               <SwiperSlide key={index}>
                 <div className={styles.webappCard}>
                   <div className={styles.webappImage}>
-                    <img src={feature.image} alt={feature.title} />
+                    <img src={feature.image} alt={feature.title} width="350" height="250" loading="lazy" />
                     <div className={styles.webappOverlay}>
                       <Link to="/contact" className={styles.webappButton}>Get Started</Link>
                     </div>

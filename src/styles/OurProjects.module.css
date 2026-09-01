@@ -45,7 +45,7 @@
 
 .welcomeText {
   font-size: 1.1rem;
-  color: #777;
+  color: #222;
   font-weight: 600;
   /* text-transform: uppercase;
   letter-spacing: 1px; */
@@ -67,7 +67,7 @@
 }
 
 .titleHighlight {
-  background: linear-gradient(135deg, #0e8d38 0%, #03ba58 100%);
+  background: linear-gradient(135deg, #043b1e 0%, #043b1e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -76,8 +76,8 @@
 .sectionDescription {
   font-size: 1.2rem;
   line-height: 1.7em;
-  color: #777;
-  max-width: 830px;
+  color: #222;
+  max-width: 95s0px;
   text-align: center;
   margin: 0 auto 20px;
   font-weight: 400;
@@ -125,6 +125,7 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s ease;
+  aspect-ratio: 4 / 3; /* Prevent stretching - maintain aspect ratio */
 }
 
 .projectCard:hover .cardImage img,
@@ -244,14 +245,14 @@
   width: 10px;
   height: 5px;
   border-radius: 0%;
-  background: rgba(14, 141, 56, 0.3);
+  background: #666;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
 }
 
 .indicator:hover {
-  background: rgba(14, 141, 56, 0.6);
+  background: rgba(4, 59, 30, 0.6);
   transform: scale(1.2);
 }
 

@@ -1,0 +1,15 @@
+# Bhoomi Techzone - Robots.txt
+# Allow all search engines to crawl all pages
+
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://bhoomitechzone.in/sitemap.xml
+
+# Disallow admin and private directories (if they exist)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all other pages including those with query parameters
+# No crawl-delay to ensure fast indexing

@@ -6,38 +6,56 @@ const Partnership = () => {
     {
       id: 1,
       name: 'AWS',
-      logo: '/images/awspartner.png',
-      alt: 'AWS Logo'
+      logo: '/images/awspartner',
+      alt: 'AWS Logo',
+      isLocal: true,
+      width: 200,
+      height: 200
     },
     {
       id: 2,
       name: 'Azure',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg',
-      alt: 'Microsoft Azure Logo'
+      logo: '/images/azurepartner',
+      alt: 'Microsoft Azure Logo',
+      isLocal: true,
+      width: 200,
+      height: 200
     },
     {
       id: 3,
       name: 'Salesforce',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg',
-      alt: 'Salesforce Logo'
+      logo: '/images/salesforcepartner',
+      alt: 'Salesforce Logo',
+      isLocal: true,
+      width: 200,
+      height: 200
     },
     {
       id: 4,
       name: 'Google Cloud Platform',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg',
-      alt: 'Google Cloud Platform Logo'
+      logo: '/images/cloudpartner',
+      alt: 'Google Cloud Platform Logo',
+      isLocal: true,
+      width: 200,
+      height: 200
     },
     {
       id: 5,
       name: 'Microsoft 365',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Microsoft_365_%282022%29.svg',
-      alt: 'Microsoft 365 Logo'
+      logo: '/images/commonpartners',
+      alt: 'Microsoft 365 Logo',
+      isLocal: true,
+      width: 200,
+      height: 200
     },
     {
       id: 6,
       name: 'IBM Cloud',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg',
-      alt: 'IBM Cloud Logo'
+      logo: '/images/ibmpartners',
+      alt: 'IBM Cloud Logo',
+      isLocal: true,
+      width: 200,
+      height: 200
     }
   ];
 
@@ -50,14 +68,31 @@ const Partnership = () => {
           {partners.map((partner) => (
             <div key={partner.id} className={styles.partnerCard}>
               <div className={styles.logoContainer}>
-                <img 
-                  src={partner.logo} 
-                  alt={partner.alt}
-                  className={styles.logo}
-                  onError={(e) => {
-                    e.target.src = '/images/placeholder-logo.png';
-                  }}
-                />
+                {partner.isLocal ? (
+                  <picture>
+                    <source srcSet={`${partner.logo}.webp`} type="image/webp" />
+                    <img 
+                      src={`${partner.logo}.png`} 
+                      alt={partner.alt}
+                      width={partner.width}
+                      height={partner.height}
+                      className={styles.logo}
+                      loading="lazy"
+                    />
+                  </picture>
+                ) : (
+                  <img 
+                    src={partner.logo} 
+                    alt={partner.alt}
+                    width={partner.width}
+                    height={partner.height}
+                    className={styles.logo}
+                    loading="lazy"
+                    onError={(e) => {
+                      e.target.src = '/images/placeholder-logo.png';
+                    }}
+                  />
+                )}
               </div>
             </div>
           ))}

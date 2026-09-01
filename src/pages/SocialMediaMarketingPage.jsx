@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHead from '../components/SEOHead';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -61,15 +62,21 @@ const SocialMediaMarketingPage = () => {
 
   return (
     <>
+      <SEOHead
+        title="Social Media Marketing Services to Boost Online Presence"
+        description="Grow your brand with expert Social Media Marketing Services by Bhoomi Techzone. We drive real engagement, boost visibility & turn followers into customers."
+        keywords="Social Media Marketing Services, social media advertising"
+        canonical="https://bhoomitechzone.in/social-media-marketing"
+      />
       {/* Social Media Marketing Banner */}
       <section className={styles.webDevBanner}>
         <ParticleBanner />
         <div className={styles.overlay}></div>
         <div className={styles.container}>
           <div className={styles.content}>
-            <h1 className={styles.title}>Social Media Marketing</h1>
+            <h1 className={styles.title}>Social Media Marketing Services</h1>
             <p className={styles.subtitle}>
-              Building communities and driving across all social platforms
+              Result-driven Social Media Marketing Services to grow your brand online Boost engagement and conversions with expert social media advertising strategies
             </p>
             <div className={styles.breadcrumb}>
               <Link to="/" className={styles.breadcrumbLink}>Home</Link>
@@ -95,10 +102,10 @@ const SocialMediaMarketingPage = () => {
                 <span className={styles.highlight}>Social Media </span> Marketing
               </h2>
               <p className={styles.description}>
-                We specialize in creating engaging social media strategies that build authentic communities and drive meaningful conversations around your brand. Our comprehensive approach combines creative content creation, strategic planning, and data-driven optimization to maximize your social media presence and convert followers into loyal customers across all major platforms.
+                We specialize in delivering result-driven Social Media Marketing <Link to="/services">Services</Link> that create engaging strategies to build authentic communities and drive meaningful conversations around your brand. Our comprehensive approach combines creative content creation, strategic planning, and data-driven optimization to maximize your social media presence and convert followers into loyal customers across all major platforms.
               </p>
               <p className={styles.description}>
-                From organic content strategies to paid social advertising, we deliver integrated social media solutions that amplify your brand voice, increase engagement rates, and generate qualified leads. Our social media approach focuses on community building, brand storytelling, and performance optimization to ensure sustainable growth and meaningful connections with your target audience.
+                From organic content strategies to social media advertising, we deliver integrated Social Media Marketing agencies that amplify your brand voice, increase engagement rates, and generate qualified leads. Our approach focuses on community building, brand storytelling, and performance optimization to ensure sustainable growth and meaningful connections with your target audience.
               </p>
               
               <div className={styles.serviceStats} ref={statsRef}>
@@ -118,7 +125,7 @@ const SocialMediaMarketingPage = () => {
             </div>
             <div className={styles.imageContent}>
               <lottie-player
-                src="https://lottie.host/56f58b50-2e9d-4f31-85b9-c36c74ecaf3e/5nDFfRQpCF.json"
+                src="https://assets6.lottiefiles.com/packages/lf20_2cwDXD.json"
                 background="transparent"
                 speed="0.5"
                 className={styles.serviceImage}
@@ -138,25 +145,25 @@ const SocialMediaMarketingPage = () => {
           <div className={styles.additionalContent}>
             <h3 className={styles.sectionHeading}>Why is social media marketing crucial for business growth?</h3>
             <p className={styles.paragraph}>
-              In today's interconnected digital landscape, social media platforms have become the primary spaces where consumers discover, research, and engage with brands. With over 4.7 billion social media users worldwide spending an average of 2.5 hours daily on social platforms, businesses that aren't actively engaging on social media are missing out on enormous opportunities for brand awareness, customer acquisition, and relationship building.
+              In today's interconnected digital landscape, social media platforms have become the primary spaces where consumers discover, research, and engage with brands. With over 4.7 billion users worldwide spending significant time daily, businesses without strong Social Media Marketing Services are missing out on major opportunities for brand awareness, customer acquisition, and relationship building.
             </p>
             <p className={styles.paragraph}>
-              Social media marketing offers unparalleled opportunities for direct customer communication, real-time feedback, and community building. Unlike traditional advertising, social platforms enable two-way conversations that foster trust, loyalty, and authentic brand connections. This level of engagement translates into higher conversion rates, improved customer retention, and valuable user-generated content that amplifies your marketing efforts organically.
+              Social Media Marketing Services offer unmatched opportunities for direct customer communication, real-time feedback, and community building. Combined with effective social media advertising, businesses can create two-way conversations that foster trust, loyalty, and authentic brand connections, leading to higher conversions and long-term growth.
             </p>
 
             <h3 className={styles.sectionHeading}>Top 5 benefits of professional social media marketing:</h3>
             <div className={styles.reasonsList}>
               <div className={styles.reason}>
                 <h4 className={styles.reasonTitle}>1. Enhanced Brand Awareness</h4>
-                <p className={styles.reasonText}>Social media platforms provide massive reach potential, allowing your brand to be discovered by millions of potential customers through organic content and targeted advertising.</p>
+                <p className={styles.reasonText}>With expert Social Media Marketing Services, your brand gains massive reach through organic strategies and targeted social media advertising campaigns.</p>
               </div>
               <div className={styles.reason}>
                 <h4 className={styles.reasonTitle}>2. Direct Customer Engagement</h4>
-                <p className={styles.reasonText}>Build meaningful relationships with your audience through direct communication, real-time responses, and community building that fosters brand loyalty.</p>
+                <p className={styles.reasonText}>Build strong relationships with your audience through consistent interaction powered by effective Social Media Marketing Services.</p>
               </div>
               <div className={styles.reason}>
                 <h4 className={styles.reasonTitle}>3. Cost-Effective Marketing</h4>
-                <p className={styles.reasonText}>Social media marketing offers exceptional ROI with lower costs compared to traditional advertising while providing precise targeting and measurable results.</p>
+                <p className={styles.reasonText}>Compared to traditional methods, Social Media Marketing Services offer better ROI with lower costs and higher engagement potential.</p>
               </div>
               <div className={styles.reason}>
                 <h4 className={styles.reasonTitle}>4. Real-Time Market Insights</h4>
@@ -170,7 +177,7 @@ const SocialMediaMarketingPage = () => {
 
             <h3 className={styles.sectionHeading}>OUR SOCIAL MEDIA MARKETING SERVICES:</h3>
             <p className={styles.paragraph}>
-              Bhoomi Techzone offers comprehensive social media marketing services that cover all aspects of social presence and community engagement. Our expert team specializes in creating platform-specific strategies that drive engagement, build communities, and convert followers into customers across all major social media platforms.
+              Bhoomi Techzone offers comprehensive Social Media Marketing Services that cover all aspects of social presence and community engagement. Our expert team specializes in creating platform-specific strategies along with social media advertising campaigns that drive engagement, build communities, and convert followers into customers.
             </p>
             <div className={styles.servicesList}>
               <div className={styles.serviceItem}>• Social Media Strategy Development</div>
@@ -183,7 +190,7 @@ const SocialMediaMarketingPage = () => {
 
             <h3 className={styles.sectionHeading}>Bhoomi Techzone's PRINCIPLES OF SOCIAL MEDIA marketing:</h3>
             <p className={styles.paragraph}>
-              At Bhoomi Techzone, we believe that successful social media marketing is built on authentic engagement, creative storytelling, and strategic community building. Our social media philosophy is grounded in principles that ensure every campaign creates meaningful connections and drives sustainable business growth:
+              At Bhoomi Techzone, our Social Media Marketing Services are built on authentic engagement, creative storytelling, and strategic community building to ensure long-term success :
             </p>
             <ul className={styles.principlesList}>
               <li className={styles.principleItem}>
@@ -298,7 +305,7 @@ const SocialMediaMarketingPage = () => {
               <SwiperSlide key={index}>
                 <div className={styles.projectCard}>
                   <div className={styles.projectImage}>
-                    <img src={project.image} alt={project.title} />
+                    <img src={project.image} alt={project.title} width="350" height="250" loading="lazy" />
                     <div className={styles.projectOverlay}>
                       <Link to="/contact" className={styles.projectButton}>Get Quote</Link>
                     </div>

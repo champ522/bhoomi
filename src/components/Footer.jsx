@@ -13,15 +13,19 @@ const Footer = () => {
           {/* Company Info Section */}
           <div className={styles.footerColumn}>
             <Link to="/" className={styles.logoSection}>
-              <img
-                src="/images/bhoomilogo.png"
-                alt="BhoomiTech Logo"
-                className={styles.logoImage}
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.nextSibling.style.display = 'flex';
-                }}
-              />
+              <picture>
+                <source srcSet="/images/bhoomilogo.webp" type="image/webp" />
+                <img
+                  src="/images/bhoomilogo.png" width="210" height="63"
+                  alt="BhoomiTech Logo"
+                  className={styles.logoImage}
+                  loading="lazy"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
+              </picture>
               <div className={styles.logoFallback} style={{ display: 'none' }}>
                 <span className={styles.logoText}>BhoomiTech</span>
               </div>

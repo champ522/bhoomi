@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #0d6efd;
+            margin-bottom: 10px;
+        }
+        .info {
+            background: #e7f3ff;
+            padding: 15px;
+            border-left: 4px solid #0d6efd;
+            margin: 20px 0;
+        }
+        .test-btn {
+            background: #0d6efd;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        .test-btn:hover {
+            background: #0b5ed7;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+        }
+        .success {
+            background: #d1e7dd;
+            color: #0f5132;
+            border: 1px solid #badbcc;
+        }
+        .error {
+            background: #f8d7da;
+            color: #842029;
+            border: 1px solid #f5c2c7;
+        }
+        pre {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>BTPLSOFT Email Testing</h1>
+        <p>Use this page to test if your email system is working correctly.</p>
+
+        <div class="info">
+            <strong>Important:</strong> This page must be accessed through a web server (localhost or hosting) for PHP to work. 
+            Opening it directly as a file will NOT work.
+        </div>
+
+        <h3>Quick Tests:</h3>
+        
+        <button class="test-btn" onclick="testPhpEnabled()">1. Test if PHP is Enabled</button>
+        <button class="test-btn" onclick="testEmailFiles()">2. Test Email Files Exist</button>
+        <button class="test-btn" onclick="testSendEmail()">3. Send Test Email</button>
+
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function showResult(message, isSuccess = true) {
+            const resultDiv = document.getElementById('result');
+            resultDiv.className = 'result ' + (isSuccess ? 'success' : 'error');
+            resultDiv.innerHTML = message;
+            resultDiv.style.display = 'block';
+        }
+
+        function testPhpEnabled() {
+            fetch('test-php.php')
+                .then(response => response.text())
+                .then(data => {
+                    if (data.includes('PHP is working')) {
+                        showResult('✓ PHP is enabled and working!<br><pre>' + data + '</pre>', true);
+                    } else {
+                        showResult('✗ PHP might not be working correctly.<br><pre>' + data + '</pre>', false);
+                    }
+                })
+                .catch(error => {
+                    showResult('✗ Error: ' + error.message + '<br><br>You are probably opening this file directly. Please use a web server (XAMPP, WAMP, or upload to hosting).', false);
+                });
+        }
+
+        function testEmailFiles() {
+            const files = ['send-email.php', 'send-hero-email.php', 'send-contact-email.php'];
+            let results = '<strong>Checking email files:</strong><br>';
+            let allExists = true;
+
+            Promise.all(files.map(file => 
+                fetch(file, { method: 'HEAD' })
+                    .then(response => ({ file, exists: response.ok }))
+                    .catch(() => ({ file, exists: false }))
+            )).then(responses => {
+                responses.forEach(({ file, exists }) => {
+                    results += `<br>${exists ? '✓' : '✗'} ${file} - ${exists ? 'Found' : 'Not Found'}`;
+                    if (!exists) allExists = false;
+                });
+                showResult(results, allExists);
+            });
+        }
+
+        function testSendEmail() {
+            const formData = new FormData();
+            formData.append('fullName', 'Test User');
+            formData.append('email', 'test@example.com');
+            formData.append('mobile', '1234567890');
+            formData.append('countryCode', '+1');
+            formData.append('project', 'business-website');
+            formData.append('description', 'This is a test email from the testing page');
+
+            fetch('send-email.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(text => {
+                try {
+                    const data = JSON.parse(text);
+                    if (data.success) {
+                        showResult('✓ Email sent successfully!<br><br>' + data.message + '<br><br>Check info@btplsoft.com and sales@bhoomitechzone.in', true);
+                    } else {
+                        showResult('✗ Email failed to send.<br><br>' + data.message, false);
+                    }
+                } catch (e) {
+                    showResult('✗ Invalid response from server:<br><pre>' + text + '</pre>', false);
+                }
+            })
+            .catch(error => {
+                showResult('✗ Error: ' + error.message + '<br><br>Make sure you are running this on a PHP server.', false);
+            });
+        }
+    </script>
+</body>
+</html>

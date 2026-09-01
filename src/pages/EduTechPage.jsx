@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHead from '../components/SEOHead';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -78,39 +79,15 @@ const EduTechPage = () => {
     }
   ];
 
-  const useCases = [
-    {
-      title: "K-12 Education Platforms",
-      description: "Complete digital learning solutions for schools with curriculum management and parent portals.",
-      content: "We develop comprehensive K-12 education platforms that digitize the entire learning experience. Our solutions include interactive lesson plans, multimedia content delivery, homework management, automated grading systems, and parent-teacher communication portals. Features include attendance tracking, report card generation, virtual classrooms, and learning analytics to monitor student progress and identify areas needing attention.",
-      features: ["Virtual Classrooms", "Homework Management", "Parent Portal", "Progress Tracking"],
-      image: "/images/edutechbnr1.png"
-    },
-    {
-      title: "Higher Education LMS",
-      description: "Advanced learning management systems for universities with research collaboration tools.",
-      content: "Our higher education LMS solutions cater to colleges and universities with advanced features like course catalog management, online enrollment, degree audit systems, research collaboration tools, and thesis management. We integrate video conferencing, discussion forums, assignment submissions, peer reviews, and plagiarism detection. The system supports multiple user roles including students, faculty, administrators, and alumni.",
-      features: ["Course Management", "Research Tools", "Online Enrollment", "Collaboration"],
-      image: "/images/edutech01.png"
-    },
-    {
-      title: "Corporate Training Portals",
-      description: "Employee training and development platforms with compliance tracking and certification.",
-      content: "We build corporate learning platforms that streamline employee training and professional development. Our solutions include onboarding modules, compliance training, skill development courses, and certification programs. Features include learning paths customization, competency tracking, performance assessments, and integration with HR systems. Detailed analytics help organizations measure training effectiveness and ROI.",
-      features: ["Onboarding Modules", "Compliance Training", "Skill Development", "HR Integration"],
-      image: "/images/edutech03.png"
-    },
-    {
-      title: "Online Course Marketplaces",
-      description: "Multi-vendor e-learning platforms with payment processing and content management.",
-      content: "Our online course marketplace solutions enable entrepreneurs to build platforms like Udemy or Coursera. Features include instructor onboarding, course creation tools, video hosting, student enrollment, payment gateway integration, revenue sharing, rating and review systems, and recommendation engines. We implement advanced search, category filtering, and personalized learning recommendations to enhance user experience.",
-      features: ["Multi-Vendor Support", "Payment Processing", "Course Builder", "Analytics"],
-      image: "/images/edutech02.png"
-    }
-  ];
 
   return (
     <>
+      <SEOHead
+        title="EdTech Software Development in Noida for Smart Learning"
+        description="Get EdTech software development in Noida with scalable, interactive, and secure solutions for e-learning platforms, LMS, and digital education systems - Bhoomi Techzone."
+        keywords="EdTech Software Development, EdTech Software Development In noida"
+        canonical="https://bhoomitechzone.in/edutech"
+      />
       {/* EduTech Hero Banner */}
       <section className={styles.heroSection}>
         <ParticleBanner />
@@ -125,16 +102,16 @@ const EduTechPage = () => {
               <span>EduTech</span>
             </div>
             <h1 className={styles.heroTitle}>
-              Transform Education with
-              <span className={styles.heroHighlight}> Digital Innovation</span>
+              EdTech 
+              <span className={styles.heroHighlight}> Software Development </span>
+              in Noida
             </h1>
             <p className={styles.heroSubtitle}>
-              Build engaging, scalable, and interactive educational technology solutions that 
-              revolutionize learning experiences for students, teachers, and institutions.
+              Our EdTech Software Development in Noida delivers interactive, user-friendly solutions for students, teachers, and institutions.
             </p>
           </div>
           <div className={styles.heroAnimation}>
-            <img src="/images/edutechbnr1.png" alt="EduTech Solutions" />
+            <img src="/images/edutechbnr1.png" alt="EduTech Solutions" width="1200" height="400" />
           </div>
         </div>
       </section>
@@ -170,18 +147,13 @@ const EduTechPage = () => {
             <div className={styles.aboutContent}>
               <span className={styles.sectionLabel}>Our Expertise</span>
               <h2 className={styles.sectionTitle}>
-                Leading <span className={styles.highlight}>EduTech Dev</span> Company
+                Leading <span className={styles.highlight}>EduTech Development </span> Company
               </h2>
               <p className={styles.paragraph}>
-                At Bhoomi Techzone, we specialize in developing innovative educational technology solutions 
-                that transform traditional learning into engaging digital experiences. Our expertise spans 
-                learning management systems, virtual classrooms, e-learning platforms, and educational apps.
+                We at Bhoomi Techzone provide cutting-edge <strong style={{ color: 'black' }}>EdTech software development</strong> <Link to="/services">services</Link> that convert conventional education into effective online learning opportunities. <Link to="/mobile-app-development">Mobile education apps</Link>, e-learning platforms, virtual classrooms, and <Link to="/lms-software">learning management systems</Link> are among our areas of competence.
               </p>
               <p className={styles.paragraph}>
-                We understand the unique challenges of the education sector including accessibility, 
-                engagement, content delivery, and assessment. Our edutech solutions are built with 
-                user-friendly interfaces, scalable architectures, and powerful features that enhance 
-                learning outcomes for students, educators, and institutions.
+                We understand the key challenges in education such as accessibility, engagement, content delivery, and performance tracking. Our <strong style={{ color: 'black' }}>EdTech Software Development in Noida</strong> focuses on creating intuitive, scalable, and feature-rich solutions that improve learning outcomes for students, educators, and institutions.
               </p>
               <div className={styles.featuresList}>
                 <div className={styles.featureItem}>
@@ -249,34 +221,169 @@ const EduTechPage = () => {
             </h2>
           </div>
           
-          {useCases.map((useCase, index) => (
-            <div 
-              key={index} 
-              className={`${styles.useCaseRow} ${index % 2 === 1 ? styles.reverse : ''}`}
-            >
-              <div className={styles.useCaseContent}>
-                <h3 className={styles.useCaseTitle}>{useCase.title}</h3>
-                <p className={styles.useCaseDescription}>{useCase.description}</p>
-                <p className={styles.useCaseDetails}>{useCase.content}</p>
-                <div className={styles.useCaseFeatures}>
-                  {useCase.features.map((feature, idx) => (
-                    <span key={idx} className={styles.featureTag}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                        <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                      {feature}
-                    </span>
-                  ))}
-                </div>
-                <Link to="/contact" className={styles.useCaseBtn}>
-                  Get Started
-                </Link>
+          {/* Use Case 1: K-12 Education Platforms */}
+          <div className={styles.useCaseRow}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>K-12 Education Platforms</h3>
+              <p className={styles.useCaseDescription}>Complete digital learning solutions for schools with curriculum management and parent portals</p>
+              <p className={styles.useCaseDetails}>We create comprehensive digital learning solutions that improve communication and streamline curriculum management for educational institutions. Parent-teacher portals, automated grading, homework monitoring, multimedia content, interactive classes, and attendance management are some of our options. Institutions can track student progress and increase overall learning efficiency with our <strong style={{ color: 'black' }}>EdTech software development</strong>.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Virtual Classrooms
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Homework Management
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Parent Portal
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Progress Tracking
+                </span>
               </div>
-              <div className={styles.useCaseImage}>
-                <img src={useCase.image} alt={useCase.title} />
-              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
             </div>
-          ))}
+            <div className={styles.useCaseImage}>
+              <img src="/images/edutechbnr1.png" alt="EdTech software development" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Use Case 2: Higher Education LMS */}
+          <div className={`${styles.useCaseRow} ${styles.reverse}`}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>Higher Education LMS</h3>
+              <p className={styles.useCaseDescription}>Advanced learning management systems for universities with research collaboration tools.</p>
+              <p className={styles.useCaseDetails}>Our advanced LMS solutions for colleges and universities include course management, online enrollment, research collaboration tools, and thesis management systems. We integrate video conferencing, discussion forums, assignments, peer reviews, and plagiarism detection. Our <strong style={{ color: 'black' }}>EdTech Software Development in Noida</strong> ensures seamless learning and collaboration across all user roles.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Course Management
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Research Tools
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Online Enrollment
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Collaboration
+                </span>
+              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
+            </div>
+            <div className={styles.useCaseImage}>
+              <img src="/images/edutech01.png" alt="EdTech Software Development in Noida" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Use Case 3: Corporate Training Portals */}
+          <div className={styles.useCaseRow}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>Corporate Training Portals</h3>
+              <p className={styles.useCaseDescription}>Employee training and development platforms with compliance tracking and certification.</p>
+              <p className={styles.useCaseDetails}>We build powerful corporate learning platforms for employee training and development. Features include onboarding modules, compliance training, skill development programs, certification tracking, and performance analysis. Our <strong style={{ color: 'black' }}>EdTech software development</strong> helps organizations improve workforce productivity and training outcomes.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Onboarding Modules
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Compliance Training
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Skill Development
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  HR Integration
+                </span>
+              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
+            </div>
+            <div className={styles.useCaseImage}>
+              <img src="/images/edutech03.png" alt="EdTech Software Development" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Use Case 4: Online Course Marketplaces */}
+          <div className={`${styles.useCaseRow} ${styles.reverse}`}>
+            <div className={styles.useCaseContent}>
+              <h3 className={styles.useCaseTitle}>Online Course Marketplaces</h3>
+              <p className={styles.useCaseDescription}>Multi-vendor e-learning platforms with payment processing and content management.</p>
+              <p className={styles.useCaseDetails}>Our solutions enable businesses to create platforms like Udemy or Coursera with multi-vendor support. Features include instructor onboarding, course creation tools, payment integration, revenue sharing, ratings, and recommendations. With our <strong style={{ color: 'black' }}>EdTech Software Development in Noida</strong>, you can launch scalable and profitable e-learning platforms.</p>
+              <div className={styles.useCaseFeatures}>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Multi-Vendor Support
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Payment Processing
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Course Builder
+                </span>
+                <span className={styles.featureTag}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="#0e8d38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Analytics
+                </span>
+              </div>
+              <Link to="/contact" className={styles.useCaseBtn}>
+                Get Started
+              </Link>
+            </div>
+            <div className={styles.useCaseImage}>
+              <img src="/images/edutech02.png" alt="EdTech Software Development in Noida" width="350" height="250" loading="lazy" />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -290,8 +397,7 @@ const EduTechPage = () => {
                 <span className={styles.highlight}>Powerful Features</span> for Modern Learning
               </h2>
               <p className={styles.paragraph}>
-                Our educational technology solutions come packed with features designed to enhance learning 
-                experiences, streamline administrative tasks, and provide valuable insights into student performance.
+                Our <strong style={{ color: 'black' }}>EdTech software development</strong> educational technology solutions come packed with features designed to enhance learning experiences, streamline administrative tasks, and provide valuable insights into student performance.
               </p>
               <div className={styles.securityFeatures}>
                 <div className={styles.securityFeature}>
