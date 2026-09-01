@@ -28,18 +28,15 @@ const ContactModal = lazy(() => import('../components/ContactModal'));
 const Home = () => {
   const [showModal, setShowModal] = useState(false);
 
-  useEffect(() => {
-    // Show modal after 1 second
-    const timer = setTimeout(() => {
-      setShowModal(true);
-    }, 1000);
-
-    // Cleanup timer if component unmounts
-    return () => clearTimeout(timer);
-  }, []);
+  // Removed auto-popup - only show on user interaction
+  // This saves CPU cycles on initial page load
 
   const handleCloseModal = () => {
     setShowModal(false);
+  };
+
+  const handleOpenModal = () => {
+    setShowModal(true);
   };
 
   return (

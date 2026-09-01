@@ -414,7 +414,12 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .modalOverlay {
+    animation: none; /* Disable animations on tablet/mobile */
+  }
+
   .modalContent {
+    animation: none; /* Disable animations on tablet/mobile */
     margin: 0px;
     padding: 30px 25px;
     max-width: none;

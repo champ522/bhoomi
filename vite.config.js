@@ -61,11 +61,6 @@ export default defineConfig({
             return 'swiper';
           }
           
-          // Separate chunk for Three.js (heavy 3D library)
-          if (id.includes('node_modules/three')) {
-            return 'three';
-          }
-          
           // Scheduler separate chunk
           if (id.includes('node_modules/scheduler')) {
             return 'vendor';
