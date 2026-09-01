@@ -63,6 +63,8 @@
   </script>
   <!-- End Meta Pixel Code -->
 
+  <!-- Third-party Scripts moved to bottom with defer -->
+
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
     {
@@ -120,17 +122,6 @@
       }
     }
     </script>
-
- <!-- Google tag (gtag.js) --> 
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-34N7NC7YSG"></script> 
-  <script>
-   window.dataLayer = window.dataLayer || []; 
-   function gtag() {
-    dataLayer.push(arguments);
-    } 
-    gtag('js', new Date()); 
-    gtag('config', 'G-34N7NC7YSG'); 
-  </script>
 
   <!-- Performance & Resource Hints -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
@@ -227,6 +218,16 @@
 
   <!-- Main Application Script (Module) -->
   <script type="module" src="/src/main.jsx"></script>
+
+  <!-- DEFERRED: Google Analytics (moved from head to defer execution) -->
+  <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-34N7NC7YSG"></script>
+  <script defer>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-34N7NC7YSG');
+  </script>
+  <!-- End Deferred Google Analytics -->
 </body>
 
 </html>
