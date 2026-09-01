@@ -1,15 +1,10 @@
-import React, { useRef } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay, EffectFade, Parallax } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-fade';
-import 'swiper/css/parallax';
+import React, { useState, useRef, useEffect } from 'react';
 import styles from '../styles/HeroBanner.module.css';
 
 const HeroBanner = () => {
-  const swiperRef = useRef(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [autoPlay] = useState(true);
+  const autoPlayRef = useRef(null);
 
   // Right side images array
   const rightImages = [
@@ -54,9 +49,29 @@ const HeroBanner = () => {
     }
   ];
 
+  // Autoplay carousel every 4 seconds
+  useEffect(() => {
+    if (!autoPlay) return;
+    
+    autoPlayRef.current = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 4000);
+
+    return () => {
+      if (autoPlayRef.current) {
+        clearInterval(autoPlayRef.current);
+      }
+    };
+  }, [autoPlay, slides.length]);
+
   // Lightweight CSS-based background - no JavaScript animations needed
 
 
+  return (
+    <section className={styles.heroBanner}>
+      {/* CSS Animated Gradient Background */}
+      <div className={styles.particleCanvas} />
+      
   return (
     <section className={styles.heroBanner}>
       {/* CSS Animated Gradient Background */}
@@ -104,63 +119,28 @@ const HeroBanner = () => {
         </div>
       </div>
       
-      <Swiper
-        ref={swiperRef}
-        modules={[Navigation, Pagination, Autoplay, EffectFade, Parallax]}
-        spaceBetween={0}
-        slidesPerView={1}
-        loop={true}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
-        speed={1500}
-        effect="fade"
-        fadeEffect={{
-          crossFade: true
-        }}
-        parallax={true}
-        navigation={{
-          nextEl: `.${styles.swiperButtonNext}`,
-          prevEl: `.${styles.swiperButtonPrev}`,
-        }}
-        pagination={{
-          el: `.${styles.swiperPagination}`,
-          clickable: true,
-          renderBullet: (index, className) => {
-            return `<span class="${className} ${styles.customBullet}"><span class="${styles.bulletContent}"></span></span>`;
-          },
-        }}
-        onSlideChange={() => {
-          // Add slide change animations
-          const activeSlide = document.querySelector('.swiper-slide-active');
-          if (activeSlide) {
-            activeSlide.classList.add(styles.slideAnimation);
-            setTimeout(() => {
-              activeSlide.classList.remove(styles.slideAnimation);
-            }, 1000);
-          }
-        }}
-        className={styles.heroSwiper}
-      >
+      {/* LIGHTWEIGHT CSS-BASED CAROUSEL (replacing 96KB Swiper) */}
+      <div className={styles.carouselContainer}>
         {slides.map((slide, index) => (
-          <SwiperSlide key={slide.id} className={styles.heroSlide}>
-            
+          <div 
+            key={slide.id} 
+            className={`${styles.carouselSlide} ${currentSlide === index ? styles.active : ''}`}
+          >
             <div className={styles.slideContent}>
               <div className={styles.container}>
                 <div className={styles.contentWrapper}>
-                  <div className={styles.textContent} data-swiper-parallax="-300">
-                    <h2 className={styles.slideTitle} data-swiper-parallax="-200">
+                  <div className={styles.textContent}>
+                    <h2 className={styles.slideTitle}>
                       <span className={styles.titlePart1}>{slide.title}</span>
                       <span className={styles.titleHighlight}>{slide.highlight}</span>
                     </h2>
-                    <h3 className={styles.slideSubtitle} data-swiper-parallax="-100">
+                    <h3 className={styles.slideSubtitle}>
                       {slide.subtitle}
                     </h3>
-                    <p className={styles.slideDescription} data-swiper-parallax="0">
+                    <p className={styles.slideDescription}>
                       {slide.description}
                     </p>
-                    <div className={styles.slideButtons} data-swiper-parallax="100">
+                    <div className={styles.slideButtons}>
                       <a href={slide.buttonLink} className={styles.primaryButton}>
                         <span>{slide.buttonText}</span>
                       </a>
@@ -173,7 +153,7 @@ const HeroBanner = () => {
                     </div>
                   </div>
                   
-                  <div className={styles.imageContent} data-swiper-parallax="300">
+                  <div className={styles.imageContent}>
                     <div className={styles.heroImage}>
                       <picture>
                         <source srcSet={`${rightImages[index]}.webp`} type="image/webp" />
@@ -191,24 +171,42 @@ const HeroBanner = () => {
                 </div>
               </div>
             </div>
-          </SwiperSlide>
+          </div>
         ))}
-      </Swiper>
+      </div>
 
-      {/* Custom Navigation */}
-      <div className={styles.swiperButtonPrev}>
+      {/* Navigation Buttons */}
+      <button 
+        className={styles.swiperButtonPrev}
+        onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)}
+        aria-label="Previous slide"
+      >
         <svg viewBox="0 0 24 24">
           <path d="M15 18l-6-6 6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
-      </div>
-      <div className={styles.swiperButtonNext}>
+      </button>
+      
+      <button 
+        className={styles.swiperButtonNext}
+        onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
+        aria-label="Next slide"
+      >
         <svg viewBox="0 0 24 24">
           <path d="M9 18l6-6-6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
-      </div>
+      </button>
 
-      {/* Custom Pagination */}
-      {/* <div className={styles.swiperPagination}></div> */}
+      {/* Pagination Dots */}
+      <div className={styles.carouselPagination}>
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            className={`${styles.paginationDot} ${currentSlide === index ? styles.active : ''}`}
+            onClick={() => setCurrentSlide(index)}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
     </section>
   );
 };

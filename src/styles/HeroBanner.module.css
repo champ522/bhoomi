@@ -36,7 +36,7 @@
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  animation: rotate 10s infinite linear;
+  animation: rotate 20s infinite linear;
 }
 
 .face {
@@ -51,7 +51,7 @@
   opacity: 0.9;
   border: 2px solid;
   border-color: #9ff8bc;
-  box-shadow: 0 0 100px rgba(71, 252, 131, 0.61);
+  box-shadow: 0 0 50px rgba(71, 252, 131, 0.4);
   border-radius: 50%;
 }
 
@@ -117,6 +117,72 @@
   height: 100%;
   position: relative;
   z-index: 10;
+}
+
+/* LIGHTWEIGHT CSS-BASED CAROUSEL (replacing Swiper) */
+.carouselContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.carouselSlide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  pointer-events: none;
+}
+
+.carouselSlide.active {
+  opacity: 1;
+  pointer-events: auto;
+  animation: slideIn 0.8s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Carousel Pagination Dots */
+.carouselPagination {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  gap: 12px;
+  pointer-events: auto;
+}
+
+.paginationDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.paginationDot.active {
+  background-color: #28a745;
+  transform: scale(1.3);
+}
+
+.paginationDot:hover {
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .heroSlide {
