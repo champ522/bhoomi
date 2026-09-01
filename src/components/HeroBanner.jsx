@@ -66,17 +66,11 @@ const HeroBanner = () => {
 
   // Lightweight CSS-based background - no JavaScript animations needed
 
+  return (
+    <section className={styles.heroBanner}>
+      {/* CSS Animated Gradient Background */}
+      <div className={styles.particleCanvas} />
 
-  return (
-    <section className={styles.heroBanner}>
-      {/* CSS Animated Gradient Background */}
-      <div className={styles.particleCanvas} />
-      
-  return (
-    <section className={styles.heroBanner}>
-      {/* CSS Animated Gradient Background */}
-      <div className={styles.particleCanvas} />
-      
       {/* 3D Cube */}
       <div className={styles.cubeContainer}>
         <div className={styles.cube}>
